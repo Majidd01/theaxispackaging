@@ -164,7 +164,7 @@ export default function IndustryDetailPage() {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-24 object-cover rounded-lg mb-4"
+                    className="w-full h-24 md:h-56 object-cover rounded-lg mb-4"
                   />
                   <Link to={`/products/${product.slug}`}>
                     <Button
@@ -313,7 +313,7 @@ export default function IndustryDetailPage() {
                       <img
                         src={relatedIndustry.image}
                         alt={relatedIndustry.name}
-                        className="w-full h-24 object-cover rounded-lg mb-4"
+                        className="w-full h-24 md:h-56 object-cover rounded-lg mb-4"
                       />
                       <Button
                         variant="outline"

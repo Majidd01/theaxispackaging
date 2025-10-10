@@ -32,7 +32,7 @@ export function IndustrySolutions() {
                   <img
                     src={industry.image}
                     alt={industry.name}
-                    className="w-full h-32 object-cover rounded-lg"
+                    className="w-full h-32 md:h-56 object-cover rounded-lg"
                   />
                 </CardContent>
               </Card>

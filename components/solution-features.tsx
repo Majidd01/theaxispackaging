@@ -73,7 +73,12 @@ export function SolutionFeatures() {
                   <feature.icon className={`w-10 h-10 bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`} />
                 </div>
                 
-                <h3 className={`text-xl font-bold text-[var(--axis-dark-blue)] mb-4 group-hover:text-white transition-all duration-300`}>
+                <h3 className={`text-2xl font-bold mb-4 transition-all duration-300 ${
+                  feature.gradient.includes('blue') ? 'text-blue-600 group-hover:text-white' :
+                  feature.gradient.includes('orange') ? 'text-orange-600 group-hover:text-white' :
+                  feature.gradient.includes('purple') ? 'text-purple-600 group-hover:text-white' :
+                  'text-green-600 group-hover:text-white'
+                }`}>
                   {feature.title}
                 </h3>
                 

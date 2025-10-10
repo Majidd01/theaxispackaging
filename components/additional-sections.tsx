@@ -20,7 +20,7 @@ export function AdditionalSections() {
             {CORRUGATED_STYLES.slice(0, 4).map((style) => (
               <Link key={style.name} to="/corrugated-styles" className="group">
                 <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <img src={style.image} alt={style.name} className="w-full h-32 object-cover rounded-lg mb-4" />
+                  <img src={style.image} alt={style.name} className="w-full h-32 md:h-56 object-cover rounded-lg mb-4" />
                   <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-2 group-hover:text-[var(--axis-orange)] transition-colors">
                     {style.name}
                   </h3>
@@ -47,7 +47,7 @@ export function AdditionalSections() {
             {CORRUGATED_OPTIONS.slice(0, 4).map((option) => (
               <Link key={option.name} to="/corrugated-options" className="group">
                 <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <img src={option.image} alt={option.name} className="w-full h-32 object-cover rounded-lg mb-4" />
+                  <img src={option.image} alt={option.name} className="w-full h-32 md:h-56 object-cover rounded-lg mb-4" />
                   <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-2 group-hover:text-[var(--axis-orange)] transition-colors">
                     {option.name}
                   </h3>
@@ -74,7 +74,7 @@ export function AdditionalSections() {
             {CORRUGATED_INSPIRATIONS.slice(0, 4).map((inspiration) => (
               <Link key={inspiration.name} to="/corrugated-inspirations" className="group">
                 <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <img src={inspiration.image} alt={inspiration.name} className="w-full h-32 object-cover rounded-lg mb-4" />
+                  <img src={inspiration.image} alt={inspiration.name} className="w-full h-32 md:h-56 object-cover rounded-lg mb-4" />
                   <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-2 group-hover:text-[var(--axis-orange)] transition-colors">
                     {inspiration.name}
                   </h3>
@@ -101,7 +101,7 @@ export function AdditionalSections() {
             {PACKAGING_SERVICES.slice(0, 4).map((service) => (
               <Link key={service.name} to="/packaging-services" className="group">
                 <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <img src={service.image} alt={service.name} className="w-full h-32 object-cover rounded-lg mb-4" />
+                  <img src={service.image} alt={service.name} className="w-full h-32 md:h-56 object-cover rounded-lg mb-4" />
                   <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-2 group-hover:text-[var(--axis-orange)] transition-colors">
                     {service.name}
                   </h3>

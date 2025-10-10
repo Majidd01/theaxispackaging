@@ -551,7 +551,7 @@ export default function ProductDetailPage() {
                       src={relatedProduct.image || placeholderImg}
                       onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
                       alt={relatedProduct.name}
-                      className="w-full h-24 object-cover rounded-lg mb-4"
+                      className="w-full h-24 md:h-56 object-cover rounded-lg mb-4"
                     />
                     <Link to={`/products/${relatedProduct.slug}`}>
                       <Button

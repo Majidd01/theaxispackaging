@@ -23,7 +23,7 @@ export function Header() {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>+1 (555) 123-4567</span>
+              <span>+44 7367 066309</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
@@ -51,19 +51,22 @@ export function Header() {
       </div>
 
       {/* Main navigation */}
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 sm:h-16 h-14">
+      <div className="container mx-auto px-4 py-2">
+        <div className="flex items-center justify-between h-20 sm:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <img
                 src="/assets/logo.png"
                 alt="Axis Packaging Logo"
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shadow-lg group-hover:scale-105 transition-transform duration-200"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover group-hover:scale-105 transition-transform duration-200"
+                style={{
+                  height: "120px",
+                  width: "120px",
+                  transform: "scale(1.3)"
+                }}
               />
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">✓</span>
-              </div>
+             
             </div>
             <div>
               <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text text-transparent">

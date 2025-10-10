@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { setActiveCategory } from "@/lib/slices/faqsSlice";
-import { HelpCircle, MessageCircle, Search, ArrowLeft } from "lucide-react";
+import { HelpCircle, MessageCircle, Search, ArrowLeft, Users, Clock, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -1399,28 +1399,73 @@ Contact our sales team to discuss your specific volume needs and maximize your s
               )}
 
               {/* Contact Support */}
-              <div className="mt-16 text-center">
-                <div className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white rounded-2xl p-8">
-                  <MessageCircle className="h-12 w-12 mx-auto mb-4 text-[var(--axis-orange)]" />
-                  <h3 className="text-xl font-bold mb-4">Still Have Questions?</h3>
-                  <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                    Our packaging experts are here to help. Get personalized answers to your specific
-                    questions and receive a custom quote for your packaging needs.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link to="/contact">
-                      <Button className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90 text-white">
-                        Contact Our Experts
-                      </Button>
-                    </Link>
-                    <Link to="/quote">
-                      <Button
-                        variant="outline"
-                        className="border-white text-white hover:bg-white hover:text-[var(--axis-dark-blue)] bg-transparent"
-                      >
-                        Request a Quote
-                      </Button>
-                    </Link>
+              <div className="mt-16">
+                <div className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white rounded-3xl p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
+                  {/* Animated Background Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
+                    <div className="absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full translate-x-12 translate-y-12 animate-bounce delay-1000"></div>
+                    <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-white rounded-full -translate-x-8 -translate-y-8 animate-ping delay-500"></div>
+                    <div className="absolute top-1/4 right-1/4 w-8 h-8 bg-orange-300 rounded-full animate-pulse delay-700"></div>
+                    <div className="absolute bottom-1/4 left-1/4 w-12 h-12 bg-blue-300 rounded-full animate-bounce delay-300"></div>
+                  </div>
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute top-4 right-4 w-6 h-6 bg-orange-400/30 rounded-full animate-bounce delay-200"></div>
+                  <div className="absolute bottom-4 left-4 w-4 h-4 bg-blue-400/30 rounded-full animate-bounce delay-500"></div>
+                  <div className="absolute top-1/2 right-8 w-3 h-3 bg-white/40 rounded-full animate-ping delay-1000"></div>
+                  
+                  <div className="relative z-10 text-center">
+                    <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                      <MessageCircle className="h-10 w-10 text-white group-hover:rotate-12 transition-transform duration-300" />
+                    </div>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-orange-200 transition-colors duration-300">
+                      Still Have Questions?
+                    </h3>
+                    <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg group-hover:text-white transition-colors duration-300">
+                      Our packaging experts are here to help. Get personalized answers to your specific questions and find the perfect solution for your needs.
+                    </p>
+                    
+                    {/* Enhanced Support Stats */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                      <div className="text-center group/stat hover:scale-105 transition-all duration-300">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover/stat:bg-orange-500/30 group-hover/stat:scale-110 transition-all duration-300">
+                          <Users className="h-6 w-6 text-white group-hover/stat:animate-pulse" />
+                        </div>
+                        <div className="text-2xl font-bold group-hover/stat:text-orange-200 transition-colors duration-300">24/7</div>
+                        <div className="text-blue-100 text-sm group-hover/stat:text-white transition-colors duration-300">Expert Support</div>
+                      </div>
+                      <div className="text-center group/stat hover:scale-105 transition-all duration-300">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover/stat:bg-orange-500/30 group-hover/stat:scale-110 transition-all duration-300">
+                          <Clock className="h-6 w-6 text-white group-hover/stat:animate-spin" />
+                        </div>
+                        <div className="text-2xl font-bold group-hover/stat:text-orange-200 transition-colors duration-300">&lt; 2hr</div>
+                        <div className="text-blue-100 text-sm group-hover/stat:text-white transition-colors duration-300">Response Time</div>
+                      </div>
+                      <div className="text-center group/stat hover:scale-105 transition-all duration-300">
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover/stat:bg-orange-500/30 group-hover/stat:scale-110 transition-all duration-300">
+                          <Shield className="h-6 w-6 text-white group-hover/stat:animate-bounce" />
+                        </div>
+                        <div className="text-2xl font-bold group-hover/stat:text-orange-200 transition-colors duration-300">100%</div>
+                        <div className="text-blue-100 text-sm group-hover/stat:text-white transition-colors duration-300">Satisfaction</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Link to="/contact">
+                        <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 group/btn">
+                          <span className="group-hover/btn:animate-pulse">Contact Support</span>
+                        </Button>
+                      </Link>
+                      <Link to="/quote">
+                        <Button
+                          variant="outline"
+                          className="border-2 border-white text-white hover:bg-white hover:text-[var(--axis-dark-blue)] bg-transparent px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 group/btn"
+                        >
+                          <span className="group-hover/btn:animate-pulse">Get Custom Quote</span>
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
