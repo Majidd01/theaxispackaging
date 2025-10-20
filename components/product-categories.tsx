@@ -47,32 +47,57 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {currentProducts.map((product, index) => (
-            <Link key={product.slug} to={`/products/${product.slug}`}>
-              <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-                <CardContent className="p-4">
-                  {/* Product Image */}
-                  <div className="mb-4">
+            <Link 
+              key={product.slug} 
+              to={`/products/${product.slug}`}
+              className="group transform hover:-translate-y-2 transition-all duration-500 block"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <Card className="h-full bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer">
+                <CardContent className="p-0">
+                  {/* Product Image Container */}
+                  <div className="relative overflow-hidden">
                     <img
                       src={product.image || placeholderImg}
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).src = placeholderImg;
                       }}
                       alt={product.name}
-                      className="w-full h-48 object-cover rounded-lg"
+                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
+                    {/* Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Product Number Badge */}
+                    <div className="absolute top-3 left-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-xs font-bold text-[var(--axis-dark-blue)]">
+                        #{String(startIndex + index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
 
-                  {/* Product Number */}
-                  <div className="text-center mb-2">
-                    <span className="text-sm text-gray-500 font-medium">
-                      #{String(startIndex + index + 1).padStart(3, "0")}
-                    </span>
+                  {/* Content */}
+                  <div className="p-4">
+                    {/* Product Name */}
+                    <CardTitle className="text-lg text-center text-[var(--axis-dark-blue)] group-hover:text-orange-600 transition-colors duration-300 font-bold">
+                      {product.name}
+                    </CardTitle>
+                    
+                    {/* Quick Features */}
+                    <div className="mt-3 flex justify-center space-x-2">
+                      <div className="flex items-center text-xs text-gray-500">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
+                        <span>Premium</span>
+                      </div>
+                      <div className="flex items-center text-xs text-gray-500">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-1"></div>
+                        <span>Custom</span>
+                      </div>
+                    </div>
                   </div>
-
-                  {/* Product Name */}
-                  <CardTitle className="text-lg text-center text-[var(--axis-dark-blue)] group-hover:text-[var(--axis-orange)] transition-colors">
-                    {product.name}
-                  </CardTitle>
                 </CardContent>
               </Card>
             </Link>

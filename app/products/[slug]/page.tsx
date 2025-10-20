@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PRODUCT_CATEGORIES } from "@/lib/constants";
-import { CheckCircle, MessageCircle, Package, Shield, Star, Truck } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageCircle, Package, Shield, Star, Truck } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
@@ -526,44 +526,113 @@ export default function ProductDetailPage() {
       </section>
 
       {/* Related Products */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] text-center mb-12">
-            Related Products
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-orange-200/30 to-orange-300/20 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/2 -right-16 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-blue-300/20 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute -bottom-16 left-1/3 w-24 h-24 bg-gradient-to-br from-purple-200/30 to-purple-300/20 rounded-full animate-pulse delay-500"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-orange-50 rounded-full text-sm font-medium text-orange-700 mb-6 shadow-lg backdrop-blur-sm">
+              <Package className="w-4 h-4 mr-2" />
+              Discover More
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text text-transparent mb-4">
+              Related Products
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore our other premium packaging solutions that might interest you
+            </p>
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
             {PRODUCT_CATEGORIES.filter((p) => p.slug !== slug)
               .slice(0, 3)
-              .map((relatedProduct) => (
-                <Card
+              .map((relatedProduct, index) => (
+                <div
                   key={relatedProduct.slug}
-                  className="group hover:shadow-lg transition-all duration-300"
+                  className="group transform hover:-translate-y-2 transition-all duration-500"
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl">{relatedProduct.icon}</span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-2">
-                      {relatedProduct.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">{relatedProduct.description}</p>
-                    <img
-                      src={relatedProduct.image || placeholderImg}
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                      alt={relatedProduct.name}
-                      className="w-full h-24 md:h-56 object-cover rounded-lg mb-4"
-                    />
-                    <Link to={`/products/${relatedProduct.slug}`}>
-                      <Button
-                        variant="outline"
-                        className="w-full border-[var(--axis-orange)] text-[var(--axis-orange)] hover:bg-[var(--axis-orange)] hover:text-white"
-                      >
-                        Learn More
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+                  <Card className="h-full bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                    <CardContent className="p-0">
+                      {/* Product Image Container */}
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={relatedProduct.image || placeholderImg}
+                          onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                          alt={relatedProduct.name}
+                          className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        {/* Overlay Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Icon Badge */}
+                        <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-xl">{relatedProduct.icon}</span>
+                        </div>
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-6">
+                        <div className="mb-4">
+                          <h3 className="text-xl font-bold text-[var(--axis-dark-blue)] mb-2 group-hover:text-orange-600 transition-colors duration-300">
+                            {relatedProduct.name}
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {relatedProduct.description}
+                          </p>
+                        </div>
+
+                        {/* Features */}
+                        <div className="mb-6">
+                          <div className="flex items-center text-sm text-gray-500 mb-2">
+                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                            <span>Premium Quality</span>
+                          </div>
+                          <div className="flex items-center text-sm text-gray-500 mb-2">
+                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                            <span>Custom Design</span>
+                          </div>
+                          <div className="flex items-center text-sm text-gray-500">
+                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                            <span>Fast Delivery</span>
+                          </div>
+                        </div>
+
+                        {/* CTA Button */}
+                        <Link to={`/products/${relatedProduct.slug}`}>
+                          <Button
+                            className="w-full bg-gradient-to-r from-[var(--axis-orange)] to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group/btn"
+                          >
+                            <span className="flex items-center justify-center">
+                              Learn More
+                              <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                            </span>
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <Package className="w-5 h-5 mr-2" />
+              <span className="font-semibold">View All Products</span>
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </div>
           </div>
         </div>
       </section>

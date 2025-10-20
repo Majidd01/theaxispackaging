@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { INDUSTRIES, PRODUCT_CATEGORIES } from "@/lib/constants";
-import { Award, CheckCircle, Factory, Package, Users } from "lucide-react";
+import { ArrowRight, Award, Building2, CheckCircle, Factory, Package, Users } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 export default function IndustryDetailPage() {
@@ -291,40 +291,111 @@ export default function IndustryDetailPage() {
       </section>
 
       {/* Related Industries */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] text-center mb-12">
-            Related Industries
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+      <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-200/30 to-blue-300/20 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/2 -right-16 w-32 h-32 bg-gradient-to-br from-orange-200/30 to-orange-300/20 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute -bottom-16 left-1/3 w-24 h-24 bg-gradient-to-br from-purple-200/30 to-purple-300/20 rounded-full animate-pulse delay-500"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full text-sm font-medium text-blue-700 mb-6 shadow-lg backdrop-blur-sm">
+              <Building2 className="w-4 h-4 mr-2" />
+              Explore Industries
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text text-transparent mb-4">
+              Related Industries
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Discover how we serve other industries with specialized packaging solutions
+            </p>
+          </div>
+
+          {/* Industries Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
             {INDUSTRIES.filter((i) => i.slug !== slug)
               .slice(0, 3)
-              .map((relatedIndustry) => (
-                <Link key={relatedIndustry.slug} to={`/industries/${relatedIndustry.slug}`}>
-                  <Card className="group hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-2xl">{relatedIndustry.icon}</span>
+              .map((relatedIndustry, index) => (
+                <Link 
+                  key={relatedIndustry.slug} 
+                  to={`/industries/${relatedIndustry.slug}`}
+                  className="group transform hover:-translate-y-2 transition-all duration-500 block"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <Card className="h-full bg-white/80 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                    <CardContent className="p-0">
+                      {/* Industry Image Container */}
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={relatedIndustry.image}
+                          alt={relatedIndustry.name}
+                          className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        {/* Overlay Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Icon Badge */}
+                        <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-xl">{relatedIndustry.icon}</span>
+                        </div>
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
-                      <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-2">
-                        {relatedIndustry.name}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4">{relatedIndustry.description}</p>
-                      <img
-                        src={relatedIndustry.image}
-                        alt={relatedIndustry.name}
-                        className="w-full h-24 md:h-56 object-cover rounded-lg mb-4"
-                      />
-                      <Button
-                        variant="outline"
-                        className="w-full border-[var(--axis-orange)] text-[var(--axis-orange)] hover:bg-[var(--axis-orange)] hover:text-white"
-                      >
-                        Learn More
-                      </Button>
+
+                      {/* Content */}
+                      <div className="p-6">
+                        <div className="mb-4">
+                          <h3 className="text-xl font-bold text-[var(--axis-dark-blue)] mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                            {relatedIndustry.name}
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {relatedIndustry.description}
+                          </p>
+                        </div>
+
+                        {/* Features */}
+                        <div className="mb-6">
+                          <div className="flex items-center text-sm text-gray-500 mb-2">
+                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                            <span>Specialized Solutions</span>
+                          </div>
+                          <div className="flex items-center text-sm text-gray-500 mb-2">
+                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                            <span>Industry Expertise</span>
+                          </div>
+                          <div className="flex items-center text-sm text-gray-500">
+                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                            <span>Custom Requirements</span>
+                          </div>
+                        </div>
+
+                        {/* CTA Button */}
+                        <Button
+                          className="w-full bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group/btn"
+                        >
+                          <span className="flex items-center justify-center">
+                            Learn More
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                          </span>
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 </Link>
               ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[var(--axis-orange)] to-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <Building2 className="w-5 h-5 mr-2" />
+              <span className="font-semibold">View All Industries</span>
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </div>
           </div>
         </div>
       </section>

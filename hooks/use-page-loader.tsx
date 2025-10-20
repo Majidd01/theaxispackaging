@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 
 export function usePageLoader() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
   const location = useLocation();
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -12,6 +13,12 @@ export function usePageLoader() {
     // Clear any existing timer
     if (timerRef.current) {
       clearTimeout(timerRef.current);
+    }
+
+    // Don't show loader on initial page load
+    if (isInitialLoad) {
+      setIsInitialLoad(false);
+      return;
     }
 
     // Show loader when navigating to a new page
@@ -30,7 +37,7 @@ export function usePageLoader() {
         clearTimeout(timerRef.current);
       }
     };
-  }, [location.pathname]);
+  }, [location.pathname, isInitialLoad]);
 
   return isLoading;
 }
