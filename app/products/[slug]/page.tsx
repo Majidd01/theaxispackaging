@@ -61,8 +61,8 @@ export default function ProductDetailPage() {
         "service_vhwzbeo",
         "template_9epu9ft",
         {
-          to_email: "theasxis.packaging@gmail.com",
-          // to_email: "theasxis.packaging@gmail.com",
+          to_email: "info@theaxispackaging.com",
+          // to_email: "info@theaxispackaging.com",
           subject: `Add to Quote - ${product?.name ?? "Product"}`,
           from_name: form.name,
           from_email: form.email,

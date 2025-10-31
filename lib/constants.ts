@@ -2,7 +2,7 @@ export const COMPANY_INFO = {
   name: "Axis Packaging",
   tagline: "Your Box, Your Brand",
   phone: "+447367066309",
-  email: "theasxis.packaging@gmail.com",
+  email: "info@theaxispackaging.com",
   address: "104 Pudsey Road, Leeds, LS12 3TZ, United Kingdom.",
   hours: "Mon-Fri: 8AM-6PM PST",
 };

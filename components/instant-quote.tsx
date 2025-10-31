@@ -50,7 +50,7 @@ export function InstantQuote() {
     }
     if (downloadGuide && industry) {
       try {
-        const content = `Axis Packaging\nIndustry Guide: ${industry}\n\nThis is a concise starter guide for the ${industry} industry.\nContact: theasxis.packaging@gmail.com`;
+        const content = `Axis Packaging\nIndustry Guide: ${industry}\n\nThis is a concise starter guide for the ${industry} industry.\nContact: info@theaxispackaging.com`;
         // const content = `Axis Packaging\nIndustry Guide: ${industry}\n\nThis is a concise starter guide for the ${industry} industry.\nContact: majid121.skylinxtech@gmail.com`;
         const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
         const url = URL.createObjectURL(blob);
@@ -88,8 +88,8 @@ export function InstantQuote() {
 
     try {
       const templateParams = {
-        // to_email: "theasxis.packaging@gmail.com",
-        to_email: "theasxis.packaging@gmail.com",
+        // to_email: "info@theaxispackaging.com",
+        to_email: "info@theaxispackaging.com",
         from_name: formData.contactInfo.name,
         from_email: formData.contactInfo.email,
         from_phone: formData.contactInfo.phone || "Not provided",

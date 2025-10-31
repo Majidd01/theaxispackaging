@@ -135,7 +135,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 For any questions or support, please contact:
-- Email: theasxis.packaging@gmail.com
+- Email: info@theaxispackaging.com
 - Website: https://axispackaging.com
 
 ---

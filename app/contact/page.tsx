@@ -41,8 +41,8 @@ export default function ContactPage() {
 
     try {
       const templateParams = {
-        // to_email: "theasxis.packaging@gmail.com",
-        to_email: "theasxis.packaging@gmail.com",
+        // to_email: "info@theaxispackaging.com",
+        to_email: "info@theaxispackaging.com",
         // to_email: "majid121.skylinxtech@gmail.com",
         from_name: contactFormData.name,
         from_email: contactFormData.email,
