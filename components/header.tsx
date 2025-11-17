@@ -27,7 +27,7 @@ export function Header() {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>info@axispackaging.com</span>
+              <span>info@theaxispackaging.com</span>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-4">
