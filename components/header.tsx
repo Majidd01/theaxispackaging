@@ -91,42 +91,48 @@ export function Header() {
                       <ChevronDown className="h-4 w-4" />
                     </Link>
 
-                    {/* Products Dropdown */}
-                    <div className="absolute top-full left-0 mt-2 w-[650px] bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                      <div className="p-4">
-                        <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-4">
+                    {/* Products Dropdown - Enhanced Mega Menu */}
+                    <div className="absolute top-full left-0 mt-2 w-[750px] bg-white border-2 border-gray-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                      <div className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 p-4">
+                        <h3 className="text-xl font-bold text-white">
                           Our Products
                         </h3>
+                        <p className="text-sm text-blue-100 mt-1">Explore our comprehensive packaging solutions</p>
+                      </div>
+                      <div className="p-6">
                         <div className="grid grid-cols-3 gap-4">
                           {productsForDropdown.map((product) => (
                             <Link
                               key={product.slug}
                               to="/products"
-                              className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                              className="group/item flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-orange-100 transition-all duration-300 border border-transparent hover:border-orange-200 hover:shadow-md"
                             >
-                              <img
-                                src={product.image || "/assets/placeholder.jpg"}
-                                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
-                                alt={product.name}
-                                className="w-16 h-16 object-cover rounded"
-                              />
-                              <div>
-                                <h4 className="text-sm font-medium text-gray-900">
+                              <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
+                                <img
+                                  src={product.image || "/assets/placeholder.jpg"}
+                                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
+                                  alt={product.name}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              <div className="text-center">
+                                <h4 className="text-sm font-semibold text-gray-900 group-hover/item:text-[var(--axis-orange)] transition-colors">
                                   {product.name}
                                 </h4>
-                                <p className="text-xs text-gray-500 line-clamp-2">
+                                <p className="text-xs text-gray-500 line-clamp-2 mt-1">
                                   {product.description}
                                 </p>
                               </div>
                             </Link>
                           ))}
                         </div>
-                        <div className="mt-4 pt-4 border-t">
+                        <div className="mt-6 pt-6 border-t border-gray-200">
                           <Link
                             to="/products"
-                            className="text-[var(--axis-orange)] hover:text-[var(--axis-orange)]/80 font-medium text-sm"
+                            className="inline-flex items-center gap-2 text-[var(--axis-orange)] hover:text-[var(--axis-orange)]/80 font-semibold text-sm group/link"
                           >
-                            View All Products →
+                            View All Products
+                            <ChevronDown className="h-4 w-4 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" />
                           </Link>
                         </div>
                       </div>
@@ -146,42 +152,50 @@ export function Header() {
                       <ChevronDown className="h-4 w-4" />
                     </Link>
 
-                    {/* Industries Dropdown */}
-                    <div className="absolute top-full left-[-70px] mt-2 w-[650px] h-[480px] overflow-y-auto bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                      <div className="p-4">
-                        <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-4">
+                    {/* Industries Dropdown - Enhanced Mega Menu */}
+                    <div className="absolute top-full left-[-70px] mt-2 w-[750px] h-[520px] overflow-y-auto bg-white border-2 border-gray-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                      <div className="bg-gradient-to-r from-[var(--axis-orange)] to-orange-600 p-4 sticky top-0 z-10">
+                        <h3 className="text-xl font-bold text-white">
                           Shop by Industry
                         </h3>
+                        <p className="text-sm text-orange-100 mt-1">Find solutions tailored to your industry</p>
+                      </div>
+                      <div className="p-6">
                         <div className="grid grid-cols-3 gap-4">
                           {industriesForDropdown.map((industry) => (
                             <Link
                               key={industry.slug}
                               to={`/industries/${industry.slug}`}
-                              className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                              className="group/item flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 transition-all duration-300 border border-transparent hover:border-blue-200 hover:shadow-md"
                             >
-                              <img
-                                src={industry.image || "/assets/placeholder.jpg"}
-                                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
-                                alt={industry.name}
-                                className="w-16 h-16 object-cover rounded"
-                              />
-                              <div>
-                                <h4 className="text-sm font-medium text-gray-900">
+                              <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
+                                <img
+                                  src={industry.image || "/assets/placeholder.jpg"}
+                                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
+                                  alt={industry.name}
+                                  className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
+                              </div>
+                              <div className="text-center">
+                                <div className="text-2xl mb-2">{industry.icon}</div>
+                                <h4 className="text-sm font-semibold text-gray-900 group-hover/item:text-[var(--axis-dark-blue)] transition-colors">
                                   {industry.name}
                                 </h4>
-                                <p className="text-xs text-gray-500 line-clamp-2">
+                                <p className="text-xs text-gray-500 line-clamp-2 mt-1">
                                   {industry.description}
                                 </p>
                               </div>
                             </Link>
                           ))}
                         </div>
-                        <div className="mt-4 pt-4 border-t">
+                        <div className="mt-6 pt-6 border-t border-gray-200">
                           <Link
                             to="/industries"
-                            className="text-[var(--axis-orange)] hover:text-[var(--axis-orange)]/80 font-medium text-sm"
+                            className="inline-flex items-center gap-2 text-[var(--axis-orange)] hover:text-[var(--axis-orange)]/80 font-semibold text-sm group/link"
                           >
-                            View All Industries →
+                            View All Industries
+                            <ChevronDown className="h-4 w-4 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" />
                           </Link>
                         </div>
                       </div>

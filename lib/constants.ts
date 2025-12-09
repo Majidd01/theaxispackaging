@@ -12,10 +12,6 @@ export const NAVIGATION_ITEMS = [
   { name: "Products", href: "/products" },
   { name: "Industries", href: "/industries" },
   { name: "Sustainability", href: "/sustainability" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-  { name: "FAQs", href: "/faqs" },
-  { name: "MOQ", href: "/moq" },
 ];
 
 export const PRODUCT_CATEGORIES = [
