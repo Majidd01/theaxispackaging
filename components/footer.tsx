@@ -82,7 +82,13 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Facebook" className="text-blue-100 hover:text-white">
+              <a 
+                href="https://www.facebook.com/share/14YENMTyjLk/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook" 
+                className="text-blue-100 hover:text-white"
+              >
                 <Facebook className="h-6 w-6" />
               </a>
               <a
@@ -94,7 +100,13 @@ export function Footer() {
               >
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" aria-label="LinkedIn" className="text-blue-100 hover:text-white">
+              <a 
+                href="https://www.linkedin.com/company/the-axis-packaging/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn" 
+                className="text-blue-100 hover:text-white"
+              >
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>
