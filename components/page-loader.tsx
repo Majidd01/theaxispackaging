@@ -59,7 +59,7 @@ export function PageLoader({ isLoading }: PageLoaderProps) {
         
         {/* Loading Text with Gradient */}
         <div className="space-y-3 mb-8">
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text text-transparent animate-pulse">
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text - animate-pulse">
             Loading...
           </h3>
           <p className="text-gray-600 text-base">

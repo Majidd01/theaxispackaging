@@ -27,7 +27,7 @@ export function ProductShowcase() {
             <Package className="w-4 h-4 mr-2" />
             Featured Products
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text - mb-4">
             Featured Packaging
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

@@ -29,7 +29,7 @@ export function IndustryShowcase() {
           
           <h2 className="text-4xl lg:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6 leading-tight">
             Shop by{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text -">
               Industries
             </span>
           </h2>

@@ -48,7 +48,7 @@ export function SolutionFeatures() {
           
           <h2 className="text-4xl lg:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6 leading-tight">
             We are your best solution for{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text -">
               Custom Packaging
             </span>
           </h2>
@@ -70,7 +70,7 @@ export function SolutionFeatures() {
               
               <div className="text-center relative">
                 <div className={`w-20 h-20 bg-gradient-to-r ${feature.bgGradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  <feature.icon className={`w-10 h-10 bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`} />
+                  <feature.icon className={`w-10 h-10 bg-gradient-to-r ${feature.gradient} bg-clip-text -`} />
                 </div>
                 
                 <h3 className={`text-2xl font-bold mb-4 transition-all duration-300 ${
