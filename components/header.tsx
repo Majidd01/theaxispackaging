@@ -66,7 +66,7 @@ export function Header() {
                   transform: "scale(1.3)"
                 }}
               />
-             
+
             </div>
             <div>
               <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text -">
@@ -104,7 +104,7 @@ export function Header() {
                           {productsForDropdown.map((product) => (
                             <Link
                               key={product.slug}
-                              to="/products"
+                              to={`/products/${product.slug}`}
                               className="group/item flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-orange-100 transition-all duration-300 border border-transparent hover:border-orange-200 hover:shadow-md"
                             >
                               <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
@@ -225,8 +225,8 @@ export function Header() {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-sky-600 text-[var(--axis-orange)] hover:bg-[var(--axis-orange)] hover:text-white px-6 py-2 rounded-lg"
               >
                 Contact Us

@@ -12,6 +12,7 @@ import { Link, useParams } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Helmet } from "react-helmet-async";
 const placeholderImg = "/assets/placeholder.jpg";
 
 export default function ProductDetailPage() {
@@ -128,6 +129,14 @@ export default function ProductDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>{product.metaTitle || `${product.name} | Axis Packaging`}</title>
+        <meta name="description" content={product.metaDescription || product.description} />
+        <meta property="og:title" content={product.metaTitle || product.name} />
+        <meta property="og:description" content={product.metaDescription || product.description} />
+        <meta property="og:image" content={product.image || placeholderImg} />
+        <link rel="canonical" href={`https://theaxispackaging.com/products/${product.slug}`} />
+      </Helmet>
       <Header />
 
       {/* Breadcrumb */}
@@ -571,7 +580,7 @@ export default function ProductDetailPage() {
                         />
                         {/* Overlay Gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
+
                         {/* Icon Badge */}
                         <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                           <span className="text-xl">{relatedProduct.icon}</span>

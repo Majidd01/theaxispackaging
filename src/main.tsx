@@ -5,14 +5,17 @@ import { store } from '@/lib/store'
 import { BrowserRouter } from 'react-router-dom'
 import '@/app/globals.css'
 import App from './App'
+import { HelmetProvider } from 'react-helmet-async'
 import { Toaster } from '@/components/ui/toaster'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<BrowserRouter>
-				<App />
-				<Toaster />
+				<HelmetProvider>
+					<App />
+					<Toaster />
+				</HelmetProvider>
 			</BrowserRouter>
 		</Provider>
 	</React.StrictMode>
