@@ -181,9 +181,9 @@ export function InstantQuote() {
             <Calculator className="h-4 w-4 mr-2" />
             Instant Quote
           </Badge>
-          <h2 className="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
+          <h1 className="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
             Get Your Custom Quote in Minutes
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Fill out our quick form and receive a detailed quote for your custom packaging needs
           </p>

@@ -69,9 +69,9 @@ export function Header() {
 
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text -">
+              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text -">
                 {COMPANY_INFO.name}
-              </h1>
+              </span>
               <p className="text-xs sm:text-sm text-gray-600 font-medium hidden sm:block">{COMPANY_INFO.tagline}</p>
             </div>
           </Link>

@@ -13,6 +13,7 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Helmet } from "react-helmet-async";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const placeholderImg = "/assets/placeholder.jpg";
 
 export default function ProductDetailPage() {
@@ -507,6 +508,62 @@ export default function ProductDetailPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Everything you need to know about our packaging services
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="bg-white px-6 rounded-xl border-none shadow-sm">
+              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                How long does it take to get a custom quote?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                Our team typically reviews requirements and provides a detailed quote within 24 hours. For rush requests, we aim to respond even faster via our instant quote portal.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2" className="bg-white px-6 rounded-xl border-none shadow-sm">
+              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                What is the minimum order quantity (MOQ)?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                Our standard MOQ starts as low as 100 units depending on the product category. This allows businesses of all sizes to access premium, custom-branded packaging.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3" className="bg-white px-6 rounded-xl border-none shadow-sm">
+              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                Do you offer international shipping?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                Yes, Axis Packaging ships worldwide. We handle all logistics and customs coordination to ensure your branded boxes arrive safely at your doorstep, regardless of your location.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4" className="bg-white px-6 rounded-xl border-none shadow-sm">
+              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                Can I request a physical sample before placing a bulk order?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                Absolutely! We offer sample production (prototyping) so you can verify the dimensions, material quality, and printing accuracy before committing to a full production run.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5" className="bg-white px-6 rounded-xl border-none shadow-sm">
+              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                What design file formats do you accept?
+              </AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                We prefer high-resolution vector files such as Adobe Illustrator (AI), PDF, or EPS for the best print quality. However, we also accept high-quality PSD, JPG, and PNG files for initial review.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 

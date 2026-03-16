@@ -32,13 +32,13 @@ export function Hero() {
           </div>
 
           {/* Enhanced Heading */}
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
             Create Custom Boxes &{" "}
             <span className="bg-gradient-to-r from-orange-300 to-orange-100 bg-clip-text -">
               Packaging
             </span>{" "}
             of Your Dreams
-          </h2>
+          </h1>
 
           {/* Enhanced Description */}
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg leading-relaxed" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>

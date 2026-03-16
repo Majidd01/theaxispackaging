@@ -8,10 +8,12 @@ import { Providers } from "./providers"
 import { ChatSupport } from "@/components/chat-support"
 
 export const metadata: Metadata = {
-  title: "Eco-Packaging - Premium Custom Packaging Solutions",
+  title: "Axis Packaging - Premium Custom Packaging Solutions",
   description:
-    "Leading provider of custom packaging solutions including regular boxes, retail packaging, and more.",
-  generator: "v0.app",
+    "Leading provider of premium custom packaging solutions. From retail boxes to industrial shipping, we offer innovative, sustainable, and high-quality packaging tailored to your brand.",
+  icons: {
+    icon: "/favicon.png",
+  },
 }
 
 export default function RootLayout({
