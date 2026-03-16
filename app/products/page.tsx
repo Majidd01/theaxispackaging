@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { INDUSTRIES } from "@/lib/constants";
 import { ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function ProductsPage() {
   const [searchParams] = useSearchParams();
@@ -13,6 +14,11 @@ export default function ProductsPage() {
   const selectedIndustry = industrySlug ? INDUSTRIES.find((i) => i.slug === industrySlug) : null;
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{selectedIndustry ? selectedIndustry.metaTitle : "Custom Packaging Solutions - Axis Packaging"}</title>
+        <meta name="description" content={selectedIndustry ? selectedIndustry.metaDescription : "Explore our comprehensive range of premium packaging products designed to elevate your brand."} />
+        <link rel="canonical" href={`https://theaxispackaging.com/products${industrySlug ? `?industry=${industrySlug}` : ""}`} />
+      </Helmet>
       <Header />
       <main>
         <section className="py-16 bg-gradient-to-br from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white">

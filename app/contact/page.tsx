@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { COMPANY_INFO } from "@/lib/constants";
 import { ChevronDown, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 
@@ -156,6 +157,11 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Us - Axis Packaging - Get a Custom Quote</title>
+        <meta name="description" content="Get in touch with Axis Packaging for your custom packaging needs. Request a quote, ask questions, or schedule a consultation with our experts." />
+        <link rel="canonical" href="https://theaxispackaging.com/contact" />
+      </Helmet>
       <Header />
 
       <main>

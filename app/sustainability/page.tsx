@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Leaf, Recycle, Award, TreePine } from "lucide-react"
+import { Helmet } from "react-helmet-async"
 
 export default function SustainabilityPage() {
   const initiatives = [
@@ -30,6 +31,11 @@ export default function SustainabilityPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Sustainable Packaging Solutions - Axis Packaging</title>
+        <meta name="description" content="Discover Axis Packaging's commitment to sustainability. We offer eco-friendly materials and carbon-neutral operations for a greener future." />
+        <link rel="canonical" href="https://theaxispackaging.com/sustainability" />
+      </Helmet>
       <Header />
       <main>
         <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">

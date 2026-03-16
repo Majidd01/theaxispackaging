@@ -4,7 +4,8 @@ import { ChatSupport } from "@/components/chat-support"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Users, Award, Target, Heart, ArrowRight } from "lucide-react"
+import { ArrowRight, Award, Heart, Target, Users } from "lucide-react"
+import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
 
 export default function AboutPage() {
@@ -54,6 +55,11 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About Axis Packaging - Premium Custom Packaging Solutions</title>
+        <meta name="description" content="Learn about Axis Packaging, your partner in innovative, sustainable, and high-quality custom packaging solutions since 2014." />
+        <link rel="canonical" href="https://theaxispackaging.com/about" />
+      </Helmet>
       <Header />
 
       <main>

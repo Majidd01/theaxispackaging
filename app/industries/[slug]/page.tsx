@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { INDUSTRIES, PRODUCT_CATEGORIES } from "@/lib/constants";
 import { ArrowRight, Award, Building2, CheckCircle, Factory, Package, Users } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function IndustryDetailPage() {
   const { slug } = useParams();
@@ -37,6 +38,11 @@ export default function IndustryDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>{industry.metaTitle || `${industry.name} Packaging Solutions - Axis Packaging`}</title>
+        <meta name="description" content={industry.metaDescription || `Discover our specialized packaging solutions for the ${industry.name} industry.`} />
+        <link rel="canonical" href={`https://theaxispackaging.com/industries/${industry.slug}`} />
+      </Helmet>
       <Header />
 
       {/* Breadcrumb */}

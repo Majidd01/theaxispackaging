@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function IndustriesPage() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,6 +39,11 @@ export default function IndustriesPage() {
   };
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Industries We Serve - Custom Packaging by Sector - Axis Packaging</title>
+        <meta name="description" content="Find the perfect packaging solutions tailored to your industry. We serve over 25 industries with specialized expertise and certified facilities." />
+        <link rel="canonical" href="https://theaxispackaging.com/industries" />
+      </Helmet>
       <Header />
 
       {/* Hero Section */}

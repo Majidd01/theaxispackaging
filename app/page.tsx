@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Eco-Packaging - Premium Custom Packaging Solutions</title>
-        <meta name="description" content="Leading provider of custom packaging solutions including regular boxes, retail packaging, and more." />
+        <title>Axis Packaging - Premium Custom Packaging Solutions | Innovative & Sustainable</title>
+        <meta name="description" content="Leading provider of premium custom packaging solutions. From retail boxes to industrial shipping, we offer innovative, sustainable, and high-quality packaging tailored to your brand." />
         <link rel="canonical" href="https://theaxispackaging.com/" />
       </Helmet>
       <Header />

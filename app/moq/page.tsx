@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Package, Calculator, Truck, DollarSign, CheckCircle } from "lucide-react"
+import { Helmet } from "react-helmet-async"
 
 export default function MOQPage() {
   const moqTiers = [
@@ -59,6 +60,11 @@ export default function MOQPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Minimum Order Quantities - Flexible Packaging Solutions - Axis Packaging</title>
+        <meta name="description" content="Learn about our flexible minimum order quantities (MOQs). We offer small to large scale packaging solutions tailored to every business size." />
+        <link rel="canonical" href="https://theaxispackaging.com/moq" />
+      </Helmet>
       <Header />
 
       <main>

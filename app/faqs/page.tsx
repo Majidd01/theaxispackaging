@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { setActiveCategory } from "@/lib/slices/faqsSlice";
 import { HelpCircle, MessageCircle, Search, ArrowLeft, Users, Clock, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -1252,6 +1253,11 @@ Contact our sales team to discuss your specific volume needs and maximize your s
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Frequently Asked Questions - Axis Packaging Solutions</title>
+        <meta name="description" content="Find answers to common questions about our custom packaging products, production times, shipping, and more." />
+        <link rel="canonical" href="https://theaxispackaging.com/faqs" />
+      </Helmet>
       <Header />
 
       <main>

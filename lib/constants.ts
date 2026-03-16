@@ -74,6 +74,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🥡",
     image: "/assets/packify-food-containers.png",
     slug: "flexible-pouches",
+    metaTitle: "Buy Custom Flexible Packaging Pouches - Axis Packaging",
+    metaDescription: "Maintain food freshness with our resealable packaging pouches. Custom sizes, high-barrier materials, and vibrant printing options.",
+    h1: "Custom Flexible Packaging Pouches for Freshness",
   },
   {
     name: "Metal Tin Containers",
@@ -81,6 +84,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🥫",
     image: "/assets/assorted-food-containers.png",
     slug: "tin-containers",
+    metaTitle: "Buy Metal Tin Containers - Custom Packaging - Axis Packaging",
+    metaDescription: "Searching for packaging that protects and stands out? Our custom metal tin containers offer durability and premium shelf appeal.",
+    h1: "Premium Metal Tin Containers for Standout Branding",
   },
   {
     name: "Retail POP Displays",
@@ -88,6 +94,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🏪",
     image: "/assets/Retail POP Displays.jpg",
     slug: "pop-displays",
+    metaTitle: "Buy Retail POP Displays - Custom Solutions - Axis Packaging",
+    metaDescription: "Showcase products beautifully with custom retail POP displays. Enhance visibility on counters and floor areas with brand-focused designs.",
+    h1: "Custom Retail POP Displays for Enhanced Visibility",
   },
   {
     name: "Vinyl Stickers Labels",
@@ -95,6 +104,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🏷️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "stickers-labels",
+    metaTitle: "Buy Vinyl Stickers & Labels - Custom Printing - Axis Packaging",
+    metaDescription: "Add custom flair to your products with high-quality vinyl stickers and labels. Durable, waterproof, and perfect for branding impact.",
+    h1: "Custom Vinyl Stickers & Labels for Brand Impact",
   },
   {
     name: "Printed Kraft Boxes",
@@ -102,6 +114,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🌱",
     image: "/assets/Printed Kraft Boxes.jpg",
     slug: "kraft-boxes",
+    metaTitle: "Buy Printed Kraft Boxes - Sustainable Packaging - Axis Packaging",
+    metaDescription: "Showcase products stylishly with sustainable kraft packaging. Custom printed boxes that combine eco-friendly materials with premium design.",
+    h1: "Sustainable Printed Kraft Boxes for Stylish Packaging",
   },
   {
     name: "Paper Shopping Bags",
@@ -109,6 +124,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🛍️",
     image: "/assets/retail-packaging-display.png",
     slug: "paper-bags",
+    metaTitle: "Buy Paper Shopping Bags - Eco-Friendly - Axis Packaging",
+    metaDescription: "Stylish and eco-friendly paper shopping bags for retail and gifting. Custom printed with your logo for a premium brand experience.",
+    h1: "Eco-Friendly Paper Shopping Bags for Retail",
   },
   {
     name: "Eco-friendly Packaging",
@@ -116,6 +134,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "♻️",
     image: "/assets/packify-eco-friendly-packaging.png",
     slug: "eco-friendly",
+    metaTitle: "Buy Eco-friendly Packaging - Sustainable Solutions - Axis Packaging",
+    metaDescription: "Explore our range of sustainable packaging alternatives. Eco-friendly materials that protect your products and the planet.",
+    h1: "Sustainable & Eco-friendly Packaging Solutions",
   },
   {
     name: "Corrugated Shipping Boxes",
@@ -123,6 +144,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "📦",
     image: "/assets/Corrugated Shipping Boxes.jpg",
     slug: "corrugated-shipping",
+    metaTitle: "Buy Corrugated Shipping Boxes - Heavy Duty - Axis Packaging",
+    metaDescription: "Heavy-duty corrugated boxes for safe shipping and storage. Buy custom sizes and strengths to protect your goods during transit.",
+    h1: "Heavy-Duty Corrugated Shipping Boxes for Safe Transit",
   },
   {
     name: "Custom Cosmetic Boxes",
@@ -130,6 +154,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "💄",
     image: "/assets/packify-cosmetic-boxes.png",
     slug: "cosmetic-boxes",
+    metaTitle: "Buy Custom Cosmetic Boxes - Elegant Solutions - Axis Packaging",
+    metaDescription: "Elegant packaging solutions for beauty and cosmetic products. Custom printed cosmetic boxes with luxury finishes and premium feel.",
+    h1: "Elegant Custom Cosmetic Boxes for Beauty Brands",
   },
   {
     name: "Food Grade Containers",
@@ -137,6 +164,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🍽️",
     image: "/assets/assorted-food-containers.png",
     slug: "food-containers",
+    metaTitle: "Buy Food Grade Containers - FDA Approved - Axis Packaging",
+    metaDescription: "FDA approved containers for food and beverage products. Safe, hygienic, and custom-designed packaging for all types of food.",
+    h1: "FDA Approved Food Grade Containers for Safety",
   },
   {
     name: "Pharmaceutical Packaging",
@@ -144,6 +174,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "pharmaceutical",
+    metaTitle: "Buy Pharmaceutical Packaging - Compliant - Axis Packaging",
+    metaDescription: "Compliant packaging for pharmaceutical and medical products. Secure, informative, and meeting all industry standards for safety.",
+    h1: "Compliant Pharmaceutical & Medical Packaging",
   },
   {
     name: "Electronics Packaging",
@@ -151,6 +184,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "📱",
     image: "/assets/packify-electronics-packaging.png",
     slug: "electronics",
+    metaTitle: "Buy Electronics Packaging - Anti-Static & Protective - Axis Packaging",
+    metaDescription: "Anti-static and protective packaging for electronic devices. Custom solutions to ensure safety from electrostatic discharge and impact.",
+    h1: "Protective Electronics Packaging with Anti-Static Features",
   },
   {
     name: "Jewelry Gift Boxes",
@@ -158,6 +194,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "💍",
     image: "/assets/luxury-cosmetic-boxes.png",
     slug: "jewelry-boxes",
+    metaTitle: "Buy Jewelry Gift Boxes - Luxury Presentation - Axis Packaging",
+    metaDescription: "Luxury presentation boxes for jewelry and precious items. Custom-designed with premium materials for an unforgettable unboxing experience.",
+    h1: "Luxury Jewelry Gift Boxes for Premium Presentation",
   },
   {
     name: "Wine & Liquor Boxes",
@@ -165,6 +204,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🍷",
     image: "/assets/packify-hero-box4.png",
     slug: "wine-boxes",
+    metaTitle: "Buy Wine & Liquor Boxes - Premium Packaging - Axis Packaging",
+    metaDescription: "Premium packaging for alcoholic beverages and wine bottles. Durable, stylish, and custom-designed for safe transport and gift appeal.",
+    h1: "Premium Wine & Liquor Boxes for Safe Transport",
   },
   {
     name: "Bakery & Cake Boxes",
@@ -172,6 +214,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🎂",
     image: "/assets/packify-food-packaging.png",
     slug: "bakery-boxes",
+    metaTitle: "Buy Bakery & Cake Boxes - Food Safe - Axis Packaging",
+    metaDescription: "Food-safe boxes perfect for cakes, pastries, and baked goods. Custom printed and available in various sizes for all your bakery needs.",
+    h1: "Food-Safe Bakery & Cake Boxes for Fresh Delivery",
   },
   {
     name: "Apparel Packaging",
@@ -179,6 +224,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "👕",
     image: "/assets/packify-fashion-packaging.png",
     slug: "apparel-packaging",
+    metaTitle: "Buy Apparel Packaging - Stylish & Durable - Axis Packaging",
+    metaDescription: "Stylish boxes and bags for clothing and fashion items. Enhance your apparel brand with custom printed, high-quality packaging.",
+    h1: "Stylish Apparel Packaging for Fashion Brands",
   },
   {
     name: "Subscription Boxes",
@@ -186,6 +234,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "📮",
     image: "/assets/custom-packaging-boxes.png",
     slug: "subscription-boxes",
+    metaTitle: "Buy Subscription Boxes - Custom Branded - Axis Packaging",
+    metaDescription: "Custom branded boxes for subscription and e-commerce businesses. Create a unique unboxing experience with our durable shipping boxes.",
+    h1: "Custom Branded Subscription Boxes for E-Commerce",
   },
   {
     name: "Gift Wrapping Boxes",
@@ -193,6 +244,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🎁",
     image: "/assets/custom-blue-box.png",
     slug: "gift-boxes",
+    metaTitle: "Buy Gift Wrapping Boxes - Beautiful Presentation - Axis Packaging",
+    metaDescription: "Beautiful presentation boxes for gifts and special occasions. Custom sizes and finishes to make every gift feel extra special.",
+    h1: "Beautiful Gift Wrapping Boxes for All Occasions",
   },
   {
     name: "Toy Packaging",
@@ -260,6 +314,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🕯️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "candle-boxes",
+    metaTitle: "Buy Candle & Fragrance Boxes - Elegant - Axis Packaging",
+    metaDescription: "Elegant packaging for candles, perfumes, and fragrance products. Custom-designed boxes with premium finishes and scent labels.",
+    h1: "Elegant Candle & Fragrance Boxes for Luxury Brands",
   },
   {
     name: "Supplement Bottles",
@@ -317,6 +374,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🎵",
     image: "/assets/Musical Instrument Cases.jpg",
     slug: "music-cases",
+    metaTitle: "Buy Musical Instrument Cases - Protective - Axis Packaging",
+    metaDescription: "Protective cases and packaging for musical instruments. Ensure safe transport and storage with our durable, custom-fit solutions.",
+    h1: "Protective Musical Instrument Cases and Packaging",
   },
   {
     name: "Art & Collectibles Boxes",
@@ -344,6 +404,9 @@ export const INDUSTRIES = [
     icon: "👕",
     image: "/assets/packify-fashion-packaging.png",
     slug: "apparel",
+    metaTitle: "Buy Apparel Packaging Boxes - Custom Clothing Solutions",
+    metaDescription: "Pair your apparel with one-of-a-kind custom printed clothing boxes. Enhance brand appeal with premium fashion packaging.",
+    h1: "Custom Apparel Packaging Boxes for Fashion Brands",
   },
   {
     name: "Bakery & Cake",
@@ -351,6 +414,9 @@ export const INDUSTRIES = [
     icon: "🍰",
     image: "/assets/packify-food-packaging.png",
     slug: "bakery-cake",
+    metaTitle: "Buy Bakery & Cake Packaging - Custom Boxes - Axis Packaging",
+    metaDescription: "Show off your baked goods with personalized cake and bakery boxes. Food-safe, durable, and custom-designed for freshness.",
+    h1: "Custom Bakery & Cake Packaging Solutions",
   },
   {
     name: "Beer & Liquor",
@@ -358,6 +424,9 @@ export const INDUSTRIES = [
     icon: "🍺",
     image: "/assets/custom-blue-box.png",
     slug: "beer-liquor",
+    metaTitle: "Buy Beer & Liquor Packaging - Premium Solutions - Axis Packaging",
+    metaDescription: "Premium packaging for alcoholic beverages. Custom-designed boxes for beer and liquor that ensure safe transport and brand presence.",
+    h1: "Premium Beer & Liquor Packaging Solutions",
   },
   {
     name: "Beverage",
@@ -365,6 +434,9 @@ export const INDUSTRIES = [
     icon: "🥤",
     image: "/assets/packify-food-containers.png",
     slug: "beverage",
+    metaTitle: "Buy Beverage Packaging Solutions - Custom Designs - Axis Packaging",
+    metaDescription: "Custom packaging for all types of beverages. From cans to bottles, we provide high-quality solutions that protect and present your drink brands.",
+    h1: "Custom Beverage Packaging Solutions",
   },
   {
     name: "Candle",
@@ -372,6 +444,9 @@ export const INDUSTRIES = [
     icon: "🕯️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "candle",
+    metaTitle: "Buy Custom Candle Packaging - Elegant Boxes - Axis Packaging",
+    metaDescription: "Elegant packaging for candle products. Custom printed candle boxes with luxury finishes and protective inserts.",
+    h1: "Elegant Custom Candle Packaging Solutions",
   },
   {
     name: "Candy & Sweets",
@@ -379,6 +454,9 @@ export const INDUSTRIES = [
     icon: "🍬",
     image: "/assets/packify-chocolate-packaging.png",
     slug: "candy-sweets",
+    metaTitle: "Buy Candy & Sweets Packaging - Custom Designs - Axis Packaging",
+    metaDescription: "Sweet packaging solutions for confectionery. Custom candy boxes and packaging that attract customers and keep treats fresh.",
+    h1: "Custom Candy & Sweets Packaging Solutions",
   },
   {
     name: "Cannabis",
@@ -386,6 +464,9 @@ export const INDUSTRIES = [
     icon: "🌿",
     image: "/assets/packify-cannabis-packaging.png",
     slug: "cannabis",
+    metaTitle: "Buy Cannabis Packaging - Tamper Proof Solutions - Axis Packaging",
+    metaDescription: "Custom-crafted tamper proof marijuana packaging. Compliant, secure, and brand-focused solutions for the cannabis industry.",
+    h1: "Compliant & Secure Cannabis Packaging Solutions",
   },
   {
     name: "Chocolate",
@@ -393,6 +474,9 @@ export const INDUSTRIES = [
     icon: "🍫",
     image: "/assets/packify-chocolate-packaging.png",
     slug: "chocolate",
+    metaTitle: "Buy Custom Chocolate Boxes - Premium Packaging - Axis Packaging",
+    metaDescription: "Premium custom chocolate boxes and packaging. Elegant designs and food-safe materials to showcase your luxury chocolates.",
+    h1: "Premium Custom Chocolate Packaging Solutions",
   },
   {
     name: "Coffee",
@@ -400,6 +484,9 @@ export const INDUSTRIES = [
     icon: "☕",
     image: "/assets/packify-food-containers.png",
     slug: "coffee",
+    metaTitle: "Buy Coffee Packaging Solutions - Custom Designs - Axis Packaging",
+    metaDescription: "Packaging solutions for coffee products. Custom bags and boxes that maintain freshness and highlight your brand's unique flavor.",
+    h1: "Custom Coffee Packaging Solutions for Freshness",
   },
   {
     name: "Cosmetics",
@@ -407,6 +494,9 @@ export const INDUSTRIES = [
     icon: "💄",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "cosmetics",
+    metaTitle: "Buy Cosmetics Packaging - Custom Printed Boxes - Axis Packaging",
+    metaDescription: "Custom printed cosmetic boxes and packaging. Luxury finishes and brand-focused designs for all your beauty products.",
+    h1: "Custom Cosmetics Packaging Solutions for Beauty Brands",
   },
   {
     name: "E-Commerce",
@@ -414,6 +504,9 @@ export const INDUSTRIES = [
     icon: "🛒",
     image: "/assets/e-commerce.jpg",
     slug: "ecommerce",
+    metaTitle: "Buy E-Commerce Packaging - Secure Solutions - Axis Packaging",
+    metaDescription: "Packaging solutions for online businesses. Durable shipping boxes and mailers designed for the rigors of e-commerce delivery.",
+    h1: "Durable E-Commerce Packaging Solutions for Online Retail",
   },
   {
     name: "Electronics",
@@ -421,6 +514,9 @@ export const INDUSTRIES = [
     icon: "📱",
     image: "/assets/packify-electronics-packaging.png",
     slug: "electronics",
+    metaTitle: "Buy Electronics Packaging - Custom Protective - Axis Packaging",
+    metaDescription: "Protective packaging for electronic devices. Custom-designed solutions to prevent damage and ensure safe delivery of sensitive electronics.",
+    h1: "Protective Electronics Packaging Solutions",
   },
   {
     name: "Food",
@@ -428,6 +524,9 @@ export const INDUSTRIES = [
     icon: "🍽️",
     image: "/assets/packify-food-packaging.png",
     slug: "food",
+    metaTitle: "Buy Food Packaging Solutions - Safe & Compliant - Axis Packaging",
+    metaDescription: "Safe and compliant food packaging solutions. FDA approved materials and custom designs to keep your food products secure and appetizing.",
+    h1: "Safe & Compliant Custom Food Packaging Solutions",
   },
   {
     name: "Gift",
@@ -435,6 +534,9 @@ export const INDUSTRIES = [
     icon: "🎁",
     image: "/assets/packify-luxury-boxes.png",
     slug: "gift",
+    metaTitle: "Buy Gift Packaging - Beautiful & Custom - Axis Packaging",
+    metaDescription: "Beautiful packaging for gift items. Custom gift boxes and wrapping solutions that make every occasion extra special.",
+    h1: "Beautiful & Custom Gift Packaging Solutions",
   },
   {
     name: "Jewelry",
@@ -442,6 +544,9 @@ export const INDUSTRIES = [
     icon: "💍",
     image: "/assets/luxury-cosmetic-boxes.png",
     slug: "jewelry",
+    metaTitle: "Buy Jewelry Packaging - Luxury Solutions - Axis Packaging",
+    metaDescription: "Luxury packaging for jewelry and accessories. Custom-designed boxes and displays that reflect the elegance of your pieces.",
+    h1: "Luxury Jewelry Packaging Solutions",
   },
   {
     name: "Pets",
@@ -449,6 +554,9 @@ export const INDUSTRIES = [
     icon: "🐾",
     image: "/assets/assorted-food-containers.png",
     slug: "pets",
+    metaTitle: "Buy Pet Product Packaging - Custom Solutions - Axis Packaging",
+    metaDescription: "Packaging for pet products and supplies. Custom-designed boxes and bags for pet food, toys, and grooming items.",
+    h1: "Custom Pet Product Packaging Solutions",
   },
   {
     name: "Pharmaceutical",
@@ -456,6 +564,9 @@ export const INDUSTRIES = [
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "pharmaceutical",
+    metaTitle: "Buy Pharmaceutical Packaging - Compliant - Axis Packaging",
+    metaDescription: "Compliant packaging for pharmaceutical products. Safe, secure, and meeting all industry standards for medical and health supplies.",
+    h1: "Compliant Pharmaceutical Packaging Solutions",
   },
   {
     name: "Presentation",
@@ -463,6 +574,9 @@ export const INDUSTRIES = [
     icon: "📊",
     image: "/assets/packify-retail-boxes.png",
     slug: "presentation",
+    metaTitle: "Buy Presentation Packaging - Professional - Axis Packaging",
+    metaDescription: "Professional presentation packaging. Custom-designed boxes and folders that showcase your brand and products with elegance.",
+    h1: "Professional Presentation Packaging Solutions",
   },
   {
     name: "Restaurant",
@@ -470,6 +584,9 @@ export const INDUSTRIES = [
     icon: "🍽️",
     image: "/assets/packify-food-packaging.png",
     slug: "restaurant",
+    metaTitle: "Buy Restaurant Packaging - Custom Solutions - Axis Packaging",
+    metaDescription: "Packaging for restaurant and food service. Custom-designed takeout boxes and bags that represent your brand and keep food fresh.",
+    h1: "Custom Restaurant Packaging Solutions for Food Service",
   },
   {
     name: "Retail",
@@ -477,6 +594,9 @@ export const INDUSTRIES = [
     icon: "🏪",
     image: "/assets/packify-retail-packaging.png",
     slug: "retail",
+    metaTitle: "Buy Retail Packaging - Eye-Catching Designs - Axis Packaging",
+    metaDescription: "Eye-catching retail displays and packaging. Stand out on the shelf with our custom-designed retail packaging solutions.",
+    h1: "Eye-Catching Retail Packaging & Display Solutions",
   },
   {
     name: "Shipping",
@@ -484,6 +604,9 @@ export const INDUSTRIES = [
     icon: "📦",
     image: "/assets/packify-shipping-boxes.png",
     slug: "shipping",
+    metaTitle: "Buy Shipping Packaging - Secure Solutions - Axis Packaging",
+    metaDescription: "Secure shipping and mailer solutions. Durable custom boxes designed for logistics and safe delivery of your products.",
+    h1: "Secure Shipping & Mailer Packaging Solutions",
   },
   {
     name: "Soap",
@@ -491,6 +614,9 @@ export const INDUSTRIES = [
     icon: "🧼",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "soap",
+    metaTitle: "Buy Soap Packaging - Custom Designs - Axis Packaging",
+    metaDescription: "Packaging for soap and personal care products. Custom printed soap boxes that highlight your brand's unique fragrance and style.",
+    h1: "Custom Soap & Personal Care Packaging Solutions",
   },
   {
     name: "Toy",
@@ -498,6 +624,9 @@ export const INDUSTRIES = [
     icon: "🧸",
     image: "/assets/packify-retail-boxes.png",
     slug: "toy",
+    metaTitle: "Buy Toy Packaging - Safe & Fun Designs - Axis Packaging",
+    metaDescription: "Fun and safe packaging for toys. Custom-designed boxes that attract kids and meet all safety requirements for toy brands.",
+    h1: "Safe & Fun Custom Toy Packaging Solutions",
   },
   {
     name: "Tea",
@@ -505,6 +634,9 @@ export const INDUSTRIES = [
     icon: "🫖",
     image: "/assets/packify-food-containers.png",
     slug: "tea",
+    metaTitle: "Buy Tea Packaging - Elegant Solutions - Axis Packaging",
+    metaDescription: "Elegant packaging for tea products. Custom bags and boxes that preserve flavor and provide a premium experience for tea drinkers.",
+    h1: "Elegant Custom Tea Packaging Solutions",
   },
   {
     name: "Wine",
@@ -512,6 +644,9 @@ export const INDUSTRIES = [
     icon: "🍷",
     image: "/assets/custom-blue-box.png",
     slug: "wine",
+    metaTitle: "Buy Wine Packaging - Premium Solutions - Axis Packaging",
+    metaDescription: "Premium packaging for wine and spirits. Custom-designed boxes and displays that reflect the luxury and quality of your brand.",
+    h1: "Premium Wine & Spirit Packaging Solutions",
   },
 ];
 
