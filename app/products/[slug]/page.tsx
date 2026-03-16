@@ -169,7 +169,7 @@ export default function ProductDetailPage() {
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = placeholderImg;
                   }}
-                  alt={product.name}
+                  alt={product.alt || product.name}
                   className="w-full h-96 object-cover rounded-lg shadow-lg"
                 />
               </div>
@@ -179,25 +179,25 @@ export default function ProductDetailPage() {
                 <img
                   src={product.image || placeholderImg}
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.name}
+                  alt={product.alt || product.name}
                   className="w-16 h-16 object-cover rounded border-2 border-[var(--axis-orange)]"
                 />
                 <img
                   src={product.image || placeholderImg}
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.name}
+                  alt={product.alt || product.name}
                   className="w-16 h-16 object-cover rounded border border-gray-300"
                 />
                 <img
                   src={product.image || placeholderImg}
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.name}
+                  alt={product.alt || product.name}
                   className="w-16 h-16 object-cover rounded border border-gray-300"
                 />
                 <img
                   src={product.image || placeholderImg}
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.name}
+                  alt={product.alt || product.name}
                   className="w-16 h-16 object-cover rounded border border-gray-300"
                 />
               </div>
@@ -211,7 +211,7 @@ export default function ProductDetailPage() {
               </div>
 
               <h1 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
-                {product.name}
+                {product.h1 || product.name}
               </h1>
 
               <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>

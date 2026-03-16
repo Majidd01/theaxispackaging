@@ -8,9 +8,9 @@ import { Providers } from "./providers"
 import { ChatSupport } from "@/components/chat-support"
 
 export const metadata: Metadata = {
-  title: "Axis Packaging - Premium Custom Packaging Solutions",
+  title: "Eco-Packaging - Premium Custom Packaging Solutions",
   description:
-    "Leading provider of custom packaging solutions including boxes, retail packaging, and sustainable packaging options.",
+    "Leading provider of custom packaging solutions including regular boxes, retail packaging, and more.",
   generator: "v0.app",
 }
 

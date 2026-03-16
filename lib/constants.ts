@@ -21,6 +21,10 @@ export const PRODUCT_CATEGORIES = [
     icon: "📦",
     image: "/assets/packify-custom-boxes.png",
     slug: "folding-carton-boxes",
+    metaTitle: "Premium and Customized Folding Carton Boxes - Axis Packaging",
+    metaDescription: "Get custom folding carton boxes with fast turnaround, fast production, and high quality perfect for retail, gifting, and more.",
+    h1: "Custom Folding Carton Boxes for Premium Packaging",
+    alt: "folding carton boxes",
   },
   {
     name: "Premium Rigid Boxes",
@@ -28,6 +32,10 @@ export const PRODUCT_CATEGORIES = [
     icon: "🎁",
     image: "/assets/packify-luxury-boxes.png",
     slug: "rigid-boxes",
+    metaTitle: "Buy Custom Rigid Boxes - Premium Packaging - Axis Packaging",
+    metaDescription: "Shop rigid boxes for premium products. Custom sizes, luxury finishes, and eco-friendly packaging with fast flip turnaround.",
+    h1: "Custom & Premium Rigid Boxes",
+    alt: "Custom rigid box with luxury finish,Premium rigid gift boxes",
   },
   {
     name: "Custom Box Inserts",
@@ -35,6 +43,10 @@ export const PRODUCT_CATEGORIES = [
     icon: "📋",
     image: "/assets/Custom Box Inserts.jpg",
     slug: "box-inserts",
+    metaTitle: "Buy Custom Box Inserts - Premium Packaging - Axis Packaging",
+    metaDescription: "Get custom box inserts for gifts and retail. Durable, stylish and versatile packaging solutions with rapid turnaround.",
+    h1: "Custom & Premium Box Inserts for Packaging",
+    alt: "Custom box inserts,Premium packaging inserts",
   },
   {
     name: "Custom Reusable Bags",
@@ -42,6 +54,10 @@ export const PRODUCT_CATEGORIES = [
     icon: "👜",
     image: "/assets/packify-retail-packaging.png",
     slug: "reusable-bags",
+    metaTitle: "Buy Custom Reusable Bags - Top Durable & Shopping Bags",
+    metaDescription: "Looking for sustainable packaging? Our custom reusable bags offer strength, style, and sustainability. Ideal for retail, grocery, and promotions.",
+    h1: "Custom & Eco-Friendly Reusable Bags",
+    alt: "custom reusable bags,",
   },
   {
     name: "Printed Mailer Bags",
@@ -49,6 +65,8 @@ export const PRODUCT_CATEGORIES = [
     icon: "📮",
     image: "/assets/printed mailer box.jpeg",
     slug: "mailer-bags",
+    metaTitle: "Shop Plastic and Customized Mailer Bags - Axis Packaging",
+    metaDescription: "Order custom mailer bags for secure shipping. Eco-friendly bags ideal for clothing and small product items, available in various colors.",
   },
   {
     name: "Flexible Packaging Pouches",
@@ -182,6 +200,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🧸",
     image: "/assets/packify-hero-box3.png",
     slug: "toy-packaging",
+    metaTitle: "Buy Toy Packaging Boxes & Custom Designs - Axis Packaging",
+    metaDescription: "Shop premium toy packaging for kids, girls, and collectibles. Custom, durable, and eco-friendly boxes perfect for retail.",
+    h1: "Premium Toy Packaging Boxes",
   },
   {
     name: "Book & Media Packaging",
@@ -189,6 +210,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "📚",
     image: "/assets/Book & Media Packaging.jpg",
     slug: "media-packaging",
+    metaTitle: "Buy Media & Book Packaging Solutions - Axis Packaging",
+    metaDescription: "Protect and present CDs, DVDs, and books with our premium packaging. Custom designs, sturdy materials, perfect for retail and shipping.",
+    h1: "Premium Media & Book Packaging for Retail & Shipping",
   },
   {
     name: "Automotive Parts Boxes",
@@ -196,6 +220,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🚗",
     image: "/assets/Automotive Parts Boxes.jpg",
     slug: "automotive-boxes",
+    metaTitle: "Buy Automotive Packaging Boxes for Parts - Axis Packaging",
+    metaDescription: "Premium auto parts with durable custom automotive packaging boxes. Custom designs, foam protection, and bulk supply options.",
+    h1: "Custom Auto Packaging Boxes for Secure Part Protection",
   },
   {
     name: "Sports Equipment Boxes",
@@ -203,6 +230,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "⚽",
     image: "/assets/spports.jpg",
     slug: "sports-boxes",
+    metaTitle: "Buy Custom Sports Packaging Boxes - Axis Packaging",
+    metaDescription: "Design your unique custom sports packaging to reflect your brand image, protect equipment, and boost product appeal.",
+    h1: "Custom Sports Packaging Boxes for Gear & Brand Impact",
   },
   {
     name: "Pet Product Packaging",
@@ -210,6 +240,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🐾",
     image: "/assets/assorted-food-containers.png",
     slug: "pet-packaging",
+    metaTitle: "Pet Products Packaging - Custom Solutions - Axis Packaging",
+    metaDescription: "Shop premium PET, custom pet packaging boxes with premium finishes and sustainable options for pet products and toys.",
+    h1: "Custom PET Packaging Boxes",
   },
   {
     name: "Hardware & Tools Boxes",
@@ -217,6 +250,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🔧",
     image: "/assets/Hardware & Tools Boxes.png",
     slug: "hardware-boxes",
+    metaTitle: "Buy Hardware & Tool Boxes - Storage Solutions - Axis Packaging",
+    metaDescription: "Organize, protect and store tools with hardware and tool boxes. Custom, durable, and versatile storage solutions.",
+    h1: "Custom Hardware & Tool Boxes for Storage and organization",
   },
   {
     name: "Candle & Fragrance Boxes",
@@ -231,6 +267,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "supplement-bottles",
+    metaTitle: "Buy Custom Supplement Bottles - Customized - Axis Packaging",
+    metaDescription: "Bulk packaging, high quality, supplement bottles with customizable labels, designs, and packaging ideal for brands.",
+    h1: "Custom Supplement Bottles",
   },
   {
     name: "Craft & Hobby Boxes",
@@ -238,6 +277,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🎨",
     image: "/assets/Craft & Hobby Boxes.jpg",
     slug: "craft-boxes",
+    metaTitle: "Buy Craft and Hobby Boxes - Custom Creation - Axis Packaging",
+    metaDescription: "Craft and hobby boxes designed for art supplies, DIY kits, and creative storage. Sturdy, small packaging that keeps you organized.",
+    h1: "Craft and Hobby Boxes for Creative Storage and DIY Kits",
   },
   {
     name: "Garden & Plant Packaging",
@@ -245,6 +287,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🌱",
     image: "/assets/packify-eco-friendly-packaging.png",
     slug: "garden-packaging",
+    metaTitle: "Garden & Plant Packaging - Premium Creation - Axis Packaging",
+    metaDescription: "Shop garden and plant packaging including plant boxes. Foam packaging, eco-friendly in card/kraft boxes. Perfect for gifts.",
+    h1: "Custom & Plant Packaging — Plant Boxes and Plastic Packaging",
   },
   {
     name: "Office Supply Boxes",
@@ -252,6 +297,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "📎",
     image: "/assets/packify-retail-boxes.png",
     slug: "office-boxes",
+    metaTitle: "Shop Office Supply Boxes - Custom & Premium - Axis Packaging",
+    metaDescription: "Shop office supply boxes for storage and organization, available in small, large, paper or cardboard designs for brands.",
+    h1: "Office Supply Boxes — Storage and Organization Solutions",
   },
   {
     name: "Home Decor Packaging",
@@ -259,6 +307,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🏠",
     image: "/assets/packify-custom-boxes.png",
     slug: "home-decor",
+    metaTitle: "Buy Home Decor Packaging - Premium Creation - Axis Packaging",
+    metaDescription: "Shop home decor packaging including decorative boxes, storage solutions, and subscription boxes. Perfect for gifts and collectibles.",
+    h1: "Home Decor Packaging — Decoration & Storage Boxes",
   },
   {
     name: "Musical Instrument Cases",
@@ -273,6 +324,9 @@ export const PRODUCT_CATEGORIES = [
     icon: "🖼️",
     image: "/assets/packify-cosmetic-boxes.png",
     slug: "art-boxes",
+    metaTitle: "Shop Art & Craft Boxes - Premium Kits - Axis Packaging",
+    metaDescription: "Shop art and craft boxes for storage, kits, and creative projects. Durable, organized, and premium boxes perfect for art.",
+    h1: "Art & Craft Boxes — Storage and Creative Kits",
   },
 ];
 
