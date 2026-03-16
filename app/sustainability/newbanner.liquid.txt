@@ -1,0 +1,468 @@
+{% schema %}
+{
+    "name": "Banner section",
+        "max_blocks": 5,
+            "settings": [
+                {
+                    "type": "checkbox",
+                    "id": "hide_on_mobile",
+                    "label": "Hide on mobile",
+                    "default": false
+                },
+                {
+                    "type": "range",
+                    "id": "desktop_height",
+                    "label": "Desktop Banner Height (px)",
+                    "min": 400,
+                    "max": 1000,
+                    "step": 10,
+                    "default": 660
+                },
+                {
+                    "type": "range",
+                    "id": "mobile_height",
+                    "label": "Mobile Banner Height (px)",
+                    "min": 200,
+                    "max": 800,
+                    "step": 10,
+                    "default": 400
+                },
+                {
+                    "type": "checkbox",
+                    "id": "autoplay",
+                    "label": "Autoplay",
+                    "default": true
+                },
+                {
+                    "type": "range",
+                    "id": "autoplay_speed_in_seconds",
+                    "label": "Autoplay Speed (seconds)",
+                    "min": 3,
+                    "max": 20,
+                    "step": 1,
+                    "default": 10,
+                    "info": "Recommended: 10 seconds. The autoplay speed is the time each slide will be displayed before transitioning to the next one. ADA compliant: 7 seconds. This is the minimum time required for a person with a cognitive disability to read the text on the slide."
+                },
+                {
+                    "type": "checkbox",
+                    "id": "is_first",
+                    "label": "Is first module",
+                    "info": "Check if this is the first module on the page (SEO)",
+                    "default": false
+                },
+                {
+                    "type": "checkbox",
+                    "id": "is_parallax",
+                    "label": "Parallax effect",
+                    "info": "Check if the section should have a parallax effect",
+                    "default": false
+                },
+                {
+                    "type": "radio",
+                    "options": [
+                        { "value": "pagination-dark", "label": "Dark" },
+                        { "value": "pagination-light", "label": "Light" }
+                    ],
+                    "default": "pagination-dark",
+                    "id": "pagination_icons_color",
+                    "label": "Pagination icons color"
+                }
+            ],
+                "blocks": [
+                    {
+                        "type": "slide",
+                        "name": "Slide",
+                        "settings": [
+                            {
+                                "type": "image_picker",
+                                "id": "image_a",
+                                "label": "Image"
+                            },
+                            {
+                                "type": "image_picker",
+                                "id": "image_mobile",
+                                "label": "Mobile Image"
+                            },
+                            {
+                                "type": "header",
+                                "content": "Video (optional)"
+                            },
+                            {
+                                "type": "video",
+                                "id": "shopify_video_desktop",
+                                "label": "Desktop Video",
+                                "info": "A Shopify-hosted video (will be prioritized over the Direct Video URL)"
+                            },
+                            {
+                                "type": "video",
+                                "id": "shopify_video_mobile",
+                                "label": "Mobile Video",
+                                "info": "A Shopify-hosted video (will be prioritized over the Direct Video URL)"
+                            },
+                            {
+                                "type": "text",
+                                "id": "vimeo_video_desktop",
+                                "label": "Desktop Vimeo Direct Video URL",
+                                "info": "Direct video file link from Vimeo (Needs to end in .mp4). Video should not be larger than 1280px wide or be longer than 10 seconds."
+                            },
+                            {
+                                "type": "text",
+                                "id": "vimeo_video_mobile",
+                                "label": "Mobile Vimeo Direct Video URL",
+                                "info": "Direct video file link from Vimeo (Needs to end in .mp4). Video should not be larger than 1280px wide or be longer than 10 seconds."
+                            },
+                            {
+                                "type": "text",
+                                "id": "subheadline",
+                                "label": "Sub-Headline Text"
+                            },
+                            {
+                                "type": "textarea",
+                                "id": "headline",
+                                "label": "Headline Text"
+                            },
+                            {
+                                "type": "textarea",
+                                "id": "subtitle",
+                                "label": "Subtitle Text"
+                            },
+                            {
+                                "type": "richtext",
+                                "id": "copy",
+                                "label": "Copy Text"
+                            },
+                            {
+                                "type": "text",
+                                "id": "cta",
+                                "label": "CTA Text"
+                            },
+                            {
+                                "type": "url",
+                                "id": "link",
+                                "label": "CTA Link"
+                            },
+                            {
+                                "type": "radio",
+                                "options": [
+                                    { "value": "cta-1", "label": "Black -> White" },
+                                    { "value": "cta-2", "label": "Transparent -> Black" },
+                                    { "value": "cta-3", "label": "Black -> Transparent" },
+                                ],
+                                "default": "cta-3",
+                                "id": "cta_style",
+                                "label": "CTA Style"
+                            },
+                            {
+                                "type": "header",
+                                "content": "Background Settings"
+                            },
+                            {
+                                "type": "color",
+                                "id": "background_color",
+                                "label": "Background Color",
+                                "default": "transparent"
+                            },
+                            {
+                                "type": "header",
+                                "content": "Text Settings"
+                            },
+                            {
+                                "type": "radio",
+                                "options": [
+                                    { "value": "theme-dark", "label": "Light" },
+                                    { "value": "theme-light", "label": "Dark" }
+                                ],
+                                "default": "theme-light",
+                                "id": "text_color",
+                                "label": "Font Color"
+                            },
+                            {
+                                "type": "radio",
+                                "options": [
+                                    { "value": "text-left", "label": "Left" },
+                                    { "value": "text-center", "label": "Center" },
+                                    { "value": "text-right", "label": "Right" }
+                                ],
+                                "default": "text-left",
+                                "id": "text_align",
+                                "label": "Text Alignment"
+                            },
+                            {
+                                "type": "radio",
+                                "options": [
+                                    { "value": "text-left-mobile", "label": "Left" },
+                                    { "value": "text-center-mobile", "label": "Center" },
+                                    { "value": "text-right-mobile", "label": "Right" }
+                                ],
+                                "default": "text-left-mobile",
+                                "id": "text_align_mobile",
+                                "label": "Text Alignment (Mobile)"
+                            },
+                            {
+                                "type": "header",
+                                "content": "Alignment"
+                            },
+                            {
+                                "type": "radio",
+                                "options": [
+                                    { "value": "align-top", "label": "Top" },
+                                    { "value": "align-middle", "label": "Middle" },
+                                    { "value": "align-bottom", "label": "Bottom" }
+                                ],
+                                "default": "align-middle",
+                                "id": "vertical_align",
+                                "label": "Vertical Alignment"
+                            },
+                            {
+                                "type": "radio",
+                                "options": [
+                                    { "value": "align-top-mobile", "label": "Top" },
+                                    { "value": "align-middle-mobile", "label": "Middle" },
+                                    { "value": "align-bottom-mobile", "label": "Bottom" }
+                                ],
+                                "default": "align-top-mobile",
+                                "id": "vertical_align_mobile",
+                                "label": "Vertical Alignment (Mobile)"
+                            },
+                            {
+                                "type": "header",
+                                "content": "Split View"
+                            },
+                            {
+                                "type": "checkbox",
+                                "id": "split_view",
+                                "label": "Split view"
+                            },
+                            {
+                                "type": "checkbox",
+                                "id": "split_view_mobile",
+                                "label": "Split view mobile"
+                            },
+                            {
+                                "type": "radio",
+                                "options": [
+                                    { "value": "split-left", "label": "Left" },
+                                    { "value": "split-right", "label": "Right" }
+                                ],
+                                "default": "split-right",
+                                "id": "splitted_view",
+                                "label": "Splitted view (image position)"
+                            }
+                        ]
+                    }
+                ],
+                    "presets": [
+                        {
+                            "name": "Banner section",
+                            "settings": {
+
+                            }
+                        }
+                    ]
+}
+{% endschema %}
+<style>
+    #hero-section--{{ section.id }} .subtitle {
+        line - height: 22px;
+    margin-bottom: 12px;
+    max-width: 600px;
+    font-size: 16px;
+    font-family: 'ProximaNova-Regular';
+    font-weight: 400;
+    line-height:22px;
+    }
+    #hero-section--{{ section.id }} .title-font-1{
+        font - size:60px;
+    line-height:60px;
+}
+
+    #hero-section--{{ section.id }} {
+        height: {{ section.settings.desktop_height }}px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #hero - section--{{ section.id }} {
+        height: auto;
+        }
+
+    #hero-section--{{ section.id }} .block-container {
+        display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    padding:0 20px;
+        }
+    #hero-section--{{ section.id }} .title-font-1 {
+        font - size:45px;
+        }
+    #hero-section--{{ section.id }} .subtitle{
+        font - size:14px;
+    line-height:20px;
+        }
+    #hero-section--{{ section.id }} .block-container .inner-wrapper {
+        position: relative;
+    order: 1;
+    padding: 10px 0;
+    z-index: 2;
+        }
+
+    #hero-section--{{ section.id }} .block-container .inner-wrapper .headline,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper .subheadline,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper .subtitle,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper .copy,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper .copy p,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper .cta-wrap,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper .cta-wrap p,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper h1,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper h2,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper h3,
+    #hero-section--{{ section.id }} .block-container .inner-wrapper p {
+        color: #000000 !important;
+        }
+
+    #hero-section--{{ section.id }} .block-container .desktop-image {
+        display: none !important;
+        }
+
+    #hero-section--{{ section.id }} .block-container .mobile-image {
+        position: relative;
+    order: 2;
+    width: 100%;
+    min-height: {{ section.settings.mobile_height }}px;
+    display: block;
+        }
+
+    {% if section.settings.hide_on_mobile %}
+    #hero-section--{{ section.id }} {
+        display: none !important;
+        }
+    {% endif %}
+    }
+
+    @media screen and (max-width: 500px) {
+        #hero-section--{{ section.id }} .block-container .mobile-image {
+            height: 358px !important;
+            width: 358px !important;
+            min-height: 358px !important;
+            margin: 0 auto;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+</style>
+{% if section.blocks.size > 0 %}
+
+{% if section.settings.hide_on_mobile %}
+{% comment %}
+<style>
+    @media screen and (max-width: 768px) {
+        #hero - section--{{ section.id }} {
+        display: none !important;
+    }
+  }
+</style>
+{% endcomment %}
+{% endif %}
+
+<section class="hero-section hero-section--{{ section.id }} 
+            {{ section.settings.pagination_icons_color }} 
+            {% if section.settings.is_parallax == true %} parralax {% endif %}
+            {% if section.blocks.size > 1 %}slick slick-size-{{ section.blocks.size }}{% endif %}
+        " id="hero-section--{{ section.id }}"
+    data-autoplay="{{ section.settings.autoplay }}"
+    data-autoplay-speed-in-seconds="{{ section.settings.autoplay_speed_in_seconds }}"
+    style="--animation-duration-slick: {{ section.settings.autoplay_speed_in_seconds }}s">
+
+    {% for block in section.blocks %}
+    {% liquid
+                    assign use_title_tag = false
+    if section.settings.is_first and forloop.index == 1
+    assign use_title_tag = true
+    endif
+                %}
+
+    {% assign block_video_source_desktop = "" %}
+    {% if block.settings.shopify_video_desktop != blank %}
+    {% assign block_video_desktop = block.settings.shopify_video_desktop.sources | where: 'format', 'mp4' | first %}
+    {% if block_video_desktop != blank %}
+    {% assign block_video_source_desktop = block_video_desktop.url %}
+    {% endif %}
+    {% endif %}
+
+    {% if block_video_source_desktop == blank and block.settings.vimeo_video_desktop != blank %}
+    {% assign block_video_source_desktop = block.settings.vimeo_video_desktop %}
+    {% endif %}
+
+    {% assign block_video_source_mobile = "" %}
+    {% if block.settings.shopify_video_mobile != blank %}
+    {% assign block_video_mobile = block.settings.shopify_video_mobile.sources | where: 'format', 'mp4' | first %}
+    {% if block_video_mobile != blank %}
+    {% assign block_video_source_mobile = block_video_mobile.url %}
+    {% endif %}
+    {% endif %}
+
+    {% if block_video_source_mobile == blank and block.settings.vimeo_video_mobile != blank %}
+    {% assign block_video_source_mobile = block.settings.vimeo_video_mobile %}
+    {% endif %}
+
+    <a href="{{ block.settings.link }}" class="block-container {{ block.settings.text_align }} {{ block.settings.text_align_mobile }} {{ block.settings.text_color }} {{ block.settings.vertical_align }} {{ block.settings.vertical_align_mobile }} {% if block.settings.split_view %} split-view {{ block.settings.splitted_view }} {% endif %} {% if block.settings.split_view_mobile %} split-view-mobile {% endif %}" style="background-color: {{ block.settings.background_color }};">
+        {% comment %} Add .bg-video to .inner-wrapper to show video in background {% endcomment %}
+
+        <span class="absolute-image desktop-image lazy" role="img" aria-label="{{ block.settings.image_a.alt }}" {% if block.settings.image_a != blank %} style="background-image:url('{{ block.settings.image_a | image_url: width: 1 }}');" data-bg="{{ block.settings.image_a | image_url: width: 2000 }}" {% else %} style="background-color: {{ block.settings.background_color }}" {% endif %}></span>
+    <span class="absolute-image mobile-image lazy" role="img" aria-label="{{ block.settings.image_mobile.alt }}" {% if block.settings.image_mobile != blank %} style="background-image:url('{{ block.settings.image_mobile | image_url: width: 1 }}');" data-bg="{{ block.settings.image_mobile | image_url: width: 768 }}" {% else %} style="background-color: {{ block.settings.background_color }}" {% endif %}></span>
+
+{% comment %} Add.bottom to.inner - wrapper to push text to bottom of container {% endcomment %}
+<div class="inner-wrapper">
+    {% if block.settings.subheadline != blank %}
+    <h3 class="subheadline eyebrow-font-1">{{ block.settings.subheadline }}</h3>
+    {% endif %}
+    {% if block.settings.headline != blank %}
+    {% if use_title_tag %}
+    <h1 class="headline title-font-1">
+        {{ block.settings.headline | replace: '<p>', '' | replace: '</p>', '' }}
+    </h1>
+    {% else %}
+    <h2 class="headline title-font-1">{{ block.settings.headline }}</h2>
+    {% endif %}
+    {% if block.settings.subtitle %}
+    <p class="subtitle title-font-9">{{ block.settings.subtitle }}</p>
+    {% endif %}
+    {% endif %}
+    {% if block.settings.copy != blank %}
+    <div class="copy body-font-1">{{ block.settings.copy }}</div>
+    {% endif %}
+    {% if block.settings.cta != blank %}
+    <div class="cta-wrap">
+        <p class="{{ block.settings.cta_style }}"><span>{{ block.settings.cta }}</span></p>
+    </div>
+    {% endif %}
+</div>
+
+{% if block_video_source_desktop != blank %}
+<div class="video-wrapper bg-video desktop-video"
+    data-video-type=""
+    data-video-id=""
+    data-video-src="{{ block_video_source_desktop }}">
+    <div class="content-wrapper">
+        <button class="video-ctl paused"></button>
+    </div>
+</div>
+{% endif %}
+
+{% if block_video_source_mobile != blank %}
+<div class="video-wrapper bg-video mobile-video"
+    data-video-type=""
+    data-video-id=""
+    data-video-src="{{ block_video_source_mobile }}">
+    <div class="content-wrapper">
+        <button class="video-ctl paused"></button>
+    </div>
+</div>
+{% endif %}
+                </a >
+
+    {% endfor %}
+    
+        </section >
+
+    {% endif %}
