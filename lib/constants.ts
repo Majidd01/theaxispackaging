@@ -17,7 +17,7 @@ export const NAVIGATION_ITEMS = [
 export const PRODUCT_CATEGORIES = [
   {
     name: "Custom Folding Carton Boxes",
-    description: "Durable folding cartons crafted from thin, flexible paperboard",
+    description: "Get custom folding carton boxes with flexible sizes, fast production, and high quality perfect for retail, gifting, and more.",
     icon: "📦",
     image: "/assets/packify-custom-boxes.png",
     slug: "folding-carton-boxes",
@@ -28,7 +28,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Premium Rigid Boxes",
-    description: "Premium packaging crafted from thick durable chipboard",
+    description: "Shop rigid boxes for premium products. Custom sizes, luxury finishes, and eco-friendly packaging with fast flip turnaround.",
     icon: "🎁",
     image: "/assets/packify-luxury-boxes.png",
     slug: "rigid-boxes",
@@ -39,7 +39,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Custom Box Inserts",
-    description: "Keep small products safe with tailored, protective box inserts",
+    description: "Get custom box inserts for gifts and retail. Durable, stylish and versatile packaging solutions with rapid turnaround.",
     icon: "📋",
     image: "/assets/Custom Box Inserts.jpg",
     slug: "box-inserts",
@@ -50,7 +50,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Custom Reusable Bags",
-    description: "Say goodbye to plastic, carry reusable bags proudly",
+    description: "Looking for sustainable packaging? Our custom reusable bags offer strength, style, and sustainability. Ideal for retail, grocery, and promotions.",
     icon: "👜",
     image: "/assets/packify-retail-packaging.png",
     slug: "reusable-bags",
@@ -61,7 +61,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Printed Mailer Bags",
-    description: "Eco mailer bags for shipping clothing and small retail products",
+    description: "Order custom mailer bags for secure shipping. Eco-friendly bags ideal for clothing and small product items, available in various colors.",
     icon: "📮",
     image: "/assets/printed mailer box.jpeg",
     slug: "mailer-bags",
@@ -70,7 +70,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Flexible Packaging Pouches",
-    description: "Maintain food freshness and safety using resealable packaging pouches",
+    description: "Maintain food freshness with our resealable packaging pouches. Custom sizes, high-barrier materials, and vibrant printing options.",
     icon: "🥡",
     image: "/assets/packify-food-containers.png",
     slug: "flexible-pouches",
@@ -80,7 +80,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Metal Tin Containers",
-    description: "Searching for packaging that protects and stands out from competitors",
+    description: "Searching for packaging that protects and stands out? Our custom metal tin containers offer durability and premium shelf appeal.",
     icon: "🥫",
     image: "/assets/assorted-food-containers.png",
     slug: "tin-containers",
@@ -90,7 +90,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Retail POP Displays",
-    description: "Showcase products beautifully on counters and retail store floor areas",
+    description: "Showcase products beautifully with custom retail POP displays. Enhance visibility on counters and floor areas with brand-focused designs.",
     icon: "🏪",
     image: "/assets/Retail POP Displays.jpg",
     slug: "pop-displays",
@@ -100,7 +100,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Vinyl Stickers Labels",
-    description: "Add custom flair to your products and packaging for impact",
+    description: "Elevate your products with high-quality vinyl stickers and labels. Available in custom shapes, sizes, and finishes for branding and packaging.",
     icon: "🏷️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "stickers-labels",
@@ -110,7 +110,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Printed Kraft Boxes",
-    description: "Showcase your products stylishly with sustainable kraft packaging",
+    description: "Showcase products stylishly with sustainable kraft packaging. Custom printed boxes that combine eco-friendly materials with premium design.",
     icon: "🌱",
     image: "/assets/Printed Kraft Boxes.jpg",
     slug: "kraft-boxes",
@@ -120,7 +120,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Paper Shopping Bags",
-    description: "Stylish eco-friendly paper bags",
+    description: "Stylish and eco-friendly paper shopping bags for retail and gifting. Custom printed with your logo for a premium brand experience.",
     icon: "🛍️",
     image: "/assets/retail-packaging-display.png",
     slug: "paper-bags",
@@ -130,7 +130,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Eco-friendly Packaging",
-    description: "Sustainable alternatives to packaging",
+    description: "Explore our range of sustainable packaging alternatives. Eco-friendly materials that protect your products and the planet.",
     icon: "♻️",
     image: "/assets/packify-eco-friendly-packaging.png",
     slug: "eco-friendly",
@@ -140,7 +140,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Corrugated Shipping Boxes",
-    description: "Heavy-duty corrugated boxes for safe shipping and storage",
+    description: "Heavy-duty corrugated boxes for safe shipping and storage. Buy custom sizes and strengths to protect your goods during transit.",
     icon: "📦",
     image: "/assets/Corrugated Shipping Boxes.jpg",
     slug: "corrugated-shipping",
@@ -150,7 +150,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Custom Cosmetic Boxes",
-    description: "Elegant packaging solutions for beauty and cosmetic products",
+    description: "Elegant packaging solutions for beauty and cosmetic products. Custom printed cosmetic boxes with luxury finishes and premium feel.",
     icon: "💄",
     image: "/assets/packify-cosmetic-boxes.png",
     slug: "cosmetic-boxes",
@@ -160,7 +160,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Food Grade Containers",
-    description: "FDA approved containers for food and beverage products",
+    description: "FDA approved containers for food and beverage products. Safe, hygienic, and custom-designed packaging for all types of food.",
     icon: "🍽️",
     image: "/assets/assorted-food-containers.png",
     slug: "food-containers",
@@ -170,7 +170,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Pharmaceutical Packaging",
-    description: "Compliant packaging for pharmaceutical and medical products",
+    description: "Compliant packaging for pharmaceutical and medical products. Secure, informative, and meeting all industry standards for safety.",
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "pharmaceutical",
@@ -180,7 +180,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Electronics Packaging",
-    description: "Anti-static and protective packaging for electronic devices",
+    description: "Anti-static and protective packaging for electronic devices. Custom solutions to ensure safety from electrostatic discharge and impact.",
     icon: "📱",
     image: "/assets/packify-electronics-packaging.png",
     slug: "electronics",
@@ -190,7 +190,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Jewelry Gift Boxes",
-    description: "Luxury presentation boxes for jewelry and precious items",
+    description: "Luxury presentation boxes for jewelry and precious items. Custom-designed with premium materials for an unforgettable unboxing experience.",
     icon: "💍",
     image: "/assets/luxury-cosmetic-boxes.png",
     slug: "jewelry-boxes",
@@ -200,7 +200,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Wine & Liquor Boxes",
-    description: "Premium packaging for alcoholic beverages and wine bottles",
+    description: "Order premium custom wine and liquor boxes. Elegant designs and durable materials perfect for gifting and luxury branding.",
     icon: "🍷",
     image: "/assets/packify-hero-box4.png",
     slug: "wine-boxes",
@@ -210,7 +210,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Bakery & Cake Boxes",
-    description: "Food-safe boxes perfect for cakes, pastries, and baked goods",
+    description: "Keep treats fresh with custom bakery and cake boxes. Durable, food-safe packaging perfect for cakes, pastries, and desserts.",
     icon: "🎂",
     image: "/assets/packify-food-packaging.png",
     slug: "bakery-boxes",
@@ -220,7 +220,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Apparel Packaging",
-    description: "Stylish boxes and bags for clothing and fashion items",
+    description: "Elevate brand with custom apparel packaging. Premium boxes and bags designed for clothing, shoes, and fashion accessories.",
     icon: "👕",
     image: "/assets/packify-fashion-packaging.png",
     slug: "apparel-packaging",
@@ -230,7 +230,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Subscription Boxes",
-    description: "Custom branded boxes for subscription and e-commerce businesses",
+    description: "Design unique subscription boxes that excite customers. Durable, branded packaging perfect for monthly deliveries and kits.",
     icon: "📮",
     image: "/assets/custom-packaging-boxes.png",
     slug: "subscription-boxes",
@@ -240,7 +240,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Gift Wrapping Boxes",
-    description: "Beautiful presentation boxes for gifts and special occasions",
+    description: "Make every gift special with custom gift wrapping boxes. Beautiful designs and premium finishes for any occasion or brand.",
     icon: "🎁",
     image: "/assets/custom-blue-box.png",
     slug: "gift-boxes",
@@ -250,7 +250,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Toy Packaging",
-    description: "Safe and colorful packaging solutions for toys and games",
+    description: "Shop premium toy packaging for kids, gifts, and collectibles. Custom, durable, and eco-friendly boxes perfect for storage.",
     icon: "🧸",
     image: "/assets/packify-hero-box3.png",
     slug: "toy-packaging",
@@ -260,7 +260,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Book & Media Packaging",
-    description: "Protective packaging for books, CDs, DVDs, and media products",
+    description: "Protect and present CDs, DVDs, and books with our media packaging. Custom designs, sturdy materials, perfect for retail and shipping.",
     icon: "📚",
     image: "/assets/Book & Media Packaging.jpg",
     slug: "media-packaging",
@@ -270,7 +270,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Automotive Parts Boxes",
-    description: "Durable packaging for automotive parts and accessories",
+    description: "Protect auto parts with durable custom-built packaging boxes. Custom designs, foam protection, and bulk supply options.",
     icon: "🚗",
     image: "/assets/Automotive Parts Boxes.jpg",
     slug: "automotive-boxes",
@@ -280,7 +280,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Sports Equipment Boxes",
-    description: "Robust packaging for sports gear and equipment",
+    description: "Design your unique custom sports packaging to reflect your brand image, protect equipment, and boost product appeal with durable boxes.",
     icon: "⚽",
     image: "/assets/spports.jpg",
     slug: "sports-boxes",
@@ -290,7 +290,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Pet Product Packaging",
-    description: "Specialized packaging for pet food, toys, and accessories",
+    description: "Shop premium pet product high quality custom built packaging boxes with premium finishes and sustainable options to present products.",
     icon: "🐾",
     image: "/assets/assorted-food-containers.png",
     slug: "pet-packaging",
@@ -300,7 +300,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Hardware & Tools Boxes",
-    description: "Heavy-duty packaging for tools and hardware items",
+    description: "Organize, protect and ship tools with our hardware and tool boxes. Custom, durable, and versatile storage solutions for any workspace.",
     icon: "🔧",
     image: "/assets/Hardware & Tools Boxes.png",
     slug: "hardware-boxes",
@@ -310,7 +310,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Candle & Fragrance Boxes",
-    description: "Elegant packaging for candles, perfumes, and fragrance products",
+    description: "Enhance your brand with custom candle and fragrance boxes. Heat-resistant materials and luxury finishes for a premium experience.",
     icon: "🕯️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "candle-boxes",
@@ -320,7 +320,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Supplement Bottles",
-    description: "Compliant packaging for vitamins and dietary supplements",
+    description: "Axis Packaging offers high quality supplement bottles with customizable labels, designs, and packaging, ideal for retail.",
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "supplement-bottles",
@@ -330,7 +330,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Craft & Hobby Boxes",
-    description: "Organized storage solutions for craft supplies and hobbies",
+    description: "Craft and hobby boxes designed for art supplies, DIY kits, and creative storage. Strong, stylish packaging that keeps materials organized.",
     icon: "🎨",
     image: "/assets/Craft & Hobby Boxes.jpg",
     slug: "craft-boxes",
@@ -340,7 +340,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Garden & Plant Packaging",
-    description: "Eco-friendly packaging for plants, seeds, and garden supplies",
+    description: "Shop garden and plant packaging including plant boxes, flower packaging, and accessories for vibrant brand presence.",
     icon: "🌱",
     image: "/assets/packify-eco-friendly-packaging.png",
     slug: "garden-packaging",
@@ -350,7 +350,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Office Supply Boxes",
-    description: "Professional packaging for office and business supplies",
+    description: "Shop office supply boxes for storage and organization, available in small, large, paper or fabric-covered designs for any workspace.",
     icon: "📎",
     image: "/assets/packify-retail-boxes.png",
     slug: "office-boxes",
@@ -360,7 +360,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Home Decor Packaging",
-    description: "Protective packaging for home decoration and furniture items",
+    description: "Shop home decor packaging including decorative boxes, storage solutions, and subscription boxes. Perfect for gifts, home organization, and retail.",
     icon: "🏠",
     image: "/assets/packify-custom-boxes.png",
     slug: "home-decor",
@@ -370,7 +370,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Musical Instrument Cases",
-    description: "Protective cases and packaging for musical instruments",
+    description: "Protect instruments with custom musical instrument cases. Durable, padded packaging designed for safe transport and professional presentation.",
     icon: "🎵",
     image: "/assets/Musical Instrument Cases.jpg",
     slug: "music-cases",
@@ -380,7 +380,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     name: "Art & Collectibles Boxes",
-    description: "Museum-quality packaging for artwork and collectible items",
+    description: "Shop art and craft boxes for storage, kits, and creative projects. Durable, organized, and stylish boxes perfect for brand presentation.",
     icon: "🖼️",
     image: "/assets/packify-cosmetic-boxes.png",
     slug: "art-boxes",
@@ -400,7 +400,7 @@ export const TRUST_INDICATORS = [
 export const INDUSTRIES = [
   {
     name: "Apparel",
-    description: "Pair your apparel with one-of-a-kind custom printed clothing boxes",
+    description: "Pair your apparel with one-of-a-kind custom printed clothing boxes. Enhance brand appeal with premium fashion packaging.",
     icon: "👕",
     image: "/assets/packify-fashion-packaging.png",
     slug: "apparel",
@@ -410,7 +410,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Bakery & Cake",
-    description: "Show off your baked good with personalized cake and bakery boxes",
+    description: "Show off your baked goods with personalized cake and bakery boxes. Food-safe, durable, and custom-designed for freshness.",
     icon: "🍰",
     image: "/assets/packify-food-packaging.png",
     slug: "bakery-cake",
@@ -420,7 +420,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Beer & Liquor",
-    description: "Premium packaging for alcoholic beverages",
+    description: "Premium packaging for alcoholic beverages. Custom-designed boxes for beer and liquor that ensure safe transport and brand presence.",
     icon: "🍺",
     image: "/assets/custom-blue-box.png",
     slug: "beer-liquor",
@@ -430,7 +430,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Beverage",
-    description: "Custom packaging for all types of beverages",
+    description: "Custom packaging for all types of beverages. From cans to bottles, we provide high-quality solutions that protect and present your drink brands.",
     icon: "🥤",
     image: "/assets/packify-food-containers.png",
     slug: "beverage",
@@ -440,7 +440,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Candle",
-    description: "Elegant packaging for candle products",
+    description: "Elegant packaging for candle products. Custom printed candle boxes with luxury finishes and protective inserts.",
     icon: "🕯️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "candle",
@@ -450,7 +450,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Candy & Sweets",
-    description: "Sweet packaging solutions for confectionery",
+    description: "Sweet packaging solutions for confectionery. Custom candy boxes and packaging that attract customers and keep treats fresh.",
     icon: "🍬",
     image: "/assets/packify-chocolate-packaging.png",
     slug: "candy-sweets",
@@ -460,7 +460,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Cannabis",
-    description: "Custom-crafted tamper proof marijuana packaging",
+    description: "Custom-crafted tamper proof marijuana packaging. Compliant, secure, and brand-focused solutions for the cannabis industry.",
     icon: "🌿",
     image: "/assets/packify-cannabis-packaging.png",
     slug: "cannabis",
@@ -470,7 +470,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Chocolate",
-    description: "Premium custom chocolate boxes and packaging",
+    description: "Premium custom chocolate boxes and packaging. Elegant designs and food-safe materials to showcase your luxury chocolates.",
     icon: "🍫",
     image: "/assets/packify-chocolate-packaging.png",
     slug: "chocolate",
@@ -480,7 +480,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Coffee",
-    description: "Packaging solutions for coffee products",
+    description: "Packaging solutions for coffee products. Custom bags and boxes that maintain freshness and highlight your brand's unique flavor.",
     icon: "☕",
     image: "/assets/packify-food-containers.png",
     slug: "coffee",
@@ -490,7 +490,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Cosmetics",
-    description: "Custom printed cosmetic boxes and packaging",
+    description: "Custom printed cosmetic boxes and packaging. Luxury finishes and brand-focused designs for all your beauty products.",
     icon: "💄",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "cosmetics",
@@ -500,7 +500,7 @@ export const INDUSTRIES = [
   },
   {
     name: "E-Commerce",
-    description: "Packaging solutions for online businesses",
+    description: "Packaging solutions for online businesses. Durable shipping boxes and mailers designed for the rigors of e-commerce delivery.",
     icon: "🛒",
     image: "/assets/e-commerce.jpg",
     slug: "ecommerce",
@@ -510,7 +510,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Electronics",
-    description: "Protective packaging for electronic devices",
+    description: "Protective packaging for electronic devices. Custom-designed solutions to prevent damage and ensure safe delivery of sensitive electronics.",
     icon: "📱",
     image: "/assets/packify-electronics-packaging.png",
     slug: "electronics",
@@ -520,7 +520,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Food",
-    description: "Safe and compliant food packaging solutions",
+    description: "Safe and compliant food packaging solutions. FDA approved materials and custom designs to keep your food products secure and appetizing.",
     icon: "🍽️",
     image: "/assets/packify-food-packaging.png",
     slug: "food",
@@ -530,7 +530,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Gift",
-    description: "Beautiful packaging for gift items",
+    description: "Beautiful packaging for gift items. Custom gift boxes and wrapping solutions that make every occasion extra special.",
     icon: "🎁",
     image: "/assets/packify-luxury-boxes.png",
     slug: "gift",
@@ -540,7 +540,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Jewelry",
-    description: "Luxury packaging for jewelry and accessories",
+    description: "Luxury packaging for jewelry and accessories. Custom-designed boxes and displays that reflect the elegance of your pieces.",
     icon: "💍",
     image: "/assets/luxury-cosmetic-boxes.png",
     slug: "jewelry",
@@ -550,7 +550,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Pets",
-    description: "Packaging for pet products and supplies",
+    description: "Packaging for pet products and supplies. Custom-designed boxes and bags for pet food, toys, and grooming items.",
     icon: "🐾",
     image: "/assets/assorted-food-containers.png",
     slug: "pets",
@@ -560,7 +560,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Pharmaceutical",
-    description: "Compliant packaging for pharmaceutical products",
+    description: "Compliant packaging for pharmaceutical products. Safe, secure, and meeting all industry standards for medical and health supplies.",
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "pharmaceutical",
@@ -570,7 +570,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Presentation",
-    description: "Professional presentation packaging",
+    description: "Professional presentation packaging. Custom-designed boxes and folders that showcase your brand and products with elegance.",
     icon: "📊",
     image: "/assets/packify-retail-boxes.png",
     slug: "presentation",
@@ -580,7 +580,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Restaurant",
-    description: "Packaging for restaurant and food service",
+    description: "Packaging for restaurant and food service. Custom-designed takeout boxes and bags that represent your brand and keep food fresh.",
     icon: "🍽️",
     image: "/assets/packify-food-packaging.png",
     slug: "restaurant",
@@ -590,7 +590,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Retail",
-    description: "Eye-catching retail displays and packaging",
+    description: "Eye-catching retail displays and packaging. Stand out on the shelf with our custom-designed retail packaging solutions.",
     icon: "🏪",
     image: "/assets/packify-retail-packaging.png",
     slug: "retail",
@@ -600,7 +600,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Shipping",
-    description: "Secure shipping and mailer solutions",
+    description: "Secure shipping and mailer solutions. Durable custom boxes designed for logistics and safe delivery of your products.",
     icon: "📦",
     image: "/assets/packify-shipping-boxes.png",
     slug: "shipping",
@@ -610,7 +610,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Soap",
-    description: "Packaging for soap and personal care products",
+    description: "Packaging for soap and personal care products. Custom printed soap boxes that highlight your brand's unique fragrance and style.",
     icon: "🧼",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "soap",
@@ -620,7 +620,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Toy",
-    description: "Fun and safe packaging for toys",
+    description: "Fun and safe packaging for toys. Custom-designed boxes that attract kids and meet all safety requirements for toy brands.",
     icon: "🧸",
     image: "/assets/packify-retail-boxes.png",
     slug: "toy",
@@ -630,7 +630,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Tea",
-    description: "Elegant packaging for tea products",
+    description: "Elegant packaging for tea products. Custom bags and boxes that preserve flavor and provide a premium experience for tea drinkers.",
     icon: "🫖",
     image: "/assets/packify-food-containers.png",
     slug: "tea",
@@ -640,7 +640,7 @@ export const INDUSTRIES = [
   },
   {
     name: "Wine",
-    description: "Premium packaging for wine and spirits",
+    description: "Premium packaging for wine and spirits. Custom-designed boxes and displays that reflect the luxury and quality of your brand.",
     icon: "🍷",
     image: "/assets/custom-blue-box.png",
     slug: "wine",
