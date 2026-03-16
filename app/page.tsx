@@ -14,6 +14,7 @@ export default function Home() {
       <Helmet>
         <title>Axis Packaging - Premium Custom Packaging Solutions | Innovative & Sustainable</title>
         <meta name="description" content="Leading provider of premium custom packaging solutions. From retail boxes to industrial shipping, we offer innovative, sustainable, and high-quality packaging tailored to your brand." />
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="canonical" href="https://theaxispackaging.com/" />
       </Helmet>
       <Header />
