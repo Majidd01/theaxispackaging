@@ -11,6 +11,7 @@ export const NAVIGATION_ITEMS = [
   { name: "Home", href: "/" },
   { name: "Products", href: "/products" },
   { name: "Industries", href: "/industries" },
+  { name: "Blog", href: "/blog" },
   { name: "Sustainability", href: "/sustainability" },
 ];
 

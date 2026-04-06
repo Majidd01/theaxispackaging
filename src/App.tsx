@@ -11,6 +11,9 @@ import ProductsPage from "@/app/products/page";
 import QuotePage from "@/app/quote/page";
 import SustainabilityPage from "@/app/sustainability/page";
 import TermsPage from "@/app/terms/page";
+import BlogPage from "@/app/blog/page";
+import BlogPostPage from "@/app/blog/[slug]/page";
+import AdminBlogPage from "@/app/admin/blog/page";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { NavigationWrapper } from "@/components/navigation-wrapper";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -30,6 +33,9 @@ function App() {
         <Route path="/industries/:slug" element={<IndustryDetailPage />} />
         <Route path="/quote" element={<QuotePage />} />
         <Route path="/sustainability" element={<SustainabilityPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/admin/blog" element={<AdminBlogPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/moq" element={<MOQPage />} />

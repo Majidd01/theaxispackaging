@@ -280,6 +280,10 @@
         height: {{ section.settings.desktop_height }}px;
     }
 
+    #hero-section--{{ section.id }} .mobile-image {
+        display: none;
+    }
+
     @media screen and (max-width: 768px) {
         #hero - section--{{ section.id }} {
         height: auto;
@@ -328,8 +332,9 @@
         position: relative;
     order: 2;
     width: 100%;
-    min-height: {{ section.settings.mobile_height }}px;
-    display: block;
+    height: 100%;
+    display: block !important;
+    object-fit: cover;
         }
 
     {% if section.settings.hide_on_mobile %}
@@ -345,8 +350,8 @@
             width: 358px !important;
             min-height: 358px !important;
             margin: 0 auto;
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
+            object-position: center;
         }
     }
 </style>
@@ -409,7 +414,14 @@
         {% comment %} Add .bg-video to .inner-wrapper to show video in background {% endcomment %}
 
         <span class="absolute-image desktop-image lazy" role="img" aria-label="{{ block.settings.image_a.alt }}" {% if block.settings.image_a != blank %} style="background-image:url('{{ block.settings.image_a | image_url: width: 1 }}');" data-bg="{{ block.settings.image_a | image_url: width: 2000 }}" {% else %} style="background-color: {{ block.settings.background_color }}" {% endif %}></span>
-    <span class="absolute-image mobile-image lazy" role="img" aria-label="{{ block.settings.image_mobile.alt }}" {% if block.settings.image_mobile != blank %} style="background-image:url('{{ block.settings.image_mobile | image_url: width: 1 }}');" data-bg="{{ block.settings.image_mobile | image_url: width: 768 }}" {% else %} style="background-color: {{ block.settings.background_color }}" {% endif %}></span>
+        {% if block.settings.image_mobile != blank %}
+            <img src="{{ block.settings.image_mobile | image_url: width: 768 }}" 
+                 alt="{{ block.settings.image_mobile.alt }}" 
+                 class="absolute-image mobile-image" 
+                 loading="lazy">
+        {% else %}
+            <span class="absolute-image mobile-image" style="background-color: {{ block.settings.background_color }}"></span>
+        {% endif %}
 
 {% comment %} Add.bottom to.inner - wrapper to push text to bottom of container {% endcomment %}
 <div class="inner-wrapper">

@@ -1,0 +1,2746 @@
+{{ 'custom-pdp.css' | asset_url | stylesheet_tag }}
+<style>
+    .pdp-main-image {
+        position: relative;
+    }
+
+    .pdp-wishlist-btn-wrapper {
+        position: absolute;
+        bottom: 45px;
+        right: 10px;
+        z-index: 10;
+    }
+</style>
+
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="custom-pdp-wrapper">
+    <div class="custom-pdp-container">
+        <!-- Breadcrumb -->
+        {% if section.settings.show_breadcrumb %}
+        <div class="pdp-breadcrumb">
+            <a href="{{ routes.root_url }}">{{ section.settings.breadcrumb_home_text }}</a>
+            <span class="breadcrumb-separator">{{ section.settings.breadcrumb_separator }}</span>
+            <a href="{{ collection.url }}">{{ section.settings.breadcrumb_collection_text }}</a>
+        </div>
+        {% endif %}
+
+        <div class="pdp-main-content">
+            <!-- Product Images Section -->
+            <div class="pdp-images-section">
+                <div class="pdp-image-gallery">
+                    <!-- Thumbnail Gallery -->
+                    <div class="pdp-thumbnail-scroller" data-visible-count="7">
+                        <div class="thumbnail-nav thumbnail-nav--up" role="button" tabindex="0"
+                            aria-label="Scroll thumbnails up" aria-disabled="false">
+                            <svg class="thumbnail-nav__icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+                                <path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="pdp-thumbnail-viewport">
+                            <div class="pdp-thumbnails">
+                                {% for media in product.media %}
+                                {% if media.media_type == 'image' %}
+                                <div class="pdp-thumbnail {% if forloop.first %}active{% endif %}"
+                                    data-image-index="{{ forloop.index0 }}">
+                                    <img src="{{ media | img_url: '100x' }}" alt="{{ media.alt | escape }}"
+                                        loading="lazy">
+                                </div>
+                                {% elsif media.media_type == 'external_video' %}
+                                <div class="pdp-thumbnail is-video {% if forloop.first %}active{% endif %}"
+                                    data-image-index="{{ forloop.index0 }}">
+                                    <img src="{{ media.preview_image | img_url: '100x' }}"
+                                        alt="{{ media.alt | escape }}" loading="lazy">
+                                    <span class="thumbnail-play-icon"><svg viewBox="0 0 10 10">
+                                            <polygon points="2,0 10,5 2,10" />
+                                        </svg></span>
+                                </div>
+                                {% elsif media.media_type == 'video' %}
+                                <div class="pdp-thumbnail is-video {% if forloop.first %}active{% endif %}"
+                                    data-image-index="{{ forloop.index0 }}">
+                                    <img src="{{ media.preview_image | img_url: '100x' }}"
+                                        alt="{{ media.alt | escape }}" loading="lazy">
+                                    <span class="thumbnail-play-icon"><svg viewBox="0 0 10 10">
+                                            <polygon points="2,0 10,5 2,10" />
+                                        </svg></span>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="thumbnail-nav thumbnail-nav--down" role="button" tabindex="0"
+                            aria-label="Scroll thumbnails down" aria-disabled="false">
+                            <svg class="thumbnail-nav__icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+                                <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Main Image -->
+                    <div class="pdp-main-image">
+                        {% for media in product.media %}
+                        {% if media.media_type == 'image' %}
+                        <div class="pdp-image-slide {% if forloop.first %}active{% endif %}"
+                            data-slide-index="{{ forloop.index0 }}" data-full-image="{{ media | img_url: '2048x2048' }}"
+                            data-image-id="{{ media.id }}">
+                            <img src="{{ media | img_url: 'master' }}" alt="{{ media.alt | escape }}" loading="eager"
+                                fetchpriority="{% if forloop.first %}high{% else %}auto{% endif %}"
+                                class="pdp-zoomable-image" style="cursor: zoom-in;">
+                        </div>
+                        {% elsif media.media_type == 'external_video' %}
+                        <div class="pdp-image-slide is-video {% if forloop.first %}active{% endif %}"
+                            data-slide-index="{{ forloop.index0 }}" data-media-type="external_video">
+                            <div class="pdp-video-wrapper">
+                                {% if media.host == 'youtube' %}
+                                <iframe src="https://www.youtube.com/embed/{{ media.external_id }}?enablejsapi=1"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy" title="{{ media.alt | escape }}"></iframe>
+                                {% elsif media.host == 'vimeo' %}
+                                <iframe src="https://player.vimeo.com/video/{{ media.external_id }}"
+                                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"
+                                    title="{{ media.alt | escape }}"></iframe>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% elsif media.media_type == 'video' %}
+                        <div class="pdp-image-slide is-video {% if forloop.first %}active{% endif %}"
+                            data-slide-index="{{ forloop.index0 }}" data-media-type="video">
+                            <div class="pdp-video-wrapper">
+                                {{ media | video_tag: controls: true, autoplay: false, muted: false, loop: false }}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
+                        <!-- Match Badge -->
+
+                        {% if customer and customer.metafields.tangent.product_scores %}
+                        {% assign scores = customer.metafields.tangent.product_scores.value %}
+                        {% assign pid = product.id | append: "" %}
+                        {% if scores[pid] %}
+                        <div class="pdp-match-badge" style="background-color: {{ section.settings.match_badge_bg }}; 
+        color: {{ section.settings.match_badge_text_color }};">
+                            {{ scores[pid].score }}% MATCH
+                        </div>
+                        {% endif %}
+                        {% endif %}
+
+
+
+                        <div class="product-special-tags-wrapper-pdp">
+                            {% assign allowed_tags =
+                            'best seller|selling fast|exclusive|online only|limited-edition|local fave|new|on sale|out
+                            of stock|back in stock|new shades'
+                            | split: '|'
+                            %}
+
+                            {% assign tag_count = 0 %}
+
+                            {% for tag in product.tags %}
+                            {% assign tag_downcase = tag | downcase %}
+
+                            {% if allowed_tags contains tag_downcase and tag_count < 2 %} <span class="special-tag-pdp">
+                                {{ tag }}
+                                </span>
+
+                                {% assign tag_count = tag_count | plus: 1 %}
+                                {% endif %}
+                                {% endfor %}
+                        </div>
+                        <!-- Swym Wishlist Plus EPI Button -->
+                        <div class="pdp-wishlist-btn-wrapper">
+                            <button data-with-epi="true"
+                                class="p-2 swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+                                data-swaction="addToWishlist" data-product-id="{{product.id | json}}"
+                                data-variant-id="{{product.variants[0].id}}"
+                                data-product-url="{{ shop.url }}{{ product.url }}"></button>
+                        </div>
+                        <!-- Swym Wishlist Plus EPI Button -->
+
+                    </div>
+                </div>
+
+                <!-- Testimonial Section -->
+                <div class="desktop-only">
+                    {% if section.settings.show_testimonial %}
+                    <div class="pdp-image-gallery">
+                        <div class="customWidth"></div>
+                        {% assign mf = product.metafields.custom %}
+
+                        {% assign testimonial_heading = mf.testimonial_heading | default:
+                        section.settings.testimonial_heading %}
+                        {% assign testimonial_quote = mf.testimonial_quote %}
+                        {% assign testimonial_author_name = mf.testimonial_author_name %}
+                        {% assign testimonial_author_role = mf.testimonial_author_role %}
+                        {% assign testimonial_avatar = mf.testimonial_avatar %}
+                        {% if testimonial_quote != blank %}
+                        {% if testimonial_heading != blank or testimonial_quote != blank %}
+                        <div class="pdp-testimonial-section"
+                            style="background-color: {{ section.settings.testimonial_bg_color }};">
+                            {% if testimonial_heading != blank %}
+                            <h2 class="testimonial-heading"
+                                style="color: {{ section.settings.testimonial_heading_color }};">
+                                {{ testimonial_heading }}
+                            </h2>
+                            {% endif %}
+
+                            {% if testimonial_quote != blank %}
+                            <blockquote class="testimonial-quote"
+                                style="color: {{ section.settings.testimonial_quote_color }};">
+                                {{ testimonial_quote }}
+                            </blockquote>
+                            {% endif %}
+
+                            {% if testimonial_author_name != blank or testimonial_author_role != blank or
+                            testimonial_avatar != blank %}
+                            <div class="testimonial-author">
+                                {% if testimonial_avatar %}
+                                <img src="{{ testimonial_avatar | img_url: '60x60' }}"
+                                    alt="{{ testimonial_author_name }}" class="testimonial-avatar">
+                                {% endif %}
+
+                                <div class="testimonial-author-info">
+                                    {% if testimonial_author_name != blank %}
+                                    <div class="testimonial-author-name"
+                                        style="color: {{ section.settings.testimonial_author_name_color }};">
+                                        {{ testimonial_author_name }}
+                                    </div>
+                                    {% endif %}
+
+                                    {% if testimonial_author_role != blank %}
+                                    <div class="testimonial-author-role"
+                                        style="color: {{ section.settings.testimonial_author_role_color }};">
+                                        {{ testimonial_author_role }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    <div class="pdp-image-gallery ">
+                        <div class="customWidthwidget"></div>
+                        {%- for block in section.blocks -%}
+                        {%- case block.type -%}
+                        {%- when '@app' -%}
+                        {%- comment -%} Only render gigit widget here {%- endcomment -%}
+                        {%- if block.settings.app_id contains 'gigit' or block.id contains 'gigit' -%}
+                        <div class="gigit_widget" blocktype="app"
+                            data-show-in-quickbuy="{{ show_app_blocks_in_quickbuy }}" blockid="{{ block.id }}">
+                            {% render block %}
+                        </div>
+                        {%- endif -%}
+                        {% endcase %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Product Info Section -->
+            <div class="pdp-info-section">
+                <!-- Brand -->
+
+                <div class="pdp-brand"> {%- liquid
+                    assign product_vendor_handle = product.vendor | handle
+                    if collections[product_vendor_handle].handle == product_vendor_handle
+                    assign vendor_url = collections[product_vendor_handle].url
+                    else
+                    assign vendor_url = product.vendor | url_for_vendor
+                    endif
+                    -%}
+                    <span class="brand">{{ product.vendor | link_to: vendor_url }}</span>
+                </div>
+
+
+                <!-- Product Title -->
+                <h1 class="pdp-title"
+                    style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.title_font_size }}px;">
+                    {{ product.title }}
+                </h1>
+
+                <div class="cc-rating-container product-detail__gap-sm">
+                    <div class="yotpo-widget-instance" data-yotpo-instance-id="245462"
+                        data-yotpo-product-id="{{product.id}}"></div>
+                </div>
+
+                <!-- Description Blocks -->
+                {% if product.metafields.custom.whatitis == blank
+                and product.metafields.custom.whatitdoes == blank
+                and product.metafields.custom.whoitfor == blank
+                and product.metafields.custom.fragrance_notes == blank %}
+
+                <div class="pdp-description">
+                    {{ product.description }}
+                </div>
+
+                {% else %}
+                <div class="pdp-descriptions">
+
+                    {% if product.metafields.custom.whatitis != blank %}
+                    <div class="pdp-description-item">
+                        <h3 class="description-title">
+                            {{ product.metafields.custom.what_it_is_title | default: 'WHAT IT IS:' }}
+                            <span class="description-text">
+                                {{ product.metafields.custom.whatitis }}
+                            </span>
+                        </h3>
+                    </div>
+                    {% endif %}
+
+                    {% if product.metafields.custom.whatitdoes != blank %}
+                    <div class="pdp-description-item">
+                        <h3 class="description-title">
+                            {{ product.metafields.custom.what_it_does_title | default: 'WHAT IT DOES:' }}
+                            <span class="description-text">
+                                {{ product.metafields.custom.whatitdoes }}
+                            </span>
+                        </h3>
+                    </div>
+                    {% endif %}
+
+                    {% if product.metafields.custom.whoitfor != blank %}
+                    <div class="pdp-description-item">
+                        <h3 class="description-title">
+                            {{ product.metafields.custom.what_it_is_for_title | default: 'WHO IT IS FOR:' }}
+                            <span class="description-text">
+                                {{ product.metafields.custom.whoitfor }}
+                            </span>
+                        </h3>
+                    </div>
+                    {% endif %}
+
+                    {% if product.metafields.custom.fragrance_notes != blank %}
+                    <div class="pdp-description-item">
+                        <h3 class="description-title">
+                            {{ product.metafields.custom.fragrance_notes_title | default: 'FRAGRANCE NOTES:' }}
+                            <span class="description-text">
+                                {{ product.metafields.custom.fragrance_notes }}
+                            </span>
+                        </h3>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+
+                {% endif %}
+
+
+
+
+                <!-- Variant Selector (Size/Options) -->
+                {% if product.has_only_default_variant == false %}
+                <div class="pdp-variants">
+                    {% for option in product.options_with_values %}
+                    {% assign option_name_downcase = option.name | downcase %}
+                    {% assign is_color_option = false %}
+                    {% if option_name_downcase contains 'color' or option_name_downcase contains 'colour' %}
+                    {% assign is_color_option = true %}
+                    {% endif %}
+                    {% assign option_index0 = forloop.index0 %}
+                    {% if option.values.size > 1 %}
+                    <div class="pdp-variant-group" data-option-index="{{ option.position }}">
+                        <div class="variant-option-heading">
+                            {%- comment -%}
+                            <span class="variant-option-title">{{ option.name }}</span>
+                            {%- endcomment -%}
+
+                            {% assign has_swatches = false %}
+
+                            {% for option in product.options_with_values %}
+                            {% assign option_name = option.name | downcase %}
+                            {% if option_name contains 'color' or option_name contains 'colour' %}
+                            {% for variant in product.variants %}
+                            {% assign swatch_meta = variant.metafields.swatches.color %}
+                            {% if swatch_meta == blank %}
+                            {% assign swatch_meta = variant.metafields.custom.swatch_color %}
+                            {% endif %}
+                            {% if swatch_meta == blank %}
+                            {% assign swatch_meta = variant.metafields.custom_fields.swatch_color %}
+                            {% endif %}
+                            {% if swatch_meta == blank %}
+                            {% assign swatch_meta = variant.metafields.custom['Swatch Color'] %}
+                            {% endif %}
+                            {% if swatch_meta == blank %}
+                            {% assign swatch_meta = variant.metafields.custom_fields['Swatch Color'] %}
+                            {% endif %}
+
+                            {% if swatch_meta != blank %}
+                            {% assign has_swatches = true %}
+                            {% break %}
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            {% if has_swatches %}
+                            {% break %}
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if has_swatches %}
+                            <span class="variant-option-selected" data-variant-selected-label="{{ option.position }}">
+                                {{ option.selected_value | default: option.values.first }}
+                            </span>
+                            {% comment %} <a href="#navigate" class="find-my-shade"> Find my shade </a> {% endcomment %}
+                            {% endif %}
+                        </div>
+
+                        {% if is_color_option %}
+                        <div class="variant-options variant-swatches" data-option-index="{{ option.position }}">
+                            {% for value in option.values %}
+                            {% assign swatch_hex = '' %}
+                            {% for variant in product.variants %}
+                            {% if variant.options[option_index0] == value %}
+                            {% assign swatch_meta = variant.metafields.swatches.color %}
+                            {% if swatch_meta != blank %}
+                            {% assign swatch_hex = swatch_meta.value | default: swatch_meta %}
+                            {% endif %}
+                            {% if swatch_hex == blank %}
+                            {% assign swatch_meta = variant.metafields.custom.swatch_color %}
+                            {% if swatch_meta != blank %}
+                            {% assign swatch_hex = swatch_meta.value | default: swatch_meta %}
+                            {% endif %}
+                            {% endif %}
+                            {% if swatch_hex == blank %}
+                            {% assign swatch_meta = variant.metafields.custom_fields.swatch_color %}
+                            {% if swatch_meta != blank %}
+                            {% assign swatch_hex = swatch_meta.value | default: swatch_meta %}
+                            {% endif %}
+                            {% endif %}
+                            {% if swatch_hex == blank %}
+                            {% assign swatch_meta = variant.metafields.custom['Swatch Color'] %}
+                            {% if swatch_meta != blank %}
+                            {% assign swatch_hex = swatch_meta.value | default: swatch_meta %}
+                            {% endif %}
+                            {% endif %}
+                            {% if swatch_hex == blank %}
+                            {% assign swatch_meta = variant.metafields.custom_fields['Swatch Color'] %}
+                            {% if swatch_meta != blank %}
+                            {% assign swatch_hex = swatch_meta.value | default: swatch_meta %}
+                            {% endif %}
+                            {% endif %}
+                            {% if swatch_hex != blank %}
+                            {% break %}
+                            {% endif %}
+                            {% endif %}
+                            {% endfor %}
+                            {% if swatch_hex == blank %}
+                            {% assign swatch_hex = value %}
+                            {% endif %}
+                            {% assign swatch_hex = swatch_hex | strip %}
+                            {% assign swatch_color_value = swatch_hex %}
+                            {% if swatch_color_value != blank %}
+                            {% unless swatch_color_value contains '#' %}
+                            {% assign swatch_color_value = '#' | append: swatch_color_value %}
+                            {% endunless %}
+                            {% endif %}
+                            {% assign is_selected = false %}
+                            {% if option.selected_value %}
+                            {% if option.selected_value == value %}
+                            {% assign is_selected = true %}
+                            {% endif %}
+                            {% elsif forloop.first %}
+                            {% assign is_selected = true %}
+                            {% endif %}
+                            <button type="button" class="variant-swatch {% if is_selected %}active{% endif %}"
+                                data-option-position="{{ option.position }}" data-option-value="{{ value | escape }}"
+                                aria-label="{{ value }}">
+                                <span class="swatch-color" style="background-color: {{ swatch_color_value }};"></span>
+                            </button>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="variant-options" data-option-index="{{ option.position }}">
+                            {% for value in option.values %}
+                            {% assign is_selected = false %}
+                            {% if option.selected_value %}
+                            {% if option.selected_value == value %}
+                            {% assign is_selected = true %}
+                            {% endif %}
+                            {% elsif forloop.first %}
+                            {% assign is_selected = true %}
+                            {% endif %}
+                            <button type="button" class="variant-option {% if is_selected %}active{% endif %}"
+                                data-option-position="{{ option.position }}" data-option-value="{{ value | escape }}">
+                                {{ value }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <script>
+                    // Initialize variant on page load
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const variantGroups = document.querySelectorAll('.pdp-variant-group');
+                        const selectedOptions = [];
+
+                        variantGroups.forEach(group => {
+                            const activeBtn = group.querySelector('.variant-option.active, .variant-swatch.active');
+                            if (activeBtn) {
+                                selectedOptions.push(activeBtn.dataset.optionValue);
+                            }
+                        });
+
+                        // Set initial variant
+                        const productData = {{ product | json
+                    }};
+                    const matchingVariant = productData.variants.find(variant => {
+                        return variant.options.every((option, index) => option === selectedOptions[index]);
+                    });
+
+                    if (matchingVariant) {
+                        const addToCartBtn = document.querySelector('.pdp-add-to-cart');
+                        if (addToCartBtn) {
+                            addToCartBtn.dataset.variantId = matchingVariant.id;
+                        }
+                        const sampleButtons = document.querySelectorAll('#sample-it, .sample-it-button');
+                        sampleButtons.forEach(btn => {
+                            btn.dataset.variant = matchingVariant.id;
+                            btn.setAttribute('data-variant', matchingVariant.id);
+                        });
+                    }
+          });
+                </script>
+
+                {% if product.tags contains 'event-digital' %}
+                <!-- Event/Registration Product -->
+                <div class="pdp-actions">
+                    {% if product.tags contains 'event-digital' %}
+                    <a href="{{ product.metafields.acuity.url }}" target="_blank" class="pdp-add-to-cart"
+                        style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }}; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="button-text">Register Now</span>
+                    </a>
+                    {% else %}
+                    {% if product.title contains 'Tata Harper Skin Consultations' %}
+                    <a href="https://app.acuityscheduling.com/schedule.php?owner=20123808&appointmentType=24102029"
+                        target="_blank" class="pdp-add-to-cart"
+                        style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }}; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="button-text">Schedule Appointment</span>
+                    </a>
+                    {% elsif product.title contains 'WestHollywood' %}
+                    <a href="https://app.acuityscheduling.com/schedule.php?owner=20123808&location=8380%20Beverly%20Blvd.%20Los%20Angeles%2C%20CA%2090048"
+                        target="_blank" class="pdp-add-to-cart"
+                        style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }}; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="button-text">Schedule Appointment</span>
+                    </a>
+                    {% elsif product.title contains 'SantaMonica' %}
+                    <a href="https://app.acuityscheduling.com/schedule.php?owner=20123808&location=1231%20Montana%20Ave.%20Santa%20Monica%2C%20CA%2090403"
+                        target="_blank" class="pdp-add-to-cart"
+                        style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }}; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="button-text">Schedule Appointment</span>
+                    </a>
+                    {% elsif product.title contains 'NewYork' %}
+                    <a href="https://app.acuityscheduling.com/schedule.php?owner=20123808&location=76%20E%20Houston%20St.%20New%20York%2C%20NY%2010012"
+                        target="_blank" class="pdp-add-to-cart"
+                        style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }}; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        <span class="button-text">Schedule Appointment</span>
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                    <script src="https://embed.acuityscheduling.com/embed/button/20123808.js" async></script>
+                </div>
+                {% else %}
+                <!-- Quantity Selector -->
+                {% for block in section.blocks %}
+                {% if block.type == 'quantity_selector' %}
+                <div class="pdp-quantity-wrapper" {{ block.shopify_attributes }}>
+                    <label class="quantity-label" style="color: {{ block.settings.label_color }};">{{
+                        block.settings.label_text }}</label>
+                    <div class="pdp-quantity-selector">
+                        <button type="button" class="quantity-btn quantity-decrease" aria-label="Decrease quantity"
+                            style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_text_color }};">−</button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="99" aria-label="Quantity"
+                            style="color: {{ block.settings.input_text_color }};">
+                        <button type="button" class="quantity-btn quantity-increase" aria-label="Increase quantity"
+                            style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_text_color }};">+</button>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                <!-- Product Form for Recharge Integration -->
+                <form method="post" action="/cart/add" id="product-form-{{ product.id }}" accept-charset="UTF-8"
+                    class="pdp-product-form" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{ current_variant.id }}" class="product-variant-id">
+                    <input type="hidden" name="quantity" value="1" class="product-quantity-input">
+
+                    <!-- App Blocks (Recharge Subscription, etc.) -->
+                    {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                    {%- when '@app' -%}
+                    {%- comment -%} Render all app blocks except gigit widget {%- endcomment -%}
+                    {%- unless block.settings.app_id contains 'gigit' or block.id contains 'gigit' -%}
+                    <div class="pdp-app-block" blocktype="app" data-show-in-quickbuy="{{ show_app_blocks_in_quickbuy }}"
+                        blockid="{{ block.id }}" {{ block.shopify_attributes }}>
+                        {% render block %}
+                    </div>
+                    {%- endunless -%}
+                    {% endcase %}
+                    {% endfor %}
+
+                    <!-- Add to Cart Button -->
+                    {% unless product.tags contains 'search-hidden' %}
+                    <div class="pdp-actions">
+                        {% assign has_selling_plans = false %}
+                        {% if product.selling_plan_groups.size > 0 %}
+                        {% assign has_selling_plans = true %}
+                        {% endif %}
+                        <button type="submit" class="pdp-add-to-cart" data-product-id="{{ product.id }}"
+                            data-variant-id="{{ current_variant.id }}" data-price="{{ current_variant.price | money }}"
+                            data-compare-price="{% if current_variant.compare_at_price > current_variant.price %}{{ current_variant.compare_at_price | money }}{% endif %}"
+                            data-has-subscription="{{ has_selling_plans }}"
+                            style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }};{% unless current_variant.available %} display: none;{% endunless %}">
+                            <span class="button-text">{{ section.settings.button_text }}</span>
+                            <span class="button-price" {% if has_selling_plans %}style="display: none;" {% endif %}>{{
+                                current_variant.price | money }}</span>
+                            {% render 'cart-spinner' %}
+                        </button>
+                        <a href="#" id="BIS_trigger" type="button" class="pdp-add-to-cart btn btn-block"
+                            data-variant-id="{{ current_variant.id }}"
+                            style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }}; text-decoration: none; display: {% if current_variant.available %}none{% else %}flex{% endif %}; align-items: center; justify-content: center;">Join
+                            the waitlist</a>
+                    </div>
+                    {% endunless %}
+                </form>
+                {% endif %}
+
+
+                <!-- Shipping Info -->
+                {% if section.settings.show_shipping_info %}
+                <div class="pdp-shipping-info"
+                    style="background-color: {{ section.settings.shipping_info_bg }}; color: {{ section.settings.shipping_info_text_color }};">
+                    {{ section.settings.shipping_info_text }}
+                </div>
+                {% endif %}
+                <div class="afterpay-klarna">
+                    <span>Pay over time with &nbsp;</span>
+                    <span>
+                        <svg class="afterpay-logo" xmlns="http://www.w3.org/2000/svg"
+                            preserveAspectRatio="xMidYMid meet" width="104" height="36" viewBox="14 12 76 12">
+                            <g class="afterpay-logo-badge-lockup">
+                                <path
+                                    d="m88.23074,13.52071l-2.25928,-1.29288l-2.29193,-1.31247c-1.51489,-0.86845 -3.40851,0.22201 -3.40851,1.97197l0,0.29384c0,0.16324 0.08489,0.31342 0.22854,0.39178l1.06435,0.60726c0.29383,0.16978 0.6595,-0.0457 0.6595,-0.38525l0,-0.69868c0,-0.34607 0.37219,-0.56155 0.67256,-0.39178l2.0895,1.20147l2.08298,1.19493c0.30037,0.16977 0.30037,0.60727 0,0.77704l-2.08298,1.19494l-2.0895,1.20146c-0.30037,0.16978 -0.67256,-0.0457 -0.67256,-0.39178l0,-0.34607c0,-1.74997 -1.89362,-2.84696 -3.40851,-1.97198l-2.29193,1.31247l-2.25928,1.29289c-1.52142,0.87498 -1.52142,3.07549 0,3.95047l2.25928,1.29289l2.29193,1.31247c1.51489,0.86845 3.40851,-0.22201 3.40851,-1.97198l0,-0.29383c0,-0.16325 -0.08489,-0.31343 -0.22854,-0.39179l-1.06435,-0.60726c-0.29383,-0.16977 -0.6595,0.04571 -0.6595,0.38525l0,0.69868c0,0.34608 -0.37219,0.56156 -0.67256,0.39179l-2.0895,-1.20147l-2.08298,-1.19494c-0.30037,-0.16977 -0.30037,-0.60726 0,-0.77703l2.08298,-1.19494l2.0895,-1.20147c0.30037,-0.16977 0.67256,0.04571 0.67256,0.39179l0,0.34607c0,1.74996 1.89362,2.84695 3.40851,1.97197l2.29193,-1.31247l2.25928,-1.29288c1.52142,-0.88151 1.52142,-3.0755 0,-3.95048z">
+                                </path>
+                                <path
+                                    d="m73.4083,13.95167l-5.28907,10.92421l-2.19398,0l1.9785,-4.08107l-3.11467,-6.84314l2.25275,0l1.99809,4.58386l2.18092,-4.58386l2.18746,0z">
+                                </path>
+                                <path
+                                    d="m20.52416,17.83032c0,-1.30594 -0.9468,-2.2201 -2.10909,-2.2201s-2.1091,0.93375 -2.1091,2.2201c0,1.2733 0.94681,2.2201 2.1091,2.2201s2.10909,-0.91416 2.10909,-2.2201m0.01959,3.87865l0,-1.00558c-0.57461,0.69868 -1.43,1.12964 -2.44864,1.12964c-2.12869,0 -3.74152,-1.70425 -3.74152,-4.00271c0,-2.27887 1.67813,-4.01577 3.78723,-4.01577c0.99251,0 1.82832,0.43749 2.40293,1.11658l0,-0.97946l1.90668,0l0,7.7573l-1.90668,0z">
+                                </path>
+                                <path
+                                    d="m31.72262,19.98513c-0.66603,0 -0.85539,-0.24813 -0.85539,-0.9011l0,-3.44116l1.22758,0l0,-1.6912l-1.22758,0l0,-1.89361l-1.95239,0l0,1.89361l-2.52047,0l0,-0.7705c0,-0.65297 0.24813,-0.9011 0.93375,-0.9011l0.43096,0l0,-1.50184l-0.94027,0c-1.61284,0 -2.37682,0.52891 -2.37682,2.14175l0,1.03822l-1.08393,0l0,1.68467l1.08393,0l0,6.0661l1.95238,0l0,-6.0661l2.52047,0l0,3.80029c0,1.58019 0.60727,2.26581 2.18746,2.26581l1.00557,0l0,-1.72384l-0.38525,0z">
+                                </path>
+                                <path
+                                    d="m38.73553,17.13164c-0.13713,-1.00557 -0.95987,-1.61284 -1.92627,-1.61284c-0.95986,0 -1.75649,0.58768 -1.95238,1.61284l3.87865,0zm-3.89824,1.208c0.13712,1.14923 0.95987,1.8022 2.00462,1.8022c0.82275,0 1.45613,-0.38525 1.82832,-1.00558l2.00462,0c-0.46361,1.64549 -1.93932,2.69677 -3.87865,2.69677c-2.34416,0 -3.98965,-1.64548 -3.98965,-3.98965c0,-2.34417 1.7369,-4.03536 4.03536,-4.03536c2.31152,0 3.98965,1.70425 3.98965,4.03536c0,0.16977 -0.01305,0.33955 -0.0457,0.49626l-5.94857,0z">
+                                </path>
+                                <path
+                                    d="m53.26414,17.83032c0,-1.2537 -0.94681,-2.2201 -2.1091,-2.2201c-1.16229,0 -2.1091,0.93375 -2.1091,2.2201c0,1.2733 0.94681,2.2201 2.1091,2.2201c1.16229,0 2.1091,-0.95986 2.1091,-2.2201m-6.14446,7.04556l0,-10.92421l1.90667,0l0,1.00558c0.57462,-0.71174 1.43001,-1.14923 2.44865,-1.14923c2.09603,0 3.74152,1.72384 3.74152,4.00271s-1.67814,4.01578 -3.78723,4.01578c-0.97946,0 -1.78261,-0.38526 -2.34417,-1.03823l0,4.08107l-1.96544,0l0,0.00653z">
+                                </path>
+                                <path
+                                    d="m62.09231,17.83032c0,-1.30594 -0.94681,-2.2201 -2.1091,-2.2201c-1.16229,0 -2.1091,0.93375 -2.1091,2.2201c0,1.2733 0.94681,2.2201 2.1091,2.2201c1.16229,0 2.1091,-0.91416 2.1091,-2.2201m0.01959,3.87865l0,-1.00558c-0.57462,0.69868 -1.43001,1.12964 -2.44865,1.12964c-2.12868,0 -3.74152,-1.70425 -3.74152,-4.00271c0,-2.27887 1.67813,-4.01577 3.78723,-4.01577c0.99252,0 1.82832,0.43749 2.40294,1.11658l0,-0.97946l1.90667,0l0,7.7573l-1.90667,0z">
+                                </path>
+                                <path
+                                    d="m43.67852,14.70912s0.4832,-0.9011 1.67814,-0.9011c0.50931,0 0.8358,0.1763 0.8358,0.1763l0,1.97851s-0.71827,-0.44402 -1.37777,-0.35261c-0.6595,0.09142 -1.0774,0.69215 -1.0774,1.50184l0,4.59038l-1.97197,0l0,-7.75076l1.90667,0l0,0.75744l0.00653,0z">
+                                </path>
+                            </g>
+                        </svg>
+                    </span>
+                    {% comment %} <span>&nbsp; or</span>
+                    <span>
+                        <svg class="klarna-logo" role="img" aria-hidden="true" focusable="false" width="60px"
+                            height="30px" viewBox="0 0 60 30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <title>Klarna badge</title>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <path
+                                    d="M45.74265,18.1758 C44.72265,18.1758 43.89615,17.3928 43.89615,16.4238 C43.89615,15.4578 44.72265,14.6733 45.74265,14.6733 C46.76265,14.6733 47.58915,15.4578 47.58915,16.4238 C47.58915,17.3928 46.76265,18.1758 45.74265,18.1758 L45.74265,18.1758 Z M47.59515,13.0188 L47.59515,13.4568 C47.02065,13.0638 46.32615,12.8313 45.57615,12.8313 C43.59165,12.8313 41.98365,14.4408 41.98365,16.4238 C41.98365,18.4083 43.59165,20.0163 45.57615,20.0163 C46.32615,20.0163 47.02065,19.7853 47.59515,19.3938 L47.59515,19.8288 L49.63515,19.8288 L49.63515,13.0188 L47.59515,13.0188 Z"
+                                    fill="#000000"></path>
+                                <path
+                                    d="M16.04295,9.9843 L13.83045,9.9843 C13.83045,11.7963 12.99945,13.4583 11.54595,14.5473 L10.66995,15.2028 L14.06445,19.8303 L16.85445,19.8303 L13.73145,15.5733 C15.21045,14.0988 16.04295,12.1158 16.04295,9.9843"
+                                    fill="#000000"></path>
+                                <polygon fill="#000000"
+                                    points="8.13525 19.83045 10.40025 19.83045 10.40025 9.98445 8.13525 9.98445">
+                                </polygon>
+                                <polygon fill="#000000"
+                                    points="17.51175 19.82745 19.64625 19.82745 19.64625 9.98445 17.51175 9.98445">
+                                </polygon>
+                                <path
+                                    d="M38.3613,12.8364 C37.5483,12.8364 36.7773,13.0899 36.2628,13.7874 L36.2628,13.0209 L34.2333,13.0209 L34.2333,19.8279 L36.2868,19.8279 L36.2868,16.2504 C36.2868,15.2154 36.9813,14.7084 37.8183,14.7084 C38.7123,14.7084 39.2283,15.2424 39.2283,16.2369 L39.2283,19.8279 L41.2638,19.8279 L41.2638,15.4974 C41.2638,13.9149 40.0038,12.8364 38.3613,12.8364"
+                                    fill="#000000"></path>
+                                <path
+                                    d="M24.24015,18.1758 C23.22015,18.1758 22.39365,17.3928 22.39365,16.4238 C22.39365,15.4578 23.22015,14.6733 24.24015,14.6733 C25.26015,14.6733 26.08665,15.4578 26.08665,16.4238 C26.08665,17.3928 25.26015,18.1758 24.24015,18.1758 L24.24015,18.1758 Z M26.09265,13.0188 L26.09265,13.4568 C25.51815,13.0638 24.82365,12.8313 24.07365,12.8313 C22.08915,12.8313 20.48115,14.4408 20.48115,16.4238 C20.48115,18.4083 22.08915,20.0163 24.07365,20.0163 C24.82365,20.0163 25.51815,19.7853 26.09265,19.3938 L26.09265,19.8288 L28.13265,19.8288 L28.13265,13.0188 L26.09265,13.0188 Z"
+                                    fill="#000000"></path>
+                                <path
+                                    d="M31.2846,13.90725 L31.2846,13.02075 L29.1981,13.02075 L29.1981,19.82775 L31.2891,19.82775 L31.2891,16.64925 C31.2891,15.57675 32.4516,15.00075 33.2571,15.00075 C33.2661,15.00075 33.2736,15.00075 33.2826,15.00075 L33.2826,13.02075 C32.4546,13.02075 31.6926,13.37625 31.2846,13.90725"
+                                    fill="#000000"></path>
+                                <path
+                                    d="M51.7983,17.4126 C51.0918,17.4126 50.5188,17.9856 50.5188,18.6936 C50.5188,19.3986 51.0918,19.9716 51.7983,19.9716 C52.5048,19.9716 53.0778,19.3986 53.0778,18.6936 C53.0778,17.9856 52.5048,17.4126 51.7983,17.4126"
+                                    fill="#000000"></path>
+                            </g>
+                        </svg>
+                    </span> {% endcomment %}
+                </div>
+
+                <style>
+                    .afterpay-klarna {
+                        font-size: 12px;
+                        margin: 14px 0px;
+                        display: flex;
+                        align-items: Center;
+                    }
+
+                    .afterpay-logo {
+                        width: 104px;
+                        height: 36px;
+                    }
+
+                    .klarna-logo {
+                        width: 90px;
+                        height: 45px;
+                    }
+                </style>
+
+                {% include 'sample-program' %}
+
+                <div class="inventoryLocationInformation">
+                    <div class="showStoreStock btn--secondary btn" tabindex="0">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <span> Check Stores </span>
+                        </div>
+                    </div>
+                    <div id="inventoryLocationInformation" class="closed">
+                        <span class="inventoryLocationLoading">Loading..</span>
+                    </div>
+                </div>
+
+                {% unless block.settings.show_pickup_availability == false %}
+                {% render 'store-availability', product: product, current_variant: current_variant %}
+                {% endunless %}
+
+                {% if product.available and block.settings.show_backorder_text == true %}
+                {% render 'backorder', product: product, variant: current_variant %}
+                {% endif %}
+                <!-- Accordion Section -->
+                <div class="pdp-accordion-section">
+                    {% comment %}
+                    {% for block in section.blocks %}
+                    {% if block.type == 'accordion_item' %}
+                    <div class="accordion-item" {{ block.shopify_attributes }}>
+                        <button class="accordion-header" type="button"
+                            style="border-color: {{ section.settings.accordion_border_color }};">
+                            <span class="accordion-title" style="color: {{ block.settings.accordion_title_color }};">{{
+                                block.settings.accordion_title }}</span>
+                            <span class="accordion-icon"
+                                style="color: {{ block.settings.accordion_icon_color }};">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner"
+                                style="color: {{ block.settings.accordion_content_color }};">
+                                {{ block.settings.accordion_content }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endcomment %}
+                    <div class="mobile-only">
+                        {% if section.settings.show_testimonial %}
+                        <div class="pdp-image-gallery">
+                            <div class="customWidth"></div>
+                            {% assign mf = product.metafields.custom %}
+
+                            {% assign testimonial_heading = mf.testimonial_heading | default:
+                            section.settings.testimonial_heading %}
+                            {% assign testimonial_quote = mf.testimonial_quote | default:
+                            section.settings.testimonial_quote %}
+                            {% assign testimonial_author_name = mf.testimonial_author_name | default:
+                            section.settings.testimonial_author_name %}
+                            {% assign testimonial_author_role = mf.testimonial_author_role | default:
+                            section.settings.testimonial_author_role %}
+                            {% assign testimonial_avatar = mf.testimonial_avatar | default:
+                            section.settings.testimonial_avatar %}
+                            {% if testimonial_quote != blank %}
+                            {% if testimonial_heading != blank or testimonial_quote != blank %}
+                            <div class="pdp-testimonial-section"
+                                style="background-color: {{ section.settings.testimonial_bg_color }};">
+                                {% if testimonial_heading != blank %}
+                                <h2 class="testimonial-heading"
+                                    style="color: {{ section.settings.testimonial_heading_color }};">
+                                    {{ testimonial_heading }}
+                                </h2>
+                                {% endif %}
+
+                                {% if testimonial_quote != blank %}
+                                <blockquote class="testimonial-quote"
+                                    style="color: {{ section.settings.testimonial_quote_color }};">
+                                    {{ testimonial_quote }}
+                                </blockquote>
+                                {% endif %}
+
+                                {% if testimonial_author_name != blank or testimonial_author_role != blank or
+                                testimonial_avatar != blank %}
+                                <div class="testimonial-author">
+                                    {% if testimonial_avatar %}
+                                    <img src="{{ testimonial_avatar | img_url: '60x60' }}"
+                                        alt="{{ testimonial_author_name }}" class="testimonial-avatar">
+                                    {% endif %}
+
+                                    <div class="testimonial-author-info">
+                                        {% if testimonial_author_name != blank %}
+                                        <div class="testimonial-author-name"
+                                            style="color: {{ section.settings.testimonial_author_name_color }};">
+                                            {{ testimonial_author_name }}
+                                        </div>
+                                        {% endif %}
+
+                                        {% if testimonial_author_role != blank %}
+                                        <div class="testimonial-author-role"
+                                            style="color: {{ section.settings.testimonial_author_role_color }};">
+                                            {{ testimonial_author_role }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                            {% endif %}
+
+                        </div>
+                        {% endif %}
+                        <div class="pdp-image-gallery">
+                            <div class="customWidthwidget"></div>
+                            {%- for block in section.blocks -%}
+                            {%- case block.type -%}
+                            {%- when '@app' -%}
+                            {%- comment -%} Only render gigit widget here for mobile {%- endcomment -%}
+                            {%- if block.settings.app_id contains 'gigit' or block.id contains 'gigit' -%}
+                            <div blocktype="app" data-show-in-quickbuy="{{ show_app_blocks_in_quickbuy }}"
+                                blockid="{{ block.id }}">
+                                {% render block %}
+                            </div>
+                            {%- endif -%}
+                            {% endcase %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+
+                    {% render 'product-bundles' , product: product %}
+                    {% comment %} assign item2_content = product.metafields.custom.keyingredients {% endcomment %}
+
+                    {%- liquid
+
+
+                    assign item2_title = 'Ingredients'
+                    assign item2_content = product.metafields.instructions.Ingredients
+
+                    assign item3_title = 'How To Use'
+                    assign item3_content = product.metafields.instructions.HowToUse
+
+                    assign item5_title = 'Why We’re Obsessed'
+                    assign item5_content = product.metafields.custom.whyobsessed
+
+                    assign show_climate_impact = false
+                    if current_variant.metafields.vaayu.carbon_total
+                    if current_variant.metafields.vaayu.vaayu_water_total
+                    assign show_climate_impact = true
+                    endif
+                    endif
+                    -%}
+
+                    {% comment %} Check if there's actual proven claims content {% endcomment %}
+                    {% comment %} {% assign proven_claims_text = product.metafields.custom.proven_claims %} {%
+                    endcomment %}
+
+
+                    {% assign item6_title = '' %}
+
+                    {% assign item6_title = 'Proven Claims' %}
+
+
+                    {% comment %} Only set item7_title if climate impact data exists {% endcomment %}
+                    {% assign item7_title = '' %}
+                    {% if show_climate_impact %}
+                    {% assign item7_title = 'Climate Impact' %}
+                    {% endif %}
+
+                    {% capture item6_content %}<provenance-bundle id="provenance-trust-badge"
+                        url="https://www.provenance.org/bundles/6GJH4QOY/embed"></provenance-bundle>
+                    <script defer="" src="https://lib.provenance.org/sdk/@1/provenance-sdk.js"></script>{% endcapture %}
+
+                    {% capture item7_content %}
+                    <style>
+                        .container-carbons {
+
+                            padding: 5px 0;
+
+                        }
+
+                        .container-carbons .title {
+                            font-size: 15px;
+                            font-weight: bold;
+                            font-family: 'Tomato Grotesk';
+                        }
+
+                        .container-carbons .subtitle {
+                            margin-top: 10px;
+
+                        }
+
+                        .container-carbons .bar {
+                            height: 15px;
+                            width: 100%;
+                            background: #eee;
+                            border-radius: 5px;
+                            margin: 5px 0 20px 0;
+                            display: flex;
+                            overflow: hidden;
+                        }
+
+                        .container-carbons .segment {
+                            height: 100%;
+                        }
+
+                        .container-carbons .legend {
+                            display: flex;
+                            flex-wrap: wrap;
+                            font-size: 11px;
+                            margin-top: 10px;
+                            max-width: 400px
+                        }
+
+                        .container-carbons .legend div {
+                            display: flex;
+                            align-items: baseline;
+                            margin-right: 10px;
+
+                        }
+
+                        .container-carbons .legend span {
+                            display: inline-block;
+                            width: 10px;
+                            height: 10px;
+                            margin-right: 5px;
+                        }
+
+                        .container-carbons .info-box {
+                            background: #71848826;
+                            padding: 10px;
+                            margin-top: 15px;
+                            font-size: 12px;
+                            display: flex;
+                            align-items: center;
+                            border-radius: 5px;
+                            gap: 25px;
+                        }
+
+                        .container-carbons .new_update {
+                            text-decoration: underline;
+                        }
+
+                        .new_image_with_text {
+                            display: flex;
+                            align-items: end;
+                            gap: 0 10px;
+                            margin-bottom: 10px;
+                        }
+
+                        .new_image_with_text p {
+                            margin: 0;
+                        }
+
+                        .new_image_with_text img {
+                            height: 25px;
+                            width: auto;
+
+                        }
+
+                        .bold-font {
+                            font-weight: bold;
+                        }
+
+                        .font-light {
+                            font-weight: 400;
+                        }
+
+                        .mt-10-carbon {
+                            margin: 25px 0px !important;
+                        }
+
+                        .container-carbons .heading-carbons {
+                            font-size: 15px;
+                            font-family: 'Tomato Grotesk';
+                            max-width: 440px;
+                        }
+
+                        .container-carbons .subtitle {
+                            font-size: 15px;
+                            font-family: 'Tomato Grotesk';
+                        }
+
+                        .mobile-info-box {
+                            display: none !important;
+                        }
+
+                        #desktop-text {
+                            margin: 0px;
+                            font-size: 14px;
+                        }
+
+                        @media only screen and (max-width:600px) {
+                            .desktop-info-box {
+                                display: none !important;
+                            }
+
+                            .mobile-info-box {
+                                display: flex !important;
+                            }
+
+                            .mobile-info-box {
+                                gap: 40px !important;
+                                justify-content: space-between;
+                                padding: 9px 20px !important;
+                                align-items: center;
+                            }
+
+                            .container-carbons .subtitle {
+                                font-size: 14px !important;
+                            }
+
+                            .info-box-1 p {
+                                margin: 0px;
+                            }
+
+                            #desktop-text {
+                                margin: 0px;
+                                font-size: 12px;
+                            }
+
+                            #mobile-image {
+                                height: 50px;
+                            }
+
+                            .info-box-2 {
+                                display: flex;
+                                justify-content: Center;
+                                align-items: center;
+                            }
+                        }
+                    </style>
+
+                    <div class="container-carbons">
+                        <p class="heading-carbons">We measure each product's environmental impact across its entire
+                            lifecycle. <strong class="new_update"><a
+                                    href="https://www.thedetoxmarket.com/pages/vaayu">Learn more.</a></strong></p>
+
+                        <p class="subtitle">Impact for <span id="vaayu-title">{{ current_variant.title }}</span></p>
+
+                        <div class="subtitle  bold-font new_image_with_text"><img
+                                src="https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1765.svg?v=1738250874"
+                                alt="">
+                            <p> CARBON EMISSIONS <span class="font-light"> ~ {{
+                                    current_variant.metafields.vaayu.carbon_total | divided_by: 1000.0 | round: 2 }} kg
+                                    CO₂eq.</span></p>
+                        </div>
+
+                        <div class="bar">
+                            <div class="segment carbon_raw_material"
+                                style="width: {{ current_variant.metafields.vaayu.carbon_raw_material_extraction | divided_by: current_variant.metafields.vaayu.carbon_total | times: 100 }}%; background: #88BCC6CC;">
+                            </div>
+                            <div class="segment carbon_product_manufacture"
+                                style="width: {{ current_variant.metafields.vaayu.carbon_product_manufacturing | divided_by: current_variant.metafields.vaayu.carbon_total | times: 100 }}%; background: #708387;">
+                            </div>
+                            <div class="segment carbon_packaging"
+                                style="width: {{ current_variant.metafields.vaayu.carbon_packaging | divided_by: current_variant.metafields.vaayu.carbon_total | times: 100 }}%; background: #2D484E;">
+                            </div>
+                            <div class="segment carbon_transportation"
+                                style="width: {{ current_variant.metafields.vaayu.carbon_transportation | divided_by: current_variant.metafields.vaayu.carbon_total | times: 100 }}%; background: #1E899F;">
+                            </div>
+                            <div class="segment carbon_distribution"
+                                style="width: {{ current_variant.metafields.vaayu.carbon_distribution | divided_by: current_variant.metafields.vaayu.carbon_total | times: 100 }}%; background: #A0DDEA;">
+                            </div>
+                            <div class="segment carbon_use"
+                                style="width: {{ current_variant.metafields.vaayu.carbon_use | divided_by: current_variant.metafields.vaayu.carbon_total | times: 100 }}%; background: #7DBFBB;">
+                            </div>
+                            <div class="segment carbon_endoflife"
+                                style="width: {{ current_variant.metafields.vaayu.carbon_end_of_life | divided_by: current_variant.metafields.vaayu.carbon_total | times: 100 }}%; background:#9F9F9F;">
+                            </div>
+                        </div>
+
+                        <div class="subtitle bold-font  new_image_with_text"><img
+                                src="https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1766.svg?v=1738250873"
+                                alt="">
+                            <p>WATER <span class="font-light">~ {{ current_variant.metafields.vaayu.vaayu_water_total }}
+                                    l</span></p>
+                        </div>
+                        <div class="bar">
+                            <div class="segment water_raw_material"
+                                style="width: {{ current_variant.metafields.vaayu.water_raw_material_extraction | divided_by: current_variant.metafields.vaayu.vaayu_water_total | times: 100 }}%; background: #88BCC6CC;">
+                            </div>
+                            <div class="segment water_product_manufacture"
+                                style="width: {{ current_variant.metafields.vaayu.vaayu_water_product_manufacturing | divided_by: current_variant.metafields.vaayu.vaayu_water_total | times: 100 }}%; background: #708387;">
+                            </div>
+                            <div class="segment water_packaging"
+                                style="width: {{ current_variant.metafields.vaayu.water_packaging | divided_by: current_variant.metafields.vaayu.vaayu_water_total | times: 100 }}%; background: #2D484E;">
+                            </div>
+                            <div class="segment water_transportation"
+                                style="width: {{ current_variant.metafields.vaayu.water_transportation | divided_by: current_variant.metafields.vaayu.vaayu_water_total | times: 100 }}%; background: #1E899F;">
+                            </div>
+                            <div class="segment water_distribution"
+                                style="width: {{ current_variant.metafields.vaayu.vaayu_water_distribution | divided_by: current_variant.metafields.vaayu.vaayu_water_total | times: 100 }}%; background: #A0DDEA;">
+                            </div>
+                            <div class="segment water_use"
+                                style="width: {{ current_variant.metafields.vaayu.water_use | divided_by: current_variant.metafields.vaayu.vaayu_water_total | times: 100 }}%; background: #7DBFBB;">
+                            </div>
+                            <div class="segment water_endoflife"
+                                style="width: {{ current_variant.metafields.vaayu.vaayu_water_end_of_life | divided_by: current_variant.metafields.vaayu.vaayu_water_total | times: 100 }}%; background:#9F9F9F;">
+                            </div>
+                            <!-- <div class="segment" style="width: 33%; background: #98C1CA;"></div>
+            <div class="segment" style="width: 33%; background: #708387;"></div>
+             <div class="segment" style="width: 34%; background: #9F9F9F;"></div> -->
+                        </div>
+                        <div class="legend">
+                            <div><span style="background: #98C1CA;  border-radius: 50%;"></span> Raw Material Extraction
+                            </div>
+                            <div><span style="background: #708387;border-radius: 50%;"></span> Product Manufacturing
+                            </div><br>
+                            <div><span style="background: #2D484E;border-radius: 50%;"></span> Packaging</div>
+                            <div><span style="background: #1E899F;border-radius: 50%;"></span> Transportation</div>
+                            <div><span style="background: #A0DDEA;border-radius: 50%;"></span> Distribution</div>
+                            <div><span style="background: #7DBFBC;border-radius: 50%;"></span> Use</div>
+                            <div><span style="background: #9F9F9F;border-radius: 50%;"></span> End-of-Life</div>
+                        </div>
+
+
+                        <div class="subtitle  bold-font new_image_with_text mt-10-carbon"><img
+                                src="https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1767.svg?v=1738250870"
+                                alt="">
+                            <p>PLASTIC <span class="font-light" id="vayuu_plastic"> ~ {{
+                                    current_variant.metafields.vaayu.plastics }} g</span></p>
+                        </div>
+
+                        <div class="info-box desktop-info-box">
+                            <strong>1 KG CARBON IS EQUAL TO</strong>
+                            <img id="desktop-image" src="" alt="">
+                            <div class="desktop-content">
+
+                                <p id="desktop-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="info-box mobile-info-box">
+                            <div class="info-box-1">
+                                <strong>1 KG CARBON IS EQUAL TO</strong>
+                                <p id="mobile-description"></p>
+                            </div>
+                            <div class="info-box-2">
+                                <img id="mobile-image" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    {% endcapture %}
+                    <div class="product-detail-accordion" data-show-in-quickbuy="{{ block.settings.show_in_quickbuy }}">
+                        {%
+                        render 'accordion',
+                        allow_multi_open: true,
+                        add_content_class: 'rte',
+                        first_item_open: description_is_open,
+                        item1_title: description_title,
+                        item1_content: product.description,
+                        item2_title: item2_title,
+                        item2_content: item2_content,
+
+
+                        item5_title: item5_title,
+                        item5_content: item5_content,
+                        item3_title: item3_title,
+                        item3_content: item3_content,
+                        item6_title: item6_title,
+                        item6_content: item6_content,
+                        item7_title: item7_title,
+                        item7_content: item7_content,
+                        sustainability_heading: item6_title != blank or item7_title != blank
+                        %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Lightbox Modal -->
+<div class="pdp-lightbox-modal" id="pdpLightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+    <button class="lightbox-next" aria-label="Next image">&rsaquo;</button>
+    <div class="lightbox-content">
+        <img src="" alt="" id="lightboxImage">
+    </div>
+    <div class="lightbox-counter">
+        <span id="lightboxCounter"></span>
+    </div>
+</div>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const variant_fields = [];
+        {% - for variant in product.variants -%}
+
+        // pushing data what we need
+        variant_fields.push({
+            id: {{ variant.id }},
+        metafields: {{ variant.metafields.vaayu | json }}
+    
+  });
+    {% - endfor -%}
+
+
+    setTimeout(function () {
+        console.log("I JUST RAN");
+        $('#clickyboxes-option-color a').click(function () {
+            $('#vaayu-title').html($(this).attr('title'))
+            setTimeout(function () {
+                console.log("I JUST RAN AGAIN");
+                const vaayu_urlParams = new URLSearchParams(window.location.search);
+                const currentVariantID = parseInt(vaayu_urlParams.get('variant').trim().toLowerCase());
+                console.log(' daffy current variant ', currentVariantID);
+                console.log(' daffy all variant ', variant_fields);
+                const variant_selected = variant_fields.filter(function (vant) {
+                    if (vant.id == currentVariantID) {
+                        return vant;
+                    }
+                });
+                console.log(variant_selected[0]);
+                var const_variant_selected = variant_selected[0];
+                $('.carbon_raw_material').css('width', (const_variant_selected.metafields.carbon_raw_material_extraction / const_variant_selected.metafields.carbon_total * 100) + '%');
+                $('.carbon_product_manufacture').css('width', (const_variant_selected.metafields.carbon_product_manufacturing / const_variant_selected.metafields.carbon_total * 100) + '%');
+                $('.carbon_packaging').css('width', (const_variant_selected.metafields.carbon_packaging / const_variant_selected.metafields.carbon_total * 100) + '%');
+                $('.carbon_transportation').css('width', (const_variant_selected.metafields.carbon_transportation / const_variant_selected.metafields.carbon_total * 100) + '%');
+                $('.carbon_distribution').css('width', (const_variant_selected.metafields.carbon_distribution / const_variant_selected.metafields.carbon_total * 100) + '%');
+                $('.carbon_use').css('width', (const_variant_selected.metafields.carbon_use / const_variant_selected.metafields.carbon_total * 100) + '%');
+                $('.carbon_endoflife').css('width', (const_variant_selected.metafields.carbon_end_of_life / const_variant_selected.metafields.carbon_total * 100) + '%');
+
+                $('.water_raw_material').css('width', (const_variant_selected.metafields.water_raw_material_extraction / const_variant_selected.metafields.vaayu_water_total * 100) + '%');
+                $('.water_product_manufacture').css('width', (const_variant_selected.metafields.vaayu_water_product_manufacturing / const_variant_selected.metafields.vaayu_water_total * 100) + '%');
+                $('.water_packaging').css('width', (const_variant_selected.metafields.water_packaging / const_variant_selected.metafields.vaayu_water_total * 100) + '%');
+                $('.water_transportation').css('width', (const_variant_selected.metafields.water_transportation / const_variant_selected.metafields.vaayu_water_total * 100) + '%');
+                $('.water_distribution').css('width', (const_variant_selected.metafields.vaayu_water_distribution / const_variant_selected.metafields.vaayu_water_total * 100) + '%');
+                $('.water_use').css('width', (const_variant_selected.metafields.water_use / const_variant_selected.metafields.vaayu_water_total * 100) + '%');
+                $('.water_endoflife').css('width', (const_variant_selected.metafields.vaayu_water_end_of_life / const_variant_selected.metafields.vaayu_water_total * 100) + '%');
+
+                $('#vayuu_plastic').html('~ ' + const_variant_selected.metafields.plastics + ' g');
+            }, 1000);
+
+
+
+            console.log('Vaayu', $(this).attr('title'))
+        });
+    }, 12000);
+
+    const data = [
+        {
+            text: "Driving a gas-powered car for 3 miles (5 km)",
+            image: "https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1760.svg?v=1738330018"
+        },
+        {
+            text: "Taking 15 10-minute showers",
+            image: "https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1761_1.svg?v=1738329524"
+        },
+        {
+            text: "Leaving the stove on for 40 minutes",
+            image: "https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1764_1.svg?v=1738329527"
+        },
+        {
+            text: "Using air conditioning for 45 minutes",
+            image: "https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1763_1.svg?v=1738329530"
+        },
+        {
+            text: "Using a laptop for 100 hours",
+            image: "https://cdn.shopify.com/s/files/1/0067/3362/files/NewGroupe4_1.svg?v=1738329531"
+        },
+        {
+            text: "Machine washing 2 loads of laundry",
+            image: "https://cdn.shopify.com/s/files/1/0067/3362/files/Group_1762_1.svg?v=1738329533"
+        }
+    ];
+
+    // Select a random item from the data array
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const randomItem = data[randomIndex];
+
+    // Update desktop info box
+    document.getElementById("desktop-text").textContent = randomItem.text;
+    document.getElementById("desktop-image").src = randomItem.image;
+
+    // Update mobile info box
+    document.getElementById("mobile-description").textContent = randomItem.text;
+    document.getElementById("mobile-image").src = randomItem.image;
+  });
+    async function _getCurrentProduct() {
+        const product = document.querySelector(`script[id*='ProductJson']`);
+
+        if (product) {
+            return JSON.parse(product.innerHTML);
+        }
+
+        let url;
+
+        url = `https://${window.location.host + window.location.pathname}.json`;
+
+        return new Promise(async (resolve, reject) => {
+            let response = await fetch(url);
+
+            let { product } = await response.json();
+
+            window.ezfy_product = product;
+
+            resolve(product);
+        });
+    }
+</script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Image Gallery
+        const thumbnails = document.querySelectorAll('.pdp-thumbnail');
+        const slides = document.querySelectorAll('.pdp-image-slide');
+        const thumbnailScroller = document.querySelector('.pdp-thumbnail-scroller');
+        const variantGroups = document.querySelectorAll('.pdp-variant-group');
+
+        // Preload all images for instant switching
+        const preloadImages = () => {
+            slides.forEach(slide => {
+                const img = slide.querySelector('img');
+                if (img && img.dataset.src) {
+                    // If using lazy loading, force load
+                    img.src = img.dataset.src;
+                }
+                // Create a new image object to ensure it's in browser cache
+                if (img && img.src) {
+                    const preloadImg = new Image();
+                    preloadImg.src = img.src;
+                }
+            });
+        };
+
+        // Preload images immediately
+        preloadImages();
+
+        // Function to update active slide and thumbnail
+        const updateActiveSlide = (index) => {
+            // Ensure index is within bounds
+            if (index < 0 || index >= slides.length) return;
+
+            // Update active thumbnail
+            thumbnails.forEach(t => t.classList.remove('active'));
+            if (thumbnails[index]) {
+                thumbnails[index].classList.add('active');
+
+                // Scroll thumbnail into view if needed
+                const thumbnailViewport = document.querySelector('.pdp-thumbnail-viewport');
+                if (thumbnailViewport && thumbnails[index]) {
+                    const isMobile = window.innerWidth <= 768;
+                    const thumbnail = thumbnails[index];
+                    const viewport = thumbnailViewport;
+
+                    if (isMobile) {
+                        // Horizontal scroll for mobile
+                        const thumbnailLeft = thumbnail.offsetLeft;
+                        const thumbnailWidth = thumbnail.offsetWidth;
+                        const viewportWidth = viewport.clientWidth;
+                        const scrollLeft = viewport.scrollLeft;
+
+                        // Check if thumbnail is out of view
+                        if (thumbnailLeft < scrollLeft || thumbnailLeft + thumbnailWidth > scrollLeft + viewportWidth) {
+                            viewport.scrollTo({
+                                left: thumbnailLeft - (viewportWidth / 2) + (thumbnailWidth / 2),
+                                behavior: 'smooth'
+                            });
+                        }
+                    } else {
+                        // Vertical scroll for desktop
+                        const thumbnailTop = thumbnail.offsetTop;
+                        const thumbnailHeight = thumbnail.offsetHeight;
+                        const viewportHeight = viewport.clientHeight;
+                        const scrollTop = viewport.scrollTop;
+
+                        // Check if thumbnail is out of view
+                        if (thumbnailTop < scrollTop || thumbnailTop + thumbnailHeight > scrollTop + viewportHeight) {
+                            viewport.scrollTo({
+                                top: thumbnailTop - (viewportHeight / 2) + (thumbnailHeight / 2),
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            }
+
+            // Update active slide with smooth transition
+            slides.forEach(s => s.classList.remove('active'));
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+        };
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function () {
+                const index = parseInt(this.dataset.imageIndex);
+                updateActiveSlide(index);
+            });
+        });
+
+        // Add swipe functionality to main image
+        const mainImageContainer = document.querySelector('.pdp-main-image');
+        if (mainImageContainer && slides.length > 1) {
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+            let isDragging = false;
+
+            // Mouse and touch event handlers
+            const handleStart = (e) => {
+                isDragging = true;
+                const touch = e.type.includes('touch') ? e.touches[0] : e;
+                touchStartX = touch.clientX;
+                touchStartY = touch.clientY;
+                mainImageContainer.style.cursor = 'grabbing';
+            };
+
+            const handleMove = (e) => {
+                if (!isDragging) return;
+                const touch = e.type.includes('touch') ? e.touches[0] : e;
+                touchEndX = touch.clientX;
+                touchEndY = touch.clientY;
+            };
+
+            const handleEnd = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                mainImageContainer.style.cursor = 'zoom-in';
+
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+                const minSwipeDistance = 50;
+
+                // Only trigger swipe if horizontal movement is greater than vertical
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+                    const currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+                    let newIndex = currentIndex;
+
+                    if (deltaX > 0) {
+                        // Swipe right - go to previous image
+                        newIndex = currentIndex > 0 ? currentIndex - 1 : slides.length - 1;
+                    } else {
+                        // Swipe left - go to next image
+                        newIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
+                    }
+
+                    updateActiveSlide(newIndex);
+                }
+
+                // Reset touch positions
+                touchStartX = 0;
+                touchStartY = 0;
+                touchEndX = 0;
+                touchEndY = 0;
+            };
+
+            // Touch events for mobile
+            mainImageContainer.addEventListener('touchstart', handleStart, { passive: true });
+            mainImageContainer.addEventListener('touchmove', handleMove, { passive: true });
+            mainImageContainer.addEventListener('touchend', handleEnd);
+
+            // Mouse events for desktop
+            mainImageContainer.addEventListener('mousedown', handleStart);
+            mainImageContainer.addEventListener('mousemove', handleMove);
+            mainImageContainer.addEventListener('mouseup', handleEnd);
+            mainImageContainer.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    handleEnd();
+                }
+            });
+        }
+
+
+        if (thumbnailScroller) {
+            const thumbnailViewport = thumbnailScroller.querySelector('.pdp-thumbnail-viewport');
+            const navUp = thumbnailScroller.querySelector('.thumbnail-nav--up');
+            const navDown = thumbnailScroller.querySelector('.thumbnail-nav--down');
+            const visibleCount = parseInt(thumbnailScroller.dataset.visibleCount, 10) || 4;
+            const thumbnailItems = thumbnailScroller.querySelectorAll('.pdp-thumbnail');
+
+            const setNavDisabled = (navEl, isDisabled) => {
+                if (!navEl) return;
+                if (isDisabled) {
+                    navEl.classList.add('is-disabled');
+                    navEl.setAttribute('aria-disabled', 'true');
+                } else {
+                    navEl.classList.remove('is-disabled');
+                    navEl.setAttribute('aria-disabled', 'false');
+                }
+            };
+
+            const attachKeyHandler = (navEl, direction) => {
+                if (!navEl) return;
+                navEl.addEventListener('keydown', (event) => {
+                    const key = event.key;
+                    if (key === 'Enter' || key === ' ') {
+                        event.preventDefault();
+                        scrollByDirection(direction);
+                    }
+                    const isMobile = window.innerWidth <= 768;
+                    if (!isMobile) {
+                        if (key === 'ArrowUp' && direction === 'up') {
+                            event.preventDefault();
+                            scrollByDirection('up');
+                        }
+                        if (key === 'ArrowDown' && direction === 'down') {
+                            event.preventDefault();
+                            scrollByDirection('down');
+                        }
+                    } else {
+                        if (key === 'ArrowLeft' && direction === 'up') {
+                            event.preventDefault();
+                            scrollByDirection('up');
+                        }
+                        if (key === 'ArrowRight' && direction === 'down') {
+                            event.preventDefault();
+                            scrollByDirection('down');
+                        }
+                    }
+                });
+            };
+
+            if (!thumbnailViewport || thumbnailItems.length <= visibleCount) {
+                thumbnailScroller.classList.add('pdp-thumbnail-scroller--static');
+                setNavDisabled(navUp, true);
+                setNavDisabled(navDown, true);
+            } else {
+                thumbnailScroller.classList.remove('pdp-thumbnail-scroller--static');
+
+                const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+                const getStride = () => {
+                    const isMobile = window.innerWidth <= 768;
+
+                    if (isMobile) {
+                        // Horizontal scrolling on mobile
+                        if (thumbnailItems.length <= 1) {
+                            const singleWidth = thumbnailItems[0]?.getBoundingClientRect().width;
+                            return singleWidth || 44;
+                        }
+
+                        const offsetGap = Math.abs(thumbnailItems[1].offsetLeft - thumbnailItems[0].offsetLeft);
+                        if (offsetGap > 0) {
+                            return offsetGap;
+                        }
+
+                        const itemWidth = thumbnailItems[0].getBoundingClientRect().width || 44;
+                        const viewportStyles = window.getComputedStyle(thumbnailViewport);
+                        const columnGap = parseFloat(viewportStyles.columnGap || viewportStyles.gap || '0');
+                        return itemWidth + (Number.isFinite(columnGap) ? columnGap : 0);
+                    } else {
+                        // Vertical scrolling on desktop
+                        if (thumbnailItems.length <= 1) {
+                            const singleHeight = thumbnailItems[0]?.getBoundingClientRect().height;
+                            return singleHeight || 80;
+                        }
+
+                        const offsetGap = Math.abs(thumbnailItems[1].offsetTop - thumbnailItems[0].offsetTop);
+                        if (offsetGap > 0) {
+                            return offsetGap;
+                        }
+
+                        const itemHeight = thumbnailItems[0].getBoundingClientRect().height || 80;
+                        const viewportStyles = window.getComputedStyle(thumbnailViewport);
+                        const rowGap = parseFloat(viewportStyles.rowGap || viewportStyles.gap || '0');
+                        return itemHeight + (Number.isFinite(rowGap) ? rowGap : 0);
+                    }
+                };
+
+                const getScrollStep = () => {
+                    const isMobile = window.innerWidth <= 768;
+                    const mobileVisibleCount = 4;
+                    return getStride() * (isMobile ? mobileVisibleCount : visibleCount);
+                };
+
+                const updateNavState = () => {
+                    const isMobile = window.innerWidth <= 768;
+
+                    if (isMobile) {
+                        // Horizontal scrolling
+                        const maxScrollLeft = Math.max(thumbnailViewport.scrollWidth - thumbnailViewport.clientWidth, 0);
+                        if (navUp) {
+                            setNavDisabled(navUp, thumbnailViewport.scrollLeft <= 1);
+                        }
+                        if (navDown) {
+                            setNavDisabled(navDown, thumbnailViewport.scrollLeft >= maxScrollLeft - 1);
+                        }
+                    } else {
+                        // Vertical scrolling
+                        const maxScrollTop = Math.max(thumbnailViewport.scrollHeight - thumbnailViewport.clientHeight, 0);
+                        if (navUp) {
+                            setNavDisabled(navUp, thumbnailViewport.scrollTop <= 1);
+                        }
+                        if (navDown) {
+                            setNavDisabled(navDown, thumbnailViewport.scrollTop >= maxScrollTop - 1);
+                        }
+                    }
+                };
+
+                const scrollByDirection = (direction) => {
+                    const isMobile = window.innerWidth <= 768;
+
+                    if (isMobile) {
+                        // Horizontal scrolling
+                        const maxScrollLeft = Math.max(thumbnailViewport.scrollWidth - thumbnailViewport.clientWidth, 0);
+                        const nextPosition = thumbnailViewport.scrollLeft + (direction === 'up' ? -getScrollStep() : getScrollStep());
+
+                        thumbnailViewport.scrollTo({
+                            left: clamp(nextPosition, 0, maxScrollLeft),
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Vertical scrolling
+                        const maxScrollTop = Math.max(thumbnailViewport.scrollHeight - thumbnailViewport.clientHeight, 0);
+                        const nextPosition = thumbnailViewport.scrollTop + (direction === 'up' ? -getScrollStep() : getScrollStep());
+
+                        thumbnailViewport.scrollTo({
+                            top: clamp(nextPosition, 0, maxScrollTop),
+                            behavior: 'smooth'
+                        });
+                    }
+                };
+
+                if (navUp) {
+                    navUp.addEventListener('click', () => scrollByDirection('up'));
+                    attachKeyHandler(navUp, 'up');
+                }
+
+                if (navDown) {
+                    navDown.addEventListener('click', () => scrollByDirection('down'));
+                    attachKeyHandler(navDown, 'down');
+                }
+
+                thumbnailViewport.addEventListener('scroll', () => window.requestAnimationFrame(updateNavState), { passive: true });
+                window.addEventListener('resize', () => window.requestAnimationFrame(updateNavState));
+
+                updateNavState();
+            }
+        }
+
+        const addToCartBtn = document.querySelector('.pdp-add-to-cart');
+
+        const updateGroupSelectedLabel = (group) => {
+            if (!group) return;
+            const label = group.querySelector('.variant-option-selected');
+            const activeButton = group.querySelector('.variant-option.active, .variant-swatch.active');
+            if (label && activeButton) {
+                label.textContent = activeButton.dataset.optionValue;
+            }
+        };
+
+        // Variant Selection
+        const variantButtons = document.querySelectorAll('.variant-option, .variant-swatch');
+
+        variantButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const optionGroup = this.closest('.pdp-variant-group');
+                const siblings = optionGroup.querySelectorAll('.variant-option, .variant-swatch');
+
+                siblings.forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+
+                updateGroupSelectedLabel(optionGroup);
+                updateVariant();
+            });
+        });
+
+        variantGroups.forEach(group => updateGroupSelectedLabel(group));
+
+        // Run initial thumbnail filtering based on default selected swatch/variant
+        const enableSwatchFiltering = {{ product.metafields.custom.color_variant_swatch | default: false
+    }};
+
+    function filterImagesBySwatch() {
+        const activeColorSwatch = document.querySelector('.variant-swatches .variant-swatch.active');
+        const activeVariantOption = document.querySelector('.variant-options .variant-option.active');
+
+        const allSlides = document.querySelectorAll('.pdp-image-slide');
+        const allThumbnails = document.querySelectorAll('.pdp-thumbnail');
+
+        // 👉 CASE 1: SWATCH (keep your existing logic)
+        if (activeColorSwatch) {
+            const selectedValue = activeColorSwatch.dataset.optionValue.toLowerCase().trim();
+            let firstVisibleIndex = -1;
+
+            allSlides.forEach((slide, idx) => {
+                let alt = '';
+                const slideImg = slide.querySelector('img');
+                const slideIframe = slide.querySelector('iframe');
+
+                if (slideImg) {
+                    alt = slideImg.alt || '';
+                } else if (slideIframe) {
+                    alt = slideIframe.getAttribute('title') || '';
+                }
+
+                if (!alt && allThumbnails[idx]) {
+                    const thumbImg = allThumbnails[idx].querySelector('img');
+                    if (thumbImg) alt = thumbImg.alt || '';
+                }
+
+                alt = alt.toLowerCase().trim();
+
+                const isMatch = alt.includes(selectedValue) || alt.includes('always');
+
+                slide.style.display = isMatch ? '' : 'none';
+
+                if (allThumbnails[idx]) {
+                    allThumbnails[idx].style.display = isMatch ? '' : 'none';
+                }
+
+                if (isMatch && firstVisibleIndex === -1) {
+                    firstVisibleIndex = idx;
+                }
+            });
+
+            if (firstVisibleIndex !== -1) {
+                updateActiveSlide(firstVisibleIndex);
+            }
+        }
+
+        // 👉 CASE 2: OTHER VARIANTS (no filtering, only switch image)
+        else if (activeVariantOption) {
+            const selectedValue = activeVariantOption.dataset.optionValue.toLowerCase().trim();
+            let matchedIndex = -1;
+
+            allSlides.forEach((slide, idx) => {
+                let alt = '';
+                const slideImg = slide.querySelector('img');
+                const slideIframe = slide.querySelector('iframe');
+
+                if (slideImg) {
+                    alt = slideImg.alt || '';
+                } else if (slideIframe) {
+                    alt = slideIframe.getAttribute('title') || '';
+                }
+
+                if (!alt && allThumbnails[idx]) {
+                    const thumbImg = allThumbnails[idx].querySelector('img');
+                    if (thumbImg) alt = thumbImg.alt || '';
+                }
+
+                alt = alt.toLowerCase().trim();
+
+                // find first match only
+                if (matchedIndex === -1 && alt.includes(selectedValue)) {
+                    matchedIndex = idx;
+                }
+
+                // 👉 ALWAYS show all images
+                slide.style.display = '';
+                if (allThumbnails[idx]) {
+                    allThumbnails[idx].style.display = '';
+                }
+            });
+
+            // 👉 Switch to matched image OR fallback to first
+            if (matchedIndex !== -1) {
+                updateActiveSlide(matchedIndex);
+            } else {
+                updateActiveSlide(0);
+            }
+        }
+    }
+    filterImagesBySwatch();
+
+    function updateVariant() {
+        const selectedOptions = [];
+        const variantGroups = document.querySelectorAll('.pdp-variant-group');
+
+        variantGroups.forEach(group => {
+            const activeBtn = group.querySelector('.variant-option.active, .variant-swatch.active');
+            if (activeBtn) {
+                selectedOptions.push(activeBtn.dataset.optionValue);
+            }
+        });
+
+        // Find variant that matches selected options
+        const productData = {{ product | json
+    }};
+    const matchingVariant = productData.variants.find(variant => {
+        return variant.options.every((option, index) => option === selectedOptions[index]);
+    });
+
+    if (matchingVariant) {
+        addToCartBtn.dataset.variantId = matchingVariant.id;
+
+        // Update hidden form input for Recharge integration
+        const variantIdInput = document.querySelector('.product-variant-id');
+        if (variantIdInput) {
+            variantIdInput.value = matchingVariant.id;
+        }
+
+        // Trigger Recharge widget update
+        if (window.ReCharge && window.ReCharge.updateVariant) {
+            window.ReCharge.updateVariant(matchingVariant.id);
+        }
+
+        // Update button price display
+        const buttonPriceEl = addToCartBtn.querySelector('.button-price');
+
+        if (buttonPriceEl) {
+            // Check if product has subscription available
+            const hasSubscription = addToCartBtn.dataset.hasSubscription === 'true';
+
+            if (hasSubscription) {
+                // Always hide price when product has subscription option
+                buttonPriceEl.style.display = 'none';
+            } else {
+                // Show price for products without subscription
+                buttonPriceEl.style.display = '';
+                buttonPriceEl.textContent = formatMoney(matchingVariant.price);
+            }
+
+            // Update data attributes
+            addToCartBtn.dataset.price = formatMoney(matchingVariant.price);
+            if (matchingVariant.compare_at_price && matchingVariant.compare_at_price > matchingVariant.price) {
+                addToCartBtn.dataset.comparePrice = formatMoney(matchingVariant.compare_at_price);
+            } else {
+                addToCartBtn.dataset.comparePrice = '';
+            }
+        }
+
+        // Check availability and update button state
+        const bisTrigger = document.getElementById('BIS_trigger');
+        const bisFrame = document.getElementById('BIS_frame');
+
+        if (matchingVariant.available) {
+            addToCartBtn.disabled = false;
+            addToCartBtn.style.display = '';
+            const buttonText = addToCartBtn.querySelector('.button-text');
+            if (buttonText) {
+                buttonText.textContent = '{{ section.settings.button_text }}';
+            }
+            // Hide waitlist
+            if (bisTrigger) bisTrigger.style.display = 'none';
+            if (bisFrame) bisFrame.style.display = 'none';
+        } else {
+            // Hide add to cart
+            addToCartBtn.style.display = 'none';
+            if (buttonPriceEl) {
+                buttonPriceEl.style.display = 'none';
+            }
+            // Show waitlist trigger button only (not the frame)
+            if (bisTrigger) {
+                bisTrigger.style.display = 'flex';
+                bisTrigger.dataset.variantId = matchingVariant.id;
+            }
+            // Always hide BIS_frame on swatch change - only show on trigger click
+            if (bisFrame) bisFrame.style.display = 'none';
+        }
+        // Update URL with selected variant
+        const params = new URLSearchParams(window.location.search);
+        params.set('variant', matchingVariant.id);
+        window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+
+        // Update sample program button if it exists (using querySelectorAll for safety)
+        const sampleButtons = document.querySelectorAll('#sample-it, .sample-it-button');
+        sampleButtons.forEach(btn => {
+            btn.dataset.variant = matchingVariant.id;
+            btn.setAttribute('data-variant', matchingVariant.id);
+        });
+
+        // Filter thumbnails and main images by selected color swatch
+        filterImagesBySwatch();
+    }
+  }
+
+    function formatMoney(cents) {
+        return '$' + (cents / 100).toFixed(2);
+    }
+
+    // BIS waitlist: only show frame when trigger is clicked
+    const bisTriggerBtn = document.getElementById('BIS_trigger');
+    if (bisTriggerBtn) {
+        bisTriggerBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const bisFrame = document.getElementById('BIS_frame');
+            if (bisFrame) {
+                bisFrame.style.display = bisFrame.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    }
+
+    // Mark out-of-stock swatches with diagonal line
+    const productData = {{ product | json }};
+    const swatchButtons = document.querySelectorAll('.variant-swatch');
+    swatchButtons.forEach(swatch => {
+        const swatchValue = swatch.dataset.optionValue;
+        const optionPosition = parseInt(swatch.dataset.optionPosition);
+        const optionIndex = optionPosition - 1;
+        // Check if ANY variant with this option value is available
+        const hasAvailable = productData.variants.some(v => {
+            return v.options[optionIndex] === swatchValue && v.available;
+        });
+        if (!hasAvailable) {
+            swatch.classList.add('is-sold-out');
+        }
+    });
+
+    // Quantity Selector
+    const quantityInput = document.querySelector('.quantity-input');
+    const decreaseBtn = document.querySelector('.quantity-decrease');
+    const increaseBtn = document.querySelector('.quantity-increase');
+
+    // Function to update hidden quantity input
+    function updateHiddenQuantity(value) {
+        const hiddenQuantityInput = document.querySelector('.product-quantity-input');
+        if (hiddenQuantityInput) {
+            hiddenQuantityInput.value = value;
+        }
+    }
+
+    if (decreaseBtn) {
+        decreaseBtn.addEventListener('click', function () {
+            let currentValue = parseInt(quantityInput.value) || 1;
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+                updateHiddenQuantity(currentValue - 1);
+            }
+        });
+    }
+
+    if (increaseBtn) {
+        increaseBtn.addEventListener('click', function () {
+            let currentValue = parseInt(quantityInput.value) || 1;
+            const maxValue = parseInt(quantityInput.max) || 99;
+            if (currentValue < maxValue) {
+                quantityInput.value = currentValue + 1;
+                updateHiddenQuantity(currentValue + 1);
+            }
+        });
+    }
+
+    if (quantityInput) {
+        quantityInput.addEventListener('change', function () {
+            let value = parseInt(this.value) || 1;
+            const min = parseInt(this.min) || 1;
+            const max = parseInt(this.max) || 99;
+
+            if (value < min) value = min;
+            if (value > max) value = max;
+
+            this.value = value;
+            updateHiddenQuantity(value);
+        });
+    }
+
+    // Add to Cart Form Submission
+    const productForm = document.querySelector('.pdp-product-form');
+
+    if (productForm) {
+        productForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data - this will include any Recharge subscription properties
+            const formData = new FormData(this);
+            const formDataObj = {};
+
+            // Convert FormData to object
+            for (let [key, value] of formData.entries()) {
+                // Handle properties object for Recharge
+                if (key.startsWith('properties[')) {
+                    if (!formDataObj.properties) {
+                        formDataObj.properties = {};
+                    }
+                    const propKey = key.match(/properties\[(.*?)\]/)[1];
+                    formDataObj.properties[propKey] = value;
+                } else if (key === 'id') {
+                    formDataObj.id = value;
+                } else if (key === 'quantity') {
+                    formDataObj.quantity = parseInt(value);
+                } else if (key === 'selling_plan') {
+                    formDataObj.selling_plan = value;
+                } else {
+                    formDataObj[key] = value;
+                }
+            }
+
+            // Show loading spinner
+            addToCartBtn.classList.add('loading');
+
+            // Prepare the request body
+            const requestBody = {
+                items: [{
+                    id: formDataObj.id,
+                    quantity: formDataObj.quantity || 1
+                }]
+            };
+
+            // Add selling plan if present (for Recharge subscriptions)
+            if (formDataObj.selling_plan) {
+                requestBody.items[0].selling_plan = formDataObj.selling_plan;
+            }
+
+            // Add properties if present (for Recharge)
+            if (formDataObj.properties) {
+                requestBody.items[0].properties = formDataObj.properties;
+            }
+
+            // Add to cart
+            fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestBody)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to add to cart');
+                    }
+                    return response.json();
+                })
+                .then(addedItem => {
+                    // Fetch the updated cart data
+                    return fetch('/cart.js').then(res => res.json());
+                })
+                .then(cart => {
+                    // Update cart count badges
+                    const cartCountBadges = document.querySelectorAll('.cart-count-badge');
+                    cartCountBadges.forEach(badge => {
+                        badge.textContent = cart.item_count;
+                        if (cart.item_count > 0) {
+                            badge.style.display = 'flex';
+                        }
+                    });
+
+                    // Update cart icon aria-labels
+                    const cartIcons = document.querySelectorAll('[data-cart-drawer-trigger]');
+                    cartIcons.forEach(icon => {
+                        icon.setAttribute('aria-label', `Cart (${cart.item_count} items)`);
+                    });
+
+                    // Update the cart bubble in the cart drawer button
+                    const cartDrawerButton = document.querySelector('cart-drawer-component button[aria-label*="cart"]');
+                    if (cartDrawerButton) {
+                        cartDrawerButton.setAttribute('aria-label', `Open cart drawer Cart count: ${cart.item_count}`);
+                    }
+
+                    // Refresh the cart drawer content
+                    const cartDrawerComponent = document.querySelector('cart-drawer-component');
+                    const cartItemsComponent = document.querySelector('cart-items-component');
+
+                    if (cartItemsComponent) {
+                        // Fetch the current page to get the updated cart drawer HTML
+                        fetch(window.location.href)
+                            .then(response => response.text())
+                            .then(html => {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, 'text/html');
+                                const newCartItemsComponent = doc.querySelector('cart-items-component');
+
+                                if (newCartItemsComponent) {
+                                    // Replace the cart items component content
+                                    cartItemsComponent.innerHTML = newCartItemsComponent.innerHTML;
+
+                                    // Update the dialog class to remove empty state
+                                    const dialog = cartDrawerComponent?.querySelector('dialog');
+                                    if (dialog) {
+                                        if (cart.item_count === 0) {
+                                            dialog.classList.add('cart-drawer--empty');
+                                        } else {
+                                            dialog.classList.remove('cart-drawer--empty');
+                                        }
+                                    }
+                                }
+
+                                // Hide loading spinner
+                                addToCartBtn.classList.remove('loading');
+
+                                // Open the cart drawer after a small delay to sync with content update
+                                if (cartDrawerComponent && typeof cartDrawerComponent.open === 'function') {
+                                    setTimeout(() => {
+                                        cartDrawerComponent.open();
+                                    }, 200);
+                                }
+                            })
+                            .catch(err => {
+                                console.error('Error refreshing cart drawer:', err);
+                                // Hide loading spinner
+                                addToCartBtn.classList.remove('loading');
+                                // Still try to open the drawer even if refresh failed
+                                if (cartDrawerComponent && typeof cartDrawerComponent.open === 'function') {
+                                    cartDrawerComponent.open();
+                                }
+                            });
+                    } else {
+                        // Hide loading spinner
+                        addToCartBtn.classList.remove('loading');
+                        // Fallback: just open the drawer
+                        if (cartDrawerComponent && typeof cartDrawerComponent.open === 'function') {
+                            cartDrawerComponent.open();
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding to cart:', error);
+                    // Hide loading spinner on error
+                    addToCartBtn.classList.remove('loading');
+                    alert('Failed to add item to cart. Please try again.');
+                });
+        });
+    }
+
+    // Accordion Functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function () {
+            const accordionItem = this.parentElement;
+            const isActive = accordionItem.classList.contains('active');
+
+            // Close all accordion items
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                accordionItem.classList.add('active');
+            }
+        });
+    });
+
+    // Image Lightbox Functionality
+    const lightbox = document.getElementById('pdpLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const zoomableImages = document.querySelectorAll('.pdp-zoomable-image');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    let currentLightboxIndex = 0;
+    const totalImages = slides.length;
+
+    // Open lightbox when clicking on main image
+    zoomableImages.forEach((img, index) => {
+        img.addEventListener('click', function () {
+            const slideIndex = parseInt(this.closest('.pdp-image-slide').dataset.slideIndex);
+            openLightbox(slideIndex);
+        });
+    });
+
+    function openLightbox(index) {
+        currentLightboxIndex = index;
+        const fullImageUrl = slides[index].dataset.fullImage;
+        lightboxImage.src = fullImageUrl;
+        lightboxImage.alt = slides[index].querySelector('img').alt;
+        updateLightboxCounter();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function showPrevImage() {
+        currentLightboxIndex = (currentLightboxIndex - 1 + totalImages) % totalImages;
+        const fullImageUrl = slides[currentLightboxIndex].dataset.fullImage;
+        lightboxImage.src = fullImageUrl;
+        lightboxImage.alt = slides[currentLightboxIndex].querySelector('img').alt;
+        updateLightboxCounter();
+    }
+
+    function showNextImage() {
+        currentLightboxIndex = (currentLightboxIndex + 1) % totalImages;
+        const fullImageUrl = slides[currentLightboxIndex].dataset.fullImage;
+        lightboxImage.src = fullImageUrl;
+        lightboxImage.alt = slides[currentLightboxIndex].querySelector('img').alt;
+        updateLightboxCounter();
+    }
+
+    function updateLightboxCounter() {
+        lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${totalImages}`;
+    }
+
+    // Event listeners for lightbox controls
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrevImage);
+    nextBtn.addEventListener('click', showNextImage);
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    });
+});
+</script>
+
+{% schema %}
+{
+"name": "Custom Product PDP",
+"settings": [
+{
+"type": "header",
+"content": "Breadcrumb Settings"
+},
+{
+"type": "checkbox",
+"id": "show_breadcrumb",
+"label": "Show Breadcrumb",
+"default": true
+},
+{
+"type": "text",
+"id": "breadcrumb_home_text",
+"label": "Home Text",
+"default": "Back to Skincare"
+},
+{
+"type": "text",
+"id": "breadcrumb_collection_text",
+"label": "Collection Text",
+"default": "Skincare"
+},
+{
+"type": "text",
+"id": "breadcrumb_separator",
+"label": "Separator",
+"default": ">"
+},
+{
+"type": "header",
+"content": "Image Gallery Settings"
+},
+{
+"type": "range",
+"id": "max_thumbnails",
+"min": 3,
+"max": 10,
+"step": 1,
+"label": "Max Thumbnails",
+"default": 6
+},
+{
+"type": "checkbox",
+"id": "show_match_badge",
+"label": "Show Match Badge",
+"default": true
+},
+{
+"type": "text",
+"id": "match_percentage",
+"label": "Match Percentage",
+"default": "86% MATCH"
+},
+{
+"type": "color",
+"id": "match_badge_bg",
+"label": "Match Badge Background",
+"default": "#E8F0FE"
+},
+{
+"type": "color",
+"id": "match_badge_text_color",
+"label": "Match Badge Text Color",
+"default": "#1A73E8"
+},
+{
+"type": "checkbox",
+"id": "show_product_tags",
+"label": "Show Product Tags",
+"default": true
+},
+{
+"type": "header",
+"content": "Brand Settings"
+},
+{
+"type": "checkbox",
+"id": "show_brand",
+"label": "Show Brand",
+"default": true
+},
+{
+"type": "text",
+"id": "brand_text",
+"label": "Brand Text (leave empty to use product vendor)",
+"default": "THREE SHIPS BEAUTY"
+},
+{
+"type": "color",
+"id": "brand_color",
+"label": "Brand Color",
+"default": "#666666"
+},
+{
+"type": "header",
+"content": "Title Settings"
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default": "#000000"
+},
+{
+"type": "range",
+"id": "title_font_size",
+"min": 20,
+"max": 48,
+"step": 2,
+"unit": "px",
+"label": "Title Font Size",
+"default": 32
+},
+
+{
+"type": "header",
+"content": "Price Settings"
+},
+{
+"type": "color",
+"id": "price_color",
+"label": "Price Color",
+"default": "#000000"
+},
+{
+"type": "range",
+"id": "price_font_size",
+"min": 16,
+"max": 40,
+"step": 2,
+"unit": "px",
+"label": "Price Font Size",
+"default": 28
+},
+
+{
+"type": "header",
+"content": "Button Settings"
+},
+{
+"type": "text",
+"id": "button_text",
+"label": "Button Text",
+"default": "ADD TO CART"
+},
+{
+"type": "color",
+"id": "button_bg_color",
+"label": "Button Background Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "button_text_color",
+"label": "Button Text Color",
+"default": "#FFFFFF"
+},
+{
+"type": "header",
+"content": "Shipping Info"
+},
+{
+"type": "checkbox",
+"id": "show_shipping_info",
+"label": "Show Shipping Info",
+"default": true
+},
+{
+"type": "richtext",
+"id": "shipping_info_text",
+"label": "Shipping Info Text",
+"default": "<p>Free Shipping • Spend $150 Save 20%</p>"
+},
+{
+"type": "color",
+"id": "shipping_info_bg",
+"label": "Shipping Info Background",
+"default": "#F0F8F0"
+},
+{
+"type": "color",
+"id": "shipping_info_text_color",
+"label": "Shipping Info Text Color",
+"default": "#2D5F2E"
+},
+{
+"type": "header",
+"content": "Testimonial Section"
+},
+{
+"type": "checkbox",
+"id": "show_testimonial",
+"label": "Show Testimonial Section",
+"default": true
+},
+{
+"type": "text",
+"id": "testimonial_heading",
+"label": "Testimonial Heading",
+"default": "WHY WE LOVE IT"
+},
+{
+"type": "color",
+"id": "testimonial_heading_color",
+"label": "Heading Color",
+"default": "#000000"
+},
+{
+"type": "textarea",
+"id": "testimonial_quote",
+"label": "Testimonial Quote",
+"default": "This mask is perfect for those with sensitive skin. I always have trouble with other exfoliants being too
+strong, but this one is great / doesn't irritate my skin."
+},
+{
+"type": "color",
+"id": "testimonial_quote_color",
+"label": "Quote Text Color",
+"default": "#1a1a1a"
+},
+{
+"type": "text",
+"id": "testimonial_author_name",
+"label": "Author Name",
+"default": "ROSE H."
+},
+{
+"type": "color",
+"id": "testimonial_author_name_color",
+"label": "Author Name Color",
+"default": "#000000"
+},
+{
+"type": "text",
+"id": "testimonial_author_role",
+"label": "Author Role",
+"default": "Head Merchant"
+},
+{
+"type": "color",
+"id": "testimonial_author_role_color",
+"label": "Author Role Color",
+"default": "#666666"
+},
+{
+"type": "image_picker",
+"id": "testimonial_avatar",
+"label": "Author Avatar Image"
+},
+{
+"type": "color",
+"id": "testimonial_bg_color",
+"label": "Background Color",
+"default": "#E8F0F8"
+},
+{
+"type": "header",
+"content": "Accordion Settings"
+},
+{
+"type": "color",
+"id": "accordion_border_color",
+"label": "Accordion Border Color",
+"default": "#E0E0E0"
+}
+],
+"blocks": [
+{
+"type": "@app"
+},
+
+{
+"type": "accordion_item",
+"name": "Accordion Item",
+"settings": [
+{
+"type": "text",
+"id": "accordion_title",
+"label": "Accordion Title",
+"default": "Ingredients"
+},
+{
+"type": "color",
+"id": "accordion_title_color",
+"label": "Title Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "accordion_icon_color",
+"label": "Icon Color",
+"default": "#000000"
+},
+{
+"type": "richtext",
+"id": "accordion_content",
+"label": "Accordion Content",
+"default": "<p>Add your content here.</p>"
+},
+{
+"type": "color",
+"id": "accordion_content_color",
+"label": "Content Text Color",
+"default": "#666666"
+}
+]
+},
+{
+"type": "product_tag",
+"name": "Product Tag",
+"settings": [
+{
+"type": "text",
+"id": "tag_text",
+"label": "Tag Text",
+"default": "Hydrating"
+},
+{
+"type": "color",
+"id": "tag_bg_color",
+"label": "Tag Background Color",
+"default": "#F5F5F5"
+},
+{
+"type": "color",
+"id": "tag_text_color",
+"label": "Tag Text Color",
+"default": "#000000"
+}
+]
+},
+
+{
+"type": "description_block",
+"name": "Description Block",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Title",
+"default": "WHAT IT IS:"
+},
+{
+"type": "textarea",
+"id": "description",
+"label": "Description",
+"default": "A science-backed, concentrated facial oil from the Soothing Capsule."
+},
+{
+"type": "color",
+"id": "title_color",
+"label": "Title Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text Color",
+"default": "#666666"
+}
+]
+},
+
+{
+"type": "variant_option",
+"name": "Variant Option",
+"settings": [
+{
+"type": "select",
+"id": "display_type",
+"label": "Display Type",
+"options": [
+{
+"value": "buttons",
+"label": "Buttons"
+},
+{
+"value": "swatches",
+"label": "Color Swatches"
+}
+],
+"default": "buttons",
+"info": "Swatches work best for color options. Each block applies to product options in order."
+},
+{
+"type": "color",
+"id": "label_color",
+"label": "Label Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "border_color",
+"label": "Border Color",
+"default": "#E0E0E0"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background Color",
+"default": "#FFFFFF"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "active_bg_color",
+"label": "Active Background Color",
+"default": "#1A73E8"
+},
+{
+"type": "color",
+"id": "active_text_color",
+"label": "Active Text Color",
+"default": "#FFFFFF"
+}
+]
+},
+{
+"type": "quantity_selector",
+"name": "Quantity Selector",
+"settings": [
+{
+"type": "text",
+"id": "label_text",
+"label": "Label Text",
+"default": "Quantity"
+},
+{
+"type": "color",
+"id": "label_color",
+"label": "Label Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "button_bg_color",
+"label": "Button Background Color",
+"default": "#F5F5F5"
+},
+{
+"type": "color",
+"id": "button_text_color",
+"label": "Button Text Color",
+"default": "#000000"
+},
+{
+"type": "color",
+"id": "input_text_color",
+"label": "Input Text Color",
+"default": "#000000"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Custom Product PDP",
+"blocks": [
+{
+"type": "product_tag",
+"settings": {
+"tag_text": "Hydrating"
+}
+},
+{
+"type": "product_tag",
+"settings": {
+"tag_text": "Smoothing"
+}
+},
+{
+"type": "description_block",
+"settings": {
+"title": "WHAT IT IS:",
+"description": "A science-backed, concentrated facial oil from the Soothing Capsule."
+}
+},
+{
+"type": "description_block",
+"settings": {
+"title": "WHAT IT DOES:",
+"description": "Envelops skin in a protective layer to help repair the skin barrier and target signs of aging for a
+calmer, brighter complexion."
+}
+},
+{
+"type": "description_block",
+"settings": {
+"title": "WHO IT'S FOR:",
+"description": "Those with sensitive or reactive skin who seek soothing, deep moisture relief."
+}
+},
+{
+"type": "variant_option",
+"settings": {
+"display_type": "buttons"
+}
+},
+{
+"type": "variant_option",
+"settings": {
+"display_type": "swatches"
+}
+},
+{
+"type": "accordion_item",
+"settings": {
+"accordion_title": "Ingredients"
+}
+},
+{
+"type": "accordion_item",
+"settings": {
+"accordion_title": "Why We're Obsessed"
+}
+},
+{
+"type": "accordion_item",
+"settings": {
+"accordion_title": "About The Brand"
+}
+}
+]
+}
+]
+}
+{% endschema %}
