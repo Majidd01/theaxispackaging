@@ -533,6 +533,18 @@
     ],
     "views": 0
   },
+
+
+
+
+
+
+
+
+
+
+
+
   {
     "id": "4",
     "title": "Choosing the Right Packaging Partner: Why The Axis Packaging Stands Out",
@@ -639,7 +651,82 @@
         "type": "paragraph",
         "content": "When choosing sustainable packaging, look for verified certifications that back up environmental claims. Third-party verification ensures credibility and genuine environmental benefits."
       }
-    ]
+    ],
+    "featuredImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=400&fit=crop",
+    "featuredImageAlt": "Eco-friendly green sustainable packaging made from natural materials",
+    "author": "Axis Packaging Team",
+    "publishedAt": "2024-03-05T10:00:00Z",
+    "readingTimeMinutes": 9,
+    "category": "Sustainability",
+    "tags": ["sustainability", "eco-friendly", "green-packaging", "environment"],
+    "meta": {
+      "metaTitle": "Sustainable Packaging Solutions: Eco-Friendly Options | Axis Packaging",
+      "metaDescription": "Discover sustainable packaging materials and practices that reduce environmental impact. Learn about eco-friendly options that benefit your business and planet.",
+      "ogImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=400&fit=crop"
+    },
+    "cta": {
+      "title": "Switch to Sustainable Packaging Today",
+      "description": "Make an environmental impact while building brand loyalty. Our sustainable solutions are cost-competitive.",
+      "buttonText": "Explore Eco-Friendly Options",
+      "buttonLink": "/sustainability",
+      "features": [
+        "100% Recyclable Materials",
+        "Reduced Carbon Footprint",
+        "Competitive Pricing"
+      ]
+    },
+    "faqs": [
+      {
+        "id": "faq1",
+        "question": "Are sustainable packaging options more expensive?",
+        "answer": "Not necessarily. While some eco-friendly materials have higher upfront costs, savings from reduced material usage, improved efficiency, and customer premium pricing often offset initial costs."
+      },
+      {
+        "id": "faq2",
+        "question": "How do I know if packaging is truly eco-friendly?",
+        "answer": "Look for third-party certifications like FSC, GreenGuard, or ISO 14001. Ask suppliers for environmental impact reports and lifecycle assessments."
+      },
+      {
+        "id": "faq3",
+        "question": "Can recycled packaging maintain product quality?",
+        "answer": "Yes. Modern recycled materials offer equivalent strength and protection as virgin materials. Quality doesn't need to be compromised for sustainability."
+      },
+      {
+        "id": "faq4",
+        "question": "What is the difference between biodegradable and compostable?",
+        "answer": "Biodegradable materials break down naturally over time. Compostable materials break down into organic matter within specific timeframes (usually 180 days) under proper conditions. Compostable is preferable."
+      }
+    ],
+    "relatedPostIds": ["1", "2"],
+    "isPublished": true,
+    "tableOfContents": [
+      {
+        "id": "section1",
+        "level": 2,
+        "text": "Why Sustainable Packaging Matters Now More Than Ever"
+      },
+      {
+        "id": "section2",
+        "level": 2,
+        "text": "Top Sustainable Packaging Materials"
+      },
+      {
+        "id": "section3",
+        "level": 2,
+        "text": "Sustainable Packaging Best Practices"
+      },
+      {
+        "id": "section4",
+        "level": 2,
+        "text": "The Business Case for Sustainable Packaging"
+      },
+      {
+        "id": "section5",
+        "level": 2,
+        "text": "Certifications and Standards to Look For"
+      }
+    ],
+    "views": 0
   }
   
 ]
