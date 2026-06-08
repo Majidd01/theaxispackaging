@@ -1,3 +1,5 @@
+import { PRODUCT_ENRICHMENTS } from "./product-enrichments";
+
 export const COMPANY_INFO = {
   name: "Axis Packaging",
   tagline: "Your Box, Your Brand",
@@ -15,7 +17,7 @@ export const NAVIGATION_ITEMS = [
   { name: "Sustainability", href: "/sustainability" },
 ];
 
-export const PRODUCT_CATEGORIES = [
+const _PRODUCT_CATEGORIES = [
   {
     name: "Custom Folding Carton Boxes",
     description: "Get custom folding carton boxes with flexible sizes, fast production, and high quality perfect for retail, gifting, and more.",
@@ -300,54 +302,318 @@ export const PRODUCT_CATEGORIES = [
     h1: "Custom PET Packaging Boxes",
   },
   {
-    name: "Hardware & Tools Boxes",
-    description: "Organize, protect and ship tools with our hardware and tool boxes. Custom, durable, and versatile storage solutions for any workspace.",
+    name: "Hardware & Tool Boxes",
+    description: "Custom hardware packaging boxes protect heavy, sharp, and high-value products from factory floor to retail shelf to customer doorstep. We manufacture custom tool boxes and hardware packaging for hand tools, power tools, drill bits, fasteners, screws, bolts, and complete tool kits — in heavy-duty corrugated and rigid stock, with retail-ready printing, branded logo placement, and structural formats engineered for weight, sharpness, and durability.",
     icon: "🔧",
     image: "/assets/Hardware & Tools Boxes.png",
     slug: "hardware-boxes",
-    metaTitle: "Buy Hardware & Tool Boxes - Storage Solutions - Axis Packaging",
-    metaDescription: "Organize, protect and store tools with hardware and tool boxes. Custom, durable, and versatile storage solutions.",
-    h1: "Custom Hardware & Tool Boxes for Storage and organization",
+    metaTitle: "Custom Hardware & Tool Packaging Boxes | Axis Packaging",
+    metaDescription: "Custom hardware and tool boxes for drills, screws, hand tools & power tools. Heavy-duty corrugated, logo printing & wholesale rates. Free proof included.",
+    h1: "Custom Hardware & Tool Packaging Boxes",
+    alt: "Custom hardware and tool packaging boxes in heavy-duty corrugated by Axis Packaging",
+    breadcrumbName: "Hardware & Tool Boxes",
+    productsWePackageTitle: "Hardware & Tool Products We Package",
+    productsWePackage: [
+      { title: "Hand tool boxes", detail: "Hammer, screwdriver, wrench, and multi-tool retail packaging with hang tabs" },
+      { title: "Power tool packaging", detail: "Heavy-duty corrugated with foam inserts, full-color product printing" },
+      { title: "Drill bit & accessory boxes", detail: "Tray inserts, window display, blister-alternative formats" },
+      { title: "Fastener & hardware packaging", detail: "Small-part tuck boxes, hang-display formats, bulk inner cartons" },
+      { title: "Complete tool kit boxes", detail: "Large corrugated, foam-molded inserts, retail and e-commerce formats" },
+      { title: "Industrial & auto parts packaging", detail: "Heavy-duty corrugated shippers, moisture-resistant options" },
+    ],
+    materials: [
+      { name: "Corrugated (B/C/BC-flute)", bestFor: "Power tools, heavy tool kits, industrial shipping" },
+      { name: "Double-Wall Corrugated", bestFor: "Extra-heavy or sharp hardware requiring crush resistance" },
+      { name: "SBS Cardstock (16pt–24pt)", bestFor: "Hand tool retail boxes, drill bit display, fastener packaging" },
+      { name: "Rigid Bux Board", bestFor: "Premium tool gift sets, professional-grade tool presentation" },
+    ],
+    printingFinishing: {
+      print: ["Full-color CMYK", "PMS Pantone", "Single-color"],
+      finish: ["Matte", "Gloss", "Spot UV", "Kraft natural"],
+      addons: ["Foam inserts", "Hang tabs", "Blister-style windows", "Tray inserts", "Moisture-resistant lining", "Custom die-cut slots for tool shapes"],
+    },
+    whyChoose: [
+      "Heavy-duty corrugated construction — rated for tools, hardware, and dense products",
+      "Custom foam and die-cut tray inserts to hold tool shapes securely",
+      "Retail-ready formats: hang tabs, peg-display, shelf-stand for hardware store placement",
+      "Bold CMYK printing for product specifications, safety warnings, and brand identity",
+      "Moisture-resistant options for outdoor and industrial hardware packaging",
+      "Free digital proof + 3D mockup with every order",
+      "Low MOQ — small hardware brands to large wholesale distributors",
+    ],
+    faqs: [
+      {
+        question: "What hardware and tool products can you make packaging for?",
+        answer: "Hand tools, power tools, drill bits, screwdrivers, wrenches, fasteners, screws, bolts, complete tool kits, and industrial and auto parts.",
+      },
+      {
+        question: "What materials work best for heavy tool packaging?",
+        answer: "Double-wall or BC-flute corrugated is the standard for heavy power tools and tool kits. B-flute and C-flute work well for mid-weight hand tools. For retail display of smaller hardware items, 16pt–24pt SBS cardstock provides a sharp print surface with adequate rigidity.",
+      },
+      {
+        question: "Can you add foam inserts to tool packaging?",
+        answer: "Yes. Custom die-cut foam inserts in EVA and polyurethane are available for tool boxes — holding each tool in a shaped cavity, preventing movement, and creating a premium presentation when the box is opened.",
+      },
+      {
+        question: "Do you offer hang tab hardware packaging for retail display?",
+        answer: "Yes. Hang tab formats for peg-display in hardware stores and home improvement retail are standard on our tuck-end and cardstock hardware packaging styles.",
+      },
+      {
+        question: "What is the minimum order quantity?",
+        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+      },
+    ],
   },
   {
     name: "Candle & Fragrance Boxes",
-    description: "Enhance your brand with custom candle and fragrance boxes. Heat-resistant materials and luxury finishes for a premium experience.",
+    description: "Custom candle boxes communicate the luxury, scent, and personality of your brand before the candle is ever lit. We manufacture candle packaging boxes and fragrance packaging for jar candles, pillar candles, taper candles, reed diffusers, wax melts, and gift sets — in premium rigid board, kraft, and cardstock, with foil stamping, soft-touch coating, and elegant finishes that match the quality of what is inside.",
     icon: "🕯️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "candle-boxes",
-    metaTitle: "Buy Candle & Fragrance Boxes - Elegant - Axis Packaging",
-    metaDescription: "Elegant packaging for candles, perfumes, and fragrance products. Custom-designed boxes with premium finishes and scent labels.",
-    h1: "Elegant Candle & Fragrance Boxes for Luxury Brands",
+    metaTitle: "Custom Candle & Fragrance Boxes Packaging | Axis",
+    metaDescription: "Custom candle boxes and fragrance packaging with luxury finishes, foil stamping & eco-friendly kraft. Wholesale pricing, low MOQ, free proof. Order today.",
+    h1: "Custom Candle & Fragrance Packaging Boxes",
+    alt: "Custom luxury candle boxes with gold foil stamp and soft-touch finish by Axis Packaging",
+    breadcrumbName: "Candle & Fragrance Boxes",
+    productsWePackageTitle: "Candle & Fragrance Products We Package",
+    productsWePackage: [
+      { title: "Jar candle boxes", detail: "Tuck-end, window display, sleeve formats; foam inserts for protection" },
+      { title: "Pillar & taper candle boxes", detail: "Tall-format rigid and cardstock, custom inserts" },
+      { title: "Reed diffuser packaging", detail: "Rigid magnetic lid, foam-molded inserts, luxury presentation" },
+      { title: "Wax melt & tealight boxes", detail: "Window display, multi-cavity tray inserts, retail formats" },
+      { title: "Candle gift sets", detail: "Two-piece rigid boxes, ribbon closures, tissue lining, branded tissue" },
+      { title: "Fragrance & perfume cartons", detail: "Precision-fit cardstock cartons, foil-stamped, premium finish" },
+    ],
+    materials: [
+      { name: "Rigid Bux Board", bestFor: "Luxury candle gift boxes, reed diffusers, premium brands" },
+      { name: "SBS Cardstock (14pt–24pt)", bestFor: "Retail jar candle boxes, fragrance cartons, high-print quality" },
+      { name: "Kraft Board", bestFor: "Eco candle brands, artisan and natural wax candle packaging" },
+      { name: "Corrugated (E-flute)", bestFor: "Candle e-commerce shipping, multi-candle order fulfillment" },
+    ],
+    printingFinishing: {
+      print: ["Full-color CMYK", "PMS Pantone", "Interior printing available"],
+      finish: ["Matte", "Gloss", "Soft-touch", "Gold/Silver foil stamp", "Spot UV", "Emboss", "Deboss", "Holographic foil"],
+      addons: ["Magnetic closures", "Ribbon pulls", "Window cutouts", "Foam inserts", "Tissue lining", "Fragrance info tags"],
+    },
+    whyChoose: [
+      "Luxury finishing — foil stamp, emboss, soft-touch — standard for candle brands",
+      "Rigid gift box formats with magnetic closures for premium candle lines",
+      "Fragrance info tag printing and interior-printed lid options",
+      "Foam and card inserts to protect glass jars during shipping and retail display",
+      "Eco-friendly kraft options for natural wax and sustainable candle brands",
+      "Free digital proof + 3D mockup with every order",
+      "Low MOQ — indie candle makers to large wholesale brands",
+    ],
+    faqs: [
+      {
+        question: "What candle types can you make packaging for?",
+        answer: "Jar candles, pillar candles, taper candles, votive candles, tealights, wax melts, reed diffusers, and candle gift sets.",
+      },
+      {
+        question: "Can you make luxury gift boxes for candles?",
+        answer: "Yes. Our luxury candle gift boxes in rigid board with magnetic closures, ribbon pulls, foil-stamped logos, and tissue lining are built for premium candle brands and gifting occasions.",
+      },
+      {
+        question: "What finishes work best for candle packaging?",
+        answer: "Soft-touch coating with gold foil stamping is the most popular combination for premium candle brands. Matte lamination with Spot UV is the modern minimalist option. Gloss lamination suits bold, colorful retail candle packaging.",
+      },
+      {
+        question: "Do you offer eco-friendly candle boxes?",
+        answer: "Yes. Recycled kraft, FSC-certified cardstock, and biodegradable materials with water-based inks are all available — ideal for natural wax, soy, and coconut candle brands.",
+      },
+      {
+        question: "What is the minimum order quantity?",
+        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+      },
+    ],
   },
   {
-    name: "Supplement Bottles",
-    description: "Axis Packaging offers high quality supplement bottles with customizable labels, designs, and packaging, ideal for retail.",
+    name: "Supplement Packaging",
+    description: "Custom supplement packaging is one of the most regulated and brand-sensitive categories in retail. Consumers judge supplement brands by packaging before they read the label. We manufacture custom supplement boxes for protein powders, vitamins, capsules, softgels, wellness shots, and health drinks — in materials compliant with FDA labeling standards, with full-color printing, tamper-evident options, and premium finishes that communicate quality and trust.",
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "supplement-bottles",
-    metaTitle: "Buy Custom Supplement Bottles - Customized - Axis Packaging",
-    metaDescription: "Bulk packaging, high quality, supplement bottles with customizable labels, designs, and packaging ideal for brands.",
-    h1: "Custom Supplement Bottles",
+    metaTitle: "Custom Supplement Packaging Boxes & Bottles | Axis",
+    metaDescription: "Custom supplement packaging boxes for protein, vitamins, capsules & wellness bottles. FDA-compliant materials, logo printing & wholesale rates. Free proof included.",
+    h1: "Custom Supplement Packaging Boxes",
+    alt: "Custom supplement packaging boxes with nutritional label printing by Axis Packaging",
+    breadcrumbName: "Supplement Packaging",
+    productsWePackageTitle: "Supplement Products We Package",
+    productsWePackage: [
+      { title: "Protein powder boxes", detail: "Heavy-duty corrugated, moisture-resistant, large-format branding" },
+      { title: "Vitamin & capsule boxes", detail: "Tuck-end retail, auto-bottom, child-resistant options available" },
+      { title: "Softgel & tablet packaging", detail: "Sealed tuck boxes, sleeve-and-tray formats, foil-lined options" },
+      { title: "Wellness shot & drink boxes", detail: "Bottle carriers, six-pack partitions, branded retail cartons" },
+      { title: "Pre-workout & sports nutrition boxes", detail: "Bold CMYK printing, metallic finish, high-impact shelf presence" },
+      { title: "Supplement gift sets & starter kits", detail: "Rigid gift boxes, branded insert trays, premium unboxing" },
+    ],
+    materials: [
+      { name: "SBS Cardstock (16pt–24pt)", bestFor: "Retail vitamin and capsule boxes, high-resolution label printing" },
+      { name: "Corrugated (B/C-flute)", bestFor: "Protein powder shipping, bulk supplement fulfillment" },
+      { name: "Rigid Bux Board", bestFor: "Premium wellness brands, supplement gift sets" },
+      { name: "Moisture-Resistant Lining", bestFor: "Powder and liquid supplement packaging" },
+    ],
+    printingFinishing: {
+      print: ["Full-color CMYK", "PMS Pantone", "Nutritional label printing"],
+      finish: ["Matte", "Gloss", "Soft-touch", "Metallic foil", "Spot UV", "Emboss/Deboss"],
+      addons: ["Tamper-evident seals", "Child-resistant closures", "Foil lining", "QR code printing", "Window cutouts"],
+    },
+    whyChoose: [
+      "FDA-compliant materials available for supplement retail packaging",
+      "Nutritional label panel printing with accurate CMYK color reproduction",
+      "Moisture-resistant options for powder and liquid supplement products",
+      "Bold shelf-presence designs — metallic foil, Spot UV, high-impact CMYK",
+      "Child-resistant and tamper-evident options available",
+      "Free digital proof + 3D mockup with every order",
+      "Low MOQ — startup supplement brands to large wholesale runs",
+    ],
+    faqs: [
+      {
+        question: "What types of supplements can you make packaging for?",
+        answer: "Protein powders, vitamins, capsules, softgels, tablets, wellness shots, pre-workout, sports nutrition blends, and supplement gift sets.",
+      },
+      {
+        question: "Are your supplement packaging materials FDA-compliant?",
+        answer: "Yes. We use food-safe, FDA-compliant materials suitable for supplement retail packaging. All materials and inks comply with applicable health and safety standards.",
+      },
+      {
+        question: "Can you print nutritional labels and supplement facts panels?",
+        answer: "Yes. Full nutritional label printing with accurate CMYK color matching is available on all supplement box formats. We support supplement facts panel placement and regulatory text layout.",
+      },
+      {
+        question: "Do you offer tamper-evident or child-resistant options?",
+        answer: "Yes. Tamper-evident seals and child-resistant closure options are available for capsule and tablet supplement packaging.",
+      },
+      {
+        question: "What is the minimum order quantity?",
+        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+      },
+    ],
   },
   {
     name: "Craft & Hobby Boxes",
-    description: "Craft and hobby boxes designed for art supplies, DIY kits, and creative storage. Strong, stylish packaging that keeps materials organized.",
+    description: "Custom craft boxes and hobby packaging turn everyday creative supplies into a branded experience. We manufacture packaging for DIY kit brands, craft subscription boxes, yarn and fabric suppliers, scrapbooking products, jewelry-making sets, and art and hobby retailers — in kraft, cardstock, and corrugated, with full-color printing and eco-friendly options.",
     icon: "🎨",
     image: "/assets/Craft & Hobby Boxes.jpg",
     slug: "craft-boxes",
-    metaTitle: "Buy Craft and Hobby Boxes - Custom Creation - Axis Packaging",
-    metaDescription: "Craft and hobby boxes designed for art supplies, DIY kits, and creative storage. Sturdy, small packaging that keeps you organized.",
-    h1: "Craft and Hobby Boxes for Creative Storage and DIY Kits",
+    metaTitle: "Custom Craft & Hobby Boxes Packaging | Axis Packaging",
+    metaDescription: "Custom craft and hobby boxes for DIY kits, yarn, scrapbooking, jewelry making & more. Eco-friendly kraft, logo printing & wholesale pricing. Free proof included.",
+    h1: "Custom Craft & Hobby Boxes",
+    alt: "Custom craft and hobby boxes in eco-friendly kraft by Axis Packaging",
+    breadcrumbName: "Craft & Hobby Boxes",
+    productsWePackageTitle: "Craft & Hobby Products We Package",
+    productsWePackage: [
+      { title: "DIY kit boxes", detail: "Subscription mailers, multi-item dividers, branded tissue and inserts" },
+      { title: "Yarn & fabric packaging", detail: "Sleeve wraps, band wraps, hang-tag formats, kraft natural finish" },
+      { title: "Scrapbooking & paper craft boxes", detail: "Flat-pack rigid, tuck-end retail, window display" },
+      { title: "Jewelry making kits", detail: "Tray-insert boxes, foam slots, gift-ready rigid formats" },
+      { title: "Paint-by-numbers & canvas kits", detail: "Corrugated mailers, foam padding, branded exterior" },
+      { title: "General hobby supply boxes", detail: "Retail shelf, hang tab, window cutout formats" },
+    ],
+    materials: [
+      { name: "Kraft Board", bestFor: "Eco craft brands, artisan hobby suppliers, subscription boxes" },
+      { name: "SBS Cardstock (14pt–24pt)", bestFor: "Retail hobby shelf packaging, vivid CMYK printing" },
+      { name: "Corrugated (E/B-flute)", bestFor: "DIY kit shipping, subscription mailers, heavier hobby sets" },
+      { name: "Rigid Bux Board", bestFor: "Premium hobby gift boxes, luxury craft sets" },
+    ],
+    printingFinishing: {
+      print: ["Full-color CMYK", "PMS Pantone", "Single-color"],
+      finish: ["Matte", "Gloss", "Soft-touch", "Kraft natural", "Foil stamp", "Spot UV"],
+      addons: ["Die-cut windows", "Hang tabs", "Custom dividers", "Foam inserts", "Tissue lining"],
+    },
+    whyChoose: [
+      "Eco-friendly kraft options — standard for craft and hobby brands",
+      "Custom dividers and inserts for multi-item DIY kit organization",
+      "Subscription box formats with branded interior and exterior printing",
+      "Retail-ready hang tabs and window cutouts available",
+      "Low MOQ — indie makers to large wholesale all accommodated",
+      "Free digital proof + 3D mockup with every order",
+    ],
+    faqs: [
+      {
+        question: "What craft and hobby products can you package?",
+        answer: "DIY kits, yarn, fabric, scrapbooking supplies, jewelry-making sets, paint-by-numbers kits, canvas sets, and general hobby supply bundles.",
+      },
+      {
+        question: "Can you make branded subscription boxes for craft brands?",
+        answer: "Yes. We produce custom craft subscription boxes in corrugated mailer formats with full exterior and interior printing, custom dividers, and tissue paper for organized unboxing.",
+      },
+      {
+        question: "Do you offer eco-friendly craft packaging?",
+        answer: "Yes. Recycled kraft, FSC-certified corrugated, and biodegradable materials with water-based inks are all available — preferred by most craft and hobby brands.",
+      },
+      {
+        question: "What is the minimum order quantity?",
+        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+      },
+      {
+        question: "How long does production take?",
+        answer: "7–10 business days after proof approval. Rush turnaround available.",
+      },
+    ],
   },
   {
     name: "Garden & Plant Packaging",
-    description: "Shop garden and plant packaging including plant boxes, flower packaging, and accessories for vibrant brand presence.",
+    description: "Custom garden packaging and plant packaging boxes keep plants alive, seeds protected, and garden brands visible. We manufacture packaging for nurseries, plant subscription services, seed companies, and garden supply brands — in eco-friendly materials with full-color printing, ventilation options, and moisture-resistant construction built for live and dry garden products.",
     icon: "🌱",
     image: "/assets/packify-eco-friendly-packaging.png",
-    slug: "garden-packaging",
-    metaTitle: "Garden & Plant Packaging - Premium Creation - Axis Packaging",
-    metaDescription: "Shop garden and plant packaging including plant boxes. Foam packaging, eco-friendly in card/kraft boxes. Perfect for gifts.",
-    h1: "Custom & Plant Packaging — Plant Boxes and Plastic Packaging",
+    slug: "custom-garden-plant-packaging",
+    metaTitle: "Custom Garden & Plant Packaging Boxes | Axis Packaging",
+    metaDescription: "Custom gardening and plant packaging boxes for seeds, live plants, pots & tools. Eco-friendly materials, logo printing & wholesale pricing. Free proof included.",
+    h1: "Custom Garden & Plant Packaging Boxes",
+    alt: "Custom garden and plant packaging boxes in eco-friendly kraft by Axis Packaging",
+    breadcrumbName: "Garden & Plant Packaging",
+    productsWePackageTitle: "Garden Products We Package",
+    productsWePackage: [
+      { title: "Seed boxes", detail: "Tuck-end or window display, moisture-resistant, printed with planting info" },
+      { title: "Live plant shipping boxes", detail: "Ventilated corrugated, pot inserts, handles, size-to-roots construction" },
+      { title: "Potted plant packaging", detail: "Corrugated with cardboard or foam pot-holders to prevent tipping in transit" },
+      { title: "Soil & fertilizer boxes", detail: "Heavy-duty corrugated, moisture barrier lining, branded print" },
+      { title: "Garden tool packaging", detail: "Retail display boxes, hang tab formats, full-color product printing" },
+      { title: "Garden gift sets & subscription boxes", detail: "Branded mailers with dividers, tissue, and eco-friendly materials" },
+    ],
+    materials: [
+      { name: "Corrugated (E/B/C-flute)", bestFor: "Live plant shipping, heavy-duty garden tools, soil boxes" },
+      { name: "Kraft Board", bestFor: "Seed boxes, eco garden brands, subscription mailers" },
+      { name: "SBS Cardstock (14pt–24pt)", bestFor: "Retail seed display, garden gift sets, tool packaging" },
+      { name: "Moisture-Resistant Lining", bestFor: "Soil, fertilizer, and live plant boxes needing humidity control" },
+    ],
+    printingFinishing: {
+      print: ["Full-color CMYK", "PMS Pantone", "Single-color"],
+      finish: ["Matte", "Gloss", "Soft-touch", "Spot UV", "Kraft natural"],
+      addons: ["Ventilation holes", "Pot inserts & trays", "Hang tabs", "Die-cut windows", "Carry handles", "Moisture barrier lining"],
+    },
+    whyChoose: [
+      "Eco-friendly materials: FSC-certified, recycled kraft, biodegradable options",
+      "Ventilated construction available for live plant shipping boxes",
+      "Custom pot-holder inserts to prevent tipping and root damage in transit",
+      "Moisture-resistant lining options for soil, fertilizer, and wet products",
+      "Full-color CMYK printing for planting instructions, brand logos, and product info",
+      "Free digital proof + 3D mockup with every order",
+      "Low MOQ — nurseries, startups, and large wholesale all accommodated",
+    ],
+    faqs: [
+      {
+        question: "What types of garden products can you make packaging for?",
+        answer: "Seeds, live plants, potted plants, soil, fertilizer, garden tools, grow kits, plant subscription boxes, and garden gift sets.",
+      },
+      {
+        question: "Can you make boxes for shipping live plants?",
+        answer: "Yes. Our live plant shipping boxes use ventilated corrugated construction with custom pot-holder inserts to keep plants stable, roots protected, and plants breathing throughout transit.",
+      },
+      {
+        question: "Are your garden packaging materials eco-friendly?",
+        answer: "Yes. All our eco-friendly garden packaging options include recycled kraft, FSC-certified corrugated, and biodegradable cardstock — ideal for garden and plant brands whose customers expect sustainable packaging.",
+      },
+      {
+        question: "Can seed boxes include moisture protection?",
+        answer: "Yes. We offer moisture-resistant lining and sealed construction for seed packaging to protect seeds from humidity and moisture damage during storage and shipping.",
+      },
+      {
+        question: "What is the minimum order quantity?",
+        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+      },
+    ],
   },
   {
     name: "Office Supply Boxes",
@@ -380,16 +646,73 @@ export const PRODUCT_CATEGORIES = [
     h1: "Protective Musical Instrument Cases and Packaging",
   },
   {
-    name: "Art & Collectibles Boxes",
-    description: "Shop art and craft boxes for storage, kits, and creative projects. Durable, organized, and stylish boxes perfect for brand presentation.",
+    name: "Custom Art Boxes",
+    description: "Protect and present your art supplies with packaging built for the creative industry. We manufacture custom art boxes for paint brushes, colored pencils, crayons, watercolor sets, sketchbooks, and complete art kits — in any size, material, and finish, with full-color printing and low minimum orders.",
     icon: "🖼️",
     image: "/assets/packify-cosmetic-boxes.png",
-    slug: "art-boxes",
-    metaTitle: "Shop Art & Craft Boxes - Premium Kits - Axis Packaging",
-    metaDescription: "Shop art and craft boxes for storage, kits, and creative projects. Durable, organized, and premium boxes perfect for art.",
-    h1: "Art & Craft Boxes — Storage and Creative Kits",
+    slug: "custom-art-boxes",
+    metaTitle: "Custom Art Boxes & Art Supply Packaging | Axis Packaging",
+    metaDescription: "Custom art boxes for paint brushes, pencils, crayons, watercolors & art kits. Logo printing, die-cut windows, wholesale pricing. Free proof included.",
+    h1: "Custom Art Boxes",
+    alt: "Custom art supply packaging boxes with die-cut window and CMYK printing by Axis Packaging",
+    breadcrumbName: "Art Boxes",
+    productsWePackageTitle: "Art Supply Products We Package",
+    productsWePackage: [
+      { title: "Paint brush boxes", detail: "Slim tuck-end or display formats, foam inserts, die-cut windows" },
+      { title: "Colored pencil & crayon boxes", detail: "Slot trays, window cutouts, vibrant CMYK printing" },
+      { title: "Watercolor & paint set boxes", detail: "Rigid or tuck-end, foam-lined, gift-ready" },
+      { title: "Art kit & craft set boxes", detail: "Multi-item dividers, branded tissue, mailer formats" },
+      { title: "Sketchbook & art paper packaging", detail: "Sleeve wraps, corrugated mailers, band wraps" },
+    ],
+    materials: [
+      { name: "SBS Cardstock (14pt–24pt)", bestFor: "Retail shelf packaging, vivid color printing" },
+      { name: "Kraft Board", bestFor: "Eco-friendly and artisan art brands" },
+      { name: "Corrugated (E/B-flute)", bestFor: "Shipping, e-commerce, subscription boxes" },
+      { name: "Rigid Bux Board", bestFor: "Premium artist gift sets, luxury unboxing" },
+    ],
+    printingFinishing: {
+      print: ["Full-color CMYK", "PMS Pantone", "Single-color"],
+      finish: ["Gloss", "Matte", "Soft-touch", "Gold/Silver Foil", "Spot UV", "Emboss", "Deboss"],
+      addons: ["Die-cut windows", "Hang tabs", "Acetate film", "Foam inserts", "Cardboard slot trays"],
+    },
+    whyChoose: [
+      "Color-accurate CMYK printing — critical for art brands",
+      "Custom foam and slot inserts for every product type",
+      "Retail-ready formats: hang tabs, peg-display, shelf-stand",
+      "Eco-friendly materials: FSC-certified, recycled kraft, water-based inks",
+      "Free digital proof + 3D mockup with every order",
+      "Low MOQ — small batch to large wholesale runs",
+    ],
+    faqs: [
+      {
+        question: "What art supplies can you make boxes for?",
+        answer: "Paint brushes, colored pencils, crayons, markers, watercolors, acrylic paint sets, sketchbooks, art kits, and gift sets.",
+      },
+      {
+        question: "Can I add a die-cut window to my art boxes?",
+        answer: "Yes. Die-cut windows with acetate film are available on all tuck-end and retail box styles — ideal for pencil, crayon, and brush packaging so buyers can see the product before purchasing.",
+      },
+      {
+        question: "Do you offer eco-friendly art packaging?",
+        answer: "Yes. Recycled kraft, FSC-certified corrugated, and biodegradable cardstock are all available with water-based inks.",
+      },
+      {
+        question: "What is the minimum order quantity?",
+        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+      },
+      {
+        question: "How long does production take?",
+        answer: "7–10 business days after proof approval. Rush turnaround available.",
+      },
+    ],
   },
 ];
+
+export const PRODUCT_CATEGORIES = _PRODUCT_CATEGORIES.map((product) =>
+  PRODUCT_ENRICHMENTS[product.slug]
+    ? { ...product, ...PRODUCT_ENRICHMENTS[product.slug] }
+    : product
+);
 
 export const TRUST_INDICATORS = [
   { text: "10+ Years Experience", icon: "⭐" },

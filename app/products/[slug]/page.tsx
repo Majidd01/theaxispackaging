@@ -16,6 +16,35 @@ import { Helmet } from "react-helmet-async";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const placeholderImg = "/assets/placeholder.jpg";
 
+type InternalLink = { phrase: string; href: string };
+
+function renderLinkedText(text: string, links: InternalLink[] = []) {
+  if (!links.length) return text;
+  let parts: (string | JSX.Element)[] = [text];
+  for (const link of [...links].sort((a, b) => b.phrase.length - a.phrase.length)) {
+    const newParts: (string | JSX.Element)[] = [];
+    for (const part of parts) {
+      if (typeof part !== "string") {
+        newParts.push(part);
+        continue;
+      }
+      const segments = part.split(link.phrase);
+      segments.forEach((seg, i) => {
+        if (seg) newParts.push(seg);
+        if (i < segments.length - 1) {
+          newParts.push(
+            <Link key={`${link.phrase}-${i}-${seg.slice(0, 8)}`} to={link.href} className="text-[var(--axis-orange)] hover:underline font-medium">
+              {link.phrase}
+            </Link>
+          );
+        }
+      });
+    }
+    parts = newParts;
+  }
+  return <>{parts}</>;
+}
+
 export default function ProductDetailPage() {
   const { slug } = useParams();
   const product = PRODUCT_CATEGORIES.find((p) => p.slug === slug);
@@ -128,6 +157,56 @@ export default function ProductDetailPage() {
     );
   }
 
+  const productFaqs = (product as any).faqs as { question: string; answer: string }[] | undefined;
+  const breadcrumbLabel = (product as any).breadcrumbName || product.name;
+  const productsWePackageTitle = (product as any).productsWePackageTitle || "Products We Package";
+  const contentSections = (product as any).contentSections as
+    | {
+        title: string;
+        intro?: string;
+        subsections?: { title: string; content: string }[];
+        lists?: { label: string; items: string[] }[];
+        bullets?: string[];
+        comparisonTable?: { columns: string[]; rows: { label: string; values: string[] }[] };
+      }[]
+    | undefined;
+  const specificationsTable = (product as any).specificationsTable as { feature: string; detail: string }[] | undefined;
+  const specificationsTitle = (product as any).specificationsTitle || "Specifications";
+  const whyChooseParagraphs = (product as any).whyChooseParagraphs as string[] | undefined;
+  const benefits = (product as any).benefits as string[] | undefined;
+  const benefitsTitle = (product as any).benefitsTitle || "Benefits";
+  const productTypes = (product as any).productTypes as { title: string; detail: string }[] | undefined;
+  const productTypesTitle = (product as any).productTypesTitle || "Product Types";
+  const internalLinks = ((product as any).internalLinks || []) as InternalLink[];
+  const hideProductFeatures = (product as any).hideProductFeatures ?? !!contentSections;
+  const quoteIntro = (product as any).quoteIntro as string | undefined;
+  const quoteTitle = (product as any).quoteTitle || "Ready to Get Started?";
+  const urgencyBanner = (product as any).urgencyBanner as { title: string; text: string } | undefined;
+  const whyChooseTitle = (product as any).whyChooseTitle
+    || (whyChooseParagraphs ? "Why Choose Axis Packaging" : (product as any).whyChoose ? "Why Axis Packaging" : "Why Choose This Product?");
+
+  const faqSchema = productFaqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: productFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      }
+    : null;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://theaxispackaging.com/" },
+      { "@type": "ListItem", position: 2, name: "Products", item: "https://theaxispackaging.com/products" },
+      { "@type": "ListItem", position: 3, name: breadcrumbLabel, item: `https://theaxispackaging.com/products/${product.slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
@@ -137,6 +216,8 @@ export default function ProductDetailPage() {
         <meta property="og:description" content={product.metaDescription || product.description} />
         <meta property="og:image" content={product.image || placeholderImg} />
         <link rel="canonical" href={`https://theaxispackaging.com/products/${product.slug}`} />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
       </Helmet>
       <Header />
 
@@ -152,7 +233,7 @@ export default function ProductDetailPage() {
               Products
             </Link>
             <span className="text-gray-400">/</span>
-            <span className="text-[var(--axis-dark-blue)] font-medium">{product.name}</span>
+            <span className="text-[var(--axis-dark-blue)] font-medium">{breadcrumbLabel}</span>
           </div>
         </div>
       </section>
@@ -408,6 +489,7 @@ export default function ProductDetailPage() {
       </section>
 
       {/* Product Features */}
+      {!hideProductFeatures && (
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -449,8 +531,259 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </section>
+      )}
 
-      {/* Specifications */}
+      {/* Rich content sections with H2/H3 structure */}
+      {contentSections?.map((section, idx) => (
+        <section key={section.title} className={`py-16 ${idx % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">{section.title}</h2>
+            {section.intro && (
+              <p className="text-gray-600 mb-8 leading-relaxed">{renderLinkedText(section.intro, internalLinks)}</p>
+            )}
+            {section.subsections?.map((sub) => (
+              <div key={sub.title} className="mb-8 last:mb-0">
+                <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-3">{sub.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{renderLinkedText(sub.content, internalLinks)}</p>
+              </div>
+            ))}
+            {section.lists?.map((list) => (
+              <div key={list.label} className="mb-6 last:mb-0">
+                <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-3">{list.label}</h3>
+                <ul className="space-y-2">
+                  {list.items.map((item) => (
+                    <li key={item} className="flex items-start space-x-2 text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-green-500 mt-1 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            {section.bullets && (
+              <ul className="space-y-3">
+                {section.bullets.map((item) => (
+                  <li key={item} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-[var(--axis-orange)] mt-0.5 shrink-0" />
+                    <span className="text-gray-700 leading-relaxed">{renderLinkedText(item, internalLinks)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {section.comparisonTable && (
+              <div className="overflow-x-auto mt-6">
+                <table className="w-full text-left border-collapse rounded-xl overflow-hidden shadow-sm">
+                  <thead>
+                    <tr className="bg-[var(--axis-dark-blue)] text-white">
+                      {section.comparisonTable.columns.map((col) => (
+                        <th key={col} className="px-6 py-4 font-semibold">{col}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.comparisonTable.rows.map((row, i) => (
+                      <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                        <td className="px-6 py-4 font-medium text-[var(--axis-dark-blue)]">{row.label}</td>
+                        {row.values.map((val) => (
+                          <td key={val} className="px-6 py-4 text-gray-600">{val}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        </section>
+      ))}
+
+      {/* Benefits list */}
+      {benefits && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-8">{benefitsTitle}</h2>
+            <ul className="grid md:grid-cols-2 gap-4">
+              {benefits.map((item) => (
+                <li key={item} className="flex items-start space-x-3 bg-white p-4 rounded-xl shadow-sm">
+                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Product types (e.g. paper bag styles) */}
+      {productTypes && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-8 text-center">{productTypesTitle}</h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {productTypes.map((item) => (
+                <div key={item.title} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                  <h3 className="font-semibold text-[var(--axis-dark-blue)] mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Art Supply Products We Package — shown only when product defines productsWePackage */}
+      {(product as any).productsWePackage && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-8 text-center">
+              {productsWePackageTitle}
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {((product as any).productsWePackage as { title: string; detail: string }[]).map((item) => (
+                <div key={item.title} className="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-[var(--axis-orange)] transition-colors">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-[var(--axis-orange)] mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-[var(--axis-dark-blue)]">{item.title}</p>
+                      <p className="text-sm text-gray-600 mt-1">{item.detail}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Materials Table — shown only when product defines materials */}
+      {(product as any).materials && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-8 text-center">
+              Materials
+            </h2>
+            <div className="overflow-x-auto max-w-3xl mx-auto">
+              <table className="w-full text-left border-collapse rounded-xl overflow-hidden shadow-sm">
+                <thead>
+                  <tr className="bg-[var(--axis-dark-blue)] text-white">
+                    <th className="px-6 py-4 font-semibold">Material</th>
+                    <th className="px-6 py-4 font-semibold">Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {((product as any).materials as { name: string; bestFor: string }[]).map((mat, i) => (
+                    <tr key={mat.name} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <td className="px-6 py-4 font-medium text-[var(--axis-dark-blue)]">{mat.name}</td>
+                      <td className="px-6 py-4 text-gray-600">{mat.bestFor}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Printing & Finishing — shown only when product defines printingFinishing */}
+      {(product as any).printingFinishing && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-10 text-center">
+              Printing & Finishing
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-4">Print Options</h3>
+                <ul className="space-y-2">
+                  {((product as any).printingFinishing.print as string[]).map((p: string) => (
+                    <li key={p} className="flex items-center space-x-2 text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-4">Finishes</h3>
+                <ul className="space-y-2">
+                  {((product as any).printingFinishing.finish as string[]).map((f: string) => (
+                    <li key={f} className="flex items-center space-x-2 text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-4">Add-ons</h3>
+                <ul className="space-y-2">
+                  {((product as any).printingFinishing.addons as string[]).map((a: string) => (
+                    <li key={a} className="flex items-center space-x-2 text-gray-700">
+                      <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Specifications table (rich pages) */}
+      {specificationsTable && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-8 text-center">{specificationsTitle}</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse rounded-xl overflow-hidden shadow-sm">
+                <thead>
+                  <tr className="bg-[var(--axis-dark-blue)] text-white">
+                    <th className="px-6 py-4 font-semibold">Feature</th>
+                    <th className="px-6 py-4 font-semibold">Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {specificationsTable.map((row, i) => (
+                    <tr key={row.feature} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <td className="px-6 py-4 font-medium text-[var(--axis-dark-blue)]">{row.feature}</td>
+                      <td className="px-6 py-4 text-gray-600">{row.detail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Why Choose (standalone for rich pages) */}
+      {(whyChooseParagraphs || (product as any).whyChoose) && contentSections && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-8">{whyChooseTitle}</h2>
+            {whyChooseParagraphs ? (
+              <div className="space-y-4">
+                {whyChooseParagraphs.map((p) => (
+                  <p key={p.slice(0, 40)} className="text-gray-700 leading-relaxed">{renderLinkedText(p, internalLinks)}</p>
+                ))}
+              </div>
+            ) : (
+              <ul className="space-y-3">
+                {((product as any).whyChoose as string[]).map((point: string) => (
+                  <li key={point} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <span className="text-gray-700">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Specifications (default two-column layout) */}
+      {!specificationsTable && (
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
@@ -459,57 +792,84 @@ export default function ProductDetailPage() {
                 Product Specifications
               </h2>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">Customizable sizes and dimensions</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">Premium materials and finishes</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">Full-color printing capabilities</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">Eco-friendly options available</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">Minimum order quantity: 100 pieces</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span className="text-gray-700">Production time: 10-15 business days</span>
-                </div>
+                {((product as any).specificationsBullets as string[] | undefined)?.map((item) => (
+                  <div key={item} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-500" />
+                    <span className="text-gray-700">{item}</span>
+                  </div>
+                )) || (
+                  <>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span className="text-gray-700">Customizable sizes and dimensions</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span className="text-gray-700">Premium materials and finishes</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span className="text-gray-700">Full-color printing capabilities</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span className="text-gray-700">Eco-friendly options available</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span className="text-gray-700">Minimum order quantity: 100 pieces</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span className="text-gray-700">Production time: 10-15 business days</span>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
             <div>
               <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">
-                Why Choose This Product?
+                {whyChooseTitle}
               </h2>
-              <div className="space-y-4">
-                <p className="text-gray-700 leading-relaxed">
-                  Our {product.name} are designed with your business in mind. We understand the
-                  importance of quality packaging in protecting your products and enhancing your
-                  brand image.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  With years of experience in the packaging industry, we've developed solutions that
-                  combine functionality, aesthetics, and sustainability to meet the highest
-                  standards.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Every product is crafted with attention to detail, ensuring that your packaging
-                  not only looks great but also performs exceptionally well in real-world
-                  conditions.
-                </p>
-              </div>
+              {whyChooseParagraphs ? (
+                <div className="space-y-4">
+                  {whyChooseParagraphs.map((p) => (
+                    <p key={p.slice(0, 40)} className="text-gray-700 leading-relaxed">{renderLinkedText(p, internalLinks)}</p>
+                  ))}
+                </div>
+              ) : (product as any).whyChoose ? (
+                <ul className="space-y-3">
+                  {((product as any).whyChoose as string[]).map((point: string) => (
+                    <li key={point} className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                      <span className="text-gray-700">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="space-y-4">
+                  <p className="text-gray-700 leading-relaxed">
+                    Our {product.name} are designed with your business in mind. We understand the
+                    importance of quality packaging in protecting your products and enhancing your
+                    brand image.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    With years of experience in the packaging industry, we've developed solutions that
+                    combine functionality, aesthetics, and sustainability to meet the highest
+                    standards.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Every product is crafted with attention to detail, ensuring that your packaging
+                    not only looks great but also performs exceptionally well in real-world
+                    conditions.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
+      )}
 
       {/* FAQs Section */}
       <section className="py-16 bg-gray-50">
@@ -523,62 +883,93 @@ export default function ProductDetailPage() {
             </p>
           </div>
           <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="bg-white px-6 rounded-xl border-none shadow-sm">
-              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                How long does it take to get a custom quote?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                Our team typically reviews requirements and provides a detailed quote within 24 hours. For rush requests, we aim to respond even faster via our instant quote portal.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2" className="bg-white px-6 rounded-xl border-none shadow-sm">
-              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                What is the minimum order quantity (MOQ)?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                Our standard MOQ starts as low as 100 units depending on the product category. This allows businesses of all sizes to access premium, custom-branded packaging.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3" className="bg-white px-6 rounded-xl border-none shadow-sm">
-              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                Do you offer international shipping?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                Yes, Axis Packaging ships worldwide. We handle all logistics and customs coordination to ensure your branded boxes arrive safely at your doorstep, regardless of your location.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4" className="bg-white px-6 rounded-xl border-none shadow-sm">
-              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                Can I request a physical sample before placing a bulk order?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                Absolutely! We offer sample production (prototyping) so you can verify the dimensions, material quality, and printing accuracy before committing to a full production run.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-5" className="bg-white px-6 rounded-xl border-none shadow-sm">
-              <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                What design file formats do you accept?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                We prefer high-resolution vector files such as Adobe Illustrator (AI), PDF, or EPS for the best print quality. However, we also accept high-quality PSD, JPG, and PNG files for initial review.
-              </AccordionContent>
-            </AccordionItem>
+            {productFaqs ? (
+              productFaqs.map((faq, i) => (
+                <AccordionItem key={i} value={`item-${i + 1}`} className="bg-white px-6 rounded-xl border-none shadow-sm">
+                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                    {renderLinkedText(faq.answer, internalLinks)}
+                  </AccordionContent>
+                </AccordionItem>
+              ))
+            ) : (
+              <>
+                <AccordionItem value="item-1" className="bg-white px-6 rounded-xl border-none shadow-sm">
+                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                    How long does it take to get a custom quote?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                    Our team typically reviews requirements and provides a detailed quote within 24 hours. For rush requests, we aim to respond even faster via our instant quote portal.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2" className="bg-white px-6 rounded-xl border-none shadow-sm">
+                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                    What is the minimum order quantity (MOQ)?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                    Our standard MOQ starts as low as 100 units depending on the product category. This allows businesses of all sizes to access premium, custom-branded packaging.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3" className="bg-white px-6 rounded-xl border-none shadow-sm">
+                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                    Do you offer international shipping?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                    Yes, Axis Packaging ships worldwide. We handle all logistics and customs coordination to ensure your branded boxes arrive safely at your doorstep, regardless of your location.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4" className="bg-white px-6 rounded-xl border-none shadow-sm">
+                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                    Can I request a physical sample before placing a bulk order?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                    Absolutely! We offer sample production (prototyping) so you can verify the dimensions, material quality, and printing accuracy before committing to a full production run.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5" className="bg-white px-6 rounded-xl border-none shadow-sm">
+                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                    What design file formats do you accept?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                    We prefer high-resolution vector files such as Adobe Illustrator (AI), PDF, or EPS for the best print quality. However, we also accept high-quality PSD, JPG, and PNG files for initial review.
+                  </AccordionContent>
+                </AccordionItem>
+              </>
+            )}
           </Accordion>
         </div>
       </section>
 
+      {/* Urgency banner */}
+      {urgencyBanner && (
+        <section className="py-12 bg-[var(--axis-dark-blue)] text-white">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">{urgencyBanner.title}</h2>
+            <p className="text-lg text-white/90 mb-6">{urgencyBanner.text}</p>
+            <Link to="/quote">
+              <Button size="lg" className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90">
+                Place Your Order Now
+              </Button>
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* CTA Section */}
       <section className="py-16 bg-[var(--axis-dark-blue)] text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">{quoteTitle}</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let our packaging experts help you create the perfect {product.name} for your business.
-            Get a custom quote today and see the difference quality packaging can make.
+            {quoteIntro || `Let our packaging experts help you create the perfect ${product.name} for your business. Get a custom quote today and see the difference quality packaging can make.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90">
-              Get Custom Quote
-            </Button>
+            <Link to="/quote">
+              <Button size="lg" className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90">
+                Request a Free Quote
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
