@@ -32,6 +32,7 @@ html {
 }
         `}</style>
       </head>
+      <meta name="google-site-verification" content="2fq1XRWmLJezhFi39_we9_hLx0x-GiexB7Q30EARWVQ" />
       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYE71TCK6X"></script>
 <script>
