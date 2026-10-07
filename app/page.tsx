@@ -6,17 +6,31 @@ import { Hero } from "@/components/hero";
 import { Quotation } from "@/components/quotation";
 import { SolutionFeatures } from "@/components/solution-features";
 import { Testimonials } from "@/components/testimonials";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo-head";
+import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
+import { localBusinessSchema, organizationSchema, websiteSchema, webPageSchema } from "@/lib/seo";
 
 export default function Home() {
+  const seo = STATIC_PAGE_SEO.home;
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Axis Packaging - Premium Custom Packaging Solutions | Innovative & Sustainable</title>
-        <meta name="description" content="Leading provider of premium custom packaging solutions. From retail boxes to industrial shipping, we offer innovative, sustainable, and high-quality packaging tailored to your brand." />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="canonical" href="https://theaxispackaging.com/" />
-      </Helmet>
+      <SeoHead
+        title={seo.title}
+        description={seo.description}
+        path={seo.path}
+        image="/assets/banner.png"
+        keywords="custom packaging UK, custom boxes UK, custom printed boxes UK, bespoke packaging UK, branded packaging"
+        jsonLd={[
+          organizationSchema(),
+          localBusinessSchema(),
+          websiteSchema(),
+          webPageSchema({
+            title: seo.title,
+            description: seo.description,
+            path: seo.path,
+          }),
+        ]}
+      />
       <Header />
       <main>
         <Hero />

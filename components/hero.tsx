@@ -10,7 +10,7 @@ export function Hero() {
       {/* Background Image */}
       <div
         role="img"
-        aria-label="custom packaging solutions"
+        aria-label="Custom printed packaging boxes by Axis Packaging UK"
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/assets/banner.png')"

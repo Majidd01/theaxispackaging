@@ -9,7 +9,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { INDUSTRIES, PRODUCT_CATEGORIES } from "@/lib/constants";
 import { ArrowRight, Award, Building2, CheckCircle, Factory, Package, Users } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo-head";
+import { buildIndustrySeo } from "@/lib/seo-page-data";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 
 export default function IndustryDetailPage() {
   const { slug } = useParams();
@@ -18,6 +20,12 @@ export default function IndustryDetailPage() {
   if (!industry) {
     return (
       <div className="min-h-screen bg-gray-50">
+        <SeoHead
+          title="Industry Not Found | Axis Packaging"
+          description="The industry packaging page you requested could not be found."
+          path={`/industries/${slug || ""}`}
+          noindex
+        />
         <Header />
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
@@ -36,13 +44,30 @@ export default function IndustryDetailPage() {
     );
   }
 
+  const seo = buildIndustrySeo(industry);
+  const path = `/industries/${industry.slug}`;
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Helmet>
-        <title>{industry.metaTitle || `${industry.name} Packaging Solutions - Axis Packaging`}</title>
-        <meta name="description" content={industry.metaDescription || `Discover our specialized packaging solutions for the ${industry.name} industry.`} />
-        <link rel="canonical" href={`https://theaxispackaging.com/industries/${industry.slug}`} />
-      </Helmet>
+      <SeoHead
+        title={seo.title}
+        description={seo.description}
+        path={path}
+        image={industry.image}
+        jsonLd={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Industries", path: "/industries" },
+            { name: industry.name, path },
+          ]),
+          serviceSchema({
+            name: `${industry.name} Packaging`,
+            description: industry.description,
+            path,
+            image: industry.image,
+          }),
+        ]}
+      />
       <Header />
 
       {/* Breadcrumb */}

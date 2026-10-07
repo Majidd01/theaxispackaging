@@ -14,6 +14,7 @@
     "jsx": "react-jsx",
     "incremental": true,
     "paths": {
+      "@/lib/*": ["./src/lib/*"],
       "@/*": ["./*"]
     }
   },

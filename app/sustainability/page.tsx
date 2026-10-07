@@ -3,7 +3,9 @@ import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Leaf, Recycle, Award, TreePine } from "lucide-react"
-import { Helmet } from "react-helmet-async"
+import { SeoHead } from "@/components/seo-head"
+import { STATIC_PAGE_SEO } from "@/lib/seo-page-data"
+import { webPageSchema } from "@/lib/seo"
 
 export default function SustainabilityPage() {
   const initiatives = [
@@ -31,11 +33,16 @@ export default function SustainabilityPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Sustainable Packaging Solutions - Axis Packaging</title>
-        <meta name="description" content="Discover Axis Packaging's commitment to sustainability. We offer eco-friendly materials and carbon-neutral operations for a greener future." />
-        <link rel="canonical" href="https://theaxispackaging.com/sustainability" />
-      </Helmet>
+      <SeoHead
+        title={STATIC_PAGE_SEO.sustainability.title}
+        description={STATIC_PAGE_SEO.sustainability.description}
+        path={STATIC_PAGE_SEO.sustainability.path}
+        jsonLd={webPageSchema({
+          title: STATIC_PAGE_SEO.sustainability.title,
+          description: STATIC_PAGE_SEO.sustainability.description,
+          path: STATIC_PAGE_SEO.sustainability.path,
+        })}
+      />
       <Header />
       <main>
         <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">

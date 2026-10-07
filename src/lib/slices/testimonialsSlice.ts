@@ -21,7 +21,7 @@ const initialState: TestimonialsState = {
       name: "Sarah Johnson",
       company: "TechStart Inc.",
       content:
-        "Packify.ai delivered exceptional quality boxes for our product launch. The attention to detail and customer service was outstanding.",
+        "Axis Packaging delivered exceptional quality boxes for our product launch. The attention to detail and customer service was outstanding.",
       rating: 5,
       image: "/assets/packify-client-sarah.png",
     },

@@ -36,10 +36,10 @@ export function Header() {
               <a href="https://www.facebook.com/share/14YENMTyjLk/" target="_blank" rel="noopener noreferrer" className="hover:text-sky-200 transition-colors">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="hover:text-sky-200 transition-colors">
+              <span className="opacity-70" aria-hidden="true" title="Twitter / X profile coming soon">
                 <Twitter className="h-4 w-4" />
-              </a>
-              <a href="https://www.instagram.com/theaxispackaging?utm_source=qr&igsh=c3BxM3BkN2t3Zmo4" target="_blank" rel="noopener noreferrer" className="hover:text-sky-200 transition-colors">
+              </span>
+              <a href="https://www.instagram.com/theaxispackaging/" target="_blank" rel="noopener noreferrer" className="hover:text-sky-200 transition-colors">
                 <Instagram className="h-4 w-4" />
               </a>
               <a href="https://www.linkedin.com/company/the-axis-packaging/" target="_blank" rel="noopener noreferrer" className="hover:text-sky-200 transition-colors">

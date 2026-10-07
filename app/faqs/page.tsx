@@ -10,7 +10,9 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { setActiveCategory } from "@/lib/slices/faqsSlice";
 import { HelpCircle, MessageCircle, Search, ArrowLeft, Users, Clock, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo-head";
+import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
+import { webPageSchema } from "@/lib/seo";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -1253,11 +1255,17 @@ Contact our sales team to discuss your specific volume needs and maximize your s
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Frequently Asked Questions - Axis Packaging Solutions</title>
-        <meta name="description" content="Find answers to common questions about our custom packaging products, production times, shipping, and more." />
-        <link rel="canonical" href="https://theaxispackaging.com/faqs" />
-      </Helmet>
+      <SeoHead
+        title={STATIC_PAGE_SEO.faqs.title}
+        description={STATIC_PAGE_SEO.faqs.description}
+        path={STATIC_PAGE_SEO.faqs.path}
+        jsonLd={webPageSchema({
+          title: STATIC_PAGE_SEO.faqs.title,
+          description: STATIC_PAGE_SEO.faqs.description,
+          path: STATIC_PAGE_SEO.faqs.path,
+          type: "FAQPage",
+        })}
+      />
       <Header />
 
       <main>

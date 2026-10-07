@@ -23,8 +23,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-blue-100">
-              Leading provider of custom packaging solutions including boxes, retail packaging, and
-              sustainable packaging options.
+              Leeds-based custom packaging for UK brands — custom printed boxes, bespoke packaging,
+              and sustainable packaging options.
             </p>
           </div>
 
@@ -34,12 +34,22 @@ export function Footer() {
             <ul className="space-y-2 text-blue-100">
               <li>
                 <Link to="/products" className="hover:text-white">
-                  Products
+                  Custom Packaging Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries" className="hover:text-white">
+                  Industries
                 </Link>
               </li>
               <li>
                 <Link to="/quote" className="hover:text-white">
                   Request a Quote
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-white">
+                  Packaging Blog
                 </Link>
               </li>
               <li>
@@ -50,6 +60,11 @@ export function Footer() {
               <li>
                 <Link to="/contact" className="hover:text-white">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/faqs" className="hover:text-white">
+                  FAQs
                 </Link>
               </li>
             </ul>

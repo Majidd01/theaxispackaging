@@ -95,7 +95,7 @@ export function Sustainability() {
               <CardContent className="p-0">
                 <img
                   src="/assets/packify-eco-friendly-packaging.png"
-                  alt="Packify.ai sustainable packaging materials"
+                  alt="Axis Packaging sustainable packaging materials"
                   className="w-full h-auto rounded-lg"
                 />
               </CardContent>

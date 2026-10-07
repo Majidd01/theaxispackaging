@@ -12,7 +12,9 @@ import { Link, useParams } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo-head";
+import { buildProductSeo } from "@/lib/seo-page-data";
+import { breadcrumbSchema, faqPageSchema, productSchema } from "@/lib/seo";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const placeholderImg = "/assets/placeholder.jpg";
 
@@ -139,6 +141,12 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <div className="min-h-screen bg-gray-50">
+        <SeoHead
+          title="Product Not Found | Axis Packaging"
+          description="The packaging product you requested could not be found."
+          path={`/products/${slug || ""}`}
+          noindex
+        />
         <Header />
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
@@ -185,40 +193,36 @@ export default function ProductDetailPage() {
   const whyChooseTitle = (product as any).whyChooseTitle
     || (whyChooseParagraphs ? "Why Choose Axis Packaging" : (product as any).whyChoose ? "Why Axis Packaging" : "Why Choose This Product?");
 
-  const faqSchema = productFaqs
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: productFaqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: { "@type": "Answer", text: faq.answer },
-        })),
-      }
-    : null;
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://theaxispackaging.com/" },
-      { "@type": "ListItem", position: 2, name: "Products", item: "https://theaxispackaging.com/products" },
-      { "@type": "ListItem", position: 3, name: breadcrumbLabel, item: `https://theaxispackaging.com/products/${product.slug}` },
-    ],
-  };
+  const productPath = `/products/${product.slug}`;
+  const seo = buildProductSeo(product);
+  const faqSchema = faqPageSchema(productFaqs || []);
+  const crumbs = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: breadcrumbLabel, path: productPath },
+  ]);
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Helmet>
-        <title>{product.metaTitle || `${product.name} | Axis Packaging`}</title>
-        <meta name="description" content={product.metaDescription || product.description} />
-        <meta property="og:title" content={product.metaTitle || product.name} />
-        <meta property="og:description" content={product.metaDescription || product.description} />
-        <meta property="og:image" content={product.image || placeholderImg} />
-        <link rel="canonical" href={`https://theaxispackaging.com/products/${product.slug}`} />
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
-      </Helmet>
+      <SeoHead
+        title={seo.title}
+        description={seo.description}
+        path={productPath}
+        image={product.image || placeholderImg}
+        type="product"
+        keywords={`${seo.primaryTopic}, custom packaging UK, custom printed boxes`}
+        jsonLd={[
+          crumbs,
+          productSchema({
+            name: product.name,
+            description: product.description,
+            image: product.image || placeholderImg,
+            path: productPath,
+            category: "Custom Packaging",
+          }),
+          faqSchema,
+        ].filter(Boolean)}
+      />
       <Header />
 
       {/* Breadcrumb */}
@@ -251,7 +255,11 @@ export default function ProductDetailPage() {
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = placeholderImg;
                   }}
-                  alt={product.alt || product.name}
+                  alt={(product.alt || product.name).split(",")[0].trim()}
+                  width={800}
+                  height={384}
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-96 object-cover rounded-lg shadow-lg"
                 />
               </div>

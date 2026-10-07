@@ -6,19 +6,34 @@ import { Button } from "@/components/ui/button";
 import { INDUSTRIES } from "@/lib/constants";
 import { ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo-head";
+import { STATIC_PAGE_SEO, buildIndustrySeo } from "@/lib/seo-page-data";
+import { webPageSchema } from "@/lib/seo";
 
 export default function ProductsPage() {
   const [searchParams] = useSearchParams();
   const industrySlug = searchParams.get("industry");
   const selectedIndustry = industrySlug ? INDUSTRIES.find((i) => i.slug === industrySlug) : null;
+  const industrySeo = selectedIndustry ? buildIndustrySeo(selectedIndustry) : null;
+  const title = selectedIndustry
+    ? `${selectedIndustry.name} Packaging Products UK | Axis Packaging`
+    : STATIC_PAGE_SEO.products.title;
+  const description = selectedIndustry
+    ? industrySeo!.description
+    : STATIC_PAGE_SEO.products.description;
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>{selectedIndustry ? selectedIndustry.metaTitle : "Custom Packaging Solutions - Axis Packaging"}</title>
-        <meta name="description" content={selectedIndustry ? selectedIndustry.metaDescription : "Explore our comprehensive range of premium packaging products designed to elevate your brand."} />
-        <link rel="canonical" href={`https://theaxispackaging.com/products${industrySlug ? `?industry=${industrySlug}` : ""}`} />
-      </Helmet>
+      <SeoHead
+        title={title}
+        description={description}
+        path="/products"
+        jsonLd={webPageSchema({
+          title,
+          description,
+          path: "/products",
+          type: "CollectionPage",
+        })}
+      />
       <Header />
       <main>
         <section className="py-16 bg-gradient-to-br from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white">

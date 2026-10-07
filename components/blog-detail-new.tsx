@@ -5,6 +5,8 @@ import { Link as RouterLink, useParams } from "react-router-dom";
 import { getBlogBySlug, getRelatedBlogs } from "@/lib/blogs";
 import { Clock, Calendar, User, ChevronRight, ChevronDown } from "lucide-react";
 import { Blog, BlogContentBlock, BlogFAQ } from "@/lib/blog-types";
+import { SeoHead } from "@/components/seo-head";
+import { blogPostingSchema, breadcrumbSchema, faqPageSchema } from "@/lib/seo";
 
 export const BlogDetailComponent = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -119,6 +121,12 @@ export const BlogDetailComponent = () => {
   if (!blog) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center">
+        <SeoHead
+          title="Blog Post Not Found | Axis Packaging"
+          description="The blog post you requested could not be found."
+          path={`/blog/${slug || ""}`}
+          noindex
+        />
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog Not Found</h1>
           <RouterLink to="/blog" className="text-blue-600 hover:text-blue-700 underline">
@@ -129,8 +137,41 @@ export const BlogDetailComponent = () => {
     );
   }
 
+  const blogPath = `/blog/${blog.slug}`;
+  const blogTitle = blog.meta?.metaTitle || `${blog.title} | Axis Packaging`;
+  const blogDescription = blog.meta?.metaDescription || blog.excerpt;
+  const faqSchema = faqPageSchema(
+    (blog.faqs || []).map((f) => ({ question: f.question, answer: f.answer }))
+  );
+
   return (
     <main className="min-h-screen bg-white">
+      <SeoHead
+        title={blogTitle}
+        description={blogDescription}
+        path={blogPath}
+        image={blog.meta?.ogImage || blog.featuredImage}
+        type="article"
+        publishedTime={blog.publishedAt}
+        modifiedTime={blog.updatedAt || blog.publishedAt}
+        jsonLd={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: blog.title, path: blogPath },
+          ]),
+          blogPostingSchema({
+            title: blog.title,
+            description: blogDescription,
+            image: blog.featuredImage,
+            path: blogPath,
+            author: blog.author,
+            datePublished: blog.publishedAt,
+            dateModified: blog.updatedAt || blog.publishedAt,
+          }),
+          faqSchema,
+        ].filter(Boolean)}
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
         <div className="max-w-4xl mx-auto px-4">
@@ -155,7 +196,7 @@ export const BlogDetailComponent = () => {
             </span>
             <span className="flex items-center gap-2">
               <Calendar size={16} />
-              {new Date(blog.publishedAt).toLocaleDateString("en-US", {
+              {new Date(blog.publishedAt).toLocaleDateString("en-GB", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
@@ -173,7 +214,11 @@ export const BlogDetailComponent = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <img
           src={blog.featuredImage}
-          alt={blog.featuredImageAlt}
+          alt={blog.featuredImageAlt || blog.title}
+          width={1200}
+          height={630}
+          fetchPriority="high"
+          decoding="async"
           className="w-full rounded-lg shadow-lg"
           onError={(e) => {
             (e.target as HTMLImageElement).src =

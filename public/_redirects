@@ -1,4 +1,3 @@
-/products/home-decor /products/home-decor-packaging-boxes 301
-/products/office-boxes /products/custom-office-boxes 301
-/products/music-cases /products/musical-instrument-boxes 301
-/* /index.html 200
+# Preserve SPA fallback. Do not 301 live product slugs to non-existent targets.
+# Admin is blocked in robots.txt; still serve app shell if visited.
+/*    /index.html   200

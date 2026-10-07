@@ -13,7 +13,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { COMPANY_INFO } from "@/lib/constants";
 import { ChevronDown, CheckCircle } from "lucide-react";
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+import { SeoHead } from "@/components/seo-head";
+import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
+import { localBusinessSchema, organizationSchema, webPageSchema } from "@/lib/seo";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 
@@ -157,11 +159,21 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Contact Us - Axis Packaging - Get a Custom Quote</title>
-        <meta name="description" content="Get in touch with Axis Packaging for your custom packaging needs. Request a quote, ask questions, or schedule a consultation with our experts." />
-        <link rel="canonical" href="https://theaxispackaging.com/contact" />
-      </Helmet>
+      <SeoHead
+        title={STATIC_PAGE_SEO.contact.title}
+        description={STATIC_PAGE_SEO.contact.description}
+        path={STATIC_PAGE_SEO.contact.path}
+        jsonLd={[
+          organizationSchema(),
+          localBusinessSchema(),
+          webPageSchema({
+            title: STATIC_PAGE_SEO.contact.title,
+            description: STATIC_PAGE_SEO.contact.description,
+            path: STATIC_PAGE_SEO.contact.path,
+            type: "ContactPage",
+          }),
+        ]}
+      />
       <Header />
 
       <main>
@@ -185,11 +197,11 @@ export default function ContactPage() {
                     <br />
                     Starts with
                     <br />
-                    <span className="text-green-600">theasxis Packaging</span>
+                    <span className="text-green-600">Axis Packaging</span>
                   </h1>
 
                   <p className="text-gray-600 leading-relaxed mb-8">
-                    At theasxisPackaging, we thrive on elevating solutions and cost- effective
+                    At Axis Packaging, we thrive on elevating solutions and cost-effective
                     custom packaging that enhances your brand and drives customer satisfaction. From
                     concept to delivery, we're your trusted partner for all your packaging needs.
                   </p>

@@ -5,6 +5,9 @@ import { Link as RouterLink } from "react-router-dom";
 import { getPublishedBlogs } from "@/lib/blogs";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { Blog } from "@/lib/blog-types";
+import { SeoHead } from "@/components/seo-head";
+import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
+import { webPageSchema } from "@/lib/seo";
 
 export const BlogPageComponent = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -28,6 +31,11 @@ export const BlogPageComponent = () => {
   if (loading) {
     return (
       <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+        <SeoHead
+          title={STATIC_PAGE_SEO.blog.title}
+          description={STATIC_PAGE_SEO.blog.description}
+          path={STATIC_PAGE_SEO.blog.path}
+        />
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-600">Loading blog posts...</p>
@@ -38,6 +46,17 @@ export const BlogPageComponent = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <SeoHead
+        title={STATIC_PAGE_SEO.blog.title}
+        description={STATIC_PAGE_SEO.blog.description}
+        path={STATIC_PAGE_SEO.blog.path}
+        jsonLd={webPageSchema({
+          title: STATIC_PAGE_SEO.blog.title,
+          description: STATIC_PAGE_SEO.blog.description,
+          path: STATIC_PAGE_SEO.blog.path,
+          type: "CollectionPage",
+        })}
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="max-w-6xl mx-auto px-4">
@@ -93,7 +112,7 @@ export const BlogPageComponent = () => {
                     <div className="flex items-center gap-4 text-xs text-gray-500 mb-4 pb-4 border-b border-gray-200">
                       <span className="flex items-center gap-1">
                         <Calendar size={14} />
-                        {new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                        {new Date(blog.publishedAt).toLocaleDateString("en-GB", {
                           month: "short",
                           day: "numeric",
                           year: "numeric",

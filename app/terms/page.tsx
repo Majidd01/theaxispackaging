@@ -1,16 +1,17 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
-import { Helmet } from "react-helmet-async"
+import { SeoHead } from "@/components/seo-head"
+import { STATIC_PAGE_SEO } from "@/lib/seo-page-data"
 
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Terms of Service - Axis Packaging</title>
-        <meta name="description" content="Read Axis Packaging's Terms of Service. This document outlines the rules and regulations for using our website and custom packaging services." />
-        <link rel="canonical" href="https://theaxispackaging.com/terms" />
-      </Helmet>
+      <SeoHead
+        title={STATIC_PAGE_SEO.terms.title}
+        description={STATIC_PAGE_SEO.terms.description}
+        path={STATIC_PAGE_SEO.terms.path}
+      />
       <Header />
       <main className="py-16">
         <div className="container mx-auto px-4 max-w-4xl">

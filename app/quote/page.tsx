@@ -1,16 +1,20 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { InstantQuote } from "@/components/instant-quote"
-import { Helmet } from "react-helmet-async"
+import { SeoHead } from "@/components/seo-head"
+import { STATIC_PAGE_SEO } from "@/lib/seo-page-data"
+import { webPageSchema } from "@/lib/seo"
 
 export default function QuotePage() {
+  const seo = STATIC_PAGE_SEO.quote
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Request a Custom Packaging Quote - Axis Packaging</title>
-        <meta name="description" content="Get an instant quote for your custom packaging project. Provide your specifications and receive a detailed proposal for your brand." />
-        <link rel="canonical" href="https://theaxispackaging.com/quote" />
-      </Helmet>
+      <SeoHead
+        title={seo.title}
+        description={seo.description}
+        path={seo.path}
+        jsonLd={webPageSchema({ title: seo.title, description: seo.description, path: seo.path })}
+      />
       <Header />
       <main>
         <InstantQuote />
