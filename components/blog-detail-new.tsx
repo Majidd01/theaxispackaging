@@ -46,6 +46,34 @@ export const BlogDetailComponent = () => {
     setExpandedFAQs(newExpanded);
   };
 
+  const renderLinkedText = (text: string) => {
+    const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+    return parts.map((part, i) => {
+      const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (!match) return <React.Fragment key={i}>{part}</React.Fragment>;
+      const [, label, href] = match;
+      const isExternal = /^https?:\/\//i.test(href);
+      if (isExternal) {
+        return (
+          <a
+            key={i}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            {label}
+          </a>
+        );
+      }
+      return (
+        <RouterLink key={i} to={href} className="text-blue-600 hover:text-blue-800 underline">
+          {label}
+        </RouterLink>
+      );
+    });
+  };
+
   const renderContentBlock = (block: BlogContentBlock,  index: number) => {
     switch (block.type) {
       case "heading2":
@@ -63,14 +91,14 @@ export const BlogDetailComponent = () => {
       case "paragraph":
         return (
           <p key={index} className="text-gray-700 leading-relaxed mb-4">
-            {block.content}
+            {renderLinkedText(block.content || "")}
           </p>
         );
       case "bullet-list":
         return (
           <ul key={index} className="list-disc list-inside space-y-2 mb-4 text-gray-700">
             {block.listItems?.map((item, i) => (
-              <li key={i} className="ml-4">{item}</li>
+              <li key={i} className="ml-4">{renderLinkedText(item)}</li>
             ))}
           </ul>
         );
@@ -80,6 +108,10 @@ export const BlogDetailComponent = () => {
             <img
               src={block.imageUrl}
               alt={block.imageAlt || "Blog image"}
+              width={1200}
+              height={675}
+              loading="lazy"
+              decoding="async"
               className="w-full rounded-lg shadow-md"
               onError={(e) => {
                 (e.target as HTMLImageElement).src =
@@ -272,11 +304,19 @@ export const BlogDetailComponent = () => {
                   ))}
                 </ul>
               )}
-              <RouterLink to={blog.cta.buttonLink}>
-                <button className="bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
-                  {blog.cta.buttonText}
-                </button>
-              </RouterLink>
+              {/^https?:\/\//i.test(blog.cta.buttonLink) ? (
+                <a href={blog.cta.buttonLink}>
+                  <button className="bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+                    {blog.cta.buttonText}
+                  </button>
+                </a>
+              ) : (
+                <RouterLink to={blog.cta.buttonLink}>
+                  <button className="bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+                    {blog.cta.buttonText}
+                  </button>
+                </RouterLink>
+              )}
             </div>
           )}
 
