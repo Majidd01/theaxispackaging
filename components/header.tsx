@@ -23,7 +23,9 @@ export function Header() {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>+44 7367 066309</span>
+              <a href={`tel:${COMPANY_INFO.phone}`} className="hover:underline">
+                {COMPANY_INFO.phoneDisplay || "+44 7398 429456"}
+              </a>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />

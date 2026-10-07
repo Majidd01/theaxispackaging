@@ -882,7 +882,7 @@ Let us know your design needs and we'll provide a custom quote tailored to your 
 • **Mobile App:** Order on-the-go from your device
 
 **Traditional Ordering:**
-• **Phone Orders:** Call +1 (813) 327-1566
+• **Phone Orders:** Call +44 7398 429456
 • **Email Orders:** Send detailed requirements
 • **In-Person:** Visit our sales office
 • **Trade Shows:** Meet us at industry events

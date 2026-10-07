@@ -40,7 +40,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "contact Axis Packaging",
     title: "Contact Axis Packaging | Custom Packaging Quote UK",
     description: truncateMeta(
-      "Contact Axis Packaging in Leeds for custom packaging advice or a quote. Call +44 7367 066309 or email info@theaxispackaging.com."
+      "Contact Axis Packaging in Leeds for custom packaging advice or a quote. Call +44 7398 429456 or email info@theaxispackaging.com."
     ),
   },
   products: {

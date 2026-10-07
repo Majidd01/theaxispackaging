@@ -101,7 +101,7 @@ export function Quotation() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                     <Input
                       type="tel"
-                      placeholder="+44 7367 066309"
+                      placeholder="+44 7398 429456"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
                       className="border-gray-300 focus:border-orange-500 focus:ring-orange-500"
