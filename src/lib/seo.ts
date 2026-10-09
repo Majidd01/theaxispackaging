@@ -3,7 +3,7 @@
  * Keep factual — no invented ratings, prices, or reviews.
  */
 
-export const SITE_URL = "https://theaxispackaging.com";
+export const SITE_URL = "https://www.theaxispackaging.com";
 export const SITE_NAME = "Axis Packaging";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/banner.png`;
 export const DEFAULT_LOCALE = "en_GB";
@@ -31,14 +31,25 @@ export const BUSINESS = {
 
 export function absoluteUrl(path = "/"): string {
   if (!path || path === "/") return `${SITE_URL}/`;
-  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    // Prefer www host; leave external URLs unchanged.
+    return path
+      .replace(/^https?:\/\/theaxispackaging\.com(?=\/|$)/i, SITE_URL)
+      .replace(/^https?:\/\/www\.theaxispackaging\.com(?=\/|$)/i, SITE_URL);
+  }
   const normalised = path.startsWith("/") ? path : `/${path}`;
-  return `${SITE_URL}${normalised}`;
+  const trimmed =
+    normalised.length > 1 && normalised.endsWith("/")
+      ? normalised.slice(0, -1)
+      : normalised;
+  return `${SITE_URL}${trimmed}`;
 }
 
 export function absoluteImageUrl(src?: string | null): string {
   if (!src) return DEFAULT_OG_IMAGE;
-  if (src.startsWith("http://") || src.startsWith("https://")) return src;
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    return absoluteUrl(src);
+  }
   return absoluteUrl(src.startsWith("/") ? src : `/${src}`);
 }
 
@@ -74,7 +85,10 @@ export function organizationSchema() {
     url: BUSINESS.url,
     email: BUSINESS.email,
     telephone: BUSINESS.phone,
-    logo: absoluteUrl("/assets/logo.png"),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/assets/logo.png"),
+    },
     image: DEFAULT_OG_IMAGE,
     description: BUSINESS.description,
     address: {
@@ -157,6 +171,7 @@ export function webPageSchema(opts: {
     url: absoluteUrl(opts.path),
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
     inLanguage: "en-GB",
   };
 }
@@ -225,7 +240,9 @@ export function blogPostingSchema(opts: {
       : { "@id": `${SITE_URL}/#organization` },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
+      url: SITE_URL,
       logo: {
         "@type": "ImageObject",
         url: absoluteUrl("/assets/logo.png"),

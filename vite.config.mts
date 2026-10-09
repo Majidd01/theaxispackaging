@@ -38,7 +38,7 @@ export default defineConfig({
 	plugins: [
 		react(),
 		Sitemap({
-			hostname: 'https://theaxispackaging.com',
+			hostname: 'https://www.theaxispackaging.com',
 			dynamicRoutes,
 			generateRobotsTxt: false,
 			readable: true,

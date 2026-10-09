@@ -92,9 +92,9 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/blog",
     pageType: "Blog",
     primaryTopic: "packaging insights blog",
-    title: "Packaging Insights & Tips Blog | Axis Packaging",
+    title: "Custom Packaging Blog UK | Tips & Guides | Axis Packaging",
     description: truncateMeta(
-      "Read Axis Packaging guides on custom boxes, sustainable materials, industry packaging trends, and practical tips for UK brands."
+      "Explore custom packaging tips, printed box ideas and expert guides from Axis Packaging. Discover practical packaging solutions for UK businesses."
     ),
   },
   terms: {

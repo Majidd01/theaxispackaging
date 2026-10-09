@@ -1,7 +1,7 @@
-# Axis Packaging - https://theaxispackaging.com/
+# Axis Packaging - https://www.theaxispackaging.com/
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://theaxispackaging.com/sitemap.xml
+Sitemap: https://www.theaxispackaging.com/sitemap.xml

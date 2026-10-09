@@ -7,7 +7,10 @@ import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { Blog } from "@/lib/blog-types";
 import { SeoHead } from "@/components/seo-head";
 import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
-import { webPageSchema } from "@/lib/seo";
+import { organizationSchema, webPageSchema } from "@/lib/seo";
+
+const BLOG_SEO_KEYWORDS =
+  "Custom Packaging Blog UK, custom packaging, custom printed boxes UK, bespoke packaging, packaging solutions UK, branded packaging";
 
 export const BlogPageComponent = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -35,6 +38,7 @@ export const BlogPageComponent = () => {
           title={STATIC_PAGE_SEO.blog.title}
           description={STATIC_PAGE_SEO.blog.description}
           path={STATIC_PAGE_SEO.blog.path}
+          keywords={BLOG_SEO_KEYWORDS}
         />
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -50,12 +54,16 @@ export const BlogPageComponent = () => {
         title={STATIC_PAGE_SEO.blog.title}
         description={STATIC_PAGE_SEO.blog.description}
         path={STATIC_PAGE_SEO.blog.path}
-        jsonLd={webPageSchema({
-          title: STATIC_PAGE_SEO.blog.title,
-          description: STATIC_PAGE_SEO.blog.description,
-          path: STATIC_PAGE_SEO.blog.path,
-          type: "CollectionPage",
-        })}
+        keywords={BLOG_SEO_KEYWORDS}
+        jsonLd={[
+          organizationSchema(),
+          webPageSchema({
+            title: STATIC_PAGE_SEO.blog.title,
+            description: STATIC_PAGE_SEO.blog.description,
+            path: STATIC_PAGE_SEO.blog.path,
+            type: "CollectionPage",
+          }),
+        ]}
       />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
