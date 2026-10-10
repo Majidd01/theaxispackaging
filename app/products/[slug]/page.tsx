@@ -8,8 +8,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { PRODUCT_CATEGORIES } from "@/lib/constants";
 import { ArrowRight, CheckCircle, MessageCircle, Package, Shield, Star, Truck } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { submitEnquiry } from "@/lib/submit-enquiry";
 import { useToast } from "@/hooks/use-toast";
 import { SeoHead } from "@/components/seo-head";
 import { buildProductSeo } from "@/lib/seo-page-data";
@@ -70,6 +71,7 @@ export default function ProductDetailPage() {
 
   const [submitting, setSubmitting] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [companyWebsite, setCompanyWebsite] = useState("");
 
   const validate = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -95,30 +97,27 @@ export default function ProductDetailPage() {
     }
     setSubmitting(true);
     try {
-      emailjs.init("shQGEnnog2UpWxhdL");
-      await emailjs.send(
-        "service_vhwzbeo",
-        "template_9epu9ft",
-        {
-          to_email: "info@theaxispackaging.com",
-          // to_email: "info@theaxispackaging.com",
-          subject: `Add to Quote - ${product?.name ?? "Product"}`,
-          from_name: form.name,
-          from_email: form.email,
-          from_phone: form.phone,
-          product_type: product?.name ?? slug,
-          quantity: quantityValue,
-          dimensions: `${form.length} ${unitLabel} x ${form.width} ${unitLabel} x ${form.depth} ${unitLabel}`,
-          material: form.material,
-          printing: form.print,
-          finishing: form.finishing,
-          additional_option: form.additionalOption,
-          add_up: form.addUp,
-          file_name: selectedFile?.name || "No file attached",
-        }
-      );
+      const result = await submitEnquiry({
+        form: "product",
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        product: product?.name ?? slug,
+        quantity: quantityValue,
+        dimensions: { length: form.length, width: form.width, depth: form.depth, unit: form.unit },
+        material: form.material,
+        printing: form.print,
+        finishing: form.finishing,
+        additionalOption: form.additionalOption,
+        addUp: form.addUp,
+        fileName: selectedFile?.name || "",
+        companyWebsite,
+      });
+      if (!result.ok) {
+        toast({ title: "Failed to submit", description: result.error });
+        return;
+      }
 
-      // Persist to localStorage as a lightweight quote cart entry
       const existing = JSON.parse(localStorage.getItem("quoteItems") || "[]");
       const item = {
         slug,
@@ -526,6 +525,7 @@ export default function ProductDetailPage() {
                         className="w-36 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--axis-orange)]"
                       />
                     )}
+                    <EnquiryHoneypot value={companyWebsite} onChange={setCompanyWebsite} />
                     <Button onClick={handleAddToQuote} disabled={submitting} className="bg-green-600 hover:bg-green-700 text-white px-8">
                       {submitting ? "ADDING..." : "ADD TO QUOTE"}
                     </Button>

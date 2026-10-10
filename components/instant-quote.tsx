@@ -21,15 +21,12 @@ import {
   updateDimensions,
   updateFormData,
 } from "@/lib/slices/quoteFormSlice";
-import emailjs from "@emailjs/browser";
 import { Calculator, CheckCircle, Clock, Upload } from "lucide-react";
+import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { submitEnquiry } from "@/lib/submit-enquiry";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-
-// Initialize EmailJS with your public key
-// emailjs.init("shQGEnnog2UpWxhdL");
-emailjs.init("1c6673PLz9Wiytv_t");
 
 export function InstantQuote() {
   const dispatch = useAppDispatch();
@@ -37,6 +34,8 @@ export function InstantQuote() {
   const [step, setStep] = useState(1);
   const [unit, setUnit] = useState<"mm" | "in">("mm");
   const [customQuantity, setCustomQuantity] = useState("");
+  const [companyWebsite, setCompanyWebsite] = useState("");
+  const [fileNames, setFileNames] = useState<string[]>([]);
   const { toast } = useToast();
 
   // Handle optional industry param and guide download
@@ -91,38 +90,29 @@ export function InstantQuote() {
     dispatch(setSubmitting(true));
 
     try {
-      const templateParams = {
-        // to_email: "info@theaxispackaging.com",
-        to_email: "info@theaxispackaging.com",
-        from_name: formData.contactInfo.name,
-        from_email: formData.contactInfo.email,
-        from_phone: formData.contactInfo.phone || "Not provided",
-        from_company: formData.contactInfo.company || "Not provided",
-        product_type: formData.productType,
+      const result = await submitEnquiry({
+        form: "instant",
+        name: formData.contactInfo.name,
+        email: formData.contactInfo.email,
+        phone: formData.contactInfo.phone,
+        company: formData.contactInfo.company,
+        productType: formData.productType,
         quantity,
-        dimensions: `${formData.dimensions.length || "N/A"} ${unit} x ${
-          formData.dimensions.width || "N/A"
-        } ${unit} x ${formData.dimensions.height || "N/A"} ${unit}`,
-        material: formData.material || "Not specified",
-        printing: formData.printing || "Not specified",
-        timeline: formData.timeline || "Not specified",
-        additional_requirements: formData.additionalRequirements || "None",
-        subject: `New Quote Request - ${formData.contactInfo.name}`,
-      };
-
-      await emailjs.send(
-        // "service_vhwzbeo", // Your service ID
-        // "template_9epu9ft", // Your template ID
-        "service_82mnk3u", // Your service ID
-        "template_8f726v7", // Your template ID
-        templateParams
-      );
-
+        dimensions: { ...formData.dimensions, unit },
+        material: formData.material,
+        printing: formData.printing,
+        timeline: formData.timeline,
+        additionalRequirements: formData.additionalRequirements,
+        fileName: fileNames.join(", "),
+        companyWebsite,
+      });
+      if (!result.ok) {
+        alert(result.error);
+        return;
+      }
       dispatch(setSubmitted(true));
-      console.log("Quote request sent successfully!");
-    } catch (error) {
-      console.error("Error sending email:", error);
-      alert("Failed to send quote request. Please try again.");
+    } catch {
+      alert("We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
     } finally {
       dispatch(setSubmitting(false));
     }
@@ -526,9 +516,7 @@ export function InstantQuote() {
                           accept=".pdf,.ai,.psd,.jpg,.jpeg,.png"
                           className="hidden"
                           onChange={(e) => {
-                            const files = Array.from(e.target.files || []);
-                            console.log('Selected files:', files);
-                            // You can add file handling logic here
+                            setFileNames(Array.from(e.target.files || []).map((file) => file.name));
                           }}
                         />
                         <p className="text-sm text-gray-500">
@@ -560,6 +548,7 @@ export function InstantQuote() {
                 )}
 
                 {/* Navigation Buttons */}
+                <EnquiryHoneypot value={companyWebsite} onChange={setCompanyWebsite} />
                 <div className="flex justify-between mt-8 pt-6 border-t">
                   <Button
                     type="button"

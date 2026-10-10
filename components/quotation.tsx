@@ -8,9 +8,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Calculator, Package, Clock, Shield, Star } from "lucide-react";
+import { Calculator, Package, Clock, Shield, Star, CheckCircle } from "lucide-react";
+import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { submitEnquiry } from "@/lib/submit-enquiry";
 
 export function Quotation() {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,10 +40,33 @@ export function Quotation() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setError("");
+    setSubmitting(true);
+    const result = await submitEnquiry({
+      form: "homepage",
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      productType: formData.productType,
+      quantity: formData.quantity,
+      dimensions: formData.dimensions,
+      material: formData.material,
+      printing: formData.printing,
+      budget: formData.budget,
+      timeline: formData.timeline,
+      description: formData.description,
+      agreeToTerms: formData.agreeToTerms,
+      companyWebsite,
+    });
+    setSubmitting(false);
+    if (!result.ok) {
+      setError(result.error);
+      return;
+    }
+    setSubmitted(true);
   };
 
   return (
@@ -70,7 +99,17 @@ export function Quotation() {
           {/* Quote Form */}
           <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-sm">
             <CardContent className="p-8">
+              {submitted ? (
+                <div className="py-10 text-center" role="status">
+                  <CheckCircle className="mx-auto mb-4 h-12 w-12 text-green-600" />
+                  <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-3">Quote request received</h3>
+                  <p className="text-gray-600">
+                    Thank you. Your enquiry has been sent to Axis Packaging. We will reply to {formData.email}.
+                  </p>
+                </div>
+              ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                <EnquiryHoneypot value={companyWebsite} onChange={setCompanyWebsite} />
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -249,14 +288,18 @@ export function Quotation() {
                   </label>
                 </div>
 
+                {error && (
+                  <p className="text-sm text-red-600" role="alert">{error}</p>
+                )}
                 <Button
                   type="submit"
                   className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                  disabled={!formData.agreeToTerms}
+                  disabled={!formData.agreeToTerms || submitting}
                 >
-                  Get My Custom Quote
+                  {submitting ? "Sending..." : "Get My Custom Quote"}
                 </Button>
               </form>
+              )}
             </CardContent>
           </Card>
 

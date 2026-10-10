@@ -15,12 +15,9 @@ import { useState } from "react";
 import { SeoHead } from "@/components/seo-head";
 import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
 import { localBusinessSchema, organizationSchema, webPageSchema } from "@/lib/seo";
-import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
-
-// Initialize EmailJS with your public key
-// emailjs.init("shQGEnnog2UpWxhdL");
-emailjs.init("1c6673PLz9Wiytv_t");
+import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { submitEnquiry } from "@/lib/submit-enquiry";
 
 export default function ContactPage() {
   const navigate = useNavigate();
@@ -36,51 +33,31 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [companyWebsite, setCompanyWebsite] = useState("");
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        // to_email: "info@theaxispackaging.com",
-        to_email: "info@theaxispackaging.com",
-        // to_email: "majid121.skylinxtech@gmail.com",
-        from_name: contactFormData.name,
-        from_email: contactFormData.email,
-        from_phone: contactFormData.phone || "Not provided",
-        project_type: contactFormData.projectType || "Not specified",
-        budget: contactFormData.budget || "Not specified",
-        timeline: contactFormData.timeline || "Not specified",
-        description: contactFormData.description || "No description provided",
-        subject: `New Contact Message - ${contactFormData.name}`,
-        date_received: new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
-        time_received: new Date().toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', hour12: true }),
-      };
-
-      // Debug: Log the data being sent
-      console.log("Contact Form Data:", contactFormData);
-      console.log("Template Params:", templateParams);
-      console.log("Individual fields:", {
-        projectType: contactFormData.projectType,
+      const result = await submitEnquiry({
+        form: "contact",
+        name: contactFormData.name,
+        email: contactFormData.email,
+        phone: contactFormData.phone,
+        productType: contactFormData.projectType,
         budget: contactFormData.budget,
         timeline: contactFormData.timeline,
-        description: contactFormData.description
+        description: contactFormData.description,
+        companyWebsite,
       });
-
-      await emailjs.send(
-        // "service_vhwzbeo", // Your service ID
-        // "template_9epu9ft", // Your template ID
-        "service_82mnk3u", // Your service ID
-        "template_ykfl7oj", // Your template ID
-        templateParams
-      );
-
+      if (!result.ok) {
+        alert(result.error);
+        return;
+      }
       setSubmitted(true);
-      console.log("Contact message sent successfully!");
-    } catch (error) {
-      console.error("Error sending email:", error);
-      alert("Failed to send message. Please try again.");
+    } catch {
+      alert("We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
     } finally {
       setIsSubmitting(false);
     }
@@ -250,6 +227,7 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent className="p-6">
                     <form onSubmit={handleContactSubmit} className="space-y-6">
+                      <EnquiryHoneypot value={companyWebsite} onChange={setCompanyWebsite} />
                       {/* Contact Info Section */}
                       <div>
                         <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-4">
