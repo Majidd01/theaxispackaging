@@ -6,11 +6,26 @@ import { ChevronDown, Clock, Mail, Menu, Phone, X, Facebook, Twitter, Instagram,
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+const FEATURED_PRODUCT_SLUGS = [
+  "folding-carton-boxes",
+  "corrugated-shipping",
+  "mailer-boxes",
+  "pizza-boxes",
+  "greaseproof-paper",
+  "kraft-boxes",
+];
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [productQuery, setProductQuery] = useState("");
 
-  // Get first 10 products for dropdown
-  const productsForDropdown = PRODUCT_CATEGORIES.slice(0, 10);
+  const featuredProducts = FEATURED_PRODUCT_SLUGS.map((slug) =>
+    PRODUCT_CATEGORIES.find((product) => product.slug === slug)
+  ).filter((product): product is (typeof PRODUCT_CATEGORIES)[number] => Boolean(product));
+  const normalisedQuery = productQuery.trim().toLowerCase();
+  const productMatches = normalisedQuery
+    ? PRODUCT_CATEGORIES.filter((product) => product.name.toLowerCase().includes(normalisedQuery)).slice(0, 8)
+    : [];
 
   // Get first 12 industries for dropdown
   const industriesForDropdown = INDUSTRIES.slice(0, 12);
@@ -102,38 +117,68 @@ export function Header() {
                         <p className="text-sm text-blue-100 mt-1">Explore our comprehensive packaging solutions</p>
                       </div>
                       <div className="p-6">
-                        <div className="grid grid-cols-3 gap-4">
-                          {productsForDropdown.map((product) => (
-                            <Link
-                              key={product.slug}
-                              to={`/products/${product.slug}`}
-                              className="group/item flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-orange-100 transition-all duration-300 border border-transparent hover:border-orange-200 hover:shadow-md"
-                            >
-                              <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
-                                <img
-                                  src={product.image || "/assets/placeholder.jpg"}
-                                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
-                                  alt={product.name}
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div className="text-center">
-                                <h4 className="text-sm font-semibold text-gray-900 group-hover/item:text-[var(--axis-orange)] transition-colors">
+                        <label className="block text-xs font-medium text-gray-500 mb-2" htmlFor="product-menu-search">
+                          Find a product
+                        </label>
+                        <input
+                          id="product-menu-search"
+                          type="search"
+                          value={productQuery}
+                          onChange={(e) => setProductQuery(e.target.value)}
+                          placeholder="Search the catalogue"
+                          className="w-full mb-4 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--axis-orange)]"
+                        />
+                        {normalisedQuery ? (
+                          <div className="grid grid-cols-2 gap-2 mb-4">
+                            {productMatches.length ? (
+                              productMatches.map((product) => (
+                                <Link
+                                  key={product.slug}
+                                  to={`/products/${product.slug}`}
+                                  className="px-3 py-2 rounded-lg text-sm font-medium text-gray-800 hover:bg-orange-50 hover:text-[var(--axis-orange)]"
+                                  onClick={() => setProductQuery("")}
+                                >
                                   {product.name}
-                                </h4>
-                                <p className="text-xs text-gray-500 line-clamp-2 mt-1">
-                                  {product.description}
-                                </p>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
+                                </Link>
+                              ))
+                            ) : (
+                              <p className="col-span-2 text-sm text-gray-500">No matching product. Use the full catalogue.</p>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-3 gap-4">
+                            {featuredProducts.map((product) => (
+                              <Link
+                                key={product.slug}
+                                to={`/products/${product.slug}`}
+                                className="group/item flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-orange-100 transition-all duration-300 border border-transparent hover:border-orange-200 hover:shadow-md"
+                              >
+                                <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
+                                  <img
+                                    src={product.image || "/assets/placeholder.jpg"}
+                                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
+                                    alt={product.name}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                                <div className="text-center">
+                                  <h4 className="text-sm font-semibold text-gray-900 group-hover/item:text-[var(--axis-orange)] transition-colors">
+                                    {product.name}
+                                  </h4>
+                                  <p className="text-xs text-gray-500 line-clamp-2 mt-1">
+                                    {product.description}
+                                  </p>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                         <div className="mt-6 pt-6 border-t border-gray-200">
                           <Link
                             to="/products"
                             className="inline-flex items-center gap-2 text-[var(--axis-orange)] hover:text-[var(--axis-orange)]/80 font-semibold text-sm group/link"
                           >
-                            View All Products
+                            View all {PRODUCT_CATEGORIES.length} products
                             <ChevronDown className="h-4 w-4 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" />
                           </Link>
                         </div>
@@ -238,7 +283,7 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -248,7 +293,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="lg:hidden py-4 border-t">
             <nav className="flex flex-col space-y-4">
               {NAVIGATION_ITEMS.map((item) => (
                 <Link

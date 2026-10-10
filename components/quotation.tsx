@@ -157,7 +157,7 @@ export function Quotation() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Dimensions (L x W x H)</label>
                   <Input
                     type="text"
-                    placeholder="e.g., 10 x 8 x 4 inches"
+                    placeholder="e.g. 250 x 200 x 100 mm"
                     value={formData.dimensions}
                     onChange={(e) => handleInputChange("dimensions", e.target.value)}
                     className="border-gray-300 focus:border-orange-500 focus:ring-orange-500"

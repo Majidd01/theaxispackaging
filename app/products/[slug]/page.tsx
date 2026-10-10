@@ -65,6 +65,8 @@ export default function ProductDetailPage() {
     additionalOption: "Choose Option",
     addUp: "Choose Option",
     quantity: "500",
+    customQuantity: "",
+    unit: "mm" as "mm" | "in",
   });
 
   const [submitting, setSubmitting] = useState(false);
@@ -78,8 +80,13 @@ export default function ProductDetailPage() {
     if (!form.length || !form.width || !form.depth) return "All dimensions are required";
     if (Number(form.length) <= 0 || Number(form.width) <= 0 || Number(form.depth) <= 0)
       return "Dimensions must be positive";
+    if (form.quantity === "custom" && !/^\d+$/.test(form.customQuantity.trim()))
+      return "Enter the quantity as a whole number";
     return "";
   };
+
+  const quantityValue = form.quantity === "custom" ? form.customQuantity.trim() : form.quantity;
+  const unitLabel = form.unit === "mm" ? "mm" : "in";
 
   const handleAddToQuote = async () => {
     const error = validate();
@@ -101,8 +108,8 @@ export default function ProductDetailPage() {
           from_email: form.email,
           from_phone: form.phone,
           product_type: product?.name ?? slug,
-          quantity: form.quantity,
-          dimensions: `${form.length}" x ${form.width}" x ${form.depth}"`,
+          quantity: quantityValue,
+          dimensions: `${form.length} ${unitLabel} x ${form.width} ${unitLabel} x ${form.depth} ${unitLabel}`,
           material: form.material,
           printing: form.print,
           finishing: form.finishing,
@@ -117,8 +124,8 @@ export default function ProductDetailPage() {
       const item = {
         slug,
         productName: product?.name ?? slug,
-        quantity: form.quantity,
-        dimensions: { length: form.length, width: form.width, depth: form.depth },
+        quantity: quantityValue,
+        dimensions: { length: form.length, width: form.width, depth: form.depth, unit: form.unit },
         material: form.material,
         printing: form.print,
         finishing: form.finishing,
@@ -344,10 +351,29 @@ export default function ProductDetailPage() {
                   </div>
                 </div>
 
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-700">Size *</span>
+                  <div className="inline-flex rounded-md border border-gray-300 overflow-hidden text-sm">
+                    <button
+                      type="button"
+                      onClick={() => setForm({ ...form, unit: "mm" })}
+                      className={`px-3 py-1 ${form.unit === "mm" ? "bg-[var(--axis-dark-blue)] text-white" : "bg-white text-gray-700"}`}
+                    >
+                      mm
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setForm({ ...form, unit: "in" })}
+                      className={`px-3 py-1 ${form.unit === "in" ? "bg-[var(--axis-dark-blue)] text-white" : "bg-white text-gray-700"}`}
+                    >
+                      in
+                    </button>
+                  </div>
+                </div>
                 <div className="grid grid-cols-3 gap-4 mb-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Length (Inch) *
+                      Length ({unitLabel}) *
                     </label>
                     <input
                       type="number"
@@ -355,14 +381,14 @@ export default function ProductDetailPage() {
                       placeholder="Length"
                       value={form.length}
                       onChange={(e) => setForm({ ...form, length: e.target.value })}
-                      min={0.1}
-                      step={0.1}
+                      min={form.unit === "mm" ? 1 : 0.1}
+                      step={form.unit === "mm" ? 1 : 0.1}
                       required
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Width (Inch) *
+                      Width ({unitLabel}) *
                     </label>
                     <input
                       type="number"
@@ -370,14 +396,14 @@ export default function ProductDetailPage() {
                       placeholder="Width"
                       value={form.width}
                       onChange={(e) => setForm({ ...form, width: e.target.value })}
-                      min={0.1}
-                      step={0.1}
+                      min={form.unit === "mm" ? 1 : 0.1}
+                      step={form.unit === "mm" ? 1 : 0.1}
                       required
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Depth (Inch) *
+                      Depth ({unitLabel}) *
                     </label>
                     <input
                       type="number"
@@ -385,8 +411,8 @@ export default function ProductDetailPage() {
                       placeholder="Depth"
                       value={form.depth}
                       onChange={(e) => setForm({ ...form, depth: e.target.value })}
-                      min={0.1}
-                      step={0.1}
+                      min={form.unit === "mm" ? 1 : 0.1}
+                      step={form.unit === "mm" ? 1 : 0.1}
                       required
                     />
                   </div>
@@ -478,13 +504,32 @@ export default function ProductDetailPage() {
                   <p className="text-lg font-semibold text-[var(--axis-orange)] mb-4">
                     PRICE ON REQUEST
                   </p>
-                  <div className="flex items-center gap-4">
-                    <select value={form.quantity} onChange={(e) => setForm({ ...form, quantity: e.target.value })} className="px-3 py-2 border border-gray-300 rounded-md">
-                      <option>500</option>
-                      <option>1000</option>
-                      <option>2000</option>
-                      <option>5000</option>
+                  <div className="flex items-center gap-4 flex-wrap justify-center">
+                    <select
+                      aria-label="Quantity"
+                      value={form.quantity}
+                      onChange={(e) => setForm({ ...form, quantity: e.target.value })}
+                      className="px-3 py-2 border border-gray-300 rounded-md"
+                    >
+                      <option value="500">500</option>
+                      <option value="1000">1000</option>
+                      <option value="2000">2000</option>
+                      <option value="5000">5000</option>
+                      <option value="custom">Other quantity</option>
                     </select>
+                    {form.quantity === "custom" && (
+                      <input
+                        type="number"
+                        min={1}
+                        step={1}
+                        inputMode="numeric"
+                        aria-label="Custom quantity"
+                        placeholder="Your quantity"
+                        value={form.customQuantity}
+                        onChange={(e) => setForm({ ...form, customQuantity: e.target.value })}
+                        className="w-36 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--axis-orange)]"
+                      />
+                    )}
                     <Button onClick={handleAddToQuote} disabled={submitting} className="bg-green-600 hover:bg-green-700 text-white px-8">
                       {submitting ? "ADDING..." : "ADD TO QUOTE"}
                     </Button>

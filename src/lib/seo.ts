@@ -50,7 +50,8 @@ export function absoluteImageUrl(src?: string | null): string {
   if (src.startsWith("http://") || src.startsWith("https://")) {
     return absoluteUrl(src);
   }
-  return absoluteUrl(src.startsWith("/") ? src : `/${src}`);
+  const normalised = src.startsWith("/") ? src : `/${src}`;
+  return absoluteUrl(encodeURI(normalised));
 }
 
 export function truncateMeta(text: string, max = 160): string {

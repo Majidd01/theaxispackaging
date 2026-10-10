@@ -37,6 +37,25 @@ const dynamicRoutes = [
 export default defineConfig({
 	plugins: [
 		react(),
+		{
+			name: 'preview-prerendered-html',
+			configurePreviewServer(server) {
+				server.middlewares.use((req, res, next) => {
+					if (!req.url || req.method !== 'GET' && req.method !== 'HEAD') return next()
+					const pathname = req.url.split('?')[0]
+					if (pathname === '/' || pathname.includes('.')) return next()
+					const rel = pathname.replace(/^\//, '').replace(/\/$/, '')
+					const distDir = path.resolve(__dirname, 'dist')
+					const file = [path.join(distDir, `${rel}.html`), path.join(distDir, rel, 'index.html')].find((candidate) =>
+						fs.existsSync(candidate)
+					)
+					if (!file) return next()
+					res.statusCode = 200
+					res.setHeader('Content-Type', 'text/html; charset=utf-8')
+					fs.createReadStream(file).pipe(res)
+				})
+			},
+		},
 		Sitemap({
 			hostname: 'https://www.theaxispackaging.com',
 			dynamicRoutes,

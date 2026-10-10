@@ -707,6 +707,796 @@ const _PRODUCT_CATEGORIES = [
       },
     ],
   },
+  {
+    name: "Custom Pizza Boxes",
+    description: "Custom pizza boxes for UK takeaways, restaurants and delivery kitchens. Tell Axis Packaging the box size, print and quantity you need, and we will quote the job. This page does not list prices or a fixed size range.",
+    icon: "🍕",
+    image: "/assets/pizza-boxes.jpg",
+    slug: "pizza-boxes",
+    metaTitle: "Custom Pizza Boxes UK | Axis Packaging",
+    metaDescription: "Custom pizza boxes for UK takeaways. Made to the size you supply, plain or printed. Request a quote from Axis Packaging in Leeds.",
+    h1: "Custom Pizza Boxes for UK Takeaways",
+    alt: "Stack of plain brown corrugated pizza boxes, with the top box open and empty",
+    breadcrumbName: "Pizza Boxes",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "burger boxes", href: "/products/burger-boxes" },
+      { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
+    ],
+    contentSections: [
+      {
+        title: "Pizza boxes for collection and delivery",
+        intro: "A pizza box has to stay shut in a delivery bag, stack in a pass, and open cleanly at the table. It is a different pack from bakery and cake boxes, which are built for slices and celebration cakes, and from food grade containers, which are closed tubs rather than a flat corrugated carton.",
+        subsections: [
+          {
+            title: "What to send with your enquiry",
+            content: "Share the length, width and depth in the quote form, how many boxes you need, and whether the board should be plain or printed. If the pizza is sold for delivery, say so. We quote from those details rather than from a published size chart.",
+          },
+          {
+            title: "When a pizza box is the wrong pack",
+            content: "Hot sides, chips and salads usually need takeaway trays or tubs, not a pizza carton. Parcels that travel by courier belong in corrugated shipping boxes. Browse restaurant packaging if you are planning the wider menu, and use burger boxes when the item is a burger rather than a round pizza.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Pizza box formats to discuss",
+    productTypes: [
+      { title: "Single pizza cartons", detail: "A shallow corrugated carton for one pizza. Size comes from your base, not from a stock list." },
+      { title: "Printed pizza cartons", detail: "The same carton with your name or a simple design. Print choices on the quote form are plain, one colour, two colours, or full colour." },
+      { title: "Plain kraft pizza cartons", detail: "Unprinted board for shops that brand the pizza with a sticker or a band instead of a printed lid." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Size", detail: "The length, width and depth you enter on the quote form. No standard pizza sizes are published here." },
+      { feature: "Board", detail: "Corrugated or kraft board. The board for your job is confirmed on the quote." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. This page does not state a minimum order." },
+    ],
+    whyChooseTitle: "How Axis Packaging handles a pizza box enquiry",
+    whyChooseParagraphs: [
+      "Send the pizza size you actually sell, the quantity, and whether the box needs print. We reply with a quote for that job. Prices, lead times and food-contact requirements are confirmed in that reply, not assumed on this page.",
+      "If the rest of the menu needs other packs, keep pizza boxes separate from cake packaging and from closed food tubs so each page stays useful for the right search.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Made to the footprint of your pizza, once you supply the measurements",
+      "Plain or printed, using the print choices on the quote form",
+      "Suitable to discuss for collection and delivery service",
+      "Quoted per job, with no price shown on this page",
+    ],
+    faqs: [
+      {
+        question: "What size pizza box can you make?",
+        answer: "Enter the length, width and depth you need. We do not publish a list of 7 inch, 10 inch or 12 inch boxes, because the quote follows your pizza.",
+      },
+      {
+        question: "Can you print our takeaway name on the lid?",
+        answer: "Yes. Choose plain, one colour, two colours, or full colour on the quote form and tell us what must appear on the box.",
+      },
+      {
+        question: "Is there a minimum order for pizza boxes?",
+        answer: "This page does not state a minimum. Send the quantity you need and we will quote that quantity.",
+      },
+      {
+        question: "Are these boxes certified for direct food contact?",
+        answer: "Tell us what the box will hold and any food-contact requirement you must meet. Certification is not claimed on this page.",
+      },
+    ],
+  },
+  {
+    name: "Custom Burger Boxes",
+    description: "Custom burger boxes for UK takeaways, burger restaurants and cafes. Clamshell cartons are quoted to your burger size, print and quantity. Prices and minimum orders are not published here.",
+    icon: "🍔",
+    image: "/assets/burger-boxes.jpg",
+    slug: "burger-boxes",
+    metaTitle: "Custom Burger Boxes UK | Axis Packaging",
+    metaDescription: "Custom burger boxes for UK takeaways and cafes. Kraft clamshell boxes made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    h1: "Custom Burger Boxes for Takeaway Service",
+    alt: "Four closed kraft clamshell burger boxes on a light grey background",
+    breadcrumbName: "Burger Boxes",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "pizza boxes", href: "/products/pizza-boxes" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "Printed kraft boxes", href: "/products/kraft-boxes" },
+      { phrase: "takeaway food trays", href: "/products/food-trays" },
+    ],
+    contentSections: [
+      {
+        title: "Clamshell boxes for burgers",
+        intro: "A burger box is a hinged carton that closes over the bun. It is not a flat pizza carton and it is not a cake box. Shops often pair burger boxes with paper shopping bags for carry-out, and with takeaway food trays when chips or sides sit beside the burger.",
+        subsections: [
+          {
+            title: "Measurements that matter",
+            content: "Measure the burger as it is actually served, including tall brioche buns and stacked patties. Put those three dimensions on the quote form. A box that is only sized to the patty will crush the bun.",
+          },
+          {
+            title: "Print and board",
+            content: "Printed kraft boxes on our kraft page are a broader carton range. For a burger, ask for a clamshell and say if the board should be plain or printed. Closed tubs are listed under food grade containers when the product is a sauce, dip or salad rather than a burger.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Burger box styles to ask about",
+    productTypes: [
+      { title: "Single burger clamshell", detail: "A hinged carton for one burger. Height should clear the bun you sell." },
+      { title: "Larger stacked-burger clamshell", detail: "A taller carton for double or chicken burgers. Supply the served height, not the patty height." },
+      { title: "Printed or plain", detail: "Plain kraft, or print in one colour, two colours, or full colour." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Size", detail: "Length, width and depth of the served burger. No stock burger sizes are listed." },
+      { feature: "Style", detail: "Hinged clamshell unless you ask for a different closure." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a burger box quote works",
+    whyChooseParagraphs: [
+      "Describe the burger, the quantity, and the print. If customers also take pizza, keep that job on pizza boxes so the two cartons are specified separately.",
+      "We will not guess a price or a lead time on this page. Both come back with the quote.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Sized around the served burger, including the bun",
+      "Hinged carton rather than a flat pizza box",
+      "Plain or printed",
+      "Can be discussed alongside bags and side trays",
+    ],
+    faqs: [
+      {
+        question: "Will a burger box fit a tall brioche bun?",
+        answer: "Only if you give us the height of the burger as served. Do not send the patty thickness on its own.",
+      },
+      {
+        question: "Can the same box be used for chicken burgers?",
+        answer: "Yes, if the dimensions match. Send the size of each item you want boxed. One clamshell does not automatically fit every burger on a menu.",
+      },
+      {
+        question: "Do you state a minimum order?",
+        answer: "No. Ask for a quote at the quantity you expect to use.",
+      },
+      {
+        question: "Do you claim a food-contact certificate here?",
+        answer: "No. Tell us the food and any certificate your buyer requires, and we will confirm what can be offered.",
+      },
+    ],
+  },
+  {
+    name: "Custom Noodle Boxes",
+    description: "Custom noodle boxes for UK noodle bars, street-food traders and restaurants. Folded paperboard pails are quoted to your portion size and print. No price or standard capacity is published on this page.",
+    icon: "🥡",
+    image: "/assets/noodle-boxes.jpg",
+    slug: "noodle-boxes",
+    metaTitle: "Custom Noodle Boxes UK | Axis Packaging",
+    metaDescription: "Custom noodle boxes for UK takeaways. Folded paperboard pails made to your size, plain or printed. Request a quote from Axis Packaging in Leeds.",
+    h1: "Custom Noodle Boxes for Hot Food Takeaway",
+    alt: "Five empty kraft paperboard noodle boxes with folded paper handles",
+    breadcrumbName: "Noodle Boxes",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "flexible packaging pouches", href: "/products/flexible-pouches" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "pizza boxes", href: "/products/pizza-boxes" },
+      { phrase: "vinyl stickers and labels", href: "/products/stickers-labels" },
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
+    ],
+    contentSections: [
+      {
+        title: "Folded pails for noodles and rice",
+        intro: "A noodle box is a tall folded paperboard pail, often with a paper handle, for a hot portion that is eaten from the pack. It is a different job from flexible packaging pouches, which are sealed bags, and from food grade containers, which are lidded tubs.",
+        subsections: [
+          {
+            title: "Portion size",
+            content: "Tell us how the portion is served: noodles, rice, or a sauced dish, and the length, width and height of the filled pail you want. We do not publish millilitre sizes, because the quote uses your portion.",
+          },
+          {
+            title: "Print, or a separate label",
+            content: "The pail can be plain or printed. Shops that change specials often prefer plain board plus vinyl stickers and labels. Round pizzas should stay on pizza boxes. For the rest of a restaurant menu, see restaurant packaging.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Noodle box options to specify",
+    productTypes: [
+      { title: "Handled pail", detail: "A folded paperboard box with a paper handle, as in the photograph. Handle strength is confirmed for your portion weight at quote stage." },
+      { title: "Plain pail", detail: "Unprinted board for kitchens that label each order." },
+      { title: "Printed pail", detail: "Your name or a simple design, in one colour, two colours, or full colour." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Size", detail: "Length, width and height for your portion. No capacity in millilitres is published." },
+      { feature: "Handle", detail: "Say if you want a paper handle. We do not promise a handle rating until the portion weight is known." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated here." },
+    ],
+    whyChooseTitle: "How a noodle box enquiry is quoted",
+    whyChooseParagraphs: [
+      "Send the portion size, whether you want a handle, and how the box should be printed. Sauce-heavy dishes may need a different closure from a dry noodle portion, so describe the food.",
+      "Keep sealed refill packs on flexible packaging pouches. A noodle pail is for a ready-to-eat takeaway portion.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Tall pail format rather than a flat carton or a pouch",
+      "Handle only if you ask for one",
+      "Plain board or printed board",
+      "Sized from your portion, not from a stock capacity list",
+    ],
+    faqs: [
+      {
+        question: "Can the box hold a saucy noodle dish?",
+        answer: "Describe the dish and how full the box will be. We will not claim leak resistance on this page. The quote will say what board and closure we can offer.",
+      },
+      {
+        question: "Do the handles come as standard?",
+        answer: "No. Ask for a paper handle if you want one, and tell us the filled weight you expect.",
+      },
+      {
+        question: "What quantities can I ask for?",
+        answer: "Any quantity you want quoted. This page does not set a minimum.",
+      },
+      {
+        question: "Is a food-contact certificate included?",
+        answer: "Not on this page. State the requirement with your enquiry.",
+      },
+    ],
+  },
+  {
+    name: "Custom Sandwich Boxes",
+    description: "Custom sandwich boxes for UK cafes, bakeries, delis and food-to-go counters. Wedge and rectangular cartons are quoted to your sandwich size. No prices or standard sandwich sizes are listed here.",
+    icon: "🥪",
+    image: "/assets/sandwich-boxes.jpg",
+    slug: "sandwich-boxes",
+    metaTitle: "Custom Sandwich Boxes UK | Axis Packaging",
+    metaDescription: "Custom sandwich boxes for UK cafes and bakeries. Wedge and rectangular cartons made to your size. Quote from Axis Packaging in Leeds.",
+    h1: "Custom Sandwich Boxes for Cafes and Bakeries",
+    alt: "Two triangular kraft sandwich wedges and one rectangular kraft sandwich box",
+    breadcrumbName: "Sandwich Boxes",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "bakery packaging", href: "/industries/bakery-cake" },
+      { phrase: "takeaway food trays", href: "/products/food-trays" },
+    ],
+    contentSections: [
+      {
+        title: "Cartons for made-to-order sandwiches",
+        intro: "Sandwich boxes are small cartons for a triangular wedge or a long filled roll. They are not bakery and cake boxes, which are for cakes and pastries, and they are not food grade containers, which suit tubs, salads and other lidded foods.",
+        subsections: [
+          {
+            title: "Wedge or rectangular",
+            content: "A cut sandwich usually wants a triangular carton. A baguette or uncut roll usually wants a longer rectangle. Measure the sandwich after it is made, including tall fillings, and put those dimensions on the quote form.",
+          },
+          {
+            title: "How cafes carry them out",
+            content: "Many cafes put the closed carton into paper shopping bags. Side salads and crisps are a better fit for takeaway food trays than for the sandwich carton. Bakeries planning cakes as well as sandwiches can use bakery packaging for the cake range and keep this page for the sandwich.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Sandwich carton shapes",
+    productTypes: [
+      { title: "Triangular wedge", detail: "For a sandwich cut on the diagonal. Match the carton to the cut piece, not to the whole loaf." },
+      { title: "Rectangular carton", detail: "For rolls, baguettes and uncut sandwiches. Length is the measurement that is most often wrong, so measure the filled roll." },
+      { title: "Plain or printed", detail: "Plain kraft, or print in one colour, two colours, or full colour." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Shape", detail: "Triangular wedge, rectangular carton, or both. Say which sandwiches use which shape." },
+      { feature: "Size", detail: "Length, width and depth of the made sandwich. No platters or standard wedge sizes are published." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a sandwich box quote works",
+    whyChooseParagraphs: [
+      "List each sandwich you want boxed and its made size. A single wedge size rarely fits a baguette and a thin triangle at the same time.",
+      "Cake orders stay with bakery and cake boxes. This page is only for the sandwich carton.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Wedge cartons and rectangular cartons can be quoted separately",
+      "Sized from the finished sandwich",
+      "Plain or printed",
+      "Distinct from cake boxes and from lidded food tubs",
+    ],
+    faqs: [
+      {
+        question: "Can one box fit every sandwich on our menu?",
+        answer: "Usually not. A deep filled triangle and a long roll need different cartons. Send both sizes if you sell both.",
+      },
+      {
+        question: "Do you make window boxes for sandwiches?",
+        answer: "Ask if you want a window. We will say on the quote whether that closure is available for your size. It is not promised here.",
+      },
+      {
+        question: "What is the minimum order?",
+        answer: "None is published. Request a quote for the quantity you need.",
+      },
+      {
+        question: "Do you state that the board is food-contact certified?",
+        answer: "No. Include any food-contact requirement in your enquiry so it can be checked.",
+      },
+    ],
+  },
+  {
+    name: "Takeaway Food Trays",
+    description: "Takeaway food trays for UK chip shops, cafes, restaurants and street-food stalls. Open kraft trays are quoted to your food and your size. Prices, capacities and minimum orders are not listed on this page.",
+    icon: "🍟",
+    image: "/assets/food-trays.jpg",
+    slug: "food-trays",
+    metaTitle: "Takeaway Food Trays UK | Axis Packaging",
+    metaDescription: "Takeaway food trays for UK shops and restaurants. Open kraft trays made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    h1: "Takeaway Food Trays for Chips and Sides",
+    alt: "Three empty kraft food trays, two rectangular and one boat-shaped",
+    breadcrumbName: "Food Trays",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "burger boxes", href: "/products/burger-boxes" },
+      { phrase: "pizza boxes", href: "/products/pizza-boxes" },
+      { phrase: "Printed kraft boxes", href: "/products/kraft-boxes" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "food industry packaging", href: "/industries/food" },
+    ],
+    contentSections: [
+      {
+        title: "Open trays for chips, sides and street food",
+        intro: "A food tray is an open board tray for food that is eaten straight away. It is not a lidded tub. Use food grade containers when the food must be closed. Use burger boxes or pizza boxes when the item needs its own carton. Printed kraft boxes cover a wider kraft carton range if you also need closed cartons.",
+        subsections: [
+          {
+            title: "Which foods suit a tray",
+            content: "Chips, wedges, loaded fries, small street-food portions and some bakery sides are the usual brief. Sauces that must not spill in a bag are a poor match for an open tray. Say what you serve so the quote can refuse a tray when a closed pack is the better fit.",
+          },
+          {
+            title: "Shape",
+            content: "The photograph shows rectangular trays and a boat-shaped tray. Tell us which shape you want and the length, width and depth. We do not publish a scoop size or a portion weight.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Tray shapes to specify",
+    productTypes: [
+      { title: "Rectangular tray", detail: "An open four-sided tray for chips and flatter portions." },
+      { title: "Boat tray", detail: "A shallow open tray with curved ends, for smaller sides." },
+      { title: "Plain or printed", detail: "Plain kraft, or print in one colour, two colours, or full colour." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Food", detail: "What goes in the tray, and whether it is dry, greasy or sauced." },
+      { feature: "Size", detail: "Length, width and depth you need. No standard chip-scoop size is published." },
+      { feature: "Shape", detail: "Rectangular, boat, or both." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a tray enquiry is handled",
+    whyChooseParagraphs: [
+      "Describe the food first, then the tray size. An open tray is the wrong pack for a leaking sauce, and we would rather quote a closed container than pretend a tray will hold it.",
+      "Wider food ranges can be reviewed under food industry packaging. Keep this URL for the open tray itself.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Open tray, not a lidded container",
+      "Rectangular and boat shapes can be quoted separately",
+      "Plain or printed",
+      "Sized from your portion, with no published scoop weight",
+    ],
+    faqs: [
+      {
+        question: "Are these trays suitable for chips?",
+        answer: "Chips are a common use. Tell us the portion and whether you add wet toppings. Wet toppings may need a different pack.",
+      },
+      {
+        question: "Can you print a shop name on the tray?",
+        answer: "Yes, if you choose print on the quote form. Plain trays are also available.",
+      },
+      {
+        question: "What quantities can I order?",
+        answer: "Ask for the quantity you need. A minimum is not published here.",
+      },
+      {
+        question: "Do you claim the tray is greaseproof or food-certified?",
+        answer: "No. Those are separate requirements. State them on the enquiry if your food needs them.",
+      },
+    ],
+  },
+  {
+    name: "Greaseproof Paper",
+    description: "Greaseproof paper for UK takeaways, bakeries and cafes. Sheets or rolls are quoted to the size you need. Prices, sheet weights and food-contact certificates are not listed on this page.",
+    icon: "🧻",
+    image: "/assets/greaseproof-paper.jpg",
+    slug: "greaseproof-paper",
+    metaTitle: "Greaseproof Paper UK | Axis Packaging",
+    metaDescription: "Greaseproof paper for UK takeaways and bakeries. Sheets or rolls made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    h1: "Greaseproof Paper for Takeaways and Bakeries",
+    alt: "Stack of folded white greaseproof paper sheets beside an upright brown paper roll",
+    breadcrumbName: "Greaseproof Paper",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "takeaway food trays", href: "/products/food-trays" },
+      { phrase: "burger boxes", href: "/products/burger-boxes" },
+      { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
+    ],
+    contentSections: [
+      {
+        title: "Sheets and rolls for greasy food",
+        intro: "Greaseproof paper is a sheet or a roll used under or around food that marks ordinary paper. It is not a carton and it is not a bag. Use takeaway food trays when the portion needs an open board tray, and burger boxes when the burger needs its own closed carton. Cakes and slices belong in bakery and cake boxes. Use paper shopping bags to carry the order away from the counter.",
+        subsections: [
+          {
+            title: "Sheets or a roll",
+            content: "The photograph shows a stack of cut white sheets and one brown roll. Tell us which format you want, and the length and width. We do not publish a sheet weight, a roll width, or a grease-resistance grade. If your kitchen needs a named grade or a food-contact certificate, say so in the enquiry so it can be checked before it is treated as agreed.",
+          },
+          {
+            title: "When paper is the wrong pack",
+            content: "A sheet will not hold a sauced portion on its own, and it will not replace a bag at the till. For the rest of a takeaway menu, see restaurant packaging and keep this page for the paper.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Paper formats to specify",
+    productTypes: [
+      { title: "Cut sheets", detail: "Sheets cut to the length and width you supply." },
+      { title: "Rolls", detail: "A roll for counters that tear paper to length. Width comes from your brief." },
+      { title: "Plain or printed", detail: "Unprinted paper, or print in one colour, two colours, or full colour." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Format", detail: "Cut sheets or a roll. Say which you need." },
+      { feature: "Size", detail: "The length and width you need. No standard sheet size is published." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a paper enquiry is handled",
+    whyChooseParagraphs: [
+      "Send the food you wrap, the format, and the size. The quote follows that brief. A grease grade and any food-contact certificate are confirmed only if you ask for them and they can be supplied.",
+      "Order cartons and bags on their own pages so this URL stays useful for the paper itself.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Cut sheets or a roll, from the size you supply",
+      "For wrapping or lining, not as a closed carton",
+      "Plain or printed",
+      "No price or sheet weight on this page",
+    ],
+    faqs: [
+      {
+        question: "Can this paper line a food tray?",
+        answer: "Yes, if you want a sheet inside a tray. The tray is a separate product. Say whether you need the paper, the tray, or both.",
+      },
+      {
+        question: "Can you print a shop name on the paper?",
+        answer: "Yes, if you choose print on the quote form. Plain paper is also available.",
+      },
+      {
+        question: "What quantities can I order?",
+        answer: "Ask for the quantity you need. A minimum is not published here.",
+      },
+      {
+        question: "Do you publish a grease grade or a food-contact certificate?",
+        answer: "No. The page does not name a test grade or a certificate. Ask for either if your kitchen requires it.",
+      },
+    ],
+  },
+  {
+    name: "Custom Paper Cups",
+    description: "Custom paper cups for UK cafes, takeaways and events. Cups are quoted to the size, print and quantity you need. Capacities, lids and prices are not listed on this page.",
+    icon: "☕",
+    image: "/assets/paper-cups.jpg",
+    slug: "paper-cups",
+    metaTitle: "Custom Paper Cups UK | Axis Packaging",
+    metaDescription: "Custom paper cups for UK cafes and takeaways. Plain or printed cups made to your size. Quote from Axis Packaging in Leeds.",
+    h1: "Custom Paper Cups for Cafes and Events",
+    alt: "Nested stack of four plain white paper cups beside one plain kraft paper cup",
+    breadcrumbName: "Paper Cups",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "greaseproof paper", href: "/products/greaseproof-paper" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "beverage packaging", href: "/industries/beverage" },
+      { phrase: "bakery packaging", href: "/industries/bakery-cake" },
+    ],
+    contentSections: [
+      {
+        title: "Paper cups for counter and event service",
+        intro: "A paper cup holds a drink served at a counter or a short event. It is not a sealed tub. Use food grade containers when the product must be closed. Greaseproof paper wraps or lines food and does not hold a drink. Use paper shopping bags when the customer carries the order away.",
+        subsections: [
+          {
+            title: "How to give the cup size",
+            content: "The quote form asks for length, width and depth. For a cup, enter the diameter in length and width, and the height in depth. The photograph shows a plain white cup and a plain kraft cup, with no print and no lid. We do not publish drink sizes, a wall type, or a lid range.",
+          },
+          {
+            title: "When a cup is the wrong pack",
+            content: "Hot food belongs in a carton or a tray. A product that must stay sealed belongs in a closed container. See beverage packaging for drink brands, and bakery packaging if the cup is only one part of a cafe counter.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Cup options to specify",
+    productTypes: [
+      { title: "Plain cups", detail: "Unprinted paper cups, white or kraft, as shown in the photograph." },
+      { title: "Printed cups", detail: "The same cup style with your name or a simple design." },
+      { title: "Lids", detail: "Not included unless you ask for a lid to be quoted with the cup." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Size", detail: "Diameter and height entered on the quote form. No standard drink sizes are published." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Lids", detail: "Ask if a lid must be quoted. Lid sizes are not listed here." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a cup enquiry is handled",
+    whyChooseParagraphs: [
+      "Describe the drink service and the cup size. Wall type, lid fit and any food-contact requirement are confirmed only when you ask and they can be met.",
+      "A cafe that also wraps food should order greaseproof paper on its own page, so this URL stays about the cup.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Sized from the diameter and height you supply",
+      "Plain white or plain kraft, or printed",
+      "Lids are quoted only if you ask for them",
+      "No capacity chart on this page",
+    ],
+    faqs: [
+      {
+        question: "What cup sizes can you make?",
+        answer: "Enter the diameter and height you need. This page does not publish a list of drink sizes.",
+      },
+      {
+        question: "Can you print a cafe name on the cup?",
+        answer: "Yes. Choose plain, one colour, two colours, or full colour on the quote form.",
+      },
+      {
+        question: "Are lids included?",
+        answer: "No. Ask for a lid to be quoted with the cup. This page does not list lid sizes.",
+      },
+      {
+        question: "Are the cups certified for hot drinks?",
+        answer: "Tell us the drink and any certificate you must have. Certification is not claimed on this page.",
+      },
+    ],
+  },
+  {
+    name: "Custom Mailer Boxes",
+    description: "Custom mailer boxes for UK online shops. These are corrugated cartons for posting smaller orders, quoted to your size and print. Prices and board grades are not listed on this page.",
+    icon: "📦",
+    image: "/assets/mailer-boxes.jpg",
+    slug: "mailer-boxes",
+    metaTitle: "Custom Mailer Boxes UK | Axis Packaging",
+    metaDescription: "Custom mailer boxes for UK online shops. Corrugated cartons made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    h1: "Custom Mailer Boxes for Online Orders",
+    alt: "Two plain brown corrugated mailer boxes with one closed and one open and empty",
+    breadcrumbName: "Mailer Boxes",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "printed mailer bags", href: "/products/mailer-bags" },
+      { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
+      { phrase: "custom tissue paper", href: "/products/tissue-paper" },
+      { phrase: "custom packing tape", href: "/products/packing-tape" },
+      { phrase: "ecommerce packaging", href: "/industries/ecommerce" },
+    ],
+    contentSections: [
+      {
+        title: "Corrugated cartons for smaller parcels",
+        intro: "A mailer box is a corrugated carton for posting a smaller order. The photograph shows one closed carton and one open empty carton with folding flaps. It is not a bag. Flexible packs for clothing and small items are printed mailer bags. Heavier or larger outer cartons are corrugated shipping boxes. Line a gift or apparel order with custom tissue paper, and close the parcel with custom packing tape. Those are separate products.",
+        subsections: [
+          {
+            title: "What to measure",
+            content: "Enter the length, width and depth of the assembled box, and say what you are posting. We do not publish a flute, a board grade, or a list of mailer sizes. Tell us the closure you need rather than assuming the flap style in the photograph is the only one.",
+          },
+          {
+            title: "Bags, mailers and outer shippers",
+            content: "Choose a bag when the product can travel in a flexible pack, and an outer shipper when the order is large or heavy. See ecommerce packaging for the wider dispatch setup, and keep this URL for the mailer carton.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Mailer carton options to specify",
+    productTypes: [
+      { title: "Plain mailer cartons", detail: "Unprinted corrugated cartons, as in the photograph." },
+      { title: "Printed mailer cartons", detail: "The same carton with your name or a design on the outside." },
+      { title: "Lined orders", detail: "Tissue and tape can be quoted with the carton. They are not included unless you ask." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Size", detail: "Length, width and depth of the assembled box. No stock mailer sizes are published." },
+      { feature: "Board", detail: "Corrugated board. The grade for your job is confirmed on the quote." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a mailer box enquiry is handled",
+    whyChooseParagraphs: [
+      "Send the product, the assembled size, and whether the carton needs print. Tissue and tape are quoted on their own pages, so they are not assumed in the carton price.",
+      "Use the industry page when you are planning dispatch as a whole, and this page when the item is the mailer carton.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Corrugated carton, not a flexible mailer bag",
+      "Made to the assembled size you supply",
+      "Plain or printed",
+      "Tissue and tape quoted separately",
+    ],
+    faqs: [
+      {
+        question: "How is a mailer box different from a mailer bag?",
+        answer: "A mailer box is a rigid corrugated carton. A mailer bag is a flexible bag. Both can be quoted. They are different packs.",
+      },
+      {
+        question: "Can the outside be printed?",
+        answer: "Yes. Choose plain, one colour, two colours, or full colour on the quote form.",
+      },
+      {
+        question: "What quantities can I order?",
+        answer: "Ask for the quantity you need. A minimum is not published here.",
+      },
+      {
+        question: "Do you state a board grade?",
+        answer: "Not on this page. The grade is confirmed on the quote for your product and the way it will travel.",
+      },
+    ],
+  },
+  {
+    name: "Custom Tissue Paper",
+    description: "Custom tissue paper for UK retailers, gift brands and apparel shops. Sheets are quoted to your size, colour and print. Sheet weights and prices are not listed on this page.",
+    icon: "🎀",
+    image: "/assets/tissue-paper.jpg",
+    slug: "tissue-paper",
+    metaTitle: "Custom Tissue Paper UK | Axis Packaging",
+    metaDescription: "Custom tissue paper for UK retailers and gift brands. Plain or printed sheets made to your size. Quote from Axis Packaging in Leeds.",
+    h1: "Custom Tissue Paper for Gifts and Retail",
+    alt: "Two stacks of plain tissue paper sheets one white and one kraft brown",
+    breadcrumbName: "Tissue Paper",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "custom mailer boxes", href: "/products/mailer-boxes" },
+      { phrase: "gift wrapping boxes", href: "/products/gift-boxes" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "greaseproof paper", href: "/products/greaseproof-paper" },
+      { phrase: "apparel packaging", href: "/products/apparel-packaging" },
+    ],
+    contentSections: [
+      {
+        title: "Tissue sheets for gifts, apparel and unboxing",
+        intro: "Tissue paper is a thin sheet used to wrap a product or to fill space inside a carton. Place it inside custom mailer boxes, inside gift wrapping boxes, or inside paper shopping bags. It is not a food wrap. Food that needs a grease-resistant sheet should use greaseproof paper. Clothing brands that need the outer carton as well should look at apparel packaging separately.",
+        subsections: [
+          {
+            title: "Colour, size and print",
+            content: "The photograph shows one stack of plain white sheets and one stack of plain kraft sheets. Those are examples of unprinted tissue, not a stock colour chart. Tell us the colour, the sheet size, and whether the sheet should be plain or printed. We do not publish a sheet weight.",
+          },
+          {
+            title: "What tissue does not do",
+            content: "Tissue will not close a parcel, hold a drink, or protect a greasy wrap on its own. Order the carton, the bag, or the food paper on the matching page, and keep this page for the sheet.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Tissue options to specify",
+    productTypes: [
+      { title: "Plain white sheets", detail: "Unprinted white tissue, as in the left-hand stack in the photograph." },
+      { title: "Plain kraft sheets", detail: "Unprinted brown tissue, as in the right-hand stack in the photograph." },
+      { title: "Printed sheets", detail: "Tissue with your name or a simple pattern. Colour still comes from your brief." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Use", detail: "Gift wrap, apparel wrapping, or void fill inside a carton or bag." },
+      { feature: "Sheet", detail: "Length, width and colour you need. No sheet weight is published." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a tissue enquiry is handled",
+    whyChooseParagraphs: [
+      "Say what the sheet wraps, the size, and the colour. Print is optional. The sheet is quoted on its own, even when it will sit inside a mailer or a gift box.",
+      "Do not use this page for food lining. That brief belongs on the greaseproof paper page.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Thin sheets for wrapping or filling, not a carton",
+      "White and kraft shown as plain examples",
+      "Other colours and print taken from your brief",
+      "No sheet weight or price on this page",
+    ],
+    faqs: [
+      {
+        question: "Can tissue paper go inside a mailer box?",
+        answer: "Yes. The sheet and the carton are quoted separately. Say if you need both.",
+      },
+      {
+        question: "Can you print a logo on the tissue?",
+        answer: "Yes. Choose the print option on the quote form and tell us the sheet colour.",
+      },
+      {
+        question: "Is this the same as greaseproof paper?",
+        answer: "No. Tissue is for gifts, retail and apparel. It is not offered here as a food wrap.",
+      },
+      {
+        question: "What quantities can I order?",
+        answer: "Ask for the quantity you need. A minimum is not published here.",
+      },
+    ],
+  },
+  {
+    name: "Custom Packing Tape",
+    description: "Custom packing tape for UK shops, warehouses and online sellers. Rolls are quoted to your brief and print. Widths, roll lengths and prices are not listed on this page.",
+    icon: "📏",
+    image: "/assets/packing-tape.jpg",
+    slug: "packing-tape",
+    metaTitle: "Custom Packing Tape UK | Axis Packaging",
+    metaDescription: "Custom packing tape for UK shops and warehouses. Plain or printed tape made to your brief. Quote from Axis Packaging in Leeds.",
+    h1: "Custom Packing Tape for Parcels and Cartons",
+    alt: "Three rolls of plain brown packing tape with two standing and one lying on its side",
+    breadcrumbName: "Packing Tape",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "custom mailer boxes", href: "/products/mailer-boxes" },
+      { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
+      { phrase: "vinyl stickers and labels", href: "/products/stickers-labels" },
+      { phrase: "printed mailer bags", href: "/products/mailer-bags" },
+      { phrase: "shipping packaging", href: "/industries/shipping" },
+    ],
+    contentSections: [
+      {
+        title: "Tape for closing cartons",
+        intro: "Packing tape closes a carton for storage or dispatch. The photograph shows three plain brown rolls, two standing and one lying on its side, with no print. Use it on custom mailer boxes and on corrugated shipping boxes. It is not a product label. Brand marks that must be a sticker belong on vinyl stickers and labels. A flexible clothing pack is a job for printed mailer bags, which may not need carton tape at all.",
+        subsections: [
+          {
+            title: "What to send with the enquiry",
+            content: "Say whether the tape should be plain or printed, and what it will close. We do not publish a tape width, a roll length, or an adhesive type. The quote form still asks for length, width and depth. Use those fields for the roll size you need, and say in the size fields if you only know the carton you are closing.",
+          },
+          {
+            title: "Tape, labels and bags",
+            content: "A printed tape can carry a short name. A shaped sticker or a product label is a different item. See shipping packaging for the wider dispatch range, and keep this page for the tape.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Tape options to specify",
+    productTypes: [
+      { title: "Plain brown rolls", detail: "Unprinted brown tape, as shown in the photograph." },
+      { title: "Printed rolls", detail: "The same style of roll with your name or a short design." },
+      { title: "Carton closing", detail: "Tape for mailer cartons and larger shipping cartons. The carton is quoted separately." },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Use", detail: "What the tape will close, such as a mailer carton or a larger shipper." },
+      { feature: "Roll", detail: "The width and length you need. Neither is published as a standard roll." },
+      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a tape enquiry is handled",
+    whyChooseParagraphs: [
+      "Describe the carton and whether the roll needs print. Adhesive type is confirmed on the quote, not assumed from the photograph of plain brown rolls.",
+      "Order the carton on its own page. Tape does not include the box.",
+    ],
+    benefitsTitle: "Useful points before you enquire",
+    benefits: [
+      "Plain brown rolls shown with no print",
+      "Print can be requested on the quote form",
+      "For closing cartons, not as a product label",
+      "No width, roll length or price on this page",
+    ],
+    faqs: [
+      {
+        question: "Can you print a shop name on the tape?",
+        answer: "Yes. Choose the print option on the quote form. Plain brown tape is also available.",
+      },
+      {
+        question: "What roll sizes do you stock?",
+        answer: "This page does not publish a width or a roll length. Send the size you need.",
+      },
+      {
+        question: "Is the adhesive type stated?",
+        answer: "No. Tell us how the carton will travel and we will confirm the tape on the quote.",
+      },
+      {
+        question: "What quantities can I order?",
+        answer: "Ask for the quantity you need. A minimum is not published here.",
+      },
+    ],
+  },
 ];
 
 export const PRODUCT_CATEGORIES = _PRODUCT_CATEGORIES.map((product) =>

@@ -35,6 +35,8 @@ export function InstantQuote() {
   const dispatch = useAppDispatch();
   const { formData, isSubmitting, submitted } = useAppSelector((state) => state.quoteForm);
   const [step, setStep] = useState(1);
+  const [unit, setUnit] = useState<"mm" | "in">("mm");
+  const [customQuantity, setCustomQuantity] = useState("");
   const { toast } = useToast();
 
   // Handle optional industry param and guide download
@@ -74,9 +76,11 @@ export function InstantQuote() {
     e.preventDefault();
 
     // Validate required fields
+    const quantity = formData.quantity === "custom" ? customQuantity.trim() : formData.quantity;
     if (
       !formData.productType ||
-      !formData.quantity ||
+      !quantity ||
+      (formData.quantity === "custom" && !/^\d+$/.test(quantity)) ||
       !formData.contactInfo.name ||
       !formData.contactInfo.email
     ) {
@@ -95,10 +99,10 @@ export function InstantQuote() {
         from_phone: formData.contactInfo.phone || "Not provided",
         from_company: formData.contactInfo.company || "Not provided",
         product_type: formData.productType,
-        quantity: formData.quantity,
-        dimensions: `${formData.dimensions.length || "N/A"}" x ${
+        quantity,
+        dimensions: `${formData.dimensions.length || "N/A"} ${unit} x ${
           formData.dimensions.width || "N/A"
-        }" x ${formData.dimensions.height || "N/A"}"`,
+        } ${unit} x ${formData.dimensions.height || "N/A"} ${unit}`,
         material: formData.material || "Not specified",
         printing: formData.printing || "Not specified",
         timeline: formData.timeline || "Not specified",
@@ -271,19 +275,49 @@ export function InstantQuote() {
                             <SelectItem value="1000-5000">1,000 - 5,000 units</SelectItem>
                             <SelectItem value="5000-10000">5,000 - 10,000 units</SelectItem>
                             <SelectItem value="10000+">10,000+ units</SelectItem>
+                            <SelectItem value="custom">Other quantity</SelectItem>
                           </SelectContent>
                         </Select>
+                        {formData.quantity === "custom" && (
+                          <Input
+                            className="mt-2 bg-white"
+                            type="number"
+                            min={1}
+                            step={1}
+                            inputMode="numeric"
+                            placeholder="Your quantity"
+                            aria-label="Custom quantity"
+                            value={customQuantity}
+                            onChange={(e) => setCustomQuantity(e.target.value)}
+                          />
+                        )}
                       </div>
                     </div>
 
                     <div className="mt-8">
-                      <Label className="text-base font-medium mb-3 block">
-                        Dimensions (inches)
-                      </Label>
+                      <div className="flex items-center justify-between mb-3">
+                        <Label className="text-base font-medium">Size</Label>
+                        <div className="inline-flex rounded-md border border-gray-300 overflow-hidden text-sm">
+                          <button
+                            type="button"
+                            onClick={() => setUnit("mm")}
+                            className={`px-3 py-1 ${unit === "mm" ? "bg-[var(--axis-dark-blue)] text-white" : "bg-white text-gray-700"}`}
+                          >
+                            mm
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setUnit("in")}
+                            className={`px-3 py-1 ${unit === "in" ? "bg-[var(--axis-dark-blue)] text-white" : "bg-white text-gray-700"}`}
+                          >
+                            in
+                          </button>
+                        </div>
+                      </div>
                       <div className="grid grid-cols-3 gap-4">
                         <div>
                           <Label htmlFor="length" className="text-sm">
-                            Length
+                            Length ({unit})
                           </Label>
                           <Input
                             id="length"
@@ -295,7 +329,7 @@ export function InstantQuote() {
                         </div>
                         <div>
                           <Label htmlFor="width" className="text-sm">
-                            Width
+                            Width ({unit})
                           </Label>
                           <Input
                             id="width"
@@ -307,7 +341,7 @@ export function InstantQuote() {
                         </div>
                         <div>
                           <Label htmlFor="height" className="text-sm">
-                            Height
+                            Height ({unit})
                           </Label>
                           <Input
                             id="height"
