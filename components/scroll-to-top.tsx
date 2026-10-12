@@ -1,21 +1,22 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 export function ScrollToTop() {
   const { pathname } = useLocation();
+  const previousPath = useRef<string | null>(null);
 
   useEffect(() => {
-    // Scroll to top when route changes
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (previousPath.current === pathname) return;
 
-    // Track page view in Google Analytics for SPA route changes
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("config", "G-PGRM8ZJSRX", {
-        page_path: pathname,
-      });
-    }
+    const isFirstView = previousPath.current === null;
+    previousPath.current = pathname;
+    // The GA4 tag in index.html records the first page view. Enhanced
+    // Measurement records later history changes, so this effect only scrolls.
+    if (isFirstView) return;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
   return null;
