@@ -1,17 +1,20 @@
 import { Blog } from "./blog-types";
 
-// Blogs are loaded from public/blogs-data/blogs.json
-// To add more blogs, edit the JSON file directly
+// Blogs are loaded from public/blogs-data/blogs.json.
+// The query changes with the file contents so a previously immutable response cannot be reused.
+declare const __BLOGS_CACHE_KEY__: string;
 let blogsCache: Blog[] | null = null;
 
-// Load blogs from JSON file
 const loadBlogs = async (): Promise<Blog[]> => {
   if (blogsCache !== null) {
     return blogsCache;
   }
 
   try {
-    const response = await fetch("/blogs-data/blogs.json");
+    const response = await fetch(`/blogs-data/blogs.json?v=${__BLOGS_CACHE_KEY__}`, {
+      cache: "no-cache",
+      headers: { Accept: "application/json" },
+    });
     if (!response.ok) {
       console.error("Failed to load blogs");
       return [];

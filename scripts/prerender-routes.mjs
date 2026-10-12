@@ -1,6 +1,7 @@
 import { createServer } from "vite";
 import fs from "node:fs";
 import path from "node:path";
+import { blogsCacheKey } from "./blogs-cache-key.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const distDir = path.join(root, "dist");
@@ -386,5 +387,24 @@ if (
   (homeHtml.match(/name="description"/g) || []).length !== 1
 ) {
   console.error("Homepage prerender no longer matches the visible hero or its meta description");
+  process.exit(1);
+}
+const versionedBlogsUrl = `/blogs-data/blogs.json?v=${blogsCacheKey(root)}`;
+const bundles = fs.readdirSync(path.join(distDir, "assets")).filter((name) => name.endsWith(".js"));
+const bundleHasVersion = bundles.some((name) =>
+  fs.readFileSync(path.join(distDir, "assets", name), "utf8").includes(versionedBlogsUrl)
+);
+const sampleBlogHtml = fs.readFileSync(
+  path.join(distDir, "blog", "custom-packaging-small-business-uk.html"),
+  "utf8"
+);
+if (
+  !bundleHasVersion ||
+  !sampleBlogHtml.includes("<h1>") ||
+  !sampleBlogHtml.includes('rel="canonical"') ||
+  (sampleBlogHtml.match(/name="description"/g) || []).length !== 1 ||
+  sampleBlogHtml.includes("Blog Not Found")
+) {
+  console.error("Blog JSON cache key or prerendered blog SEO is missing");
   process.exit(1);
 }

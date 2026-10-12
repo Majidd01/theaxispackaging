@@ -4,6 +4,7 @@ import path from 'path'
 import fs from 'fs'
 import Sitemap from 'vite-plugin-sitemap'
 import { PRODUCT_CATEGORIES, INDUSTRIES } from './src/lib/constants'
+import { blogsCacheKey } from './scripts/blogs-cache-key.mjs'
 
 function getBlogRoutes(): string[] {
 	try {
@@ -35,6 +36,9 @@ const dynamicRoutes = [
 ]
 
 export default defineConfig({
+	define: {
+		__BLOGS_CACHE_KEY__: JSON.stringify(blogsCacheKey(__dirname)),
+	},
 	plugins: [
 		react(),
 		{
