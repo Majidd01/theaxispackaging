@@ -25,14 +25,13 @@ export function Hero() {
             width={1536}
             height={1024}
             fetchPriority="high"
-            decoding="async"
+            decoding="sync"
             className="absolute inset-0 h-full w-full object-cover"
           />
         </picture>
         {/* Enhanced Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-blue-500/10 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-blue-500/10"></div>
       </div>
 
       {/* Content */}

@@ -86,9 +86,9 @@ export function SeoHead({
         <link
           rel="preload"
           as="image"
-          href="/assets/hero/banner-960.webp"
-          type="image/webp"
-          imageSrcSet="/assets/hero/banner-640.webp 640w, /assets/hero/banner-960.webp 960w, /assets/hero/banner-1280.webp 1280w, /assets/hero/banner-1536.webp 1536w"
+          href="/assets/hero/banner-960.avif"
+          type="image/avif"
+          imageSrcSet="/assets/hero/banner-640.avif 640w, /assets/hero/banner-960.avif 960w, /assets/hero/banner-1280.avif 1280w, /assets/hero/banner-1536.avif 1536w"
           imageSizes="100vw"
           fetchPriority="high"
         />

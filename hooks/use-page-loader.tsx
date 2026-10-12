@@ -5,29 +5,26 @@ import { useLocation } from "react-router-dom";
 
 export function usePageLoader() {
   const [isLoading, setIsLoading] = useState(false);
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
   const location = useLocation();
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const skipInitialView = useRef(true);
 
   useEffect(() => {
-    // Clear any existing timer
     if (timerRef.current) {
       clearTimeout(timerRef.current);
+      timerRef.current = null;
     }
 
-    // Don't show loader on initial page load
-    if (isInitialLoad) {
-      setIsInitialLoad(false);
+    // A state flag would update and run this effect again, which used to
+    // cover the first view. A ref skips that view without another render.
+    if (skipInitialView.current) {
+      skipInitialView.current = false;
       return;
     }
 
-    // Show loader when navigating to a new page
     setIsLoading(true);
-    
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // Hide loader after exactly 1 second
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     timerRef.current = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
@@ -37,7 +34,7 @@ export function usePageLoader() {
         clearTimeout(timerRef.current);
       }
     };
-  }, [location.pathname, isInitialLoad]);
+  }, [location.pathname]);
 
   return isLoading;
 }
