@@ -1,19 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { COMPANY_INFO, INDUSTRIES, NAVIGATION_ITEMS, PRODUCT_CATEGORIES } from "@/lib/constants";
+import { COMPANY_INFO, NAVIGATION_ITEMS } from "@/lib/site-info";
+import { FEATURED_PRODUCTS, HEADER_INDUSTRIES, HEADER_PRODUCTS } from "@/lib/header-nav";
 import { ChevronDown, Clock, Mail, Menu, Phone, X, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-const FEATURED_PRODUCT_SLUGS = [
-  "folding-carton-boxes",
-  "corrugated-shipping",
-  "mailer-boxes",
-  "pizza-boxes",
-  "greaseproof-paper",
-  "kraft-boxes",
-];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,16 +13,13 @@ export function Header() {
   const [productMenuImages, setProductMenuImages] = useState(false);
   const [industryMenuImages, setIndustryMenuImages] = useState(false);
 
-  const featuredProducts = FEATURED_PRODUCT_SLUGS.map((slug) =>
-    PRODUCT_CATEGORIES.find((product) => product.slug === slug)
-  ).filter((product): product is (typeof PRODUCT_CATEGORIES)[number] => Boolean(product));
+  const featuredProducts = FEATURED_PRODUCTS;
   const normalisedQuery = productQuery.trim().toLowerCase();
   const productMatches = normalisedQuery
-    ? PRODUCT_CATEGORIES.filter((product) => product.name.toLowerCase().includes(normalisedQuery)).slice(0, 8)
+    ? HEADER_PRODUCTS.filter((product) => product.name.toLowerCase().includes(normalisedQuery)).slice(0, 8)
     : [];
 
-  // Get first 12 industries for dropdown
-  const industriesForDropdown = INDUSTRIES.slice(0, 12);
+  const industriesForDropdown = HEADER_INDUSTRIES;
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100">
@@ -189,7 +178,7 @@ export function Header() {
                             to="/products"
                             className="inline-flex items-center gap-2 text-[var(--axis-orange)] hover:text-[var(--axis-orange)]/80 font-semibold text-sm group/link"
                           >
-                            View all {PRODUCT_CATEGORIES.length} products
+                            View all {HEADER_PRODUCTS.length} products
                             <ChevronDown className="h-4 w-4 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" />
                           </Link>
                         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { COMPANY_INFO } from "@/lib/constants";
+import { COMPANY_INFO } from "@/lib/site-info";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
