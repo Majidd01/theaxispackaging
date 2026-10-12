@@ -83,7 +83,15 @@ export function SeoHead({
       <link rel="icon" type="image/png" href="/favicon.png" />
       <meta name="theme-color" content="#0B3C5D" />
       {path === "/" ? (
-        <link rel="preload" as="image" href="/assets/banner.png" fetchPriority="high" />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/hero/banner-960.webp"
+          type="image/webp"
+          imageSrcSet="/assets/hero/banner-640.webp 640w, /assets/hero/banner-960.webp 960w, /assets/hero/banner-1280.webp 1280w, /assets/hero/banner-1536.webp 1536w"
+          imageSizes="100vw"
+          fetchPriority="high"
+        />
       ) : null}
 
       {schemas.map((schema, i) => (

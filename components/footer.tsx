@@ -13,7 +13,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="/assets/logo.png"
+                src="/assets/logo-320.webp"
                 alt="Axis Packaging Logo"
                 className="w-10 h-10 rounded-lg object-cover"
               />

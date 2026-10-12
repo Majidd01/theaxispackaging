@@ -33,7 +33,7 @@ export function PageLoader({ isLoading }: PageLoaderProps) {
         <div className="mb-12 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
           <img
-            src="/assets/logo.png"
+            src="/assets/logo-320.webp"
             alt="Axis Packaging Logo"
             className="relative w-24 h-24 mx-auto rounded-2xl shadow-2xl animate-bounce"
             style={{

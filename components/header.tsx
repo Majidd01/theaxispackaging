@@ -18,6 +18,8 @@ const FEATURED_PRODUCT_SLUGS = [
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [productQuery, setProductQuery] = useState("");
+  const [productMenuImages, setProductMenuImages] = useState(false);
+  const [industryMenuImages, setIndustryMenuImages] = useState(false);
 
   const featuredProducts = FEATURED_PRODUCT_SLUGS.map((slug) =>
     PRODUCT_CATEGORIES.find((product) => product.slug === slug)
@@ -74,7 +76,7 @@ export function Header() {
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <img
-                src="/assets/logo.png"
+                src="/assets/logo-320.webp"
                 alt="Axis Packaging Logo"
                 className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover group-hover:scale-105 transition-transform duration-200"
                 style={{
@@ -99,7 +101,12 @@ export function Header() {
               // Special handling for Products and Industries with dropdowns
               if (item.name === "Products") {
                 return (
-                  <div key={item.name} className="relative group">
+                  <div
+                    key={item.name}
+                    className="relative group"
+                    onMouseEnter={() => setProductMenuImages(true)}
+                    onFocus={() => setProductMenuImages(true)}
+                  >
                     <Link
                       to={item.href}
                       className="flex items-center gap-1 text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
@@ -154,12 +161,16 @@ export function Header() {
                                 className="group/item flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gradient-to-br hover:from-orange-50 hover:to-orange-100 transition-all duration-300 border border-transparent hover:border-orange-200 hover:shadow-md"
                               >
                                 <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
-                                  <img
-                                    src={product.image || "/assets/placeholder.jpg"}
-                                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
-                                    alt={product.name}
-                                    className="w-full h-full object-cover"
-                                  />
+                                  {productMenuImages ? (
+                                    <img
+                                      src={`/assets/menu/${product.slug}.webp`}
+                                      alt={product.name}
+                                      width={160}
+                                      height={160}
+                                      decoding="async"
+                                      className="w-full h-full object-cover"
+                                    />
+                                  ) : null}
                                 </div>
                                 <div className="text-center">
                                   <h4 className="text-sm font-semibold text-gray-900 group-hover/item:text-[var(--axis-orange)] transition-colors">
@@ -190,7 +201,12 @@ export function Header() {
 
               if (item.name === "Industries") {
                 return (
-                  <div key={item.name} className="relative group">
+                  <div
+                    key={item.name}
+                    className="relative group"
+                    onMouseEnter={() => setIndustryMenuImages(true)}
+                    onFocus={() => setIndustryMenuImages(true)}
+                  >
                     <Link
                       to={item.href}
                       className="flex items-center gap-1 text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
@@ -216,12 +232,16 @@ export function Header() {
                               className="group/item flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 transition-all duration-300 border border-transparent hover:border-blue-200 hover:shadow-md"
                             >
                               <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
-                                <img
-                                  src={industry.image || "/assets/placeholder.jpg"}
-                                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/assets/placeholder.jpg"; }}
-                                  alt={industry.name}
-                                  className="w-full h-full object-cover"
-                                />
+                                {industryMenuImages ? (
+                                  <img
+                                    src={`/assets/menu/${industry.slug}.webp`}
+                                    alt={industry.name}
+                                    width={160}
+                                    height={160}
+                                    decoding="async"
+                                    className="w-full h-full object-cover"
+                                  />
+                                ) : null}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
                               </div>
                               <div className="text-center">

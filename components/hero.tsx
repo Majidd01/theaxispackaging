@@ -7,15 +7,28 @@ import { Package, Award, Zap, CheckCircle } from "lucide-react";
 export function Hero() {
   return (
     <section className="relative flex items-center justify-center overflow-hidden" style={{ height: '85vh', minHeight: '600px' }}>
-      {/* Background Image */}
-      <div
-        role="img"
-        aria-label="Custom printed packaging boxes by Axis Packaging UK"
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/assets/banner.png')"
-        }}
-      >
+      <div className="absolute inset-0">
+        <picture>
+          <source
+            type="image/avif"
+            srcSet="/assets/hero/banner-640.avif 640w, /assets/hero/banner-960.avif 960w, /assets/hero/banner-1280.avif 1280w, /assets/hero/banner-1536.avif 1536w"
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcSet="/assets/hero/banner-640.webp 640w, /assets/hero/banner-960.webp 960w, /assets/hero/banner-1280.webp 1280w, /assets/hero/banner-1536.webp 1536w"
+            sizes="100vw"
+          />
+          <img
+            src="/assets/hero/banner-1280.webp"
+            alt="Custom printed packaging boxes by Axis Packaging UK"
+            width={1536}
+            height={1024}
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
         {/* Enhanced Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         {/* Animated gradient overlay */}
