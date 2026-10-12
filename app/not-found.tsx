@@ -1,4 +1,3 @@
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { SeoHead } from "@/components/seo-head";
@@ -13,7 +12,6 @@ export default function NotFoundPage() {
         path="/404"
         noindex
       />
-      <Header />
       <main className="container mx-auto px-4 py-20 text-center">
         <h1 className="text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">Page Not Found</h1>
         <p className="text-gray-600 mb-8 max-w-xl mx-auto">

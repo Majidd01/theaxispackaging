@@ -42,19 +42,87 @@
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 		<link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-7CGWJZE8QL"></script>
+		<!-- Google tag (gtag.js). The stub is ready immediately. The library loads after window load, during idle, so its long tasks stay out of the initial blocking window. -->
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
 			}
-			gtag("js", new Date());
-			gtag("config", "G-7CGWJZE8QL");
+
+			var axisGaLandingUrl = location.href;
+			var axisGaLandingReferrer = document.referrer || "";
+			var axisGaPendingViews = [];
+			var axisGaLastUrl = axisGaLandingUrl;
+			var axisGaStarted = false;
+
+			function axisGaRemember() {
+				if (window.__axisGaReady) return;
+				var href = location.href;
+				if (href === axisGaLastUrl) return;
+				axisGaLastUrl = href;
+				axisGaPendingViews.push({ href: href, title: document.title || "" });
+			}
+
+			var axisGaPushState = history.pushState;
+			var axisGaReplaceState = history.replaceState;
+			history.pushState = function () {
+				var result = axisGaPushState.apply(this, arguments);
+				axisGaRemember();
+				return result;
+			};
+			history.replaceState = function () {
+				var result = axisGaReplaceState.apply(this, arguments);
+				axisGaRemember();
+				return result;
+			};
+			window.addEventListener("popstate", axisGaRemember);
+
+			function axisGaFlush() {
+				var views = axisGaPendingViews.splice(0, axisGaPendingViews.length);
+				for (var i = 0; i < views.length; i++) {
+					gtag("event", "page_view", {
+						page_location: views[i].href,
+						page_title: views[i].title
+					});
+				}
+			}
+
+			function axisGaLoad() {
+				if (axisGaStarted) return;
+				axisGaStarted = true;
+				var axisGaConfig = { page_location: axisGaLandingUrl };
+				if (axisGaLandingReferrer) axisGaConfig.page_referrer = axisGaLandingReferrer;
+				gtag("js", new Date());
+				gtag("config", "G-7CGWJZE8QL", axisGaConfig);
+				dataLayer.push(function () {
+					window.__axisGaReady = true;
+					axisGaFlush();
+				});
+				var script = document.createElement("script");
+				script.async = true;
+				script.src = "https://www.googletagmanager.com/gtag/js?id=G-7CGWJZE8QL";
+				script.onload = function () {
+					window.__axisGaReady = true;
+					axisGaFlush();
+				};
+				script.onerror = function () {
+					window.__axisGaReady = true;
+				};
+				document.head.appendChild(script);
+			}
+
+			function axisGaSchedule() {
+				if ("requestIdleCallback" in window) requestIdleCallback(axisGaLoad, { timeout: 2000 });
+				else setTimeout(axisGaLoad, 2000);
+			}
+
+			if (document.readyState === "complete") axisGaSchedule();
+			else window.addEventListener("load", axisGaSchedule, { once: true });
 		</script>
 	</head>
 	<body>
-		<div id="root"></div>
+		<div id="header-root"></div>
+		<div id="app-root"></div>
 		<script type="module" src="/src/main.tsx"></script>
 	</body>
 </html>

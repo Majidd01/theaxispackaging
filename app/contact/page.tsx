@@ -4,7 +4,6 @@ import type React from "react";
 
 import { ChatSupport } from "@/components/chat-support";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -101,7 +100,6 @@ export default function ContactPage() {
   if (submitted) {
     return (
       <div className="min-h-screen bg-background">
-        <Header />
         <main className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
@@ -174,8 +172,6 @@ export default function ContactPage() {
           }),
         ]}
       />
-      <Header />
-
       <main>
         {/* Main Content Section */}
         <section className="py-12 bg-white">

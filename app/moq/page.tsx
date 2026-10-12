@@ -1,4 +1,3 @@
-import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ChatSupport } from "@/components/chat-support"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -72,8 +71,6 @@ export default function MOQPage() {
           path: STATIC_PAGE_SEO.moq.path,
         })}
       />
-      <Header />
-
       <main>
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white">

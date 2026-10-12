@@ -1,5 +1,4 @@
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { ProductCategories } from "@/components/product-categories";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -34,7 +33,6 @@ export default function ProductsPage() {
           type: "CollectionPage",
         })}
       />
-      <Header />
       <main>
         <section className="py-16 bg-gradient-to-br from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white">
           <div className="container mx-auto px-4 text-center">

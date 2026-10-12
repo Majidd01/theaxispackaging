@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ChatSupport } from "@/components/chat-support"
 import { CORRUGATED_OPTIONS } from "@/lib/constants"
@@ -25,8 +24,6 @@ export default function CorrugatedOptionsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white py-20">
         <div className="container mx-auto px-4 text-center">

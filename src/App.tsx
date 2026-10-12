@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { NavigationWrapper } from "@/components/navigation-wrapper";
+import { HomeHeroGate } from "@/components/home-hero-gate";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import Home from "@/app/page";
 
@@ -32,6 +33,7 @@ function RouteFallback() {
 function App() {
   return (
     <NavigationWrapper>
+      <HomeHeroGate />
       <ScrollToTop />
       <Suspense fallback={<RouteFallback />}>
         <Routes>

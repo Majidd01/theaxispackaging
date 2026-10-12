@@ -2,7 +2,6 @@
 
 import { ChatSupport } from "@/components/chat-support";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -52,8 +51,6 @@ export default function IndustriesPage() {
           type: "CollectionPage",
         })}
       />
-      <Header />
-
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white py-20">
         <div className="container mx-auto px-4 text-center">

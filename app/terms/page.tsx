@@ -1,4 +1,3 @@
-import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { SeoHead } from "@/components/seo-head"
@@ -12,7 +11,6 @@ export default function TermsPage() {
         description={STATIC_PAGE_SEO.terms.description}
         path={STATIC_PAGE_SEO.terms.path}
       />
-      <Header />
       <main className="py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">

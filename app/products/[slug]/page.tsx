@@ -2,7 +2,6 @@
 
 import { ChatSupport } from "@/components/chat-support";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -154,7 +153,6 @@ export default function ProductDetailPage() {
           path={`/products/${slug || ""}`}
           noindex
         />
-        <Header />
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
             Product Not Found
@@ -230,8 +228,6 @@ export default function ProductDetailPage() {
           faqSchema,
         ].filter(Boolean)}
       />
-      <Header />
-
       {/* Breadcrumb */}
       <section className="bg-white py-4 border-b">
         <div className="container mx-auto px-4">

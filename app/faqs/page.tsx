@@ -2,7 +2,6 @@
 
 import { ChatSupport } from "@/components/chat-support";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -1266,8 +1265,6 @@ Contact our sales team to discuss your specific volume needs and maximize your s
           type: "FAQPage",
         })}
       />
-      <Header />
-
       <main>
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
