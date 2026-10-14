@@ -34,10 +34,18 @@ function renderLinkedText(text: string, links: InternalLink[] = []) {
       segments.forEach((seg, i) => {
         if (seg) newParts.push(seg);
         if (i < segments.length - 1) {
+          const className = "text-[var(--axis-orange)] hover:underline font-medium";
+          const key = `${link.phrase}-${i}-${seg.slice(0, 8)}`;
           newParts.push(
-            <Link key={`${link.phrase}-${i}-${seg.slice(0, 8)}`} to={link.href} className="text-[var(--axis-orange)] hover:underline font-medium">
-              {link.phrase}
-            </Link>
+            /^https?:\/\//i.test(link.href) ? (
+              <a key={key} href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+                {link.phrase}
+              </a>
+            ) : (
+              <Link key={key} to={link.href} className={className}>
+                {link.phrase}
+              </Link>
+            )
           );
         }
       });

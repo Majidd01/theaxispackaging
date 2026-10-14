@@ -1008,6 +1008,107 @@ const _PRODUCT_CATEGORIES = [
     ],
   },
   {
+    name: "Custom Printed Bagel & Sandwich Boxes",
+    description: "Custom Printed Bagel & Sandwich Boxes give cafes, bakeries, delis, sandwich bars and caterers a branded carton for food that leaves the counter. The pack can carry your logo, colours and original artwork, so a bagel or a filled roll looks like part of the shop rather than a plain takeaway container.",
+    icon: "🥯",
+    image: "/assets/custom-printed-bagel-sandwich-boxes.webp",
+    slug: "printed-bagel-sandwich-boxes",
+    metaTitle: "Custom Printed Bagel & Sandwich Boxes UK | Axis Packaging",
+    metaDescription: "Custom printed bagel and sandwich boxes for UK cafes, bakeries and delis. Food-grade board, full-colour CMYK print. Request a quote from Axis Packaging.",
+    h1: "Custom Printed Bagel & Sandwich Boxes",
+    alt: "Custom Printed Bagel & Sandwich Boxes with Axis Packaging branding",
+    breadcrumbName: "Bagel & Sandwich Boxes",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "sandwich boxes", href: "/products/sandwich-boxes" },
+      { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "food labelling and packaging guidance", href: "https://www.gov.uk/food-labelling-and-packaging" },
+    ],
+    contentSections: [
+      {
+        title: "Branded cartons for bagels and sandwiches",
+        intro: "A printed carton does two jobs. It holds the food for the walk back to the office, and it shows the name of the business that made it. This range is for bagels, sandwiches and filled rolls. It is separate from plain sandwich boxes, which are quoted when you want an unprinted wedge or rectangle, and from bakery and cake boxes, which are built for cakes and pastries.",
+        subsections: [
+          {
+            title: "Bagel boxes",
+            content: "A bagel is round and taller than a flat sandwich wedge. Tell us the diameter and the height of the filled bagel, including cream cheese or other toppings. We quote a carton for that size. Dimensions are not listed here, because they depend on the bagel you sell.",
+          },
+          {
+            title: "Sandwich boxes with a window",
+            content: "A triangular carton with a clear window lets the customer see the filling before they open it. Measure the sandwich after it is cut, including tall ingredients. If you also sell long rolls, say so. One wedge size does not fit a baguette. Side salads and crisps are usually better in food grade containers than in the sandwich carton.",
+          },
+        ],
+      },
+      {
+        title: "Print, colour and who it is for",
+        intro: "Full-colour CMYK printing can reproduce logos, brand colours and original illustrations on the board. The finish is matt or gloss. This product uses food-grade board at 240gsm. UK food labelling and packaging guidance explains that packaging used for food must be suitable for that use, and that a declaration of compliance comes from the supplier. Prices and minimum orders are not published on this page.",
+        subsections: [
+          {
+            title: "Shops that use this packaging",
+            content: "Cafes, bakeries, delis, sandwich bars, caterers and other food-to-go businesses use printed cartons when the food is eaten away from the counter. Many of them then place the closed box in paper shopping bags for the customer to carry. Describe the menu, and we will quote the carton shapes you actually need.",
+          },
+          {
+            title: "What to send with the enquiry",
+            content: "Use the quote form on this page. Include the food, the length, width and depth, whether you want a bagel box, a window sandwich box, or both, and the quantity. Lead time is confirmed on the quotation, not assumed here. If you only need an unprinted sandwich carton, the sandwich boxes page is the better place to start.",
+          },
+        ],
+      },
+    ],
+    productTypesTitle: "Formats to discuss",
+    productTypes: [
+      { title: "Bagel carton", detail: "A box shaped around a filled bagel. The size comes from the bagel you describe, not from a stock list." },
+      { title: "Window sandwich carton", detail: "A triangular box with a display window, so the filling can be seen before the carton is opened." },
+      { title: "Printed artwork", detail: "Your logo, colours and original artwork, printed in full-colour CMYK with a matt or gloss finish." },
+    ],
+    specificationsTitle: "Specifications",
+    specificationsTable: [
+      { feature: "Material", detail: "Food-grade board" },
+      { feature: "Board weight", detail: "240gsm" },
+      { feature: "Printing", detail: "Full-colour CMYK" },
+      { feature: "Finish", detail: "Matt or gloss" },
+      { feature: "Dimensions", detail: "Awaiting confirmation. Enter the length, width and depth on the quote form." },
+      { feature: "Lead time", detail: "Confirmed on the quotation." },
+      { feature: "Quantity", detail: "Quoted for the quantity you request. No minimum is stated on this page." },
+    ],
+    whyChooseTitle: "How a quote is prepared",
+    whyChooseParagraphs: [
+      "Send the bagel or sandwich as it is served, the print you want, and the quantity. We reply with a quotation for that job. Prices and production time are part of the reply, not this page.",
+      "Keep cakes on bakery and cake boxes, so a celebration cake is quoted separately from a bagel or a sandwich.",
+    ],
+    benefitsTitle: "Before you enquire",
+    benefits: [
+      "A bagel carton and a window sandwich carton can be quoted together",
+      "Artwork is discussed with the box, rather than taken from a stock design",
+      "The window is for sandwiches where the filling should stay visible",
+      "Measurements come from the food you actually sell",
+      "Unprinted wedges are better handled as a separate sandwich carton",
+    ],
+    faqs: [
+      {
+        question: "Can one printed design cover both a bagel box and a sandwich box?",
+        answer: "Yes. Tell us which shapes you need and we can quote them together. Each carton still has to match the food that goes inside it.",
+      },
+      {
+        question: "Do you list standard bagel or sandwich sizes?",
+        answer: "No. Dimensions are awaiting your confirmation. Enter the measurements of the filled bagel or the cut sandwich on the quote form.",
+      },
+      {
+        question: "What printing can I request?",
+        answer: "Full-colour CMYK, with a matt or gloss finish. Describe the logo, colours and artwork you want printed.",
+      },
+      {
+        question: "Is there a minimum order or a published price?",
+        answer: "Neither is published here. Request a quotation for the quantity you expect to order.",
+      },
+      {
+        question: "When will the boxes be ready?",
+        answer: "Lead time is confirmed on the quotation, once we have the size, print and quantity. It is not stated on this page.",
+      },
+    ],
+  },
+  {
     name: "Takeaway Food Trays",
     description: "Takeaway food trays for UK chip shops, cafes, restaurants and street-food stalls. Open kraft trays are quoted to your food and your size. Prices, capacities and minimum orders are not listed on this page.",
     icon: "🍟",
