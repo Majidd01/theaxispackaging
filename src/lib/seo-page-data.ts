@@ -47,7 +47,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/products",
     pageType: "Category",
     primaryTopic: "custom packaging products UK",
-    title: "Custom Packaging Products UK | Boxes & Branding | Axis Packaging",
+    title: "Custom Packaging Products UK | Axis Packaging",
     description: truncateMeta(
       "Browse custom packaging products from Axis Packaging — folding cartons, rigid boxes, mailers, kraft boxes, and more for UK retail and e-commerce brands."
     ),
@@ -74,7 +74,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/sustainability",
     pageType: "Landing",
     primaryTopic: "sustainable packaging UK",
-    title: "Sustainable Packaging UK | Eco-Friendly Options | Axis Packaging",
+    title: "Sustainable Packaging UK | Axis Packaging",
     description: truncateMeta(
       "Discover Axis Packaging’s sustainable packaging options — recyclable materials and eco-conscious custom boxes for UK brands reducing environmental impact."
     ),
@@ -83,7 +83,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/faqs",
     pageType: "FAQ",
     primaryTopic: "custom packaging FAQs",
-    title: "Custom Packaging FAQs | Orders, Materials & Shipping | Axis Packaging",
+    title: "Custom Packaging FAQs | Axis Packaging",
     description: truncateMeta(
       "Answers to common questions about Axis Packaging — MOQs, production times, materials, custom printing, and shipping for UK packaging orders."
     ),
@@ -140,7 +140,8 @@ export function buildProductSeo(input: {
       title: truncateMeta("Custom POP Displays UK | Axis Packaging", 60),
       description: truncateMeta(
         input.metaDescription ||
-          "Custom POP displays for UK shops, supermarkets and exhibitions. Cardboard, corrugated and fabric options, with printing confirmed on your quotation."
+          "Custom POP displays for UK shops, supermarkets and exhibitions. Cardboard, corrugated and fabric options, with printing confirmed on your quotation.",
+        155
       ),
       primaryTopic: "custom pop displays",
     };
@@ -151,12 +152,22 @@ export function buildProductSeo(input: {
 
   const description = truncateMeta(
     improveDescription(
-      input.metaDescription || input.description,
+      stripUnsupportedClaims(input.metaDescription || input.description),
       input.name
-    )
+    ),
+    155
   );
 
   return { title: truncateMeta(title, 60), description, primaryTopic };
+}
+
+function stripUnsupportedClaims(raw: string | undefined) {
+  return (raw || "")
+    .replace(/\bMOQ\s*100\b\.?/gi, "")
+    .replace(/\bFree design proof\b\.?/gi, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+\./g, ".")
+    .trim();
 }
 
 function improveDescription(raw: string | undefined, name: string) {
@@ -179,9 +190,10 @@ export function buildIndustrySeo(input: {
   const description = truncateMeta(
     input.metaDescription ||
       input.description ||
-      `Custom ${input.name.toLowerCase()} packaging solutions from Axis Packaging — tailored boxes and branding for UK businesses.`
+      `Custom ${input.name.toLowerCase()} packaging solutions from Axis Packaging — tailored boxes and branding for UK businesses.`,
+    155
   );
-  return { title: truncateMeta(title, 65), description, primaryTopic };
+  return { title: truncateMeta(title, 60), description, primaryTopic };
 }
 
 function stripBuyPrefix(name: string) {

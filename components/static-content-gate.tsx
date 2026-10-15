@@ -13,11 +13,19 @@ export function StaticContentGate() {
     const content = document.getElementById(CONTENT_ID);
     if (!content) return;
     const path = content.getAttribute("data-path") || "";
-    const hide = location.pathname !== path;
-    if (content.hidden !== hide) content.hidden = hide;
-    const nextDisplay = hide ? "none" : "";
-    if (content.style.display !== nextDisplay) content.style.display = nextDisplay;
-  }, [location.pathname]);
+    // The product catalog is rendered by React so pagination stays the same on a direct visit.
+    // The prerendered links remain in the HTML source for crawlers, but are inert once React runs.
+    const hide = path === "/products" || location.pathname !== path;
+    content.hidden = hide;
+    content.style.display = hide ? "none" : "";
+    if (hide) {
+      content.setAttribute("inert", "");
+      content.setAttribute("aria-hidden", "true");
+    } else {
+      content.removeAttribute("inert");
+      content.removeAttribute("aria-hidden");
+    }
+  }, [location.pathname, location.search]);
 
   useLayoutEffect(() => {
     const content = document.getElementById(CONTENT_ID);

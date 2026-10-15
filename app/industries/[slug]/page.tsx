@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { INDUSTRIES, PRODUCT_CATEGORIES } from "@/lib/constants";
 import { ArrowRight, Award, Building2, CheckCircle, Factory, Package, Users } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { hasStaticContent } from "@/lib/has-static-content";
 import { SeoHead } from "@/components/seo-head";
 import { buildIndustrySeo } from "@/lib/seo-page-data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
@@ -44,6 +45,34 @@ export default function IndustryDetailPage() {
 
   const seo = buildIndustrySeo(industry);
   const path = `/industries/${industry.slug}`;
+
+  if (hasStaticContent(path)) {
+    return (
+      <>
+        <SeoHead
+          title={seo.title}
+          description={seo.description}
+          path={path}
+          image={industry.image}
+          jsonLd={[
+            breadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Industries", path: "/industries" },
+              { name: industry.name, path },
+            ]),
+            serviceSchema({
+              name: `${industry.name} Packaging`,
+              description: industry.description,
+              path,
+              image: industry.image,
+            }),
+          ]}
+        />
+        <Footer />
+        <ChatSupport />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -252,9 +281,9 @@ export default function IndustryDetailPage() {
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-[var(--axis-dark-blue)]">Fast Turnaround</h3>
+                    <h3 className="font-semibold text-[var(--axis-dark-blue)]">Fast Turnaround Options</h3>
                     <p className="text-gray-600">
-                      Quick production and delivery times to meet your business deadlines
+                      Timing is confirmed on your quotation
                     </p>
                   </div>
                 </div>

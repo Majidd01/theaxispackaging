@@ -10,6 +10,12 @@ import {
   contactStaticHtml,
   faqsStaticHtml,
 } from "./prerender-static-content.mjs";
+import {
+  industriesIndexStaticHtml,
+  industryStaticHtml,
+  productStaticHtml,
+  productsIndexStaticHtml,
+} from "./prerender-catalog-content.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const distDir = path.join(root, "dist");
@@ -304,8 +310,11 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
     description: page.description,
     image: "/assets/banner.png",
     type: "website",
-    body: rich ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p></main>`,
-    staticContent: rich?.staticContent,
+    body: rich || key === "products" || key === "industries" ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p><h2>Related pages</h2><nav aria-label="Related pages"><ul><li><a href="/products">Packaging products</a></li><li><a href="/industries">Industries</a></li><li><a href="/quote">Request a quotation</a></li><li><a href="/contact">Contact us</a></li><li><a href="/faqs">Packaging FAQs</a></li></ul></nav></main>`,
+    staticContent:
+      rich?.staticContent ||
+      (key === "products" ? productsIndexStaticHtml(PRODUCT_CATEGORIES) : undefined) ||
+      (key === "industries" ? industriesIndexStaticHtml(INDUSTRIES) : undefined),
     jsonLd: rich?.jsonLd || [
       webPageSchema({
         title: page.title,
@@ -345,7 +354,8 @@ for (const product of PRODUCT_CATEGORIES) {
     image: product.image,
     type: "product",
     keywords: `${built.primaryTopic}, custom packaging UK, custom printed boxes`,
-    body: productBody(product, h1),
+    body: "",
+    staticContent: productStaticHtml(product, PRODUCT_CATEGORIES),
     jsonLd: [
       breadcrumbSchema([
         { name: "Home", path: "/" },
@@ -373,7 +383,8 @@ for (const industry of INDUSTRIES) {
     description: built.description,
     image: industry.image,
     type: "website",
-    body: `<main><h1>${esc(industry.h1 || built.title)}</h1><p>${esc(industry.description)}</p></main>`,
+    body: "",
+    staticContent: industryStaticHtml(industry, PRODUCT_CATEGORIES, INDUSTRIES),
     jsonLd: [
       breadcrumbSchema([
         { name: "Home", path: "/" },
@@ -603,12 +614,12 @@ for (const page of pages) {
   const refs = collectLocalRefs(page.staticContent);
   for (const href of refs.hrefs) {
     if (!href.startsWith("/") || href.startsWith("//")) continue;
-    const pathOnly = href.split(/[?#]/)[0];
+    const pathOnly = href.replace(/&amp;/g, "&").split(/[?#]/)[0];
     if (pathOnly !== "/" && !routePaths.has(pathOnly)) brokenStaticLinks.push(`${page.path} -> ${href}`);
   }
   for (const src of refs.images) {
     if (!src.startsWith("/") || src.startsWith("//")) continue;
-    const file = path.join(root, "public", decodeURIComponent(src.split(/[?#]/)[0].replace(/^\//, "")));
+    const file = path.join(root, "public", decodeURIComponent(src.replace(/&amp;/g, "&").split(/[?#]/)[0].replace(/^\//, "")));
     if (!fs.existsSync(file)) missingStaticImages.push(`${page.path} -> ${src}`);
   }
 }

@@ -6,8 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PRODUCT_CATEGORIES } from "@/lib/constants";
-import { ArrowRight, CheckCircle, MessageCircle, Package, Shield, Star, Truck } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageCircle, Package } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { createPortal } from "react-dom";
+import { hasStaticContent } from "@/lib/has-static-content";
 import { useState } from "react";
 import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
 import { submitEnquiry } from "@/lib/submit-enquiry";
@@ -198,12 +200,14 @@ export default function ProductDetailPage() {
   const productTypes = (product as any).productTypes as { title: string; detail: string }[] | undefined;
   const productTypesTitle = (product as any).productTypesTitle || "Product Types";
   const internalLinks = ((product as any).internalLinks || []) as InternalLink[];
-  const hideProductFeatures = (product as any).hideProductFeatures ?? !!contentSections;
   const quoteIntro = (product as any).quoteIntro as string | undefined;
   const quoteTitle = (product as any).quoteTitle || "Ready to Get Started?";
   const urgencyBanner = (product as any).urgencyBanner as { title: string; text: string } | undefined;
   const whyChooseTitle = (product as any).whyChooseTitle
     || (whyChooseParagraphs ? "Why Choose Axis Packaging" : (product as any).whyChoose ? "Why Axis Packaging" : "Why Choose This Product?");
+  const specificationsBullets = (product as any).specificationsBullets as string[] | undefined;
+  const whyChoosePoints = (product as any).whyChoose as string[] | undefined;
+  const hasVerifiedWhyChoose = Boolean(whyChooseParagraphs?.length || whyChoosePoints?.length);
 
   const productPath = `/products/${product.slug}`;
   const seo = buildProductSeo(product);
@@ -214,110 +218,8 @@ export default function ProductDetailPage() {
     { name: breadcrumbLabel, path: productPath },
   ]);
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <SeoHead
-        title={seo.title}
-        description={seo.description}
-        path={productPath}
-        image={product.image || placeholderImg}
-        type="product"
-        keywords={`${seo.primaryTopic}, custom packaging UK, custom printed boxes`}
-        jsonLd={[
-          crumbs,
-          productSchema({
-            name: product.name,
-            description: product.description,
-            image: product.image || placeholderImg,
-            path: productPath,
-            category: "Custom Packaging",
-          }),
-          faqSchema,
-        ].filter(Boolean)}
-      />
-      {/* Breadcrumb */}
-      <section className="bg-white py-4 border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm">
-            <Link to="/" className="text-gray-500 hover:text-[var(--axis-orange)]">
-              Home
-            </Link>
-            <span className="text-gray-400">/</span>
-            <Link to="/products" className="text-gray-500 hover:text-[var(--axis-orange)]">
-              Products
-            </Link>
-            <span className="text-gray-400">/</span>
-            <span className="text-[var(--axis-dark-blue)] font-medium">{breadcrumbLabel}</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Detail */}
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Left Side - Product Images */}
-            <div>
-              {/* Main Product Image */}
-              <div className="mb-4">
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = placeholderImg;
-                  }}
-                  alt={(product.alt || product.name).split(",")[0].trim()}
-                  width={800}
-                  height={384}
-                  fetchPriority="high"
-                  decoding="async"
-                  className="w-full h-96 object-cover rounded-lg shadow-lg"
-                />
-              </div>
-
-              {/* Thumbnail Gallery */}
-              <div className="flex gap-2">
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border-2 border-[var(--axis-orange)]"
-                />
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border border-gray-300"
-                />
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border border-gray-300"
-                />
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border border-gray-300"
-                />
-              </div>
-            </div>
-
-            {/* Right Side - Product Details & Quote Form */}
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <span className="text-2xl">{product.icon}</span>
-                <Badge className="bg-[var(--axis-orange)] text-white">Premium Quality</Badge>
-              </div>
-
-              <h1 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
-                {product.h1 || product.name}
-              </h1>
-
-              <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
-
-              {/* Quote Form */}
-              <div className="bg-gray-50 p-6 rounded-lg">
+  const quoteForm = (
+    <div className="bg-gray-50 p-6 rounded-lg">
                 <div className="grid grid-cols-3 gap-4 mb-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
@@ -540,55 +442,145 @@ export default function ProductDetailPage() {
                   </div>
                 </div>
               </div>
+  );
+  const quoteSlot = hasStaticContent(productPath) ? document.getElementById("static-product-quote") : null;
+  if (quoteSlot) {
+    return (
+      <>
+        <SeoHead
+          title={seo.title}
+          description={seo.description}
+          path={productPath}
+          image={product.image || placeholderImg}
+          type="product"
+          keywords={`${seo.primaryTopic}, custom packaging UK, custom printed boxes`}
+          jsonLd={[
+            crumbs,
+            productSchema({
+              name: product.name,
+              description: product.description,
+              image: product.image || placeholderImg,
+              path: productPath,
+              category: "Custom Packaging",
+            }),
+            faqSchema,
+          ].filter(Boolean)}
+        />
+        {createPortal(quoteForm, quoteSlot)}
+        <Footer />
+        <ChatSupport />
+      </>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <SeoHead
+        title={seo.title}
+        description={seo.description}
+        path={productPath}
+        image={product.image || placeholderImg}
+        type="product"
+        keywords={`${seo.primaryTopic}, custom packaging UK, custom printed boxes`}
+        jsonLd={[
+          crumbs,
+          productSchema({
+            name: product.name,
+            description: product.description,
+            image: product.image || placeholderImg,
+            path: productPath,
+            category: "Custom Packaging",
+          }),
+          faqSchema,
+        ].filter(Boolean)}
+      />
+      {/* Breadcrumb */}
+      <section className="bg-white py-4 border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center space-x-2 text-sm">
+            <Link to="/" className="text-gray-500 hover:text-[var(--axis-orange)]">
+              Home
+            </Link>
+            <span className="text-gray-400">/</span>
+            <Link to="/products" className="text-gray-500 hover:text-[var(--axis-orange)]">
+              Products
+            </Link>
+            <span className="text-gray-400">/</span>
+            <span className="text-[var(--axis-dark-blue)] font-medium">{breadcrumbLabel}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Detail */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left Side - Product Images */}
+            <div>
+              {/* Main Product Image */}
+              <div className="mb-4">
+                <img
+                  src={product.image || placeholderImg}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = placeholderImg;
+                  }}
+                  alt={(product.alt || product.name).split(",")[0].trim()}
+                  width={800}
+                  height={384}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-96 object-cover rounded-lg shadow-lg"
+                />
+              </div>
+
+              {/* Thumbnail Gallery */}
+              <div className="flex gap-2">
+                <img
+                  src={product.image || placeholderImg}
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                  alt={product.alt || product.name}
+                  className="w-16 h-16 object-cover rounded border-2 border-[var(--axis-orange)]"
+                />
+                <img
+                  src={product.image || placeholderImg}
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                  alt={product.alt || product.name}
+                  className="w-16 h-16 object-cover rounded border border-gray-300"
+                />
+                <img
+                  src={product.image || placeholderImg}
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                  alt={product.alt || product.name}
+                  className="w-16 h-16 object-cover rounded border border-gray-300"
+                />
+                <img
+                  src={product.image || placeholderImg}
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                  alt={product.alt || product.name}
+                  className="w-16 h-16 object-cover rounded border border-gray-300"
+                />
+              </div>
+            </div>
+
+            {/* Right Side - Product Details & Quote Form */}
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <span className="text-2xl">{product.icon}</span>
+                <Badge className="bg-[var(--axis-orange)] text-white">Premium Quality</Badge>
+              </div>
+
+              <h1 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
+                {product.h1 || product.name}
+              </h1>
+
+              <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
+
+              {quoteForm}
+
             </div>
           </div>
         </div>
       </section>
-
-      {/* Product Features */}
-      {!hideProductFeatures && (
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
-              Product Features & Benefits
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why {product.name} is the perfect choice for your packaging needs
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center p-6">
-              <Package className="h-12 w-12 text-[var(--axis-orange)] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">
-                Premium Quality
-              </h3>
-              <p className="text-gray-600">Highest quality materials and expert craftsmanship</p>
-            </Card>
-            <Card className="text-center p-6">
-              <Star className="h-12 w-12 text-[var(--axis-orange)] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">
-                Custom Design
-              </h3>
-              <p className="text-gray-600">Tailored to your brand and specific requirements</p>
-            </Card>
-            <Card className="text-center p-6">
-              <Truck className="h-12 w-12 text-[var(--axis-orange)] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">
-                Fast Turnaround Options
-              </h3>
-              <p className="text-gray-600">Timing is confirmed on your quotation</p>
-            </Card>
-            <Card className="text-center p-6">
-              <Shield className="h-12 w-12 text-[var(--axis-orange)] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">Premium Quality Packaging</h3>
-              <p className="text-gray-600">Packaging is supplied to the specification agreed on your quotation</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-      )}
 
       {/* Rich content sections with H2/H3 structure */}
       {contentSections?.map((section, idx) => (
@@ -839,164 +831,76 @@ export default function ProductDetailPage() {
         </section>
       )}
 
-      {/* Specifications (default two-column layout) */}
-      {!specificationsTable && (
+      {!specificationsTable && (specificationsBullets?.length || hasVerifiedWhyChoose) && (
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className={`grid gap-12 ${specificationsBullets?.length && hasVerifiedWhyChoose ? "lg:grid-cols-2" : ""}`}>
+            {specificationsBullets?.length ? (
             <div>
               <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">
                 Product Specifications
               </h2>
               <div className="space-y-4">
-                {((product as any).specificationsBullets as string[] | undefined)?.map((item) => (
+                {specificationsBullets.map((item) => (
                   <div key={item} className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-green-500" />
                     <span className="text-gray-700">{item}</span>
                   </div>
-                )) || (
-                  <>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Customizable sizes and dimensions</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Premium materials and finishes</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Full-color printing capabilities</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Eco-friendly options available</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Order quantity confirmed on your quotation</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Fast turnaround options confirmed on your quotation</span>
-                    </div>
-                  </>
-                )}
+                ))}
               </div>
             </div>
+            ) : null}
+            {hasVerifiedWhyChoose ? (
             <div>
               <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">
                 {whyChooseTitle}
               </h2>
-              {whyChooseParagraphs ? (
+              {whyChooseParagraphs?.length ? (
                 <div className="space-y-4">
                   {whyChooseParagraphs.map((p) => (
                     <p key={p.slice(0, 40)} className="text-gray-700 leading-relaxed">{renderLinkedText(p, internalLinks)}</p>
                   ))}
                 </div>
-              ) : (product as any).whyChoose ? (
+              ) : (
                 <ul className="space-y-3">
-                  {((product as any).whyChoose as string[]).map((point: string) => (
+                  {whyChoosePoints?.map((point) => (
                     <li key={point} className="flex items-start space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
                       <span className="text-gray-700">{point}</span>
                     </li>
                   ))}
                 </ul>
-              ) : (
-                <div className="space-y-4">
-                  <p className="text-gray-700 leading-relaxed">
-                    Our {product.name} are designed with your business in mind. We understand the
-                    importance of quality packaging in protecting your products and enhancing your
-                    brand image.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    We supply packaging that combines functionality, presentation and the material
-                    options confirmed on your quotation.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    Every product is crafted with attention to detail, ensuring that your packaging
-                    not only looks great but also performs exceptionally well in real-world
-                    conditions.
-                  </p>
-                </div>
               )}
             </div>
+            ) : null}
           </div>
         </div>
       </section>
       )}
 
-      {/* FAQs Section */}
+      {productFaqs?.length ? (
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600">
-              Everything you need to know about our packaging services
-            </p>
           </div>
           <Accordion type="single" collapsible className="w-full space-y-4">
-            {productFaqs ? (
-              productFaqs.map((faq, i) => (
-                <AccordionItem key={i} value={`item-${i + 1}`} className="bg-white px-6 rounded-xl border-none shadow-sm">
-                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                    {renderLinkedText(faq.answer, internalLinks)}
-                  </AccordionContent>
-                </AccordionItem>
-              ))
-            ) : (
-              <>
-                <AccordionItem value="item-1" className="bg-white px-6 rounded-xl border-none shadow-sm">
-                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                    How long does it take to get a custom quote?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                    Our team typically reviews requirements and provides a detailed quote within 24 hours. For rush requests, we aim to respond even faster via our instant quote portal.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2" className="bg-white px-6 rounded-xl border-none shadow-sm">
-                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                    What is the minimum order quantity (MOQ)?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                    Our standard MOQ starts as low as 100 units depending on the product category. This allows businesses of all sizes to access premium, custom-branded packaging.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3" className="bg-white px-6 rounded-xl border-none shadow-sm">
-                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                    Do you offer international shipping?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                    Yes, Axis Packaging ships worldwide. We handle all logistics and customs coordination to ensure your branded boxes arrive safely at your doorstep, regardless of your location.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4" className="bg-white px-6 rounded-xl border-none shadow-sm">
-                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                    Can I request a physical sample before placing a bulk order?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                    Absolutely! We offer sample production (prototyping) so you can verify the dimensions, material quality, and printing accuracy before committing to a full production run.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5" className="bg-white px-6 rounded-xl border-none shadow-sm">
-                  <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
-                    What design file formats do you accept?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
-                    We prefer high-resolution vector files such as Adobe Illustrator (AI), PDF, or EPS for the best print quality. However, we also accept high-quality PSD, JPG, and PNG files for initial review.
-                  </AccordionContent>
-                </AccordionItem>
-              </>
-            )}
+            {productFaqs.map((faq, i) => (
+              <AccordionItem key={faq.question} value={`item-${i + 1}`} className="bg-white px-6 rounded-xl border-none shadow-sm">
+                <AccordionTrigger className="text-lg font-semibold text-[var(--axis-dark-blue)] hover:no-underline px-6">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed px-6 pb-6 mt-2 border-t pt-4">
+                  {renderLinkedText(faq.answer, internalLinks)}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
       </section>
+      ) : null}
 
       {/* Urgency banner */}
       {urgencyBanner && (
@@ -1117,7 +1021,7 @@ export default function ProductDetailPage() {
                           </div>
                           <div className="flex items-center text-sm text-gray-500">
                             <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
-                            <span>Fast Delivery</span>
+                            <span>24h Quote Response</span>
                           </div>
                         </div>
 

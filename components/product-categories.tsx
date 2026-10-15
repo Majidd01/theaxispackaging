@@ -147,6 +147,26 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
           </div>
         )}
 
+        {!selectedIndustry && (
+          <nav aria-label="All packaging products" className="mb-16">
+            <h2 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-6 text-center">
+              All packaging products
+            </h2>
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 max-w-5xl mx-auto">
+              {PRODUCT_CATEGORIES.map((product) => (
+                <li key={`all-${product.slug}`}>
+                  <Link
+                    to={`/products/${product.slug}`}
+                    className="text-[var(--axis-dark-blue)] hover:text-[var(--axis-orange)] font-medium"
+                  >
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         {/* Product Features */}
         <div className="grid md:grid-cols-4 gap-8 text-center">
           <div className="flex flex-col items-center">

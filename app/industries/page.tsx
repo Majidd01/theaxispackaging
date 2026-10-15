@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { hasStaticContent } from "@/lib/has-static-content";
 import { SeoHead } from "@/components/seo-head";
 import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
 import { webPageSchema } from "@/lib/seo";
@@ -38,6 +39,25 @@ export default function IndustriesPage() {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  if (hasStaticContent("/industries")) {
+    return (
+      <>
+        <SeoHead
+          title={STATIC_PAGE_SEO.industries.title}
+          description={STATIC_PAGE_SEO.industries.description}
+          path={STATIC_PAGE_SEO.industries.path}
+          jsonLd={webPageSchema({
+            title: STATIC_PAGE_SEO.industries.title,
+            description: STATIC_PAGE_SEO.industries.description,
+            path: STATIC_PAGE_SEO.industries.path,
+            type: "CollectionPage",
+          })}
+        />
+        <Footer />
+        <ChatSupport />
+      </>
+    );
+  }
   return (
     <div className="min-h-screen bg-gray-50">
       <SeoHead
