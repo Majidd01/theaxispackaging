@@ -178,7 +178,7 @@ Unique descriptions (~140–160 chars where practical) with UK benefit framing. 
 
 - Product main image: descriptive alt (first segment of alt string), width/height, `fetchPriority="high"`, `decoding="async"`
 - Blog featured image: dimensions + high priority
-- Homepage hero: improved aria-label; preload of `/assets/banner.png`
+- Homepage hero: improved aria-label; preload of `/assets/banner.jpg`
 - **Not done (needs assets / design risk):** bulk WebP/AVIF conversion of existing PNG/JPG library — flagged for human/media pipeline
 
 ---

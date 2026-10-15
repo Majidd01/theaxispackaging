@@ -9,7 +9,7 @@ export const ABOUT_PAGE = {
     "Customisation covers the practical choices: the style of box, the print, paper bags and other branded packaging. Share the product details and the options you prefer, and we will use them to prepare a quotation.",
     "If you are still comparing packaging options, contact us in Leeds. We can help you describe what you need so the quotation matches the format.",
   ],
-  storyImage: "/assets/custom-packaging-boxes.png",
+  storyImage: "/assets/custom-packaging-boxes.jpg",
   storyAlt: "An assortment of custom printed boxes",
   valuesTitle: "What you can expect",
   valuesIntro: "A straightforward way to choose packaging and request a quotation.",
@@ -36,7 +36,7 @@ export const ABOUT_PAGE = {
   focus: [
     {
       title: "Custom printed boxes",
-      image: "/assets/custom-packaging-boxes.png",
+      image: "/assets/custom-packaging-boxes.jpg",
       alt: "An assortment of custom printed boxes",
       description: "Boxes printed with your branding for products that need a name, colours and product information on the pack.",
       href: "/products",
@@ -52,7 +52,7 @@ export const ABOUT_PAGE = {
     },
     {
       title: "Retail packaging and paper bags",
-      image: "/assets/retail-packaging-display.png",
+      image: "/assets/retail-packaging-display.jpg",
       alt: "Retail boxes displayed on a shop shelf",
       description: "Retail packaging for the shelf, and paper shopping bags that can be printed for shops and other customer-facing businesses.",
       href: "/products/paper-bags",

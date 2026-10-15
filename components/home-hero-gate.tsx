@@ -11,11 +11,22 @@ export function HomeHeroGate() {
 
   useLayoutEffect(() => {
     const hero = document.getElementById(HERO_ID);
-    if (!hero) return;
+    const intro = document.getElementById("static-home-intro");
     const hide = location.pathname !== "/";
-    if (hero.hidden !== hide) hero.hidden = hide;
-    const nextDisplay = hide ? "none" : "";
-    if (hero.style.display !== nextDisplay) hero.style.display = nextDisplay;
+    for (const element of [hero, intro]) {
+      if (!element) continue;
+      if (element === intro && !hide) continue;
+      if (element.hidden !== hide) element.hidden = hide;
+      const nextDisplay = hide ? "none" : "";
+      if (element.style.display !== nextDisplay) element.style.display = nextDisplay;
+      if (hide) {
+        element.setAttribute("inert", "");
+        element.setAttribute("aria-hidden", "true");
+      } else {
+        element.removeAttribute("inert");
+        element.removeAttribute("aria-hidden");
+      }
+    }
   }, [location.pathname]);
 
   useLayoutEffect(() => {

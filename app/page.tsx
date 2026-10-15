@@ -1,6 +1,8 @@
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { Footer } from "@/components/footer";
 import { SeoHead } from "@/components/seo-head";
+import { HOME_INTRO } from "@/lib/home-intro";
 import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
 import { localBusinessSchema, organizationSchema, websiteSchema, webPageSchema } from "@/lib/seo";
 
@@ -70,13 +72,23 @@ function WhenVisible({
 
 export default function Home() {
   const seo = STATIC_PAGE_SEO.home;
+
+  useLayoutEffect(() => {
+    const intro = document.getElementById("static-home-intro");
+    if (!intro) return;
+    intro.hidden = true;
+    intro.style.display = "none";
+    intro.setAttribute("inert", "");
+    intro.setAttribute("aria-hidden", "true");
+  }, []);
+
   return (
     <div className="bg-background">
       <SeoHead
         title={seo.title}
         description={seo.description}
         path={seo.path}
-        image="/assets/banner.png"
+        image="/assets/banner.jpg"
         keywords="custom packaging UK, custom boxes UK, custom printed boxes UK, bespoke packaging UK, branded packaging"
         jsonLd={[
           organizationSchema(),
@@ -91,9 +103,31 @@ export default function Home() {
       />
       <HomeHeroFallback />
       <main>
-        <WhenVisible className="min-h-[1914px] md:min-h-[1181px] lg:min-h-[838px]">
-          <SolutionFeatures />
-        </WhenVisible>
+        <section className="py-12 bg-white border-t">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">{HOME_INTRO.h2}</h2>
+            {HOME_INTRO.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="text-gray-700 leading-relaxed mb-4">
+                {paragraph}
+              </p>
+            ))}
+            <p className="text-gray-700">
+              {HOME_INTRO.links.map((link, index) => (
+                <span key={link.href}>
+                  {index > 0 ? " · " : null}
+                  <Link to={link.href} className="text-[var(--axis-orange)] hover:underline font-medium">
+                    {link.label}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          </div>
+        </section>
+        <div className="min-h-[1914px] md:min-h-[1181px] lg:min-h-[838px]">
+          <Suspense fallback={null}>
+            <SolutionFeatures />
+          </Suspense>
+        </div>
         <WhenVisible className="min-h-[2824px] md:min-h-[2058px] lg:min-h-[1322px]">
           <Quotation />
         </WhenVisible>

@@ -370,7 +370,9 @@ export default function ContactPage() {
                     <span className="text-green-600">{CONTACT_PAGE.h1Brand}</span>
                   </h1>
 
-                  <p className="text-gray-600 leading-relaxed mb-8">{CONTACT_PAGE.intro}</p>
+                  <p className="text-gray-600 leading-relaxed mb-4">{CONTACT_PAGE.intro}</p>
+                  <h2 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-3">{CONTACT_PAGE.detailsHeading}</h2>
+                  <p className="text-gray-600 leading-relaxed mb-8">{CONTACT_PAGE.details}</p>
                 </div>
 
                 {/* FAQ Section */}

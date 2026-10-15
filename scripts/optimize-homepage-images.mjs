@@ -11,31 +11,31 @@ fs.mkdirSync(menuDir, { recursive: true });
 
 const heroWidths = [640, 960, 1280, 1536];
 const menuItems = [
-  ["folding-carton-boxes", "packify-custom-boxes.png"],
+  ["folding-carton-boxes", "packify-custom-boxes.jpg"],
   ["corrugated-shipping", "Corrugated Shipping Boxes.jpg"],
   ["mailer-boxes", "mailer-boxes.jpg"],
   ["pizza-boxes", "pizza-boxes.jpg"],
   ["greaseproof-paper", "greaseproof-paper.jpg"],
   ["kraft-boxes", "Printed Kraft Boxes.jpg"],
-  ["apparel", "packify-fashion-packaging.png"],
-  ["bakery-cake", "packify-food-packaging.png"],
-  ["beer-liquor", "custom-blue-box.png"],
-  ["beverage", "packify-food-containers.png"],
-  ["candle", "packify-cosmetics-packaging.png"],
-  ["candy-sweets", "packify-chocolate-packaging.png"],
-  ["cannabis", "packify-cannabis-packaging.png"],
-  ["chocolate", "packify-chocolate-packaging.png"],
-  ["coffee", "packify-food-containers.png"],
-  ["cosmetics", "packify-cosmetics-packaging.png"],
+  ["apparel", "packify-fashion-packaging.jpg"],
+  ["bakery-cake", "packify-food-packaging.jpg"],
+  ["beer-liquor", "custom-blue-box.jpg"],
+  ["beverage", "packify-food-containers.jpg"],
+  ["candle", "packify-cosmetics-packaging.jpg"],
+  ["candy-sweets", "packify-chocolate-packaging.jpg"],
+  ["cannabis", "packify-cannabis-packaging.jpg"],
+  ["chocolate", "packify-chocolate-packaging.jpg"],
+  ["coffee", "packify-food-containers.jpg"],
+  ["cosmetics", "packify-cosmetics-packaging.jpg"],
   ["ecommerce", "e-commerce.jpg"],
-  ["electronics", "packify-electronics-packaging.png"],
+  ["electronics", "packify-electronics-packaging.jpg"],
 ];
 
 function kb(file) {
   return Math.round(fs.statSync(file).size / 1024);
 }
 
-const banner = path.join(assets, "banner.png");
+const banner = path.join(assets, "banner.jpg");
 const logo = path.join(assets, "logo.png");
 const before = { banner: kb(banner), logo: kb(logo), menu: 0 };
 const after = { hero: 0, logo: 0, menu: 0 };

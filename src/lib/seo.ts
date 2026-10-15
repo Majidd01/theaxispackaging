@@ -5,7 +5,7 @@
 
 export const SITE_URL = "https://www.theaxispackaging.com";
 export const SITE_NAME = "Axis Packaging";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/banner.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/banner.jpg`;
 export const DEFAULT_LOCALE = "en_GB";
 
 export const BUSINESS = {

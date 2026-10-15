@@ -91,7 +91,7 @@ export function contactStaticHtml(contact) {
     .join("");
   return shell(
     "/contact",
-    `<section class="py-12 bg-white"><div class="container mx-auto px-4"><div class="grid lg:grid-cols-2 gap-12"><div><div class="mb-12"><h1 class="text-4xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(contact.h1Lead)}<br />${esc(contact.h1Middle)}<br /><span class="text-green-600">${esc(contact.h1Brand)}</span></h1><p class="text-gray-600 leading-relaxed mb-8">${esc(contact.intro)}</p></div><div><h2 class="text-2xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(contact.faqHeading)}</h2><div class="space-y-3">${questions}</div><div class="mt-4 text-center"><a href="/faqs" class="inline-flex items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 border border-[var(--axis-orange)] text-[var(--axis-orange)]">${esc(contact.allFaqsLabel)}</a></div></div></div><div id="static-contact-form"></div></div></div></section>`
+    `<section class="py-12 bg-white"><div class="container mx-auto px-4"><div class="grid lg:grid-cols-2 gap-12"><div><div class="mb-12"><h1 class="text-4xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(contact.h1Lead)}<br />${esc(contact.h1Middle)}<br /><span class="text-green-600">${esc(contact.h1Brand)}</span></h1><p class="text-gray-600 leading-relaxed mb-4">${esc(contact.intro)}</p><h2 class="text-2xl font-bold text-[var(--axis-dark-blue)] mb-3">${esc(contact.detailsHeading)}</h2><p class="text-gray-600 leading-relaxed mb-8">${esc(contact.details)}</p></div><div><h2 class="text-2xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(contact.faqHeading)}</h2><div class="space-y-3">${questions}</div><div class="mt-4 text-center"><a href="/faqs" class="inline-flex items-center justify-center rounded-md text-sm font-medium h-10 px-4 py-2 border border-[var(--axis-orange)] text-[var(--axis-orange)]">${esc(contact.allFaqsLabel)}</a></div></div></div><div id="static-contact-form"></div></div></div></section>`
   );
 }
 
@@ -212,6 +212,72 @@ export function blogArticleStaticHtml(blog, blogs) {
       related ? `<div class="bg-gray-50 rounded-lg p-6"><h3 class="font-bold text-gray-900 mb-4">Related Articles</h3><div class="space-y-4">${related}</div></div>` : ""
     }<div class="bg-blue-50 rounded-lg p-6 mt-6"><p class="text-sm text-gray-600 mb-2">Category</p><p class="font-bold text-gray-900">${esc(blog.category)}</p></div></aside></div>
     <div class="max-w-4xl mx-auto px-4 pb-12"><a href="/blog" class="text-blue-600 font-semibold">← Back to Blog</a></div>`
+  );
+}
+
+function linkifyPhrases(text, links) {
+  let html = esc(text);
+  const sorted = [...(links || [])].sort((a, b) => b.phrase.length - a.phrase.length);
+  for (const link of sorted) {
+    const pattern = new RegExp(link.phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
+    html = html.replace(pattern, (match) => `<a href="${esc(link.href)}" class="text-[var(--axis-orange)] hover:underline font-medium">${match}</a>`);
+  }
+  return html;
+}
+
+export function homeIntroHtml(intro) {
+  const paragraphs = intro.paragraphs.map((paragraph) => `<p class="text-gray-700 leading-relaxed mb-4">${esc(paragraph)}</p>`).join("");
+  const links = intro.links
+    .map((link) => `<a href="${esc(link.href)}" class="text-[var(--axis-orange)] hover:underline font-medium">${esc(link.label)}</a>`)
+    .join(" · ");
+  return `<section id="static-home-intro" class="py-12 bg-white border-t"><div class="container mx-auto px-4 max-w-4xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(intro.h2)}</h2>${paragraphs}<p class="text-gray-700">${links}</p></div></section>`;
+}
+
+export function quoteIntroHtml(guide) {
+  const bullets = guide.bullets.map((item) => `<li class="text-gray-700">${esc(item)}</li>`).join("");
+  return `<section id="static-quote-intro" class="py-12 bg-white"><div class="container mx-auto px-4 max-w-4xl"><h1 class="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(guide.h1)}</h1><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(guide.h2)}</h2><p class="text-gray-700 leading-relaxed mb-4">${esc(guide.intro)}</p><ul class="list-disc pl-5 space-y-2 mb-4">${bullets}</ul><p class="text-gray-700 leading-relaxed">${esc(guide.close)}</p></div></section>`;
+}
+
+export function sustainabilityStaticHtml(page) {
+  const sections = page.sections
+    .map((section) => {
+      const subsections = (section.subsections || [])
+        .map(
+          (item) =>
+            `<h3 class="text-xl font-semibold text-[var(--axis-dark-blue)] mt-6 mb-2">${esc(item.title)}</h3><p class="text-gray-700 leading-relaxed">${linkifyPhrases(item.content, page.links)}</p>`
+        )
+        .join("");
+      const bullets = section.bullets
+        ? `<ul class="list-disc pl-5 space-y-2">${section.bullets.map((item) => `<li class="text-gray-700">${esc(item)}</li>`).join("")}</ul>`
+        : "";
+      return `<section class="py-12 bg-white border-t"><div class="container mx-auto px-4 max-w-4xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(section.title)}</h2><p class="text-gray-700 leading-relaxed mb-4">${linkifyPhrases(section.intro, page.links)}</p>${subsections}${bullets}</div></section>`;
+    })
+    .join("");
+  return shell(
+    "/sustainability",
+    `<section class="py-16 bg-gradient-to-br from-green-50 to-blue-50"><div class="container mx-auto px-4 text-center max-w-4xl"><h1 class="text-4xl lg:text-5xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(page.h1)}</h1><p class="text-xl text-gray-600">${linkifyPhrases(page.intro, page.links)}</p></div></section>${sections}`
+  );
+}
+
+export function moqStaticHtml(page) {
+  const tiers = page.tiers
+    .map(
+      (tier) =>
+        `<article class="border border-gray-200 rounded-lg p-4"><h3 class="text-lg font-semibold text-[var(--axis-dark-blue)]">${esc(tier.category)}</h3><p class="text-[var(--axis-orange)] font-bold mt-2">${esc(tier.note)}</p><p class="text-sm text-gray-500">Order quantity</p><p class="font-semibold text-[var(--axis-dark-blue)] mt-2">${esc(tier.price)}</p><p class="text-sm text-gray-500">Price</p><ul class="mt-3 space-y-1">${tier.features.map((feature) => `<li class="text-sm text-gray-700">${esc(feature)}</li>`).join("")}</ul></article>`
+    )
+    .join("");
+  const points = page.points
+    .map((point) => `<article><h3 class="text-lg font-semibold text-[var(--axis-dark-blue)]">${esc(point.title)}</h3><p class="text-gray-700">${esc(point.content)}</p></article>`)
+    .join("");
+  const questions = page.questions
+    .map(
+      (item) =>
+        `<article class="border border-gray-200 rounded-lg p-4"><h3 class="font-semibold text-[var(--axis-dark-blue)] mb-2">${esc(item.question)}</h3><p class="text-gray-700">${esc(item.answer)}</p></article>`
+    )
+    .join("");
+  return shell(
+    "/moq",
+    `<section class="py-16 bg-[var(--axis-dark-blue)] text-white"><div class="container mx-auto px-4 max-w-4xl text-center"><h1 class="text-4xl lg:text-5xl font-bold mb-6">${esc(page.h1)}</h1><p class="text-xl text-blue-100">${esc(page.intro)}</p></div></section><section class="py-16 bg-white"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4 text-center">${esc(page.catalogueTitle)}</h2><p class="text-gray-700 text-center max-w-3xl mx-auto mb-8">${esc(page.catalogueIntro)}</p><div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">${tiers}</div></div></section><section class="py-16 bg-gray-50"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4 text-center">${esc(page.quantityTitle)}</h2><p class="text-gray-700 text-center mb-8">${esc(page.quantityIntro)}</p><div class="grid md:grid-cols-2 gap-6">${points}</div></div></section><section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-3xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6 text-center">${esc(page.questionsTitle)}</h2><div class="space-y-4">${questions}</div><p class="mt-8 text-center"><a href="/quote" class="inline-flex bg-[var(--axis-orange)] text-white px-6 py-3 rounded-md font-semibold">Request a quotation</a></p></div></section><section class="py-16 bg-[var(--axis-dark-blue)] text-white"><div class="container mx-auto px-4 text-center"><h2 class="text-3xl font-bold mb-4">Request a quantity quotation</h2><p class="text-xl text-blue-100 mb-6">Send the product and the quantity you need. The quotation confirms what can be supplied.</p><a href="/contact" class="text-white underline font-medium">Contact us</a></div></section>`
   );
 }
 

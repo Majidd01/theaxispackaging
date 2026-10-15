@@ -23,9 +23,10 @@ import {
 } from "@/lib/slices/quoteFormSlice";
 import { Calculator, CheckCircle, Clock, Upload } from "lucide-react";
 import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { QUOTE_GUIDE } from "@/lib/quote-page-content";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import type React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export function InstantQuote() {
@@ -37,6 +38,15 @@ export function InstantQuote() {
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [fileNames, setFileNames] = useState<string[]>([]);
   const { toast } = useToast();
+
+  useLayoutEffect(() => {
+    const intro = document.getElementById("static-quote-intro");
+    if (!intro) return;
+    intro.hidden = true;
+    intro.style.display = "none";
+    intro.setAttribute("inert", "");
+    intro.setAttribute("aria-hidden", "true");
+  }, []);
 
   // Handle optional industry param and guide download
   useEffect(() => {
@@ -176,11 +186,22 @@ export function InstantQuote() {
             Instant Quote
           </Badge>
           <h1 className="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
-            Get Your Custom Quote in Minutes
+            {QUOTE_GUIDE.h1}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Fill out our quick form and receive a detailed quote for your custom packaging needs
           </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto mb-10 text-left bg-white rounded-lg p-6 shadow-sm">
+          <h2 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-3">{QUOTE_GUIDE.h2}</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">{QUOTE_GUIDE.intro}</p>
+          <ul className="list-disc pl-5 space-y-2 mb-4">
+            {QUOTE_GUIDE.bullets.map((item) => (
+              <li key={item} className="text-gray-700">{item}</li>
+            ))}
+          </ul>
+          <p className="text-gray-700 leading-relaxed">{QUOTE_GUIDE.close}</p>
         </div>
 
         <div className="max-w-4xl mx-auto">

@@ -7,7 +7,7 @@ import { Package } from "lucide-react"
 export function ProductShowcase() {
   const items = [
     { name: "Folding Cartons", img: "/assets/packify-corrugated-boxes.png", slug: "folding-carton-boxes" },
-    { name: "Rigid Boxes", img: "/assets/packify-luxury-boxes.png", slug: "rigid-boxes" },
+    { name: "Rigid Boxes", img: "/assets/packify-luxury-boxes.jpg", slug: "rigid-boxes" },
     { name: "Mailer Bags", img: "/assets/packify-mailers.png", slug: "mailer-bags" },
   ]
 

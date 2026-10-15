@@ -76,7 +76,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "sustainable packaging UK",
     title: "Sustainable Packaging UK | Axis Packaging",
     description: truncateMeta(
-      "Discover Axis Packaging’s sustainable packaging options — recyclable materials and eco-conscious custom boxes for UK brands reducing environmental impact."
+      "Ask Axis Packaging about paper-based and other packaging materials for UK orders. Any material requirement is confirmed on your quotation."
     ),
   },
   faqs: {

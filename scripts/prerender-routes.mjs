@@ -9,6 +9,10 @@ import {
   collectLocalRefs,
   contactStaticHtml,
   faqsStaticHtml,
+  homeIntroHtml,
+  moqStaticHtml,
+  quoteIntroHtml,
+  sustainabilityStaticHtml,
 } from "./prerender-static-content.mjs";
 import {
   industriesIndexStaticHtml,
@@ -40,6 +44,10 @@ const aboutContent = await server.ssrLoadModule("/src/lib/about-page-content.ts"
 const contactContent = await server.ssrLoadModule("/src/lib/contact-page-content.ts");
 const faqContent = await server.ssrLoadModule("/src/lib/faq-page-content.ts");
 const blogIndexContent = await server.ssrLoadModule("/src/lib/blog-index-content.ts");
+const homeIntro = await server.ssrLoadModule("/src/lib/home-intro.ts");
+const sustainabilityContent = await server.ssrLoadModule("/src/lib/sustainability-page-content.ts");
+const quoteContent = await server.ssrLoadModule("/src/lib/quote-page-content.ts");
+const moqContent = await server.ssrLoadModule("/src/lib/moq-page-content.ts");
 await server.close();
 
 const { PRODUCT_CATEGORIES, INDUSTRIES, STATIC_PAGE_SEO } = {
@@ -144,18 +152,18 @@ function renderPage(page) {
     );
     const withHero = withHeader.replace(
       '<div id="app-root"></div>',
-      `${page.hero}\n\t\t<div id="app-root"></div>`
+      `${page.hero}\n\t\t${page.homeIntro || ""}\n\t\t<div id="app-root"></div>`
     );
     if (withHero === html || !withHero.includes('id="static-hero"')) {
       throw new Error("Could not place the preserved homepage hero outside the React root");
     }
     html = withHero;
-  } else if (page.staticContent) {
+  } else if (page.staticContent || page.beforeRoot) {
     const next = html.replace(
       '<div id="app-root"></div>',
-      `${page.staticContent}\n\t\t<div id="app-root"></div>`
+      `${page.beforeRoot || ""}${page.staticContent || ""}\n\t\t<div id="app-root"></div>`
     );
-    if (next === html || !next.includes('id="static-content"')) {
+    if (next === html || (page.staticContent && !next.includes('id="static-content"'))) {
       throw new Error(`Could not place static content for ${page.path}`);
     }
     html = next;
@@ -248,12 +256,13 @@ pages.push({
   path: "/",
   title: home.title,
   description: home.description,
-  image: "/assets/banner.png",
+  image: "/assets/banner.jpg",
   type: "website",
   keywords: "custom packaging UK, custom boxes UK, custom printed boxes UK, bespoke packaging UK, branded packaging",
   header: homeShell.header,
   hero: homeShell.hero,
   body: "",
+  homeIntro: homeIntroHtml(homeIntro.HOME_INTRO),
   jsonLd: [
     organizationSchema(),
     localBusinessSchema(),
@@ -308,13 +317,16 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
     path: page.path,
     title: page.title,
     description: page.description,
-    image: "/assets/banner.png",
+    image: "/assets/banner.jpg",
     type: "website",
-    body: rich || key === "products" || key === "industries" ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p><h2>Related pages</h2><nav aria-label="Related pages"><ul><li><a href="/products">Packaging products</a></li><li><a href="/industries">Industries</a></li><li><a href="/quote">Request a quotation</a></li><li><a href="/contact">Contact us</a></li><li><a href="/faqs">Packaging FAQs</a></li></ul></nav></main>`,
+    body: rich || ["products", "industries", "sustainability", "moq", "quote"].includes(key) ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p><h2>Related pages</h2><nav aria-label="Related pages"><ul><li><a href="/products">Packaging products</a></li><li><a href="/industries">Industries</a></li><li><a href="/quote">Request a quotation</a></li><li><a href="/contact">Contact us</a></li><li><a href="/faqs">Packaging FAQs</a></li></ul></nav></main>`,
     staticContent:
       rich?.staticContent ||
       (key === "products" ? productsIndexStaticHtml(PRODUCT_CATEGORIES) : undefined) ||
-      (key === "industries" ? industriesIndexStaticHtml(INDUSTRIES) : undefined),
+      (key === "industries" ? industriesIndexStaticHtml(INDUSTRIES) : undefined) ||
+      (key === "sustainability" ? sustainabilityStaticHtml(sustainabilityContent.SUSTAINABILITY_PAGE) : undefined) ||
+      (key === "moq" ? moqStaticHtml(moqContent.MOQ_PAGE) : undefined),
+    beforeRoot: key === "quote" ? quoteIntroHtml(quoteContent.QUOTE_GUIDE) : "",
     jsonLd: rich?.jsonLd || [
       webPageSchema({
         title: page.title,
@@ -410,7 +422,7 @@ pages.push({
   path: blogIndex.path,
   title: blogIndex.title,
   description: blogIndex.description,
-  image: "/assets/banner.png",
+  image: "/assets/banner.jpg",
   type: "website",
   staticContent: blogIndexStaticHtml(blogIndexContent.BLOG_INDEX_COPY, publishedBlogs),
   jsonLd: [

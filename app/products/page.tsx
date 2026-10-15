@@ -47,7 +47,7 @@ export default function ProductsPage() {
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               {selectedIndustry
                 ? `Discover our specialized packaging solutions designed specifically for the ${selectedIndustry.name} industry. ${selectedIndustry.description}`
-                : "Explore our comprehensive range of premium packaging products designed to elevate your brand and protect your products."}
+                : "Explore our comprehensive range of premium packaging products designed to elevate your brand and protect your products. Choose a product to see where it is used, or tell us the item, quantity and print when you request a quotation. Quotation requests receive a 24h quote response."}
             </p>
           </div>
         </section>
