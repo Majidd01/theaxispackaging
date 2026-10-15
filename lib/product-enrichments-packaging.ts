@@ -3,7 +3,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   "reusable-bags": {
     metaTitle: "Custom Reusable Bags | Eco-Friendly & Durable | Axis Packaging",
     metaDescription:
-      "Custom reusable bags for retail, grocery & promotions. Durable materials, full-color printing & sustainable options. MOQ 100 pieces. Free design proof included.",
+      "Custom reusable bags for retail, grocery & promotions. Durable materials, full-color printing & sustainable options. Order quantities and proofs are confirmed on your quotation.",
     h1: "Custom & Eco-Friendly Reusable Bags",
     description:
       "Switching to reusable bags is a simple way to improve daily carrying while reducing waste. Designed for repeated use, these bags offer a practical and durable solution for shopping, groceries, and everyday needs. They are lightweight, easy to carry, and built to handle regular use without tearing or losing shape. Upgrade to sustainable packaging with custom reusable bags designed for durability, practical use, and everyday performance — perfect for retail, grocery, and promotions.",
@@ -57,8 +57,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Printing: Full-color printing for clear and professional branding",
       "Finishing: Multiple finish options for enhanced look and feel",
       "Eco Options: Sustainable and reusable material choices available",
-      "Minimum Order Quantity: 100 pieces",
-      "Production Time: 10–15 business days",
+      "Order quantity confirmed on your quotation",
+      "Timing confirmed on your quotation",
     ],
     faqs: [
       { question: "What is the best material for reusable bags?", answer: "The best material depends on usage. Cotton and canvas are ideal for durability, while non-woven fabric works well for lightweight and cost-effective use." },
@@ -68,8 +68,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       { question: "Are reusable bags washable?", answer: "Yes, most fabric-based reusable bags like cotton and canvas can be washed and reused multiple times." },
     ],
     urgencyBanner: {
-      title: "Don't Wait — Secure Your Production Slot Today",
-      text: "Demand for custom printed reusable bags is increasing, and production capacity is limited. Delaying your order can result in longer lead times and missed timelines. Place your order now to avoid delays and ensure fast delivery.",
+      title: "Request a Packaging Quotation",
+      text: "Tell us the bags and the quantity you need. Quotation requests receive a 24h quote response. Timing is confirmed on your quotation and is not a guaranteed delivery time.",
     },
     quoteTitle: "Get Your Custom Reusable Bags Now",
   },
@@ -77,7 +77,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   "mailer-bags": {
     metaTitle: "Custom Printed Mailer Bags | Axis Packaging",
     metaDescription:
-      "Custom printed mailer bags for eCommerce shipping. Waterproof, lightweight & brand-ready. Full-color printing, self-adhesive seal. MOQ 100. Fast turnaround.",
+      "Custom printed mailer bags for eCommerce shipping. Waterproof, lightweight & brand-ready. Full-color printing, self-adhesive seal. Order quantities and timing are confirmed on your quotation.",
     h1: "Printed Mailer Bags",
     description:
       "Shipping packaging needs to be strong, cost-efficient, and reliable. Printed mailer bags offer a practical solution for businesses that want secure delivery without increasing shipping weight or cost. At Axis Packaging, our printed mailer bags are designed for secure delivery, lower shipping costs, and strong brand presentation. Built for modern eCommerce, they protect your products while keeping packaging lightweight and efficient.",
@@ -123,8 +123,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Printing: Full-color custom printing",
       "Sizes: Multiple size options available",
       "Use: eCommerce shipping, retail delivery",
-      "MOQ: 100 pieces",
-      "Production Time: 10–15 business days",
+      "Order quantity confirmed on your quotation",
+      "Timing confirmed on your quotation",
     ],
     faqs: [
       { question: "Are printed mailer bags waterproof?", answer: "Yes, they are made from waterproof materials that protect products from moisture during shipping." },
@@ -134,8 +134,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       { question: "Do mailer bags provide enough protection?", answer: "Yes, for soft and non-fragile products. Fragile items may need additional protection such as box inserts." },
     ],
     urgencyBanner: {
-      title: "Don't Delay — Limited Production Capacity",
-      text: "Demand for custom printed mailer bags is increasing, and production slots are limited. Delaying your order can result in longer turnaround times. Secure your order now to ensure fast production and delivery.",
+      title: "Request a Packaging Quotation",
+      text: "Tell us the mailer bags and the quantity you need. Quotation requests receive a 24h quote response. Timing is confirmed on your quotation and is not a guaranteed delivery time.",
     },
     quoteTitle: "Get Your Custom Mailer Bags Now",
   },
@@ -189,8 +189,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Printing: Full-color custom printing",
       "Sizes: Fully customizable",
       "Use: Food, retail, liquids, powders",
-      "MOQ: 100 pieces",
-      "Production Time: 10–15 business days",
+      "Order quantity confirmed on your quotation",
+      "Timing confirmed on your quotation",
     ],
     faqs: [
       { question: "What is pouch packaging used for?", answer: "It is used to protect products and maintain freshness, especially for food and retail items." },
@@ -271,8 +271,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Full-color custom printing available",
       "Matte, gloss, and premium finishes",
       "Lightweight yet durable construction",
-      "MOQ starts from 100 pieces",
-      "Production time: 10–15 business days",
+      "Order quantity confirmed on your quotation",
+      "Timing confirmed on your quotation",
     ],
     faqs: [
       { question: "Are printed kraft boxes eco-friendly?", answer: "Yes, kraft boxes are recyclable and commonly used as environmentally friendly packaging solutions." },
@@ -350,8 +350,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "High-quality vinyl sticker printing",
       "Permanent adhesive options available",
       "Indoor and outdoor application suitable",
-      "MOQ starts from 100 pieces",
-      "Production time: 10–15 business days",
+      "Order quantity confirmed on your quotation",
+      "Timing confirmed on your quotation",
     ],
     faqs: [
       { question: "Are vinyl stickers waterproof and weather-resistant?", answer: "Yes, vinyl stickers are designed to resist water, moisture, scratches, and outdoor conditions, making them suitable for both indoor and outdoor applications." },
@@ -397,8 +397,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Embossing and labeling available",
       "Reusable and long-lasting packaging",
       "Eco-conscious packaging options",
-      "MOQ starts from 100 pieces",
-      "Production time: 10–15 business days",
+      "Order quantity confirmed on your quotation",
+      "Timing confirmed on your quotation",
     ],
     faqs: [
       { question: "Are metal tin containers food safe?", answer: "Yes, many metal tin containers are suitable for dry food products such as tea, biscuits, confectionery, coffee, and snacks when manufactured with food-grade materials." },
@@ -454,8 +454,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Lightweight but durable construction",
       "Easy assembly and transportation",
       "Suitable for retail stores and exhibitions",
-      "MOQ starts from 100 pieces",
-      "Production time: 10–15 business days",
+      "Order quantity confirmed on your quotation",
+      "Timing confirmed on your quotation",
     ],
     faqs: [
       { question: "What are retail POP displays used for?", answer: "Retail POP displays are used to showcase products in high-visibility areas inside stores, helping brands attract customer attention and increase product engagement at the point of purchase." },

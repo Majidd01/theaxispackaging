@@ -8,6 +8,8 @@ import { Blog } from "@/lib/blog-types";
 import { SeoHead } from "@/components/seo-head";
 import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
 import { organizationSchema, webPageSchema } from "@/lib/seo";
+import { BLOG_INDEX_COPY } from "@/lib/blog-index-content";
+import { hasStaticContent } from "@/lib/has-static-content";
 
 const BLOG_SEO_KEYWORDS =
   "Custom Packaging Blog UK, custom packaging, custom printed boxes UK, bespoke packaging, packaging solutions UK, branded packaging";
@@ -30,6 +32,26 @@ export const BlogPageComponent = () => {
 
     fetchBlogs();
   }, []);
+
+  if (hasStaticContent("/blog")) {
+    return (
+      <SeoHead
+        title={STATIC_PAGE_SEO.blog.title}
+        description={STATIC_PAGE_SEO.blog.description}
+        path={STATIC_PAGE_SEO.blog.path}
+        keywords={BLOG_SEO_KEYWORDS}
+        jsonLd={[
+          organizationSchema(),
+          webPageSchema({
+            title: STATIC_PAGE_SEO.blog.title,
+            description: STATIC_PAGE_SEO.blog.description,
+            path: STATIC_PAGE_SEO.blog.path,
+            type: "CollectionPage",
+          }),
+        ]}
+      />
+    );
+  }
 
   if (loading) {
     return (
@@ -68,9 +90,9 @@ export const BlogPageComponent = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Packaging Insights & Tips</h1>
+          <h1 className="text-5xl font-bold mb-4">{BLOG_INDEX_COPY.h1}</h1>
           <p className="text-xl text-blue-100">
-            Expert guides, industry trends, and best practices for sustainable packaging solutions
+            {BLOG_INDEX_COPY.intro}
           </p>
         </div>
       </div>
@@ -79,7 +101,7 @@ export const BlogPageComponent = () => {
       <div className="max-w-6xl mx-auto px-4 py-16">
         {blogs.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-xl text-gray-600">No blog posts available yet.</p>
+            <p className="text-xl text-gray-600">{BLOG_INDEX_COPY.empty}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -147,7 +169,7 @@ export const BlogPageComponent = () => {
                     {/* Read More */}
                     <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                       <span className="text-blue-600 font-semibold text-sm group-hover:text-blue-700">
-                        Read Article
+                        {BLOG_INDEX_COPY.readArticle}
                       </span>
                       <ArrowRight size={16} className="text-blue-600 group-hover:translate-x-1 transition-transform" />
                     </div>

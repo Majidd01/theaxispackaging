@@ -21,7 +21,7 @@ export const BUSINESS = {
   addressCountry: "GB",
   addressRegion: "England",
   description:
-    "UK custom packaging manufacturer specialising in custom printed boxes, bespoke packaging, and branded packaging solutions for businesses across the United Kingdom.",
+    "UK custom packaging supplier specialising in custom printed boxes, bespoke packaging, and branded packaging solutions for businesses across the United Kingdom.",
   sameAs: [
     "https://www.facebook.com/share/14YENMTyjLk/",
     "https://www.instagram.com/theaxispackaging/",
@@ -197,7 +197,6 @@ export function productSchema(opts: {
       name: SITE_NAME,
     },
     category: opts.category || "Custom Packaging",
-    manufacturer: { "@id": `${SITE_URL}/#organization` },
   };
 }
 

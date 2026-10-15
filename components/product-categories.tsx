@@ -166,14 +166,14 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
           <div className="flex flex-col items-center">
             <Truck className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
             <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">
-              Fast Delivery
+              Fast Turnaround Options
             </h3>
-            <p className="text-gray-600">Quick turnaround times worldwide</p>
+            <p className="text-gray-600">Timing is confirmed on your quotation</p>
           </div>
           <div className="flex flex-col items-center">
             <Shield className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-            <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">Certified</h3>
-            <p className="text-gray-600">ISO certified and compliant materials</p>
+            <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">Premium Quality Packaging</h3>
+            <p className="text-gray-600">Supplied to the specification agreed on your quotation</p>
           </div>
         </div>
       </div>

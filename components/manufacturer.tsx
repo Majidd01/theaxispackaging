@@ -10,26 +10,26 @@ export function Manufacturer() {
     {
       icon: Factory,
       title: "State-of-the-Art Facilities",
-      description: "Modern manufacturing facilities with cutting-edge equipment",
-      stat: "50,000 sq ft",
+      description: "Packaging options discussed around the product you need to pack",
+      stat: "Custom packaging",
     },
     {
       icon: Users,
       title: "Expert Team",
-      description: "Skilled professionals with decades of packaging experience",
-      stat: "100+ Experts",
+      description: "Talk to us about sizes, print and packaging options",
+      stat: "24/7 Customer Support",
     },
     {
       icon: Clock,
       title: "Fast Production",
-      description: "Quick turnaround times without compromising quality",
-      stat: "24-48 hours",
+      description: "Fast turnaround options are confirmed on your quotation",
+      stat: "24h Quote Response",
     },
     {
       icon: Shield,
       title: "Quality Assurance",
-      description: "Rigorous quality control at every step of production",
-      stat: "99.9% Quality",
+      description: "Packaging is supplied to the specification agreed on your quotation",
+      stat: "Premium Quality Packaging",
     },
   ];
 
@@ -50,14 +50,13 @@ export function Manufacturer() {
         <div className="text-center mb-12">
           <Badge className="bg-[var(--axis-mid-blue)] text-white mb-4">
             <Factory className="h-4 w-4 mr-2" />
-            Manufacturing Excellence
+            Packaging Supply
           </Badge>
           <h2 className="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
-            World-Class Manufacturing Capabilities
+            Custom Packaging for UK Businesses
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our advanced manufacturing facilities and expert team ensure every package meets the
-            highest standards of quality and precision.
+            Axis Packaging supplies custom printed boxes and branded packaging for UK businesses. Tell us what you need and we will prepare a quotation.
           </p>
         </div>
 
@@ -112,11 +111,10 @@ export function Manufacturer() {
         <div className="text-center mt-12">
           <div className="bg-[var(--axis-dark-blue)] text-white rounded-2xl p-8">
             <h3 className="text-2xl font-bold mb-4">
-              Ready to Experience Our Manufacturing Excellence?
+              Request a Packaging Quotation
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Schedule a facility tour or discuss your packaging requirements with our manufacturing
-              experts.
+              Tell us about your product and the packaging you need. We respond to quotation requests within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90 text-white">

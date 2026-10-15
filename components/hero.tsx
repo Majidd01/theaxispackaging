@@ -81,18 +81,18 @@ export function Hero() {
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 mt-8 mb-6">
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium shadow-lg border border-white/20">
               <CheckCircle className="w-4 h-4 text-green-300" />
-              <span className="font-bold">50k+</span>
-              <span>Happy Customers</span>
+              <span className="font-bold">24/7</span>
+              <span>Customer Support</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium shadow-lg border border-white/20">
               <Zap className="w-4 h-4 text-yellow-300" />
-              <span className="font-bold">24h</span>
-              <span>Quick Turnaround</span>
+              <span className="font-bold">Fast</span>
+              <span>Turnaround Options</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium shadow-lg border border-white/20">
               <Package className="w-4 h-4 text-orange-300" />
-              <span className="font-bold">100%</span>
-              <span>Custom Made</span>
+              <span className="font-bold">Custom</span>
+              <span>Printed Packaging</span>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ export function Hero() {
           <div className="mt-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-100/95 to-emerald-100/95 backdrop-blur-md text-green-800 rounded-full text-sm font-semibold shadow-xl border border-green-200/50 hover:scale-105 transition-transform duration-300">
               <CheckCircle className="w-4 h-4 text-green-600" />
-              Premium Quality Guaranteed
+              Premium Quality Packaging
             </span>
           </div>
         </div>

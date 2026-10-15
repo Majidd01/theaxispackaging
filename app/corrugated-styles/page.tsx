@@ -51,23 +51,23 @@ export default function CorrugatedStylesPage() {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">4+</h3>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">Custom</h3>
               <p className="text-gray-600">Corrugated Styles</p>
             </div>
             <div className="flex flex-col items-center">
               <Factory className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">50+</h3>
-              <p className="text-gray-600">Certified Facilities</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">24/7</h3>
+              <p className="text-gray-600">Customer Support</p>
             </div>
             <div className="flex flex-col items-center">
               <Shield className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">100%</h3>
-              <p className="text-gray-600">Quality Assured</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">Premium</h3>
+              <p className="text-gray-600">Quality Packaging</p>
             </div>
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">15+</h3>
-              <p className="text-gray-600">Years Experience</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">24h</h3>
+              <p className="text-gray-600">Quote Response</p>
             </div>
           </div>
         </div>

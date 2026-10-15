@@ -12,50 +12,50 @@ export default function MOQPage() {
   const moqTiers = [
     {
       category: "Custom Boxes",
-      moq: "100 units",
-      price: "$2.50 - $8.00",
-      features: ["Custom design", "Multiple sizes", "Brand printing", "Fast turnaround"],
+      moq: "Quoted",
+      price: "On quotation",
+      features: ["Custom design", "Multiple sizes", "Brand printing", "Fast turnaround options"],
     },
     {
       category: "Retail Packaging",
-      moq: "250 units",
-      price: "$1.80 - $6.50",
+      moq: "Quoted",
+      price: "On quotation",
       features: ["Display-ready", "Premium finishes", "Window options", "Shelf appeal"],
     },
     {
       category: "Food Packaging",
-      moq: "500 units",
-      price: "$0.75 - $3.20",
-      features: ["FDA approved", "Grease resistant", "Temperature stable", "Food safe"],
+      moq: "Quoted",
+      price: "On quotation",
+      features: ["Food packaging", "Printed options", "Sizes to discuss", "Quoted per project"],
     },
     {
       category: "Cosmetic Boxes",
-      moq: "200 units",
-      price: "$3.00 - $12.00",
-      features: ["Luxury finishes", "Magnetic closures", "Foam inserts", "Premium materials"],
+      moq: "Quoted",
+      price: "On quotation",
+      features: ["Finish options", "Closure options", "Insert options", "Premium materials"],
     },
   ]
 
   const benefits = [
     {
       icon: DollarSign,
-      title: "Competitive Pricing",
-      description: "Lower MOQs mean better pricing for small to medium businesses",
+      title: "Quotations",
+      description: "Tell us the quantity you need and we will include it in your quotation",
     },
     {
       icon: Truck,
-      title: "Fast Delivery",
-      description: "Quick turnaround times even for smaller order quantities",
+      title: "24h Quote Response",
+      description: "We respond to quotation requests within 24 hours",
     },
     {
       icon: Package,
-      title: "Quality Assurance",
-      description: "Same high-quality standards regardless of order size",
+      title: "Premium Quality Packaging",
+      description: "Packaging options are discussed around the product you need to pack",
     },
     {
       icon: Calculator,
-      title: "Flexible Options",
-      description: "Customizable MOQs based on your specific requirements",
+      title: "Order Quantities",
+      description: "Ask for the quantity you need. A minimum is confirmed on the quotation",
     },
   ]
 
@@ -77,10 +77,9 @@ export default function MOQPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="bg-[var(--axis-orange)] text-white mb-6">Minimum Order Quantities</Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">Flexible MOQ Options for Every Business</h1>
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6">Order Quantities for Your Packaging</h1>
               <p className="text-xl text-blue-100 leading-relaxed">
-                We understand that every business has different needs. That's why we offer flexible minimum order
-                quantities to accommodate businesses of all sizes.
+                Tell us the product and the quantity you need. We will use those details to prepare a quotation.
               </p>
             </div>
           </div>
@@ -90,9 +89,9 @@ export default function MOQPage() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">Our MOQ Structure</h2>
+              <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">Packaging We Can Quote</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Transparent pricing and flexible minimums designed to help your business grow
+                Order quantities and prices are confirmed on your quotation, not published as a fixed rate
               </p>
             </div>
 
@@ -108,9 +107,9 @@ export default function MOQPage() {
                   <CardContent className="p-6">
                     <div className="text-center mb-4">
                       <div className="text-2xl font-bold text-[var(--axis-orange)] mb-1">{tier.moq}</div>
-                      <div className="text-sm text-gray-500">Minimum Order</div>
+                      <div className="text-sm text-gray-500">Order quantity</div>
                       <div className="text-lg font-semibold text-[var(--axis-dark-blue)] mt-2">{tier.price}</div>
-                      <div className="text-sm text-gray-500">per unit</div>
+                      <div className="text-sm text-gray-500">Price</div>
                     </div>
                     <ul className="space-y-2">
                       {tier.features.map((feature, idx) => (
@@ -166,9 +165,8 @@ export default function MOQPage() {
                       Can I order less than the minimum quantity?
                     </h3>
                     <p className="text-gray-600">
-                      While we have standard MOQs, we understand that sometimes you need smaller quantities. Contact us
-                      to discuss your specific needs - we may be able to accommodate smaller orders with adjusted
-                      pricing.
+                      Tell us the quantity you need. We will confirm whether that quantity can be supplied when we
+                      prepare your quotation.
                     </p>
                   </CardContent>
                 </Card>
@@ -177,8 +175,7 @@ export default function MOQPage() {
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-[var(--axis-dark-blue)] mb-2">Do you offer volume discounts?</h3>
                     <p className="text-gray-600">
-                      Yes! The more you order, the better the per-unit pricing becomes. Our sales team can provide
-                      detailed volume pricing tiers based on your specific requirements.
+                      Include the quantities you are considering and we will show the relevant prices on your quotation.
                     </p>
                   </CardContent>
                 </Card>
@@ -187,8 +184,8 @@ export default function MOQPage() {
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-[var(--axis-dark-blue)] mb-2">How do MOQs affect lead times?</h3>
                     <p className="text-gray-600">
-                      Smaller orders (at or near MOQ) typically have faster turnaround times. Larger orders may require
-                      additional production time, but we'll always provide accurate timelines upfront.
+                      Timing depends on the packaging and the quantity. We confirm the expected timing on your
+                      quotation. Quotation requests receive a 24h quote response.
                     </p>
                   </CardContent>
                 </Card>

@@ -98,7 +98,7 @@ export function SolutionFeatures() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="inline-flex items-center gap-2 text-sm text-gray-500">
-            <span>✨ Trusted by 50,000+ businesses worldwide</span>
+            <span>✨ Custom packaging for UK businesses</span>
           </div>
         </div>
       </div>

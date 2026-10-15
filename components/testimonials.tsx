@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { nextTestimonial, prevTestimonial, setCurrentIndex } from "@/lib/slices/testimonialsSlice";
-import { ChevronLeft, ChevronRight, Quote, Star, Sparkles, Users, Award, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star, Sparkles, Heart } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -39,14 +39,14 @@ export function Testimonials() {
             <span className="text-sm font-semibold text-orange-700">Customer Testimonials</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6 leading-tight">
-            What Our{" "}
+            Custom{" "}
             <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text -">
-              Happy Clients
+              Packaging
             </span>{" "}
-            Say About Us
+            For Your Business
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our satisfied customers have to say about our packaging solutions and exceptional service.
+            Tell us what you need to pack and we will prepare a quotation.
           </p>
         </div>
 
@@ -170,40 +170,6 @@ export function Testimonials() {
             ))}
           </div>
 
-          {/* Enhanced Stats Section */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-100 mb-12">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              <div className="group hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="w-8 h-8 text-orange-600" />
-                </div>
-                <div className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2 group-hover:text-orange-600 transition-colors duration-300">50K+</div>
-                <div className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Happy Clients</div>
-              </div>
-              <div className="group hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-100 to-yellow-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Star className="w-8 h-8 text-yellow-600" />
-                </div>
-                <div className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2 group-hover:text-yellow-600 transition-colors duration-300">4.9/5</div>
-                <div className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Average Rating</div>
-              </div>
-              <div className="group hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Award className="w-8 h-8 text-blue-600" />
-                </div>
-                <div className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2 group-hover:text-blue-600 transition-colors duration-300">10M+</div>
-                <div className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Boxes Delivered</div>
-              </div>
-              <div className="group hover:scale-105 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-100 to-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Heart className="w-8 h-8 text-green-600" />
-                </div>
-                <div className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2 group-hover:text-green-600 transition-colors duration-300">98%</div>
-                <div className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Customer Satisfaction</div>
-              </div>
-            </div>
-          </div>
-
           {/* Enhanced CTA */}
           <div className="text-center">
             <div className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-[var(--axis-mid-blue)] text-white rounded-3xl p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
@@ -226,7 +192,7 @@ export function Testimonials() {
                   <Heart className="h-10 w-10 text-white group-hover:rotate-12 transition-transform duration-300" />
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-orange-200 transition-colors duration-300">
-                  Ready to Join Our Happy Customers?
+                  Request a Packaging Quotation
                 </h3>
                 <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg group-hover:text-white transition-colors duration-300">
                   Experience the same quality and service that our customers rave about. Get started with your custom packaging project today.

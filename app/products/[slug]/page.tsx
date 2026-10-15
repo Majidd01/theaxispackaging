@@ -576,14 +576,14 @@ export default function ProductDetailPage() {
             <Card className="text-center p-6">
               <Truck className="h-12 w-12 text-[var(--axis-orange)] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">
-                Fast Delivery
+                Fast Turnaround Options
               </h3>
-              <p className="text-gray-600">Quick turnaround times with worldwide shipping</p>
+              <p className="text-gray-600">Timing is confirmed on your quotation</p>
             </Card>
             <Card className="text-center p-6">
               <Shield className="h-12 w-12 text-[var(--axis-orange)] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">Certified</h3>
-              <p className="text-gray-600">ISO certified and compliant with industry standards</p>
+              <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">Premium Quality Packaging</h3>
+              <p className="text-gray-600">Packaging is supplied to the specification agreed on your quotation</p>
             </Card>
           </div>
         </div>
@@ -874,11 +874,11 @@ export default function ProductDetailPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Minimum order quantity: 100 pieces</span>
+                      <span className="text-gray-700">Order quantity confirmed on your quotation</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="text-gray-700">Production time: 10-15 business days</span>
+                      <span className="text-gray-700">Fast turnaround options confirmed on your quotation</span>
                     </div>
                   </>
                 )}
@@ -911,9 +911,8 @@ export default function ProductDetailPage() {
                     brand image.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    With years of experience in the packaging industry, we've developed solutions that
-                    combine functionality, aesthetics, and sustainability to meet the highest
-                    standards.
+                    We supply packaging that combines functionality, presentation and the material
+                    options confirmed on your quotation.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     Every product is crafted with attention to detail, ensuring that your packaging

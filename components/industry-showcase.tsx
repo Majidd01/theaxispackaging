@@ -44,29 +44,29 @@ export function IndustryShowcase() {
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
                 <Package className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">25+</h3>
-              <p className="text-sm text-gray-600">Industries Served</p>
+              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">Custom</h3>
+              <p className="text-sm text-gray-600">Packaging Options</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
                 <Factory className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">50+</h3>
-              <p className="text-sm text-gray-600">Certified Facilities</p>
+              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">24/7</h3>
+              <p className="text-sm text-gray-600">Customer Support</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">3000+</h3>
-              <p className="text-sm text-gray-600">Happy Clients</p>
+              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">UK</h3>
+              <p className="text-sm text-gray-600">Business Supply</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">15+</h3>
-              <p className="text-sm text-gray-600">Years Experience</p>
+              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">24h</h3>
+              <p className="text-sm text-gray-600">Quote Response</p>
             </div>
           </div>
         </div>

@@ -87,23 +87,23 @@ export default function IndustriesPage() {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">25+</h3>
-              <p className="text-gray-600">Industries Served</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">Custom</h3>
+              <p className="text-gray-600">Packaging Options</p>
             </div>
             <div className="flex flex-col items-center">
               <Factory className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">50+</h3>
-              <p className="text-gray-600">Certified Facilities</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">24/7</h3>
+              <p className="text-gray-600">Customer Support</p>
             </div>
             <div className="flex flex-col items-center">
               <Users className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">3000+</h3>
-              <p className="text-gray-600">Happy Clients</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">UK</h3>
+              <p className="text-gray-600">Business Supply</p>
             </div>
             <div className="flex flex-col items-center">
               <Award className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">15+</h3>
-              <p className="text-gray-600">Years Experience</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">24h</h3>
+              <p className="text-gray-600">Quote Response</p>
             </div>
           </div>
         </div>
@@ -406,10 +406,10 @@ export default function IndustriesPage() {
                 <Factory className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-3">
-                Certified Manufacturing
+                Packaging Supply
               </h3>
               <p className="text-gray-600">
-                Access to certified facilities worldwide ensuring quality and compliance for every
+                Packaging options for the products and quantities your industry needs. Details are confirmed on your quotation for every
                 industry.
               </p>
             </div>

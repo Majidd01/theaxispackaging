@@ -210,21 +210,19 @@ export function FAQs() {
                       <Users className="h-6 w-6 text-white group-hover/stat:animate-pulse" />
                     </div>
                     <div className="text-2xl font-bold group-hover/stat:text-orange-200 transition-colors duration-300">24/7</div>
-                    <div className="text-blue-100 text-sm group-hover/stat:text-white transition-colors duration-300">Expert Support</div>
+                    <div className="text-blue-100 text-sm group-hover/stat:text-white transition-colors duration-300">Customer Support</div>
                   </div>
                   <div className="text-center group/stat hover:scale-105 transition-all duration-300">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover/stat:bg-orange-500/30 group-hover/stat:scale-110 transition-all duration-300">
                       <Clock className="h-6 w-6 text-white group-hover/stat:animate-spin" />
                     </div>
-                    <div className="text-2xl font-bold group-hover/stat:text-orange-200 transition-colors duration-300">&lt; 2hr</div>
-                    <div className="text-blue-100 text-sm group-hover/stat:text-white transition-colors duration-300">Response Time</div>
+                    <div className="text-base font-bold leading-snug group-hover/stat:text-orange-200 transition-colors duration-300">Responsive Customer Support</div>
                   </div>
                   <div className="text-center group/stat hover:scale-105 transition-all duration-300">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover/stat:bg-orange-500/30 group-hover/stat:scale-110 transition-all duration-300">
                       <Shield className="h-6 w-6 text-white group-hover/stat:animate-bounce" />
                     </div>
-                    <div className="text-2xl font-bold group-hover/stat:text-orange-200 transition-colors duration-300">100%</div>
-                    <div className="text-blue-100 text-sm group-hover/stat:text-white transition-colors duration-300">Satisfaction</div>
+                    <div className="text-base font-bold leading-snug group-hover/stat:text-orange-200 transition-colors duration-300">Customer Satisfaction Is Our Priority</div>
                   </div>
                 </div>
                 

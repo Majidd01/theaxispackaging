@@ -21,7 +21,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "custom packaging UK",
     title: "Custom Packaging UK | Custom Printed Boxes | Axis Packaging",
     description: truncateMeta(
-      "Axis Packaging designs and manufactures custom packaging and custom printed boxes for UK brands. Bespoke boxes, branded packaging, and flexible MOQs from Leeds."
+      "Axis Packaging supplies custom packaging and custom printed boxes for UK brands. Bespoke boxes and branded packaging from Leeds."
     ),
     h1: "Create Custom Boxes & Packaging of Your Dreams",
   },
@@ -29,9 +29,9 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/about",
     pageType: "About",
     primaryTopic: "about Axis Packaging",
-    title: "About Axis Packaging | Custom Packaging Manufacturer UK",
+    title: "About Axis Packaging | Custom Packaging Supplier UK",
     description: truncateMeta(
-      "Meet Axis Packaging — a Leeds-based custom packaging partner for UK businesses. Discover our approach to quality, sustainability, and branded packaging."
+      "Leeds custom packaging supplier for UK businesses. Custom printed boxes, food and bakery packaging, retail packaging, paper bags and branded packaging."
     ),
   },
   contact: {
@@ -119,9 +119,9 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/moq",
     pageType: "Landing",
     primaryTopic: "packaging minimum order quantity",
-    title: "Packaging MOQ Explained | Flexible Order Quantities | Axis Packaging",
+    title: "Packaging Order Quantities | Axis Packaging",
     description: truncateMeta(
-      "Learn about Axis Packaging’s flexible minimum order quantities for custom boxes — suitable for startups through to larger UK wholesale runs."
+      "Ask Axis Packaging about order quantities for custom boxes and branded packaging. We prepare a quotation for the quantity you need."
     ),
   },
 };

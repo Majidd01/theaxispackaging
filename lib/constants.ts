@@ -163,13 +163,13 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Food Grade Containers",
-    description: "FDA approved containers for food and beverage products. Safe, hygienic, and custom-designed packaging for all types of food.",
+    description: "Containers for food and beverage products. Tell us the food packaging you need and we will confirm the options on your quotation.",
     icon: "🍽️",
     image: "/assets/assorted-food-containers.png",
     slug: "food-containers",
-    metaTitle: "Buy Food Grade Containers - FDA Approved - Axis Packaging",
-    metaDescription: "FDA approved containers for food and beverage products. Safe, hygienic, and custom-designed packaging for all types of food.",
-    h1: "FDA Approved Food Grade Containers for Safety",
+    metaTitle: "Food Grade Containers | Axis Packaging",
+    metaDescription: "Containers for food and beverage products. Tell us the food packaging you need and we will confirm the options on your quotation.",
+    h1: "Food Grade Containers for Food and Drink",
   },
   {
     name: "Pharmaceutical Packaging",
@@ -303,7 +303,7 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Hardware & Tool Boxes",
-    description: "Custom hardware packaging boxes protect heavy, sharp, and high-value products from factory floor to retail shelf to customer doorstep. We manufacture custom tool boxes and hardware packaging for hand tools, power tools, drill bits, fasteners, screws, bolts, and complete tool kits — in heavy-duty corrugated and rigid stock, with retail-ready printing, branded logo placement, and structural formats engineered for weight, sharpness, and durability.",
+    description: "Custom hardware packaging boxes protect heavy, sharp, and high-value products from factory floor to retail shelf to customer doorstep. We supply custom tool boxes and hardware packaging for hand tools, power tools, drill bits, fasteners, screws, bolts, and complete tool kits — in heavy-duty corrugated and rigid stock, with retail-ready printing, branded logo placement, and structural formats engineered for weight, sharpness, and durability.",
     icon: "🔧",
     image: "/assets/Hardware & Tools Boxes.png",
     slug: "hardware-boxes",
@@ -338,8 +338,8 @@ const _PRODUCT_CATEGORIES = [
       "Retail-ready formats: hang tabs, peg-display, shelf-stand for hardware store placement",
       "Bold CMYK printing for product specifications, safety warnings, and brand identity",
       "Moisture-resistant options for outdoor and industrial hardware packaging",
-      "Free digital proof + 3D mockup with every order",
-      "Low MOQ — small hardware brands to large wholesale distributors",
+      "A digital proof can be confirmed on your quotation",
+      "Order quantities are confirmed on your quotation",
     ],
     faqs: [
       {
@@ -366,12 +366,12 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Candle & Fragrance Boxes",
-    description: "Custom candle boxes communicate the luxury, scent, and personality of your brand before the candle is ever lit. We manufacture candle packaging boxes and fragrance packaging for jar candles, pillar candles, taper candles, reed diffusers, wax melts, and gift sets — in premium rigid board, kraft, and cardstock, with foil stamping, soft-touch coating, and elegant finishes that match the quality of what is inside.",
+    description: "Custom candle boxes communicate the luxury, scent, and personality of your brand before the candle is ever lit. We supply candle packaging boxes and fragrance packaging for jar candles, pillar candles, taper candles, reed diffusers, wax melts, and gift sets — in premium rigid board, kraft, and cardstock, with foil stamping, soft-touch coating, and elegant finishes that match the quality of what is inside.",
     icon: "🕯️",
     image: "/assets/packify-cosmetics-packaging.png",
     slug: "candle-boxes",
     metaTitle: "Custom Candle & Fragrance Boxes Packaging | Axis",
-    metaDescription: "Custom candle boxes and fragrance packaging with luxury finishes, foil stamping & eco-friendly kraft. Wholesale pricing, low MOQ, free proof. Order today.",
+    metaDescription: "Custom candle boxes and fragrance packaging with luxury finishes, foil stamping & eco-friendly kraft. Finishes and order quantities are confirmed on your quotation.",
     h1: "Custom Candle & Fragrance Packaging Boxes",
     alt: "Custom luxury candle boxes with gold foil stamp and soft-touch finish by Axis Packaging",
     breadcrumbName: "Candle & Fragrance Boxes",
@@ -401,8 +401,8 @@ const _PRODUCT_CATEGORIES = [
       "Fragrance info tag printing and interior-printed lid options",
       "Foam and card inserts to protect glass jars during shipping and retail display",
       "Eco-friendly kraft options for natural wax and sustainable candle brands",
-      "Free digital proof + 3D mockup with every order",
-      "Low MOQ — indie candle makers to large wholesale brands",
+      "A digital proof can be confirmed on your quotation",
+      "Order quantities are confirmed on your quotation",
     ],
     faqs: [
       {
@@ -419,7 +419,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "Do you offer eco-friendly candle boxes?",
-        answer: "Yes. Recycled kraft, FSC-certified cardstock, and biodegradable materials with water-based inks are all available — ideal for natural wax, soy, and coconut candle brands.",
+        answer: "Yes. Recycled kraft, paper-based cardstock, and biodegradable materials with water-based inks are all available — ideal for natural wax, soy, and coconut candle brands.",
       },
       {
         question: "What is the minimum order quantity?",
@@ -429,12 +429,12 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Supplement Packaging",
-    description: "Custom supplement packaging is one of the most regulated and brand-sensitive categories in retail. Consumers judge supplement brands by packaging before they read the label. We manufacture custom supplement boxes for protein powders, vitamins, capsules, softgels, wellness shots, and health drinks — in materials compliant with FDA labeling standards, with full-color printing, tamper-evident options, and premium finishes that communicate quality and trust.",
+    description: "Custom supplement packaging is one of the most regulated and brand-sensitive categories in retail. Consumers judge supplement brands by packaging before they read the label. We supply custom supplement boxes for protein powders, vitamins, capsules, softgels, wellness shots, and health drinks — with full-color printing and finish options. Tell us the labelling you need and we will confirm it on your quotation.",
     icon: "💊",
     image: "/assets/packify-pharmaceutical.png",
     slug: "supplement-bottles",
     metaTitle: "Custom Supplement Packaging Boxes & Bottles | Axis",
-    metaDescription: "Custom supplement packaging boxes for protein, vitamins, capsules & wellness bottles. FDA-compliant materials, logo printing & wholesale rates. Free proof included.",
+    metaDescription: "Custom supplement packaging boxes for protein, vitamins, capsules & wellness bottles. Printing, finishes and order quantities are confirmed on your quotation.",
     h1: "Custom Supplement Packaging Boxes",
     alt: "Custom supplement packaging boxes with nutritional label printing by Axis Packaging",
     breadcrumbName: "Supplement Packaging",
@@ -459,13 +459,13 @@ const _PRODUCT_CATEGORIES = [
       addons: ["Tamper-evident seals", "Child-resistant closures", "Foil lining", "QR code printing", "Window cutouts"],
     },
     whyChoose: [
-      "FDA-compliant materials available for supplement retail packaging",
+      "Material options for supplement packaging are confirmed on your quotation",
       "Nutritional label panel printing with accurate CMYK color reproduction",
       "Moisture-resistant options for powder and liquid supplement products",
       "Bold shelf-presence designs — metallic foil, Spot UV, high-impact CMYK",
       "Child-resistant and tamper-evident options available",
-      "Free digital proof + 3D mockup with every order",
-      "Low MOQ — startup supplement brands to large wholesale runs",
+      "A digital proof can be confirmed on your quotation",
+      "Order quantities are confirmed on your quotation",
     ],
     faqs: [
       {
@@ -473,8 +473,8 @@ const _PRODUCT_CATEGORIES = [
         answer: "Protein powders, vitamins, capsules, softgels, tablets, wellness shots, pre-workout, sports nutrition blends, and supplement gift sets.",
       },
       {
-        question: "Are your supplement packaging materials FDA-compliant?",
-        answer: "Yes. We use food-safe, FDA-compliant materials suitable for supplement retail packaging. All materials and inks comply with applicable health and safety standards.",
+        question: "Can you confirm materials for supplement packaging?",
+        answer: "Tell us the supplement packaging you need. Material options are confirmed on your quotation. We do not publish a certification on this page.",
       },
       {
         question: "Can you print nutritional labels and supplement facts panels?",
@@ -492,7 +492,7 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Craft & Hobby Boxes",
-    description: "Custom craft boxes and hobby packaging turn everyday creative supplies into a branded experience. We manufacture packaging for DIY kit brands, craft subscription boxes, yarn and fabric suppliers, scrapbooking products, jewelry-making sets, and art and hobby retailers — in kraft, cardstock, and corrugated, with full-color printing and eco-friendly options.",
+    description: "Custom craft boxes and hobby packaging turn everyday creative supplies into a branded experience. We supply packaging for DIY kit brands, craft subscription boxes, yarn and fabric suppliers, scrapbooking products, jewelry-making sets, and art and hobby retailers — in kraft, cardstock, and corrugated, with full-color printing and eco-friendly options.",
     icon: "🎨",
     image: "/assets/Craft & Hobby Boxes.jpg",
     slug: "craft-boxes",
@@ -526,8 +526,8 @@ const _PRODUCT_CATEGORIES = [
       "Custom dividers and inserts for multi-item DIY kit organization",
       "Subscription box formats with branded interior and exterior printing",
       "Retail-ready hang tabs and window cutouts available",
-      "Low MOQ — indie makers to large wholesale all accommodated",
-      "Free digital proof + 3D mockup with every order",
+      "Order quantities are confirmed on your quotation",
+      "A digital proof can be confirmed on your quotation",
     ],
     faqs: [
       {
@@ -540,7 +540,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "Do you offer eco-friendly craft packaging?",
-        answer: "Yes. Recycled kraft, FSC-certified corrugated, and biodegradable materials with water-based inks are all available — preferred by most craft and hobby brands.",
+        answer: "Yes. Recycled kraft, paper-based corrugated, and biodegradable materials with water-based inks are all available — preferred by most craft and hobby brands.",
       },
       {
         question: "What is the minimum order quantity?",
@@ -548,13 +548,13 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "How long does production take?",
-        answer: "7–10 business days after proof approval. Rush turnaround available.",
+        answer: "Timing is confirmed on your quotation. Fast turnaround options can be discussed.",
       },
     ],
   },
   {
     name: "Garden & Plant Packaging",
-    description: "Custom garden packaging and plant packaging boxes keep plants alive, seeds protected, and garden brands visible. We manufacture packaging for nurseries, plant subscription services, seed companies, and garden supply brands — in eco-friendly materials with full-color printing, ventilation options, and moisture-resistant construction built for live and dry garden products.",
+    description: "Custom garden packaging and plant packaging boxes keep plants alive, seeds protected, and garden brands visible. We supply packaging for nurseries, plant subscription services, seed companies, and garden supply brands — in eco-friendly materials with full-color printing, ventilation options, and moisture-resistant construction built for live and dry garden products.",
     icon: "🌱",
     image: "/assets/packify-eco-friendly-packaging.png",
     slug: "custom-garden-plant-packaging",
@@ -584,13 +584,13 @@ const _PRODUCT_CATEGORIES = [
       addons: ["Ventilation holes", "Pot inserts & trays", "Hang tabs", "Die-cut windows", "Carry handles", "Moisture barrier lining"],
     },
     whyChoose: [
-      "Eco-friendly materials: FSC-certified, recycled kraft, biodegradable options",
+      "Eco-friendly materials: paper-based, recycled kraft, biodegradable options",
       "Ventilated construction available for live plant shipping boxes",
       "Custom pot-holder inserts to prevent tipping and root damage in transit",
       "Moisture-resistant lining options for soil, fertilizer, and wet products",
       "Full-color CMYK printing for planting instructions, brand logos, and product info",
-      "Free digital proof + 3D mockup with every order",
-      "Low MOQ — nurseries, startups, and large wholesale all accommodated",
+      "A digital proof can be confirmed on your quotation",
+      "Order quantities are confirmed on your quotation",
     ],
     faqs: [
       {
@@ -603,7 +603,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "Are your garden packaging materials eco-friendly?",
-        answer: "Yes. All our eco-friendly garden packaging options include recycled kraft, FSC-certified corrugated, and biodegradable cardstock — ideal for garden and plant brands whose customers expect sustainable packaging.",
+        answer: "Yes. All our eco-friendly garden packaging options include recycled kraft, paper-based corrugated, and biodegradable cardstock — ideal for garden and plant brands whose customers expect sustainable packaging.",
       },
       {
         question: "Can seed boxes include moisture protection?",
@@ -647,7 +647,7 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Custom Art Boxes",
-    description: "Protect and present your art supplies with packaging built for the creative industry. We manufacture custom art boxes for paint brushes, colored pencils, crayons, watercolor sets, sketchbooks, and complete art kits — in any size, material, and finish, with full-color printing and low minimum orders.",
+    description: "Protect and present your art supplies with packaging built for the creative industry. We supply custom art boxes for paint brushes, colored pencils, crayons, watercolor sets, sketchbooks, and complete art kits — in any size, material, and finish, with full-color printing and low minimum orders.",
     icon: "🖼️",
     image: "/assets/packify-cosmetic-boxes.png",
     slug: "custom-art-boxes",
@@ -679,9 +679,9 @@ const _PRODUCT_CATEGORIES = [
       "Color-accurate CMYK printing — critical for art brands",
       "Custom foam and slot inserts for every product type",
       "Retail-ready formats: hang tabs, peg-display, shelf-stand",
-      "Eco-friendly materials: FSC-certified, recycled kraft, water-based inks",
-      "Free digital proof + 3D mockup with every order",
-      "Low MOQ — small batch to large wholesale runs",
+      "Eco-friendly materials: paper-based, recycled kraft, water-based inks",
+      "A digital proof can be confirmed on your quotation",
+      "Order quantities are confirmed on your quotation",
     ],
     faqs: [
       {
@@ -694,7 +694,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "Do you offer eco-friendly art packaging?",
-        answer: "Yes. Recycled kraft, FSC-certified corrugated, and biodegradable cardstock are all available with water-based inks.",
+        answer: "Yes. Recycled kraft, paper-based corrugated, and biodegradable cardstock are all available with water-based inks.",
       },
       {
         question: "What is the minimum order quantity?",
@@ -702,7 +702,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "How long does production take?",
-        answer: "7–10 business days after proof approval. Rush turnaround available.",
+        answer: "Timing is confirmed on your quotation. Fast turnaround options can be discussed.",
       },
     ],
   },
@@ -715,10 +715,10 @@ export const PRODUCT_CATEGORIES = _PRODUCT_CATEGORIES.map((product) =>
 );
 
 export const TRUST_INDICATORS = [
-  { text: "10+ Years Experience", icon: "⭐" },
-  { text: "ISO 9001 Certified", icon: "🏆" },
+  { text: "24h Quote Response", icon: "⭐" },
+  { text: "Premium Quality Packaging", icon: "🏆" },
   { text: "24/7 Customer Support", icon: "📞" },
-  { text: "Free Design Consultation", icon: "🎨" },
+  { text: "Quotation Support", icon: "🎨" },
 ];
 
 export const INDUSTRIES = [
@@ -844,12 +844,12 @@ export const INDUSTRIES = [
   },
   {
     name: "Food",
-    description: "Safe and compliant food packaging solutions. FDA approved materials and custom designs to keep your food products secure and appetizing.",
+    description: "Food packaging options and custom designs. Material choices are confirmed on your quotation.",
     icon: "🍽️",
     image: "/assets/packify-food-packaging.png",
     slug: "food",
     metaTitle: "Buy Food Packaging Solutions - Safe & Compliant - Axis Packaging",
-    metaDescription: "Safe and compliant food packaging solutions. FDA approved materials and custom designs to keep your food products secure and appetizing.",
+    metaDescription: "Food packaging options and custom designs. Material choices are confirmed on your quotation.",
     h1: "Safe & Compliant Custom Food Packaging Solutions",
   },
   {
@@ -1083,9 +1083,9 @@ export const PACKAGING_SERVICES = [
 ];
 
 export const CERTIFICATIONS = [
-  "ISO 9001:2015",
-  "FSC Certified",
-  "FDA Approved Materials",
-  "ROHS Compliant",
+  "24h Quote Response",
+  "Paper Packaging",
+  "Material Options",
+  "Quotation Support",
   "Recyclable Materials",
 ];

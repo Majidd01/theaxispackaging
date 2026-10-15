@@ -18,14 +18,14 @@ const initialState: FAQsState = {
       id: "1",
       question: "What is your minimum order quantity?",
       answer:
-        "Our minimum order quantity varies by product type. For custom boxes, we typically require a minimum of 100 units. However, we can accommodate smaller orders for certain products.",
+        "Minimum order quantities depend on the product and the printing. Tell us the product and the quantity you need, and we will confirm it on your quotation.",
       category: "Orders",
     },
     {
       id: "2",
       question: "How long does production take?",
       answer:
-        "Standard production time is 7-10 business days after artwork approval. Rush orders can be completed in 3-5 business days with additional fees.",
+        "Production timing depends on the packaging and the quantity. We confirm the expected timing on your quotation. Those dates are estimates and are not a guaranteed delivery time.",
       category: "Production",
     },
     {
@@ -39,7 +39,7 @@ const initialState: FAQsState = {
       id: "4",
       question: "What materials do you use?",
       answer:
-        "We use high-quality materials including corrugated cardboard, kraft paper, and eco-friendly options. All materials are sourced from certified suppliers.",
+        "We supply corrugated cardboard, kraft paper and other packaging materials. Material options are confirmed on your quotation.",
       category: "Materials",
     },
   ],

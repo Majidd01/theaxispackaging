@@ -38,7 +38,7 @@ export function Quote() {
             Ready to Get Your Custom Quote?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join thousands of satisfied customers who trust us with their packaging needs
+            Tell us what you need to pack and we will prepare a quotation
           </p>
         </div>
 

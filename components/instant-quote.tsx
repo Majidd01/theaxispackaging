@@ -362,7 +362,7 @@ export function InstantQuote() {
                             <SelectItem value="kraft-paper">Kraft Paper</SelectItem>
                             <SelectItem value="rigid-chipboard">Rigid Chipboard</SelectItem>
                             <SelectItem value="recycled-paper">Recycled Paper</SelectItem>
-                            <SelectItem value="fsc-certified">FSC Certified Paper</SelectItem>
+                            <SelectItem value="paper-based">Paper-based materials</SelectItem>
                             <SelectItem value="metal-tin">Metal Tin</SelectItem>
                             <SelectItem value="flexible-film">Flexible Film</SelectItem>
                             <SelectItem value="vinyl">Vinyl</SelectItem>

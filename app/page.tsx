@@ -10,9 +10,6 @@ const SolutionFeatures = lazy(() =>
   import("@/components/solution-features").then((module) => ({ default: module.SolutionFeatures })),
 );
 const FAQs = lazy(() => import("@/components/faqs").then((module) => ({ default: module.FAQs })));
-const Testimonials = lazy(() =>
-  import("@/components/testimonials").then((module) => ({ default: module.Testimonials })),
-);
 const ChatSupport = lazy(() =>
   import("@/components/chat-support").then((module) => ({ default: module.ChatSupport })),
 );
@@ -102,9 +99,6 @@ export default function Home() {
         </WhenVisible>
         <WhenVisible className="min-h-[2481px] md:min-h-[1743px] lg:min-h-[1713px]">
           <FAQs />
-        </WhenVisible>
-        <WhenVisible className="min-h-[3232px] md:min-h-[1927px] lg:min-h-[1932px]">
-          <Testimonials />
         </WhenVisible>
       </main>
       <Footer />

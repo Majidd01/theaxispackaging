@@ -9,13 +9,13 @@ export function Sustainability() {
   const sustainabilityFeatures = [
     {
       icon: Recycle,
-      title: "100% Recyclable Materials",
-      description: "All our packaging materials are fully recyclable and eco-friendly",
+      title: "Material Options",
+      description: "Ask about paper-based and other packaging materials when you request a quotation",
     },
     {
       icon: TreePine,
-      title: "FSC Certified Paper",
-      description: "Sourced from responsibly managed forests with FSC certification",
+      title: "Paper Packaging",
+      description: "If you need paper from a certified source, we will confirm what is available on your quotation",
     },
     {
       icon: Droplets,
@@ -24,18 +24,18 @@ export function Sustainability() {
     },
     {
       icon: Sun,
-      title: "Solar-Powered Facilities",
-      description: "Our manufacturing facilities run on renewable solar energy",
+      title: "24h Quote Response",
+      description: "Quotation requests receive a response within 24 hours",
     },
   ]
 
   const certifications = [
-    "FSC Certified",
-    "ISO 14001",
-    "Carbon Neutral",
-    "ROHS Compliant",
-    "Recyclable Materials",
-    "Biodegradable Options",
+    "24/7 Customer Support",
+    "24h Quote Response",
+    "Premium Quality Packaging",
+    "Material Options",
+    "Quotation Support",
+    "UK Business Supply",
   ]
 
   return (

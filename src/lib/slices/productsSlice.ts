@@ -44,10 +44,10 @@ const initialState: ProductsState = {
     {
       id: "3",
       name: "Food Safe Containers",
-      description: "FDA approved food packaging solutions",
+      description: "Food packaging solutions",
       image: "/assets/packify-food-containers.png",
       category: "Food Packaging",
-      features: ["FDA Approved", "Leak Proof", "Temperature Resistant"],
+      features: ["Food packaging", "Leak resistant options", "Temperature options discussed on quotation"],
     },
   ],
   selectedCategory: null,

@@ -139,23 +139,23 @@ export default function IndustryDetailPage() {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="flex flex-col items-center">
               <Users className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">500+</h3>
-              <p className="text-blue-100">{industry.name} Clients</p>
+              <h3 className="text-3xl font-bold mb-2">Custom</h3>
+              <p className="text-blue-100">{industry.name} Packaging</p>
             </div>
             <div className="flex flex-col items-center">
               <Factory className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">15+</h3>
-              <p className="text-blue-100">Years Experience</p>
+              <h3 className="text-3xl font-bold mb-2">24h</h3>
+              <p className="text-blue-100">Quote Response</p>
             </div>
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">1000+</h3>
-              <p className="text-blue-100">Projects Completed</p>
+              <h3 className="text-3xl font-bold mb-2">UK</h3>
+              <p className="text-blue-100">Business Supply</p>
             </div>
             <div className="flex flex-col items-center">
               <Award className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">100%</h3>
-              <p className="text-blue-100">Client Satisfaction</p>
+              <h3 className="text-3xl font-bold mb-2">24/7</h3>
+              <p className="text-blue-100">Customer Support</p>
             </div>
           </div>
         </div>

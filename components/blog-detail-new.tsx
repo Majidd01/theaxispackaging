@@ -7,6 +7,7 @@ import { Clock, Calendar, User, ChevronRight, ChevronDown } from "lucide-react";
 import { Blog, BlogContentBlock, BlogFAQ } from "@/lib/blog-types";
 import { SeoHead } from "@/components/seo-head";
 import { blogPostingSchema, breadcrumbSchema, faqPageSchema } from "@/lib/seo";
+import { hasStaticContent } from "@/lib/has-static-content";
 
 export const BlogDetailComponent = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -138,6 +139,10 @@ export const BlogDetailComponent = () => {
         return null;
     }
   };
+
+  if (slug && hasStaticContent(`/blog/${slug}`)) {
+    return null;
+  }
 
   if (loading) {
     return (

@@ -10,8 +10,8 @@ export default function SustainabilityPage() {
   const initiatives = [
     {
       icon: <Leaf className="h-8 w-8 text-green-600" />,
-      title: "Eco-Friendly Materials",
-      description: "100% recyclable and biodegradable packaging materials sourced from sustainable forests.",
+      title: "Material Options",
+      description: "Ask about paper-based and other packaging materials when you request a quotation.",
     },
     {
       icon: <Recycle className="h-8 w-8 text-green-600" />,
@@ -20,13 +20,13 @@ export default function SustainabilityPage() {
     },
     {
       icon: <Award className="h-8 w-8 text-green-600" />,
-      title: "FSC Certified",
-      description: "All our paper products are certified by the Forest Stewardship Council.",
+      title: "Paper Packaging",
+      description: "If you need paper from a certified source, tell us and we will confirm what is available on your quotation.",
     },
     {
       icon: <TreePine className="h-8 w-8 text-green-600" />,
-      title: "Carbon Neutral",
-      description: "Committed to carbon-neutral operations through renewable energy and offset programs.",
+      title: "24/7 Customer Support",
+      description: "Contact us any time to talk through materials and packaging options.",
     },
   ]
 

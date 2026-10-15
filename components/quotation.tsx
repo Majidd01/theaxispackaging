@@ -353,11 +353,11 @@ export function Quotation() {
 
             <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-              <p className="text-orange-100 mb-6">Join thousands of satisfied customers who trust Axis Packaging for their custom packaging needs.</p>
+              <p className="text-orange-100 mb-6">Tell us what you need to pack and we will prepare a quotation.</p>
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
-                  <div className="text-3xl font-bold">50K+</div>
-                  <div className="text-orange-100 text-sm">Happy Customers</div>
+                  <div className="text-3xl font-bold">24/7</div>
+                  <div className="text-orange-100 text-sm">Customer Support</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold">24h</div>
