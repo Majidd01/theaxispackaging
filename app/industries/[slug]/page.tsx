@@ -13,6 +13,45 @@ import { SeoHead } from "@/components/seo-head";
 import { buildIndustrySeo } from "@/lib/seo-page-data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
 
+function renderIndustryText(text: string, links: { phrase: string; href: string }[] = []) {
+  if (!links.length) return text;
+  let parts: (string | JSX.Element)[] = [text];
+  for (const link of [...links].sort((a, b) => b.phrase.length - a.phrase.length)) {
+    const next: (string | JSX.Element)[] = [];
+    for (const part of parts) {
+      if (typeof part !== "string") {
+        next.push(part);
+        continue;
+      }
+      const needle = link.phrase.toLowerCase();
+      const lower = part.toLowerCase();
+      let cursor = 0;
+      let found = lower.indexOf(needle, cursor);
+      if (found === -1) {
+        next.push(part);
+        continue;
+      }
+      let matchIndex = 0;
+      while (found !== -1) {
+        const before = part.slice(cursor, found);
+        const match = part.slice(found, found + link.phrase.length);
+        if (before) next.push(before);
+        next.push(
+          <Link key={`${link.phrase}-${matchIndex}-${before.slice(0, 12)}`} to={link.href} className="text-[var(--axis-orange)] hover:underline font-medium">
+            {match}
+          </Link>
+        );
+        matchIndex += 1;
+        cursor = found + link.phrase.length;
+        found = lower.indexOf(needle, cursor);
+      }
+      if (part.slice(cursor)) next.push(part.slice(cursor));
+    }
+    parts = next;
+  }
+  return parts;
+}
+
 export default function IndustryDetailPage() {
   const { slug } = useParams();
   const industry = INDUSTRIES.find((i) => i.slug === slug);
@@ -45,6 +84,22 @@ export default function IndustryDetailPage() {
 
   const seo = buildIndustrySeo(industry);
   const path = `/industries/${industry.slug}`;
+  const pageContent = industry as typeof industry & {
+    contentSections?: {
+      title: string;
+      intro?: string;
+      subsections?: { title: string; content: string }[];
+      bullets?: string[];
+    }[];
+    relatedProductSlugs?: string[];
+    productsIntro?: string;
+    internalLinks?: { phrase: string; href: string }[];
+  };
+  const featuredProducts = pageContent.relatedProductSlugs?.length
+    ? pageContent.relatedProductSlugs
+        .map((productSlug) => PRODUCT_CATEGORIES.find((product) => product.slug === productSlug))
+        .filter((product): product is (typeof PRODUCT_CATEGORIES)[number] => Boolean(product))
+    : PRODUCT_CATEGORIES.slice(0, 6);
 
   if (hasStaticContent(path)) {
     return (
@@ -195,16 +250,16 @@ export default function IndustryDetailPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
-              {industry.name} Packaging Solutions
+              {industry.name} packaging options
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our specialized packaging solutions designed specifically for the{" "}
-              {industry.name} industry
+              {pageContent.productsIntro ||
+                `These packaging products can be quoted for ${industry.name} businesses.`}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PRODUCT_CATEGORIES.slice(0, 6).map((product) => (
+            {featuredProducts.map((product) => (
               <Card
                 key={product.slug}
                 className="group hover:shadow-lg transition-all duration-300"
@@ -216,7 +271,6 @@ export default function IndustryDetailPage() {
                   <h3 className="text-lg font-semibold text-[var(--axis-dark-blue)] mb-2">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">{product.description}</p>
                   <img
                     src={product.image}
                     alt={product.name}
@@ -237,83 +291,36 @@ export default function IndustryDetailPage() {
         </div>
       </section>
 
-      {/* Industry Benefits */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">
-                Why Choose Axis Packaging for {industry.name}?
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-[var(--axis-dark-blue)]">
-                      Industry Expertise
-                    </h3>
-                    <p className="text-gray-600">
-                      Deep understanding of {industry.name} industry requirements and regulations
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-[var(--axis-dark-blue)]">Custom Solutions</h3>
-                    <p className="text-gray-600">
-                      Tailored packaging solutions designed specifically for {industry.name}{" "}
-                      products
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-[var(--axis-dark-blue)]">
-                      Quality Assurance
-                    </h3>
-                    <p className="text-gray-600">
-                      Rigorous quality control processes ensuring compliance with industry standards
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-[var(--axis-dark-blue)]">Fast Turnaround Options</h3>
-                    <p className="text-gray-600">
-                      Timing is confirmed on your quotation
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">
-                {industry.name} Industry Challenges We Solve
-              </h2>
-              <div className="space-y-4">
+      {pageContent.contentSections?.map((section) => (
+        <section key={section.title} className="py-16 bg-white border-t">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">{section.title}</h2>
+            {section.intro && (
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {renderIndustryText(section.intro, pageContent.internalLinks)}
+              </p>
+            )}
+            {section.subsections?.map((item) => (
+              <div key={item.title} className="mb-6">
+                <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">{item.title}</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  The {industry.name} industry faces unique packaging challenges that require
-                  specialized solutions. We understand these challenges and have developed packaging
-                  that addresses them effectively.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  From regulatory compliance to brand protection, our {industry.name} packaging
-                  solutions are designed to meet the highest standards while enhancing your product
-                  presentation.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Our team of experts works closely with {industry.name} businesses to create
-                  packaging that not only protects products but also enhances brand value and
-                  customer experience.
+                  {renderIndustryText(item.content, pageContent.internalLinks)}
                 </p>
               </div>
-            </div>
+            ))}
+            {section.bullets && (
+              <ul className="space-y-3">
+                {section.bullets.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-700">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <span>{renderIndustryText(item, pageContent.internalLinks)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* CTA Section */}
       <section className="py-16 bg-[var(--axis-dark-blue)] text-white">

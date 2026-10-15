@@ -12,15 +12,31 @@ function shell(routePath, inner) {
 
 function linkify(text, links) {
   const sorted = [...links].sort((a, b) => b.phrase.length - a.phrase.length);
-  let html = esc(text);
+  const seen = new Set();
+  const unique = [];
   for (const link of sorted) {
-    const phrase = esc(link.phrase);
-    if (!phrase || !html.includes(phrase)) continue;
-    html = html
-      .split(phrase)
-      .join(
-        `<a href="${esc(link.href)}" class="text-[var(--axis-orange)] hover:underline font-medium">${phrase}</a>`
-      );
+    const key = String(link.phrase || "").toLowerCase();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    unique.push(link);
+  }
+  let html = esc(text);
+  for (const link of unique) {
+    const phrase = String(link.phrase || "");
+    if (!phrase) continue;
+    const needle = phrase.toLowerCase();
+    let next = "";
+    let remaining = html;
+    let lower = remaining.toLowerCase();
+    let index = lower.indexOf(needle);
+    while (index !== -1) {
+      const match = remaining.slice(index, index + phrase.length);
+      next += `${remaining.slice(0, index)}<a href="${esc(link.href)}" class="text-[var(--axis-orange)] hover:underline font-medium">${match}</a>`;
+      remaining = remaining.slice(index + phrase.length);
+      lower = remaining.toLowerCase();
+      index = lower.indexOf(needle);
+    }
+    html = next + remaining;
   }
   return html;
 }
@@ -100,15 +116,49 @@ export function productStaticHtml(product, products) {
   );
 }
 
+function contentSectionHtml(sections, links) {
+  return (sections || [])
+    .map((section) => {
+      const subsections = (section.subsections || [])
+        .map(
+          (item) =>
+            `<h3 class="text-xl font-semibold text-[var(--axis-dark-blue)] mt-6 mb-2">${esc(item.title)}</h3><p class="text-gray-700 leading-relaxed">${linkify(item.content, links)}</p>`
+        )
+        .join("");
+      const bullets = section.bullets?.length ? list(section.bullets.map((item) => item)) : "";
+      const linkedBullets = section.bullets?.length
+        ? `<ul class="space-y-3">${section.bullets
+            .map(
+              (item) =>
+                `<li class="flex items-start gap-3"><span class="text-green-600" aria-hidden="true">✓</span><span class="text-gray-700">${linkify(item, links)}</span></li>`
+            )
+            .join("")}</ul>`
+        : "";
+      return `<section class="py-12 bg-white border-t"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(section.title)}</h2>${
+        section.intro ? `<p class="text-gray-700 leading-relaxed mb-4">${linkify(section.intro, links)}</p>` : ""
+      }${subsections}${linkedBullets || bullets}</div></section>`;
+    })
+    .join("");
+}
+
 export function industryStaticHtml(industry, products, industries) {
   const routePath = `/industries/${industry.slug}`;
-  const productLinks = products
-    .slice(0, 6)
+  const links = industry.internalLinks || [];
+  const chosen = industry.relatedProductSlugs?.length
+    ? industry.relatedProductSlugs
+        .map((slug) => products.find((product) => product.slug === slug))
+        .filter(Boolean)
+    : products.slice(0, 6);
+  const productLinks = chosen
     .map(
       (product) =>
         `<li><a href="/products/${esc(product.slug)}" class="text-[var(--axis-orange)] hover:underline font-medium">${esc(product.name)}</a></li>`
     )
     .join("");
+  const productsIntro =
+    industry.productsIntro ||
+    `These packaging products can be quoted for ${industry.name} businesses. Tell us the product and the quantity you need.`;
+  const sections = contentSectionHtml(industry.contentSections, links);
   const related = industries
     .filter((item) => item.slug !== industry.slug)
     .slice(0, 3)
@@ -119,7 +169,7 @@ export function industryStaticHtml(industry, products, industries) {
     .join("");
   return shell(
     routePath,
-    `<div class="min-h-screen bg-gray-50"><section class="bg-white py-4 border-b"><div class="container mx-auto px-4 text-sm text-gray-500"><a href="/" class="hover:text-[var(--axis-orange)]">Home</a> / <a href="/industries" class="hover:text-[var(--axis-orange)]">Industries</a> / <span class="text-[var(--axis-dark-blue)] font-medium">${esc(industry.name)}</span></div></section><section class="py-16 bg-white"><div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center"><div><h1 class="text-4xl md:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(industry.name)} Packaging Solutions</h1><p class="text-xl text-gray-600 mb-8 leading-relaxed">${esc(industry.description || "")}</p><p class="flex flex-col sm:flex-row gap-4"><a href="/quote?industry=${esc(industry.slug)}" class="inline-flex bg-[var(--axis-orange)] text-white px-6 py-3 rounded-md font-semibold">Get industry quote</a><a href="/contact" class="inline-flex border border-[var(--axis-dark-blue)] text-[var(--axis-dark-blue)] px-6 py-3 rounded-md font-semibold">Contact us</a></p></div><div><img src="${esc(industry.image)}" alt="${esc(industry.name)} packaging" width="800" height="384" class="w-full h-96 object-cover rounded-lg shadow-lg" /></div></div></section><section class="py-16 bg-[var(--axis-dark-blue)] text-white"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold mb-8 text-center">${esc(industry.name)} packaging supply</h2><div class="grid md:grid-cols-4 gap-8 text-center"><div><p class="text-3xl font-bold">Custom</p><p>${esc(industry.name)} packaging</p></div><div><p class="text-3xl font-bold">24h</p><p>Quote Response</p></div><div><p class="text-3xl font-bold">UK</p><p>Business Supply</p></div><div><p class="text-3xl font-bold">24/7</p><p>Customer Support</p></div></div></div></section><section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(industry.name)} packaging options</h2><p class="text-gray-700 mb-6">These packaging products can be quoted for ${esc(industry.name)} businesses. Tell us the product and the quantity you need.</p><ul class="space-y-4">${productLinks}</ul></div></section><section class="py-12 bg-gray-50"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">Related industries</h2><ul class="space-y-2">${related}</ul><p class="mt-6"><a href="/industries" class="text-[var(--axis-orange)] hover:underline font-medium">All industries</a></p></div></section></div>`
+    `<div class="min-h-screen bg-gray-50"><section class="bg-white py-4 border-b"><div class="container mx-auto px-4 text-sm text-gray-500"><a href="/" class="hover:text-[var(--axis-orange)]">Home</a> / <a href="/industries" class="hover:text-[var(--axis-orange)]">Industries</a> / <span class="text-[var(--axis-dark-blue)] font-medium">${esc(industry.name)}</span></div></section><section class="py-16 bg-white"><div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center"><div><h1 class="text-4xl md:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(industry.name)} Packaging Solutions</h1><p class="text-xl text-gray-600 mb-8 leading-relaxed">${esc(industry.description || "")}</p><p class="flex flex-col sm:flex-row gap-4"><a href="/quote?industry=${esc(industry.slug)}" class="inline-flex bg-[var(--axis-orange)] text-white px-6 py-3 rounded-md font-semibold">Get industry quote</a><a href="/contact" class="inline-flex border border-[var(--axis-dark-blue)] text-[var(--axis-dark-blue)] px-6 py-3 rounded-md font-semibold">Contact us</a></p></div><div><img src="${esc(industry.image)}" alt="${esc(industry.name)} packaging" width="800" height="384" class="w-full h-96 object-cover rounded-lg shadow-lg" /></div></div></section><section class="py-16 bg-[var(--axis-dark-blue)] text-white"><div class="container mx-auto px-4"><h2 class="text-3xl font-bold mb-8 text-center">${esc(industry.name)} packaging supply</h2><div class="grid md:grid-cols-4 gap-8 text-center"><div><p class="text-3xl font-bold">Custom</p><p>${esc(industry.name)} packaging</p></div><div><p class="text-3xl font-bold">24h</p><p>Quote Response</p></div><div><p class="text-3xl font-bold">UK</p><p>Business Supply</p></div><div><p class="text-3xl font-bold">24/7</p><p>Customer Support</p></div></div></div></section>${sections}<section class="py-16 bg-white"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(industry.name)} packaging options</h2><p class="text-gray-700 mb-6">${linkify(productsIntro, links)}</p><ul class="space-y-4">${productLinks}</ul></div></section><section class="py-12 bg-gray-50"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">Related industries</h2><ul class="space-y-2">${related}</ul><p class="mt-6"><a href="/industries" class="text-[var(--axis-orange)] hover:underline font-medium">All industries</a></p></div></section></div>`
   );
 }
 

@@ -32,20 +32,36 @@ function renderLinkedText(text: string, links: InternalLink[] = []) {
         newParts.push(part);
         continue;
       }
-      const segments = part.split(link.phrase);
+      const needle = link.phrase.toLowerCase();
+      const lower = part.toLowerCase();
+      const segments: string[] = [];
+      const matches: string[] = [];
+      let cursor = 0;
+      let found = lower.indexOf(needle, cursor);
+      if (found === -1) {
+        newParts.push(part);
+        continue;
+      }
+      while (found !== -1) {
+        segments.push(part.slice(cursor, found));
+        matches.push(part.slice(found, found + link.phrase.length));
+        cursor = found + link.phrase.length;
+        found = lower.indexOf(needle, cursor);
+      }
+      segments.push(part.slice(cursor));
       segments.forEach((seg, i) => {
         if (seg) newParts.push(seg);
-        if (i < segments.length - 1) {
+        if (i < matches.length) {
           const className = "text-[var(--axis-orange)] hover:underline font-medium";
           const key = `${link.phrase}-${i}-${seg.slice(0, 8)}`;
           newParts.push(
             /^https?:\/\//i.test(link.href) ? (
               <a key={key} href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
-                {link.phrase}
+                {matches[i]}
               </a>
             ) : (
               <Link key={key} to={link.href} className={className}>
-                {link.phrase}
+                {matches[i]}
               </Link>
             )
           );

@@ -1,5 +1,6 @@
 /** Rich SEO content merged into PRODUCT_CATEGORIES entries by slug key */
 import { PACKAGING_PRODUCT_ENRICHMENTS } from "./product-enrichments-packaging";
+import { THIN_PRODUCT_ENRICHMENTS } from "./product-enrichments-thin";
 
 export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
   "paper-bags": {
@@ -381,5 +382,6 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
     quoteIntro:
       "Tell us your instrument type, dimensions, quantity, and branding requirements. Quotation requests receive a 24h quote response. Axis Packaging supplies custom packaging matched to the specification agreed on your quotation.",
   },
+  ...THIN_PRODUCT_ENRICHMENTS,
   ...PACKAGING_PRODUCT_ENRICHMENTS,
 };

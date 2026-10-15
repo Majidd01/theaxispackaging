@@ -1,3 +1,4 @@
+import { INDUSTRY_PAGE_CONTENT } from "./industry-page-content";
 import { PRODUCT_ENRICHMENTS } from "./product-enrichments";
 
 export { COMPANY_INFO, NAVIGATION_ITEMS } from "./site-info";
@@ -1597,7 +1598,7 @@ export const TRUST_INDICATORS = [
   { text: "Quotation Support", icon: "🎨" },
 ];
 
-export const INDUSTRIES = [
+const _INDUSTRIES = [
   {
     name: "Apparel",
     description: "Pair your apparel with one-of-a-kind custom printed clothing boxes. Enhance brand appeal with premium fashion packaging.",
@@ -1849,6 +1850,11 @@ export const INDUSTRIES = [
     h1: "Premium Wine & Spirit Packaging Solutions",
   },
 ];
+
+export const INDUSTRIES = _INDUSTRIES.map((industry) => {
+  const extra = INDUSTRY_PAGE_CONTENT[industry.slug];
+  return extra ? { ...industry, ...extra } : industry;
+});
 
 export const CORRUGATED_STYLES = [
   {
