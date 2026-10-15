@@ -78,13 +78,13 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Retail POP Displays",
-    description: "Showcase products beautifully with custom retail POP displays. Enhance visibility on counters and floor areas with brand-focused designs.",
+    description: "Custom POP displays for UK shops, supermarkets and exhibitions. Tell us the size, material and print, and we will prepare a quotation.",
     icon: "🏪",
     image: "/assets/Retail POP Displays.jpg",
     slug: "pop-displays",
-    metaTitle: "Buy Retail POP Displays - Custom Solutions - Axis Packaging",
-    metaDescription: "Showcase products beautifully with custom retail POP displays. Enhance visibility on counters and floor areas with brand-focused designs.",
-    h1: "Custom Retail POP Displays for Enhanced Visibility",
+    metaTitle: "Custom POP Displays UK | Axis Packaging",
+    metaDescription: "Custom POP displays for UK shops, supermarkets and exhibitions. Cardboard, corrugated and fabric options, with printing confirmed on your quotation.",
+    h1: "Custom POP Displays for UK Retail",
   },
   {
     name: "Vinyl Stickers Labels",

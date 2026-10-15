@@ -135,6 +135,16 @@ export function buildProductSeo(input: {
   metaDescription?: string;
   h1?: string;
 }): { title: string; description: string; primaryTopic: string } {
+  if (input.slug === "pop-displays") {
+    return {
+      title: truncateMeta("Custom POP Displays UK | Axis Packaging", 60),
+      description: truncateMeta(
+        input.metaDescription ||
+          "Custom POP displays for UK shops, supermarkets and exhibitions. Cardboard, corrugated and fabric options, with printing confirmed on your quotation."
+      ),
+      primaryTopic: "custom pop displays",
+    };
+  }
   const primaryTopic = `${input.name} UK`.replace(/\s+/g, " ").trim();
   // Prefer clean UK commercial titles; avoid thin "Buy …" template titles.
   const title = `${stripBuyPrefix(input.name)} UK | Axis Packaging`;

@@ -410,19 +410,21 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   },
 
   "pop-displays": {
-    metaTitle: "Custom Retail POP Displays | Axis Packaging",
+    metaTitle: "Custom POP Displays UK | Axis Packaging",
     metaDescription:
-      "Custom retail POP displays for in-store visibility & branding. Cardboard, corrugated & fabric options. Full-color printing. MOQ 100. Free design proof.",
-    h1: "Custom Retail POP Displays for Enhanced Visibility",
+      "Custom POP displays for UK shops, supermarkets and exhibitions. Cardboard, corrugated and fabric options, with printing confirmed on your quotation.",
+    h1: "Custom POP Displays for UK Retail",
     description:
-      "Increase in-store attention and improve product visibility with custom retail POP displays designed for stronger branding, organized product presentation, and better customer engagement. At Axis Packaging, we create retail display solutions that help products stand out in supermarkets, retail stores, exhibitions, and promotional spaces. Pair your displays with custom folding carton boxes or custom stickers & labels for a complete retail packaging and branding setup.",
-    alt: "Custom retail POP display stands for in-store product visibility by Axis Packaging",
+      "Custom POP displays help UK shops, supermarkets and exhibitions present products where customers can see them. Axis Packaging supplies cardboard, corrugated and fabric display structures, with full-colour printing for your branding. Tell us the products, the size and where the display will stand, and you can request a quotation. Pair a display with custom folding carton boxes, custom stickers & labels or printed kraft boxes. Retail packaging options can be quoted alongside the display.",
+    alt: "Custom POP displays for in-store product visibility",
     breadcrumbName: "POP Displays",
     hideProductFeatures: true,
     internalLinks: [
       { phrase: "custom folding carton boxes", href: "/products/folding-carton-boxes" },
       { phrase: "custom stickers & labels", href: "/products/stickers-labels" },
       { phrase: "printed kraft boxes", href: "/products/kraft-boxes" },
+      { phrase: "retail packaging options", href: "/industries/retail" },
+      { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
       {
@@ -443,13 +445,13 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     productTypesTitle: "Types of POP Display Stands",
     productTypes: [
       { title: "Curved Pop Up Display Stand", detail: "Creates a premium and eye-catching presentation for exhibitions, promotional setups, and branded retail environments." },
-      { title: "Cardboard Pop Up Display Stands", detail: "Lightweight, cost-effective, and ideal for temporary promotions, supermarkets, and retail campaigns." },
+      { title: "Cardboard Pop Up Display Stands", detail: "Lightweight cardboard display stands for temporary promotions, supermarkets and retail campaigns." },
       { title: "Fabric Pop Up Display Stands", detail: "Commonly used for exhibitions, trade shows, and large promotional environments requiring lightweight and reusable branding displays." },
     ],
     specificationsBullets: [
       "Custom sizes and display structures available",
       "Cardboard, corrugated, and fabric material options",
-      "Full-color custom printing",
+      "Full-colour printing for logos, graphics and brand colours",
       "Matte, gloss, and UV finishes available",
       "Lightweight but durable construction",
       "Easy assembly and transportation",
@@ -460,9 +462,9 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     faqs: [
       { question: "What are retail POP displays used for?", answer: "Retail POP displays are used to showcase products in high-visibility areas inside stores, helping brands attract customer attention and increase product engagement at the point of purchase." },
       { question: "Which products work best with POP retail displays?", answer: "POP displays are commonly used for cosmetics, snacks, beverages, electronics, confectionery, promotional products, skincare items, and seasonal retail products." },
-      { question: "Are cardboard pop up display stands durable?", answer: "Yes, high-quality cardboard POP displays are designed to remain stable and durable in retail environments while still being lightweight and cost-effective." },
+      { question: "Are cardboard pop up display stands durable?", answer: "Cardboard POP displays are lightweight stands for retail promotions. The structure and finish are confirmed on your quotation." },
       { question: "What is the difference between floor displays and counter displays?", answer: "Floor displays are larger standalone retail displays placed in aisles or store sections, while counter displays are smaller units designed for checkout counters and impulse-purchase areas." },
-      { question: "Can custom POP displays be printed with branding?", answer: "Yes, retail POP displays can be fully customized with logos, product graphics, promotional messaging, and brand colors to improve in-store visibility." },
+      { question: "Can custom POP displays be printed with branding?", answer: "Yes. Custom POP displays can be printed with logos, product graphics, promotional messaging and brand colours. Share the artwork, colours and display size when you request a quotation." },
     ],
     quoteTitle: "Request Custom POP Displays for Your Brand",
   },
