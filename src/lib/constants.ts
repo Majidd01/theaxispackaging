@@ -696,12 +696,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Pizza Boxes",
     description: "Custom pizza boxes for UK takeaways, restaurants and delivery kitchens. Tell Axis Packaging the box size, print and quantity you need, and we will quote the job. This page does not list prices or a fixed size range.",
     icon: "🍕",
-    image: "/assets/pizza-boxes.jpg",
+    image: "/assets/custom-pizza-boxes.jpg",
     slug: "pizza-boxes",
-    metaTitle: "Custom Pizza Boxes UK | Axis Packaging",
-    metaDescription: "Custom pizza boxes for UK takeaways. Made to the size you supply, plain or printed. Request a quote from Axis Packaging in Leeds.",
+    featuredOrder: 2,
+    seoTitle: "Custom Pizza Boxes for UK Takeaways | Axis Packaging",
+    metaDescription: "Custom pizza boxes for UK takeaways and delivery kitchens. Send the pizza size, print and quantity, and Axis Packaging in Leeds will quote the carton.",
     h1: "Custom Pizza Boxes for UK Takeaways",
-    alt: "Stack of plain brown corrugated pizza boxes, with the top box open and empty",
+    alt: "Printed red and cream pizza boxes with one box open around a pizza",
     breadcrumbName: "Pizza Boxes",
     hideProductFeatures: true,
     internalLinks: [
@@ -709,12 +710,13 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
       { phrase: "food grade containers", href: "/products/food-containers" },
       { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
+      { phrase: "takeaway food trays", href: "/products/food-trays" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
     ],
     contentSections: [
       {
         title: "Pizza boxes for collection and delivery",
-        intro: "A pizza box has to stay shut in a delivery bag, stack in a pass, and open cleanly at the table. It is a different pack from bakery and cake boxes, which are built for slices and celebration cakes, and from food grade containers, which are closed tubs rather than a flat corrugated carton.",
+        intro: "A pizza box has to stay shut in a delivery bag, stack in a pass, and open cleanly at the table. It is a different pack from bakery and cake boxes, which are built for slices and celebration cakes, and from food grade containers, which are closed tubs rather than a flat corrugated carton. A whole pizza stays in this carton rather than in takeaway food trays.",
         subsections: [
           {
             title: "What to send with your enquiry",
@@ -775,12 +777,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Burger Boxes",
     description: "Custom burger boxes for UK takeaways, burger restaurants and cafes. Clamshell cartons are quoted to your burger size, print and quantity. Prices and minimum orders are not published here.",
     icon: "🍔",
-    image: "/assets/burger-boxes.jpg",
+    image: "/assets/custom-burger-boxes.jpg",
     slug: "burger-boxes",
-    metaTitle: "Custom Burger Boxes UK | Axis Packaging",
-    metaDescription: "Custom burger boxes for UK takeaways and cafes. Kraft clamshell boxes made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 3,
+    seoTitle: "Custom Burger Boxes for UK Takeaways | Axis Packaging",
+    metaDescription: "Custom burger boxes for UK takeaways and cafes. Printed clamshell cartons are quoted to your burger size, print and quantity by Axis Packaging in Leeds.",
     h1: "Custom Burger Boxes for Takeaway Service",
-    alt: "Four closed kraft clamshell burger boxes on a light grey background",
+    alt: "Printed teal and mustard burger boxes with one box open around a burger",
     breadcrumbName: "Burger Boxes",
     hideProductFeatures: true,
     internalLinks: [
@@ -854,12 +857,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Noodle Boxes",
     description: "Custom noodle boxes for UK noodle bars, street-food traders and restaurants. Folded paperboard pails are quoted to your portion size and print. No price or standard capacity is published on this page.",
     icon: "🥡",
-    image: "/assets/noodle-boxes.jpg",
+    image: "/assets/custom-noodle-boxes.jpg",
     slug: "noodle-boxes",
-    metaTitle: "Custom Noodle Boxes UK | Axis Packaging",
-    metaDescription: "Custom noodle boxes for UK takeaways. Folded paperboard pails made to your size, plain or printed. Request a quote from Axis Packaging in Leeds.",
+    featuredOrder: 4,
+    seoTitle: "Custom Noodle Boxes for UK Takeaways | Axis Packaging",
+    metaDescription: "Custom noodle boxes for UK takeaways and street-food stalls. Folded cartons are quoted to your portion, print and quantity by Axis Packaging in Leeds.",
     h1: "Custom Noodle Boxes for Hot Food Takeaway",
-    alt: "Five empty kraft paperboard noodle boxes with folded paper handles",
+    alt: "Printed coral and navy noodle cartons with noodles and chopsticks",
     breadcrumbName: "Noodle Boxes",
     hideProductFeatures: true,
     internalLinks: [
@@ -887,7 +891,7 @@ const _PRODUCT_CATEGORIES = [
     ],
     productTypesTitle: "Noodle box options to specify",
     productTypes: [
-      { title: "Handled pail", detail: "A folded paperboard box with a paper handle, as in the photograph. Handle strength is confirmed for your portion weight at quote stage." },
+      { title: "Handled pail", detail: "A folded paperboard box. A paper handle can be requested on the quotation. The photograph shows printed cartons and does not set the handle or the capacity." },
       { title: "Plain pail", detail: "Unprinted board for kitchens that label each order." },
       { title: "Printed pail", detail: "Your name or a simple design, in one colour, two colours, or full colour." },
     ],
@@ -933,25 +937,27 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Sandwich Boxes",
     description: "Custom sandwich boxes for UK cafes, bakeries, delis and food-to-go counters. Wedge and rectangular cartons are quoted to your sandwich size. No prices or standard sandwich sizes are listed here.",
     icon: "🥪",
-    image: "/assets/sandwich-boxes.jpg",
+    image: "/assets/custom-sandwich-boxes.jpg",
     slug: "sandwich-boxes",
-    metaTitle: "Custom Sandwich Boxes UK | Axis Packaging",
-    metaDescription: "Custom sandwich boxes for UK cafes and bakeries. Wedge and rectangular cartons made to your size. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 5,
+    seoTitle: "Custom Sandwich Boxes for UK Cafes | Axis Packaging",
+    metaDescription: "Custom sandwich boxes for UK cafes, bakeries and delis. Wedge and rectangular cartons are quoted to your sandwich size by Axis Packaging in Leeds, UK.",
     h1: "Custom Sandwich Boxes for Cafes and Bakeries",
-    alt: "Two triangular kraft sandwich wedges and one rectangular kraft sandwich box",
+    alt: "Printed sage sandwich boxes with a filled baguette in an open wedge carton",
     breadcrumbName: "Sandwich Boxes",
     hideProductFeatures: true,
     internalLinks: [
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
       { phrase: "paper shopping bags", href: "/products/paper-bags" },
       { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "printed bagel and sandwich boxes", href: "/products/printed-bagel-sandwich-boxes" },
       { phrase: "bakery packaging", href: "/industries/bakery-cake" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
     ],
     contentSections: [
       {
         title: "Cartons for made-to-order sandwiches",
-        intro: "Sandwich boxes are small cartons for a triangular wedge or a long filled roll. They are not bakery and cake boxes, which are for cakes and pastries, and they are not food grade containers, which suit tubs, salads and other lidded foods.",
+        intro: "Sandwich boxes are small cartons for a triangular wedge or a long filled roll. They are not bakery and cake boxes, which are for cakes and pastries, and they are not food grade containers, which suit tubs, salads and other lidded foods. A branded carton for a bagel or a filled roll, where the print is the main brief, is covered by printed bagel and sandwich boxes.",
         subsections: [
           {
             title: "Wedge or rectangular",
@@ -1014,6 +1020,7 @@ const _PRODUCT_CATEGORIES = [
     icon: "🥯",
     image: "/assets/custom-printed-bagel-sandwich-boxes.webp",
     slug: "printed-bagel-sandwich-boxes",
+    featuredOrder: 1,
     metaTitle: "Custom Printed Bagel & Sandwich Boxes UK | Axis Packaging",
     metaDescription: "Custom printed bagel and sandwich boxes for UK cafes, bakeries and delis. Food-grade board, full-colour CMYK print. Request a quote from Axis Packaging.",
     h1: "Custom Printed Bagel & Sandwich Boxes",
@@ -1113,12 +1120,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Takeaway Food Trays",
     description: "Takeaway food trays for UK chip shops, cafes, restaurants and street-food stalls. Open kraft trays are quoted to your food and your size. Prices, capacities and minimum orders are not listed on this page.",
     icon: "🍟",
-    image: "/assets/food-trays.jpg",
+    image: "/assets/takeaway-food-trays.jpg",
     slug: "food-trays",
-    metaTitle: "Takeaway Food Trays UK | Axis Packaging",
-    metaDescription: "Takeaway food trays for UK shops and restaurants. Open kraft trays made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 6,
+    seoTitle: "Takeaway Food Trays for UK Chip Shops | Axis Packaging",
+    metaDescription: "Takeaway food trays for UK chip shops, cafes and street food. Open serving trays for chips and sides are quoted to your size by Axis Packaging in Leeds.",
     h1: "Takeaway Food Trays for Chips and Sides",
-    alt: "Three empty kraft food trays, two rectangular and one boat-shaped",
+    alt: "Red and charcoal takeaway food trays holding chips onion rings and loaded fries",
     breadcrumbName: "Food Trays",
     hideProductFeatures: true,
     internalLinks: [
@@ -1140,7 +1148,7 @@ const _PRODUCT_CATEGORIES = [
           },
           {
             title: "Shape",
-            content: "The photograph shows rectangular trays and a boat-shaped tray. Tell us which shape you want and the length, width and depth. We do not publish a scoop size or a portion weight.",
+            content: "The photograph shows open trays holding chips, onion rings and a loaded portion. That is presentation, not a size chart, and it is a different brief from printed food trays. Tell us which shape you want and the length, width and depth. We do not publish a scoop size or a portion weight.",
           },
         ],
       },
@@ -1193,12 +1201,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Greaseproof Paper",
     description: "Greaseproof paper for UK takeaways, bakeries and cafes. Sheets or rolls are quoted to the size you need. Prices, sheet weights and food-contact certificates are not listed on this page.",
     icon: "🧻",
-    image: "/assets/greaseproof-paper.jpg",
+    image: "/assets/branded-greaseproof-paper.jpg",
     slug: "greaseproof-paper",
-    metaTitle: "Greaseproof Paper UK | Axis Packaging",
-    metaDescription: "Greaseproof paper for UK takeaways and bakeries. Sheets or rolls made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 7,
+    seoTitle: "Greaseproof Paper for UK Bakeries | Axis Packaging",
+    metaDescription: "Greaseproof paper for UK bakeries, cafes and takeaways. Sheets or rolls are quoted to your size and print by Axis Packaging in Leeds. Tell us the format.",
     h1: "Greaseproof Paper for Takeaways and Bakeries",
-    alt: "Stack of folded white greaseproof paper sheets beside an upright brown paper roll",
+    alt: "Printed green and blush greaseproof paper wrapping a croissant and a pastry",
     breadcrumbName: "Greaseproof Paper",
     hideProductFeatures: true,
     internalLinks: [
@@ -1207,6 +1216,7 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
       { phrase: "paper shopping bags", href: "/products/paper-bags" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
+      { phrase: "food-contact materials regulations", href: "https://www.gov.uk/government/publications/food-contact-materials-regulations" },
     ],
     contentSections: [
       {
@@ -1215,7 +1225,7 @@ const _PRODUCT_CATEGORIES = [
         subsections: [
           {
             title: "Sheets or a roll",
-            content: "The photograph shows a stack of cut white sheets and one brown roll. Tell us which format you want, and the length and width. We do not publish a sheet weight, a roll width, or a grease-resistance grade. If your kitchen needs a named grade or a food-contact certificate, say so in the enquiry so it can be checked before it is treated as agreed.",
+            content: "The photograph shows printed sheets and a roll used around bakery food. That is presentation, not a grade or a certificate. Tell us which format you want, and the length and width. We do not publish a sheet weight, a roll width, or a grease-resistance grade. If your kitchen needs a named grade or a food-contact certificate, say so in the enquiry so it can be checked before it is treated as agreed. Businesses can read the food-contact materials regulations before they ask. Reading that guidance does not mean paper from Axis Packaging is certified.",
           },
           {
             title: "When paper is the wrong pack",
@@ -1272,12 +1282,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Paper Cups",
     description: "Custom paper cups for UK cafes, takeaways and events. Cups are quoted to the size, print and quantity you need. Capacities, lids and prices are not listed on this page.",
     icon: "☕",
-    image: "/assets/paper-cups.jpg",
+    image: "/assets/custom-paper-cups.jpg",
     slug: "paper-cups",
-    metaTitle: "Custom Paper Cups UK | Axis Packaging",
-    metaDescription: "Custom paper cups for UK cafes and takeaways. Plain or printed cups made to your size. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 8,
+    seoTitle: "Custom Paper Cups for UK Café Counters | Axis Packaging",
+    metaDescription: "Custom paper cups for UK cafes, takeaways and events. Cup size, print and quantity are confirmed on your Axis Packaging quotation. No chart is published.",
     h1: "Custom Paper Cups for Cafes and Events",
-    alt: "Nested stack of four plain white paper cups beside one plain kraft paper cup",
+    alt: "Printed terracotta navy and cream paper cups for cafe service",
     breadcrumbName: "Paper Cups",
     hideProductFeatures: true,
     internalLinks: [
@@ -1294,7 +1305,7 @@ const _PRODUCT_CATEGORIES = [
         subsections: [
           {
             title: "How to give the cup size",
-            content: "The quote form asks for length, width and depth. For a cup, enter the diameter in length and width, and the height in depth. The photograph shows a plain white cup and a plain kraft cup, with no print and no lid. We do not publish drink sizes, a wall type, or a lid range.",
+            content: "The quote form asks for length, width and depth. For a cup, enter the diameter in length and width, and the height in depth. The photograph shows printed cups as a café example. A lid in a picture is not a promise that a lid is included. We do not publish drink sizes, a wall type, or a lid range.",
           },
           {
             title: "When a cup is the wrong pack",
@@ -1305,7 +1316,7 @@ const _PRODUCT_CATEGORIES = [
     ],
     productTypesTitle: "Cup options to specify",
     productTypes: [
-      { title: "Plain cups", detail: "Unprinted paper cups, white or kraft, as shown in the photograph." },
+      { title: "Plain cups", detail: "Unprinted paper cups, white or kraft, can be quoted. The photograph shows a printed example." },
       { title: "Printed cups", detail: "The same cup style with your name or a simple design." },
       { title: "Lids", detail: "Not included unless you ask for a lid to be quoted with the cup." },
     ],
@@ -1351,12 +1362,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Mailer Boxes",
     description: "Custom mailer boxes for UK online shops. These are corrugated cartons for posting smaller orders, quoted to your size and print. Prices and board grades are not listed on this page.",
     icon: "📦",
-    image: "/assets/mailer-boxes.jpg",
+    image: "/assets/custom-mailer-boxes.jpg",
     slug: "mailer-boxes",
-    metaTitle: "Custom Mailer Boxes UK | Axis Packaging",
-    metaDescription: "Custom mailer boxes for UK online shops. Corrugated cartons made to your size, plain or printed. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 10,
+    seoTitle: "Custom Mailer Boxes for UK Online Shops | Axis Packaging",
+    metaDescription: "Custom mailer boxes for UK online shops. These corrugated cartons for smaller posted orders are quoted to your size and print by Axis Packaging in Leeds.",
     h1: "Custom Mailer Boxes for Online Orders",
-    alt: "Two plain brown corrugated mailer boxes with one closed and one open and empty",
+    alt: "Printed plum and sand mailer boxes with one open around tissue and a candle",
     breadcrumbName: "Mailer Boxes",
     hideProductFeatures: true,
     internalLinks: [
@@ -1369,7 +1381,7 @@ const _PRODUCT_CATEGORIES = [
     contentSections: [
       {
         title: "Corrugated cartons for smaller parcels",
-        intro: "A mailer box is a corrugated carton for posting a smaller order. The photograph shows one closed carton and one open empty carton with folding flaps. It is not a bag. Flexible packs for clothing and small items are printed mailer bags. Heavier or larger outer cartons are corrugated shipping boxes. Line a gift or apparel order with custom tissue paper, and close the parcel with custom packing tape. Those are separate products.",
+        intro: "A mailer box is a corrugated carton for posting a smaller order. The photograph shows a printed mailer, one open with tissue and a small product and one closed. That is presentation, not a board grade. It is not a bag. Flexible packs for clothing and small items are printed mailer bags. Heavier or larger outer cartons are corrugated shipping boxes. Line a gift or apparel order with custom tissue paper, and close the parcel with custom packing tape. Those are separate products.",
         subsections: [
           {
             title: "What to measure",
@@ -1384,7 +1396,7 @@ const _PRODUCT_CATEGORIES = [
     ],
     productTypesTitle: "Mailer carton options to specify",
     productTypes: [
-      { title: "Plain mailer cartons", detail: "Unprinted corrugated cartons, as in the photograph." },
+      { title: "Plain mailer cartons", detail: "Unprinted corrugated cartons can still be quoted. The photograph shows a printed mailer." },
       { title: "Printed mailer cartons", detail: "The same carton with your name or a design on the outside." },
       { title: "Lined orders", detail: "Tissue and tape can be quoted with the carton. They are not included unless you ask." },
     ],
@@ -1430,12 +1442,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Tissue Paper",
     description: "Custom tissue paper for UK retailers, gift brands and apparel shops. Sheets are quoted to your size, colour and print. Sheet weights and prices are not listed on this page.",
     icon: "🎀",
-    image: "/assets/tissue-paper.jpg",
+    image: "/assets/custom-tissue-paper.jpg",
     slug: "tissue-paper",
-    metaTitle: "Custom Tissue Paper UK | Axis Packaging",
-    metaDescription: "Custom tissue paper for UK retailers and gift brands. Plain or printed sheets made to your size. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 11,
+    seoTitle: "Custom Tissue Paper for UK Retail | Axis Packaging",
+    metaDescription: "Custom tissue paper for UK retailers, gift brands and apparel shops. Sheet size, colour and print are confirmed on your Axis Packaging quotation in Leeds.",
     h1: "Custom Tissue Paper for Gifts and Retail",
-    alt: "Two stacks of plain tissue paper sheets one white and one kraft brown",
+    alt: "Blush and gold printed tissue paper wrapped around a small gift box",
     breadcrumbName: "Tissue Paper",
     hideProductFeatures: true,
     internalLinks: [
@@ -1452,7 +1465,7 @@ const _PRODUCT_CATEGORIES = [
         subsections: [
           {
             title: "Colour, size and print",
-            content: "The photograph shows one stack of plain white sheets and one stack of plain kraft sheets. Those are examples of unprinted tissue, not a stock colour chart. Tell us the colour, the sheet size, and whether the sheet should be plain or printed. We do not publish a sheet weight.",
+            content: "The photograph shows printed tissue around a small gift. That is presentation, not a stock colour chart. Tell us the colour, the sheet size, and whether the sheet should be plain or printed. We do not publish a sheet weight.",
           },
           {
             title: "What tissue does not do",
@@ -1463,8 +1476,8 @@ const _PRODUCT_CATEGORIES = [
     ],
     productTypesTitle: "Tissue options to specify",
     productTypes: [
-      { title: "Plain white sheets", detail: "Unprinted white tissue, as in the left-hand stack in the photograph." },
-      { title: "Plain kraft sheets", detail: "Unprinted brown tissue, as in the right-hand stack in the photograph." },
+      { title: "Plain white sheets", detail: "Unprinted white tissue can be quoted. The photograph shows a printed sheet." },
+      { title: "Plain kraft sheets", detail: "Unprinted brown tissue can be quoted separately from the printed example." },
       { title: "Printed sheets", detail: "Tissue with your name or a simple pattern. Colour still comes from your brief." },
     ],
     specificationsTitle: "What we need before we quote",
@@ -1509,12 +1522,13 @@ const _PRODUCT_CATEGORIES = [
     name: "Custom Packing Tape",
     description: "Custom packing tape for UK shops, warehouses and online sellers. Rolls are quoted to your brief and print. Widths, roll lengths and prices are not listed on this page.",
     icon: "📏",
-    image: "/assets/packing-tape.jpg",
+    image: "/assets/custom-packing-tape.jpg",
     slug: "packing-tape",
-    metaTitle: "Custom Packing Tape UK | Axis Packaging",
-    metaDescription: "Custom packing tape for UK shops and warehouses. Plain or printed tape made to your brief. Quote from Axis Packaging in Leeds.",
+    featuredOrder: 9,
+    seoTitle: "Custom Packing Tape for UK Parcels | Axis Packaging",
+    metaDescription: "Custom packing tape for UK shops and warehouses. Plain or printed rolls are quoted to your brief by Axis Packaging in Leeds. No tape width is listed here.",
     h1: "Custom Packing Tape for Parcels and Cartons",
-    alt: "Three rolls of plain brown packing tape with two standing and one lying on its side",
+    alt: "Navy and orange printed packing tape sealing two brown cartons",
     breadcrumbName: "Packing Tape",
     hideProductFeatures: true,
     internalLinks: [
@@ -1527,7 +1541,7 @@ const _PRODUCT_CATEGORIES = [
     contentSections: [
       {
         title: "Tape for closing cartons",
-        intro: "Packing tape closes a carton for storage or dispatch. The photograph shows three plain brown rolls, two standing and one lying on its side, with no print. Use it on custom mailer boxes and on corrugated shipping boxes. It is not a product label. Brand marks that must be a sticker belong on vinyl stickers and labels. A flexible clothing pack is a job for printed mailer bags, which may not need carton tape at all.",
+        intro: "Packing tape closes a carton for storage or dispatch. The photograph shows printed tape sealing two cartons. Plain tape can still be quoted. That picture is not a width or a roll length. Use it on custom mailer boxes and on corrugated shipping boxes. It is not a product label. Brand marks that must be a sticker belong on vinyl stickers and labels. A flexible clothing pack is a job for printed mailer bags, which may not need carton tape at all.",
         subsections: [
           {
             title: "What to send with the enquiry",
@@ -1542,7 +1556,7 @@ const _PRODUCT_CATEGORIES = [
     ],
     productTypesTitle: "Tape options to specify",
     productTypes: [
-      { title: "Plain brown rolls", detail: "Unprinted brown tape, as shown in the photograph." },
+      { title: "Plain brown rolls", detail: "Unprinted brown tape can be quoted. The photograph shows a printed roll." },
       { title: "Printed rolls", detail: "The same style of roll with your name or a short design." },
       { title: "Carton closing", detail: "Tape for mailer cartons and larger shipping cartons. The carton is quoted separately." },
     ],
@@ -1555,12 +1569,12 @@ const _PRODUCT_CATEGORIES = [
     ],
     whyChooseTitle: "How a tape enquiry is handled",
     whyChooseParagraphs: [
-      "Describe the carton and whether the roll needs print. Adhesive type is confirmed on the quote, not assumed from the photograph of plain brown rolls.",
+      "Describe the carton and whether the roll needs print. Adhesive type is confirmed on the quote, not assumed from the photograph.",
       "Order the carton on its own page. Tape does not include the box.",
     ],
     benefitsTitle: "Useful points before you enquire",
     benefits: [
-      "Plain brown rolls shown with no print",
+      "Printed or plain tape can be quoted",
       "Print can be requested on the quote form",
       "For closing cartons, not as a product label",
       "No width, roll length or price on this page",

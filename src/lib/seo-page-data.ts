@@ -133,6 +133,7 @@ export function buildProductSeo(input: {
   description: string;
   metaTitle?: string;
   metaDescription?: string;
+  seoTitle?: string;
   h1?: string;
 }): { title: string; description: string; primaryTopic: string } {
   if (input.slug === "pop-displays") {
@@ -147,8 +148,11 @@ export function buildProductSeo(input: {
     };
   }
   const primaryTopic = `${input.name} UK`.replace(/\s+/g, " ").trim();
-  // Prefer clean UK commercial titles; avoid thin "Buy …" template titles.
-  const title = `${stripBuyPrefix(input.name)} UK | Axis Packaging`;
+  // Prefer an explicit page title when one is set. Stored metaTitle values on older
+  // products are leftover templates and must not replace the current UK titles.
+  const title = input.seoTitle?.trim()
+    ? input.seoTitle.trim()
+    : `${stripBuyPrefix(input.name)} UK | Axis Packaging`;
 
   const description = truncateMeta(
     improveDescription(
