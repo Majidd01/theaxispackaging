@@ -1127,11 +1127,12 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "Printed kraft boxes", href: "/products/kraft-boxes" },
       { phrase: "food grade containers", href: "/products/food-containers" },
       { phrase: "food industry packaging", href: "/industries/food" },
+      { phrase: "printed food trays", href: "/products/printed-food-trays" },
     ],
     contentSections: [
       {
         title: "Open trays for chips, sides and street food",
-        intro: "A food tray is an open board tray for food that is eaten straight away. It is not a lidded tub. Use food grade containers when the food must be closed. Use burger boxes or pizza boxes when the item needs its own carton. Printed kraft boxes cover a wider kraft carton range if you also need closed cartons.",
+        intro: "A food tray is an open board tray for food that is eaten straight away. It is not a lidded tub. Use food grade containers when the food must be closed. Use burger boxes or pizza boxes when the item needs its own carton. Printed kraft boxes cover a wider kraft carton range if you also need closed cartons. For a tray where the print is the main brief, see printed food trays.",
         subsections: [
           {
             title: "Which foods suit a tray",
@@ -1580,6 +1581,171 @@ const _PRODUCT_CATEGORIES = [
       {
         question: "What quantities can I order?",
         answer: "Ask for the quantity you need. A minimum is not published here.",
+      },
+    ],
+  },
+  {
+    name: "Custom Printed Food Trays",
+    listedOn: "2026-10-16",
+    description: "Custom Printed Food Trays UK give restaurants, cafes, bakeries, takeaways and street-food stalls a branded open tray for food eaten soon after it is served. Size, shape, artwork and board are confirmed on the quotation.",
+    icon: "🍱",
+    image: "/assets/printed-food-trays.jpg",
+    slug: "printed-food-trays",
+    metaDescription: "Custom Printed Food Trays UK for restaurants, cafes, bakeries and takeaways. Your logo, size and board are confirmed on your Axis Packaging quotation.",
+    h1: "Custom Printed Food Trays for UK Restaurants & Bakeries",
+    alt: "Colourful printed food trays holding a sandwich with chips and a pastry",
+    breadcrumbName: "Printed Food Trays",
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "takeaway food trays", href: "/products/food-trays" },
+      { phrase: "burger boxes", href: "/products/burger-boxes" },
+      { phrase: "bakery boxes", href: "/products/bakery-boxes" },
+      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom paper cups", href: "/products/paper-cups" },
+      { phrase: "greaseproof paper", href: "/products/greaseproof-paper" },
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
+      { phrase: "bakery and cake packaging", href: "/industries/bakery-cake" },
+      { phrase: "food-contact materials regulations", href: "https://www.gov.uk/government/publications/food-contact-materials-regulations" },
+    ],
+    contentSections: [
+      {
+        title: "Custom Printed Food Trays for UK Food Businesses",
+        intro: "A printed food tray is an open board tray with your branding on the outside, for food eaten at the counter or taken away. It is not a closed carton or a lidded tub. Use takeaway food trays for a plain or lightly printed kraft tray for chips and sides. Use this page when the logo and colours are the reason for the enquiry.",
+        subsections: [
+          {
+            title: "What the tray is for",
+            content: "Customers see the tray while they eat. A clear name and a simple colour show that the food came from your counter. The tray still has to fit the portion, so tell us what you serve before we talk about the print.",
+          },
+          {
+            title: "What this page does not promise",
+            content: "No board grade, certificate, price or minimum order is published here. Ask us to confirm a suitable board on the quotation. Businesses can read the official food-contact materials regulations. That link does not mean a tray from Axis Packaging is certified.",
+          },
+        ],
+      },
+      {
+        title: "Printed Food Trays for Restaurants and Takeaways",
+        intro: "Restaurants, takeaways and street-food stalls use open trays when the meal is eaten straight away. Chips, a side, a sandwich and some burgers served open can sit in a tray. A burger that needs a closed carton is better quoted as burger boxes. A whole pizza is a different carton.",
+        subsections: [
+          {
+            title: "Counter and street-food service",
+            content: "Say whether the portion is dry, greasy or sauced. An open tray is a poor match for a sauce that must not leak. We would rather quote food grade containers than pretend a tray will hold the liquid.",
+          },
+          {
+            title: "Restaurant packaging around the tray",
+            content: "Drinks are often quoted as custom paper cups. A sheet under fried food is greaseproof paper, quoted separately, and it does not make the tray greaseproof. Wider restaurant packaging can be discussed with the tray. This page stays on the printed tray.",
+          },
+        ],
+      },
+      {
+        title: "Branded Food Trays for Bakeries and Cafés",
+        intro: "Bakeries and cafes use printed trays for snacks that should look like the shop. A pastry, a filled roll or a small savoury can sit in a tray when a cake box is more than the food needs. Larger bakes belong in bakery boxes. Bakery and cake packaging covers that wider range.",
+        subsections: [
+          {
+            title: "Presentation at the counter",
+            content: "Shop colours help when several snacks are served at once. Describe the food as it is handed over. A flat cookie and a tall filled roll do not share one tray size.",
+          },
+          {
+            title: "When a box is the better pack",
+            content: "If the food must stay closed, or if icing and decoration need a lid, ask for bakery boxes instead. The printed tray is for food that is seen and eaten from the open tray.",
+          },
+        ],
+      },
+      {
+        title: "Custom Printing and Branding Options",
+        intro: "Send the logo, colours and any artwork you already have. You can ask for one colour, two colours, or a fuller print. The quotation confirms what can be printed. A print method is not guaranteed on this page.",
+        subsections: [
+          {
+            title: "Artwork that stays readable",
+            content: "A short name reads better on a small tray than a crowded design. Tell us where it should sit, and whether the inside stays plain. We do not publish a list of inks or finishes.",
+          },
+          {
+            title: "Branding without extra claims",
+            content: "The print identifies the business. It does not add a food-contact approval or a performance claim. Do not print a certificate that has not been confirmed for the job.",
+          },
+        ],
+      },
+      {
+        title: "Food Tray Styles and Size Considerations",
+        intro: "The photograph shows printed rectangular trays with a sandwich, chips and a pastry. That is presentation, not a size chart. Tell us the length, width and depth, and whether you want a rectangular tray, a boat-shaped tray, or both.",
+        subsections: [
+          {
+            title: "Match the tray to the portion",
+            content: "Measure the food as it is served. A tray that is too small spills, and one that is much too large looks empty. We do not publish a scoop size or a portion weight.",
+          },
+          {
+            title: "One menu, more than one tray",
+            content: "A chip portion and a bakery snack can be quoted together. Say which foods share a design and which need their own size.",
+          },
+        ],
+      },
+      {
+        title: "How to Choose the Right Printed Food Trays",
+        intro: "Start with the food, then the service, then the print. A handsome design on the wrong shape does not help the customer carry the meal.",
+        bullets: [
+          "Name the food and say if it is dry, greasy or sauced",
+          "Say whether it is eaten at the counter, at a table, or taken away",
+          "Give the length, width and depth, or the size of the portion if you do not yet know the tray",
+          "Choose a rectangular tray, a boat-shaped tray, or ask us to quote both",
+          "Send the logo and colours, and say if any food-contact requirement must be checked",
+        ],
+      },
+      {
+        title: "Why Choose Axis Packaging?",
+        intro: "Axis Packaging supplies printed food trays from Leeds for UK food businesses. Quotation requests receive a 24h quote response, and customer support is available 24/7. The reply confirms the tray, the print and the quantity. Price and timing are not published on this page.",
+        subsections: [
+          {
+            title: "A quotation for the job you describe",
+            content: "We would rather confirm a different pack than force a tray onto food it will not hold. The tray quote stays specific to the food and the print you describe.",
+          },
+        ],
+      },
+      {
+        title: "Request a Quote for Printed Food Trays",
+        intro: "Use the quote form on this page. Include the food, the tray shape, the approximate size, the print and the quantity. Cups, a liner or a closed carton can be quoted separately. Timing is confirmed on the quotation.",
+        subsections: [
+          {
+            title: "Details that change the quote",
+            content: "The food, the quantity and any artwork change the specification. A finished dieline is not required to start. Customer support is available 24/7 if you want to talk the brief through first.",
+          },
+        ],
+      },
+    ],
+    specificationsTitle: "What we need before we quote",
+    specificationsTable: [
+      { feature: "Food", detail: "What goes in the tray, and whether it is dry, greasy or sauced." },
+      { feature: "Shape", detail: "Rectangular, boat-shaped, or both. No stock size list is published." },
+      { feature: "Size", detail: "Length, width and depth, measured from the portion you serve." },
+      { feature: "Print", detail: "Logo, colours and artwork. The print is confirmed on the quotation." },
+      { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
+    ],
+    faqs: [
+      {
+        question: "Can printed food trays be customised with a restaurant logo?",
+        answer: "Yes. Send the logo, colours and any artwork you have. The quotation confirms how that print can be applied. A print method is not stated on this page.",
+      },
+      {
+        question: "What types of food businesses use printed food trays?",
+        answer: "Restaurants, takeaways, cafes, bakeries and street-food stalls use them for food eaten from an open tray. Closed meals are quoted as another pack.",
+      },
+      {
+        question: "Are different tray sizes available?",
+        answer: "Tell us the size you need. No standard scoop or bakery size is published. Rectangular and boat-shaped trays can be quoted separately.",
+      },
+      {
+        question: "What details are needed to request a quote?",
+        answer: "Name the food, the shape, the approximate length, width and depth, the print, and the quantity. Quotation requests receive a 24h quote response.",
+      },
+      {
+        question: "Can bakeries and cafés order branded food trays?",
+        answer: "Yes. A pastry or a snack can be quoted as a printed tray. Cakes that need a lid are better handled as bakery boxes.",
+      },
+      {
+        question: "How should a business choose a suitable tray material?",
+        answer: "Describe the food and any food-contact requirement. The board is confirmed on the quotation. No material or certificate is named here.",
+      },
+      {
+        question: "Can printed food trays be used for takeaway orders?",
+        answer: "Yes, when the food can travel in an open tray. Food that must not leak is better in food grade containers. Plain kraft chip trays are takeaway food trays.",
       },
     ],
   },

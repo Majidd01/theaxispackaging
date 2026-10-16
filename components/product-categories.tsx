@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { newestFirst } from "@/lib/catalog-order";
 import { PRODUCT_CATEGORIES } from "@/lib/constants";
 import { ChevronLeft, ChevronRight, Package, Shield, Star, Truck } from "lucide-react";
 import { useState } from "react";
@@ -18,13 +19,15 @@ interface ProductCategoriesProps {
 
 export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const catalog = newestFirst(PRODUCT_CATEGORIES);
   const productsPerPage = 6;
-  const totalPages = Math.ceil(PRODUCT_CATEGORIES.length / productsPerPage);
+  const totalPages = Math.ceil(catalog.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
-  const currentProducts = PRODUCT_CATEGORIES.slice(startIndex, endIndex);
+  const currentProducts = catalog.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages || page === currentPage) return;
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -106,45 +109,66 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex justify-center items-center space-x-2 mb-16">
+          <nav
+            aria-label="Product pages"
+            className="mb-16 flex items-center justify-center gap-2"
+          >
             <Button
               variant="outline"
               size="sm"
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
+              aria-label="Previous page"
               className="flex items-center space-x-1"
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               Previous
             </Button>
 
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <Button
-                key={page}
-                variant={currentPage === page ? "default" : "outline"}
-                size="sm"
-                onClick={() => handlePageChange(page)}
-                className={
-                  currentPage === page
-                    ? "bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90"
-                    : ""
-                }
-              >
-                {page}
-              </Button>
-            ))}
+            <p
+              className="min-w-[4.5rem] text-center text-sm font-medium tabular-nums text-[var(--axis-dark-blue)] md:hidden"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <span className="sr-only">Page </span>
+              {currentPage}
+              <span aria-hidden="true"> / </span>
+              <span className="sr-only"> of </span>
+              {totalPages}
+            </p>
+
+            <div className="hidden items-center gap-2 md:flex">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <Button
+                  key={page}
+                  variant={currentPage === page ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => handlePageChange(page)}
+                  aria-label={`Page ${page}`}
+                  aria-current={currentPage === page ? "page" : undefined}
+                  className={
+                    currentPage === page
+                      ? "bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90"
+                      : ""
+                  }
+                >
+                  {page}
+                </Button>
+              ))}
+            </div>
 
             <Button
               variant="outline"
               size="sm"
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
+              aria-label="Next page"
               className="flex items-center space-x-1"
             >
               Next
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-4 w-4" aria-hidden="true" />
             </Button>
-          </div>
+          </nav>
         )}
 
         {!selectedIndustry && (
@@ -153,7 +177,7 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
               All packaging products
             </h2>
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 max-w-5xl mx-auto">
-              {PRODUCT_CATEGORIES.map((product) => (
+              {catalog.map((product) => (
                 <li key={`all-${product.slug}`}>
                   <Link
                     to={`/products/${product.slug}`}

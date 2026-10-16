@@ -48,6 +48,7 @@ const homeIntro = await server.ssrLoadModule("/src/lib/home-intro.ts");
 const sustainabilityContent = await server.ssrLoadModule("/src/lib/sustainability-page-content.ts");
 const quoteContent = await server.ssrLoadModule("/src/lib/quote-page-content.ts");
 const moqContent = await server.ssrLoadModule("/src/lib/moq-page-content.ts");
+const catalogOrder = await server.ssrLoadModule("/src/lib/catalog-order.ts");
 await server.close();
 
 const { PRODUCT_CATEGORIES, INDUSTRIES, STATIC_PAGE_SEO } = {
@@ -322,7 +323,7 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
     body: rich || ["products", "industries", "sustainability", "moq", "quote"].includes(key) ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p><h2>Related pages</h2><nav aria-label="Related pages"><ul><li><a href="/products">Packaging products</a></li><li><a href="/industries">Industries</a></li><li><a href="/quote">Request a quotation</a></li><li><a href="/contact">Contact us</a></li><li><a href="/faqs">Packaging FAQs</a></li></ul></nav></main>`,
     staticContent:
       rich?.staticContent ||
-      (key === "products" ? productsIndexStaticHtml(PRODUCT_CATEGORIES) : undefined) ||
+      (key === "products" ? productsIndexStaticHtml(catalogOrder.newestFirst(PRODUCT_CATEGORIES)) : undefined) ||
       (key === "industries" ? industriesIndexStaticHtml(INDUSTRIES) : undefined) ||
       (key === "sustainability" ? sustainabilityStaticHtml(sustainabilityContent.SUSTAINABILITY_PAGE) : undefined) ||
       (key === "moq" ? moqStaticHtml(moqContent.MOQ_PAGE) : undefined),
@@ -341,8 +342,8 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
 const missingImages = [];
 const brokenLinks = [];
 const slugs = new Set(PRODUCT_CATEGORIES.map((product) => product.slug));
-if (slugs.size !== 48) {
-  throw new Error(`Expected 48 products, found ${slugs.size}`);
+if (slugs.size !== 49) {
+  throw new Error(`Expected 49 products, found ${slugs.size}`);
 }
 
 for (const product of PRODUCT_CATEGORIES) {
@@ -517,7 +518,7 @@ console.log(
   )
 );
 
-if (productFiles.length !== 48 || sitemapProducts !== 48 || missingImages.length || brokenLinks.length) {
+if (productFiles.length !== 49 || sitemapProducts !== 49 || missingImages.length || brokenLinks.length) {
   process.exit(1);
 }
 if (!sampleTitle || sampleTitle.includes("Custom Packaging UK | Custom Printed Boxes")) {
