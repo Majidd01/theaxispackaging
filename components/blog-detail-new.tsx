@@ -135,6 +135,33 @@ export const BlogDetailComponent = () => {
             {block.content}
           </blockquote>
         );
+      case "table":
+        return (
+          <div key={index} className="overflow-x-auto my-6">
+            <table className="w-full text-sm text-left text-gray-700 border border-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  {block.headers?.map((header) => (
+                    <th key={header} scope="col" className="border border-gray-200 px-3 py-2 font-semibold text-gray-900">
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows?.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {row.map((cell, cellIndex) => (
+                      <td key={cellIndex} className="border border-gray-200 px-3 py-2 align-top">
+                        {renderLinkedText(cell)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
       default:
         return null;
     }

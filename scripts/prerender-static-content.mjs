@@ -141,6 +141,15 @@ function contentBlockHtml(block) {
       }</figure>`;
     case "quote":
       return `<blockquote class="border-l-4 border-blue-600 pl-4 italic text-gray-700 my-6 bg-blue-50 p-4 rounded">${esc(block.content)}</blockquote>`;
+    case "table":
+      return `<div class="overflow-x-auto my-6"><table class="w-full text-sm text-left text-gray-700 border border-gray-200"><thead class="bg-gray-50"><tr>${(block.headers || [])
+        .map((header) => `<th scope="col" class="border border-gray-200 px-3 py-2 font-semibold text-gray-900">${esc(header)}</th>`)
+        .join("")}</tr></thead><tbody>${(block.rows || [])
+        .map(
+          (row) =>
+            `<tr>${row.map((cell) => `<td class="border border-gray-200 px-3 py-2 align-top">${linkedHtml(cell)}</td>`).join("")}</tr>`
+        )
+        .join("")}</tbody></table></div>`;
     default:
       return "";
   }

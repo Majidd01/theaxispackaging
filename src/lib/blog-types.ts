@@ -1,11 +1,13 @@
 // Blog Content Types and Interfaces
 export interface BlogContentBlock {
   id: string;
-  type: "heading2" | "heading3" | "paragraph" | "bullet-list" | "image" | "quote" | "code";
+  type: "heading2" | "heading3" | "paragraph" | "bullet-list" | "image" | "quote" | "code" | "table";
   content?: string;
   imageUrl?: string;
   imageAlt?: string;
   listItems?: string[];
+  headers?: string[];
+  rows?: string[][];
   level?: number;
 }
 
