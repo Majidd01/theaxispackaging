@@ -1,11 +1,17 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import {
+  CATALOG_FILTERS,
+  filterCatalog,
+  isCatalogFilter,
+  PRODUCTS_PER_PAGE,
+} from "@/lib/catalog-categories";
 import { newestFirst } from "@/lib/catalog-order";
 import { PRODUCT_CATEGORIES } from "@/lib/constants";
 import { ChevronLeft, ChevronRight, Package, Shield, Star, Truck } from "lucide-react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 const placeholderImg = "/assets/placeholder.jpg";
 
 interface ProductCategoriesProps {
@@ -18,18 +24,47 @@ interface ProductCategoriesProps {
 }
 
 export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedCategory = searchParams.get("category");
+  const activeCategory = isCatalogFilter(requestedCategory) ? requestedCategory : "all";
   const catalog = newestFirst(PRODUCT_CATEGORIES);
-  const productsPerPage = 6;
-  const totalPages = Math.ceil(catalog.length / productsPerPage);
-  const startIndex = (currentPage - 1) * productsPerPage;
-  const endIndex = startIndex + productsPerPage;
-  const currentProducts = catalog.slice(startIndex, endIndex);
+  const filtered = filterCatalog(catalog, activeCategory);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PRODUCTS_PER_PAGE));
+  const requestedPage = Number(searchParams.get("page"));
+  const currentPage =
+    Number.isInteger(requestedPage) && requestedPage >= 1 && requestedPage <= totalPages
+      ? requestedPage
+      : 1;
+  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const currentProducts = filtered.slice(startIndex, startIndex + PRODUCTS_PER_PAGE);
+  const pageValue = searchParams.get("page");
+  const pageIsValid =
+    pageValue == null ||
+    (Number.isInteger(requestedPage) && requestedPage >= 1 && requestedPage <= totalPages);
+  const categoryIsValid = requestedCategory == null || isCatalogFilter(requestedCategory);
+
+  useEffect(() => {
+    if (categoryIsValid && pageIsValid) return;
+    const next = new URLSearchParams(searchParams);
+    if (!categoryIsValid) next.delete("category");
+    if (!pageIsValid) next.delete("page");
+    setSearchParams(next, { replace: true });
+  }, [categoryIsValid, pageIsValid, searchParams, setSearchParams]);
+
+  const writeListing = (category: string, page: number) => {
+    const next = new URLSearchParams(searchParams);
+    if (!isCatalogFilter(category)) next.delete("category");
+    else next.set("category", category);
+    if (page <= 1) next.delete("page");
+    else next.set("page", String(page));
+    if (next.toString() === searchParams.toString()) return;
+    setSearchParams(next);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handlePageChange = (page: number) => {
     if (page < 1 || page > totalPages || page === currentPage) return;
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    writeListing(activeCategory, page);
   };
 
   return (
@@ -48,7 +83,45 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+        <div
+          role="group"
+          aria-label="Product categories"
+          className="mb-4 flex max-w-full flex-wrap justify-center gap-2"
+        >
+          {CATALOG_FILTERS.map((filter) => {
+            const selected = activeCategory === filter.id;
+            return (
+              <Button
+                key={filter.id}
+                type="button"
+                size="sm"
+                variant={selected ? "default" : "outline"}
+                aria-pressed={selected}
+                onClick={() => writeListing(filter.id, 1)}
+                className={
+                  selected
+                    ? "bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90"
+                    : ""
+                }
+              >
+                {filter.label}
+              </Button>
+            );
+          })}
+        </div>
+        <p className="mb-8 text-center text-gray-600" aria-live="polite">
+          {filtered.length} {filtered.length === 1 ? "product" : "products"}
+        </p>
+
+        {currentProducts.length === 0 ? (
+          <div className="mb-16 text-center">
+            <p className="mb-4 text-gray-600">No products match this category.</p>
+            <Button type="button" variant="outline" onClick={() => writeListing("all", 1)}>
+              All Products
+            </Button>
+          </div>
+        ) : (
+        <div id="product-grid" className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {currentProducts.map((product, index) => (
             <Link 
               key={product.slug} 
@@ -106,6 +179,7 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
             </Link>
           ))}
         </div>
+        )}
 
         {/* Pagination */}
         {totalPages > 1 && (

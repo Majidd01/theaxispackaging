@@ -173,9 +173,9 @@ export function industryStaticHtml(industry, products, industries) {
   );
 }
 
-export function productsIndexStaticHtml(products) {
+export function productsIndexStaticHtml(products, pageSize = 8) {
   const cards = products
-    .slice(0, 6)
+    .slice(0, pageSize)
     .map(
       (product, index) =>
         `<li><a href="/products/${esc(product.slug)}" class="block h-full bg-white rounded-lg shadow-lg overflow-hidden"><img src="${esc(product.image || "/assets/placeholder.jpg")}" alt="${esc(product.name)}" width="640" height="192" loading="lazy" decoding="async" class="w-full h-48 object-cover" /><span class="block p-4 text-lg text-center font-bold text-[var(--axis-dark-blue)]">${esc(product.name)}</span><span class="sr-only">Product ${index + 1}</span></a></li>`

@@ -49,6 +49,7 @@ const sustainabilityContent = await server.ssrLoadModule("/src/lib/sustainabilit
 const quoteContent = await server.ssrLoadModule("/src/lib/quote-page-content.ts");
 const moqContent = await server.ssrLoadModule("/src/lib/moq-page-content.ts");
 const catalogOrder = await server.ssrLoadModule("/src/lib/catalog-order.ts");
+const catalogCategories = await server.ssrLoadModule("/src/lib/catalog-categories.ts");
 await server.close();
 
 const { PRODUCT_CATEGORIES, INDUSTRIES, STATIC_PAGE_SEO } = {
@@ -323,7 +324,12 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
     body: rich || ["products", "industries", "sustainability", "moq", "quote"].includes(key) ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p><h2>Related pages</h2><nav aria-label="Related pages"><ul><li><a href="/products">Packaging products</a></li><li><a href="/industries">Industries</a></li><li><a href="/quote">Request a quotation</a></li><li><a href="/contact">Contact us</a></li><li><a href="/faqs">Packaging FAQs</a></li></ul></nav></main>`,
     staticContent:
       rich?.staticContent ||
-      (key === "products" ? productsIndexStaticHtml(catalogOrder.newestFirst(PRODUCT_CATEGORIES)) : undefined) ||
+      (key === "products"
+        ? productsIndexStaticHtml(
+            catalogOrder.newestFirst(PRODUCT_CATEGORIES),
+            catalogCategories.PRODUCTS_PER_PAGE
+          )
+        : undefined) ||
       (key === "industries" ? industriesIndexStaticHtml(INDUSTRIES) : undefined) ||
       (key === "sustainability" ? sustainabilityStaticHtml(sustainabilityContent.SUSTAINABILITY_PAGE) : undefined) ||
       (key === "moq" ? moqStaticHtml(moqContent.MOQ_PAGE) : undefined),
