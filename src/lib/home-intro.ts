@@ -9,5 +9,6 @@ export const HOME_INTRO = {
     { href: "/industries", label: "Industries" },
     { href: "/quote", label: "Request a quotation" },
     { href: "/contact", label: "Contact us" },
+    { href: "/faqs", label: "Packaging FAQs" },
   ],
 };

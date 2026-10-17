@@ -500,7 +500,25 @@ fs.writeFileSync(path.join(distDir, "_redirects"), redirectLines.join("\n"));
 const productFiles = PRODUCT_CATEGORIES.filter((product) =>
   fs.existsSync(path.join(distDir, "products", `${product.slug}.html`))
 );
-const sitemap = fs.readFileSync(path.join(distDir, "sitemap.xml"), "utf8");
+const sitemapPath = path.join(distDir, "sitemap.xml");
+let sitemapXml = fs.readFileSync(sitemapPath, "utf8");
+sitemapXml = sitemapXml.replace(/\s*<lastmod>[\s\S]*?<\/lastmod>/g, "");
+for (const blog of publishedBlogs) {
+  const rawDate = blog.updatedAt || blog.publishedAt;
+  const parsed = Date.parse(rawDate || "");
+  if (!blog.slug || !Number.isFinite(parsed)) continue;
+  const escapedSlug = blog.slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const locPattern = new RegExp(
+    `(<loc>\\s*https://www\\.theaxispackaging\\.com/blog/${escapedSlug}\\s*</loc>)`
+  );
+  if (!locPattern.test(sitemapXml)) continue;
+  sitemapXml = sitemapXml.replace(
+    locPattern,
+    `$1\n        <lastmod>${new Date(parsed).toISOString()}</lastmod>`
+  );
+}
+fs.writeFileSync(sitemapPath, sitemapXml);
+const sitemap = sitemapXml;
 const sitemapProducts = (sitemap.match(/\/products\//g) || []).length;
 const robots = fs.readFileSync(path.join(distDir, "robots.txt"), "utf8");
 const sample = fs.readFileSync(path.join(distDir, "products", "pizza-boxes.html"), "utf8");

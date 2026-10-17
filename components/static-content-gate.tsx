@@ -13,9 +13,9 @@ export function StaticContentGate() {
     const content = document.getElementById(CONTENT_ID);
     if (!content) return;
     const path = content.getAttribute("data-path") || "";
-    // The product catalog is rendered by React so pagination stays the same on a direct visit.
-    // The prerendered links remain in the HTML source for crawlers, but are inert once React runs.
-    const hide = path === "/products" || location.pathname !== path;
+    const params = new URLSearchParams(location.search);
+    const industryListing = path === "/products" && location.pathname === "/products" && params.has("industry");
+    const hide = location.pathname !== path || industryListing;
     content.hidden = hide;
     content.style.display = hide ? "none" : "";
     if (hide) {
@@ -24,6 +24,12 @@ export function StaticContentGate() {
     } else {
       content.removeAttribute("inert");
       content.removeAttribute("aria-hidden");
+    }
+    const cards = content.querySelector<HTMLElement>("#static-product-cards");
+    if (cards) {
+      const hideCards = path === "/products" && location.pathname === "/products" && !industryListing;
+      cards.hidden = hideCards;
+      cards.style.display = hideCards ? "none" : "";
     }
   }, [location.pathname, location.search]);
 

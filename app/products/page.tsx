@@ -3,6 +3,7 @@ import { ProductCategories } from "@/components/product-categories";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { INDUSTRIES } from "@/lib/constants";
+import { hasStaticContent } from "@/lib/has-static-content";
 import { ArrowRight } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { SeoHead } from "@/components/seo-head";
@@ -20,6 +21,28 @@ export default function ProductsPage() {
   const description = selectedIndustry
     ? industrySeo!.description
     : STATIC_PAGE_SEO.products.description;
+  const staticCatalog = hasStaticContent("/products");
+
+  if (staticCatalog && !selectedIndustry) {
+    return (
+      <div className="min-h-screen bg-white">
+        <SeoHead
+          title={title}
+          description={description}
+          path="/products"
+          jsonLd={webPageSchema({
+            title,
+            description,
+            path: "/products",
+            type: "CollectionPage",
+          })}
+        />
+        <ProductCategories embedInStatic />
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <SeoHead

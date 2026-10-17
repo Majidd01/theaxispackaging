@@ -11,6 +11,7 @@ import { newestFirst } from "@/lib/catalog-order";
 import { PRODUCT_CATEGORIES } from "@/lib/constants";
 import { ChevronLeft, ChevronRight, Package, Shield, Star, Truck } from "lucide-react";
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
 const placeholderImg = "/assets/placeholder.jpg";
 
@@ -21,9 +22,11 @@ interface ProductCategoriesProps {
     icon: string;
     slug: string;
   } | null;
+  /** Keep the prerendered catalogue and place only the working controls into it. */
+  embedInStatic?: boolean;
 }
 
-export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) {
+export function ProductCategories({ selectedIndustry, embedInStatic = false }: ProductCategoriesProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const requestedCategory = searchParams.get("category");
   const activeCategory = isCatalogFilter(requestedCategory) ? requestedCategory : "all";
@@ -67,22 +70,18 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
     writeListing(activeCategory, page);
   };
 
-  return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
-            {selectedIndustry
-              ? `${selectedIndustry.name} Packaging Solutions`
-              : "One for All Solution"}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {selectedIndustry
-              ? `Explore our specialized packaging products perfect for the ${selectedIndustry.name} industry. Each solution is designed to meet your specific requirements and enhance your brand presence.`
-              : "Get everything custom packaging your business needs all in one place. From folding cartons to luxury rigid boxes, we have it all."}
-          </p>
-        </div>
+  const controlsSlot =
+    embedInStatic && typeof document !== "undefined"
+      ? document.getElementById("static-catalog-controls")
+      : null;
+  const pagerSlot =
+    embedInStatic && typeof document !== "undefined"
+      ? document.getElementById("static-catalog-pager")
+      : null;
+  const embedded = Boolean(controlsSlot && pagerSlot);
 
+  const catalogueControls = (
+    <>
         <div
           role="group"
           aria-label="Product categories"
@@ -180,7 +179,11 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
           ))}
         </div>
         )}
+    </>
+  );
 
+  const cataloguePager = (
+    <>
         {/* Pagination */}
         {totalPages > 1 && (
           <nav
@@ -244,28 +247,6 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
             </Button>
           </nav>
         )}
-
-        {!selectedIndustry && (
-          <nav aria-label="All packaging products" className="mb-16">
-            <h2 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-6 text-center">
-              All packaging products
-            </h2>
-            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 max-w-5xl mx-auto">
-              {catalog.map((product) => (
-                <li key={`all-${product.slug}`}>
-                  <Link
-                    to={`/products/${product.slug}`}
-                    className="text-[var(--axis-dark-blue)] hover:text-[var(--axis-orange)] font-medium"
-                  >
-                    {product.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-
-        {/* Product Features */}
         <div className="grid md:grid-cols-4 gap-8 text-center">
           <div className="flex flex-col items-center">
             <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
@@ -294,6 +275,55 @@ export function ProductCategories({ selectedIndustry }: ProductCategoriesProps) 
             <p className="text-gray-600">Supplied to the specification agreed on your quotation</p>
           </div>
         </div>
+    </>
+  );
+
+  if (embedded && controlsSlot && pagerSlot) {
+    return (
+      <>
+        {createPortal(catalogueControls, controlsSlot)}
+        {createPortal(cataloguePager, pagerSlot)}
+      </>
+    );
+  }
+
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
+            {selectedIndustry
+              ? `${selectedIndustry.name} Packaging Solutions`
+              : "One for All Solution"}
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {selectedIndustry
+              ? `Explore our specialized packaging products perfect for the ${selectedIndustry.name} industry. Each solution is designed to meet your specific requirements and enhance your brand presence.`
+              : "Get everything custom packaging your business needs all in one place. From folding cartons to luxury rigid boxes, we have it all."}
+          </p>
+        </div>
+        {catalogueControls}
+        {cataloguePager}
+
+        {!selectedIndustry && (
+          <nav aria-label="All packaging products" className="mb-16">
+            <h2 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-6 text-center">
+              All packaging products
+            </h2>
+            <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 max-w-5xl mx-auto">
+              {catalog.map((product) => (
+                <li key={`all-${product.slug}`}>
+                  <Link
+                    to={`/products/${product.slug}`}
+                    className="text-[var(--axis-dark-blue)] hover:text-[var(--axis-orange)] font-medium"
+                  >
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </div>
     </section>
   );
