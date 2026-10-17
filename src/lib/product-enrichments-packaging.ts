@@ -372,7 +372,11 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     alt: "Premium custom metal tin containers with logo printing by Axis Packaging",
     breadcrumbName: "Tin Containers",
     hideProductFeatures: true,
-    internalLinks: [{ phrase: "custom vinyl stickers & labels", href: "/products/stickers-labels" }],
+    internalLinks: [
+      { phrase: "custom vinyl stickers & labels", href: "/products/stickers-labels" },
+      { phrase: "chocolates", href: "/industries/chocolate" },
+      { phrase: "coffee", href: "/industries/coffee" },
+    ],
     contentSections: [
       {
         title: "What Are Metal Tin Containers?",

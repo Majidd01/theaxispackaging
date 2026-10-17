@@ -15,6 +15,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       { phrase: "rigid boxes", href: "/products/rigid-boxes" },
       { phrase: "printed kraft boxes", href: "/products/kraft-boxes" },
       { phrase: "retail packaging", href: "/industries/retail" },
+      { phrase: "bar of soap", href: "/industries/soap" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -58,6 +59,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
     internalLinks: [
       { phrase: "jewellery gift boxes", href: "/products/jewelry-boxes" },
       { phrase: "gift wrapping boxes", href: "/products/gift-boxes" },
+      { phrase: "colour cosmetics", href: "/industries/cosmetics" },
       { phrase: "cosmetic boxes", href: "/products/cosmetic-boxes" },
       { phrase: "request a quotation", href: "/quote" },
     ],
@@ -148,6 +150,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       { phrase: "mailer boxes", href: "/products/mailer-boxes" },
       { phrase: "subscription boxes", href: "/products/subscription-boxes" },
       { phrase: "shipping packaging", href: "/industries/shipping" },
+      { phrase: "online sellers", href: "/industries/ecommerce" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
