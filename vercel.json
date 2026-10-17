@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/products/home-decor", "destination": "/products/home-decor-packaging-boxes", "statusCode": 301 },
+    { "source": "/products/garden-packaging", "destination": "/products/custom-garden-plant-packaging", "statusCode": 301 },
+    { "source": "/products/music-cases", "destination": "/products/musical-instrument-boxes", "statusCode": 301 },
+    { "source": "/products/art-boxes", "destination": "/products/custom-art-boxes", "statusCode": 301 }
+  ],
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
