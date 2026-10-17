@@ -348,8 +348,8 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
 const missingImages = [];
 const brokenLinks = [];
 const slugs = new Set(PRODUCT_CATEGORIES.map((product) => product.slug));
-if (slugs.size !== 49) {
-  throw new Error(`Expected 49 products, found ${slugs.size}`);
+if (slugs.size !== 50) {
+  throw new Error(`Expected 50 products, found ${slugs.size}`);
 }
 
 for (const product of PRODUCT_CATEGORIES) {
@@ -528,7 +528,7 @@ console.log(
   )
 );
 
-if (productFiles.length !== 49 || sitemapProducts !== 49 || missingImages.length || brokenLinks.length) {
+if (productFiles.length !== 50 || sitemapProducts !== 50 || missingImages.length || brokenLinks.length) {
   process.exit(1);
 }
 if (!sampleTitle || sampleTitle.includes("Custom Packaging UK | Custom Printed Boxes")) {

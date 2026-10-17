@@ -108,7 +108,9 @@ export function productStaticHtml(product, products) {
           )
           .join("")}</dl></div></section>`
       : "";
-  const faqHeading = product.slug === "pop-displays" ? "Frequently Asked Questions" : "Frequently asked questions";
+  const faqHeading =
+    product.faqHeading ||
+    (product.slug === "pop-displays" ? "Frequently Asked Questions" : "Frequently asked questions");
   const faqs = product.faqs?.length
     ? `<section class="py-12 bg-gray-50"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(faqHeading)}</h2><div class="space-y-4">${product.faqs
         .map(

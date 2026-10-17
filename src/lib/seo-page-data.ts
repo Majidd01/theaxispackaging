@@ -147,6 +147,17 @@ export function buildProductSeo(input: {
       primaryTopic: "custom pop display boxes",
     };
   }
+  if (input.slug === "custom-restaurant-menu-cards") {
+    return {
+      title: truncateMeta("Custom Restaurant Menu Cards UK: 8 Essential Buying Tips", 60),
+      description: truncateMeta(
+        input.metaDescription ||
+          "Custom Restaurant Menu Cards UK for restaurants, cafés and takeaways. Check the finished size, folds, print and finish, then request your menu quotation.",
+        160
+      ),
+      primaryTopic: "custom restaurant menu cards",
+    };
+  }
   const primaryTopic = `${input.name} UK`.replace(/\s+/g, " ").trim();
   // Prefer an explicit page title when one is set. Stored metaTitle values on older
   // products are leftover templates and must not replace the current UK titles.

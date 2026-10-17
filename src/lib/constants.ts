@@ -1763,6 +1763,309 @@ const _PRODUCT_CATEGORIES = [
       },
     ],
   },
+  {
+    name: "Custom Restaurant Menu Cards",
+    listedOn: "2026-10-17",
+    description:
+      "Custom Restaurant Menu Cards UK are printed cards and folded leaflets for restaurants, cafés and takeaways. The pictures are illustrative concepts, not photographs of current stock. Describe who reads the menu, the size and the artwork, then use the quotation form on this page.",
+    icon: "🍽️",
+    image: "/assets/menu-card-restaurant-table.webp",
+    slug: "custom-restaurant-menu-cards",
+    metaTitle: "Custom Restaurant Menu Cards UK: 8 Essential Buying Tips",
+    metaDescription:
+      "Custom Restaurant Menu Cards UK for restaurants, cafés and takeaways. Check the finished size, folds, print and finish, then request your menu quotation.",
+    h1: "Custom Restaurant Menu Cards UK",
+    alt: "Custom Restaurant Menu Cards UK illustrated as burgundy dinner cards on a restaurant table",
+    breadcrumbName: "Menu Cards",
+    faqHeading: "Frequently Asked Questions",
+    hideProductFeatures: true,
+    quoteTitle: "Request a custom menu card quote",
+    gallery: [
+      {
+        src: "/assets/menu-card-restaurant-table.webp",
+        alt: "Custom Restaurant Menu Cards UK illustrated as burgundy dinner cards on a restaurant table",
+      },
+      {
+        src: "/assets/menu-card-cafe-breakfast.webp",
+        alt: "Sage green cream and orange café menu cards with coffee breakfast and bakery headings",
+      },
+      {
+        src: "/assets/menu-card-takeaway-leaflet.webp",
+        alt: "Orange green and cream folded takeaway menu leaflet with burger chips and drinks",
+      },
+      {
+        src: "/assets/menu-card-finishing-layouts.webp",
+        alt: "Burgundy green and cream menu cards showing wine plates and Sunday layouts",
+      },
+    ],
+    internalLinks: [
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
+      { phrase: "pizza boxes", href: "/products/pizza-boxes" },
+      { phrase: "burger boxes", href: "/products/burger-boxes" },
+      { phrase: "custom paper cups", href: "/products/paper-cups" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "printed food trays", href: "/products/printed-food-trays" },
+      { phrase: "bakery boxes", href: "/products/bakery-boxes" },
+      { phrase: "sandwich boxes", href: "/products/sandwich-boxes" },
+      { phrase: "quotation form on this page", href: "#static-product-quote" },
+      { phrase: "allergen guidance for food businesses", href: "https://www.food.gov.uk/business-guidance/allergen-guidance-for-food-businesses" },
+    ],
+    contentSections: [
+      {
+        title: "Product Overview",
+        intro:
+          "A menu card is the printed sheet, fold or booklet a customer reads before they order. It is not a food carton, a bag or a cup. The card you receive is the one named on the quotation, not the picture in the gallery.",
+        subsections: [
+          {
+            title: "What the card has to do",
+            content:
+              "Someone has to read the dishes and the prices in your room, or in a few seconds at the counter. A photograph does not help if the type is too small or a fold hides the section they need.",
+          },
+          {
+            title: "What this page does not decide",
+            content:
+              "No paper weight, laminate, price, minimum order or delivery time is published here. The Food Standards Agency publishes allergen guidance for food businesses. A menu can be one place to show that information. Printing the card does not meet a legal duty by itself, and we do not check your dish wording.",
+          },
+        ],
+      },
+      {
+        title: "Benefits of Custom Restaurant Menu Cards UK",
+        intro:
+          "A printed menu is worth having when the offer is easier to read and easier to recognise as yours. It does not promise a busier service.",
+        subsections: [
+          {
+            title: "Menu readability",
+            content:
+              "Group dishes and drinks so the eye can find them, and leave space around prices. Say which words must stay large.",
+          },
+          {
+            title: "Brand recognition",
+            content:
+              "A logo and a short set of colours help a returning customer know they have the right card. Keep the logo clear of the dish names.",
+          },
+          {
+            title: "A clear dine-in and takeaway split",
+            content:
+              "A table card can stay in a holder. A takeaway leaflet has to survive a pocket and still be readable. Quote them separately if the dishes differ.",
+          },
+          {
+            title: "Room to organise the offer",
+            content:
+              "Breakfast and dinner rarely share one layout. Tell us how the day is divided before the design is locked.",
+          },
+          {
+            title: "Something staff can hand over",
+            content:
+              "Say whether the menu stays on the table, sits in a folder, or leaves with the customer.",
+          },
+          {
+            title: "A brief you can reprint from",
+            content:
+              "Keep the size and artwork so a later quotation can be compared with the first. A reprint is still a new quotation, and no date is promised.",
+          },
+        ],
+      },
+      {
+        title: "Customisation Options",
+        intro:
+          "These are questions for the brief. None of them is a standard specification, and each is confirmed only when the quotation says so.",
+        subsections: [
+          {
+            title: "Sizes and layout",
+            content:
+              "Measure the table, the holder or the counter before you pick a finished size. A card that is too wide gets in the way of plates, and one that is too small cramps the type. Sketch one column, two columns, or a drinks panel.",
+          },
+          {
+            title: "Logo and brand colours",
+            content:
+              "Send a logo you are allowed to print, and the colours you want matched as closely as the process allows. Do not assume a foil, a spot colour or a special ink until the quotation includes it.",
+          },
+          {
+            title: "Single-sheet, folded and multi-page concepts",
+            content:
+              "A single sheet suits a short list. A fold suits a leaflet or a card that hides a section until it is opened. Several pages suit a longer list, such as wine beside food. Ask which structure is feasible for your quantity.",
+          },
+          {
+            title: "Artwork preparation",
+            content:
+              "Say whether you have finished artwork or a logo and a written list. You supply the dish names, prices and any allergen wording. We do not invent dishes or prices.",
+          },
+        ],
+      },
+      {
+        title: "Popular Menu Card Formats",
+        intro:
+          "Choose the format from how the menu is used. A shape that looks generous in a photograph can be awkward in service.",
+        subsections: [
+          {
+            title: "Single-sheet cards",
+            content:
+              "A single sheet is the simplest card for a table or a counter. It suits a short list. On a long menu the type shrinks or the card grows, so say which of those you want to avoid.",
+          },
+          {
+            title: "Folded menus",
+            content:
+              "A fold gives panels without a booklet and is a common takeaway shape. Mark the cover and the panel a customer sees first. Leave a margin so type does not sit in the crease.",
+          },
+          {
+            title: "Multi-page menus",
+            content:
+              "Several leaves suit food on one page and drinks on another. Say how the pages should be held together, and do not assume stitching or a cover board until the quotation includes it.",
+          },
+          {
+            title: "Takeaway leaflets",
+            content:
+              "A leaflet is read away from the restaurant. The food still needs its own pack. A round pizza belongs in pizza boxes, a closed burger in burger boxes, and an open portion may be printed food trays.",
+          },
+        ],
+      },
+      {
+        title: "Materials and Finishing Options",
+        intro:
+          "Paper and card are discussed from how the menu is handled. This page does not name a weight, a coating or a certificate.",
+        subsections: [
+          {
+            title: "Paper and card thickness",
+            content:
+              "A card that stays on the table all evening is handled more than a leaflet read once. Ask what material is proposed. A thicker sheet can be harder to fold, so the quotation should name it in words you can compare.",
+          },
+          {
+            title: "Lamination and other finishes",
+            content:
+              "A laminate or varnish can change how a card feels and how it marks. Treat a finish as included only when the quotation says so. Gloss can glare under restaurant lights, and matte can show fingerprints. Neither means the card is waterproof.",
+          },
+          {
+            title: "Print and photographs",
+            content:
+              "A picture uses more of the card than type and needs artwork that stays sharp at the finished size. A type-only menu is often easier to read and to update. Say which dishes, if any, need a picture.",
+          },
+        ],
+      },
+      {
+        title: "How to Choose the Right Menu Cards",
+        intro:
+          "These eight checks keep two quotations comparable. Answer them before you approve artwork.",
+        subsections: [
+          {
+            title: "1. Name the reader and the place",
+            content:
+              "Say whether the card lives on a table, at the till, or in a customer’s hand. A dining room, a café counter and a takeaway door are different briefs.",
+          },
+          {
+            title: "2. List the sections you need now",
+            content:
+              "Write the sections, such as breakfast, mains and drinks, and say how often they change. A weekly change needs a simpler update than a menu that changes twice a year.",
+          },
+          {
+            title: "3. Fix the finished size and the fold",
+            content:
+              "Give the width and height, or the space the card must fit. Say if it is a single sheet, a fold or a set of pages, and include a holder size if you have one.",
+          },
+          {
+            title: "4. Describe the handling",
+            content:
+              "Say how long the card should stay in use and whether it is handled with damp hands. Ask which material is proposed. Do not send a guessed paper code from another website.",
+          },
+          {
+            title: "5. Set the type before the decoration",
+            content:
+              "The dish name and the price have to be readable at arm’s length. Agree a size for those words, then place the logo where it does not compete with them.",
+          },
+          {
+            title: "6. Decide photographs or type",
+            content:
+              "Use photographs where they help someone choose, and send images you have the right to print. A soft photo will not become sharp because the layout looks premium.",
+          },
+          {
+            title: "7. Ask about finishing in the same brief",
+            content:
+              "If you want a laminate or another finish, ask now. A finish added later can change the feel and the glare. Wait for the quotation before you describe a coating to customers.",
+          },
+          {
+            title: "8. State the quantity and the artwork",
+            content:
+              "Give the quantity you want quoted. No minimum is published on this page. Say whether the artwork is finished, and who will check the dish names. Quotation requests receive a 24h quote response.",
+          },
+        ],
+      },
+      {
+        title: "Menu Cards for Restaurants, Cafés and Takeaways",
+        intro:
+          "The same printer can serve more than one kind of food business. The useful difference is how the menu is held and how the food leaves.",
+        subsections: [
+          {
+            title: "Restaurants",
+            content:
+              "A dining room usually needs a card that stays at the table. Wine and the main list may be separate covers, as the gallery suggests. Measure the table and any holder. Food that is packed to leave is a different product from the card.",
+          },
+          {
+            title: "Cafés",
+            content:
+              "Keep drinks, breakfast and bakery items apart so a coffee order is not buried in mains. Cakes that need a lid are bakery boxes, and a filled roll that must stay closed is better discussed as sandwich boxes. The menu only lists them.",
+          },
+          {
+            title: "Takeaways",
+            content:
+              "A takeaway needs a leaflet people can carry, plus packaging for the food. Drinks are often quoted as custom paper cups, and the order may leave in paper shopping bags. Wider food packs sit under restaurant packaging.",
+          },
+        ],
+      },
+      {
+        title: "Request a Custom Menu Card Quote",
+        intro:
+          "Use the quotation form on this page. Axis Packaging supplies custom printed menu cards from Leeds, and customer support is available 24/7. Price and timing are confirmed on the quotation, not on this page.",
+        subsections: [
+          {
+            title: "What to include",
+            content:
+              "Name the format, the approximate size, the quantity and whether you have artwork. Say if it is for the table, the counter or a handout. Attach the logo and the dish list.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a custom restaurant menu card?",
+        answer:
+          "It is a printed card, folded leaflet or set of pages that lists what you sell. It is not a carton for the food. Format, size and print are confirmed on the quotation.",
+      },
+      {
+        question: "Do these pictures show Axis Packaging stock?",
+        answer:
+          "No. The gallery shows illustrative concepts with fictional names. The card you can order is the size, format and artwork confirmed on your quotation.",
+      },
+      {
+        question: "Can you print a single sheet, a folded leaflet and a multi-page menu?",
+        answer:
+          "Ask for the format you need, or ask for more than one to be quoted. The quotation confirms which structure can be supplied.",
+      },
+      {
+        question: "Which paper weight should I choose?",
+        answer:
+          "Do not guess a weight from this page. Describe where the card is used and how long it should last. The material is named on the quotation.",
+      },
+      {
+        question: "Can the menu include our logo and brand colours?",
+        answer:
+          "Yes, when you supply artwork you are allowed to print. Say which colours matter most. A special ink or a foil is included only if the quotation says so.",
+      },
+      {
+        question: "What should I send with the artwork?",
+        answer:
+          "Send the logo, the dish list, the prices and any allergen wording you want printed. A clear written list is enough to start. A finished file helps if you already have one.",
+      },
+      {
+        question: "Are menu cards the same as food packaging?",
+        answer:
+          "No. A menu describes the food. Trays, cartons, cups and bags are quoted separately. Mention them if you need them, so the menu job stays clear.",
+      },
+      {
+        question: "Will a new menu card increase sales by a set amount?",
+        answer:
+          "No figure is promised. A clear menu can make the offer easier to read. Whether people order more depends on the food and the service, which this page cannot know.",
+      },
+    ],
+  },
 ];
 
 export const PRODUCT_CATEGORIES = _PRODUCT_CATEGORIES.map((product) =>

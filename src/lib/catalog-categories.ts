@@ -20,6 +20,7 @@ export type CatalogFilterId = (typeof CATALOG_FILTERS)[number]["id"];
 const CATEGORY_SLUGS: Record<Exclude<CatalogFilterId, "all">, readonly string[]> = {
   food: [
     "printed-food-trays",
+    "custom-restaurant-menu-cards",
     "pizza-boxes",
     "burger-boxes",
     "noodle-boxes",
@@ -53,6 +54,7 @@ const CATEGORY_SLUGS: Record<Exclude<CatalogFilterId, "all">, readonly string[]>
     "kraft-boxes",
     "stickers-labels",
     "pop-displays",
+    "custom-restaurant-menu-cards",
     "apparel-packaging",
     "candle-boxes",
     "wine-boxes",
