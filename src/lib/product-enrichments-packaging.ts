@@ -410,62 +410,252 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   },
 
   "pop-displays": {
-    metaTitle: "Custom POP Displays UK | Axis Packaging",
+    metaTitle: "Custom Pop Display Boxes UK: 7 Essential Shop-Floor Tips",
     metaDescription:
-      "Custom POP displays for UK shops, supermarkets and exhibitions. Cardboard, corrugated and fabric options, with printing confirmed on your quotation.",
-    h1: "Custom POP Displays for UK Retail",
+      "Custom Pop Display Boxes UK for shops, brands and promotions. Check the size, weight, branding and counter space before you request a display quotation.",
+    h1: "Custom Pop Display Boxes UK",
+    image: "/assets/pop-display-countertop-teal.webp",
+    gallery: [
+      {
+        src: "/assets/pop-display-countertop-teal.webp",
+        alt: "Custom Pop Display Boxes UK illustrated as a teal cardboard countertop display",
+      },
+      {
+        src: "/assets/pop-display-shelf-orange.webp",
+        alt: "Orange cardboard shelf display concept with open compartments",
+      },
+      {
+        src: "/assets/pop-display-tiered-yellow.webp",
+        alt: "Yellow tiered cardboard counter display concept for small cartons",
+      },
+      {
+        src: "/assets/pop-display-counter-red.webp",
+        alt: "Red countertop display concept with two wells for plain jars",
+      },
+    ],
     description:
-      "Custom POP displays help UK shops, supermarkets and exhibitions present products where customers can see them. Axis Packaging supplies cardboard, corrugated and fabric display structures, with full-colour printing for your branding. Tell us the products, the size and where the display will stand, and you can request a quotation. Pair a display with custom folding carton boxes, custom stickers & labels or printed kraft boxes. Retail packaging options can be quoted alongside the display.",
-    alt: "Custom POP displays for in-store product visibility",
+      "Custom Pop Display Boxes UK shops use are cardboard units that hold products on a counter or at a shelf end. The pictures here are illustrative concepts, not photographs of current stock. Describe the product and the space, then use the quotation form on this page.",
+    alt: "Custom Pop Display Boxes UK illustrated as a teal cardboard countertop display",
     breadcrumbName: "POP Displays",
     hideProductFeatures: true,
     internalLinks: [
-      { phrase: "custom folding carton boxes", href: "/products/folding-carton-boxes" },
-      { phrase: "custom stickers & labels", href: "/products/stickers-labels" },
-      { phrase: "printed kraft boxes", href: "/products/kraft-boxes" },
-      { phrase: "retail packaging options", href: "/industries/retail" },
-      { phrase: "request a quotation", href: "/quote" },
+      { phrase: "folding carton boxes", href: "/products/folding-carton-boxes" },
+      { phrase: "stickers and labels", href: "/products/stickers-labels" },
+      { phrase: "kraft boxes", href: "/products/kraft-boxes" },
+      { phrase: "cosmetic boxes", href: "/products/cosmetic-boxes" },
+      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "retail POP display guide", href: "/blog/custom-retail-pop-displays-visibility-conversions" },
+      { phrase: "quotation form on this page", href: "#static-product-quote" },
     ],
     contentSections: [
       {
-        title: "What Are Retail POP Displays?",
-        intro: "Retail POP displays (Point of Purchase displays) are branded display structures used to showcase products in retail environments and attract customer attention at the point of sale. These displays help businesses improve product visibility, organize retail presentation, support promotional campaigns, increase customer engagement, and encourage impulse purchases.",
-        bullets: ["Supermarkets", "Convenience stores", "Exhibitions", "Retail chains", "Trade shows", "Checkout counters"],
-      },
-      {
-        title: "Benefits of Retail POP Displays",
+        title: "Product Overview",
+        intro:
+            "Pop display boxes hold a product out from ordinary shelving. Point of purchase is where someone decides whether to pick it up. The display gives that product a space that suits your counter or shelf.",
         subsections: [
-          { title: "Better Product Visibility", content: "Strategically designed displays place products directly in front of customers, helping improve visibility inside crowded retail spaces." },
-          { title: "Stronger Retail Branding", content: "Branded displays help reinforce business identity while maintaining a cleaner and more professional in-store presentation." },
-          { title: "Encourages Impulse Purchases", content: "Products displayed near checkout counters or high-traffic retail areas often receive more customer attention and unplanned purchases." },
-          { title: "Organized Product Presentation", content: "POP displays help retailers keep products properly arranged and easier for customers to browse. Many brands combine displays with printed kraft boxes for premium retail presentation." },
+          {
+            title: "How a point-of-purchase display works",
+            content:
+              "A useful display keeps products together, shows the front of the pack and stays put as items are taken. A low unit suits a till. A taller unit suits an aisle end. Weight and space decide the brief.",
+          },
+          {
+            title: "What to tell us before a quotation",
+            content:
+              "Send the product size, how many units should be on show, and the width and depth of the spot. Folding carton boxes, kraft boxes and stickers and labels can be quoted with the display. Our retail POP display guide covers wider presentation. This page stays with the stand.",
+          },
         ],
       },
-    ],
-    productTypesTitle: "Types of POP Display Stands",
-    productTypes: [
-      { title: "Curved Pop Up Display Stand", detail: "Creates a premium and eye-catching presentation for exhibitions, promotional setups, and branded retail environments." },
-      { title: "Cardboard Pop Up Display Stands", detail: "Lightweight cardboard display stands for temporary promotions, supermarkets and retail campaigns." },
-      { title: "Fabric Pop Up Display Stands", detail: "Commonly used for exhibitions, trade shows, and large promotional environments requiring lightweight and reusable branding displays." },
-    ],
-    specificationsBullets: [
-      "Custom sizes and display structures available",
-      "Cardboard, corrugated, and fabric material options",
-      "Full-colour printing for logos, graphics and brand colours",
-      "Matte, gloss, and UV finishes available",
-      "Lightweight but durable construction",
-      "Easy assembly and transportation",
-      "Suitable for retail stores and exhibitions",
-      "Order quantity confirmed on your quotation",
-      "Timing confirmed on your quotation",
+      {
+        title: "Benefits of Custom Pop Display Boxes UK",
+        intro:
+          "A display is worth having when it makes the product easier to see and easier to keep tidy. It does not guarantee a sales increase.",
+        subsections: [
+          {
+            title: "Product visibility",
+            content:
+              "Shoppers notice a grouped, forward-facing product more easily than the same item lost in a mixed shelf. A header and a consistent row give the range one outline.",
+          },
+          {
+            title: "Organised retail presentation",
+            content:
+              "Compartments and shelves stop products sliding into a pile. Staff can refill a defined space instead of rebuilding a stack, and an empty facing is obvious.",
+          },
+          {
+            title: "Brand recognition",
+            content:
+              "A logo and a short name on the header help a returning customer find the range. Keep the print large enough to read in passing. Match it to the packs in the display, including cosmetic boxes, so the stand and the product look like one range.",
+          },
+          {
+            title: "Countertop promotions",
+            content:
+              "A counter is a small space. A compact unit can hold a promotion without taking the whole till. Agree the footprint with staff. A tall unit on a narrow counter is awkward to serve around.",
+          },
+          {
+            title: "Product accessibility",
+            content:
+              "Customers should be able to take one item without dismantling the display. Open fronts and compartments that match the pack help. Say if the product is fragile. A deep well that hides it is a poor result.",
+          },
+          {
+            title: "Retail campaign flexibility",
+            content:
+              "A display made for one pack size is awkward for a taller pack later. If the range may change, ask which dimensions can vary and whether new header artwork needs a separate quotation.",
+          },
+        ],
+      },
+      {
+        title: "Customization Options",
+        intro:
+            "These options depend on the product and what is technically feasible. Nothing here is a standard specification.",
+        subsections: [
+          {
+            title: "Custom dimensions",
+            content:
+              "Start from the product and the space, not a catalogue size name. Compartments should clear the pack, including lids. The outside must still fit the counter, with room to serve beside it.",
+          },
+          {
+            title: "Cardboard material options",
+            content:
+              "Counter units are commonly discussed in carton board or corrugated board. A heavier or taller unit usually needs a stronger board. Ask which board is proposed for the weight, and how it is assembled.",
+          },
+          {
+            title: "Brand colours and artwork",
+            content:
+              "Share the colours and the header artwork. Plain colour can be enough when the packs already carry the detail. Confirm how many colours the quotation includes.",
+          },
+          {
+            title: "Logo printing",
+            content:
+              "A logo is most useful on the header and the panel facing the shopper. Keep it clear of folds. If it must match other packaging, send that reference with the enquiry.",
+          },
+          {
+            title: "Display compartments",
+            content:
+              "Compartments separate flavours, sizes or price groups. Too many dividers waste space. Too few let mixed products collapse together. Tell us how you want the range grouped, and whether customers should see one row or a stacked column.",
+          },
+          {
+            title: "Countertop and shelf-display concepts",
+            content:
+              "A countertop concept is reached from above. A shelf concept is taller and read from the front. The pictures compare those silhouettes. The unit you receive is the one confirmed on the quotation, not the picture.",
+          },
+          {
+            title: "Finishing options",
+            content:
+              "A matte or gloss surface can change how colour looks under shop lighting. Ask which finish is suitable for the board and the print. Do not assume a special coating, a window or a particular strength until it is written on the quotation.",
+          },
+        ],
+      },
+      {
+        title: "Where Are Pop Display Boxes Used?",
+        intro:
+          "The same idea turns up in very different shops. The useful question is not the sector name. It is how much space you have, how heavy the product is, and how customers pick it up.",
+        subsections: [
+          {
+            title: "Retail shops and supermarkets",
+            content:
+              "Shops and supermarkets both use counter units and aisle-end units. A supermarket bay is wider than a boutique counter, so measure the bay, including the height under any shelf above it.",
+          },
+          {
+            title: "Cosmetics and personal care",
+            content:
+              "Jars and cartons are often small, and shades need to stay apart. Cosmetic boxes can sit in the display so the pack and the stand share colours. Avoid a well that hides the shade name.",
+          },
+          {
+            title: "Snacks and confectionery",
+            content:
+              "Bags and cartons crush if the well is tight or the stack is too high. Say whether the pack is a bag, a carton or a jar, and how many should stay on show.",
+          },
+          {
+            title: "Promotional counters",
+            content:
+              "Sampling desks and short promotions need a unit staff can place and remove. Paper shopping bags are a separate item for people who buy there. Describe the table size and whether the display travels.",
+          },
+        ],
+      },
+      {
+        title: "How to Choose the Right POP Display",
+        intro:
+          "These seven checks keep a quotation comparable. They are shop-floor questions, not a scoring system. Answer them before you approve artwork.",
+        subsections: [
+          {
+            title: "1. Measure the product",
+            content:
+              "Record length, width and height of the pack as it will sit in the unit, including lids. If several sizes share one display, measure the largest and say how the others should be grouped.",
+          },
+          {
+            title: "2. Weigh a full unit in your mind",
+            content:
+              "Give the weight of one product and how many should be on show. A light carton and a glass jar need different boards. That choice belongs on the quotation.",
+          },
+          {
+            title: "3. Set the display capacity",
+            content:
+              "Decide how many products should be visible, not how many can be forced in. A packed unit can hide the front item. Capacity is part of the presentation.",
+          },
+          {
+            title: "4. Measure the shop space",
+            content:
+              "Note the counter or shelf width, the depth, and anything above the unit. Leave room for the till, a card machine or a queue. A display that only fits when other tools are moved will not stay in place.",
+          },
+          {
+            title: "5. Decide the branding",
+            content:
+              "List the words and the logo that must be readable, and the ones that can stay on the product pack. A header with too much copy becomes a poster. Match the colours to the packaging customers already recognise.",
+          },
+          {
+            title: "6. Ask about stability",
+            content:
+              "Ask how the base stays upright when someone takes the front product or brushes past. Do not treat a picture as proof that the structure is stable.",
+          },
+          {
+            title: "7. Put the brief on the quotation",
+            content:
+              "Compare offers only when size, capacity, footprint and print match. Ask which board is proposed. This page does not state a price, a minimum order or a lead time.",
+          },
+        ],
+      },
+      {
+        title: "Request Custom Pop Display Packaging",
+        intro:
+          "Use the quotation form on this page with the seven checks above. Axis Packaging will confirm what can be supplied. If the cartons inside the display are part of the same job, mention them so the sizes can be considered together.",
+      },
     ],
     faqs: [
-      { question: "What are retail POP displays used for?", answer: "Retail POP displays are used to showcase products in high-visibility areas inside stores, helping brands attract customer attention and increase product engagement at the point of purchase." },
-      { question: "Which products work best with POP retail displays?", answer: "POP displays are commonly used for cosmetics, snacks, beverages, electronics, confectionery, promotional products, skincare items, and seasonal retail products." },
-      { question: "Are cardboard pop up display stands durable?", answer: "Cardboard POP displays are lightweight stands for retail promotions. The structure and finish are confirmed on your quotation." },
-      { question: "What is the difference between floor displays and counter displays?", answer: "Floor displays are larger standalone retail displays placed in aisles or store sections, while counter displays are smaller units designed for checkout counters and impulse-purchase areas." },
-      { question: "Can custom POP displays be printed with branding?", answer: "Yes. Custom POP displays can be printed with logos, product graphics, promotional messaging and brand colours. Share the artwork, colours and display size when you request a quotation." },
+      {
+        question: "What is a pop display box?",
+        answer:
+          "It is a cardboard unit that holds products at the point of purchase, usually on a counter or a shelf. The stand presents the packs and the branding. It is not the same thing as the product carton sitting inside it.",
+      },
+      {
+        question: "Do these pictures show Axis Packaging stock?",
+        answer:
+          "No. The gallery shows illustrative concepts of counter and shelf displays. The unit you can order is the structure, size and print confirmed on your quotation.",
+      },
+      {
+        question: "How do I choose between a counter unit and a shelf unit?",
+        answer:
+            "Use a counter unit for a till or low table. Use a taller shelf unit when people read the display from the front in an aisle. Measure the spot before you choose.",
+      },
+      {
+        question: "Can the display be printed with our logo?",
+        answer:
+          "Logo printing can be included when you supply the artwork and the quotation confirms the print. Say which panels need the logo. Print does not change whether the board is strong enough for the product weight.",
+      },
+      {
+        question: "What should I measure before requesting a quote?",
+        answer:
+          "Measure the product, including the lid, and the counter or shelf space. Add how many units should be on show and the weight of one product. Those figures let two quotations be compared on the same brief.",
+      },
+      {
+        question: "Will a display increase sales by a set amount?",
+        answer:
+          "No figure is promised. A display can make a product easier to see and easier to keep tidy. Whether people buy more depends on the product, the shop and the offer, which this page cannot know.",
+      },
+      {
+        question: "Can one display hold several product sizes?",
+        answer:
+            "Sometimes, if compartments fit the largest pack and you say how sizes should be grouped. Mixed sizes in one well are harder to shop. Ask for that layout on the quotation.",
+      },
     ],
-    quoteTitle: "Request Custom POP Displays for Your Brand",
+    quoteTitle: "Request custom pop display packaging",
   },
 };

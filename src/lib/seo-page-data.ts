@@ -138,13 +138,13 @@ export function buildProductSeo(input: {
 }): { title: string; description: string; primaryTopic: string } {
   if (input.slug === "pop-displays") {
     return {
-      title: truncateMeta("Custom POP Displays UK | Axis Packaging", 60),
+      title: truncateMeta("Custom Pop Display Boxes UK: 7 Essential Shop-Floor Tips", 60),
       description: truncateMeta(
         input.metaDescription ||
-          "Custom POP displays for UK shops, supermarkets and exhibitions. Cardboard, corrugated and fabric options, with printing confirmed on your quotation.",
-        155
+          "Custom Pop Display Boxes UK for shops, brands and promotions. Check the size, weight, branding and counter space before you request a display quotation.",
+        160
       ),
-      primaryTopic: "custom pop displays",
+      primaryTopic: "custom pop display boxes",
     };
   }
   const primaryTopic = `${input.name} UK`.replace(/\s+/g, " ").trim();

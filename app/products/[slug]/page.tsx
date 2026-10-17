@@ -98,6 +98,7 @@ export default function ProductDetailPage() {
   const [submitting, setSubmitting] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [companyWebsite, setCompanyWebsite] = useState("");
+  const [activeImage, setActiveImage] = useState(0);
 
   const validate = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -533,49 +534,106 @@ export default function ProductDetailPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left Side - Product Images */}
             <div>
-              {/* Main Product Image */}
-              <div className="mb-4">
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = placeholderImg;
-                  }}
-                  alt={(product.alt || product.name).split(",")[0].trim()}
-                  width={800}
-                  height={384}
-                  fetchPriority="high"
-                  decoding="async"
-                  className="w-full h-96 object-cover rounded-lg shadow-lg"
-                />
-              </div>
-
-              {/* Thumbnail Gallery */}
-              <div className="flex gap-2">
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border-2 border-[var(--axis-orange)]"
-                />
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border border-gray-300"
-                />
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border border-gray-300"
-                />
-                <img
-                  src={product.image || placeholderImg}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
-                  alt={product.alt || product.name}
-                  className="w-16 h-16 object-cover rounded border border-gray-300"
-                />
-              </div>
+              {Array.isArray((product as { gallery?: { src: string; alt: string }[] }).gallery) &&
+              (product as { gallery: { src: string; alt: string }[] }).gallery.length > 1 ? (
+                (() => {
+                  const shots = (product as { gallery: { src: string; alt: string }[] }).gallery;
+                  const selected = shots[Math.min(activeImage, shots.length - 1)];
+                  return (
+                    <div>
+                      <img
+                        src={selected.src}
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = placeholderImg;
+                        }}
+                        alt={selected.alt.split(",")[0].trim()}
+                        width={1152}
+                        height={864}
+                        fetchPriority="high"
+                        decoding="async"
+                        className="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
+                      />
+                      <div className="grid grid-cols-4 gap-2 mt-3" role="group" aria-label="Display images">
+                        {shots.map((shot, index) => (
+                          <button
+                            key={shot.src}
+                            type="button"
+                            aria-pressed={index === Math.min(activeImage, shots.length - 1)}
+                            aria-label={shot.alt}
+                            onClick={() => setActiveImage(index)}
+                            onKeyDown={(event) => {
+                              const last = shots.length - 1;
+                              let next = index;
+                              if (event.key === "ArrowRight") next = index === last ? 0 : index + 1;
+                              else if (event.key === "ArrowLeft") next = index === 0 ? last : index - 1;
+                              else if (event.key === "Home") next = 0;
+                              else if (event.key === "End") next = last;
+                              else return;
+                              event.preventDefault();
+                              setActiveImage(next);
+                              const buttons = event.currentTarget.parentElement?.querySelectorAll("button");
+                              buttons?.[next]?.focus();
+                            }}
+                            className={`rounded-md overflow-hidden border-2 focus:outline-none focus:ring-2 focus:ring-[var(--axis-orange)] ${
+                              index === Math.min(activeImage, shots.length - 1)
+                                ? "border-[var(--axis-orange)]"
+                                : "border-gray-200"
+                            }`}
+                          >
+                            <img src={shot.src} alt="" className="w-full aspect-square object-cover" />
+                          </button>
+                        ))}
+                      </div>
+                      <p className="text-xs text-gray-500 mt-2">
+                        These pictures are illustrative concepts, not photographs of Axis Packaging stock.
+                      </p>
+                    </div>
+                  );
+                })()
+              ) : (
+                <>
+                  <div className="mb-4">
+                    <img
+                      src={product.image || placeholderImg}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = placeholderImg;
+                      }}
+                      alt={(product.alt || product.name).split(",")[0].trim()}
+                      width={800}
+                      height={384}
+                      fetchPriority="high"
+                      decoding="async"
+                      className="w-full h-96 object-cover rounded-lg shadow-lg"
+                    />
+                  </div>
+                  <div className="flex gap-2">
+                    <img
+                      src={product.image || placeholderImg}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                      alt={product.alt || product.name}
+                      className="w-16 h-16 object-cover rounded border-2 border-[var(--axis-orange)]"
+                    />
+                    <img
+                      src={product.image || placeholderImg}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                      alt={product.alt || product.name}
+                      className="w-16 h-16 object-cover rounded border border-gray-300"
+                    />
+                    <img
+                      src={product.image || placeholderImg}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                      alt={product.alt || product.name}
+                      className="w-16 h-16 object-cover rounded border border-gray-300"
+                    />
+                    <img
+                      src={product.image || placeholderImg}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = placeholderImg; }}
+                      alt={product.alt || product.name}
+                      className="w-16 h-16 object-cover rounded border border-gray-300"
+                    />
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Right Side - Product Details & Quote Form */}

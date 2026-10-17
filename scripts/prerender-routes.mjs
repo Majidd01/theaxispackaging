@@ -357,6 +357,10 @@ for (const product of PRODUCT_CATEGORIES) {
   const routePath = `/products/${product.slug}`;
   const imageFile = path.join(root, "public", (product.image || "").replace(/^\//, ""));
   if (!product.image || !fs.existsSync(imageFile)) missingImages.push(product.slug);
+  for (const shot of product.gallery || []) {
+    const shotFile = path.join(root, "public", String(shot.src || "").replace(/^\//, ""));
+    if (!shot.src || !fs.existsSync(shotFile)) missingImages.push(`${product.slug}:${shot.src || "gallery"}`);
+  }
   for (const link of product.internalLinks || []) {
     const target = link.href.replace(/^\//, "").split("/");
     if (target[0] === "products" && !slugs.has(target[1])) brokenLinks.push(`${product.slug} -> ${link.href}`);

@@ -50,6 +50,20 @@ function list(items) {
     .join("")}</ul>`;
 }
 
+function productGalleryHtml(product) {
+  const shots = Array.isArray(product.gallery) ? product.gallery.filter((shot) => shot && shot.src) : [];
+  if (shots.length < 2) {
+    return `<img src="${esc(product.image)}" alt="${esc((product.alt || product.name).split(",")[0].trim())}" width="800" height="384" fetchpriority="high" decoding="async" class="w-full h-96 object-cover rounded-lg shadow-lg" />`;
+  }
+  const buttons = shots
+    .map(
+      (shot, index) =>
+        `<button type="button" class="rounded-md overflow-hidden border-2 ${index === 0 ? "border-[var(--axis-orange)]" : "border-gray-200"} focus:outline-none focus:ring-2 focus:ring-[var(--axis-orange)]" data-gallery-tab data-src="${esc(shot.src)}" data-alt="${esc(shot.alt || product.name)}" aria-pressed="${index === 0 ? "true" : "false"}" aria-label="${esc(shot.alt || product.name)}"><img src="${esc(shot.src)}" alt="" width="160" height="160" class="w-full aspect-square object-cover" /></button>`
+    )
+    .join("");
+  return `<div data-product-gallery><img data-gallery-main src="${esc(shots[0].src)}" alt="${esc(shots[0].alt || product.name)}" width="1152" height="864" fetchpriority="high" decoding="async" class="w-full aspect-[4/3] object-cover rounded-lg shadow-lg" /><div class="grid grid-cols-4 gap-2 mt-3" role="group" aria-label="Display images">${buttons}</div><p class="text-xs text-gray-500 mt-2">These pictures are illustrative concepts, not photographs of Axis Packaging stock.</p><script>(function(){var root=document.querySelector("[data-product-gallery]");if(!root||root.dataset.ready)return;root.dataset.ready="1";var main=root.querySelector("[data-gallery-main]");var tabs=[].slice.call(root.querySelectorAll("[data-gallery-tab]"));function select(tab){tabs.forEach(function(item){var on=item===tab;item.setAttribute("aria-pressed",on?"true":"false");item.classList.toggle("border-[var(--axis-orange)]",on);item.classList.toggle("border-gray-200",!on);});main.src=tab.getAttribute("data-src");main.alt=tab.getAttribute("data-alt")||"";}tabs.forEach(function(tab,index){tab.addEventListener("click",function(){select(tab);});tab.addEventListener("keydown",function(event){var next=null;if(event.key==="ArrowRight")next=tabs[(index+1)%tabs.length];else if(event.key==="ArrowLeft")next=tabs[(index-1+tabs.length)%tabs.length];else if(event.key==="Home")next=tabs[0];else if(event.key==="End")next=tabs[tabs.length-1];if(!next)return;event.preventDefault();next.focus();select(next);});});})();</script></div>`;
+}
+
 export function productStaticHtml(product, products) {
   const routePath = `/products/${product.slug}`;
   const h1 = product.h1 || product.name;
@@ -94,8 +108,9 @@ export function productStaticHtml(product, products) {
           )
           .join("")}</dl></div></section>`
       : "";
+  const faqHeading = product.slug === "pop-displays" ? "Frequently Asked Questions" : "Frequently asked questions";
   const faqs = product.faqs?.length
-    ? `<section class="py-12 bg-gray-50"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">Frequently asked questions</h2><div class="space-y-4">${product.faqs
+    ? `<section class="py-12 bg-gray-50"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-6">${esc(faqHeading)}</h2><div class="space-y-4">${product.faqs
         .map(
           (faq) =>
             `<details class="bg-white border border-gray-200 rounded-lg" open><summary class="p-4 font-semibold text-[var(--axis-dark-blue)]">${esc(faq.question)}</summary><div class="px-4 pb-4 text-gray-700 leading-relaxed">${linkify(faq.answer, links)}</div></details>`
@@ -112,7 +127,7 @@ export function productStaticHtml(product, products) {
     .join("");
   return shell(
     routePath,
-    `<div class="min-h-screen bg-gray-50"><section class="bg-white py-4 border-b"><div class="container mx-auto px-4 text-sm text-gray-500"><a href="/" class="hover:text-[var(--axis-orange)]">Home</a> / <a href="/products" class="hover:text-[var(--axis-orange)]">Products</a> / <span class="text-[var(--axis-dark-blue)] font-medium">${esc(product.breadcrumbName || product.name)}</span></div></section><section class="py-8 bg-white"><div class="container mx-auto px-4"><div class="grid lg:grid-cols-2 gap-12"><div><img src="${esc(product.image)}" alt="${esc((product.alt || product.name).split(",")[0].trim())}" width="800" height="384" fetchpriority="high" decoding="async" class="w-full h-96 object-cover rounded-lg shadow-lg" /></div><div><h1 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(h1)}</h1><p class="text-gray-600 mb-6 leading-relaxed">${linkify(product.description || "", links)}</p><div id="static-product-quote"></div></div></div></div></section>${sections}${types}${specs}${faqs}<section class="py-12 bg-white border-t"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">Related products</h2><ul class="space-y-2">${related}</ul><p class="mt-6"><a href="/products" class="text-[var(--axis-orange)] hover:underline font-medium">All packaging products</a> · <a href="/quote" class="text-[var(--axis-orange)] hover:underline font-medium">Request a quotation</a> · <a href="/contact" class="text-[var(--axis-orange)] hover:underline font-medium">Contact us</a></p></div></section></div>`
+    `<div class="min-h-screen bg-gray-50"><section class="bg-white py-4 border-b"><div class="container mx-auto px-4 text-sm text-gray-500"><a href="/" class="hover:text-[var(--axis-orange)]">Home</a> / <a href="/products" class="hover:text-[var(--axis-orange)]">Products</a> / <span class="text-[var(--axis-dark-blue)] font-medium">${esc(product.breadcrumbName || product.name)}</span></div></section><section class="py-8 bg-white"><div class="container mx-auto px-4"><div class="grid lg:grid-cols-2 gap-12"><div>${productGalleryHtml(product)}</div><div><h1 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(h1)}</h1><p class="text-gray-600 mb-6 leading-relaxed">${linkify(product.description || "", links)}</p><div id="static-product-quote"></div></div></div></div></section>${sections}${types}${specs}${faqs}<section class="py-12 bg-white border-t"><div class="container mx-auto px-4 max-w-5xl"><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">Related products</h2><ul class="space-y-2">${related}</ul><p class="mt-6"><a href="/products" class="text-[var(--axis-orange)] hover:underline font-medium">All packaging products</a> · <a href="/quote" class="text-[var(--axis-orange)] hover:underline font-medium">Request a quotation</a> · <a href="/contact" class="text-[var(--axis-orange)] hover:underline font-medium">Contact us</a></p></div></section></div>`
   );
 }
 
