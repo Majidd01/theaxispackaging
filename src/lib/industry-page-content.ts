@@ -75,6 +75,8 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
       { phrase: "food and drink containers", href: "/products/food-containers" },
       { phrase: "greaseproof paper", href: "/products/greaseproof-paper" },
+      { phrase: "printed food trays", href: "/products/printed-food-trays" },
+      { phrase: "sandwich boxes", href: "/products/sandwich-boxes" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -91,7 +93,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
           {
             title: "Counter service",
             content:
-              "Greaseproof paper is quoted when a bake needs a sheet rather than a box. Food and drink containers cover products that are not cakes. Any food-contact requirement is confirmed on the quotation.",
+              "Greaseproof paper is quoted when a bake needs a sheet rather than a box. Printed food trays can be quoted when a bake is handed over in a tray. Sandwich boxes are a separate catalogue page for sandwiches sold at the counter, not for cakes. Food and drink containers cover products that are not cakes. Any food-contact requirement is confirmed on the quotation.",
           },
         ],
       },
@@ -550,15 +552,15 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
   },
   food: {
     description:
-      "Food packaging enquiries for UK producers, shops and caterers should name the food and how it is sold. This page does not publish a food-contact certificate. Any food-contact requirement is confirmed on your quotation.",
+      "Food packaging enquiries for UK producers and retailers should name the food and how it is sold. Takeaway and foodservice packs belong on the restaurant page. This page does not publish a food-contact certificate. Any food-contact requirement is confirmed on your quotation.",
     metaDescription:
-      "Food packaging for UK producers, shops and caterers. Name the food and any food-contact requirement so Axis Packaging can confirm the pack on your quotation.",
+      "Food packaging for UK producers and retailers. Name the food and any food-contact requirement so Axis Packaging can confirm the pack on your quotation.",
     productsIntro: "These products can be quoted once the food and the sales channel are known.",
     relatedProductSlugs: ["food-containers", "bakery-boxes", "food-trays", "pizza-boxes"],
     internalLinks: [
       { phrase: "food and drink containers", href: "/products/food-containers" },
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
-      { phrase: "takeaway food trays", href: "/products/food-trays" },
+      { phrase: "restaurant packaging page", href: "/industries/restaurant" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -573,9 +575,9 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
               "Food and drink containers are the related page for food sold as a packaged product. Bakery and cake boxes cover baked goods.",
           },
           {
-            title: "Service and takeaway",
+            title: "Takeaway and foodservice",
             content:
-              "Takeaway food trays suit meals handed over a counter. Pizza boxes are a separate catalogue page for that format. State if the food is hot.",
+              "Takeaway and foodservice packs belong on the restaurant packaging page. This page is for producers and retailers. State if the food is hot, chilled or dry.",
           },
         ],
       },
@@ -814,7 +816,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
   },
   restaurant: {
     description:
-      "Restaurant packaging for UK cafés and food-service businesses covers trays, pizza and burger packs, cups and carry bags. Tell Axis Packaging the menu item and whether food is eaten on the journey home. Any food-contact requirement is confirmed on the quotation.",
+      "Restaurant packaging for UK takeaway and foodservice businesses covers trays, pizza and burger packs, cups and carry bags. Tell Axis Packaging the menu item and whether food is eaten on the journey home. Any food-contact requirement is confirmed on the quotation.",
     metaDescription:
       "Restaurant packaging for UK cafés and takeaway menus. Trays, pizza and burger packs, cups and bags, confirmed on your quotation with the food named.",
     productsIntro: "These products can be quoted for counter service and delivery menus.",
@@ -823,6 +825,10 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       { phrase: "takeaway food trays", href: "/products/food-trays" },
       { phrase: "pizza boxes", href: "/products/pizza-boxes" },
       { phrase: "burger boxes", href: "/products/burger-boxes" },
+      { phrase: "printed food trays", href: "/products/printed-food-trays" },
+      { phrase: "sandwich boxes", href: "/products/sandwich-boxes" },
+      { phrase: "noodle boxes", href: "/products/noodle-boxes" },
+      { phrase: "restaurant menu cards", href: "/products/custom-restaurant-menu-cards" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -834,7 +840,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
           {
             title: "Meals and bakery-style service",
             content:
-              "Takeaway food trays suit meals handed over a counter. Pizza boxes and burger boxes are separate catalogue pages for those formats.",
+              "Takeaway food trays suit meals handed over a counter. Printed food trays, sandwich boxes and noodle boxes are separate catalogue pages when the meal needs that format. Pizza boxes and burger boxes remain the pages for those meals. Restaurant menu cards cover the printed menu rather than the food pack.",
           },
           {
             title: "Drinks",
