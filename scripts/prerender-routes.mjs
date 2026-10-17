@@ -62,7 +62,6 @@ const {
   absoluteImageUrl,
   truncateMeta,
   breadcrumbSchema,
-  productSchema,
   faqPageSchema,
   blogPostingSchema,
   serviceSchema,
@@ -385,13 +384,6 @@ for (const product of PRODUCT_CATEGORIES) {
         { name: "Products", path: "/products" },
         { name: product.breadcrumbName || product.name, path: routePath },
       ]),
-      productSchema({
-        name: product.name,
-        description: product.description,
-        image: product.image,
-        path: routePath,
-        category: "Custom Packaging",
-      }),
       faqPageSchema(faqs),
     ],
   });

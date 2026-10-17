@@ -16,7 +16,7 @@ import { submitEnquiry } from "@/lib/submit-enquiry";
 import { useToast } from "@/hooks/use-toast";
 import { SeoHead } from "@/components/seo-head";
 import { buildProductSeo } from "@/lib/seo-page-data";
-import { breadcrumbSchema, faqPageSchema, productSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/seo";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const placeholderImg = "/assets/placeholder.jpg";
 
@@ -471,17 +471,7 @@ export default function ProductDetailPage() {
           image={product.image || placeholderImg}
           type="product"
           keywords={`${seo.primaryTopic}, custom packaging UK, custom printed boxes`}
-          jsonLd={[
-            crumbs,
-            productSchema({
-              name: product.name,
-              description: product.description,
-              image: product.image || placeholderImg,
-              path: productPath,
-              category: "Custom Packaging",
-            }),
-            faqSchema,
-          ].filter(Boolean)}
+          jsonLd={[crumbs, faqSchema].filter(Boolean)}
         />
         {createPortal(quoteForm, quoteSlot)}
         <Footer />
@@ -499,17 +489,7 @@ export default function ProductDetailPage() {
         image={product.image || placeholderImg}
         type="product"
         keywords={`${seo.primaryTopic}, custom packaging UK, custom printed boxes`}
-        jsonLd={[
-          crumbs,
-          productSchema({
-            name: product.name,
-            description: product.description,
-            image: product.image || placeholderImg,
-            path: productPath,
-            category: "Custom Packaging",
-          }),
-          faqSchema,
-        ].filter(Boolean)}
+        jsonLd={[crumbs, faqSchema].filter(Boolean)}
       />
       {/* Breadcrumb */}
       <section className="bg-white py-4 border-b">
