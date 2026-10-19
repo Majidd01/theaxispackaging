@@ -793,62 +793,255 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Custom Art Boxes",
-    description: "Protect and present your art supplies with packaging built for the creative industry. We supply custom art boxes for paint brushes, colored pencils, crayons, watercolor sets, sketchbooks, and complete art kits — in any size, material, and finish, with full-color printing. Quantities are confirmed on your quotation.",
+    description:
+      "Custom Art Boxes UK is the quotation brief for cartons that hold pencils, brushes, paint sets, sketchbooks or art kits. The pictures are illustrative concepts and not photographs of Axis Packaging stock. Name the item and how it will be handled, then use the quotation form on this page.",
     icon: "🖼️",
-    image: "/assets/packify-cosmetic-boxes.jpg",
+    image: "/assets/art-pencil-brush-cartons.webp",
     slug: "custom-art-boxes",
-    metaTitle: "Custom Art Boxes & Art Supply Packaging | Axis Packaging",
-    metaDescription: "Custom art boxes for paint brushes, pencils, crayons, watercolors & art kits. Logo printing and die-cut windows. Order quantities are confirmed on your quotation.",
-    h1: "Custom Art Boxes",
-    alt: "Custom art supply packaging boxes with die-cut window and CMYK printing by Axis Packaging",
+    seoTitle: "Custom Art Boxes UK: Checklist Before You Request a Quote",
+    metaDescription:
+      "Custom Art Boxes UK for pencils, brushes, paint sets, sketchbooks and kits. Send the longest item, the quantity and artwork, then request your quotation.",
+    h1: "Custom Art Boxes UK",
+    alt: "Custom Art Boxes UK illustrated as pencil and brush cartons on a studio counter. Illustrative concept and not a photograph of Axis Packaging stock.",
     breadcrumbName: "Art Boxes",
-    productsWePackageTitle: "Art Supply Products We Package",
-    productsWePackage: [
-      { title: "Paint brush boxes", detail: "Slim tuck-end or display formats, foam inserts, die-cut windows" },
-      { title: "Colored pencil & crayon boxes", detail: "Slot trays, window cutouts, vibrant CMYK printing" },
-      { title: "Watercolor & paint set boxes", detail: "Rigid or tuck-end, foam-lined, gift-ready" },
-      { title: "Art kit & craft set boxes", detail: "Multi-item dividers, branded tissue, mailer formats" },
-      { title: "Sketchbook & art paper packaging", detail: "Sleeve wraps, corrugated mailers, band wraps" },
+    faqHeading: "Frequently Asked Questions",
+    hideProductFeatures: true,
+    quoteTitle: "Request an art box quote",
+    gallery: [
+      {
+        src: "/assets/art-pencil-brush-cartons.webp",
+        alt: "Custom Art Boxes UK illustrated as pencil and brush cartons on a studio counter. Illustrative concept and not a photograph of Axis Packaging stock.",
+      },
+      {
+        src: "/assets/art-pencils-open-carton.webp",
+        alt: "Loose pencils beside an open carton so the longest pencil can be compared with the pack. Illustrative concept and not a photograph of Axis Packaging stock.",
+      },
+      {
+        src: "/assets/art-paint-set-gift-carton.webp",
+        alt: "A closed paint-set gift carton beside a palette and two tubes. Illustrative concept and not a photograph of Axis Packaging stock.",
+      },
     ],
-    materials: [
-      { name: "SBS Cardstock (14pt–24pt)", bestFor: "Retail shelf packaging, vivid color printing" },
-      { name: "Kraft Board", bestFor: "Eco-friendly and artisan art brands" },
-      { name: "Corrugated (E/B-flute)", bestFor: "Shipping, e-commerce, subscription boxes" },
-      { name: "Rigid Bux Board", bestFor: "Premium artist gift sets, luxury unboxing" },
+    internalLinks: [
+      { phrase: "craft boxes", href: "/products/craft-boxes" },
+      { phrase: "box inserts", href: "/products/box-inserts" },
+      { phrase: "mailer boxes", href: "/products/mailer-boxes" },
+      { phrase: "art storage guide", href: "/blog/art-box-storage-packaging-creative-supplies" },
+      { phrase: "Toys (Safety) Regulations 2011", href: "https://www.gov.uk/government/publications/toys-safety-regulations-2011" },
+      { phrase: "quotation form on this page", href: "#static-product-quote" },
     ],
-    printingFinishing: {
-      print: ["Full-color CMYK", "PMS Pantone", "Single-color"],
-      finish: ["Gloss", "Matte", "Soft-touch", "Gold/Silver Foil", "Spot UV", "Emboss", "Deboss"],
-      addons: ["Die-cut windows", "Hang tabs", "Acetate film", "Foam inserts", "Cardboard slot trays"],
-    },
-    whyChoose: [
-      "Color-accurate CMYK printing — critical for art brands",
-      "Custom foam and slot inserts for every product type",
-      "Retail-ready formats: hang tabs, peg-display, shelf-stand",
-      "Eco-friendly materials: paper-based, recycled kraft, water-based inks",
-      "A digital proof can be confirmed on your quotation",
-      "Order quantities are confirmed on your quotation",
+    contentSections: [
+      {
+        title: "What to decide before a quotation",
+        intro:
+          "A shop selling pencils and a brand posting a paint set are not asking for the same carton. This page separates five art items and lists the details that make two quotations comparable. It does not publish a board grade, a coating, a certificate, a price or a delivery date.",
+        subsections: [
+          {
+            title: "We supply the packaging",
+            content:
+              "We supply packaging from Leeds. We do not make the pencils, brushes or paint. Say what goes in the carton and whether a customer will see it on a shelf or receive it by post.",
+          },
+          {
+            title: "Leave specifications to the quotation",
+            content:
+              "If a board, a finish or a window is relevant, it is named on the quotation. Do not paste a grade, a weight or a film type from another website and treat it as agreed.",
+          },
+        ],
+      },
+      {
+        title: "Custom Art Boxes UK by item type",
+        intro:
+          "Name one item type first. A mixed enquiry is welcome, but each type needs its own length and handling note so the lines can be quoted separately.",
+        subsections: [
+          {
+            title: "Pencil boxes",
+            content:
+              "A pencil box holds pencils or crayons, not a sketchbook. Say how many sit in one carton and whether they lie flat or stand. Give the length of the longest pencil, including any sharpened tip you expect to pack. A short crayon and a long pencil should not share one guessed size.",
+          },
+          {
+            title: "Brush packaging",
+            content:
+              "Brushes are awkward because the handle and the bristles are different lengths. Measure the longest brush from the end of the handle to the tip of the bristles. Say whether the bristles must stay straight and whether several brushes share one carton. Do not assume a shaped holder until the quotation names one.",
+          },
+          {
+            title: "Paint sets",
+            content:
+              "A paint set may include pans, tubes or a small palette. List every piece and mark the tallest and the longest. Tubes can be shorter than the palette they sit with. The closed carton in the gallery is a gift-style concept beside a palette. It is not a storage trunk and it is not a stock item.",
+          },
+          {
+            title: "Sketchbooks",
+            content:
+              "A sketchbook is a flat item with a fixed page size. Give the cover width, the cover height and the thickness of the book you actually sell. Say whether the carton holds one book or several, and whether a band or a sleeve is being asked for instead of a full carton. Paper pads that are thinner than a bound book need their own note.",
+          },
+          {
+            title: "Art kits",
+            content:
+              "An art kit mixes pieces, such as pencils, a brush and a small pad. List every piece and mark the longest one. A kit sold on a counter is a different brief from a kit posted to a customer. Yarn, fabric and general hobby kits belong with craft boxes. Keep those enquiries separate from this page.",
+          },
+        ],
+      },
+      {
+        title: "Retail presentation and postal packaging",
+        intro:
+          "Say which of these two jobs the carton has to do. A pack that looks clear on a shelf can be the wrong shape for a courier, and a posted carton can be a poor shop display.",
+        subsections: [
+          {
+            title: "Retail presentation",
+            content:
+              "A retail carton is handled by shop staff and picked up by a customer. Say whether it sits on a shelf, hangs, or is handed over at a counter. If you want the contents seen before purchase, ask for a window to be discussed. Do not describe a window as already included.",
+          },
+          {
+            title: "Postal packaging",
+            content:
+              "A posted carton has to suit the journey you have in mind. Say whether the customer receives one item or a set. A flat posted gift may suit mailer boxes, which are a separate product. Name a carrier only if you already use one. This page does not promise a transit time.",
+          },
+        ],
+      },
+      {
+        title: "Information to send with the enquiry",
+        intro:
+          "These points are enough to start. Missing measurements can be asked for later. A guessed carton size is less useful than the size of the item itself.",
+        subsections: [
+          {
+            title: "Item type",
+            content:
+              "Say pencil box, brush packaging, paint set, sketchbook or art kit. If one order contains more than one type, list them on separate lines.",
+          },
+          {
+            title: "Longest item",
+            content:
+              "Name the longest piece and give its length. For pencils, that is the longest pencil. For brushes, include the bristles. For a kit, it may be a ruler, a brush or the pad. The loose pencils beside the open carton are there to show why that length has to be measured. They do not set a carton size.",
+          },
+          {
+            title: "Dimensions",
+            content:
+              "Give width, depth and height as well as the longest length. A sketchbook needs its cover size and thickness. A paint tin needs its diameter and height. Do not replace those figures with a carton you hope will be large enough.",
+          },
+          {
+            title: "Quantity",
+            content:
+              "Give the quantity you want quoted. No minimum is published on this page.",
+          },
+          {
+            title: "Artwork",
+            content:
+              "Say whether you have finished artwork or only a logo and a list of words. You supply product names and any instructions. We do not invent ranges, ages or claims about how the materials perform.",
+          },
+          {
+            title: "Intended handling",
+            content:
+              "Say who handles the carton: shop staff, a courier, or a customer at the counter. A handle, a window or an insert is a request to discuss, not a feature already agreed. If pencils or brushes must be held apart, box inserts can be quoted as a separate piece.",
+          },
+          {
+            title: "Posted or collected",
+            content:
+              "Say whether the customer receives the item by post or collects it. A collected carton mainly has to be clear in the shop. A posted carton has to suit the journey. State which one applies before the artwork is locked.",
+          },
+        ],
+      },
+      {
+        title: "Quotation checklist",
+        intro:
+          "Use this list so a later quotation can be compared with the first. A repeat order is still a new quotation.",
+        bullets: [
+          "Item type: pencils, brushes, paint set, sketchbook or art kit",
+          "Longest piece and its length",
+          "Width, depth and height of each piece",
+          "Quantity you want quoted",
+          "Artwork you already have, or a logo and the words to print",
+          "Who handles the carton",
+          "Posted or collected",
+          "Any window, insert or finish you want discussed",
+        ],
+      },
+      {
+        title: "Features to confirm before you mention them",
+        intro:
+          "Windows, inserts, finishes and printing are part of the brief. They are not capabilities this page guarantees, and they should not be promised to customers until the quotation names them.",
+        subsections: [
+          {
+            title: "Windows and inserts",
+            content:
+              "If you want a window, say what the customer should see and on which face of the carton. If you want pieces held apart, describe the pieces. Wait until the quotation names the window or the insert before you describe it as part of the pack.",
+          },
+          {
+            title: "Finishes and printing",
+            content:
+              "Say which words must be readable at arm's length: the product name, a short instruction, or a logo. If you want a particular finish, ask for it in the same brief. A finish or a print process is included only when the quotation says so.",
+          },
+        ],
+      },
+      {
+        title: "Children's kits and toy rules",
+        intro:
+          "Most art supplies on this page are not being discussed as toys. The position changes when you market the kit as a children's toy.",
+        subsections: [
+          {
+            title: "What the carton does not prove",
+            content:
+              "GOV.UK publishes the Toys (Safety) Regulations 2011 for products that are toys. Read that guidance if it matches how you sell the kit. A packaging carton alone does not establish regulatory compliance, and Axis Packaging does not provide that approval.",
+          },
+        ],
+      },
+      {
+        title: "How this page differs from storage advice",
+        intro:
+          "Organising a studio and quoting a retail or postal carton are different jobs. This page stays with the quotation.",
+        subsections: [
+          {
+            title: "The storage article",
+            content:
+              "Our art storage guide talks more generally about organising creative supplies at home, in a class or in a shop. Use it as background. Use this page to prepare the quotation. The article is not a specification.",
+          },
+        ],
+      },
+      {
+        title: "Send the brief",
+        intro:
+          "Use the quotation form on this page. Quotation requests receive a 24h quote response, and customer support is available 24/7. Price and timing are confirmed on the quotation.",
+        subsections: [
+          {
+            title: "A list you can copy",
+            content:
+              "Item type, longest item, dimensions, quantity, artwork, intended handling, and whether the packaging is posted or collected. Add a note if the kit is marketed as a children's toy. Attach a photograph of the item if you have one.",
+          },
+        ],
+      },
     ],
     faqs: [
       {
-        question: "What art supplies can you make boxes for?",
-        answer: "Paint brushes, colored pencils, crayons, markers, watercolors, acrylic paint sets, sketchbooks, art kits, and gift sets.",
+        question: "What should I send for an art box quotation?",
+        answer:
+          "Send the item type, the longest piece, the other dimensions, the quantity, the artwork you have, how the carton will be handled, and whether it is posted or collected.",
       },
       {
-        question: "Can I add a die-cut window to my art boxes?",
-        answer: "Yes. Die-cut windows with acetate film are available on all tuck-end and retail box styles — ideal for pencil, crayon, and brush packaging so buyers can see the product before purchasing.",
+        question: "Why do you ask for the longest item?",
+        answer:
+          "A carton that looks large enough in a photograph can still be short for one pencil or one brush. The longest piece sets the length that has to be discussed.",
       },
       {
-        question: "Do you offer eco-friendly art packaging?",
-        answer: "Yes. Recycled kraft, paper-based corrugated, and biodegradable cardstock are all available with water-based inks.",
+        question: "What is the difference between retail and postal packaging?",
+        answer:
+          "A retail carton is picked up in a shop. A postal carton is sent to the customer. Tell us which job you need, because the brief is not the same.",
       },
       {
-        question: "What is the minimum order quantity?",
-        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+        question: "Are the pictures photographs of Axis Packaging stock?",
+        answer:
+          "No. The gallery shows illustrative concepts. The carton you can order is the one described on your quotation.",
       },
       {
-        question: "How long does production take?",
-        answer: "Timing is confirmed on your quotation. Fast turnaround options can be discussed.",
+        question: "Can I ask for a window, an insert or a finish?",
+        answer:
+          "Yes, as a request. Name it in the brief. It is part of the pack only when the quotation includes it.",
+      },
+      {
+        question: "Does the carton meet toy safety rules?",
+        answer:
+          "No. If you market the kit as a children's toy, read the official toy safety guidance. A carton does not establish compliance, and Axis Packaging does not provide regulatory approval.",
+      },
+      {
+        question: "Is a minimum order or a delivery date published here?",
+        answer:
+          "No. Quantity and timing are confirmed on the quotation. This page does not publish a minimum, a price or a delivery promise.",
       },
     ],
   },
