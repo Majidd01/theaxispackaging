@@ -540,64 +540,224 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Garden & Plant Packaging",
-    description: "Custom garden packaging and plant packaging boxes keep plants alive, seeds protected, and garden brands visible. We supply packaging for nurseries, plant subscription services, seed companies, and garden supply brands — in eco-friendly materials with full-color printing, ventilation options, and moisture-resistant construction built for live and dry garden products.",
+    description:
+      "Custom Garden & Plant Packaging UK is the quotation brief for cartons that hold seed packets, potted plants, soil products, garden tools or gift sets. The pictures are illustrative concepts and not photographs of Axis Packaging stock. Name the item and how it will be handled, then use the quotation form on this page.",
     icon: "🌱",
-    image: "/assets/packify-eco-friendly-packaging.jpg",
+    image: "/assets/garden-plant-seed-cartons.webp",
     slug: "custom-garden-plant-packaging",
-    metaTitle: "Custom Garden & Plant Packaging Boxes | Axis Packaging",
-    metaDescription: "Custom gardening and plant packaging boxes for seeds, live plants, pots & tools. Material options and logo printing. Order quantities are confirmed on your quotation.",
-    h1: "Custom Garden & Plant Packaging Boxes",
-    alt: "Custom garden and plant packaging boxes in eco-friendly kraft by Axis Packaging",
+    seoTitle: "Custom Garden & Plant Packaging UK: Quotation Checklist",
+    metaDescription:
+      "Custom Garden & Plant Packaging UK for seeds, pots, soil, tools and gift sets. Send the item, size, quantity and artwork, then request your quotation.",
+    h1: "Custom Garden & Plant Packaging UK",
+    alt: "Custom Garden & Plant Packaging UK illustrated as seed cartons on a nursery counter. Illustrative concept and not a photograph of Axis Packaging stock.",
     breadcrumbName: "Garden & Plant Packaging",
-    productsWePackageTitle: "Garden Products We Package",
-    productsWePackage: [
-      { title: "Seed boxes", detail: "Tuck-end or window display, moisture-resistant, printed with planting info" },
-      { title: "Live plant shipping boxes", detail: "Ventilated corrugated, pot inserts, handles, size-to-roots construction" },
-      { title: "Potted plant packaging", detail: "Corrugated with cardboard or foam pot-holders to prevent tipping in transit" },
-      { title: "Soil & fertilizer boxes", detail: "Heavy-duty corrugated, moisture barrier lining, branded print" },
-      { title: "Garden tool packaging", detail: "Retail display boxes, hang tab formats, full-color product printing" },
-      { title: "Garden gift sets & subscription boxes", detail: "Branded mailers with dividers, tissue, and eco-friendly materials" },
+    faqHeading: "Frequently Asked Questions",
+    hideProductFeatures: true,
+    quoteTitle: "Request a garden packaging quote",
+    gallery: [
+      {
+        src: "/assets/garden-plant-seed-cartons.webp",
+        alt: "Custom Garden & Plant Packaging UK illustrated as seed cartons on a nursery counter. Illustrative concept and not a photograph of Axis Packaging stock.",
+      },
+      {
+        src: "/assets/garden-plant-pot-dimensions.webp",
+        alt: "A potted plant beside an open carton so the pot and the empty space can both be seen. Illustrative concept and not a photograph of Axis Packaging stock.",
+      },
+      {
+        src: "/assets/garden-plant-tool-gift.webp",
+        alt: "A trowel gloves and twine in an open gift carton with no plant inside. Illustrative concept and not a photograph of Axis Packaging stock.",
+      },
     ],
-    materials: [
-      { name: "Corrugated (E/B/C-flute)", bestFor: "Live plant shipping, heavy-duty garden tools, soil boxes" },
-      { name: "Kraft Board", bestFor: "Seed boxes, eco garden brands, subscription mailers" },
-      { name: "SBS Cardstock (14pt–24pt)", bestFor: "Retail seed display, garden gift sets, tool packaging" },
-      { name: "Moisture-Resistant Lining", bestFor: "Soil, fertilizer, and live plant boxes needing humidity control" },
+    internalLinks: [
+      { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
+      { phrase: "mailer boxes", href: "/products/mailer-boxes" },
+      { phrase: "subscription boxes", href: "/products/subscription-boxes" },
+      { phrase: "plant boxes guide", href: "/blog/plant-boxes-packaging-plants-flowers-garden-products" },
+      { phrase: "issuing plant passports", href: "https://www.gov.uk/guidance/issuing-plant-passports-to-trade-plants-in-great-britain" },
+      { phrase: "importing plants and plant products", href: "https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain" },
+      { phrase: "quotation form on this page", href: "#static-product-quote" },
     ],
-    printingFinishing: {
-      print: ["Full-color CMYK", "PMS Pantone", "Single-color"],
-      finish: ["Matte", "Gloss", "Soft-touch", "Spot UV", "Kraft natural"],
-      addons: ["Ventilation holes", "Pot inserts & trays", "Hang tabs", "Die-cut windows", "Carry handles", "Moisture barrier lining"],
-    },
-    whyChoose: [
-      "Eco-friendly materials: paper-based, recycled kraft, biodegradable options",
-      "Ventilated construction available for live plant shipping boxes",
-      "Custom pot-holder inserts to prevent tipping and root damage in transit",
-      "Moisture-resistant lining options for soil, fertilizer, and wet products",
-      "Full-color CMYK printing for planting instructions, brand logos, and product info",
-      "A digital proof can be confirmed on your quotation",
-      "Order quantities are confirmed on your quotation",
+    contentSections: [
+      {
+        title: "What to decide before a quotation",
+        intro:
+          "A nursery, a seed seller and a gift brand can all ask for a carton, and they are not describing the same pack. This page separates five item types and lists the details that make two quotations comparable. It does not publish a board grade, a coating, a certificate, a price or a delivery date.",
+        subsections: [
+          {
+            title: "We supply the packaging",
+            content:
+              "We supply packaging from Leeds. We do not grow plants, and a carton is not a promise about the condition of a plant. Say whether the item is living, or whether it is a packet, a bag of soil or a tool.",
+          },
+          {
+            title: "Leave specifications to the quotation",
+            content:
+              "If a board, a finish or a certificate is relevant, it is named on the quotation. Do not paste a grade or a weight from another website and treat it as agreed.",
+          },
+        ],
+      },
+      {
+        title: "Custom Garden & Plant Packaging UK by item type",
+        intro:
+          "Name one item type first. A mixed enquiry is welcome, but each type needs its own size and handling note so the lines can be quoted separately.",
+        subsections: [
+          {
+            title: "Seed cartons",
+            content:
+              "Seed cartons hold packets. Say how many packets sit in one carton, whether that carton is for a shelf or for posting, and what must be printed: a variety name, a short instruction, or only a logo. Give the packet size if the packets already exist. If you want the packet and the outer carton quoted together, say so. Do not send a pot measurement for a packet.",
+          },
+          {
+            title: "Potted plants",
+            content:
+              "A potted plant is the only item here that needs pot dimensions. Give the pot width and height. If a saucer travels with the pot, give the saucer width too. If the leaves must stay inside the carton, also give the height from the table to the top of the plant. The centre picture shows the empty space beside the pot.",
+          },
+          {
+            title: "Soil products",
+            content:
+              "Soil and compost are heavy, and a bag can shed dust. Give the filled weight you know, the bag size, and whether the carton holds one bag or several. If you want a liner, ask for it to be discussed rather than treating it as included. Heavier posted goods may sit closer to corrugated shipping boxes than to a small counter carton.",
+          },
+          {
+            title: "Garden tools",
+            content:
+              "Tools are solid goods. A trowel, a pair of gloves or a hand fork needs its longest length and its weight, not a pot size. Say whether the carton is a retail pack for one tool or an outer carton for several. The gallery picture of a trowel, gloves and twine is a gift-style concept with no plant inside. It is not a shipper for a living plant, and it is not a stock item.",
+          },
+          {
+            title: "Gift sets",
+            content:
+              "A gift set may combine packets, a small tool and a printed note. List every piece and mark the tallest one. A one-off carton is different from a selection that is sent again and again. A repeating selection can be discussed as subscription boxes. A flat posted gift may suit mailer boxes.",
+          },
+        ],
+      },
+      {
+        title: "Information to send with the enquiry",
+        intro:
+          "These six points are enough to start. Missing measurements can be asked for later. A guessed carton size is less useful than the size of the item itself.",
+        subsections: [
+          {
+            title: "Item type",
+            content:
+              "Say seed carton, potted plant, soil product, garden tool or gift set. If one order contains more than one type, list them on separate lines.",
+          },
+          {
+            title: "Dimensions",
+            content:
+              "For packets, bags and tools, give the item width, depth and height. For a potted plant, use the pot measurements in the next section. Do not replace those figures with a carton size you hope will be large enough.",
+          },
+          {
+            title: "Quantity",
+            content:
+              "Give the quantity you want quoted. No minimum is published on this page.",
+          },
+          {
+            title: "Artwork",
+            content:
+              "Say whether you have finished artwork or only a logo and a list of words. You supply variety names, prices and any planting instructions. We do not invent plant names or statements about how a plant will grow.",
+          },
+          {
+            title: "Intended handling",
+            content:
+              "Say who handles the carton: shop staff, a courier, or a customer at the counter. A handle, a window or an insert is a request to discuss, not a feature already agreed.",
+          },
+          {
+            title: "Posted or collected",
+            content:
+              "Say whether the customer receives the item by post or collects it. A posted carton has to suit the journey you have in mind. A collected carton mainly has to be clear on a shelf or a counter. Name a carrier only if you already use one. This page does not promise a transit time.",
+          },
+        ],
+      },
+      {
+        title: "Pot dimensions for potted plants only",
+        intro:
+          "Pot size is the wrong question for a seed packet, a bag of soil or a tool. Asking for it on those items slows the reply.",
+        subsections: [
+          {
+            title: "What to measure",
+            content:
+              "Measure the pot at its widest point, including the rim. Measure from the table to the top of the pot. If the foliage must not be crushed, also measure from the table to the highest leaf. Include a saucer only when the saucer is part of the order.",
+          },
+          {
+            title: "What the picture does not decide",
+            content:
+              "The open carton beside the plant shows why the pot must be described. It is not a template. If you want the pot held in place, describe the pot and ask what can be discussed. That answer belongs on the quotation.",
+          },
+        ],
+      },
+      {
+        title: "Features to confirm before you mention them",
+        intro:
+          "Optional features are part of the brief. They are not capabilities this page guarantees, and they should not be promised to customers until the quotation names them.",
+        subsections: [
+          {
+            title: "Holes, liners and inserts",
+            content:
+              "If you want holes, a liner or an insert, say why in plain words. You might want a pot to sit still, or a bag of soil kept away from a booklet. Wait until the quotation names the feature before you describe it as part of the pack.",
+          },
+          {
+            title: "Words and pictures on the pack",
+            content:
+              "Say which words must be readable at arm's length: the product name, a short instruction, or a logo. A picture of a plant on the carton is artwork you must have the right to print. Printing that picture does not change how the plant itself is carried.",
+          },
+        ],
+      },
+      {
+        title: "Plant trade rules sit outside the carton",
+        intro:
+          "Some plants that are traded or brought into Great Britain need official checks. Packaging alone does not satisfy those requirements, and Axis Packaging does not provide regulatory approval.",
+        subsections: [
+          {
+            title: "Passports and imports",
+            content:
+              "GOV.UK guidance on issuing plant passports explains a duty that can apply when certain plants are traded in Great Britain. GOV.UK guidance on importing plants and plant products explains checks that can apply when plants enter Great Britain. Read those pages if they match your trade. A carton does not issue a passport and does not clear an import.",
+          },
+          {
+            title: "How this page differs from the plant article",
+            content:
+              "Our plant boxes guide talks more generally about plants, flowers and garden goods. Use it as background. Use this page to prepare the quotation. It is not a care guide.",
+          },
+        ],
+      },
+      {
+        title: "Send the brief",
+        intro:
+          "Use the quotation form on this page. Quotation requests receive a 24h quote response, and customer support is available 24/7. Price and timing are confirmed on the quotation.",
+        subsections: [
+          {
+            title: "A list you can copy",
+            content:
+              "Item type, dimensions, quantity, artwork, intended handling, and whether the item is posted or collected. Add pot dimensions only for a potted plant. Attach a photograph of the item if you have one.",
+          },
+        ],
+      },
     ],
     faqs: [
       {
-        question: "What types of garden products can you make packaging for?",
-        answer: "Seeds, live plants, potted plants, soil, fertilizer, garden tools, grow kits, plant subscription boxes, and garden gift sets.",
+        question: "What should I send for a garden packaging quotation?",
+        answer:
+          "Send the item type, the item dimensions, the quantity, the artwork you have, how the carton will be handled, and whether the item is posted or collected. Add pot dimensions only when the item is a potted plant.",
       },
       {
-        question: "Can you make boxes for shipping live plants?",
-        answer: "Yes. Our live plant shipping boxes use ventilated corrugated construction with custom pot-holder inserts to keep plants stable, roots protected, and plants breathing throughout transit.",
+        question: "Do seed cartons, soil bags and tools need pot dimensions?",
+        answer:
+          "No. Pot width and pot height are for potted plants. Packets, bags and tools need their own width, depth and height.",
       },
       {
-        question: "Are your garden packaging materials eco-friendly?",
-        answer: "Yes. All our eco-friendly garden packaging options include recycled kraft, paper-based corrugated, and biodegradable cardstock — ideal for garden and plant brands whose customers expect sustainable packaging.",
+        question: "Are the pictures photographs of Axis Packaging stock?",
+        answer:
+          "No. The gallery shows illustrative concepts. The carton you can order is the one described on your quotation.",
       },
       {
-        question: "Can seed boxes include moisture protection?",
-        answer: "Yes. We offer moisture-resistant lining and sealed construction for seed packaging to protect seeds from humidity and moisture damage during storage and shipping.",
+        question: "Does the packaging meet plant passport or import rules?",
+        answer:
+          "No. Official plant-trade duties are explained on GOV.UK. A carton does not issue a plant passport, does not clear an import, and is not a regulatory approval from Axis Packaging.",
       },
       {
-        question: "What is the minimum order quantity?",
-        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+        question: "Can a gift set be quoted as a posted mailer?",
+        answer:
+          "It can be discussed. Tell us the pieces in the set and whether the gift is posted flat or collected from a counter. The quotation will say if a posted mailer fits.",
+      },
+      {
+        question: "Is a minimum order or a delivery date published here?",
+        answer:
+          "No. Quantity and timing are confirmed on the quotation. This page does not publish a minimum, a price or a delivery promise.",
       },
     ],
   },
