@@ -30,7 +30,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
     internalLinks: [
       { phrase: "apparel packaging boxes", href: "/products/apparel-packaging" },
       { phrase: "mailer boxes", href: "/products/mailer-boxes" },
-      { phrase: "paper shopping bags", href: "/products/paper-bags" },
+      { phrase: "paper shopping bag", href: "/products/paper-bags" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -120,6 +120,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
     relatedProductSlugs: ["wine-boxes", "corrugated-shipping", "gift-boxes", "stickers-labels"],
     internalLinks: [
       { phrase: "wine and liquor boxes", href: "/products/wine-boxes" },
+      { phrase: "wine packaging page", href: "/industries/wine" },
       { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
       { phrase: "gift boxes", href: "/products/gift-boxes" },
       { phrase: "request a quotation", href: "/quote" },
@@ -133,7 +134,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
           {
             title: "Gift and retail bottles",
             content:
-              "Wine and liquor boxes are the related catalogue page for printed bottle packs. Gift boxes suit a bottle sold inside a wider hamper.",
+              "Wine and liquor boxes are the related catalogue page for printed bottle packs. A wine-only gift is briefed on the wine packaging page. Gift boxes suit a bottle sold inside a wider hamper.",
           },
           {
             title: "Trade outers",
@@ -557,7 +558,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
     metaDescription:
       "Food packaging for UK producers and retailers. Name the food and any food-contact requirement so Axis Packaging can confirm the pack on your quotation.",
     productsIntro: "These products can be quoted once the food and the sales channel are known.",
-    relatedProductSlugs: ["food-containers", "bakery-boxes", "food-trays", "pizza-boxes"],
+    relatedProductSlugs: ["food-containers", "bakery-boxes"],
     internalLinks: [
       { phrase: "food and drink containers", href: "/products/food-containers" },
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
@@ -831,6 +832,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       { phrase: "printed bagel cartons", href: "/products/printed-bagel-sandwich-boxes" },
       { phrase: "noodle boxes", href: "/products/noodle-boxes" },
       { phrase: "restaurant menu cards", href: "/products/custom-restaurant-menu-cards" },
+      { phrase: "paper cups", href: "/products/paper-cups" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -1093,6 +1095,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
     relatedProductSlugs: ["wine-boxes", "gift-boxes", "corrugated-shipping", "stickers-labels"],
     internalLinks: [
       { phrase: "wine and liquor boxes", href: "/products/wine-boxes" },
+      { phrase: "beer and liquor packaging page", href: "/industries/beer-liquor" },
       { phrase: "gift boxes", href: "/products/gift-boxes" },
       { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
       { phrase: "request a quotation", href: "/quote" },
@@ -1106,7 +1109,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
           {
             title: "Gift and retail bottles",
             content:
-              "Wine and liquor boxes are the catalogue page for printed bottle packs. Gift boxes suit a bottle packed with other items.",
+              "Wine and liquor boxes are the catalogue page for printed bottle packs. Beer, cider and spirits are briefed on the beer and liquor packaging page. Gift boxes suit a bottle packed with other items.",
           },
           {
             title: "Cases",
