@@ -50,6 +50,7 @@ const quoteContent = await server.ssrLoadModule("/src/lib/quote-page-content.ts"
 const moqContent = await server.ssrLoadModule("/src/lib/moq-page-content.ts");
 const catalogOrder = await server.ssrLoadModule("/src/lib/catalog-order.ts");
 const catalogCategories = await server.ssrLoadModule("/src/lib/catalog-categories.ts");
+const relatedProducts = await server.ssrLoadModule("/src/lib/related-products.ts");
 await server.close();
 
 const { PRODUCT_CATEGORIES, INDUSTRIES, STATIC_PAGE_SEO } = {
@@ -351,6 +352,11 @@ if (slugs.size !== 50) {
   throw new Error(`Expected 50 products, found ${slugs.size}`);
 }
 
+const relatedProblems = relatedProducts.validateRelatedProducts(PRODUCT_CATEGORIES);
+if (relatedProblems.length) {
+  throw new Error(`Related products:\n${relatedProblems.join("\n")}`);
+}
+
 for (const product of PRODUCT_CATEGORIES) {
   const built = seoPage.buildProductSeo(product);
   const routePath = `/products/${product.slug}`;
@@ -377,7 +383,7 @@ for (const product of PRODUCT_CATEGORIES) {
     type: "product",
     keywords: `${built.primaryTopic}, custom packaging UK, custom printed boxes`,
     body: "",
-    staticContent: productStaticHtml(product, PRODUCT_CATEGORIES),
+    staticContent: productStaticHtml(product, PRODUCT_CATEGORIES, relatedProducts.relatedProductsFor),
     jsonLd: [
       breadcrumbSchema([
         { name: "Home", path: "/" },

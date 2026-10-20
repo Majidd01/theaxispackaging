@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PRODUCT_CATEGORIES } from "@/lib/constants";
+import { relatedProductsFor } from "@/lib/related-products";
 import { ArrowRight, CheckCircle, MessageCircle, Package } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { createPortal } from "react-dom";
@@ -1022,9 +1023,7 @@ export default function ProductDetailPage() {
 
           {/* Products Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {PRODUCT_CATEGORIES.filter((p) => p.slug !== slug)
-              .slice(0, 3)
-              .map((relatedProduct, index) => (
+            {relatedProductsFor(product.slug, PRODUCT_CATEGORIES).map((relatedProduct, index) => (
                 <div
                   key={relatedProduct.slug}
                   className="group transform hover:-translate-y-2 transition-all duration-500"
@@ -1080,8 +1079,12 @@ export default function ProductDetailPage() {
                         </div>
 
                         {/* CTA Button */}
-                        <Link to={`/products/${relatedProduct.slug}`}>
+                        <Link
+                          to={`/products/${relatedProduct.slug}`}
+                          aria-label={`Learn more about ${relatedProduct.name}`}
+                        >
                           <Button
+                            aria-label={`Learn more about ${relatedProduct.name}`}
                             className="w-full bg-gradient-to-r from-[var(--axis-orange)] to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group/btn"
                           >
                             <span className="flex items-center justify-center">

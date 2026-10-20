@@ -64,7 +64,10 @@ function productGalleryHtml(product) {
   return `<div data-product-gallery><img data-gallery-main src="${esc(shots[0].src)}" alt="${esc(shots[0].alt || product.name)}" width="1152" height="864" fetchpriority="high" decoding="async" class="w-full aspect-[4/3] object-cover rounded-lg shadow-lg" /><div class="grid grid-cols-4 gap-2 mt-3" role="group" aria-label="Display images">${buttons}</div><p class="text-xs text-gray-500 mt-2">These pictures are illustrative concepts, not photographs of Axis Packaging stock.</p><script>(function(){var root=document.querySelector("[data-product-gallery]");if(!root||root.dataset.ready)return;root.dataset.ready="1";var main=root.querySelector("[data-gallery-main]");var tabs=[].slice.call(root.querySelectorAll("[data-gallery-tab]"));function select(tab){tabs.forEach(function(item){var on=item===tab;item.setAttribute("aria-pressed",on?"true":"false");item.classList.toggle("border-[var(--axis-orange)]",on);item.classList.toggle("border-gray-200",!on);});main.src=tab.getAttribute("data-src");main.alt=tab.getAttribute("data-alt")||"";}tabs.forEach(function(tab,index){tab.addEventListener("click",function(){select(tab);});tab.addEventListener("keydown",function(event){var next=null;if(event.key==="ArrowRight")next=tabs[(index+1)%tabs.length];else if(event.key==="ArrowLeft")next=tabs[(index-1+tabs.length)%tabs.length];else if(event.key==="Home")next=tabs[0];else if(event.key==="End")next=tabs[tabs.length-1];if(!next)return;event.preventDefault();next.focus();select(next);});});})();</script></div>`;
 }
 
-export function productStaticHtml(product, products) {
+export function productStaticHtml(product, products, relatedProductsFor) {
+  if (typeof relatedProductsFor !== "function") {
+    throw new Error("productStaticHtml requires the shared relatedProductsFor helper");
+  }
   const routePath = `/products/${product.slug}`;
   const h1 = product.h1 || product.name;
   const links = [
@@ -119,9 +122,7 @@ export function productStaticHtml(product, products) {
         )
         .join("")}</div></div></section>`
     : "";
-  const related = products
-    .filter((item) => item.slug !== product.slug)
-    .slice(0, 3)
+  const related = relatedProductsFor(product.slug, products)
     .map(
       (item) =>
         `<li><a href="/products/${esc(item.slug)}" class="text-[var(--axis-orange)] hover:underline font-medium">${esc(item.name)}</a></li>`
