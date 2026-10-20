@@ -159,7 +159,10 @@ function contentSectionHtml(sections, links) {
     .join("");
 }
 
-export function industryStaticHtml(industry, products, industries) {
+export function industryStaticHtml(industry, products, industries, relatedIndustriesFor) {
+  if (typeof relatedIndustriesFor !== "function") {
+    throw new Error("industryStaticHtml requires the shared relatedIndustriesFor helper");
+  }
   const routePath = `/industries/${industry.slug}`;
   const links = industry.internalLinks || [];
   const chosen = industry.relatedProductSlugs?.length
@@ -177,9 +180,7 @@ export function industryStaticHtml(industry, products, industries) {
     industry.productsIntro ||
     `These packaging products can be quoted for ${industry.name} businesses. Tell us the product and the quantity you need.`;
   const sections = contentSectionHtml(industry.contentSections, links);
-  const related = industries
-    .filter((item) => item.slug !== industry.slug)
-    .slice(0, 3)
+  const related = relatedIndustriesFor(industry.slug, industries)
     .map(
       (item) =>
         `<li><a href="/industries/${esc(item.slug)}" class="text-[var(--axis-orange)] hover:underline font-medium">${esc(item.name)} packaging</a></li>`

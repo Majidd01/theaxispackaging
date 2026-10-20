@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { INDUSTRIES, PRODUCT_CATEGORIES } from "@/lib/constants";
+import { relatedIndustriesFor } from "@/lib/related-industries";
 import { ArrowRight, Award, Building2, CheckCircle, Factory, Package, Users } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { hasStaticContent } from "@/lib/has-static-content";
@@ -379,12 +380,11 @@ export default function IndustryDetailPage() {
 
           {/* Industries Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {INDUSTRIES.filter((i) => i.slug !== slug)
-              .slice(0, 3)
-              .map((relatedIndustry, index) => (
-                <Link 
-                  key={relatedIndustry.slug} 
+            {relatedIndustriesFor(industry.slug, INDUSTRIES).map((relatedIndustry, index) => (
+                <Link
+                  key={relatedIndustry.slug}
                   to={`/industries/${relatedIndustry.slug}`}
+                  aria-label={`Learn more about ${relatedIndustry.name} packaging`}
                   className="group transform hover:-translate-y-2 transition-all duration-500 block"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
@@ -438,6 +438,7 @@ export default function IndustryDetailPage() {
 
                         {/* CTA Button */}
                         <Button
+                          aria-label={`Learn more about ${relatedIndustry.name} packaging`}
                           className="w-full bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group/btn"
                         >
                           <span className="flex items-center justify-center">

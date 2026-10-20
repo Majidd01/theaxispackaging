@@ -51,6 +51,7 @@ const moqContent = await server.ssrLoadModule("/src/lib/moq-page-content.ts");
 const catalogOrder = await server.ssrLoadModule("/src/lib/catalog-order.ts");
 const catalogCategories = await server.ssrLoadModule("/src/lib/catalog-categories.ts");
 const relatedProducts = await server.ssrLoadModule("/src/lib/related-products.ts");
+const relatedIndustries = await server.ssrLoadModule("/src/lib/related-industries.ts");
 await server.close();
 
 const { PRODUCT_CATEGORIES, INDUSTRIES, STATIC_PAGE_SEO } = {
@@ -357,6 +358,11 @@ if (relatedProblems.length) {
   throw new Error(`Related products:\n${relatedProblems.join("\n")}`);
 }
 
+const relatedIndustryProblems = relatedIndustries.validateRelatedIndustries(INDUSTRIES);
+if (relatedIndustryProblems.length) {
+  throw new Error(`Related industries:\n${relatedIndustryProblems.join("\n")}`);
+}
+
 for (const product of PRODUCT_CATEGORIES) {
   const built = seoPage.buildProductSeo(product);
   const routePath = `/products/${product.slug}`;
@@ -405,7 +411,7 @@ for (const industry of INDUSTRIES) {
     image: industry.image,
     type: "website",
     body: "",
-    staticContent: industryStaticHtml(industry, PRODUCT_CATEGORIES, INDUSTRIES),
+    staticContent: industryStaticHtml(industry, PRODUCT_CATEGORIES, INDUSTRIES, relatedIndustries.relatedIndustriesFor),
     jsonLd: [
       breadcrumbSchema([
         { name: "Home", path: "/" },
