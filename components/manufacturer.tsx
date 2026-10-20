@@ -88,7 +88,7 @@ export function Manufacturer() {
               Our Manufacturing Process
             </h3>
             <p className="text-gray-600">
-              From concept to delivery, we follow a proven process to ensure excellence
+              The steps below describe how an enquiry can be discussed. What is included is confirmed on your quotation.
             </p>
           </div>
 

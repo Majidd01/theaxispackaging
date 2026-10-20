@@ -86,8 +86,8 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium shadow-lg border border-white/20">
               <Zap className="w-4 h-4 text-yellow-300" />
-              <span className="font-bold">Fast</span>
-              <span>Turnaround Options</span>
+              <span className="font-bold">24h</span>
+              <span>Quote Response</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium shadow-lg border border-white/20">
               <Package className="w-4 h-4 text-orange-300" />

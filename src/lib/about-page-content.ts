@@ -2,7 +2,7 @@ export const ABOUT_PAGE = {
   badge: "About Axis Packaging",
   h1: "Custom packaging for UK businesses",
   intro:
-    "Axis Packaging is a custom packaging supplier based in Leeds. We help UK businesses choose custom printed boxes, food packaging, bakery packaging, retail packaging, paper bags and branded packaging.",
+    "Axis Packaging is a custom packaging supplier based in Leeds. We help UK businesses choose custom printed boxes, food packaging, bakery packaging, retail packaging, paper bags and branded packaging. Quotations are prepared for the packaging you describe. Write to 104 Pudsey Road, Leeds, LS12 3TZ, call +44 7398 429456, or email info@theaxispackaging.com.",
   storyTitle: "How we can help",
   story: [
     "We supply packaging that can be printed and sized around your product. Food, bakery, retail and other branded goods can each need a different box, bag or pack, and we can talk through the formats that suit how you sell.",

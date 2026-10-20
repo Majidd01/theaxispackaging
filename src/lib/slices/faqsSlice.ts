@@ -32,7 +32,7 @@ const initialState: FAQsState = {
       id: "3",
       question: "Do you offer custom printing?",
       answer:
-        "Yes, we offer full-color custom printing, including logos, graphics, and text. We support various printing techniques including offset, digital, and flexographic printing.",
+        "Send the artwork you have and say what must be printed. Printing is discussed and confirmed on your quotation. A printing method is not named on this page.",
       category: "Customization",
     },
     {

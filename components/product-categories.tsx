@@ -265,7 +265,7 @@ export function ProductCategories({ selectedIndustry, embedInStatic = false }: P
           <div className="flex flex-col items-center">
             <Truck className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
             <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">
-              Fast Turnaround Options
+              Quotation Timing
             </h3>
             <p className="text-gray-600">Timing is confirmed on your quotation</p>
           </div>
