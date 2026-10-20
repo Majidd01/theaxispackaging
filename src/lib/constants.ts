@@ -1145,6 +1145,7 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "food grade containers", href: "/products/food-containers" },
       { phrase: "Printed kraft boxes", href: "/products/kraft-boxes" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
     ],
     contentSections: [
       {
@@ -1157,7 +1158,7 @@ const _PRODUCT_CATEGORIES = [
           },
           {
             title: "Print and board",
-            content: "Printed kraft boxes on our kraft page are a broader carton range. For a burger, ask for a clamshell and say if the board should be plain or printed. Closed tubs are listed under food grade containers when the product is a sauce, dip or salad rather than a burger.",
+            content: "Printed kraft boxes on our kraft page are a broader carton range. For a burger, ask for a clamshell and say if the board should be plain or printed. Closed tubs are listed under food grade containers when the product is a sauce, dip or salad rather than a burger. For the rest of a takeaway menu, see restaurant packaging.",
           },
         ],
       },
@@ -1489,6 +1490,7 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "food grade containers", href: "/products/food-containers" },
       { phrase: "food industry packaging", href: "/industries/food" },
       { phrase: "printed food trays", href: "/products/printed-food-trays" },
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
     ],
     contentSections: [
       {
@@ -1497,7 +1499,7 @@ const _PRODUCT_CATEGORIES = [
         subsections: [
           {
             title: "Which foods suit a tray",
-            content: "Chips, wedges, loaded fries, small street-food portions and some bakery sides are the usual brief. Sauces that must not spill in a bag are a poor match for an open tray. Say what you serve so the quote can refuse a tray when a closed pack is the better fit.",
+            content: "Chips, wedges, loaded fries, small street-food portions and some bakery sides are the usual brief. Sauces that must not spill in a bag are a poor match for an open tray. Say what you serve so the quote can refuse a tray when a closed pack is the better fit. The rest of a takeaway menu is covered under restaurant packaging.",
           },
           {
             title: "Shape",
@@ -1650,6 +1652,7 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "paper shopping bags", href: "/products/paper-bags" },
       { phrase: "beverage packaging", href: "/industries/beverage" },
       { phrase: "bakery packaging", href: "/industries/bakery-cake" },
+      { phrase: "restaurant packaging", href: "/industries/restaurant" },
     ],
     contentSections: [
       {
@@ -1662,7 +1665,7 @@ const _PRODUCT_CATEGORIES = [
           },
           {
             title: "When a cup is the wrong pack",
-            content: "Hot food belongs in a carton or a tray. A product that must stay sealed belongs in a closed container. See beverage packaging for drink brands, and bakery packaging if the cup is only one part of a cafe counter.",
+            content: "Hot food belongs in a carton or a tray. A product that must stay sealed belongs in a closed container. See beverage packaging for drink brands, and bakery packaging if the cup is only one part of a cafe counter. Food served with the drink is covered under restaurant packaging.",
           },
         ],
       },
