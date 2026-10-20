@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink, useParams } from "react-router-dom";
-import { getBlogBySlug, getRelatedBlogs } from "@/lib/blogs";
+import { formatBlogDate, getBlogBySlug, getRelatedBlogs } from "@/lib/blogs";
 import { Clock, Calendar, User, ChevronRight, ChevronDown } from "lucide-react";
 import { Blog, BlogContentBlock, BlogFAQ } from "@/lib/blog-types";
 import { SeoHead } from "@/components/seo-head";
-import { blogPostingSchema, breadcrumbSchema, faqPageSchema } from "@/lib/seo";
+import { blogPostingSchema, breadcrumbSchema, faqPageSchema, verifiedIsoDate } from "@/lib/seo";
 import { hasStaticContent } from "@/lib/has-static-content";
 
 export const BlogDetailComponent = () => {
@@ -216,8 +216,8 @@ export const BlogDetailComponent = () => {
         path={blogPath}
         image={blog.meta?.ogImage || blog.featuredImage}
         type="article"
-        publishedTime={blog.publishedAt}
-        modifiedTime={blog.updatedAt || blog.publishedAt}
+        publishedTime={verifiedIsoDate(blog.publishedAt)}
+        modifiedTime={verifiedIsoDate(blog.updatedAt) || verifiedIsoDate(blog.publishedAt)}
         jsonLd={[
           breadcrumbSchema([
             { name: "Home", path: "/" },
@@ -260,11 +260,7 @@ export const BlogDetailComponent = () => {
             </span>
             <span className="flex items-center gap-2">
               <Calendar size={16} />
-              {new Date(blog.publishedAt).toLocaleDateString("en-GB", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              {formatBlogDate(blog.publishedAt, "long")}
             </span>
             <span className="flex items-center gap-2">
               <Clock size={16} />

@@ -66,6 +66,7 @@ const {
   breadcrumbSchema,
   faqPageSchema,
   blogPostingSchema,
+  verifiedIsoDate,
   serviceSchema,
   organizationSchema,
   localBusinessSchema,
@@ -460,8 +461,8 @@ for (const blog of publishedBlogs) {
     description,
     image: blog.meta?.ogImage || blog.featuredImage,
     type: "article",
-    publishedTime: blog.publishedAt,
-    modifiedTime: blog.updatedAt || blog.publishedAt,
+    publishedTime: verifiedIsoDate(blog.publishedAt),
+    modifiedTime: verifiedIsoDate(blog.updatedAt) || verifiedIsoDate(blog.publishedAt),
     staticContent: blogArticleStaticHtml(blog, publishedBlogs),
     body: "",
     jsonLd: [

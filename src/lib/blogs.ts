@@ -45,6 +45,13 @@ export const getPublishedBlogs = async (): Promise<Blog[]> => {
     );
 };
 
+export function formatBlogDate(iso: string | undefined, month: "long" | "short" = "long"): string {
+  if (!iso) return "";
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toLocaleDateString("en-GB", { day: "numeric", month, year: "numeric" });
+}
+
 export const getBlogBySlug = async (slug: string): Promise<Blog | undefined> => {
   const allBlogs = await loadBlogs();
   return allBlogs.find((blog) => blog.slug === slug);

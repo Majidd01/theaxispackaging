@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { getPublishedBlogs } from "@/lib/blogs";
+import { formatBlogDate, getPublishedBlogs } from "@/lib/blogs";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { Blog } from "@/lib/blog-types";
 import { SeoHead } from "@/components/seo-head";
@@ -142,11 +142,7 @@ export const BlogPageComponent = () => {
                     <div className="flex items-center gap-4 text-xs text-gray-500 mb-4 pb-4 border-b border-gray-200">
                       <span className="flex items-center gap-1">
                         <Calendar size={14} />
-                        {new Date(blog.publishedAt).toLocaleDateString("en-GB", {
-                          month: "short",
-                          day: "numeric",
-                          year: "numeric",
-                        })}
+                        {formatBlogDate(blog.publishedAt, "short")}
                       </span>
                       <span className="flex items-center gap-1">
                         <Clock size={14} />

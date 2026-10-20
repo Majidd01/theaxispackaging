@@ -216,15 +216,35 @@ export function faqPageSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
+/** Keep a date only when it is a real UTC calendar day already stored on the post. */
+export function verifiedIsoDate(value?: string | null): string | undefined {
+  if (!value || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(value)) {
+    return undefined;
+  }
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return undefined;
+  const [year, month, day] = value.slice(0, 10).split("-").map(Number);
+  if (
+    parsed.getUTCFullYear() !== year ||
+    parsed.getUTCMonth() !== month - 1 ||
+    parsed.getUTCDate() !== day
+  ) {
+    return undefined;
+  }
+  return value;
+}
+
 export function blogPostingSchema(opts: {
   title: string;
   description: string;
   image?: string;
   path: string;
   author?: string;
-  datePublished: string;
+  datePublished?: string;
   dateModified?: string;
 }) {
+  const datePublished = verifiedIsoDate(opts.datePublished);
+  const dateModified = verifiedIsoDate(opts.dateModified) || datePublished;
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -233,10 +253,9 @@ export function blogPostingSchema(opts: {
     image: absoluteImageUrl(opts.image),
     url: absoluteUrl(opts.path),
     mainEntityOfPage: absoluteUrl(opts.path),
-    datePublished: opts.datePublished,
-    dateModified: opts.dateModified || opts.datePublished,
+    ...(datePublished ? { datePublished, dateModified } : {}),
     author: opts.author
-      ? { "@type": "Person", name: opts.author }
+      ? { "@type": "Organization", name: opts.author }
       : { "@id": `${SITE_URL}/#organization` },
     publisher: {
       "@type": "Organization",
