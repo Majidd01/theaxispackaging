@@ -105,6 +105,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       { phrase: "rigid boxes", href: "/products/rigid-boxes" },
       { phrase: "gift wrapping boxes", href: "/products/gift-boxes" },
       { phrase: "jewellery gift boxes", href: "/products/jewelry-boxes" },
+      { phrase: "hardware and tool boxes", href: "/products/hardware-boxes" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -121,7 +122,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
           {
             title: "Separating a set",
             content:
-              "Gift sets, tool kits and cosmetic kits use inserts to keep pieces apart. Rigid boxes, gift wrapping boxes and jewellery gift boxes are the outer packs these inserts are commonly quoted with.",
+              "Gift sets, tool kits and cosmetic kits use inserts to keep pieces apart. Rigid boxes, gift wrapping boxes and jewellery gift boxes are the outer packs these inserts are commonly quoted with. Hand tools and a complete tool kit are quoted as hardware and tool boxes, with an insert only when the pieces must stay apart.",
           },
         ],
       },
@@ -683,6 +684,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
     internalLinks: [
       { phrase: "mailer boxes", href: "/products/mailer-boxes" },
       { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
+      { phrase: "musical instrument boxes", href: "/products/musical-instrument-boxes" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -694,7 +696,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
           {
             title: "Retail presentation",
             content:
-              "Shops and collectors often want a pack that names the title and keeps the item presentable. Describe the book, disc or printed piece and whether a window or a closed carton is preferred.",
+              "Shops and collectors often want a pack that names the title and keeps the item presentable. Describe the book, disc or printed piece and whether a window or a closed carton is preferred. Guitars, violins and other instruments are not discs or books. Those packs are quoted as musical instrument boxes.",
           },
           {
             title: "Posting and wholesale",
@@ -726,6 +728,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
     internalLinks: [
       { phrase: "box inserts", href: "/products/box-inserts" },
       { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
+      { phrase: "hardware and tool boxes", href: "/products/hardware-boxes" },
       { phrase: "shipping packaging", href: "/industries/shipping" },
       { phrase: "request a quotation", href: "/quote" },
     ],
@@ -738,7 +741,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
           {
             title: "Counter and retail parts",
             content:
-              "Accessories sold over a counter or online need a carton that names the part. Box inserts can be quoted when the part should not move inside the carton.",
+              "Accessories sold over a counter or online need a carton that names the part. Box inserts can be quoted when the part should not move inside the carton. Hand tools and tool kits are a different job and are quoted as hardware and tool boxes.",
           },
           {
             title: "Trade and warehouse outers",

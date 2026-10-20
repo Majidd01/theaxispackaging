@@ -77,6 +77,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       { phrase: "greaseproof paper", href: "/products/greaseproof-paper" },
       { phrase: "printed food trays", href: "/products/printed-food-trays" },
       { phrase: "sandwich boxes", href: "/products/sandwich-boxes" },
+      { phrase: "printed bagel cartons", href: "/products/printed-bagel-sandwich-boxes" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -93,7 +94,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
           {
             title: "Counter service",
             content:
-              "Greaseproof paper is quoted when a bake needs a sheet rather than a box. Printed food trays can be quoted when a bake is handed over in a tray. Sandwich boxes are a separate catalogue page for sandwiches sold at the counter, not for cakes. Food and drink containers cover products that are not cakes. Any food-contact requirement is confirmed on the quotation.",
+              "Greaseproof paper is quoted when a bake needs a sheet rather than a box. Printed food trays can be quoted when a bake is handed over in a tray. Sandwich boxes are a separate catalogue page for sandwiches sold at the counter, not for cakes. A printed carton for a bagel or a filled roll is listed as printed bagel cartons. Food and drink containers cover products that are not cakes. Any food-contact requirement is confirmed on the quotation.",
           },
         ],
       },
@@ -827,6 +828,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       { phrase: "burger boxes", href: "/products/burger-boxes" },
       { phrase: "printed food trays", href: "/products/printed-food-trays" },
       { phrase: "sandwich boxes", href: "/products/sandwich-boxes" },
+      { phrase: "printed bagel cartons", href: "/products/printed-bagel-sandwich-boxes" },
       { phrase: "noodle boxes", href: "/products/noodle-boxes" },
       { phrase: "restaurant menu cards", href: "/products/custom-restaurant-menu-cards" },
       { phrase: "request a quotation", href: "/quote" },
@@ -840,7 +842,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
           {
             title: "Meals and bakery-style service",
             content:
-              "Takeaway food trays suit meals handed over a counter. Printed food trays, sandwich boxes and noodle boxes are separate catalogue pages when the meal needs that format. Pizza boxes and burger boxes remain the pages for those meals. Restaurant menu cards cover the printed menu rather than the food pack.",
+              "Takeaway food trays suit meals handed over a counter. Printed food trays, sandwich boxes and noodle boxes are separate catalogue pages when the meal needs that format. A printed carton for a bagel is listed as printed bagel cartons. Pizza boxes and burger boxes remain the pages for those meals. Restaurant menu cards cover the printed menu rather than the food pack.",
           },
           {
             title: "Drinks",
