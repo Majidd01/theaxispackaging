@@ -2,7 +2,6 @@
 
 import { ChatSupport } from "@/components/chat-support";
 import { Footer } from "@/components/footer";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { INDUSTRIES, PRODUCT_CATEGORIES } from "@/lib/constants";
@@ -175,7 +174,6 @@ export default function IndustryDetailPage() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <span className="text-3xl">{industry.icon}</span>
-                <Badge className="bg-[var(--axis-orange)] text-white">Industry Expert</Badge>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6">
                 {industry.name} Packaging Solutions
@@ -187,16 +185,16 @@ export default function IndustryDetailPage() {
                     size="lg"
                     className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90"
                   >
-                    Get Industry Quote
+                    Get industry quote
                   </Button>
                 </Link>
-                <Link to={`/quote?industry=${encodeURIComponent(industry.slug)}&downloadGuide=1`}>
+                <Link to="/contact">
                   <Button
                     size="lg"
                     variant="outline"
                     className="border-[var(--axis-dark-blue)] text-[var(--axis-dark-blue)]"
                   >
-                    Download Industry Guide
+                    Contact us
                   </Button>
                 </Link>
               </div>
@@ -204,7 +202,7 @@ export default function IndustryDetailPage() {
             <div>
               <img
                 src={industry.image}
-                alt={industry.name}
+                alt={`${industry.name} packaging`}
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
             </div>
@@ -215,36 +213,62 @@ export default function IndustryDetailPage() {
       {/* Industry Stats */}
       <section className="py-16 bg-[var(--axis-dark-blue)] text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">{industry.name} Industry Expertise</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              We understand the unique challenges and requirements of the {industry.name} industry
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold mb-8 text-center">{industry.name} packaging supply</h2>
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="flex flex-col items-center">
               <Users className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">Custom</h3>
-              <p className="text-blue-100">{industry.name} Packaging</p>
+              <p className="text-3xl font-bold mb-2">Custom</p>
+              <p className="text-blue-100">{industry.name} packaging</p>
             </div>
             <div className="flex flex-col items-center">
               <Factory className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">24h</h3>
+              <p className="text-3xl font-bold mb-2">24h</p>
               <p className="text-blue-100">Quote Response</p>
             </div>
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">UK</h3>
+              <p className="text-3xl font-bold mb-2">UK</p>
               <p className="text-blue-100">Business Supply</p>
             </div>
             <div className="flex flex-col items-center">
               <Award className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold mb-2">24/7</h3>
+              <p className="text-3xl font-bold mb-2">24/7</p>
               <p className="text-blue-100">Customer Support</p>
             </div>
           </div>
         </div>
       </section>
+
+      {pageContent.contentSections?.map((section) => (
+        <section key={section.title} className="py-16 bg-white border-t">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">{section.title}</h2>
+            {section.intro && (
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {renderIndustryText(section.intro, pageContent.internalLinks)}
+              </p>
+            )}
+            {section.subsections?.map((item) => (
+              <div key={item.title} className="mb-6">
+                <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">{item.title}</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {renderIndustryText(item.content, pageContent.internalLinks)}
+                </p>
+              </div>
+            ))}
+            {section.bullets && (
+              <ul className="space-y-3">
+                {section.bullets.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-700">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
+                    <span>{renderIndustryText(item, pageContent.internalLinks)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      ))}
 
       {/* Industry Solutions */}
       <section className="py-16 bg-white">
@@ -292,68 +316,6 @@ export default function IndustryDetailPage() {
         </div>
       </section>
 
-      {pageContent.contentSections?.map((section) => (
-        <section key={section.title} className="py-16 bg-white border-t">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">{section.title}</h2>
-            {section.intro && (
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {renderIndustryText(section.intro, pageContent.internalLinks)}
-              </p>
-            )}
-            {section.subsections?.map((item) => (
-              <div key={item.title} className="mb-6">
-                <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-2">{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {renderIndustryText(item.content, pageContent.internalLinks)}
-                </p>
-              </div>
-            ))}
-            {section.bullets && (
-              <ul className="space-y-3">
-                {section.bullets.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-700">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 shrink-0" />
-                    <span>{renderIndustryText(item, pageContent.internalLinks)}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </section>
-      ))}
-
-      {/* CTA Section */}
-      <section className="py-16 bg-[var(--axis-dark-blue)] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your {industry.name} Packaging?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let our {industry.name} industry experts help you create the perfect packaging solution.
-            Get a custom quote today and see how we can elevate your brand.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to={`/quote?industry=${encodeURIComponent(industry.slug)}`}>
-              <Button
-                size="lg"
-                className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90"
-              >
-                Get Industry Quote
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[var(--axis-dark-blue)]"
-              >
-                Schedule Consultation
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Related Industries */}
       <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
         {/* Animated Background Elements */}
@@ -371,11 +333,8 @@ export default function IndustryDetailPage() {
               Explore Industries
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 bg-clip-text - mb-4">
-              Related Industries
+              Related industries
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover how we serve other industries with specialized packaging solutions
-            </p>
           </div>
 
           {/* Industries Grid */}
@@ -411,29 +370,13 @@ export default function IndustryDetailPage() {
 
                       {/* Content */}
                       <div className="p-6">
-                        <div className="mb-4">
+                        <div className="mb-6">
                           <h3 className="text-xl font-bold text-[var(--axis-dark-blue)] mb-2 group-hover:text-blue-600 transition-colors duration-300">
                             {relatedIndustry.name}
                           </h3>
                           <p className="text-gray-600 text-sm leading-relaxed">
                             {relatedIndustry.description}
                           </p>
-                        </div>
-
-                        {/* Features */}
-                        <div className="mb-6">
-                          <div className="flex items-center text-sm text-gray-500 mb-2">
-                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
-                            <span>Specialized Solutions</span>
-                          </div>
-                          <div className="flex items-center text-sm text-gray-500 mb-2">
-                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
-                            <span>Industry Expertise</span>
-                          </div>
-                          <div className="flex items-center text-sm text-gray-500">
-                            <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
-                            <span>Custom Requirements</span>
-                          </div>
                         </div>
 
                         {/* CTA Button */}
@@ -455,11 +398,14 @@ export default function IndustryDetailPage() {
 
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[var(--axis-orange)] to-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <Link
+              to="/industries"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[var(--axis-orange)] to-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            >
               <Building2 className="w-5 h-5 mr-2" />
-              <span className="font-semibold">View All Industries</span>
+              <span className="font-semibold">All industries</span>
               <ArrowRight className="w-4 h-4 ml-2" />
-            </div>
+            </Link>
           </div>
         </div>
       </section>

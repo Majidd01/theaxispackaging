@@ -27,7 +27,6 @@ import { QUOTE_GUIDE } from "@/lib/quote-page-content";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import type React from "react";
 import { useEffect, useLayoutEffect, useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 export function InstantQuote() {
   const dispatch = useAppDispatch();
@@ -37,7 +36,6 @@ export function InstantQuote() {
   const [customQuantity, setCustomQuantity] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [fileNames, setFileNames] = useState<string[]>([]);
-  const { toast } = useToast();
 
   useLayoutEffect(() => {
     const intro = document.getElementById("static-quote-intro");
@@ -48,34 +46,12 @@ export function InstantQuote() {
     intro.setAttribute("aria-hidden", "true");
   }, []);
 
-  // Handle optional industry param and guide download
+  // Pre-fill the industry when a packaging page links to the quotation.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const industry = params.get("industry") || "";
-    const downloadGuide = params.get("downloadGuide");
-    if (industry) {
-      // Pre-fill a hint in additional requirements
-      if (!formData.additionalRequirements) {
-        dispatch(updateFormData({ additionalRequirements: `Industry: ${industry}` }));
-      }
-    }
-    if (downloadGuide && industry) {
-      try {
-        const content = `Axis Packaging\nIndustry Guide: ${industry}\n\nThis is a concise starter guide for the ${industry} industry.\nContact: info@theaxispackaging.com`;
-        // const content = `Axis Packaging\nIndustry Guide: ${industry}\n\nThis is a concise starter guide for the ${industry} industry.\nContact: majid121.skylinxtech@gmail.com`;
-        const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `${industry}-guide.txt`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-        toast({ title: "Guide downloaded", description: `Downloaded ${industry} guide.` });
-      } catch {
-        // no-op
-      }
+    if (industry && !formData.additionalRequirements) {
+      dispatch(updateFormData({ additionalRequirements: `Industry: ${industry}` }));
     }
     // run only once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
