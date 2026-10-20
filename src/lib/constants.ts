@@ -1653,11 +1653,12 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "beverage packaging", href: "/industries/beverage" },
       { phrase: "bakery packaging", href: "/industries/bakery-cake" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
+      { phrase: "cup packaging guide", href: "/blog/cup-design-packing" },
     ],
     contentSections: [
       {
         title: "Paper cups for counter and event service",
-        intro: "A paper cup holds a drink served at a counter or a short event. It is not a sealed tub. Use food grade containers when the product must be closed. Greaseproof paper wraps or lines food and does not hold a drink. Use paper shopping bags when the customer carries the order away.",
+        intro: "A paper cup holds a drink served at a counter or a short event. It is not a sealed tub. Use food grade containers when the product must be closed. Greaseproof paper wraps or lines food and does not hold a drink. Use paper shopping bags when the customer carries the order away. Print planning is covered in the cup packaging guide.",
         subsections: [
           {
             title: "How to give the cup size",

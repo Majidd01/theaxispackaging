@@ -195,6 +195,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       { phrase: "rigid boxes", href: "/products/rigid-boxes" },
       { phrase: "stickers and labels", href: "/products/stickers-labels" },
       { phrase: "cosmetics packaging", href: "/industries/cosmetics" },
+      { phrase: "cosmetic box guide", href: "/blog/custom-cosmetic-boxes-beauty-brands" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -211,7 +212,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
           {
             title: "Sets and gifts",
             content:
-              "Kits and gift sets often move to rigid boxes when the lid should feel firmer. Cosmetics packaging for salons and shops is outlined on the cosmetics industry page.",
+              "Kits and gift sets often move to rigid boxes when the lid should feel firmer. Cosmetics packaging for salons and shops is outlined on the cosmetics industry page. A longer buying discussion is in the cosmetic box guide.",
           },
         ],
       },
@@ -462,6 +463,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       { phrase: "food and drink containers", href: "/products/food-containers" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
       { phrase: "bakery packaging", href: "/industries/bakery-cake" },
+      { phrase: "bakery box guide", href: "/blog/bakery-cake-boxes-fresh-delivery-presentation" },
       { phrase: "request a quotation", href: "/quote" },
     ],
     contentSections: [
@@ -478,7 +480,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
           {
             title: "Counter and delivery sales",
             content:
-              "Pastries sold from a counter or sent out for delivery need a box that can be closed for the journey. Takeaway food trays suit meals rather than cakes. Bakery packaging is also covered on the bakery industry page.",
+              "Pastries sold from a counter or sent out for delivery need a box that can be closed for the journey. Takeaway food trays suit meals rather than cakes. Bakery packaging is also covered on the bakery industry page. Questions to settle before a cake or pastry order are set out in the bakery box guide.",
           },
         ],
       },

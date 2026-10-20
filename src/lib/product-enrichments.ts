@@ -47,10 +47,13 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
       "We supply custom paper bags that combine functionality, clean design, and professional branding for retail, gifting, and promotional use.",
       "Every bag is produced with attention to detail, ensuring your brand not only looks professional but also performs reliably in everyday retail and customer handling conditions.",
     ],
+    internalLinks: [
+      { phrase: "paper bag guide", href: "/blog/eco-friendly-paper-bags-retail-packaging" },
+    ],
     faqs: [
       { question: "Are paper shopping bags durable enough for retail products?", answer: "Yes, high-quality paper shopping bags are designed to carry retail products securely while maintaining a professional appearance." },
       { question: "Can paper shopping bags be customized with my logo?", answer: "Yes, custom paper shopping bags can be printed with your logo, brand colors, artwork, and promotional messaging." },
-      { question: "Are paper shopping bags eco-friendly?", answer: "Yes, paper bags are recyclable and commonly used as a sustainable alternative to plastic shopping bags." },
+      { question: "Are paper shopping bags eco-friendly?", answer: "Yes, paper bags are recyclable and commonly used as a sustainable alternative to plastic shopping bags. How shops use them is covered in the paper bag guide." },
       { question: "What industries commonly use paper shopping bags?", answer: "Paper shopping bags are widely used for fashion retail, boutiques, cosmetics, gifting, food packaging, and promotional events." },
     ],
   },
