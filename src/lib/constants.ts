@@ -549,7 +549,7 @@ const _PRODUCT_CATEGORIES = [
     metaDescription:
       "Custom Garden & Plant Packaging UK for seeds, pots, soil, tools and gift sets. Send the item, size, quantity and artwork, then request your quotation.",
     h1: "Custom Garden & Plant Packaging UK",
-    alt: "Custom Garden & Plant Packaging UK illustrated as seed cartons on a nursery counter. Illustrative concept and not a photograph of Axis Packaging stock.",
+    alt: "Three open cartons of leaf-printed seed packets on a wooden counter",
     breadcrumbName: "Garden & Plant Packaging",
     faqHeading: "Frequently Asked Questions",
     hideProductFeatures: true,
@@ -557,15 +557,15 @@ const _PRODUCT_CATEGORIES = [
     gallery: [
       {
         src: "/assets/garden-plant-seed-cartons.webp",
-        alt: "Custom Garden & Plant Packaging UK illustrated as seed cartons on a nursery counter. Illustrative concept and not a photograph of Axis Packaging stock.",
+        alt: "Three open cartons of leaf-printed seed packets on a wooden counter",
       },
       {
         src: "/assets/garden-plant-pot-dimensions.webp",
-        alt: "A potted plant beside an open carton so the pot and the empty space can both be seen. Illustrative concept and not a photograph of Axis Packaging stock.",
+        alt: "A leafy plant in a terracotta pot and saucer beside an empty open carton",
       },
       {
         src: "/assets/garden-plant-tool-gift.webp",
-        alt: "A trowel gloves and twine in an open gift carton with no plant inside. Illustrative concept and not a photograph of Axis Packaging stock.",
+        alt: "An open carton holding a trowel cream gloves and a ball of twine with no plant inside",
       },
     ],
     internalLinks: [
@@ -802,7 +802,7 @@ const _PRODUCT_CATEGORIES = [
     metaDescription:
       "Custom Art Boxes UK for pencils, brushes, paint sets, sketchbooks and kits. Send the longest item, the quantity and artwork, then request your quotation.",
     h1: "Custom Art Boxes UK",
-    alt: "Custom Art Boxes UK illustrated as pencil and brush cartons on a studio counter. Illustrative concept and not a photograph of Axis Packaging stock.",
+    alt: "Two open kraft cartons on a wooden table with coloured pencils in one and paintbrushes in the other",
     breadcrumbName: "Art Boxes",
     faqHeading: "Frequently Asked Questions",
     hideProductFeatures: true,
@@ -810,15 +810,15 @@ const _PRODUCT_CATEGORIES = [
     gallery: [
       {
         src: "/assets/art-pencil-brush-cartons.webp",
-        alt: "Custom Art Boxes UK illustrated as pencil and brush cartons on a studio counter. Illustrative concept and not a photograph of Axis Packaging stock.",
+        alt: "Two open kraft cartons on a wooden table with coloured pencils in one and paintbrushes in the other",
       },
       {
         src: "/assets/art-pencils-open-carton.webp",
-        alt: "Loose pencils beside an open carton so the longest pencil can be compared with the pack. Illustrative concept and not a photograph of Axis Packaging stock.",
+        alt: "Coloured pencils of different lengths beside an empty open carton",
       },
       {
         src: "/assets/art-paint-set-gift-carton.webp",
-        alt: "A closed paint-set gift carton beside a palette and two tubes. Illustrative concept and not a photograph of Axis Packaging stock.",
+        alt: "A closed kraft carton beside a wooden palette and two paint tubes",
       },
     ],
     internalLinks: [
@@ -2132,7 +2132,7 @@ const _PRODUCT_CATEGORIES = [
     metaDescription:
       "Custom Restaurant Menu Cards UK for restaurants, cafés and takeaways. Check the finished size, folds, print and finish, then request your menu quotation.",
     h1: "Custom Restaurant Menu Cards UK",
-    alt: "Custom Restaurant Menu Cards UK illustrated as burgundy dinner cards on a restaurant table",
+    alt: "Two burgundy dinner cards titled Hearth showing a roast and a salad",
     breadcrumbName: "Menu Cards",
     faqHeading: "Frequently Asked Questions",
     hideProductFeatures: true,
@@ -2140,19 +2140,19 @@ const _PRODUCT_CATEGORIES = [
     gallery: [
       {
         src: "/assets/menu-card-restaurant-table.webp",
-        alt: "Custom Restaurant Menu Cards UK illustrated as burgundy dinner cards on a restaurant table",
+        alt: "Two burgundy dinner cards titled Hearth showing a roast and a salad",
       },
       {
         src: "/assets/menu-card-cafe-breakfast.webp",
-        alt: "Sage green cream and orange café menu cards with coffee breakfast and bakery headings",
+        alt: "Sage green cream and orange Mill Cafe cards beside a coffee cup and a croissant",
       },
       {
         src: "/assets/menu-card-takeaway-leaflet.webp",
-        alt: "Orange green and cream folded takeaway menu leaflet with burger chips and drinks",
+        alt: "A folded orange cream and green leaflet showing a burger chips and a drink",
       },
       {
         src: "/assets/menu-card-finishing-layouts.webp",
-        alt: "Burgundy green and cream menu cards showing wine plates and Sunday layouts",
+        alt: "Four menu covers labelled North Room Plates Wine and Sunday",
       },
     ],
     internalLinks: [

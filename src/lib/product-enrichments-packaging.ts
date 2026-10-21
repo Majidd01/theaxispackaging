@@ -422,24 +422,24 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     gallery: [
       {
         src: "/assets/pop-display-countertop-teal.webp",
-        alt: "Custom Pop Display Boxes UK illustrated as a teal cardboard countertop display",
+        alt: "A teal counter display holding stacks of small pink cream and green cartons",
       },
       {
         src: "/assets/pop-display-shelf-orange.webp",
-        alt: "Orange cardboard shelf display concept with open compartments",
+        alt: "A tall orange display unit with four shelves of plain boxes and tins",
       },
       {
         src: "/assets/pop-display-tiered-yellow.webp",
-        alt: "Yellow tiered cardboard counter display concept for small cartons",
+        alt: "A yellow and blue three-tier display holding red and cream gable cartons",
       },
       {
         src: "/assets/pop-display-counter-red.webp",
-        alt: "Red countertop display concept with two wells for plain jars",
+        alt: "A red counter display with two wells of stacked plain white jars",
       },
     ],
     description:
       "Custom Pop Display Boxes UK shops use are cardboard units that hold products on a counter or at a shelf end. The pictures here are illustrative concepts, not photographs of current stock. Describe the product and the space, then use the quotation form on this page.",
-    alt: "Custom Pop Display Boxes UK illustrated as a teal cardboard countertop display",
+    alt: "A teal counter display holding stacks of small pink cream and green cartons",
     breadcrumbName: "POP Displays",
     hideProductFeatures: true,
     internalLinks: [
