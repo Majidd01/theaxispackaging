@@ -126,7 +126,6 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
       { phrase: "corrugated office boxes", href: "/products/corrugated-shipping" },
       { phrase: "office mailer boxes", href: "/products/corrugated-shipping" },
       { phrase: "corporate gift boxes", href: "/products/gift-boxes" },
-      { phrase: "rigid corporate gift boxes", href: "/products/gift-boxes" },
     ],
     contentSections: [
       {
@@ -225,7 +224,6 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
       { phrase: "candle packaging boxes", href: "/products/candle-boxes" },
       { phrase: "corrugated boxes", href: "/products/corrugated-shipping" },
       { phrase: "home decor shipping boxes", href: "/products/corrugated-shipping" },
-      { phrase: "shipping boxes", href: "/products/corrugated-shipping" },
     ],
     contentSections: [
       {
