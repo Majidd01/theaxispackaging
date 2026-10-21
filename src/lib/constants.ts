@@ -2779,28 +2779,28 @@ export const CORRUGATED_INSPIRATIONS = [
 
 export const PACKAGING_SERVICES = [
   {
-    name: "Structural Design & Engineering",
-    description: "Our packaging experts design and engineer innovative structures",
+    name: "Pack size",
+    description: "Tell us the product and the size. The quotation confirms the pack.",
     image: "/assets/packify-custom-boxes.jpg",
-    slug: "structural-design",
+    slug: "pack-size",
   },
   {
-    name: "Packaging Artwork Design",
-    description: "Professional artwork design for your packaging",
+    name: "Print",
+    description: "Tell us the artwork you already have. The print is confirmed on the quotation.",
     image: "/assets/packify-cosmetic-boxes.jpg",
-    slug: "artwork-design",
+    slug: "print",
   },
   {
-    name: "Sample & Prototyping",
-    description: "Create physical samples and 3D prototypes",
+    name: "Quantity",
+    description: "Tell us how many packs you need. The quantity is confirmed on the quotation.",
     image: "/assets/packify-custom-boxes.jpg",
-    slug: "sampling-prototyping",
+    slug: "quantity",
   },
   {
-    name: "Quality Control",
-    description: "Rigorous quality control and testing",
+    name: "Quotation",
+    description: "Materials, print and timing are confirmed on the quotation.",
     image: "/assets/packify-custom-boxes.jpg",
-    slug: "quality-control",
+    slug: "quotation",
   },
 ];
 
