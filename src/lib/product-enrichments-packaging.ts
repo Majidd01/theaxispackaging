@@ -77,7 +77,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   "mailer-bags": {
     metaTitle: "Custom Printed Mailer Bags | Axis Packaging",
     metaDescription:
-      "Custom printed mailer bags for eCommerce shipping. Waterproof, lightweight & brand-ready. Full-color printing, self-adhesive seal. Order quantities and timing are confirmed on your quotation.",
+      "Custom printed mailer bags for eCommerce shipping. Material, print and moisture resistance are confirmed on your quotation.",
     h1: "Printed Mailer Bags",
     description:
       "Shipping packaging needs to be strong, cost-efficient, and reliable. Printed mailer bags offer a practical solution for businesses that want secure delivery without increasing shipping weight or cost. At Axis Packaging, our printed mailer bags are designed for secure delivery, lower shipping costs, and strong brand presentation. Built for modern eCommerce, they protect your products while keeping packaging lightweight and efficient.",
@@ -105,14 +105,14 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     benefitsTitle: "Benefits",
     benefits: [
       "Lightweight Shipping — Reduces courier costs compared to boxes",
-      "Waterproof Protection — Keeps products safe from moisture and weather",
-      "Tear-Resistant Material — Strong enough to handle rough delivery conditions",
+      "Moisture resistance — Whether the bag resists moisture is confirmed on the quotation",
+      "Material strength — Tear resistance is confirmed on the quotation",
       "Secure Sealing — Self-adhesive closures prevent tampering",
       "Brand Visibility — Custom printing turns every package into marketing",
     ],
     productTypesTitle: "Types of Custom Mailing Bags",
     productTypes: [
-      { title: "Printed Poly Mailer Bags", detail: "Waterproof and flexible, ideal for protecting clothing and soft goods during shipping." },
+      { title: "Printed Poly Mailer Bags", detail: "A flexible poly mailer for clothing and soft goods. Moisture resistance is confirmed on the quotation." },
       { title: "Custom Kraft Mailer Bags", detail: "Eco-friendly and structured, suitable for retail products and document packaging." },
       { title: "Personalized Mailing Bags", detail: "Fully customizable with printed designs for branding, promotions, and strong visual impression during delivery." },
     ],
@@ -127,7 +127,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Timing confirmed on your quotation",
     ],
     faqs: [
-      { question: "Are printed mailer bags waterproof?", answer: "Yes, they are made from waterproof materials that protect products from moisture during shipping." },
+      { question: "Are printed mailer bags waterproof?", answer: "Moisture resistance and tear resistance are confirmed on the quotation. This page does not publish a waterproof rating." },
       { question: "What products can be shipped in mailer bags?", answer: "They are ideal for clothing, accessories, documents, and non-fragile items." },
       { question: "Are mailer bags better than boxes?", answer: "For lightweight items, yes — they reduce shipping cost and are easier to handle." },
       { question: "Can I customize printed mailer bags?", answer: "Yes, you can fully customize size, design, and printing." },
@@ -143,23 +143,23 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   "flexible-pouches": {
     metaTitle: "Custom Flexible Packaging Pouches | Axis Packaging",
     metaDescription:
-      "Custom flexible packaging pouches for food, retail & liquids. Freshness protection, resealable zippers & full-color printing. MOQ 100. Free design proof.",
-    h1: "Custom Flexible Packaging Pouches for Freshness",
+      "Custom pouches for food, retail and liquids. Freshness, barrier performance and shelf life are confirmed on your quotation.",
+    h1: "Custom Flexible Packaging Pouches",
     description:
-      "If your packaging can't protect freshness, it's costing you product quality. Custom pouch packaging solves this with a sealed, flexible design that keeps products fresh, easy to handle, and ready for display.",
+      "Custom pouches can be quoted for food, retail and liquids. Freshness, barrier performance and shelf life depend on the product and are confirmed on the quotation.",
     alt: "Custom flexible packaging pouches with resealable zipper by Axis Packaging",
     breadcrumbName: "Flexible Pouches",
     hideProductFeatures: true,
     contentSections: [
       {
         title: "When to Use Pouch Packaging",
-        intro: "Use custom pouch packaging when product freshness is important, lightweight packaging is needed, storage efficiency matters, or resealable packaging is required.",
+        intro: "Use custom pouch packaging when you need a lightweight or resealable pack. Freshness and shelf life are confirmed on the quotation.",
       },
       {
         title: "Why Choose This Product",
         intro: "Pouch packaging offers a balance of protection, convenience, and cost efficiency.",
         bullets: [
-          "Maintains product freshness",
+          "Freshness is confirmed on the quotation",
           "Reduces storage and shipping cost",
           "Easy to handle and use",
           "Suitable for food packaging and retail",
@@ -169,7 +169,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     ],
     benefitsTitle: "Key Benefits",
     benefits: [
-      "Freshness Protection — Helps preserve product quality by blocking air and moisture",
+      "Barrier — Any effect on freshness or shelf life is confirmed on the quotation",
       "Lightweight Design — Reduces storage and transportation cost",
       "Space Efficient — Takes less space compared to rigid packaging",
       "Easy to Use — Resealable options improve convenience",
@@ -193,8 +193,8 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Timing confirmed on your quotation",
     ],
     faqs: [
-      { question: "What is pouch packaging used for?", answer: "It is used to protect products and maintain freshness, especially for food and retail items." },
-      { question: "Are flexible pouches good for food packaging?", answer: "Yes, food packaging pouches help maintain freshness and extend shelf life." },
+      { question: "What is pouch packaging used for?", answer: "Pouches can be quoted for food and retail products. Freshness is confirmed on the quotation." },
+      { question: "Are flexible pouches good for food packaging?", answer: "Pouches can be quoted for food. Freshness and shelf life depend on the food and are confirmed on the quotation." },
       { question: "Can pouch packaging be customized?", answer: "Yes, size, material, and printing can be fully customized." },
       { question: "What is a stand-up pouch?", answer: "It is a pouch with a base that allows it to stand upright for display." },
       { question: "Are pouch packaging solutions eco-friendly?", answer: "Eco-friendly material options are available depending on requirements." },
@@ -286,10 +286,10 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   "stickers-labels": {
     metaTitle: "Custom Vinyl Stickers & Labels | Axis Packaging",
     metaDescription:
-      "Custom vinyl stickers and labels for packaging & branding. Waterproof, durable & full-color printing. Custom shapes & sizes. MOQ 100. Free design proof.",
+      "Custom vinyl stickers and labels for packaging and branding. Water resistance, outdoor use and durability are confirmed on your quotation.",
     h1: "Custom Vinyl Stickers & Labels for Brand Impact",
     description:
-      "Branding is more than just a logo. The way your packaging looks, feels, and communicates with customers plays a major role in how your business is remembered. From product packaging to shipping materials, stickers and labels help businesses create a more professional and recognizable appearance. At Axis Packaging, we provide durable and professionally designed sticker and label solutions that help businesses improve packaging presentation while maintaining long-term usability.",
+      "Branding is more than just a logo. The way your packaging looks, feels, and communicates with customers plays a major role in how your business is remembered. From product packaging to shipping materials, stickers and labels help businesses create a more professional and recognizable appearance. Axis Packaging supplies sticker and label options for packaging. Water resistance, outdoor use and how long the print lasts are confirmed on the quotation.",
     alt: "Custom vinyl stickers and labels with professional printing by Axis Packaging",
     breadcrumbName: "Stickers & Labels",
     hideProductFeatures: true,
@@ -302,7 +302,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     contentSections: [
       {
         title: "What Are Vinyl Stickers?",
-        intro: "Vinyl stickers are durable adhesive labels made from vinyl material, designed for long-lasting branding, packaging, product labeling, and promotional use. Unlike standard paper stickers, vinyl materials provide better durability, water resistance, stronger adhesion, longer-lasting print quality, and cleaner presentation.",
+        intro: "Vinyl stickers are adhesive labels used for branding, packaging and product labelling. Water resistance, adhesion and how long the print lasts are confirmed on the quotation.",
       },
       {
         title: "Why Custom Vinyl Stickers & Labels Matter for Branding",
@@ -317,22 +317,22 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
         comparisonTable: {
           columns: ["Feature", "Vinyl Stickers", "Paper Labels"],
           rows: [
-            { label: "Water Resistance", values: ["High", "Low"] },
-            { label: "Durability", values: ["High", "Medium"] },
-            { label: "Outdoor Use", values: ["Suitable", "Limited"] },
-            { label: "Lifespan", values: ["Long-lasting", "Short-term"] },
+            { label: "Water Resistance", values: ["Confirmed on the quotation", "Confirmed on the quotation"] },
+            { label: "Durability", values: ["Confirmed on the quotation", "Confirmed on the quotation"] },
+            { label: "Outdoor Use", values: ["Confirmed on the quotation", "Confirmed on the quotation"] },
+            { label: "Lifespan", values: ["Confirmed on the quotation", "Confirmed on the quotation"] },
           ],
         },
       },
       {
         title: "Why Choose Axis Packaging",
-        intro: "At Axis Packaging, we focus on creating sticker and label solutions that combine branding, durability, and practical performance with accurate print quality, durable material options, and clean finishing with precise cutting.",
+        intro: "Axis Packaging supplies sticker and label options. Print quality, water resistance and how long the print lasts are confirmed on the quotation.",
       },
     ],
     benefitsTitle: "Benefits of Custom Vinyl Stickers",
     benefits: [
-      "Waterproof & Durable — Resist moisture, scratches, and regular handling",
-      "Strong Adhesion — Remain attached properly without peeling during transportation",
+      "Water resistance — Moisture resistance is confirmed on the quotation",
+      "Adhesion — How well a sticker stays in place is confirmed on the quotation",
       "Better Print Quality — Cleaner graphics, sharper text, and consistent colors",
       "Flexible Branding Options — Customize shapes, sizes, finishes, logos, and colors",
     ],
@@ -340,25 +340,25 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     productTypes: [
       { title: "Vinyl Label Stickers", detail: "Commonly used for packaging, product information, jars, bottles, and retail branding." },
       { title: "Personalised Vinyl Stickers", detail: "Customized branding for promotions, packaging, events, and marketing campaigns." },
-      { title: "Auto Vinyl Stickers", detail: "Designed for vehicles, windows, outdoor branding, and durable promotional use." },
+      { title: "Auto Vinyl Stickers", detail: "For vehicles, windows or outdoor branding. Outdoor use is confirmed on the quotation." },
       { title: "Custom Vinyl Record Label Stickers", detail: "For music packaging, collector products, promotional merchandise, and specialty branding." },
     ],
     specificationsBullets: [
       "Custom sizes and shapes available",
-      "Waterproof vinyl materials",
+      "Water resistance confirmed on the quotation",
       "Matte, gloss, and transparent finishes",
       "High-quality vinyl sticker printing",
       "Permanent adhesive options available",
-      "Indoor and outdoor application suitable",
+      "Indoor or outdoor use is confirmed on the quotation",
       "Order quantity confirmed on your quotation",
       "Timing confirmed on your quotation",
     ],
     faqs: [
-      { question: "Are vinyl stickers waterproof and weather-resistant?", answer: "Yes, vinyl stickers are designed to resist water, moisture, scratches, and outdoor conditions, making them suitable for both indoor and outdoor applications." },
+      { question: "Are vinyl stickers waterproof and weather-resistant?", answer: "Water resistance and outdoor use are confirmed on the quotation. This page does not publish a weather rating." },
       { question: "What surfaces can vinyl stickers be applied to?", answer: "Vinyl stickers can be applied to boxes, bottles, jars, windows, packaging, laptops, vehicles, glass, plastic, and many other smooth surfaces." },
-      { question: "How long do vinyl stickers last?", answer: "High-quality vinyl stickers can last for years depending on usage, surface type, and environmental exposure." },
+      { question: "How long do vinyl stickers last?", answer: "How long a sticker lasts depends on the surface and the conditions. Durability is confirmed on the quotation." },
       { question: "Can custom vinyl stickers be removed easily?", answer: "Yes, many vinyl stickers can be removed without damaging surfaces, although adhesive strength may vary depending on the application type." },
-      { question: "What is the difference between vinyl stickers and paper stickers?", answer: "Vinyl stickers are more durable, waterproof, scratch-resistant, and longer-lasting compared to standard paper stickers." },
+      { question: "What is the difference between vinyl stickers and paper stickers?", answer: "Vinyl and paper are different label materials. Durability and water resistance for the sticker you need are confirmed on the quotation." },
     ],
   },
 
@@ -405,7 +405,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
       "Timing confirmed on your quotation",
     ],
     faqs: [
-      { question: "Are metal tin containers food safe?", answer: "Yes, many metal tin containers are suitable for dry food products such as tea, biscuits, confectionery, coffee, and snacks when manufactured with food-grade materials." },
+      { question: "Are metal tin containers food safe?", answer: "Tins are used for dry goods such as tea, coffee and confectionery. Any food-contact requirement is confirmed on the quotation." },
       { question: "Can metal tin containers be customized with my logo?", answer: "Yes, custom tin containers can be printed, embossed, or labeled with your branding, logo, product information, and packaging design." },
       { question: "What products work best in tin packaging?", answer: "Tin packaging is commonly used for candles, cosmetics, tea, chocolates, confectionery, grooming products, gift items, and premium retail packaging." },
       { question: "Are tin containers reusable?", answer: "Yes, one of the biggest advantages of metal tin packaging is reusability. Customers often reuse containers for storage, which also helps increase long-term brand visibility." },

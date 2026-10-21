@@ -13,8 +13,8 @@ export function SolutionFeatures() {
     },
     {
       icon: Package,
-      title: "End-to-End Solution",
-      description: "From concept to your door, we handle design, printing, and everything else you need.",
+      title: "What to send",
+      description: "Tell us the product, the size and the print. The quotation sets out what Axis Packaging will supply.",
       gradient: "from-orange-500 to-orange-600",
       bgGradient: "from-orange-50 to-orange-100"
     },
@@ -27,8 +27,8 @@ export function SolutionFeatures() {
     },
     {
       icon: Award,
-      title: "Quality Promise",
-      description: "We guarantee the highest quality product and customer experience with every order.",
+      title: "Quality checks",
+      description: "The quotation confirms the packaging, printing and checks agreed for your order.",
       gradient: "from-green-500 to-green-600",
       bgGradient: "from-green-50 to-green-100"
     }
@@ -47,15 +47,14 @@ export function SolutionFeatures() {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6 leading-tight">
-            We are your best solution for{" "}
+            Custom packaging for{" "}
             <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text -">
-              Custom Packaging
+              UK businesses
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Never worry about going to multiple sources to get your dream packaging.
-            We handle everything from design to delivery.
+            Axis Packaging supplies custom packaging for UK businesses. Tell us what you need and the quantity so we can prepare a quotation.
           </p>
         </div>
 

@@ -76,8 +76,8 @@ export default function IndustriesPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Shop by Industries</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Find the perfect packaging solutions tailored to your industry niche. Each industry has
-            specific requirements and we understand them all.
+            Browse packaging used by UK businesses in each industry. Tell us the product, and the
+            quotation confirms the pack.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/quote">
@@ -137,8 +137,8 @@ export default function IndustriesPage() {
               Shop by Industry
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find the perfect packaging solutions tailored to your industry niche. Each industry
-              has specific requirements and we understand them all.
+              Browse packaging used by UK businesses in each industry. Tell us the product, and the
+              quotation confirms the pack.
             </p>
           </div>
 
@@ -369,8 +369,8 @@ export default function IndustriesPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Need Industry-Specific Solutions?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our packaging experts understand the unique challenges and requirements of each
-            industry. Let us create the perfect packaging solution for your business.
+            Tell us the industry and the product. Axis Packaging supplies the packaging agreed on
+            the quotation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact?from=industries">
@@ -388,7 +388,7 @@ export default function IndustriesPage() {
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-[var(--axis-dark-blue)]"
               >
-                Download Catalog
+                Request a quotation
               </Button>
             </Link>
           </div>
@@ -403,7 +403,7 @@ export default function IndustriesPage() {
               Why Choose Axis Packaging for Industry Solutions?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We deliver industry-specific expertise with every packaging solution
+              Each industry page lists packaging that can be quoted for that sector
             </p>
           </div>
 
@@ -413,11 +413,10 @@ export default function IndustriesPage() {
                 <Package className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-3">
-                Industry Expertise
+                Industry pages
               </h3>
               <p className="text-gray-600">
-                Deep understanding of industry regulations, requirements, and best practices for
-                each sector.
+                Each page lists catalogue packs that can be quoted for that sector.
               </p>
             </div>
 
@@ -439,10 +438,10 @@ export default function IndustriesPage() {
                 <Award className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-[var(--axis-dark-blue)] mb-3">
-                Quality Assurance
+                Quotation checks
               </h3>
               <p className="text-gray-600">
-                Rigorous quality control processes ensuring your packaging meets industry standards.
+                Materials, print and timing are confirmed on the quotation. This page does not confirm an industry standard or a certificate.
               </p>
             </div>
           </div>
