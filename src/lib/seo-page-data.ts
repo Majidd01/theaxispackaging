@@ -23,7 +23,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     description: truncateMeta(
       "Axis Packaging supplies custom packaging and custom printed boxes for UK brands. Bespoke boxes and branded packaging from Leeds."
     ),
-    h1: "Create Custom Boxes & Packaging of Your Dreams",
+    h1: "Custom packaging boxes for UK businesses",
   },
   about: {
     path: "/about",

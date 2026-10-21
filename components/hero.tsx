@@ -45,11 +45,11 @@ export function Hero() {
 
           {/* Enhanced Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
-            Create Custom Boxes &{" "}
-            <span className="bg-gradient-to-r from-orange-300 to-orange-100 bg-clip-text -">
-              Packaging
+            Custom{" "}
+            <span className="bg-gradient-to-r from-orange-300 to-orange-100 bg-clip-text text-transparent" style={{ WebkitTextFillColor: "transparent", textShadow: "none" }}>
+              packaging
             </span>{" "}
-            of Your Dreams
+            boxes for UK businesses
           </h1>
 
           {/* Enhanced Description */}
