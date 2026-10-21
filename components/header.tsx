@@ -23,6 +23,28 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100">
+      <style>{`
+        .axis-nav-group { position: relative; }
+        .axis-mega {
+          top: 100%;
+          left: calc(50% - 375px);
+          width: 750px;
+          max-width: calc(100vw - 2rem);
+        }
+        @supports (top: anchor(bottom)) {
+          .axis-nav-group { position: static; }
+          .axis-products-trigger { anchor-name: --products-nav; }
+          .axis-industries-trigger { anchor-name: --industries-nav; }
+          .axis-mega {
+            top: anchor(bottom);
+            left: clamp(1rem, calc(anchor(center) - 375px), calc(100% - 750px - 1rem));
+            width: min(750px, calc(100% - 2rem));
+            max-width: none;
+          }
+          .axis-mega-products { position-anchor: --products-nav; }
+          .axis-mega-industries { position-anchor: --industries-nav; }
+        }
+      `}</style>
       {/* Top bar */}
       <div className="bg-[var(--axis-orange)] text-white py-2 px-4">
         <div className="container mx-auto flex justify-between items-center text-sm">
@@ -92,20 +114,20 @@ export function Header() {
                 return (
                   <div
                     key={item.name}
-                    className="relative group"
+                    className="axis-nav-group group"
                     onMouseEnter={() => setProductMenuImages(true)}
                     onFocus={() => setProductMenuImages(true)}
                   >
                     <Link
                       to={item.href}
-                      className="flex items-center gap-1 text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
+                      className="axis-products-trigger flex items-center gap-1 text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
                     >
                       {item.name}
                       <ChevronDown className="h-4 w-4" />
                     </Link>
 
                     {/* Products Dropdown - Enhanced Mega Menu */}
-                    <div className="absolute top-full left-0 mt-2 w-[750px] bg-white border-2 border-gray-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                    <div className="axis-mega axis-mega-products absolute border-t-8 border-x-2 border-b-2 border-t-transparent border-x-gray-100 border-b-gray-100 bg-white bg-clip-padding rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50 overflow-hidden">
                       <div className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 p-4">
                         <h3 className="text-xl font-bold text-white">
                           Our Products
@@ -192,20 +214,20 @@ export function Header() {
                 return (
                   <div
                     key={item.name}
-                    className="relative group"
+                    className="axis-nav-group group"
                     onMouseEnter={() => setIndustryMenuImages(true)}
                     onFocus={() => setIndustryMenuImages(true)}
                   >
                     <Link
                       to={item.href}
-                      className="flex items-center gap-1 text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
+                      className="axis-industries-trigger flex items-center gap-1 text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
                     >
                       {item.name}
                       <ChevronDown className="h-4 w-4" />
                     </Link>
 
                     {/* Industries Dropdown - Enhanced Mega Menu */}
-                    <div className="absolute top-full left-[-70px] mt-2 w-[750px] h-[520px] overflow-y-auto bg-white border-2 border-gray-100 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                    <div className="axis-mega axis-mega-industries absolute h-[520px] overflow-y-auto border-t-8 border-x-2 border-b-2 border-t-transparent border-x-gray-100 border-b-gray-100 bg-white bg-clip-padding rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50 overflow-hidden">
                       <div className="bg-gradient-to-r from-[var(--axis-orange)] to-orange-600 p-4 sticky top-0 z-10">
                         <h3 className="text-xl font-bold text-white">
                           Shop by Industry
