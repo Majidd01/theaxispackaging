@@ -71,7 +71,7 @@ export const HEADER_PRODUCTS: HeaderProduct[] = [
     "slug": "cosmetic-boxes"
   },
   {
-    "name": "Food Grade Containers",
+    "name": "Custom Food Containers",
     "slug": "food-containers"
   },
   {

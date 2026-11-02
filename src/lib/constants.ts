@@ -148,14 +148,14 @@ const _PRODUCT_CATEGORIES = [
     h1: "Elegant Custom Cosmetic Boxes for Beauty Brands",
   },
   {
-    name: "Food Grade Containers",
+    name: "Custom Food Containers",
     description: "Containers for food and beverage products. Hygienic custom packaging for food and drink.",
     icon: "🍽️",
     image: "/assets/assorted-food-containers.jpg",
     slug: "food-containers",
-    metaTitle: "Food Grade Containers | Axis Packaging",
+    metaTitle: "Custom Food Containers | Axis Packaging",
     metaDescription: "Containers for food and beverage products. Hygienic custom packaging for food and drink.",
-    h1: "Food Grade Containers for Food and Drink",
+    h1: "Custom Food Containers for Food and Drink",
   },
   {
     name: "Pharmaceutical Packaging",
@@ -352,64 +352,68 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Candle & Fragrance Boxes",
-    description: "Custom candle boxes communicate the luxury, scent, and personality of your brand before the candle is ever lit. We supply candle packaging boxes and fragrance packaging for jar candles, pillar candles, taper candles, reed diffusers, wax melts, and gift sets — in premium rigid board, kraft, and cardstock, with foil stamping, soft-touch coating, and elegant finishes that match the quality of what is inside.",
+    description: "Candle and fragrance boxes are cartons for jar candles, pillars, tapers, wax melts and small diffuser sets. Measure the item with its lid or cap on, and say whether the customer collects it or it is posted. The board, any print and the quantity are confirmed on your quotation. This page does not list materials or finishes.",
     icon: "🕯️",
     image: "/assets/packify-cosmetics-packaging.jpg",
     slug: "candle-boxes",
     metaTitle: "Custom Candle & Fragrance Boxes Packaging | Axis",
-    metaDescription: "Custom candle boxes and fragrance packaging with luxury finishes, foil stamping & eco-friendly kraft. Finishes and order quantities are confirmed on your quotation.",
+    metaDescription: "Candle and fragrance boxes for UK brands. Measure the item with its lid on and send the height so the carton can be confirmed on your quotation.",
     h1: "Custom Candle & Fragrance Packaging Boxes",
-    alt: "Custom luxury candle boxes with gold foil stamp and soft-touch finish by Axis Packaging",
+    alt: "Illustrative cosmetic tubes a jar and dropper bottles on a pink background rather than a candle box",
     breadcrumbName: "Candle & Fragrance Boxes",
-    productsWePackageTitle: "Candle & Fragrance Products We Package",
-    productsWePackage: [
-      { title: "Jar candle boxes", detail: "Tuck-end, window display, sleeve formats; foam inserts for protection" },
-      { title: "Pillar & taper candle boxes", detail: "Tall-format rigid and cardstock, custom inserts" },
-      { title: "Reed diffuser packaging", detail: "Rigid magnetic lid, foam-molded inserts, luxury presentation" },
-      { title: "Wax melt & tealight boxes", detail: "Window display, multi-cavity tray inserts, retail formats" },
-      { title: "Candle gift sets", detail: "Two-piece rigid boxes, ribbon closures, tissue lining, branded tissue" },
-      { title: "Fragrance & perfume cartons", detail: "Precision-fit cardstock cartons, foil-stamped, premium finish" },
+    hideProductFeatures: true,
+    internalLinks: [
+      { phrase: "home decor packaging boxes", href: "/products/home-decor-packaging-boxes" },
+      { phrase: "candle industry page", href: "/industries/candle" },
     ],
-    materials: [
-      { name: "Rigid Bux Board", bestFor: "Luxury candle gift boxes, reed diffusers, premium brands" },
-      { name: "SBS Cardstock (14pt–24pt)", bestFor: "Retail jar candle boxes, fragrance cartons, high-print quality" },
-      { name: "Kraft Board", bestFor: "Eco candle brands, artisan and natural wax candle packaging" },
-      { name: "Corrugated (E-flute)", bestFor: "Candle e-commerce shipping, multi-candle order fulfillment" },
-    ],
-    printingFinishing: {
-      print: ["Full-color CMYK", "PMS Pantone", "Interior printing available"],
-      finish: ["Matte", "Gloss", "Soft-touch", "Gold/Silver foil stamp", "Spot UV", "Emboss", "Deboss", "Holographic foil"],
-      addons: ["Magnetic closures", "Ribbon pulls", "Window cutouts", "Foam inserts", "Tissue lining", "Fragrance info tags"],
-    },
-    whyChoose: [
-      "Luxury finishing — foil stamp, emboss, soft-touch — standard for candle brands",
-      "Rigid gift box formats with magnetic closures for premium candle lines",
-      "Fragrance info tag printing and interior-printed lid options",
-      "Foam and card inserts to protect glass jars during shipping and retail display",
-      "Eco-friendly kraft options for natural wax and sustainable candle brands",
-      "A digital proof can be confirmed on your quotation",
-      "Order quantities are confirmed on your quotation",
+    contentSections: [
+      {
+        title: "Measure the candle before the carton",
+        intro: "A short jar and a tall diffuser cannot share one assumed box. Send the size of each item you want packed. Other home decor packaging boxes are a separate page when the product is not a candle or a diffuser.",
+        subsections: [
+          {
+            title: "Jars",
+            content: "Measure the diameter of the jar and the height with the lid fitted. A lid that sits above the glass is part of the height. Say whether one jar goes in the box, or more than one.",
+          },
+          {
+            title: "Pillars, tapers and melts",
+            content: "A pillar or taper needs its length, and a note if it is fragile at the tip. For wax melts, say how many pieces sit in one pack and whether they are loose or already in a tray.",
+          },
+          {
+            title: "Diffusers and small sets",
+            content: "Measure the bottle with the cap on, and list every piece that must travel in the same carton. A set of two different heights needs both heights, not an average.",
+          },
+        ],
+      },
+      {
+        title: "What to send with a candle quotation",
+        intro: "Request a quotation with the points below. The reply confirms the carton, the quantity and the timing. The wider range of candle enquiries is on the candle industry page.",
+        bullets: [
+          "The item: jar, pillar, taper, melt, diffuser, or a set",
+          "Height and width, including the lid or cap",
+          "How many items go in one box",
+          "Whether the customer collects it, or it is posted",
+          "Any wording that must be printed",
+          "How many boxes you want quoted",
+        ],
+      },
     ],
     faqs: [
       {
-        question: "What candle types can you make packaging for?",
-        answer: "Jar candles, pillar candles, taper candles, votive candles, tealights, wax melts, reed diffusers, and candle gift sets.",
+        question: "Can one carton fit every candle in a range?",
+        answer: "Only when the items are the same size. A short jar and a tall diffuser need different cartons. Send each size you sell.",
       },
       {
-        question: "Can you make luxury gift boxes for candles?",
-        answer: "Yes. Our luxury candle gift boxes in rigid board with magnetic closures, ribbon pulls, foil-stamped logos, and tissue lining are built for premium candle brands and gifting occasions.",
+        question: "Do you publish board types or finishes for candle boxes?",
+        answer: "No. Describe the candle and the look you want. The quotation confirms what can be supplied. This page does not name a board, a coating or a foil.",
       },
       {
-        question: "What finishes work best for candle packaging?",
-        answer: "Soft-touch coating with gold foil stamping is the most popular combination for premium candle brands. Matte lamination with Spot UV is the modern minimalist option. Gloss lamination suits bold, colorful retail candle packaging.",
+        question: "Is a minimum order published?",
+        answer: "No. Ask for the quantity you need. The quotation is prepared for that quantity.",
       },
       {
-        question: "Do you offer eco-friendly candle boxes?",
-        answer: "Yes. Recycled kraft, paper-based cardstock, and biodegradable materials with water-based inks are all available — ideal for natural wax, soy, and coconut candle brands.",
-      },
-      {
-        question: "What is the minimum order quantity?",
-        answer: "MOQ varies by box style. Contact us with your product type and quantity for a quote.",
+        question: "Does this page cover a reed diffuser?",
+        answer: "Yes, when you send the bottle height including the cap. Products that are not candles or diffusers belong with home decor packaging boxes.",
       },
     ],
   },
@@ -1061,7 +1065,7 @@ const _PRODUCT_CATEGORIES = [
     internalLinks: [
       { phrase: "burger boxes", href: "/products/burger-boxes" },
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "corrugated shipping boxes", href: "/products/corrugated-shipping" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
@@ -1069,7 +1073,7 @@ const _PRODUCT_CATEGORIES = [
     contentSections: [
       {
         title: "Pizza boxes for collection and delivery",
-        intro: "A pizza box has to stay shut in a delivery bag, stack in a pass, and open cleanly at the table. It is a different pack from bakery and cake boxes, which are built for slices and celebration cakes, and from food grade containers, which are closed tubs rather than a flat corrugated carton. A whole pizza stays in this carton rather than in takeaway food trays.",
+        intro: "A pizza box has to stay shut in a delivery bag, stack in a pass, and open cleanly at the table. It is a different pack from bakery and cake boxes, which are built for slices and celebration cakes, and from custom food containers, which are closed tubs rather than a flat corrugated carton. A whole pizza stays in this carton rather than in takeaway food trays.",
         subsections: [
           {
             title: "What to send with your enquiry",
@@ -1142,7 +1146,7 @@ const _PRODUCT_CATEGORIES = [
     internalLinks: [
       { phrase: "pizza boxes", href: "/products/pizza-boxes" },
       { phrase: "paper shopping bags", href: "/products/paper-bags" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "Printed kraft boxes", href: "/products/kraft-boxes" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
@@ -1158,7 +1162,7 @@ const _PRODUCT_CATEGORIES = [
           },
           {
             title: "Print and board",
-            content: "Printed kraft boxes on our kraft page are a broader carton range. For a burger, ask for a clamshell and say if the board should be plain or printed. Closed tubs are listed under food grade containers when the product is a sauce, dip or salad rather than a burger. For the rest of a takeaway menu, see restaurant packaging.",
+            content: "Printed kraft boxes on our kraft page are a broader carton range. For a burger, ask for a clamshell and say if the board should be plain or printed. Closed tubs are listed under custom food containers when the product is a sauce, dip or salad rather than a burger. For the rest of a takeaway menu, see restaurant packaging.",
           },
         ],
       },
@@ -1222,7 +1226,7 @@ const _PRODUCT_CATEGORIES = [
     hideProductFeatures: true,
     internalLinks: [
       { phrase: "flexible packaging pouches", href: "/products/flexible-pouches" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "pizza boxes", href: "/products/pizza-boxes" },
       { phrase: "vinyl stickers and labels", href: "/products/stickers-labels" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
@@ -1230,7 +1234,7 @@ const _PRODUCT_CATEGORIES = [
     contentSections: [
       {
         title: "Folded pails for noodles and rice",
-        intro: "A noodle box is a tall folded paperboard pail, often with a paper handle, for a hot portion that is eaten from the pack. It is a different job from flexible packaging pouches, which are sealed bags, and from food grade containers, which are lidded tubs.",
+        intro: "A noodle box is a tall folded paperboard pail, often with a paper handle, for a hot portion that is eaten from the pack. It is a different job from flexible packaging pouches, which are sealed bags, and from custom food containers, which are lidded tubs.",
         subsections: [
           {
             title: "Portion size",
@@ -1297,13 +1301,13 @@ const _PRODUCT_CATEGORIES = [
     seoTitle: "Custom Sandwich Boxes for UK Cafes | Axis Packaging",
     metaDescription: "Custom sandwich boxes for UK cafes, bakeries and delis. Wedge and rectangular cartons are quoted to your sandwich size by Axis Packaging in Leeds, UK.",
     h1: "Custom Sandwich Boxes for Cafes and Bakeries",
-    alt: "Printed sage sandwich boxes with a filled baguette in an open wedge carton",
+    alt: "Open sage and cream carton holding a filled baguette beside a closed matching box",
     breadcrumbName: "Sandwich Boxes",
     hideProductFeatures: true,
     internalLinks: [
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
       { phrase: "paper shopping bags", href: "/products/paper-bags" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "printed bagel and sandwich boxes", href: "/products/printed-bagel-sandwich-boxes" },
       { phrase: "bakery packaging", href: "/industries/bakery-cake" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
@@ -1311,7 +1315,7 @@ const _PRODUCT_CATEGORIES = [
     contentSections: [
       {
         title: "Cartons for made-to-order sandwiches",
-        intro: "Sandwich boxes are small cartons for a triangular wedge or a long filled roll. They are not bakery and cake boxes, which are for cakes and pastries, and they are not food grade containers, which suit tubs, salads and other lidded foods. A branded carton for a bagel or a filled roll, where the print is the main brief, is covered by printed bagel and sandwich boxes.",
+        intro: "This page is the sandwich carton: a triangular wedge for a cut sandwich, or a long rectangle for a roll. Use printed bagel and sandwich boxes when the brief is a branded bagel carton or a window carton. Bakery and cake boxes are for cakes and pastries. Custom food containers suit tubs, salads and other lidded foods.",
         subsections: [
           {
             title: "Wedge or rectangular",
@@ -1328,13 +1332,13 @@ const _PRODUCT_CATEGORIES = [
     productTypes: [
       { title: "Triangular wedge", detail: "For a sandwich cut on the diagonal. Match the carton to the cut piece, not to the whole loaf." },
       { title: "Rectangular carton", detail: "For rolls, baguettes and uncut sandwiches. Length is the measurement that is most often wrong, so measure the filled roll." },
-      { title: "Plain or printed", detail: "Plain kraft, or print in one colour, two colours, or full colour." },
+      { title: "Plain or a simple printed face", detail: "A plain carton, or a face printed with the shop name. A branded bagel carton or a window carton belongs on the printed bagel page." },
     ],
     specificationsTitle: "What we need before we quote",
     specificationsTable: [
       { feature: "Shape", detail: "Triangular wedge, rectangular carton, or both. Say which sandwiches use which shape." },
       { feature: "Size", detail: "Length, width and depth of the made sandwich. No platters or standard wedge sizes are published." },
-      { feature: "Print", detail: "Plain, one colour, two colours, or full colour." },
+      { feature: "Print", detail: "Plain, or describe the wording you want printed. The quotation confirms the print. A full printed bagel or window carton is a separate page." },
       { feature: "Quantity", detail: "Quoted for the quantity you ask for. No minimum is stated on this page." },
     ],
     whyChooseTitle: "How a sandwich box quote works",
@@ -1376,15 +1380,15 @@ const _PRODUCT_CATEGORIES = [
     slug: "printed-bagel-sandwich-boxes",
     featuredOrder: 1,
     metaTitle: "Custom Printed Bagel & Sandwich Boxes UK | Axis Packaging",
-    metaDescription: "Custom printed bagel and sandwich boxes for UK cafes, bakeries and delis. Food-grade board, full-colour CMYK print. Request a quote from Axis Packaging.",
+    metaDescription: "Printed bagel and sandwich boxes for UK cafes. Send the bagel or sandwich size, the artwork and the quantity so the printed carton can be quoted.",
     h1: "Custom Printed Bagel & Sandwich Boxes",
-    alt: "Custom Printed Bagel & Sandwich Boxes with Axis Packaging branding",
+    alt: "Open printed carton holding a filled bagel beside a triangular window carton holding a sandwich both marked Axis Packaging",
     breadcrumbName: "Bagel & Sandwich Boxes",
     hideProductFeatures: true,
     internalLinks: [
       { phrase: "sandwich boxes", href: "/products/sandwich-boxes" },
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "paper shopping bags", href: "/products/paper-bags" },
       { phrase: "food labelling and packaging guidance", href: "https://www.gov.uk/food-labelling-and-packaging" },
     ],
@@ -1399,13 +1403,13 @@ const _PRODUCT_CATEGORIES = [
           },
           {
             title: "Sandwich boxes with a window",
-            content: "A triangular carton with a clear window lets the customer see the filling before they open it. Measure the sandwich after it is cut, including tall ingredients. If you also sell long rolls, say so. One wedge size does not fit a baguette. Side salads and crisps are usually better in food grade containers than in the sandwich carton.",
+            content: "A triangular carton with a clear window lets the customer see the filling before they open it. Measure the sandwich after it is cut, including tall ingredients. If you also sell long rolls, say so. One wedge size does not fit a baguette. Side salads and crisps are usually better in custom food containers than in the sandwich carton.",
           },
         ],
       },
       {
         title: "Print, colour and who it is for",
-        intro: "Full-colour CMYK printing can reproduce logos, brand colours and original illustrations on the board. The finish is matt or gloss. This product uses food-grade board at 240gsm. UK food labelling and packaging guidance explains that packaging used for food must be suitable for that use, and that a declaration of compliance comes from the supplier. Prices and minimum orders are not published on this page.",
+        intro: "Send the logo, colours and artwork you want on the carton, and say if you have a finish in mind. The quotation confirms the print that can be supplied. This page does not name a board weight or a print process. If the carton will touch food, say so. Suitability is confirmed on the quotation. Food labelling and packaging guidance is published by the UK government. Prices and minimum orders are not published here.",
         subsections: [
           {
             title: "Shops that use this packaging",
@@ -1422,14 +1426,13 @@ const _PRODUCT_CATEGORIES = [
     productTypes: [
       { title: "Bagel carton", detail: "A box shaped around a filled bagel. The size comes from the bagel you describe, not from a stock list." },
       { title: "Window sandwich carton", detail: "A triangular box with a display window, so the filling can be seen before the carton is opened." },
-      { title: "Printed artwork", detail: "Your logo, colours and original artwork, printed in full-colour CMYK with a matt or gloss finish." },
+      { title: "Printed artwork", detail: "Your logo, colours and artwork. The quotation confirms how that artwork can be printed." },
     ],
     specificationsTitle: "Specifications",
     specificationsTable: [
-      { feature: "Material", detail: "Food-grade board" },
-      { feature: "Board weight", detail: "240gsm" },
-      { feature: "Printing", detail: "Full-colour CMYK" },
-      { feature: "Finish", detail: "Matt or gloss" },
+      { feature: "Board", detail: "Named on the quotation. This page does not state a grade or a weight." },
+      { feature: "Printing", detail: "The artwork you want. The quotation confirms the print." },
+      { feature: "Finish", detail: "Describe the look you want. It is confirmed on the quotation, not promised here." },
       { feature: "Dimensions", detail: "Awaiting confirmation. Enter the length, width and depth on the quote form." },
       { feature: "Lead time", detail: "Confirmed on the quotation." },
       { feature: "Quantity", detail: "Quoted for the quantity you request. No minimum is stated on this page." },
@@ -1458,7 +1461,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "What printing can I request?",
-        answer: "Full-colour CMYK, with a matt or gloss finish. Describe the logo, colours and artwork you want printed.",
+        answer: "Send the logo, colours and artwork. The quotation confirms the print and any finish. This page does not name a print process.",
       },
       {
         question: "Is there a minimum order or a published price?",
@@ -1487,7 +1490,7 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "burger boxes", href: "/products/burger-boxes" },
       { phrase: "pizza boxes", href: "/products/pizza-boxes" },
       { phrase: "Printed kraft boxes", href: "/products/kraft-boxes" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "food industry packaging", href: "/industries/food" },
       { phrase: "printed food trays", href: "/products/printed-food-trays" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
@@ -1495,7 +1498,7 @@ const _PRODUCT_CATEGORIES = [
     contentSections: [
       {
         title: "Open trays for chips, sides and street food",
-        intro: "A food tray is an open board tray for food that is eaten straight away. It is not a lidded tub. Use food grade containers when the food must be closed. Use burger boxes or pizza boxes when the item needs its own carton. Printed kraft boxes cover a wider kraft carton range if you also need closed cartons. For a tray where the print is the main brief, see printed food trays.",
+        intro: "A food tray is an open board tray for food that is eaten straight away. It is not a lidded tub. Use custom food containers when the food must be closed. Use burger boxes or pizza boxes when the item needs its own carton. Printed kraft boxes cover a wider kraft carton range if you also need closed cartons. For a tray where the print is the main brief, see printed food trays.",
         subsections: [
           {
             title: "Which foods suit a tray",
@@ -1648,7 +1651,7 @@ const _PRODUCT_CATEGORIES = [
     hideProductFeatures: true,
     internalLinks: [
       { phrase: "greaseproof paper", href: "/products/greaseproof-paper" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "paper shopping bags", href: "/products/paper-bags" },
       { phrase: "beverage packaging", href: "/industries/beverage" },
       { phrase: "bakery packaging", href: "/industries/bakery-cake" },
@@ -1658,7 +1661,7 @@ const _PRODUCT_CATEGORIES = [
     contentSections: [
       {
         title: "Paper cups for counter and event service",
-        intro: "A paper cup holds a drink served at a counter or a short event. It is not a sealed tub. Use food grade containers when the product must be closed. Greaseproof paper wraps or lines food and does not hold a drink. Use paper shopping bags when the customer carries the order away. Print planning is covered in the cup packaging guide.",
+        intro: "A paper cup holds a drink served at a counter or a short event. It is not a sealed tub. Use custom food containers when the product must be closed. Greaseproof paper wraps or lines food and does not hold a drink. Use paper shopping bags when the customer carries the order away. Print planning is covered in the cup packaging guide.",
         subsections: [
           {
             title: "How to give the cup size",
@@ -1971,7 +1974,7 @@ const _PRODUCT_CATEGORIES = [
       { phrase: "takeaway food trays", href: "/products/food-trays" },
       { phrase: "burger boxes", href: "/products/burger-boxes" },
       { phrase: "bakery boxes", href: "/products/bakery-boxes" },
-      { phrase: "food grade containers", href: "/products/food-containers" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
       { phrase: "custom paper cups", href: "/products/paper-cups" },
       { phrase: "greaseproof paper", href: "/products/greaseproof-paper" },
       { phrase: "restaurant packaging", href: "/industries/restaurant" },
@@ -1999,7 +2002,7 @@ const _PRODUCT_CATEGORIES = [
         subsections: [
           {
             title: "Counter and street-food service",
-            content: "Say whether the portion is dry, greasy or sauced. An open tray is a poor match for a sauce that must not leak. We would rather quote food grade containers than pretend a tray will hold the liquid.",
+            content: "Say whether the portion is dry, greasy or sauced. An open tray is a poor match for a sauce that must not leak. We would rather quote custom food containers than pretend a tray will hold the liquid.",
           },
           {
             title: "Restaurant packaging around the tray",
@@ -2116,7 +2119,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "Can printed food trays be used for takeaway orders?",
-        answer: "Yes, when the food can travel in an open tray. Food that must not leak is better in food grade containers. Plain kraft chip trays are takeaway food trays.",
+        answer: "Yes, when the food can travel in an open tray. Food that must not leak is better in custom food containers. Plain kraft chip trays are takeaway food trays.",
       },
     ],
   },

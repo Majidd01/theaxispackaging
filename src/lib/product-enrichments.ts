@@ -6,55 +6,65 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
   "paper-bags": {
     metaTitle: "Custom Paper Shopping Bags | Axis Packaging",
     metaDescription:
-      "Paper shopping bags for retail and gifting. Paper, print and handles are confirmed on your quotation.",
+      "Paper shopping bags for UK shops and gifts. Describe the handle, width, gusset, height and print so the bag can be confirmed on your quotation.",
     h1: "Paper Shopping Bags for Retail",
     description:
-      "Paper shopping bags can be quoted for retail and gifting. The paper, the handles and the print are confirmed on the quotation.",
-    alt: "Custom paper shopping bags with logo printing for retail by Axis Packaging",
+      "Paper shopping bags are carry bags for shops, gifts and takeaway. Describe the handle, the bag size and whether the face should be printed. The paper is named on the quotation.",
+    alt: "Printed cartons standing in trays on a shop shelf. The picture does not show a paper shopping bag",
     breadcrumbName: "Paper Shopping Bags",
     hideProductFeatures: true,
-    productTypesTitle: "Types of Paper Shopping Bags",
-    productTypes: [
-      { title: "Luxury Paper Shopping Bags", detail: "A presentation bag can be requested for boutiques and gifts. The handles and the finish are confirmed on the quotation." },
-      { title: "Printed Paper Shopping Bags", detail: "Custom printed bags designed with your logo and branding to improve retail presentation and brand visibility." },
-      { title: "Kraft Paper Bags", detail: "A kraft paper bag can be requested for shops and takeaway. The paper is confirmed on the quotation." },
-      { title: "Cheap Paper Shopping Bags", detail: "Cost-effective paper bag solutions suitable for promotional campaigns, events, and high-volume retail packaging." },
-    ],
-    benefitsTitle: "Benefits of Paper Shopping Bags",
-    benefits: [
-      "A paper bag can be requested instead of a plastic bag",
-      "Improves retail and gifting presentation",
-      "Custom printed branding for better visibility",
-      "Strength is confirmed on the quotation",
-      "Reusable packaging for long-term brand exposure",
-      "Available in luxury and budget-friendly styles",
-      "Suitable for retail, takeaway, and promotional packaging",
-      "Creates a more premium customer experience",
-    ],
-    specificationsBullets: [
-      "Custom sizes and dimensions available",
-      "The paper is confirmed on the quotation",
-      "A finish is confirmed on the quotation",
-      "The handle is confirmed on the quotation",
-      "The print is confirmed on the quotation",
-      "Strength is confirmed on the quotation",
-      "Suitable for retail and takeaway packaging",
-      "Order quantity confirmed on your quotation",
-      "Timing confirmed on your quotation",
-    ],
-    whyChooseParagraphs: [
-      "Tell us the shop and the product. The paper and the print are confirmed on the quotation.",
-      "Axis Packaging supplies paper bags for retail, gifting and promotions.",
-      "Axis Packaging supplies paper bags. The paper, the handles and the print are confirmed on the quotation.",
-    ],
     internalLinks: [
       { phrase: "paper bag guide", href: "/blog/eco-friendly-paper-bags-retail-packaging" },
     ],
+    contentSections: [
+      {
+        title: "Handles, size and paper",
+        intro: "Three details decide the bag: how it is carried, how large it is, and what it is made from. Send those with the product that goes inside.",
+        subsections: [
+          {
+            title: "Handles",
+            content: "Say if you want twisted paper handles, flat tape, cord, or no handles at all. A garment and a small gift do not need the same handle. Describe what the customer will carry.",
+          },
+          {
+            title: "Dimensions",
+            content: "Give the width across the face, the gusset depth and the height. Measure the product you put in the bag, including anything that sticks out. This page does not publish a stock size list.",
+          },
+          {
+            title: "Paper and print",
+            content: "Say if you want a kraft paper or a white paper, and send the artwork if the face should be printed. The quotation names the paper and the print.",
+          },
+        ],
+      },
+      {
+        title: "What to include in a bag quotation",
+        intro: "Request a quotation with the bag you actually need. The reply confirms the specification, the quantity and the timing.",
+        bullets: [
+          "The shop or the gift the bag is for",
+          "Handle style, or no handles",
+          "Width, gusset and height",
+          "Kraft paper or white paper, if you have a preference",
+          "Whether the face is plain or printed",
+          "How many bags you want quoted",
+        ],
+      },
+    ],
     faqs: [
-      { question: "Are paper shopping bags durable enough for retail products?", answer: "Tell us what the bag needs to carry. Strength is confirmed on the quotation. This page does not publish a weight rating." },
-      { question: "Can paper shopping bags be customized with my logo?", answer: "Yes, custom paper shopping bags can be printed with your logo, brand colors, artwork, and promotional messaging." },
-      { question: "Are paper shopping bags eco-friendly?", answer: "If you need a recyclable paper, say so when you enquire. The quotation confirms the material. This page does not publish a certificate. How shops use bags is covered in the paper bag guide." },
-      { question: "What industries commonly use paper shopping bags?", answer: "Paper shopping bags are widely used for fashion retail, boutiques, cosmetics, gifting, food packaging, and promotional events." },
+      {
+        question: "Are paper shopping bags strong enough for what we sell?",
+        answer: "Tell us what the bag needs to carry. This page does not publish a weight rating. The quotation can then say what paper is suitable for that load.",
+      },
+      {
+        question: "Can the bag be printed with a logo?",
+        answer: "Yes. Send the logo and say whether the face is printed in one colour or more. The quotation confirms the print.",
+      },
+      {
+        question: "Can I ask for a particular paper?",
+        answer: "Yes. Name kraft, white, or another paper you need. The quotation confirms the material. This page does not publish a certificate. Everyday retail use is covered in the paper bag guide.",
+      },
+      {
+        question: "Where are these bags used?",
+        answer: "Shops use them at the counter, and they are also quoted for gifts and for carrying a takeaway order. The size still has to match the item.",
+      },
     ],
   },
 

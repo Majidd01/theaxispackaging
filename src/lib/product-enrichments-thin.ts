@@ -233,10 +233,10 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
   },
   "food-containers": {
     metaDescription:
-      "Containers for UK food and drink brands. Tell Axis Packaging the food, quantity and any food-contact requirement so it can be confirmed on your quotation.",
-    alt: "Containers for food and drink products",
+      "Containers for UK food and drink brands. Tell Axis Packaging the food, lid and quantity so food-contact needs can be confirmed on your quotation.",
+    alt: "Clear lidded food containers beside lidded drinks cups",
     description:
-      "Food and drink containers are the packs UK cafés, retailers and producers use to hold a product for sale or service. This page does not publish a food-contact certificate. Tell Axis Packaging what the container will hold, and any food-contact requirement is confirmed on your quotation together with the size and quantity.",
+      "Food and drink containers are lidded or open packs for a portion of food or a drink. Describe the food, how full the container will be, and whether it needs a lid. Any food-contact requirement is confirmed on your quotation. This page does not publish a certificate, and it is not the page for cakes.",
     internalLinks: [
       { phrase: "bakery and cake boxes", href: "/products/bakery-boxes" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
@@ -245,33 +245,56 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
     ],
     contentSections: [
       {
-        title: "Food and drink uses",
+        title: "Capacity, lid and food",
         intro:
-          "Say what is going in the container before a style is chosen. A dry snack, a chilled product and a served meal are different jobs.",
+          "Start with the portion, not a container name. A side salad, a meal for one and a dry snack need different depths. Bakery and cake boxes are for cakes and pastries, not for these portions.",
         subsections: [
           {
-            title: "Retail and grocery",
+            title: "How full it will be",
             content:
-              "Brands packing a food or drink product for a shelf need a container that can carry the product name and the information they want printed. Bakery and cake boxes are the related choice for baked goods.",
+              "Describe the food and say whether the container is filled to the brim or only partly filled. A leafy salad and a dense rice portion of the same weight do not need the same depth. This page does not publish a capacity list.",
           },
           {
-            title: "Cafés and service",
+            title: "Lids",
             content:
-              "Takeaway food trays suit meals that are handed over a counter. Food packaging for producers and shops is described on the food industry page.",
+              "Say if you need a lid, and whether the food is eaten with the lid off or carried closed. An open portion is often better as takeaway food trays. Do not assume a lid seals in liquid. The quotation says what closure can be supplied.",
+          },
+          {
+            title: "Hot, chilled or dry",
+            content:
+              "Name the food and how it is served: hot, chilled, frozen or dry. Any food-contact requirement has to be written into the enquiry. Food packaging for shops and producers is outlined on the food industry page.",
           },
         ],
       },
       {
-        title: "What to tell us about the food",
+        title: "What to send for a container quotation",
         intro:
-          "A food container quotation starts with the food, not a certificate name. Request a quotation and include the points below. The reply confirms what can be supplied, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the food in front of you. The reply confirms the container, the quantity and the timing.",
         bullets: [
-          "The food or drink the container will hold",
-          "Whether it is served hot, chilled, frozen or dry",
+          "The food or drink, and whether it is hot, chilled, frozen or dry",
+          "How full the container will be",
+          "Whether you need a lid",
           "Any food-contact requirement you need confirmed",
-          "The quantity and the approximate size",
-          "The wording that must appear on the pack",
+          "The quantity, and any wording that must be printed",
         ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you publish container sizes?",
+        answer: "No. Describe the portion and how full the container will be. A side and a main meal should be sent as two sizes if you sell both.",
+      },
+      {
+        question: "Can I ask for a lid?",
+        answer: "Yes. Say whether the container is carried closed. The quotation confirms the lid that can be supplied. This page does not claim the lid is leakproof.",
+      },
+      {
+        question: "Is a food-contact certificate shown here?",
+        answer: "No. Write the food-contact requirement into the enquiry so it can be confirmed on the quotation.",
+      },
+      {
+        question: "When should I use a bakery box instead?",
+        answer: "Use bakery and cake boxes for cakes, cupcakes and pastries. Use this page for a container that holds a portion of food or a drink.",
       },
     ],
   },
@@ -457,9 +480,9 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
     h1: "Bakery and Cake Boxes for UK Bakeries",
     metaDescription:
       "Bakery and cake boxes for UK bakeries and cafés. Tell Axis Packaging the bake, quantity and any food-contact requirement so it can be confirmed on your quotation.",
-    alt: "Bakery and cake boxes for cakes and pastries",
+    alt: "Compartment trays of prepared food. This picture is not a cake box",
     description:
-      "Bakery and cake boxes are for cakes, cupcakes, pastries and bakery gifts sold by UK bakeries and cafés. Tell Axis Packaging what is being packed and whether you need a food-contact requirement confirmed. Size, print and quantity are confirmed on your quotation.",
+      "Bakery and cake boxes are cartons for whole cakes, cupcakes, cookies and pastries. Send the width of the bake and the height of any decoration so the box can clear it. Say whether the customer carries it out or it travels further. Any food-contact requirement is confirmed on your quotation. This page does not publish a certificate.",
     internalLinks: [
       { phrase: "food and drink containers", href: "/products/food-containers" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
@@ -469,33 +492,56 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
     ],
     contentSections: [
       {
-        title: "Bakes these boxes are used for",
+        title: "Height, presentation and the journey",
         intro:
-          "A tall celebration cake and a box of cookies need different proportions. Describe the bake and how the customer carries it.",
+          "A tall celebration cake and a flat box of cookies are different cartons. Measure the bake after it is finished, including icing or toppers that stand above it.",
         subsections: [
           {
-            title: "Cakes and celebration bakes",
+            title: "Cake size and box height",
             content:
-              "Whole cakes and cupcake sets need a box that clears the decoration. Say the diameter or the portion count if you know it. Food and drink containers are the related page when the product is not a bake.",
+              "Send the diameter or the length and width, plus the height the decoration needs. A single-tier sponge and a box of twelve cupcakes should be quoted as two sizes if you sell both. Food and drink containers are the other page when the product is a portion of food rather than a bake.",
           },
           {
-            title: "Counter and delivery sales",
+            title: "Presentation",
             content:
-              "Pastries sold from a counter or sent out for delivery need a box that can be closed for the journey. Takeaway food trays suit meals rather than cakes. Bakery packaging is also covered on the bakery industry page. Questions to settle before a cake or pastry order are set out in the bakery box guide.",
+              "Say whether the lid is plain or printed with the shop name. A window can be requested so the cake can be seen. The quotation says whether that window is available for the size. It is not promised here.",
+          },
+          {
+            title: "Counter collection and transport",
+            content:
+              "A box the customer carries from the counter is a different brief from boxes stacked for a van or a courier. Say which journey you need. Takeaway food trays suit meals rather than cakes. Bakery packaging is also covered on the bakery industry page, and the bakery box guide lists the questions to settle before the order.",
           },
         ],
       },
       {
         title: "What a bakery quotation should include",
         intro:
-          "Request a quotation with the bake and any food-contact requirement. The reply confirms the box, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the finished bake and any food-contact requirement. The reply confirms the box, the quantity and the timing.",
         bullets: [
           "The bake, such as a whole cake, cupcakes or cookies",
-          "The portion size or diameter",
+          "Width or diameter, and the height including decoration",
+          "Whether the lid is plain, printed, or you want to ask about a window",
+          "Whether the customer collects it, or it is transported",
           "How many boxes you need",
-          "Whether the box is collected, delivered, or both",
-          "The shop name or artwork to print",
         ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can one box fit a tall cake and a box of cookies?",
+        answer: "Usually not. Send the width and the height of each bake, including decoration. They can be quoted as separate cartons.",
+      },
+      {
+        question: "Do you state that bakery boxes are food-contact certified?",
+        answer: "No. Include any food-contact requirement in the enquiry so it can be confirmed on the quotation. This page does not publish a certificate or a freshness claim.",
+      },
+      {
+        question: "Can the lid have a window?",
+        answer: "Ask if you want one. The quotation says whether a window is available for that size. It is not included automatically.",
+      },
+      {
+        question: "When is a food container the better page?",
+        answer: "Use food and drink containers for a lidded portion of food or a drink. Keep this page for cakes, cupcakes, cookies and pastries.",
       },
     ],
   },

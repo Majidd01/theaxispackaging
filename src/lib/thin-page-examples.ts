@@ -50,9 +50,9 @@ export const PRODUCT_PAGE_EXAMPLES: Record<string, { title: string; intro: strin
     intro: "A shop selling one bottle as a gift and a venue receiving twelve bottles need different packs. Name the bottle size, such as the bottle you already sell, and the number in the pack. Say if the customer carries it by hand or a courier collects a case. If the box also holds a glass or a card, mention that so the height is not based on the bottle alone. This page does not rate how much weight the pack can take. That is confirmed when the pack is quoted.",
   },
   "bakery-boxes": {
-    metaDescription: "Bakery and cake boxes for UK bakeries and cafés. Name the bake, quantity and any food-contact need so Axis Packaging can confirm the box.",
+    metaDescription: "Bakery and cake boxes for UK bakeries and cafés. Name the bake, its height, the quantity and any food-contact need so the box can be confirmed.",
     title: "A typical bakery box enquiry",
-    intro: "A six-inch sponge and a box of twelve cupcakes fail for different reasons. The sponge needs height above the icing. The cupcakes need dividers or enough room that the cases do not touch the lid. Say whether the box is collected from the counter or sent out for delivery, and whether the shop name is printed or added as a sticker later. If you need a food-contact requirement checked, put that on the quotation. Do not treat this page as a certificate.",
+    intro: "A six-inch sponge and a box of twelve cupcakes fail for different reasons. The sponge needs height above the icing. The cupcakes need enough room that the cases do not touch the lid. Say whether the box is collected from the counter or sent out for delivery, and whether the shop name is printed or added as a sticker later. If you need a food-contact requirement checked, put that on the quotation. Do not treat this page as a certificate.",
   },
   "apparel-packaging": {
     metaDescription: "Apparel packaging for UK clothing and shoe brands. Say if you need a box or a bag, plus the quantity and print, for a confirmed quotation.",
