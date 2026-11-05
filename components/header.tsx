@@ -2,9 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { COMPANY_INFO, NAVIGATION_ITEMS } from "@/lib/site-info";
-import { FEATURED_PRODUCTS, HEADER_INDUSTRIES, HEADER_PRODUCTS } from "@/lib/header-nav";
+import { CATALOG_MENU_PRODUCTS, PRODUCT_MENU_CARD_COUNT } from "@/lib/catalog-menu";
+import { HEADER_INDUSTRIES } from "@/lib/header-nav";
 import { ChevronDown, Clock, Mail, Menu, Phone, X, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Header() {
@@ -12,11 +13,26 @@ export function Header() {
   const [productQuery, setProductQuery] = useState("");
   const [productMenuImages, setProductMenuImages] = useState(false);
   const [industryMenuImages, setIndustryMenuImages] = useState(false);
+  const productMenuRef = useRef<HTMLDivElement>(null);
+  const productMenuPointerOpen = useRef(false);
 
-  const featuredProducts = FEATURED_PRODUCTS;
+  const featuredProducts = CATALOG_MENU_PRODUCTS.slice(0, PRODUCT_MENU_CARD_COUNT);
+
+  const resetProductMenuScroll = () => {
+    const menu = productMenuRef.current;
+    if (menu && menu.scrollTop !== 0) menu.scrollTop = 0;
+  };
+
+  const showProductMenu = () => {
+    setProductMenuImages(true);
+    if (!productMenuPointerOpen.current) {
+      productMenuPointerOpen.current = true;
+      resetProductMenuScroll();
+    }
+  };
   const normalisedQuery = productQuery.trim().toLowerCase();
   const productMatches = normalisedQuery
-    ? HEADER_PRODUCTS.filter((product) => product.name.toLowerCase().includes(normalisedQuery)).slice(0, 8)
+    ? CATALOG_MENU_PRODUCTS.filter((product) => product.name.toLowerCase().includes(normalisedQuery)).slice(0, 8)
     : [];
 
   const industriesForDropdown = HEADER_INDUSTRIES;
@@ -115,19 +131,26 @@ export function Header() {
                   <div
                     key={item.name}
                     className="axis-nav-group group"
-                    onMouseEnter={() => setProductMenuImages(true)}
+                    onMouseEnter={showProductMenu}
+                    onMouseLeave={() => {
+                      productMenuPointerOpen.current = false;
+                    }}
                     onFocus={() => setProductMenuImages(true)}
                   >
                     <Link
                       to={item.href}
                       className="axis-products-trigger flex items-center gap-1 text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
+                      onFocus={resetProductMenuScroll}
                     >
                       {item.name}
                       <ChevronDown className="h-4 w-4" />
                     </Link>
 
                     {/* Products Dropdown - Enhanced Mega Menu */}
-                    <div className="axis-mega axis-mega-products absolute border-t-8 border-x-2 border-b-2 border-t-transparent border-x-gray-100 border-b-gray-100 bg-white bg-clip-padding rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50 overflow-hidden">
+                    <div
+                      ref={productMenuRef}
+                      className="axis-mega axis-mega-products absolute max-h-[calc(100vh-6rem)] overflow-x-hidden overflow-y-auto border-t-8 border-x-2 border-b-2 border-t-transparent border-x-gray-100 border-b-gray-100 bg-white bg-clip-padding rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50"
+                    >
                       <div className="bg-gradient-to-r from-[var(--axis-dark-blue)] to-blue-600 p-4">
                         <h3 className="text-xl font-bold text-white">
                           Our Products
@@ -174,7 +197,7 @@ export function Header() {
                                 <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 group-hover/item:scale-110 transition-transform duration-300">
                                   {productMenuImages ? (
                                     <img
-                                      src={`/assets/menu/${product.slug}.webp`}
+                                      src={product.image}
                                       alt={product.name}
                                       width={160}
                                       height={160}
@@ -200,7 +223,7 @@ export function Header() {
                             to="/products"
                             className="inline-flex items-center gap-2 text-[var(--axis-orange)] hover:text-[var(--axis-orange)]/80 font-semibold text-sm group/link"
                           >
-                            View all {HEADER_PRODUCTS.length} products
+                            View all {CATALOG_MENU_PRODUCTS.length} products
                             <ChevronDown className="h-4 w-4 rotate-[-90deg] group-hover/link:translate-x-1 transition-transform" />
                           </Link>
                         </div>
