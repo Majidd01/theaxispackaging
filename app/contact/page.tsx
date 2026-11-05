@@ -302,7 +302,7 @@ export default function ContactPage() {
                     <div className="w-6 h-6 bg-[var(--axis-orange)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                       2
                     </div>
-                    <span>We prepare a detailed proposal and timeline</span>
+                    <span>A reply confirms what can be offered, including any quotation for packaging, print, price and delivery</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-[var(--axis-orange)] text-white rounded-full flex items-center justify-center text-sm font-bold">

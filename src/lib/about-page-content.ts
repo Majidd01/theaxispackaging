@@ -2,12 +2,12 @@ export const ABOUT_PAGE = {
   badge: "About Axis Packaging",
   h1: "Custom packaging for UK businesses",
   intro:
-    "Axis Packaging is a custom packaging supplier based in Leeds. We help UK businesses choose custom printed boxes, food packaging, bakery packaging, retail packaging, paper bags and branded packaging. Quotations are prepared for the packaging you describe. Write to 104 Pudsey Road, Leeds, LS12 3TZ, call +44 7473 984273, or email info@theaxispackaging.com.",
+    "Axis Packaging is a custom packaging supplier based in Leeds, United Kingdom. UK businesses can ask about packaging for restaurants, cafés, bakeries, retail, cosmetics, ecommerce and other sectors. Postal correspondence: 104 Pudsey Road, Leeds, LS12 3TZ. Call +44 7473 984273 or email info@theaxispackaging.com.",
   storyTitle: "How we can help",
   story: [
-    "We supply packaging that can be printed and sized around your product. Food, bakery, retail and other branded goods can each need a different box, bag or pack, and we can talk through the formats that suit how you sell.",
-    "Customisation covers the practical choices: the style of box, the print, paper bags and other branded packaging. Share the product details and the options you prefer, and we will use them to prepare a quotation.",
-    "If you are still comparing packaging options, contact us in Leeds. We can help you describe what you need so the quotation matches the format.",
+    "We supply packaging that can be sized and printed around the product. Size, quantity, materials and branding are discussed from the details you send. The quotation names the packaging, the print, the price and the delivery arrangements that can be offered.",
+    "Restaurants, cafés, bakeries, shops, cosmetics brands and online sellers often need different packs. Tell us the product and how it is handed over or posted, and the quotation follows that brief.",
+    "Customers can ask about packaging samples. Availability, suitability, costs and delivery arrangements are confirmed individually. Customer support is available 24/7. Request a quotation by phone, email or the form.",
   ],
   storyImage: "/assets/custom-packaging-boxes.jpg",
   storyAlt: "An assortment of custom printed boxes",

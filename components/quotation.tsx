@@ -325,7 +325,7 @@ export function Quotation() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Quick Response</h4>
-                    <p className="text-gray-600 text-sm">Receive your custom quote within 24 hours of submission, including pricing and timeline details.</p>
+                    <p className="text-gray-600 text-sm">Quotation requests receive a 24h quote response. The quotation sets out the packaging, the price and the delivery arrangements that can be offered.</p>
                   </div>
                 </div>
 
@@ -334,8 +334,8 @@ export function Quotation() {
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">No Hidden Costs</h4>
-                    <p className="text-gray-600 text-sm">Transparent pricing with no surprises. All costs are clearly outlined in your quote.</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">Quoted price</h4>
+                    <p className="text-gray-600 text-sm">The quotation sets out the price for the packaging and delivery arrangements that can be offered.</p>
                   </div>
                 </div>
 

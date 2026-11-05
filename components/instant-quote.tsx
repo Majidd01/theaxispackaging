@@ -137,7 +137,7 @@ export function InstantQuote() {
                   <div className="w-6 h-6 bg-[var(--axis-orange)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                     2
                   </div>
-                  <span>We prepare a detailed quote and design mockup</span>
+                  <span>The quotation confirms the packaging, print, price and delivery arrangements that can be offered</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-6 h-6 bg-[var(--axis-orange)] text-white rounded-full flex items-center justify-center text-sm font-bold">
@@ -529,15 +529,15 @@ export function InstantQuote() {
                       <ul className="space-y-2 text-sm text-gray-600">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span>Our team reviews your requirements within 2 hours</span>
+                          <span>Axis Packaging reviews the details and asks for clarification where it is needed</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span>We prepare a detailed quote with design mockups</span>
+                          <span>The quotation confirms the packaging, print, price and delivery arrangements that can be offered</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span>You receive your quote via email within 24 hours</span>
+                          <span>You review the quotation before deciding whether to proceed. Quotation requests receive a 24h quote response</span>
                         </li>
                       </ul>
                     </div>

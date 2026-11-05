@@ -39,7 +39,7 @@ export const FAQ_PAGE_ITEMS = [
     {
       id: "4",
       question: "Do you offer free samples?",
-      answer: `Ask us if a sample is available for the packaging you need. Any sample cost or timing is confirmed when you request it.`,
+      answer: `Customers can ask about packaging samples when discussing their requirements. Sample availability, suitability, costs and delivery arrangements are confirmed individually.`,
       category: "Orders",
     },
     {
@@ -57,7 +57,7 @@ export const FAQ_PAGE_ITEMS = [
     {
       id: "7",
       question: "How do I place an order?",
-      answer: `Contact us by phone, email or the quotation form. Share the product, the quantity and any artwork. Quotation requests receive a 24h quote response, and 24/7 customer support is available.`,
+      answer: `Contact Axis Packaging by phone, email or the quotation form. Share the product, the quantity and any artwork. Quotation requests receive a 24h quote response, and 24/7 customer support is available.`,
       category: "Orders",
     },
     {
