@@ -2426,6 +2426,293 @@ const _PRODUCT_CATEGORIES = [
       },
     ],
   },
+  {
+    name: "Custom Soap Boxes with Window",
+    listedOn: "2026-11-04",
+    description:
+      "Custom Soap Boxes with Window let a UK soap brand show the colour and texture of a bar before the carton is opened. Send the soap size, the box style, the window position, the quantity, the artwork and the delivery location. The carton you can order is the one named on the quotation.",
+    icon: "🧼",
+    image: "/assets/soap-window-pink-featured.webp",
+    slug: "custom-soap-boxes-with-window",
+    seoTitle: "Custom Soap Boxes with Window | Axis Packaging Leeds UK",
+    metaDescription:
+      "Custom Soap Boxes with Window for UK soap brands. Send the bar size, box style, window position, quantity, artwork and delivery location for a quotation.",
+    h1: "Custom Soap Boxes with Window",
+    alt: "Custom Soap Boxes with Window in pink and brown, with a clear window and a pink handmade soap bar",
+    breadcrumbName: "Soap Boxes with Window",
+    faqHeading: "Frequently Asked Questions",
+    hideProductFeatures: true,
+    quoteTitle: "Request a soap box quotation",
+    quoteIntro:
+      "Use the quotation form on this page with the soap size, box style, window position, quantity, artwork and delivery location. Price, materials and timing are confirmed on the quotation.",
+    gallery: [
+      {
+        src: "/assets/soap-window-pink-featured.webp",
+        alt: "Custom Soap Boxes with Window in pink and brown, with a clear window and a pink handmade soap bar",
+      },
+      {
+        src: "/assets/soap-window-lavender.webp",
+        alt: "Purple and cream botanical soap carton with a window, lavender soap and dried flowers",
+      },
+      {
+        src: "/assets/soap-window-herbal.webp",
+        alt: "Green and kraft botanical soap carton with a window showing a herbal soap bar",
+      },
+      {
+        src: "/assets/soap-window-gift-collection.webp",
+        alt: "Three colourful window soap cartons in coral, teal and yellow, each showing a soap bar",
+      },
+    ],
+    internalLinks: [
+      { phrase: "soap and personal-care packaging", href: "/industries/soap" },
+      { phrase: "printed kraft boxes", href: "/products/kraft-boxes" },
+      { phrase: "folding carton boxes", href: "/products/folding-carton-boxes" },
+      { phrase: "cosmetic boxes", href: "/products/cosmetic-boxes" },
+      { phrase: "gift wrapping boxes", href: "/products/gift-boxes" },
+      { phrase: "vinyl stickers and labels", href: "/products/stickers-labels" },
+      { phrase: "premium rigid boxes", href: "/products/rigid-boxes" },
+      { phrase: "custom tissue paper", href: "/products/tissue-paper" },
+      { phrase: "custom mailer boxes", href: "/products/mailer-boxes" },
+      { phrase: "quotation form on this page", href: "#static-product-quote" },
+    ],
+    contentSections: [
+      {
+        title: "Custom Soap Boxes with Window for UK Brands",
+        intro:
+          "A window soap carton is a paperboard pack with an opening so the bar can be seen. Makers, refill shops and retailers use it when the bar itself is the product. Wider soap and personal-care packaging also covers bottles and mixed sets.",
+        subsections: [
+          {
+            title: "Who this carton is for",
+            content:
+              "Say whether the carton is for a counter, a market stall or an online order. A stall needs the bar readable at arm’s length. An online order is often placed inside another pack. One carton does not automatically suit all three.",
+          },
+          {
+            title: "What the customer is meant to notice",
+            content:
+              "People choose a soap by colour, texture and anything on the surface. A window only helps when those details show without opening the carton. Say which face should be seen, and keep the fragrance name beside the window.",
+          },
+        ],
+      },
+      {
+        title: "Benefits of Window Soap Packaging",
+        intro:
+          "A window is worth asking for when seeing the bar helps someone choose. It does not make a soap last longer, and it does not prove what is inside.",
+        subsections: [
+          {
+            title: "The bar stays visible",
+            content:
+              "A closed carton hides the colour. A window lets someone compare a pale bar with a darker one without breaking a seal. Say if the bar is wrapped first. A wrap can hide the colour the window was meant to show.",
+          },
+          {
+            title: "Colour and texture do the selling",
+            content:
+              "Specks, a wavy top or a swirl are part of a handmade bar, and a window can show them. It can also show a scuff. Ask for a large window only if you are happy for the bar to be judged as it is.",
+          },
+          {
+            title: "What a window does not do",
+            content:
+              "A window is not a claim that a soap is natural, tested or suitable for a particular skin. Those words belong in your artwork only if you can stand behind them. A window also does not stop oil from marking a board. If the bar is oily or freshly cured, say so.",
+          },
+        ],
+      },
+      {
+        title: "Popular Soap Box Styles",
+        intro:
+          "Name the style from how the carton is filled and closed. A photograph is not a stock item. A style is included only when the quotation says so.",
+        subsections: [
+          {
+            title: "Tuck-end cartons",
+            content:
+              "A tuck-end carton folds flat and closes with tucked flaps. It suits one bar, filled by hand, when you do not need a separate lid. Folding carton boxes are the wider page for a closed carton when the window is not the point of the brief.",
+          },
+          {
+            title: "Sleeves",
+            content:
+              "A sleeve wraps a finished bar or an inner tray. The window can sit on the front, with the ends open or closed. Say whether the sleeve is the only pack. An open end is a poor match if the bar can slide out in a bag.",
+          },
+          {
+            title: "Two-piece and drawer styles",
+            content:
+              "A two-piece carton has a base and a lid. A drawer slides from a sleeve. Both suit a gift more than a quick counter sale. A stiffer pack can be quoted as premium rigid boxes. A magnet or a ribbon is not assumed.",
+          },
+          {
+            title: "One style across a range",
+            content:
+              "A guest bar and a bath bar rarely share one carton. Send each size. Printed kraft boxes are the related page for a plain closed carton when only some fragrances need a window.",
+          },
+        ],
+      },
+      {
+        title: "Window Shapes and Placement",
+        intro:
+          "The window is an opening on a chosen face. A clear panel is included only if the quotation says so. Shape and position change what is seen and how much print remains.",
+        subsections: [
+          {
+            title: "Front, lid or side",
+            content:
+              "A front window suits a shelf where the carton faces forward. A lid window suits a carton looked down on, such as a counter. A side window is easy to miss unless the carton is turned. Say which face is seen first.",
+          },
+          {
+            title: "Rectangle, square and softer shapes",
+            content:
+              "A rectangle follows the bar and leaves room for the fragrance name. A square suits a bar shown end-on. A round or oval opening is something to ask about, not a shape this page promises. Leave a border so the opening does not run to the edge.",
+          },
+          {
+            title: "Keep type off the opening",
+            content:
+              "The fragrance name, the weight and any warning need print that is not the window. Mark that area on the artwork. A logo split between the panel and the board is hard to read and should be moved before you approve the quotation.",
+          },
+        ],
+      },
+      {
+        title: "Custom Sizes and Dimensions",
+        intro:
+          "Size the carton from the bar you sell. This page does not publish a list of standard soap sizes.",
+        subsections: [
+          {
+            title: "Measure the finished bar",
+            content:
+              "Measure length, width and depth after the bar is cured, cut and wrapped, if you wrap it. A soft or wavy top counts as height. A measurement taken in the mould, before the bar shrinks, will rattle or jam. Send each size you sell.",
+          },
+          {
+            title: "Room to close the carton",
+            content:
+              "The carton has to be slightly larger than the bar so it can be filled and closed. How much larger depends on the style and on any panel inside the opening. Do not invent a clearance. Describe the bar and let the quotation name the carton size.",
+          },
+          {
+            title: "Depth is often missed",
+            content:
+              "Makers often send the face and forget the thickness. A guest soap and a bath bar need different depths. If several bars share a carton, say how they stack and whether you need a divider. A divider is a further piece, not part of the window.",
+          },
+          {
+            title: "Outer packs",
+            content:
+              "The retail carton is not the carton that sends a batch of bars to a shop. Say if you also need a wholesale outer or a posted order. Custom mailer boxes are the related page when the soap carton needs its own shipper.",
+          },
+        ],
+      },
+      {
+        title: "Branding and Artwork",
+        intro:
+          "You supply the words and the logo. We do not invent fragrance names, ingredients or claims.",
+        subsections: [
+          {
+            title: "What to put on the carton",
+            content:
+              "Most briefs need the brand, the fragrance and a short line that can be read beside the window. A long story fits a leaflet better than a small face. Say which words must stay large. That is usually the fragrance, not the full ingredient list.",
+          },
+          {
+            title: "Colours and files",
+            content:
+              "Send a logo you are allowed to print and say which colours matter. A special ink or a foil is included only if the quotation says so. Vinyl stickers and labels suit a range that shares one carton and changes only the fragrance label.",
+          },
+        ],
+      },
+      {
+        title: "Paperboard, Window Materials and Finishing Considerations",
+        intro:
+          "Board, a clear panel and a finish are questions for the quotation. This page does not name a grade, a film or a coating.",
+        subsections: [
+          {
+            title: "Paperboard",
+            content:
+              "Describe how the carton is handled and the feel you want. A carton picked up all day is a different brief from one posted once. Ask which board is proposed. Do not copy a weight from another website and treat it as agreed.",
+          },
+          {
+            title: "The clear panel",
+            content:
+              "A window can be open, or covered by a clear panel. Say if people should be able to touch the soap. This page does not name a plastic, a film or a compostable sheet.",
+          },
+          {
+            title: "Oils, moisture and scent",
+            content:
+              "Tell us if the bar carries oil, salt, petals or a damp cure. A finish that looks calm in a photograph can mark, and a panel can hold moisture. Colour does not solve either problem. The quotation should say what is proposed for the bar you described.",
+          },
+          {
+            title: "Finishes",
+            content:
+              "Ask if you want a matt or gloss surface. Gloss can glare and matt can show fingerprints. Treat a finish as included only when the quotation says so. It is not a promise that the carton is waterproof.",
+          },
+        ],
+      },
+      {
+        title: "Handmade Soap and Gift Packaging",
+        intro:
+          "A single handmade bar and a gift of three bars are different cartons. Describe the set as it will be handed over.",
+        subsections: [
+          {
+            title: "Handmade bars",
+            content:
+              "If the height changes from batch to batch, send the tallest bar you will pack, not the average. Say whether petals or a textured top must stay visible. A tight carton will crush the detail the window is there to show.",
+          },
+          {
+            title: "Gift sets",
+            content:
+              "Three bars need one larger carton or three small ones. Say which, and whether the bars match. Gift wrapping boxes are the related page for a general gift carton. Custom tissue paper can be quoted if the set needs wrapping inside. Do not assume tissue is included.",
+          },
+          {
+            title: "Bottles and mixed sets",
+            content:
+              "A liquid in a bottle is not this carton. Cosmetic boxes are the related page for bottled care or a matched set. If a gift contains a bottle and a bar, list every piece and its height so the carton is not sized to the bar alone.",
+          },
+        ],
+      },
+      {
+        title: "How to Request a Quotation",
+        intro:
+          "Use the quotation form on this page. Axis Packaging supplies custom packaging from Leeds. Price, specification and timing are confirmed on the quotation, not here.",
+        subsections: [
+          {
+            title: "What to include",
+            content:
+              "Send the finished soap size, the box style, the window position, the quantity, the artwork or the words, and the delivery location. The form records length, width, depth, quantity and a file, so add the style, the window and the delivery location with the enquiry. The reply confirms the specification and the timing.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a custom soap box with a window?",
+        answer:
+          "It is a carton for a soap bar with an opening so the bar can be seen. Style, size and whether a clear panel is included are confirmed on the quotation. It is not a bottle carton and it is not a stock item.",
+      },
+      {
+        question: "Do these pictures show Axis Packaging stock?",
+        answer:
+          "No. The gallery shows illustrative concepts. The carton you can order is the size, style, window and artwork confirmed on your quotation.",
+      },
+      {
+        question: "What soap measurements should I send?",
+        answer:
+          "Send the length, width and depth of the finished bar, including any wrap and any uneven top. If you sell more than one size, send each size. This page does not publish a standard bar size.",
+      },
+      {
+        question: "Where can the window sit?",
+        answer:
+          "Ask for the face the customer sees first, usually the front or the lid, and say whether you want a rectangle or another shape. The quotation says whether that opening can be supplied. It is not promised by the photographs.",
+      },
+      {
+        question: "Can the carton be printed with our fragrance names?",
+        answer:
+          "Yes, when you supply the words and artwork you are allowed to print. Keep the fragrance name off the window. A special ink or a foil is included only if the quotation says so.",
+      },
+      {
+        question: "Do you name the board or the window film on this page?",
+        answer:
+          "No. Describe the bar, including oils or botanicals on the surface, and say if the window should be covered. The quotation names what is proposed. This page does not state a grade, a film or a certificate.",
+      },
+      {
+        question: "Can a handmade bar and a three-bar gift use the same carton?",
+        answer:
+          "Only when the contents are the same size. A single bar and a set of three should be quoted as separate cartons unless you want three small cartons. Say which you mean.",
+      },
+      {
+        question: "What should I include when I ask for a quotation?",
+        answer:
+          "Include the soap size, the box style, the window position, the quantity, the artwork and the delivery location. Price and timing come back with the quotation. Neither is listed here.",
+      },
+    ],
+  },
 ];
 
 export const PRODUCT_CATEGORIES = _PRODUCT_CATEGORIES.map((product) =>

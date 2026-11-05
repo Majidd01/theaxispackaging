@@ -35,6 +35,7 @@ export const RELATED_PRODUCT_SLUGS: Readonly<Record<string, readonly string[]>> 
   "bakery-boxes": ["food-containers", "food-trays", "greaseproof-paper"],
   "food-containers": ["bakery-boxes", "food-trays", "paper-cups"],
   "custom-restaurant-menu-cards": ["pizza-boxes", "burger-boxes", "paper-cups"],
+  "custom-soap-boxes-with-window": ["kraft-boxes", "cosmetic-boxes", "gift-boxes"],
   "flexible-pouches": ["tin-containers", "food-containers", "kraft-boxes"],
 
   "mailer-boxes": ["mailer-bags", "corrugated-shipping", "packing-tape"],

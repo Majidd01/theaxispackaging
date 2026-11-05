@@ -44,6 +44,7 @@ const CATEGORY_SLUGS: Record<Exclude<CatalogFilterId, "all">, readonly string[]>
   retail: [
     "gift-boxes",
     "cosmetic-boxes",
+    "custom-soap-boxes-with-window",
     "tissue-paper",
     "jewelry-boxes",
     "folding-carton-boxes",

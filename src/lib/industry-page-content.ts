@@ -960,8 +960,9 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
     metaDescription:
       "Soap and personal-care packaging for UK makers. Bar cartons, labels and gift sets, with size, print and quantity confirmed on your quotation.",
     productsIntro: "These products can be quoted for bars, bottles and soap gifts.",
-    relatedProductSlugs: ["kraft-boxes", "folding-carton-boxes", "cosmetic-boxes", "stickers-labels"],
+    relatedProductSlugs: ["custom-soap-boxes-with-window", "kraft-boxes", "folding-carton-boxes", "cosmetic-boxes"],
     internalLinks: [
+      { phrase: "custom soap boxes with window", href: "/products/custom-soap-boxes-with-window" },
       { phrase: "printed kraft boxes", href: "/products/kraft-boxes" },
       { phrase: "folding carton boxes", href: "/products/folding-carton-boxes" },
       { phrase: "cosmetic boxes", href: "/products/cosmetic-boxes" },
@@ -976,7 +977,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
           {
             title: "Bars and simple retail packs",
             content:
-              "Printed kraft boxes and folding carton boxes are the related pages for bar cartons. Labels can name a fragrance when several soaps share one carton size.",
+              "Custom soap boxes with window are the page for a bar the customer should see before opening the carton. Printed kraft boxes and folding carton boxes are the related pages for a closed bar carton. Labels can name a fragrance when several soaps share one carton size.",
           },
           {
             title: "Bottles and sets",
