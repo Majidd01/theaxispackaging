@@ -10930,255 +10930,233 @@
     "id": "35",
     "title": "Plant Boxes: Practical Packaging for Plants, Flowers and Garden Products",
     "slug": "plant-boxes-packaging-plants-flowers-garden-products",
-    "excerpt": "Discover practical plant box packaging solutions for nurseries, florists, and online plant retailers — from cardboard plant packaging and wooden display boxes to flower and seed planting boxes.",
+    "excerpt": "Plant boxes for UK nurseries, florists and garden centres. How to measure a pot, compare a display carton with a shipping carton, and ask for a quotation.",
     "content": [
       {
-        "type": "heading2",
-        "content": "Introduction"
-      },
-      {
+        "id": "p1",
         "type": "paragraph",
-        "content": "A [plant box](/products/custom-garden-plant-packaging) is designed to protect plants, flowers, seeds, and garden products during storage, handling, transport, and delivery. The right packaging needs to balance plant protection with ventilation, moisture management, structural strength, and presentation. Plants are very different from ordinary retail products. They are living products that can be damaged by pressure, rough handling, temperature changes, excess moisture, or insufficient support."
+        "content": "Plant boxes are cartons for the plants, flowers, seeds and garden goods you already sell. A nursery, a garden centre, a florist, an online plant shop and a gardening gift business can each need plant packaging boxes, and each brief is different. [Garden and plant packaging](/products/custom-garden-plant-packaging) is where the quotation starts. Axis Packaging supplies custom packaging from Leeds. It does not grow plants, and a carton is not a promise about the condition of a plant."
       },
       {
-        "type": "heading2",
-        "content": "Why Plant Packaging Needs a Different Approach"
-      },
-      {
+        "id": "p2",
         "type": "paragraph",
-        "content": "A plant cannot be treated like a standard boxed product. Its packaging needs to account for the living nature of the product and the conditions it may experience during transportation. For online plant retailers, this becomes even more important because the product may pass through several handling points before reaching the customer. Related reading: [corrugated boxes for safe delivery](/blog/corrugated-boxes-safe-product-shipping)."
+        "content": "The picture at the top shows dark potting soil, a green scoop and a small pot of soil. It is not a photograph of a carton. No board grade, price, minimum order or delivery date is published here."
       },
       {
-        "type": "bullet-list",
-        "listItems": [
-          "Structural support and protection against crushing",
-          "Sufficient airflow and moisture management",
-          "Stable positioning",
-          "Protection for leaves and stems",
-          "Easy handling",
-          "Space for plant-specific information"
-        ]
-      },
-      {
+        "id": "section1",
         "type": "heading2",
-        "content": "What Makes a Good Plant Box?"
+        "content": "Living plants and garden products"
       },
       {
+        "id": "p3",
         "type": "paragraph",
-        "content": "A good plant box should provide enough protection without making the packaging unnecessarily complicated. The design should start with the plant itself."
+        "content": "Name the item before you name a carton. A living plant has a pot, leaves and water. A seed packet is flat and dry. Compost is heavy and can shed dust. A trowel is long and solid. An enquiry that says only \"plant boxes\" leaves those differences to be guessed."
       },
       {
-        "type": "bullet-list",
-        "listItems": [
-          "Plant size — a small houseplant does not require the same packaging as a large outdoor plant",
-          "Pot shape and size — the packaging should keep the pot stable during transportation",
-          "Leaf and stem protection — delicate foliage needs space so leaves are not pressed against packaging",
-          "Weight — larger plants can be surprisingly heavy, requiring sufficient structural strength"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Cardboard Packaging for Plants"
-      },
-      {
-        "type": "paragraph",
-        "content": "Cardboard packaging for plants can provide a practical solution for nurseries, garden centres, and online plant retailers. Cardboard is lightweight, printable, and available in different grades to suit different packaging requirements. For plant retailers, this creates an opportunity to turn ordinary delivery packaging into part of the customer experience. Floral gifts also use [gift packaging](/industries/gift)."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "Plant shipping boxes",
-          "Retail plant packaging",
-          "Protective sleeves",
-          "Display boxes",
-          "Gift packaging",
-          "Garden product cartons"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Different Types of Plant Boxes"
-      },
-      {
-        "type": "paragraph",
-        "content": "The right format depends on the type of plant and how it is being sold."
-      },
-      {
+        "id": "section1a",
         "type": "heading3",
-        "content": "Small Plant Boxes"
+        "content": "A living plant"
       },
       {
+        "id": "p4",
         "type": "paragraph",
-        "content": "Small plant boxes are useful for compact houseplants, seedlings, herbs, and smaller potted plants. They should provide enough room around the plant to prevent leaves from being crushed while keeping the pot secure. These boxes can be particularly useful for eCommerce orders where plants need to travel individually. Also explore [eco-friendly packaging solutions](/blog/sustainable-eco-friendly-packaging-solutions)."
+        "content": "Packaging for potted plants has to give the pot a place to sit and leave room for the leaves if they must stay inside. Say whether the customer collects the carton or receives it by post. That describes the journey. It does not say how long the plant will stay in good condition."
       },
       {
+        "id": "section1b",
         "type": "heading3",
-        "content": "Large Planting Boxes"
+        "content": "Packets, soil, tools and gifts"
       },
       {
+        "id": "p5",
         "type": "paragraph",
-        "content": "Large planting boxes can be used for larger plants, garden products, and bigger retail displays. Their design needs to account for additional weight and greater movement during handling. Larger formats may benefit from reinforced construction and stronger base sections to support the product throughout transportation. See [home decor packaging](/blog/home-decor-packages-packaging-stylish-home-products)."
+        "content": "Garden product packaging starts from the packet, the bag or the tool. Do not send a pot width for a packet. A gift that mixes packets, a small tool and a note needs every piece listed, with the tallest one marked. [Gift boxes](/products/gift-boxes) are the related page when the carton is for presentation. [Gift packaging](/industries/gift) covers a wider gift range."
       },
       {
+        "id": "section2",
+        "type": "heading2",
+        "content": "How to measure packaging for potted plants"
+      },
+      {
+        "id": "p6",
+        "type": "paragraph",
+        "content": "Start from the plant you sell, and send each pot size as its own line. A single carton described as large enough for the range is harder to quote than the measurements."
+      },
+      {
+        "id": "section2a",
         "type": "heading3",
-        "content": "Garden Plant Boxes"
+        "content": "Pot width and pot height"
       },
       {
+        "id": "p7",
         "type": "paragraph",
-        "content": "Garden plant boxes can be used for a variety of outdoor plants, seedlings, and gardening products. For garden centres and online retailers, consistent packaging can also help create a recognisable brand experience across different product categories."
+        "content": "Measure the pot at its widest point, including the rim, and from the table to the top of the pot. If a saucer travels with the pot, measure the saucer and say that it is part of the order. A pot on its own and the same pot in a saucer do not have the same footprint. Measure the pot as it will be packed."
       },
       {
+        "id": "section2b",
+        "type": "heading3",
+        "content": "Foliage clearance"
+      },
+      {
+        "id": "p8",
+        "type": "paragraph",
+        "content": "If the leaves must stay inside, measure from the table to the highest leaf, and to the widest leaf if the plant spreads sideways. Say whether the leaves may touch the board. A trailing plant and an upright herb need different room. If you tie the foliage, measure it tied, and only if you will tie it every time."
+      },
+      {
+        "id": "section2c",
+        "type": "heading3",
+        "content": "More than one plant size"
+      },
+      {
+        "id": "p9",
+        "type": "paragraph",
+        "content": "A small herb and a larger shrub are separate lines. One shared carton size lets a short plant move about, or brings a tall plant against the lid."
+      },
+      {
+        "id": "section3",
         "type": "heading2",
-        "content": "Wooden Box for Plant Displays"
+        "content": "Keeping the pot still"
       },
       {
+        "id": "p10",
         "type": "paragraph",
-        "content": "A wooden box for plant displays can create a natural, premium appearance that works particularly well with garden and home décor products. The natural appearance of wood can complement the plant itself, making it useful when packaging is intended to remain visible after purchase. A wood plant box can also serve a dual purpose by acting as both packaging and a reusable display or storage container. Online plant shops need reliable [ecommerce packaging](/industries/ecommerce)."
+        "content": "The height can be right while the pot still slides. That movement bends leaves and tips compost onto the board. Say if you want a tight base, a tray, or something around the rim. A sleeve, an insert or a fold is a request. Describe the pot: round or square, smooth or with a lip, light plastic or heavy ceramic. If several pots share a carton, say whether they sit in a row or are stacked."
       },
       {
+        "id": "section4",
+        "type": "heading2",
+        "content": "Moisture and air"
+      },
+      {
+        "id": "p12",
+        "type": "paragraph",
+        "content": "Say whether you water before packing, and whether the pot can leak. Wet compost can mark a board, and a closed carton can hold damp air. A liner can be discussed. It is not assumed. Some sellers want holes for a warm van journey. Others want a closed carton so compost stays in the pot. Say which matters for the journey you use. Holes are a request, not a ventilation rating."
+      },
+      {
+        "id": "section5",
+        "type": "heading2",
+        "content": "Flower packaging boxes"
+      },
+      {
+        "id": "p14",
+        "type": "paragraph",
+        "content": "Cut flowers and a flowering pot plant are different packs. The pot plant still needs the pot measurements, plus the height of the blooms. For a bouquet, give the stem length and the width of the heads as you will pack them, including any wrap you already use. Say whether the bunch is collected or posted. [Mailer boxes](/products/mailer-boxes) are the related page when a flatter posted gift is closer to the brief than a tall carton. Leave room around the heads. The carton does not decide how long the flowers stay fresh."
+      },
+      {
+        "id": "section6",
+        "type": "heading2",
+        "content": "Seed packaging boxes and garden tools"
+      },
+      {
+        "id": "p17",
+        "type": "paragraph",
+        "content": "Seed packaging boxes hold packets. Say how many packets sit in one carton, the packet size if the packets already exist, and whether the carton is for a shelf or for posting. Variety names and sowing words are yours. Axis Packaging does not invent plant names or statements about how a plant will grow. A kit with a marker, a small pot and a leaflet is larger than the packet. List the pieces. For soil, give the filled weight you know, the bag size, and whether the carton holds one bag or several."
+      },
+      {
+        "id": "p19",
+        "type": "paragraph",
+        "content": "A trowel, a fork or a pair of gloves needs its longest length and its weight, not a pot size. Say whether the carton holds one tool or several. [Kraft boxes](/products/kraft-boxes) are a related page for a plain retail carton on a shelf."
+      },
+      {
+        "id": "section7",
+        "type": "heading2",
+        "content": "Display cartons and plant shipping boxes"
+      },
+      {
+        "id": "p20",
+        "type": "paragraph",
+        "content": "A display carton is seen on a bench or a counter. The front should be readable, and a plant that should be seen should not sit behind a flap. A plant shipping box is handled on the way to the customer. Say if you need one carton to do both. A light counter carton is a poor assumption for a posted shrub. [Corrugated shipping boxes](/products/corrugated-shipping) are the related page for the outer journey. [Ecommerce packaging](/industries/ecommerce) is the page when most orders are posted."
+      },
+      {
+        "id": "p21",
+        "type": "paragraph",
+        "content": "[Corrugated boxes for safe delivery](/blog/corrugated-boxes-safe-product-shipping) is a wider article about shipping cartons. It is not a strength rating for a plant. A window can be requested if you say which face the shopper sees. A window is not a standard part of a plant box, and it does not show that the plant is healthy. Wooden packaging is not offered from this article. Ask on the quotation if you want a wooden crate considered. A wooden crate is not plant-health approval."
+      },
+      {
+        "id": "section8",
+        "type": "heading2",
+        "content": "Cardboard packaging for plants"
+      },
+      {
+        "id": "p23",
+        "type": "paragraph",
+        "content": "Cardboard packaging for plants depends on the item and the journey. A dry packet, a watered pot and a bag of compost will not share one answer. For plant boxes in the UK, name the item, the weight you know, and whether the carton is posted or collected. If a board or a coating matters, it is named on the quotation. Do not paste a grade from another website and treat it as agreed."
+      },
+      {
+        "id": "section9",
+        "type": "heading2",
+        "content": "Size, weight and handling"
+      },
+      {
+        "id": "p25",
+        "type": "paragraph",
+        "content": "The useful size is the item plus the room you described for leaves, blooms or a handle. A short box bends foliage against the lid. Empty space around a loose pot lets the pot move. Give the weight if you know it, or describe the pot and say whether the compost is wet. This article does not publish a chart of sizes. A handle, and words such as \"this way up\", can be printed if you supply the instruction."
+      },
+      {
+        "id": "section10",
+        "type": "heading2",
+        "content": "Artwork and branding"
+      },
+      {
+        "id": "p28",
+        "type": "paragraph",
+        "content": "You supply the logo, the variety name and any care line. Keep the name readable at arm's length. A long care guide fits a leaflet better than a small face of the carton. A picture of a plant is artwork you must have the right to print. Printing it does not change how the plant is carried. A shared carton that changes only the variety can use a label for the variety name."
+      },
+      {
+        "id": "p30",
+        "type": "paragraph",
+        "content": "A paper-based carton can be requested. That request is not a statement that the carton is recyclable, compostable or certified. [Eco-friendly packaging solutions](/blog/sustainable-eco-friendly-packaging-solutions) discusses materials more generally, and the [eco-friendly packaging](/products/eco-friendly) page is a separate range. [Home decor packaging](/blog/home-decor-packages-packaging-stylish-home-products) is a separate article for goods that stay in a room. A printed plant carton can suit that kind of gift. It is still the carton for the item you measured."
+      },
+      {
+        "id": "section11",
+        "type": "heading2",
+        "content": "Plant trade rules are separate from the carton"
+      },
+      {
+        "id": "p31",
+        "type": "paragraph",
+        "content": "Some plants moved by trade in Great Britain can need a plant passport. GOV.UK guidance on [issuing plant passports](https://www.gov.uk/guidance/issuing-plant-passports-to-trade-plants-in-great-britain) explains how professional operators become authorised and when a passport is needed. Plants brought into Great Britain can need the checks in the GOV.UK guidance on [importing plants and plant products](https://www.gov.uk/guidance/import-plants-and-plant-products-from-the-eu-to-great-britain). That import page also notes that wood packaging material can have its own rules. A carton does not issue a passport, does not clear an import, and is not regulatory approval from Axis Packaging."
+      },
+      {
+        "id": "section12",
+        "type": "heading2",
+        "content": "Preparing a packaging quotation"
+      },
+      {
+        "id": "p33",
+        "type": "paragraph",
+        "content": "A useful brief names one flowering plant in a round plastic pot, the pot width across the rim, the pot height and foliage height from the table, whether a saucer and wet compost are included, one plant per carton, and whether it is posted. Put your own figures in. They change with the plant, so they are not printed here."
+      },
+      {
+        "id": "p34",
+        "type": "paragraph",
+        "content": "Use the quotation form on the garden and plant packaging page. These details make two quotations comparable:"
+      },
+      {
+        "id": "list1",
         "type": "bullet-list",
         "listItems": [
-          "Decorative plants and premium gift sets",
-          "Herb collections and succulents",
-          "Indoor plants",
-          "Garden displays"
+          "The item: living plant, cut flowers, seed packets, soil, tools, or a gift set",
+          "For a potted plant: pot width at the rim, pot height from the table, and foliage height from the table if the leaves must stay inside",
+          "For anything else: the packet, bag or tool size, not a pot size",
+          "The quantity you want quoted",
+          "Whether the carton is for a counter, a shelf, or posting",
+          "How the pot, bouquet or contents should be held, if you already know",
+          "The artwork or the words, including any plant-trade text you are allowed to print",
+          "The delivery destination"
         ]
       },
       {
-        "type": "heading2",
-        "content": "Window Plant Box for Better Product Presentation"
-      },
-      {
+        "id": "p35",
         "type": "paragraph",
-        "content": "A window plant box can solve the problem of customers wanting to see the plant before purchasing by providing a viewing area without requiring the entire package to remain open. This can be particularly useful for gift plants and premium garden products where appearance strongly influences purchasing decisions. However, the viewing area should be designed without compromising the structural protection of the package. Delivery often relies on [corrugated shipping boxes](/products/corrugated-shipping)."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "Plant colour and flower appearance",
-          "Leaf shape",
-          "Overall condition",
-          "Decorative presentation"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Flower Packaging Requires Extra Care"
-      },
-      {
-        "type": "paragraph",
-        "content": "Flowers are especially sensitive to pressure and handling. A carefully designed box can help create a memorable moment while reducing the risk of damage during delivery. For bouquets and floral gift products, packaging is also part of the presentation."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "Adequate space around blooms",
-          "Stem support",
-          "Protection from crushing",
-          "Stable positioning",
-          "Moisture management",
-          "Easy carrying"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Seed Planting Boxes for Garden Products"
-      },
-      {
-        "type": "paragraph",
-        "content": "A seed planting box can be useful for packaging gardening kits that combine seeds with the materials or instructions needed to start growing. For retailers, packaging a complete growing experience into one box can make gardening products easier to understand and more appealing to beginners."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "Seeds and growing instructions",
-          "Plant markers",
-          "Small gardening accessories",
-          "Soil or growing media",
-          "Educational information"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Designing Plant Packaging for Online Delivery"
-      },
-      {
-        "type": "paragraph",
-        "content": "Selling plants online creates a packaging challenge that traditional garden-centre sales do not have. A customer may order a plant from hundreds of miles away, and the product can pass through several stages of handling before it arrives. The box should hold the plant securely without trapping or crushing it. Garden brands frequently choose [eco-friendly packaging](/products/eco-friendly)."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "A secure base for the pot",
-          "Enough headroom for foliage",
-          "Strong side panels",
-          "Appropriate ventilation",
-          "Protection around delicate stems",
-          "Easy opening for the customer",
-          "Clear handling instructions"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Sustainability and Garden Packaging"
-      },
-      {
-        "type": "paragraph",
-        "content": "Gardening naturally connects with environmental awareness, but sustainable packaging still needs to perform its primary job: protecting the product. Reducing packaging material should not come at the expense of product protection."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "Recyclable cardboard",
-          "Paper-based protective components",
-          "Reduced plastic use",
-          "Right-sized boxes",
-          "Reusable packaging",
-          "Responsible sourcing"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Branding Opportunities Inside Plant Packaging"
-      },
-      {
-        "type": "paragraph",
-        "content": "The outside of the box is only one branding opportunity. The inside can also be used to create a more memorable customer experience. That information adds value while keeping the brand connected to the customer after delivery."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "Plant care instructions",
-          "Thank-you messages and brand stories",
-          "QR codes and reordering information",
-          "Social media details",
-          "Seasonal growing advice"
-        ]
-      },
-      {
-        "type": "heading2",
-        "content": "Common Plant Packaging Problems"
-      },
-      {
-        "type": "paragraph",
-        "content": "Even attractive packaging can fail if practical details are overlooked."
-      },
-      {
-        "type": "bullet-list",
-        "listItems": [
-          "The plant moves inside the box — excessive movement can damage leaves and stems",
-          "The box is too short — foliage touching the top becomes bent during transportation",
-          "The package is too large — excess space allows movement and increases shipping costs",
-          "Moisture is ignored — watering conditions should be considered when selecting materials",
-          "Instructions are missing — customers may not know how to care for a newly delivered plant"
-        ]
+        "content": "Price, the exact carton and the timing are confirmed on the quotation. No minimum order is published in this article."
       }
     ],
     "featuredImage": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=400&fit=crop",
-    "featuredImageAlt": "Plant boxes for packaging plants, flowers, and garden products for delivery and retail",
+    "featuredImageAlt": "Dark potting soil with white granules, a green plastic scoop, and a small patterned pot filled with soil",
     "author": "Axis Packaging Team",
     "publishedAt": "2026-08-21T10:00:00Z",
-    "readingTimeMinutes": 9,
+    "readingTimeMinutes": 10,
     "category": "Packaging Solutions",
     "tags": [
       "plant-boxes",
@@ -11188,56 +11166,61 @@
       "ecommerce-packaging"
     ],
     "meta": {
-      "metaTitle": "Plant Boxes for Flowers & Garden Products | Axis Packaging",
-      "metaDescription": "Discover practical plant box packaging for nurseries, florists, and online retailers - from cardboard packs to seed and flower planting kits.",
+      "metaTitle": "Plant Boxes for UK Nurseries, Florists and Garden Centres",
+      "metaDescription": "Plant boxes for UK nurseries, florists and garden centres. Learn how to measure a pot, compare a display carton with a shipping carton, and request a quotation.",
       "ogImage": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=400&fit=crop"
     },
     "cta": {
-      "title": "Protect Your Plants with the Right Packaging",
-      "description": "From small houseplant boxes to premium wooden display packaging, we create plant packaging that protects living products and delivers a great customer experience.",
+      "title": "Request garden and plant packaging",
+      "description": "Send the item, the measurements, the quantity, the artwork and the delivery destination. Axis Packaging supplies custom packaging from Leeds. The carton is the one named on your quotation.",
       "buttonText": "Explore Garden Packaging Solutions",
-      "buttonLink": "https://theaxispackaging.com/",
+      "buttonLink": "/products/custom-garden-plant-packaging",
       "features": [
-        "Custom Sizes for All Plant Types",
-        "Window Boxes & Premium Wooden Options",
-        "Eco-Friendly & Recyclable Materials"
+        "Pot width, pot height and foliage height",
+        "A display carton or a shipping carton",
+        "Your artwork and the delivery destination"
       ]
     },
     "faqs": [
       {
         "id": "faq1",
         "question": "What is a plant box?",
-        "answer": "A plant box is a packaging or storage format designed to hold and protect plants during handling, display, transportation, or delivery."
+        "answer": "A plant box, in this article, is a carton for a plant, cut flowers, seed packets or other garden goods. It is packaging for an item you already sell. A planter you grow in is a different product. The carton you can order is the one described on the quotation."
       },
       {
         "id": "faq2",
-        "question": "Are cardboard boxes suitable for plants?",
-        "answer": "Yes, cardboard packaging for plants can provide a lightweight and customisable solution when the material and structural design are appropriate for the plant being packaged."
+        "question": "How do I measure a potted plant for a box?",
+        "answer": "Measure the pot at its widest point, including the rim, and from the table to the top of the pot. If the leaves must stay inside, also measure from the table to the highest leaf. Include a saucer only when the saucer is part of the order. Send each pot size you sell as its own line."
       },
       {
         "id": "faq3",
-        "question": "What are large planting boxes used for?",
-        "answer": "Large planting boxes can be used for bigger plants, garden products, and larger retail or transportation requirements where additional space and structural support are needed."
+        "question": "Is cardboard suitable for a living plant?",
+        "answer": "Cardboard can be discussed for a potted plant, a seed carton or a tool. Whether it suits the job depends on the weight, whether the compost is wet, and whether the carton is posted or collected. This article does not name a board grade, and it does not say that every carton is suitable."
       },
       {
         "id": "faq4",
-        "question": "What is a wooden box for plant packaging?",
-        "answer": "A wooden box for plant products provides a natural and premium presentation for decorative plants, gift sets, herbs, and selected garden products, and can be reused after purchase."
+        "question": "What is the difference between a display carton and a shipping carton?",
+        "answer": "A display carton is seen on a counter or a bench. A shipping carton is handled on the journey to the customer. Say if you need one carton to do both. A light counter carton is not automatically a carton you should post."
       },
       {
         "id": "faq5",
-        "question": "What is a window plant box?",
-        "answer": "A window plant box incorporates a viewing panel that allows customers to see part of the plant without completely opening the package, useful for retail and gift presentation."
+        "question": "Can the box have a window or ventilation holes?",
+        "answer": "You can ask. Say which face a shopper should see, or why you want holes. A window, a hole, a liner and an insert are requests to discuss. They are not already agreed, and a window does not show that the plant is healthy."
       },
       {
         "id": "faq6",
-        "question": "How should flowers be packaged for delivery?",
-        "answer": "Flower packaging should provide adequate room for blooms and stems while preventing crushing and excessive movement. The exact design depends on the type and size of the floral arrangement."
+        "question": "How should flowers be packaged?",
+        "answer": "Give the stem length and the width of the blooms as you will pack them, including any wrap you already use. Say whether the bunch is collected from a shop or posted. Leave room around the heads. A carton does not decide how long the flowers stay fresh."
       },
       {
         "id": "faq7",
-        "question": "What is a seed planting box?",
-        "answer": "A seed planting box is a packaging format that can contain seeds and related gardening materials or instructions as a convenient complete growing kit."
+        "question": "Does a plant box meet plant passport rules?",
+        "answer": "Plant passport and import duties are explained on GOV.UK. A carton does not issue a passport, does not clear an import, and is not regulatory approval from Axis Packaging. Packaging suitability and plant-trade compliance are different questions."
+      },
+      {
+        "id": "faq8",
+        "question": "What should I send for a packaging quotation?",
+        "answer": "Send the item, the measurements, the quantity, whether it is displayed or posted, the artwork, and the delivery destination. Add pot dimensions only for a potted plant. Price and timing are confirmed on the quotation. No minimum order is published here."
       }
     ],
     "relatedPostIds": [
@@ -11249,67 +11232,87 @@
       {
         "id": "section1",
         "level": 2,
-        "text": "Introduction"
+        "text": "Living plants and garden products"
+      },
+      {
+        "id": "section1a",
+        "level": 3,
+        "text": "A living plant"
+      },
+      {
+        "id": "section1b",
+        "level": 3,
+        "text": "Packets, soil, tools and gifts"
       },
       {
         "id": "section2",
         "level": 2,
-        "text": "Why Plant Packaging Needs a Different Approach"
+        "text": "How to measure packaging for potted plants"
+      },
+      {
+        "id": "section2a",
+        "level": 3,
+        "text": "Pot width and pot height"
+      },
+      {
+        "id": "section2b",
+        "level": 3,
+        "text": "Foliage clearance"
+      },
+      {
+        "id": "section2c",
+        "level": 3,
+        "text": "More than one plant size"
       },
       {
         "id": "section3",
         "level": 2,
-        "text": "What Makes a Good Plant Box?"
+        "text": "Keeping the pot still"
       },
       {
         "id": "section4",
         "level": 2,
-        "text": "Cardboard Packaging for Plants"
+        "text": "Moisture and air"
       },
       {
         "id": "section5",
         "level": 2,
-        "text": "Different Types of Plant Boxes"
+        "text": "Flower packaging boxes"
       },
       {
         "id": "section6",
         "level": 2,
-        "text": "Wooden Box for Plant Displays"
+        "text": "Seed packaging boxes and garden tools"
       },
       {
         "id": "section7",
         "level": 2,
-        "text": "Window Plant Box for Better Product Presentation"
+        "text": "Display cartons and plant shipping boxes"
       },
       {
         "id": "section8",
         "level": 2,
-        "text": "Flower Packaging Requires Extra Care"
+        "text": "Cardboard packaging for plants"
       },
       {
         "id": "section9",
         "level": 2,
-        "text": "Seed Planting Boxes for Garden Products"
+        "text": "Size, weight and handling"
       },
       {
         "id": "section10",
         "level": 2,
-        "text": "Designing Plant Packaging for Online Delivery"
+        "text": "Artwork and branding"
       },
       {
         "id": "section11",
         "level": 2,
-        "text": "Sustainability and Garden Packaging"
+        "text": "Plant trade rules are separate from the carton"
       },
       {
         "id": "section12",
         "level": 2,
-        "text": "Branding Opportunities Inside Plant Packaging"
-      },
-      {
-        "id": "section13",
-        "level": 2,
-        "text": "Common Plant Packaging Problems"
+        "text": "Preparing a packaging quotation"
       }
     ],
     "views": 0
