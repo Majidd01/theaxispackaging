@@ -359,51 +359,222 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
   },
 
   "tin-containers": {
-    metaTitle: "Custom Metal Tin Containers | Axis Packaging",
+    seoTitle: "Tin Packaging UK for Custom Metal Tins | Axis Packaging",
+    metaTitle: "Tin Packaging UK for Custom Metal Tins | Axis Packaging",
     metaDescription:
-      "Custom metal tin containers for cosmetics, candles, tea and gifts. Finish, print and any food-contact need are confirmed on your quotation.",
+      "Tin packaging UK for candles, gifts, cosmetics, tea and confectionery. Send the product size, quantity, shape, closure, artwork and delivery destination.",
     h1: "Custom Metal Tin Containers",
     description:
-      "Metal tins can be quoted for cosmetics, candles, gifts, confectionery and tea. The finish, the print and any food-contact requirement are confirmed on the quotation.",
-    alt: "Premium custom metal tin containers with logo printing by Axis Packaging",
+      "Custom metal tin containers are rigid lidded packs that Axis Packaging supplies to UK brands. This page is for tin packaging, including custom tin boxes and decorative metal tins for retail and gifts. A tub, a cup and a pouch are different products. The pictures are illustrative concepts with fictional names, not photographs of stock.",
+    image: "/assets/tin-packaging-collection.webp",
+    alt: "Round and rectangular metal tins in navy gold green and burgundy with fictional names Hearthwick Linden Grove Marrow and Solstice. One navy lid is open",
+    gallery: [
+      {
+        src: "/assets/tin-packaging-collection.webp",
+        alt: "Round and rectangular metal tins in navy gold green and burgundy with fictional names Hearthwick Linden Grove Marrow and Solstice. One navy lid is open",
+      },
+      {
+        src: "/assets/tin-packaging-retail-gift.webp",
+        alt: "A green Vale candle tin with a gold lid and a cream candle a square Orchard balm tin and a blush Bramble gift tin on linen",
+      },
+      {
+        src: "/assets/tin-packaging-printed.webp",
+        alt: "A blue Northlane printed tin a coral and cream Petal and Tin tin with the lid removed and a charcoal Kin and Co. rectangular tin",
+      },
+    ],
     breadcrumbName: "Tin Containers",
+    faqHeading: "Frequently Asked Questions",
     hideProductFeatures: true,
+    quoteTitle: "Request a metal tin quotation",
+    quoteIntro:
+      "Send the product type, dimensions, quantity, use, shape, closure, artwork and delivery destination with the form. Price and timing are not listed on this page.",
     internalLinks: [
-      { phrase: "custom vinyl stickers & labels", href: "/products/stickers-labels" },
-      { phrase: "chocolates", href: "/industries/chocolate" },
-      { phrase: "coffee", href: "/industries/coffee" },
+      { phrase: "vinyl stickers and labels", href: "/products/stickers-labels" },
+      { phrase: "candle packaging boxes", href: "/products/candle-boxes" },
+      { phrase: "cosmetic boxes", href: "/products/cosmetic-boxes" },
+      { phrase: "gift wrapping boxes", href: "/products/gift-boxes" },
+      { phrase: "custom food containers", href: "/products/food-containers" },
+      { phrase: "flexible packaging pouches", href: "/products/flexible-pouches" },
+      { phrase: "coffee packaging", href: "/industries/coffee" },
+      { phrase: "chocolate packaging", href: "/industries/chocolate" },
+      { phrase: "food labelling and packaging overview", href: "https://www.gov.uk/food-labelling-and-packaging/overview" },
+      { phrase: "quotation form on this page", href: "#static-product-quote" },
     ],
     contentSections: [
       {
-        title: "What Are Metal Tin Containers?",
-        intro: "A metal tin is a rigid container that can be quoted for retail and gifts. Protection, finish and whether the tin can be reused are confirmed on the quotation.",
-        bullets: ["Candle packaging", "Tea packaging", "Confectionery", "Cosmetics", "Gift products", "Promotional packaging", "Luxury retail products"],
+        title: "Custom Tin Packaging UK for Retail and Gift Brands",
+        intro:
+          "Tin packaging UK shops and gift brands ask for is a metal container with a lid, chosen when the pack should look finished on a shelf or in the hand. Axis Packaging supplies these tins and does not manufacture them. A tin suits a rigid product. It is the wrong pack for a bottle, and a poor match for a flat item that belongs in a carton.",
+        subsections: [
+          {
+            title: "Retail shelves and counters",
+            content:
+              "Say whether the tin stands, stacks or sits in a tray, and whether the main use is a stall, a counter or a posted order. A stall needs the name readable at arm's length. If several products share one size and only the scent or the flavour changes, that line can sit on vinyl stickers and labels.",
+          },
+          {
+            title: "Gift brands",
+            content:
+              "Say who the gift is for and whether the tin holds one item or a small set. Gift wrapping boxes are the related page when you want a carton instead. Do not assume a ribbon, a window or an insert. Keeping a tin afterwards is ordinary. It is not a durability rating.",
+          },
+          {
+            title: "Packs this page does not cover",
+            content:
+              "Custom food containers are the page for tubs, trays and cups. Flexible packaging pouches are the page for a bag. Use this page when the pack itself is a metal tin.",
+          },
+        ],
       },
       {
-        title: "Advantages of Custom Metal Tin Containers",
+        title: "Popular Uses for Metal Tin Packaging",
+        intro:
+          "Name what goes inside. The same outline can be wrong for two fills. These are briefs, not tins waiting to be dispatched.",
         subsections: [
-          { title: "Strong Product Protection", content: "Tell us what the tin needs to protect. Any strength or dent resistance is confirmed on the quotation. This page does not publish a protection rating." },
-          { title: "Premium Shelf Appeal", content: "The metallic structure and clean finishing create a premium appearance that helps products stand out in retail displays and gift packaging environments." },
-          { title: "Reusable Packaging Solution", content: "Customers frequently reuse tin containers for storage after purchase, helping brands maintain visibility beyond the original sale." },
-          { title: "Better Branding Opportunities", content: "Print, embossing and labels can be requested. They are confirmed on the quotation. Many businesses combine tin packaging with custom vinyl stickers & labels." },
+          {
+            title: "Candle packaging",
+            content:
+              "Send the finished diameter and height, including the wick and the closed lid. If the tin only wraps a glass, measure the glass. Candle packaging boxes are the page for a carton. No burn time is stated here.",
+          },
+          {
+            title: "Cosmetic and grooming products",
+            content:
+              "Measure the filled balm or grooming product, including any inner pot, and say if it is oily. A fill into the tin is different from a tin that only holds a jar. Cosmetic boxes are the page for a carton around a jar, a tube or a set.",
+          },
+          {
+            title: "Gift products",
+            content:
+              "Say how many pieces go into a decorative metal tin and whether the lid comes off. If they rattle, say so.",
+          },
+          {
+            title: "Tea and confectionery",
+            content:
+              "Loose tea, tea bags and confectionery need the food-contact check below. Wrapped sweets and loose tea are not the same order. Chocolate packaging is the page for a chocolate tin or carton.",
+          },
+          {
+            title: "Promotional and retail presentation",
+            content:
+              "Say if a seasonal tin is sold or given away, and how many sit on the counter. If coffee might also go in a bag, coffee packaging covers both formats.",
+          },
+        ],
+      },
+      {
+        title: "Tin Shapes, Sizes and Closures",
+        intro:
+          "Start from the contents. There is no size chart, shape list or seal rating on this page.",
+        subsections: [
+          {
+            title: "Measure the contents",
+            content:
+              "Measure length, width and height, or diameter and height, after the product is filled and finished. Include anything that stands proud. Send each size you sell. An empty sample will be the wrong size.",
+          },
+          {
+            title: "Shape",
+            content:
+              "Name a round, square, rectangular or oval tin, and say what has to fit inside. A round tin suits many candles and balms. A rectangular tin suits a flat gift. A shape in a photograph is not stock.",
+          },
+          {
+            title: "Lids, fill level and packing",
+            content:
+              "Say whether you want a slip lid, a screw lid, a hinged lid or another closure, and how full the tin will be. A lid that closes over the product needs the filled height. Nothing here promises an airtight, leak-proof or child-resistant closure. Say if the tins are posted loose. A decorative surface can dent, and no dent rating is published here.",
+          },
+        ],
+      },
+      {
+        title: "Custom Branding and Printed Tin Packaging",
+        intro:
+          "Printed tin packaging means the brand is on the tin or on a label. You supply the words and the logo. We do not invent claims, fragrance names or ingredients.",
+        subsections: [
+          {
+            title: "Artwork",
+            content:
+              "Send the logo and the words that must be read at arm's length. Keep the product name large. A lid has little room for a paragraph. A special ink or a foil has to be requested. It is not part of every tin.",
+          },
+          {
+            title: "Labels and decoration",
+            content:
+              "Print on the tin when every tin carries the same design. Use a separate label when only the scent, flavour or batch changes. Embossing can be requested. This page does not guarantee embossing, a printing method or a finish.",
+          },
+          {
+            title: "Claims on the artwork",
+            content:
+              "Do not add food-safe, airtight, BPA-free or a certificate unless you already hold the evidence for that tin and that use. We will not add those words. If a claim has to appear, send the wording and the reason before anything is printed.",
+          },
+        ],
+      },
+      {
+        title: "Tin Packaging for Food Products",
+        intro:
+          "Tin packaging for food is a different question from a candle tin or an empty gift tin. Tea, confectionery and other foods need the food named. A metal tin is not automatically suitable for food.",
+        subsections: [
+          {
+            title: "What to say about the food",
+            content:
+              "Say whether the tin touches the food. Loose tea, wrapped tea bags and a sweet already in foil are different. Oily or moist food changes the check. It does not make a tin suitable. Coffee sold in a bag as well is a second pack size.",
+          },
+          {
+            title: "Food-contact suitability",
+            content:
+              "Food-contact suitability must be verified against the actual intended use and the relevant documentation before you accept a quotation. This page does not claim that every tin is food-safe, airtight, BPA-free, certified or suitable for direct food contact. The food labelling and packaging overview on GOV.UK sets out general duties for food businesses. It is not evidence that a tin supplied by Axis Packaging complies.",
+          },
+          {
+            title: "Words on a retail food tin",
+            content:
+              "If the customer buys the tin, the food name and the quantity have to be readable. You supply those words. We do not write an ingredients list or an allergy statement.",
+          },
+        ],
+      },
+      {
+        title: "How to Request a Metal Tin Packaging Quote",
+        intro:
+          "Use the quotation form on this page. Axis Packaging supplies packaging from Leeds for delivery in the UK. Price, the exact tin and the timing are confirmed on the quotation, not on this page.",
+        subsections: [
+          {
+            title: "What to include",
+            content:
+              "Send the product type, the product dimensions, the required tin quantity, the intended use, the preferred shape, the closure, the artwork, the delivery destination, and any compliance or handling requirement. The form records length, width, depth and quantity, so add the shape, the use and the destination in the enquiry. For food, say whether the tin touches it.",
+          },
         ],
       },
     ],
-    specificationsBullets: [
-      "Custom sizes and dimensions available",
-      "Finish: Confirmed on the quotation",
-      "Print: Confirmed on the quotation",
-      "Embossing: Confirmed on the quotation if you ask for it",
-      "Reuse: Whether customers can reuse the tin is not a published rating",
-      "Order quantity confirmed on your quotation",
-      "Timing confirmed on your quotation",
-    ],
     faqs: [
-      { question: "Are metal tin containers food safe?", answer: "Tins are used for dry goods such as tea, coffee and confectionery. Any food-contact requirement is confirmed on the quotation." },
-      { question: "Can metal tin containers be customized with my logo?", answer: "Tell us the logo and whether you want print, a label or embossing. Those points are confirmed on the quotation." },
-      { question: "What products work best in tin packaging?", answer: "Tin packaging is commonly used for candles, cosmetics, tea, chocolates, confectionery, grooming products, gift items, and premium retail packaging." },
-      { question: "Are tin containers reusable?", answer: "Some customers keep a tin after the product is finished. Whether reuse is suitable for your product is confirmed on the quotation." },
-      { question: "Do tin containers protect products during shipping?", answer: "Tell us the product and how it will travel. Any protection against pressure or dents is confirmed on the quotation. This page does not publish a strength rating." },
+      {
+        question: "What is tin packaging?",
+        answer:
+          "A metal container with a lid for retail and gifts, not a plastic tub or a carton. Axis Packaging supplies custom metal tin containers and does not manufacture them. The pictures are illustrative concepts, not photographs of stock.",
+      },
+      {
+        question: "Can Axis Packaging supply packaging tins in the UK?",
+        answer:
+          "Yes. Describe the product and the UK delivery destination. There is no published size list. The tin you can order is the size, shape and closure described back to you.",
+      },
+      {
+        question: "Which tin shape and closure should I ask for?",
+        answer:
+          "Measure the finished contents, then name the shape and how the lid should close. A slip lid, a screw lid and a hinged lid are different requests. None is offered here as airtight or child-resistant.",
+      },
+      {
+        question: "Can you supply printed tin packaging and custom tin boxes?",
+        answer:
+          "Send artwork when the same design is printed on every tin. Ask for a label when only the scent or the batch changes. Embossing can be requested. It is not guaranteed, and this page does not name a printing method.",
+      },
+      {
+        question: "Is tin packaging for food automatically food-safe?",
+        answer:
+          "No. Name the food and say whether the tin touches it. Suitability has to be checked for that use before you accept a quotation. This page does not claim that all tins are food-safe, airtight, BPA-free or certified.",
+      },
+      {
+        question: "Can one tin be used for a candle, a cosmetic and a gift?",
+        answer:
+          "Only when the contents, the fill height and the closure are the same. A candle vessel, a balm and an empty gift tin should be separate enquiries when any of those differ.",
+      },
+      {
+        question: "Will a tin stay unmarked in the post?",
+        answer:
+          "Not by assumption. Say whether it is packed in an outer and whether it will be posted. A decorative surface can dent if it travels loose. No strength rating is published here.",
+      },
+      {
+        question: "What should I send when I ask for a metal tin quotation?",
+        answer:
+          "The product type, dimensions, quantity, intended use, preferred shape, closure, artwork, delivery destination, and any compliance or handling requirement. Price and timing are not published on this page.",
+      },
     ],
   },
 
