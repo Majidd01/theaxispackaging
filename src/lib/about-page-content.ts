@@ -1,8 +1,8 @@
 export const ABOUT_PAGE = {
   badge: "About Axis Packaging",
-  h1: "Custom packaging for UK businesses",
+  h1: "Custom packaging for UK & USA businesses",
   intro:
-    "Axis Packaging is a custom packaging supplier based in Leeds, United Kingdom. UK businesses can ask about packaging for restaurants, cafés, bakeries, retail, cosmetics, ecommerce and other sectors. Postal correspondence: 104 Pudsey Road, Leeds, LS12 3TZ. Call +44 7473 984273 or email info@theaxispackaging.com.",
+    "Axis Packaging is a Leeds-based custom packaging supplier for businesses in the United Kingdom and the United States. Customers can discuss custom sizes, materials and printing, and those details are confirmed on the quotation. Orders are dispatched from a UK warehouse to the agreed delivery address. Shipping costs and estimated delivery times are confirmed individually. Postal correspondence: 104 Pudsey Road, Leeds, LS12 3TZ. Call +44 7473 984273 or email info@theaxispackaging.com.",
   storyTitle: "How we can help",
   story: [
     "We supply packaging that can be sized and printed around the product. Size, quantity, materials and branding are discussed from the details you send. The quotation names the packaging, the print, the price and the delivery arrangements that can be offered.",
@@ -11,7 +11,7 @@ export const ABOUT_PAGE = {
   ],
   markets: {
     title: "Enquiries from the UK and the United States",
-    body: "Axis Packaging accepts custom packaging enquiries from UK and US businesses. US orders are arranged for shipment from Pakistan. Specifications are discussed during quotation. Costs and shipping arrangements depend on the order, and packaging needs can vary by industry and destination.",
+    body: "US businesses can request the same custom packaging discussion as UK customers. The USA page explains delivery, customs and how to request a quotation.",
     href: "/custom-packaging-usa",
     label: "Custom Packaging USA",
   },
@@ -33,12 +33,12 @@ export const ABOUT_PAGE = {
       description: "Tell us the product, the packaging and the quantities, and we will prepare a quotation.",
     },
     {
-      title: "UK supply",
-      description: "A Leeds supplier for businesses that need branded packaging across the United Kingdom.",
+      title: "UK and USA supply",
+      description: "A Leeds supplier for businesses in the United Kingdom and the United States. Orders are dispatched from a UK warehouse.",
     },
   ],
   focusTitle: "Packaging we supply",
-  focusIntro: "Formats UK businesses commonly ask us to quote.",
+  focusIntro: "Formats businesses commonly ask us to quote.",
   focus: [
     {
       title: "Custom printed boxes",

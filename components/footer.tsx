@@ -23,8 +23,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-blue-100">
-              Leeds-based custom packaging supplier for UK and US businesses. USA orders are arranged
-              for shipment from Pakistan.
+              Axis Packaging is a Leeds-based custom packaging supplier serving businesses across the UK
+              and USA. Orders are dispatched from a UK warehouse to customers&apos; agreed delivery addresses.
             </p>
           </div>
 

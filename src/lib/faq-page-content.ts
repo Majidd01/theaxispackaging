@@ -45,7 +45,7 @@ export const FAQ_PAGE_ITEMS = [
     {
       id: "5",
       question: "Do you ship internationally?",
-      answer: `Tell us the delivery address and the packaging, and we will confirm the shipping options on your quotation. We do not publish a guaranteed delivery time.`,
+      answer: `Tell us the delivery address and the packaging, and we will confirm the shipping options on your quotation. Orders for UK and US customers are dispatched from a UK warehouse. We do not publish a guaranteed delivery time.`,
       category: "Shipping",
     },
     {

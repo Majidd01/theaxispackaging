@@ -1,7 +1,7 @@
 export const SUSTAINABILITY_PAGE = {
   h1: "Sustainable Packaging Solutions",
   intro:
-    "Axis Packaging can quote paper-based packaging and other materials for UK businesses. This page does not publish an environmental certificate. If you need a particular material, or paper from a certified source, say so when you request a quotation and we will confirm what can be supplied.",
+    "Axis Packaging can quote paper-based packaging and other materials for UK and USA businesses. This page does not publish an environmental certificate. If you need a particular material, or paper from a certified source, say so when you request a quotation and we will confirm what can be supplied.",
   sections: [
     {
       title: "Materials you can ask about",

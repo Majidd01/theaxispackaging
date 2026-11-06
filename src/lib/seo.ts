@@ -21,7 +21,7 @@ export const BUSINESS = {
   addressCountry: "GB",
   addressRegion: "England",
   description:
-    "Custom packaging supplier for businesses in the United Kingdom and the United States. Postal correspondence in Leeds. USA orders are arranged for shipment from Pakistan.",
+    "Custom packaging supplier for businesses in the United Kingdom and the United States. Postal correspondence in Leeds. Orders are dispatched from a UK warehouse to customers' delivery addresses.",
   sameAs: [
     "https://www.facebook.com/share/14YENMTyjLk/",
     "https://www.instagram.com/theaxispackaging/",

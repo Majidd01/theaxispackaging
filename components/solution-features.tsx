@@ -47,14 +47,14 @@ export function SolutionFeatures() {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6 leading-tight">
-            Custom packaging for{" "}
+            Custom sizes, print and{" "}
             <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text -">
-              UK businesses
+              materials
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Axis Packaging supplies custom packaging for UK businesses. Tell us what you need and the quantity so we can prepare a quotation.
+            Axis Packaging supplies custom packaging for businesses in the United Kingdom and the United States. Tell us what you need and the quantity so we can prepare a quotation.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export function SolutionFeatures() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="inline-flex items-center gap-2 text-sm text-gray-500">
-            <span>✨ Custom packaging for UK businesses</span>
+            <span>✨ Tell us the product and the quantity</span>
           </div>
         </div>
       </div>

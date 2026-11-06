@@ -44,12 +44,12 @@ export function Hero() {
           </div>
 
           {/* Enhanced Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight" style={{ textShadow: '3px 3px 6px rgba(0,0,0,0.9)' }}>
             Custom{" "}
             <span className="bg-gradient-to-r from-orange-300 to-orange-100 bg-clip-text text-transparent" style={{ WebkitTextFillColor: "transparent", textShadow: "none" }}>
               packaging
             </span>{" "}
-            boxes for UK businesses
+            boxes for UK &amp; USA businesses
           </h1>
 
           {/* Enhanced Description */}

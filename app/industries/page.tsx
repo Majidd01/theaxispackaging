@@ -70,8 +70,9 @@ export default function IndustriesPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Shop by Industries</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Browse packaging used by UK businesses in each industry. Tell us the product, and the
-            quotation confirms the pack.
+            Browse packaging for restaurants, bakeries, retail, ecommerce and other industries.
+            Axis Packaging accepts enquiries from UK and USA businesses. Tell us the product, and
+            the quotation confirms the pack.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/quote">
@@ -111,8 +112,8 @@ export default function IndustriesPage() {
             </div>
             <div className="flex flex-col items-center">
               <Users className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">UK</h3>
-              <p className="text-gray-600">Business Supply</p>
+              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">UK &amp; USA</h3>
+              <p className="text-gray-600">Delivery markets</p>
             </div>
             <div className="flex flex-col items-center">
               <Award className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
@@ -131,8 +132,9 @@ export default function IndustriesPage() {
               Shop by Industry
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse packaging used by UK businesses in each industry. Tell us the product, and the
-              quotation confirms the pack.
+              Browse packaging for restaurants, bakeries, retail, ecommerce and other industries.
+              Axis Packaging accepts enquiries from UK and USA businesses. Tell us the product, and
+              the quotation confirms the pack.
             </p>
           </div>
 

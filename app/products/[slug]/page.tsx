@@ -20,6 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 import { SeoHead } from "@/components/seo-head";
 import { buildProductSeo } from "@/lib/seo-page-data";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/seo";
+import { SERVICE_MARKETS_NOTE } from "@/lib/service-markets";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const placeholderImg = "/assets/placeholder.jpg";
 
@@ -433,7 +434,7 @@ export default function ProductDetailPage() {
                 <div className="mb-6">
                   <DeliveryFields value={delivery} onChange={setDelivery} idPrefix="product-delivery" />
                   <p className="text-sm text-gray-600 mt-3">
-                    Shipping to the United States is arranged from Pakistan.{" "}
+                    Orders are dispatched from a UK warehouse to the delivery address.{" "}
                     <Link to="/custom-packaging-usa" className="text-[var(--axis-orange)] font-medium">
                       Custom Packaging USA
                     </Link>
@@ -646,6 +647,7 @@ export default function ProductDetailPage() {
               </h1>
 
               <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
+              <p className="text-gray-600 mb-6 leading-relaxed">{SERVICE_MARKETS_NOTE}</p>
 
               {quoteForm}
 

@@ -35,7 +35,7 @@ export function Sustainability() {
     "Premium Quality Packaging",
     "Material Options",
     "Quotation Support",
-    "UK Business Supply",
+    "UK & USA Supply",
   ]
 
   return (

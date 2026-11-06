@@ -13,6 +13,6 @@ export const QUOTE_GUIDE = {
   close:
     "Axis Packaging reviews the details and asks for clarification where it is needed. The quotation confirms the packaging, the print, the price and the delivery arrangements that can be offered. You review that quotation before deciding whether to proceed. Quotation requests receive a 24h quote response.",
   usaNote:
-    "USA orders are arranged for shipment from Pakistan. Shipping cost, delivery timing and import responsibilities are confirmed on the quotation.",
+    "Orders are dispatched from a UK warehouse to the confirmed delivery address. Shipping cost, delivery timing and import responsibilities are confirmed on the quotation.",
   usaLink: { href: "/custom-packaging-usa", label: "Custom Packaging USA" },
 };

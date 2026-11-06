@@ -20,11 +20,11 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/",
     pageType: "Homepage",
     primaryTopic: "custom packaging UK",
-    title: "Custom Packaging UK | Custom Printed Boxes | Axis Packaging",
+    title: "Custom Packaging UK & USA | Printed Boxes | Axis Packaging",
     description: truncateMeta(
-      "Axis Packaging supplies custom packaging and custom printed boxes for UK brands. Bespoke boxes and branded packaging from Leeds."
+      "Custom printed boxes and branded packaging for UK and USA businesses. Axis Packaging dispatches orders from a UK warehouse. Delivery is confirmed on quotation."
     ),
-    h1: "Custom packaging boxes for UK businesses",
+    h1: "Custom packaging boxes for UK & USA businesses",
   },
   about: {
     path: "/about",
@@ -32,7 +32,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "about Axis Packaging",
     title: "About Axis Packaging | Custom Packaging Supplier UK",
     description: truncateMeta(
-      "Leeds custom packaging supplier for UK businesses. Custom printed boxes, food and bakery packaging, retail packaging, paper bags and branded packaging."
+      "Leeds custom packaging supplier for UK and USA businesses. Printed boxes, food packaging, retail packaging and paper bags, quoted to your brief."
     ),
   },
   contact: {
@@ -41,7 +41,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "contact Axis Packaging",
     title: "Contact Axis Packaging | Custom Packaging Quote UK",
     description: truncateMeta(
-      "Contact Axis Packaging in Leeds for custom packaging advice or a quote. Call +44 7473 984273 or email info@theaxispackaging.com."
+      "Contact Axis Packaging in Leeds about custom packaging for the UK or USA. Call +44 7473 984273 or email info@theaxispackaging.com."
     ),
   },
   products: {
@@ -50,7 +50,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "custom packaging products UK",
     title: "Custom Packaging Products UK | Axis Packaging",
     description: truncateMeta(
-      "Browse custom packaging products from Axis Packaging — folding cartons, rigid boxes, mailers, kraft boxes, and more for UK retail and e-commerce brands."
+      "Browse folding cartons, rigid boxes, mailers and other custom packaging. UK and USA businesses can request a quotation from Axis Packaging."
     ),
   },
   industries: {
@@ -59,7 +59,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "industry packaging solutions UK",
     title: "Industry Packaging Solutions UK | Axis Packaging",
     description: truncateMeta(
-      "Explore industry-specific packaging solutions from Axis Packaging — cosmetics, food, retail, e-commerce, pharmacy, and more across the UK."
+      "Packaging for restaurants, bakeries, retail, ecommerce and other industries. Axis Packaging quotes orders for UK and USA businesses."
     ),
   },
   quote: {
@@ -68,7 +68,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "custom packaging quote UK",
     title: "Get a Custom Packaging Quote UK | Axis Packaging",
     description: truncateMeta(
-      "Request a custom packaging quote from Axis Packaging. Share your specs for printed boxes, materials, and quantities — tailored for UK businesses."
+      "Request a custom packaging quote from Axis Packaging. Share sizes, materials and quantities for delivery in the UK or the USA."
     ),
   },
   sustainability: {
@@ -77,7 +77,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "sustainable packaging UK",
     title: "Sustainable Packaging UK | Axis Packaging",
     description: truncateMeta(
-      "Ask Axis Packaging about paper-based and other packaging materials for UK orders. Any material requirement is confirmed on your quotation."
+      "Ask Axis Packaging about paper-based and other packaging materials for UK and USA orders. Any material requirement is confirmed on your quotation."
     ),
   },
   faqs: {
@@ -86,7 +86,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     primaryTopic: "custom packaging FAQs",
     title: "Custom Packaging FAQs | Axis Packaging",
     description: truncateMeta(
-      "Answers to common questions about Axis Packaging — MOQs, production times, materials, custom printing, and shipping for UK packaging orders."
+      "Answers about Axis Packaging quotations, materials, printing and delivery for UK and USA packaging orders."
     ),
   },
   blog: {

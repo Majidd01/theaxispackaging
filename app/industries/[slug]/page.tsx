@@ -12,6 +12,7 @@ import { hasStaticContent } from "@/lib/has-static-content";
 import { SeoHead } from "@/components/seo-head";
 import { buildIndustrySeo } from "@/lib/seo-page-data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { SERVICE_MARKETS_NOTE } from "@/lib/service-markets";
 
 function renderIndustryText(text: string, links: { phrase: string; href: string }[] = []) {
   if (!links.length) return text;
@@ -178,7 +179,8 @@ export default function IndustryDetailPage() {
               <h1 className="text-4xl md:text-5xl font-bold text-[var(--axis-dark-blue)] mb-6">
                 {industry.name} Packaging Solutions
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">{industry.description}</p>
+              <p className="text-xl text-gray-600 mb-4 leading-relaxed">{industry.description}</p>
+              <p className="text-gray-700 mb-8 leading-relaxed">{SERVICE_MARKETS_NOTE}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to={`/quote?industry=${encodeURIComponent(industry.slug)}`}>
                   <Button
@@ -227,8 +229,8 @@ export default function IndustryDetailPage() {
             </div>
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <p className="text-3xl font-bold mb-2">UK</p>
-              <p className="text-blue-100">Business Supply</p>
+              <p className="text-3xl font-bold mb-2">UK &amp; USA</p>
+              <p className="text-blue-100">Delivery markets</p>
             </div>
             <div className="flex flex-col items-center">
               <Award className="h-12 w-12 text-[var(--axis-orange)] mb-4" />

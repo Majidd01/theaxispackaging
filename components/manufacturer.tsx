@@ -53,10 +53,10 @@ export function Manufacturer() {
             Packaging Supply
           </Badge>
           <h2 className="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
-            Custom Packaging for UK Businesses
+            Printed packaging for UK and USA businesses
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Axis Packaging supplies custom printed boxes and branded packaging for UK businesses. Tell us what you need and we will prepare a quotation.
+            Axis Packaging supplies custom printed boxes and branded packaging for businesses in the UK and USA. Tell us what you need and we will prepare a quotation.
           </p>
         </div>
 
