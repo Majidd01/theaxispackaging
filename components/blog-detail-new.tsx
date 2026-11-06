@@ -333,16 +333,12 @@ export const BlogDetailComponent = () => {
                 </ul>
               )}
               {/^https?:\/\//i.test(blog.cta.buttonLink) ? (
-                <a href={blog.cta.buttonLink}>
-                  <button className="bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
-                    {blog.cta.buttonText}
-                  </button>
+                <a href={blog.cta.buttonLink} className="inline-flex bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+                  {blog.cta.buttonText}
                 </a>
               ) : (
-                <RouterLink to={blog.cta.buttonLink}>
-                  <button className="bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
-                    {blog.cta.buttonText}
-                  </button>
+                <RouterLink to={blog.cta.buttonLink} className="inline-flex bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+                  {blog.cta.buttonText}
                 </RouterLink>
               )}
             </div>

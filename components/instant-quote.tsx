@@ -520,16 +520,16 @@ export function InstantQuote() {
                     </div>
 
                     <div>
-                      <Label className="text-base font-medium mb-3 block">
-                        Upload Design Files (Optional)
+                      <Label className="text-base font-medium mb-3 block" htmlFor="file-upload">
+                        Artwork file names (optional)
                       </Label>
                       <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-[var(--axis-orange)] transition-colors">
                         <Upload className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                         <p className="text-gray-600 mb-2">
-                          Drag and drop your files here, or{" "}
                           <label htmlFor="file-upload" className="text-[var(--axis-orange)] hover:underline cursor-pointer">
-                            browse
-                          </label>
+                            Choose artwork files
+                          </label>{" "}
+                          if you want their names included in the enquiry.
                         </p>
                         <input
                           id="file-upload"
@@ -542,7 +542,10 @@ export function InstantQuote() {
                           }}
                         />
                         <p className="text-sm text-gray-500">
-                          Supports: PDF, AI, PSD, JPG, PNG (Max 10MB each)
+                          {fileNames.length ? fileNames.join(", ") : "No file chosen"}
+                        </p>
+                        <p className="text-sm text-gray-500 mt-2">
+                          Files are not uploaded. The enquiry records the file names, and you can send the artwork when Axis Packaging replies.
                         </p>
                       </div>
                     </div>

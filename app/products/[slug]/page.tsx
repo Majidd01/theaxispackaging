@@ -406,8 +406,8 @@ export default function ProductDetailPage() {
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Upload Design (Optional)
+                  <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="design-upload">
+                    Artwork file name (optional)
                   </label>
                   <div className="border-2 border-dashed border-gray-300 rounded-md p-4 text-center">
                     <input
@@ -427,6 +427,9 @@ export default function ProductDetailPage() {
                     </label>
                     <p className="text-sm text-gray-500">
                       {selectedFile ? selectedFile.name : "No file chosen"}
+                    </p>
+                    <p className="text-sm text-gray-500 mt-2">
+                      The file is not uploaded. The enquiry records the file name, and you can send the artwork when Axis Packaging replies.
                     </p>
                   </div>
                 </div>

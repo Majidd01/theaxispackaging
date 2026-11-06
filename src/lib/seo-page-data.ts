@@ -103,6 +103,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     pageType: "Policy",
     primaryTopic: "terms of service",
     title: "Terms of Service | Axis Packaging",
+    h1: "Terms of Service",
     description: truncateMeta(
       "Read the Terms of Service for Axis Packaging’s website and custom packaging services."
     ),
@@ -112,6 +113,7 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     pageType: "Policy",
     primaryTopic: "privacy policy",
     title: "Privacy Policy | Axis Packaging",
+    h1: "Privacy Policy",
     description: truncateMeta(
       "Learn how Axis Packaging collects, uses, and protects personal information when you use our website or request a packaging quote."
     ),

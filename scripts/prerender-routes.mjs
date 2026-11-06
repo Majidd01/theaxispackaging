@@ -14,6 +14,7 @@ import {
   quoteIntroHtml,
   sustainabilityStaticHtml,
   usaStaticHtml,
+  legalStaticHtml,
 } from "./prerender-static-content.mjs";
 import {
   industriesIndexStaticHtml,
@@ -50,6 +51,7 @@ const sustainabilityContent = await server.ssrLoadModule("/src/lib/sustainabilit
 const quoteContent = await server.ssrLoadModule("/src/lib/quote-page-content.ts");
 const moqContent = await server.ssrLoadModule("/src/lib/moq-page-content.ts");
 const usaContent = await server.ssrLoadModule("/src/lib/usa-page-content.ts");
+const legalContent = await server.ssrLoadModule("/src/lib/legal-page-content.ts");
 const catalogOrder = await server.ssrLoadModule("/src/lib/catalog-order.ts");
 const catalogCategories = await server.ssrLoadModule("/src/lib/catalog-categories.ts");
 const relatedProducts = await server.ssrLoadModule("/src/lib/related-products.ts");
@@ -306,6 +308,26 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
           description: page.description,
           path: page.path,
           type: "ContactPage",
+        }),
+      ],
+    },
+    privacy: {
+      staticContent: legalStaticHtml("/privacy", legalContent.PRIVACY_PAGE),
+      jsonLd: [
+        webPageSchema({
+          title: page.title,
+          description: page.description,
+          path: page.path,
+        }),
+      ],
+    },
+    terms: {
+      staticContent: legalStaticHtml("/terms", legalContent.TERMS_PAGE),
+      jsonLd: [
+        webPageSchema({
+          title: page.title,
+          description: page.description,
+          path: page.path,
         }),
       ],
     },

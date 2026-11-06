@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
 
 interface BlogCTAProps {
@@ -35,10 +34,8 @@ export const BlogCTA: React.FC<BlogCTAProps> = ({
           </ul>
         )}
 
-        <Link to={buttonLink}>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-            {buttonText}
-          </Button>
+        <Link to={buttonLink} className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium h-11 px-8 rounded-md">
+          {buttonText}
         </Link>
       </div>
     </section>
