@@ -1,5 +1,22 @@
 export type EnquiryResult = { ok: true } | { ok: false; error: string };
 
+function trackAcceptedEnquiry(payload: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  if (typeof gtag !== "function") return;
+  const country = payload.deliveryCountry === "US" || payload.deliveryCountry === "GB" ? payload.deliveryCountry : "unspecified";
+  const formName = typeof payload.form === "string" ? payload.form : "unknown";
+  const category = typeof payload.productType === "string" && payload.productType.length <= 80 && !payload.productType.includes("@")
+    ? payload.productType
+    : undefined;
+  gtag("event", "generate_lead", {
+    form_name: formName,
+    delivery_country: country,
+    page_path: window.location.pathname,
+    ...(category ? { item_category: category } : {}),
+  });
+}
+
 export async function submitEnquiry(payload: Record<string, unknown>): Promise<EnquiryResult> {
   try {
     const response = await fetch("/api/enquiry", {
@@ -14,6 +31,7 @@ export async function submitEnquiry(payload: Record<string, unknown>): Promise<E
         error: data?.error || "We could not send your enquiry. Please try again or email info@theaxispackaging.com.",
       };
     }
+    trackAcceptedEnquiry(payload);
     return { ok: true };
   } catch {
     return {

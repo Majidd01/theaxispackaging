@@ -16,6 +16,7 @@ const FAQsPage = lazy(() => import("@/app/faqs/page"));
 const ProductDetailPage = lazy(() => import("@/app/products/[slug]/page"));
 const ProductsPage = lazy(() => import("@/app/products/page"));
 const QuotePage = lazy(() => import("@/app/quote/page"));
+const CustomPackagingUsaPage = lazy(() => import("@/app/custom-packaging-usa/page"));
 const SustainabilityPage = lazy(() => import("@/app/sustainability/page"));
 const TermsPage = lazy(() => import("@/app/terms/page"));
 const BlogPage = lazy(() => import("@/app/blog/page"));
@@ -48,6 +49,7 @@ function App() {
           <Route path="/industries" element={<IndustriesPage />} />
           <Route path="/industries/:slug" element={<IndustryDetailPage />} />
           <Route path="/quote" element={<QuotePage />} />
+          <Route path="/custom-packaging-usa" element={<CustomPackagingUsaPage />} />
           <Route path="/sustainability" element={<SustainabilityPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />

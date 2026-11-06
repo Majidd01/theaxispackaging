@@ -9,6 +9,12 @@ export const ABOUT_PAGE = {
     "Restaurants, cafés, bakeries, shops, cosmetics brands and online sellers often need different packs. Tell us the product and how it is handed over or posted, and the quotation follows that brief.",
     "Customers can ask about packaging samples. Availability, suitability, costs and delivery arrangements are confirmed individually. Customer support is available 24/7. Request a quotation by phone, email or the form.",
   ],
+  markets: {
+    title: "Enquiries from the UK and the United States",
+    body: "Axis Packaging accepts custom packaging enquiries from UK and US businesses. US orders are arranged for shipment from Pakistan. Specifications are discussed during quotation. Costs and shipping arrangements depend on the order, and packaging needs can vary by industry and destination.",
+    href: "/custom-packaging-usa",
+    label: "Custom Packaging USA",
+  },
   storyImage: "/assets/custom-packaging-boxes.jpg",
   storyAlt: "An assortment of custom printed boxes",
   valuesTitle: "What you can expect",

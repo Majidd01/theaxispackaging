@@ -4,6 +4,7 @@
  */
 
 import { truncateMeta } from "./seo";
+import { USA_PAGE_SEO } from "./usa-page-content";
 
 export type PageSeo = {
   path: string;
@@ -123,6 +124,14 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     description: truncateMeta(
       "Ask Axis Packaging about order quantities for custom boxes and branded packaging. We prepare a quotation for the quantity you need."
     ),
+  },
+  usa: {
+    path: USA_PAGE_SEO.path,
+    pageType: "Landing",
+    primaryTopic: "custom packaging USA",
+    title: USA_PAGE_SEO.title,
+    description: USA_PAGE_SEO.description,
+    h1: USA_PAGE_SEO.h1,
   },
 };
 

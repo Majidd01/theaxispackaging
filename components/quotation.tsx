@@ -10,6 +10,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Calculator, Package, Clock, Shield, Star, CheckCircle } from "lucide-react";
 import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { DeliveryFields } from "@/components/delivery-fields";
+import { deliveryPayload, initialDelivery, validateDelivery, type DeliveryDetails } from "@/lib/delivery-destination";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 
 export function Quotation() {
@@ -17,6 +19,7 @@ export function Quotation() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
+  const [delivery, setDelivery] = useState<DeliveryDetails>(() => initialDelivery());
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,6 +46,11 @@ export function Quotation() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    const deliveryError = validateDelivery(delivery);
+    if (deliveryError) {
+      setError(deliveryError);
+      return;
+    }
     setSubmitting(true);
     const result = await submitEnquiry({
       form: "homepage",
@@ -60,6 +68,7 @@ export function Quotation() {
       description: formData.description,
       agreeToTerms: formData.agreeToTerms,
       companyWebsite,
+      ...deliveryPayload(delivery),
     });
     setSubmitting(false);
     if (!result.ok) {
@@ -276,6 +285,8 @@ export function Quotation() {
                     className="border-gray-300 focus:border-orange-500 focus:ring-orange-500 min-h-[100px]"
                   />
                 </div>
+
+                <DeliveryFields value={delivery} onChange={setDelivery} idPrefix="home-delivery" />
 
                 <div className="flex items-center space-x-2">
                   <Checkbox

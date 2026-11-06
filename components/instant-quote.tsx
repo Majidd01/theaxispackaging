@@ -22,11 +22,14 @@ import {
   updateFormData,
 } from "@/lib/slices/quoteFormSlice";
 import { Calculator, CheckCircle, Clock, Upload } from "lucide-react";
+import { DeliveryFields } from "@/components/delivery-fields";
 import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { deliveryPayload, initialDelivery, validateDelivery, type DeliveryDetails } from "@/lib/delivery-destination";
 import { QUOTE_GUIDE } from "@/lib/quote-page-content";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import type React from "react";
 import { useEffect, useLayoutEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export function InstantQuote() {
   const dispatch = useAppDispatch();
@@ -36,6 +39,7 @@ export function InstantQuote() {
   const [customQuantity, setCustomQuantity] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [fileNames, setFileNames] = useState<string[]>([]);
+  const [delivery, setDelivery] = useState<DeliveryDetails>(() => initialDelivery());
 
   useLayoutEffect(() => {
     const intro = document.getElementById("static-quote-intro");
@@ -62,14 +66,17 @@ export function InstantQuote() {
 
     // Validate required fields
     const quantity = formData.quantity === "custom" ? customQuantity.trim() : formData.quantity;
+    const deliveryError = validateDelivery(delivery);
     if (
       !formData.productType ||
       !quantity ||
       (formData.quantity === "custom" && !/^\d+$/.test(quantity)) ||
       !formData.contactInfo.name ||
-      !formData.contactInfo.email
+      !formData.contactInfo.email ||
+      deliveryError
     ) {
-      alert("Please fill in all required fields marked with *");
+      if (deliveryError) setStep(2);
+      alert(deliveryError || "Please fill in all required fields marked with *");
       return;
     }
 
@@ -91,6 +98,7 @@ export function InstantQuote() {
         additionalRequirements: formData.additionalRequirements,
         fileName: fileNames.join(", "),
         companyWebsite,
+        ...deliveryPayload(delivery),
       });
       if (!result.ok) {
         alert(result.error);
@@ -104,7 +112,16 @@ export function InstantQuote() {
     }
   };
 
-  const nextStep = () => setStep(Math.min(step + 1, 3));
+  const nextStep = () => {
+    if (step === 2) {
+      const deliveryError = validateDelivery(delivery);
+      if (deliveryError) {
+        alert(deliveryError);
+        return;
+      }
+    }
+    setStep(Math.min(step + 1, 3));
+  };
   const prevStep = () => setStep(Math.max(step - 1, 1));
 
   if (submitted) {
@@ -178,6 +195,12 @@ export function InstantQuote() {
             ))}
           </ul>
           <p className="text-gray-700 leading-relaxed">{QUOTE_GUIDE.close}</p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            {QUOTE_GUIDE.usaNote}{" "}
+            <Link to={QUOTE_GUIDE.usaLink.href} className="text-[var(--axis-orange)] font-medium">
+              {QUOTE_GUIDE.usaLink.label}
+            </Link>
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -471,6 +494,8 @@ export function InstantQuote() {
                         />
                       </div>
                     </div>
+
+                    <DeliveryFields value={delivery} onChange={setDelivery} idPrefix="quote-delivery" />
                   </div>
                 )}
 

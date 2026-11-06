@@ -14,3 +14,15 @@ export const HOME_INTRO = {
     { href: "/faqs", label: "Packaging FAQs" },
   ],
 };
+
+export const HOME_MARKETS = {
+  h2: "Custom Packaging for UK & USA Businesses",
+  paragraphs: [
+    "Axis Packaging supplies custom packaging for UK and US businesses. Businesses can request branded boxes and other custom packaging from the catalogue.",
+    "Packaging sizes, printing, materials and quantities are discussed through quotation. USA shipments are arranged from Pakistan. International shipping arrangements and costs are confirmed before proceeding.",
+  ],
+  links: [
+    { href: "/custom-packaging-usa", label: "Explore USA Packaging" },
+    { href: "/quote", label: "Request a Custom Quote" },
+  ],
+};

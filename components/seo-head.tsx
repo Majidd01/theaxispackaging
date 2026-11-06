@@ -20,6 +20,7 @@ export type SeoHeadProps = {
   keywords?: string;
   publishedTime?: string;
   modifiedTime?: string;
+  htmlLang?: "en-GB" | "en-US";
 };
 
 /**
@@ -37,11 +38,14 @@ export function SeoHead({
   keywords,
   publishedTime,
   modifiedTime,
+  htmlLang = "en-GB",
 }: SeoHeadProps) {
   const canonical = absoluteUrl(path);
   const desc = truncateMeta(description);
   const ogImage = absoluteImageUrl(image || DEFAULT_OG_IMAGE);
   const robots = noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+  const ogLocale = htmlLang === "en-US" ? "en_US" : DEFAULT_LOCALE;
+  const hrefLang = htmlLang === "en-US" ? "en-US" : "en-GB";
 
   const schemas = jsonLd
     ? Array.isArray(jsonLd)
@@ -51,7 +55,7 @@ export function SeoHead({
 
   return (
     <Helmet>
-      <html lang="en-GB" />
+      <html lang={htmlLang} />
       <title>{title}</title>
       <meta name="description" content={desc} />
       {keywords ? <meta name="keywords" content={keywords} /> : null}
@@ -60,7 +64,7 @@ export function SeoHead({
       <link rel="canonical" href={canonical} />
 
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content={DEFAULT_LOCALE} />
+      <meta property="og:locale" content={ogLocale} />
       <meta property="og:type" content={type === "product" ? "website" : type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={desc} />
@@ -74,8 +78,8 @@ export function SeoHead({
       <meta name="twitter:image" content={ogImage} />
 
       <meta name="author" content={SITE_NAME} />
-      <link rel="alternate" hrefLang="en-GB" href={canonical} />
-      <link rel="alternate" hrefLang="x-default" href={canonical} />
+      <link rel="alternate" hrefLang={hrefLang} href={canonical} />
+      {htmlLang === "en-US" ? null : <link rel="alternate" hrefLang="x-default" href={canonical} />}
 
       {publishedTime ? <meta property="article:published_time" content={publishedTime} /> : null}
       {modifiedTime ? <meta property="article:modified_time" content={modifiedTime} /> : null}

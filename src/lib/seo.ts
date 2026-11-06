@@ -21,7 +21,7 @@ export const BUSINESS = {
   addressCountry: "GB",
   addressRegion: "England",
   description:
-    "UK custom packaging supplier specialising in custom printed boxes, bespoke packaging, and branded packaging solutions for businesses across the United Kingdom.",
+    "Custom packaging supplier for businesses in the United Kingdom and the United States. Postal correspondence in Leeds. USA orders are arranged for shipment from Pakistan.",
   sameAs: [
     "https://www.facebook.com/share/14YENMTyjLk/",
     "https://www.instagram.com/theaxispackaging/",
@@ -106,9 +106,13 @@ export function organizationSchema() {
         telephone: BUSINESS.phone,
         contactType: "sales",
         email: BUSINESS.email,
-        areaServed: "GB",
+        areaServed: ["GB", "US"],
         availableLanguage: ["English"],
       },
+    ],
+    areaServed: [
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United States" },
     ],
     sameAs: [...BUSINESS.sameAs],
   };
@@ -135,10 +139,10 @@ export function localBusinessSchema() {
       addressRegion: BUSINESS.addressRegion,
       addressCountry: BUSINESS.addressCountry,
     },
-    areaServed: {
-      "@type": "Country",
-      name: "United Kingdom",
-    },
+    areaServed: [
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United States" },
+    ],
     sameAs: [...BUSINESS.sameAs],
     parentOrganization: { "@id": `${SITE_URL}/#organization` },
   };
@@ -162,6 +166,7 @@ export function webPageSchema(opts: {
   description: string;
   path: string;
   type?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage" | "FAQPage";
+  inLanguage?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -173,7 +178,7 @@ export function webPageSchema(opts: {
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
-    inLanguage: "en-GB",
+    inLanguage: opts.inLanguage || "en-GB",
   };
 }
 
@@ -276,6 +281,7 @@ export function serviceSchema(opts: {
   description: string;
   path: string;
   image?: string;
+  areaServed?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -287,7 +293,7 @@ export function serviceSchema(opts: {
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: {
       "@type": "Country",
-      name: "United Kingdom",
+      name: opts.areaServed || "United Kingdom",
     },
     serviceType: "Custom Packaging",
   };

@@ -23,8 +23,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-blue-100">
-              Leeds-based custom packaging for UK brands — custom printed boxes, bespoke packaging,
-              and sustainable packaging options.
+              Leeds-based custom packaging supplier for UK and US businesses. USA orders are arranged
+              for shipment from Pakistan.
             </p>
           </div>
 
@@ -65,6 +65,11 @@ export function Footer() {
               <li>
                 <Link to="/faqs" className="hover:text-white">
                   FAQs
+                </Link>
+              </li>
+              <li>
+                <Link to="/custom-packaging-usa" className="hover:text-white">
+                  Custom Packaging USA
                 </Link>
               </li>
             </ul>

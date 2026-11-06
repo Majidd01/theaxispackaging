@@ -77,6 +77,18 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="py-12 bg-white border-t">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">{ABOUT_PAGE.markets.title}</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">{ABOUT_PAGE.markets.body}</p>
+            <p>
+              <Link to={ABOUT_PAGE.markets.href} className="text-[var(--axis-orange)] font-medium">
+                {ABOUT_PAGE.markets.label}
+              </Link>
+            </p>
+          </div>
+        </section>
+
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">

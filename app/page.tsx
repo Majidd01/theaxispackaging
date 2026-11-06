@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, type Reac
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/footer";
 import { SeoHead } from "@/components/seo-head";
-import { HOME_INTRO } from "@/lib/home-intro";
+import { HOME_INTRO, HOME_MARKETS } from "@/lib/home-intro";
 import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
 import { localBusinessSchema, organizationSchema, websiteSchema, webPageSchema } from "@/lib/seo";
 
@@ -119,6 +119,27 @@ export default function Home() {
                     {link.label}
                   </Link>
                 </span>
+              ))}
+            </p>
+            <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mt-10 mb-4">{HOME_MARKETS.h2}</h2>
+            {HOME_MARKETS.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="text-gray-700 leading-relaxed mb-4">
+                {paragraph}
+              </p>
+            ))}
+            <p className="flex flex-col sm:flex-row gap-3">
+              {HOME_MARKETS.links.map((link, index) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={
+                    index === 0
+                      ? "inline-flex items-center justify-center rounded-md bg-[var(--axis-orange)] px-5 py-2.5 text-sm font-semibold text-white"
+                      : "inline-flex items-center justify-center rounded-md border border-[var(--axis-dark-blue)] px-5 py-2.5 text-sm font-semibold text-[var(--axis-dark-blue)]"
+                  }
+                >
+                  {link.label}
+                </Link>
               ))}
             </p>
           </div>

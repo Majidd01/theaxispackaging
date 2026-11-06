@@ -16,8 +16,10 @@ import { createPortal } from "react-dom";
 import { SeoHead } from "@/components/seo-head";
 import { STATIC_PAGE_SEO } from "@/lib/seo-page-data";
 import { localBusinessSchema, organizationSchema, webPageSchema } from "@/lib/seo";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { DeliveryFields } from "@/components/delivery-fields";
 import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { deliveryPayload, initialDelivery, validateDelivery, type DeliveryDetails } from "@/lib/delivery-destination";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import { CONTACT_PAGE } from "@/lib/contact-page-content";
 import { hasStaticContent } from "@/lib/has-static-content";
@@ -37,9 +39,15 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [companyWebsite, setCompanyWebsite] = useState("");
+  const [delivery, setDelivery] = useState<DeliveryDetails>(() => initialDelivery());
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const deliveryError = validateDelivery(delivery);
+    if (deliveryError) {
+      alert(deliveryError);
+      return;
+    }
     setIsSubmitting(true);
 
     try {
@@ -53,6 +61,7 @@ export default function ContactPage() {
         timeline: contactFormData.timeline,
         description: contactFormData.description,
         companyWebsite,
+        ...deliveryPayload(delivery),
       });
       if (!result.ok) {
         alert(result.error);
@@ -233,6 +242,8 @@ export default function ContactPage() {
                         </div>
                       </div>
 
+                      <DeliveryFields value={delivery} onChange={setDelivery} idPrefix="contact-delivery" />
+
                       <Button
                         type="submit"
                         disabled={isSubmitting}
@@ -372,7 +383,13 @@ export default function ContactPage() {
 
                   <p className="text-gray-600 leading-relaxed mb-4">{CONTACT_PAGE.intro}</p>
                   <h2 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-3">{CONTACT_PAGE.detailsHeading}</h2>
-                  <p className="text-gray-600 leading-relaxed mb-8">{CONTACT_PAGE.details}</p>
+                  <p className="text-gray-600 leading-relaxed mb-4">{CONTACT_PAGE.details}</p>
+                  <p className="text-gray-600 leading-relaxed mb-4">{CONTACT_PAGE.markets}</p>
+                  <p className="mb-8">
+                    <Link to={CONTACT_PAGE.usaLinkHref} className="text-[var(--axis-orange)] font-medium">
+                      {CONTACT_PAGE.usaLinkLabel}
+                    </Link>
+                  </p>
                 </div>
 
                 {/* FAQ Section */}

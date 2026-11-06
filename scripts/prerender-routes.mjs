@@ -13,6 +13,7 @@ import {
   moqStaticHtml,
   quoteIntroHtml,
   sustainabilityStaticHtml,
+  usaStaticHtml,
 } from "./prerender-static-content.mjs";
 import {
   industriesIndexStaticHtml,
@@ -48,6 +49,7 @@ const homeIntro = await server.ssrLoadModule("/src/lib/home-intro.ts");
 const sustainabilityContent = await server.ssrLoadModule("/src/lib/sustainability-page-content.ts");
 const quoteContent = await server.ssrLoadModule("/src/lib/quote-page-content.ts");
 const moqContent = await server.ssrLoadModule("/src/lib/moq-page-content.ts");
+const usaContent = await server.ssrLoadModule("/src/lib/usa-page-content.ts");
 const catalogOrder = await server.ssrLoadModule("/src/lib/catalog-order.ts");
 const catalogCategories = await server.ssrLoadModule("/src/lib/catalog-categories.ts");
 const relatedProducts = await server.ssrLoadModule("/src/lib/related-products.ts");
@@ -107,6 +109,8 @@ function renderPage(page) {
     `$1${esc(canonical)}$2`
   );
   html = setMeta(html, "og:type", ogType);
+  if (page.ogLocale) html = setMeta(html, "og:locale", page.ogLocale);
+  if (page.htmlLang) html = html.replace('<html lang="en-GB">', `<html lang="${esc(page.htmlLang)}">`);
   html = setMeta(html, "og:title", page.title);
   html = setMeta(html, "og:description", description);
   html = setMeta(html, "og:url", canonical);
@@ -122,8 +126,10 @@ function renderPage(page) {
       : "",
     `<meta data-rh="true" property="og:image:alt" content="${esc(page.title)}" />`,
     `<meta data-rh="true" name="author" content="Axis Packaging" />`,
-    `<link data-rh="true" rel="alternate" hrefLang="en-GB" href="${esc(canonical)}" />`,
-    `<link data-rh="true" rel="alternate" hrefLang="x-default" href="${esc(canonical)}" />`,
+    `<link data-rh="true" rel="alternate" hrefLang="${esc(page.hrefLang || "en-GB")}" href="${esc(canonical)}" />`,
+    page.hrefLang === "en-US"
+      ? ""
+      : `<link data-rh="true" rel="alternate" hrefLang="x-default" href="${esc(canonical)}" />`,
     page.publishedTime
       ? `<meta data-rh="true" property="article:published_time" content="${esc(page.publishedTime)}" />`
       : "",
@@ -266,7 +272,7 @@ pages.push({
   header: homeShell.header,
   hero: homeShell.hero,
   body: "",
-  homeIntro: homeIntroHtml(homeIntro.HOME_INTRO),
+  homeIntro: homeIntroHtml(homeIntro.HOME_INTRO, homeIntro.HOME_MARKETS),
   jsonLd: [
     organizationSchema(),
     localBusinessSchema(),
@@ -321,9 +327,8 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
     path: page.path,
     title: page.title,
     description: page.description,
-    image: "/assets/banner.jpg",
     type: "website",
-    body: rich || ["products", "industries", "sustainability", "moq", "quote"].includes(key) ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p><h2>Related pages</h2><nav aria-label="Related pages"><ul><li><a href="/products">Packaging products</a></li><li><a href="/industries">Industries</a></li><li><a href="/quote">Request a quotation</a></li><li><a href="/contact">Contact us</a></li><li><a href="/faqs">Packaging FAQs</a></li></ul></nav></main>`,
+    body: rich || ["products", "industries", "sustainability", "moq", "quote", "usa"].includes(key) ? "" : `<main><h1>${esc(page.h1 || page.title)}</h1><p>${esc(page.description)}</p><h2>Related pages</h2><nav aria-label="Related pages"><ul><li><a href="/products">Packaging products</a></li><li><a href="/industries">Industries</a></li><li><a href="/quote">Request a quotation</a></li><li><a href="/contact">Contact us</a></li><li><a href="/faqs">Packaging FAQs</a></li></ul></nav></main>`,
     staticContent:
       rich?.staticContent ||
       (key === "products"
@@ -334,9 +339,17 @@ for (const [key, page] of Object.entries(STATIC_PAGE_SEO)) {
         : undefined) ||
       (key === "industries" ? industriesIndexStaticHtml(INDUSTRIES) : undefined) ||
       (key === "sustainability" ? sustainabilityStaticHtml(sustainabilityContent.SUSTAINABILITY_PAGE) : undefined) ||
-      (key === "moq" ? moqStaticHtml(moqContent.MOQ_PAGE) : undefined),
+      (key === "moq" ? moqStaticHtml(moqContent.MOQ_PAGE) : undefined) ||
+      (key === "usa" ? usaStaticHtml(usaContent.USA_PAGE, page.h1) : undefined),
     beforeRoot: key === "quote" ? quoteIntroHtml(quoteContent.QUOTE_GUIDE) : "",
-    jsonLd: rich?.jsonLd || [
+    image: key === "usa" ? "/assets/custom-packaging-usa.webp" : "/assets/banner.jpg",
+    keywords: key === "usa" ? usaContent.USA_PAGE_SEO.keywords : undefined,
+    hrefLang: key === "usa" ? "en-US" : undefined,
+    htmlLang: key === "usa" ? "en-US" : undefined,
+    ogLocale: key === "usa" ? "en_US" : undefined,
+    jsonLd: key === "usa"
+      ? usaContent.usaLandingJsonLd()
+      : rich?.jsonLd || [
       webPageSchema({
         title: page.title,
         description: page.description,
@@ -572,6 +585,8 @@ if (
   (homeHero.match(/<h1[\s>]/g) || []).length !== 1 ||
   appRoot.includes("<h1") ||
   appRoot.includes("/assets/hero/banner-1280.webp") ||
+  !homeHtml.includes("Custom Packaging for UK &amp; USA Businesses") ||
+  !homeHtml.includes("Explore USA Packaging") ||
   !homeHtml.includes(home.description) ||
   (homeHtml.match(/name="description"/g) || []).length !== 1
 ) {
@@ -605,6 +620,16 @@ function sliceBetween(html, startMarker, endMarker) {
 }
 
 const staticChecks = [
+  {
+    file: path.join(distDir, "custom-packaging-usa.html"),
+    phrases: [
+      "Custom Packaging USA for Businesses",
+      "International Shipping from Pakistan to the United States",
+      "Does Axis Packaging deliver custom packaging to the USA?",
+      "Request a Quote",
+    ],
+    htmlPhrases: ["FAQPage", "https://www.theaxispackaging.com/custom-packaging-usa"],
+  },
   {
     file: path.join(distDir, "about.html"),
     phrases: ["Custom packaging for UK businesses", "How we can help", "Custom printed boxes"],

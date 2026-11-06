@@ -13,6 +13,8 @@ import { createPortal } from "react-dom";
 import { hasStaticContent } from "@/lib/has-static-content";
 import { useState } from "react";
 import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
+import { DeliveryFields } from "@/components/delivery-fields";
+import { deliveryPayload, initialDelivery, validateDelivery, type DeliveryDetails } from "@/lib/delivery-destination";
 import { submitEnquiry } from "@/lib/submit-enquiry";
 import { useToast } from "@/hooks/use-toast";
 import { SeoHead } from "@/components/seo-head";
@@ -99,6 +101,7 @@ export default function ProductDetailPage() {
   const [submitting, setSubmitting] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [companyWebsite, setCompanyWebsite] = useState("");
+  const [delivery, setDelivery] = useState<DeliveryDetails>(() => initialDelivery());
   const [activeImage, setActiveImage] = useState(0);
 
   const validate = () => {
@@ -111,6 +114,8 @@ export default function ProductDetailPage() {
       return "Dimensions must be positive";
     if (form.quantity === "custom" && !/^\d+$/.test(form.customQuantity.trim()))
       return "Enter the quantity as a whole number";
+    const deliveryError = validateDelivery(delivery);
+    if (deliveryError) return deliveryError;
     return "";
   };
 
@@ -140,6 +145,8 @@ export default function ProductDetailPage() {
         addUp: form.addUp,
         fileName: selectedFile?.name || "",
         companyWebsite,
+        productType: product?.slug || slug || "",
+        ...deliveryPayload(delivery),
       });
       if (!result.ok) {
         toast({ title: "Failed to submit", description: result.error });
@@ -421,6 +428,16 @@ export default function ProductDetailPage() {
                       {selectedFile ? selectedFile.name : "No file chosen"}
                     </p>
                   </div>
+                </div>
+
+                <div className="mb-6">
+                  <DeliveryFields value={delivery} onChange={setDelivery} idPrefix="product-delivery" />
+                  <p className="text-sm text-gray-600 mt-3">
+                    Shipping to the United States is arranged from Pakistan.{" "}
+                    <Link to="/custom-packaging-usa" className="text-[var(--axis-orange)] font-medium">
+                      Custom Packaging USA
+                    </Link>
+                  </p>
                 </div>
 
                 <div className="text-center">

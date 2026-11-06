@@ -29,6 +29,7 @@ const dynamicRoutes = [
 	'/terms',
 	'/privacy',
 	'/moq',
+	'/custom-packaging-usa',
 	'/blog',
 	...PRODUCT_CATEGORIES.map((product) => `/products/${product.slug}`),
 	...INDUSTRIES.map((industry) => `/industries/${industry.slug}`),

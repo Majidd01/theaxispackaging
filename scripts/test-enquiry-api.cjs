@@ -210,6 +210,126 @@ async function main() {
     assert(result.status === 200, `${body.form} form is accepted`);
   }
 
+  resetEnquiryRateLimit();
+  const usaSent = [];
+  const usa = await handleEnquiry({
+    body: {
+      form: "homepage",
+      name: "USA Buyer",
+      email: "usa@example.com",
+      agreeToTerms: true,
+      deliveryCountry: "US",
+      deliveryCity: "Austin",
+      deliveryRegion: "TX",
+      deliveryPostcode: "78701",
+      deliveryNotes: "Suite 200",
+      companyWebsite: "",
+    },
+    ip: "203.0.113.40",
+    sendMail: async (enquiry) => {
+      usaSent.push(enquiry);
+    },
+  });
+  assert(usa.status === 200 && usaSent[0]?.deliveryRegion === "TX" && usaSent[0]?.deliveryPostcode === "78701", "USA city, state and ZIP are accepted");
+  const usaMail = messageFor(usaSent[0], {
+    ENQUIRY_FROM: "info@theaxispackaging.com",
+    ENQUIRY_TO: "info@theaxispackaging.com",
+    SMTP_USER: "info@theaxispackaging.com",
+  });
+  assert(usaMail.text.includes("United States") && usaMail.text.includes("78701") && usaMail.text.includes("Austin"), "USA destination is in the business email");
+  assert(!usaMail.text.includes("usa@example.com\n") || usaMail.replyTo === "usa@example.com", "reply-to stays the customer");
+
+  resetEnquiryRateLimit();
+  const uk = await handleEnquiry({
+    body: {
+      form: "contact",
+      name: "UK Buyer",
+      email: "uk@example.co.uk",
+      deliveryCountry: "GB",
+      deliveryCity: "Leeds",
+      deliveryPostcode: "ls12 3tz",
+      companyWebsite: "",
+    },
+    ip: "203.0.113.41",
+    sendMail: async () => {},
+  });
+  assert(uk.status === 200, "UK town and postcode are accepted");
+
+  resetEnquiryRateLimit();
+  const badZip = await handleEnquiry({
+    body: {
+      form: "instant",
+      name: "Bad Zip",
+      email: "zip@example.com",
+      productType: "Mailer boxes",
+      quantity: "500",
+      deliveryCountry: "US",
+      deliveryCity: "Austin",
+      deliveryRegion: "TX",
+      deliveryPostcode: "7870",
+      companyWebsite: "",
+    },
+    ip: "203.0.113.42",
+    sendMail: async () => {
+      throw new Error("should not send");
+    },
+  });
+  assert(badZip.status === 400, "invalid ZIP code is rejected");
+
+  resetEnquiryRateLimit();
+  const badPostcode = await handleEnquiry({
+    body: {
+      form: "homepage",
+      name: "Bad Postcode",
+      email: "post@example.co.uk",
+      agreeToTerms: true,
+      deliveryCountry: "GB",
+      deliveryCity: "Leeds",
+      deliveryPostcode: "NOT A POSTCODE",
+      companyWebsite: "",
+    },
+    ip: "203.0.113.43",
+    sendMail: async () => {
+      throw new Error("should not send");
+    },
+  });
+  assert(badPostcode.status === 400, "invalid UK postcode is rejected");
+
+  resetEnquiryRateLimit();
+  const badCountry = await handleEnquiry({
+    body: {
+      form: "contact",
+      name: "Other Country",
+      email: "other@example.com",
+      deliveryCountry: "Canada",
+      deliveryCity: "Toronto",
+      companyWebsite: "",
+    },
+    ip: "203.0.113.44",
+    sendMail: async () => {
+      throw new Error("should not send");
+    },
+  });
+  assert(badCountry.status === 400, "arbitrary country text is rejected");
+
+  resetEnquiryRateLimit();
+  const honeypotWithDestination = await handleEnquiry({
+    body: {
+      form: "product",
+      ...validProduct,
+      deliveryCountry: "US",
+      deliveryCity: "Austin",
+      deliveryRegion: "TX",
+      deliveryPostcode: "78701",
+      companyWebsite: "https://spam.example",
+    },
+    ip: "203.0.113.45",
+    sendMail: async () => {
+      throw new Error("should not send");
+    },
+  });
+  assert(honeypotWithDestination.status === 400, "honeypot still rejects a USA destination enquiry");
+
   if (failed) {
     console.error(`${failed} assertion(s) failed`);
     process.exit(1);

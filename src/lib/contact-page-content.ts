@@ -7,6 +7,10 @@ export const CONTACT_PAGE = {
   detailsHeading: "How to contact Axis Packaging",
   details:
     "Postal correspondence: 104 Pudsey Road, Leeds, LS12 3TZ. Call +44 7473 984273 or email info@theaxispackaging.com. In your message, name the product, the quantity and whether you need printing. Quotation requests receive a 24h quote response, and customer support is available 24/7.",
+  markets:
+    "Customers in the United Kingdom and the United States can submit an enquiry. US orders are arranged for shipment from Pakistan. Specifications, costs and shipping arrangements are confirmed on the quotation.",
+  usaLinkLabel: "Custom Packaging USA",
+  usaLinkHref: "/custom-packaging-usa",
   faqHeading: "Frequently Asked Questions",
   questions: [
     "What are your minimum order quantities?",

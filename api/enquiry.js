@@ -37,6 +37,30 @@ function quantityText(value) {
   return /^\d+$/.test(quantity) && Number(quantity) > 0 && Number(quantity) < 10000000 ? quantity : "";
 }
 
+const UK_POSTCODE = /^(GIR\s*0AA|[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})$/i;
+const US_ZIP = /^\d{5}(?:-\d{4})?$/;
+const CITY_NAME = /^[A-Za-z][A-Za-z .'-]{1,79}$/;
+const US_STATE_CODES = new Set([
+  "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA",
+  "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM",
+  "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA",
+  "WV", "WI", "WY",
+]);
+
+function deliveryCountryCode(value) {
+  if (value == null || value === "") return "";
+  if (typeof value !== "string") return null;
+  const code = value.trim();
+  if (code === "GB" || code === "US") return code;
+  return null;
+}
+
+function formatUkPostcode(value) {
+  const compact = value.toUpperCase().replace(/\s+/g, "");
+  if (compact.length < 5) return value.toUpperCase();
+  return `${compact.slice(0, -3)} ${compact.slice(-3)}`;
+}
+
 function dimensionsText(value) {
   if (typeof value === "string") return text(value, 200);
   if (!value || typeof value !== "object" || Array.isArray(value)) return "";
@@ -128,6 +152,25 @@ function validate(body) {
     return { error: "Check the form and try again." };
   }
 
+  const deliveryCountry = deliveryCountryCode(body.deliveryCountry);
+  if (deliveryCountry === null) return { error: "Check the form and try again." };
+  const deliveryCity = text(body.deliveryCity, 80);
+  const deliveryRegion = typeof body.deliveryRegion === "string" ? body.deliveryRegion.trim().toUpperCase() : "";
+  const deliveryPostcode = text(body.deliveryPostcode, 12).toUpperCase();
+  const deliveryNotes = text(body.deliveryNotes, 300);
+  if (deliveryCountry) {
+    if (!CITY_NAME.test(deliveryCity)) return { error: "Check the form and try again." };
+    if (deliveryCountry === "US") {
+      if (!US_STATE_CODES.has(deliveryRegion) || !US_ZIP.test(deliveryPostcode)) {
+        return { error: "Check the form and try again." };
+      }
+    } else if (!UK_POSTCODE.test(deliveryPostcode)) {
+      return { error: "Check the form and try again." };
+    }
+  } else if (deliveryCity || deliveryRegion || deliveryPostcode || deliveryNotes) {
+    return { error: "Check the form and try again." };
+  }
+
   return {
     enquiry: {
       form: body.form,
@@ -147,6 +190,12 @@ function validate(body) {
       fileName,
       additionalOption,
       addUp,
+      deliveryCountry,
+      deliveryCountryLabel: deliveryCountry === "US" ? "United States" : deliveryCountry === "GB" ? "United Kingdom" : "",
+      deliveryCity,
+      deliveryRegion: deliveryCountry === "US" ? deliveryRegion : "",
+      deliveryPostcode: deliveryCountry === "GB" ? formatUkPostcode(deliveryPostcode) : deliveryPostcode,
+      deliveryNotes,
     },
   };
 }
@@ -177,6 +226,11 @@ function messageFor(enquiry, env) {
     `Add-up: ${enquiry.addUp || "Not provided"}`,
     `Timeline: ${enquiry.timeline || "Not provided"}`,
     `Budget: ${enquiry.budget || "Not provided"}`,
+    `Delivery country: ${enquiry.deliveryCountryLabel || "Not provided"}`,
+    `Delivery city: ${enquiry.deliveryCity || "Not provided"}`,
+    `Delivery state: ${enquiry.deliveryRegion || "Not provided"}`,
+    `Postcode or ZIP code: ${enquiry.deliveryPostcode || "Not provided"}`,
+    `Destination notes: ${enquiry.deliveryNotes || "Not provided"}`,
     "",
     enquiry.description || "No further details provided.",
   ];
