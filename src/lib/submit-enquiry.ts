@@ -1,7 +1,16 @@
 export type EnquiryResult = { ok: true } | { ok: false; error: string };
 
+function analyticsAccepted() {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem("axis_analytics_consent") === "granted";
+  } catch {
+    return false;
+  }
+}
+
 function trackAcceptedEnquiry(payload: Record<string, unknown>) {
-  if (typeof window === "undefined") return;
+  if (!analyticsAccepted()) return;
   const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
   if (typeof gtag !== "function") return;
   const country = payload.deliveryCountry === "US" || payload.deliveryCountry === "GB" ? payload.deliveryCountry : "unspecified";

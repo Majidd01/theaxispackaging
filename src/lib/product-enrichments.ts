@@ -9,8 +9,23 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
       "Paper shopping bags for UK shops and gifts. Describe the handle, width, gusset, height and print so the bag can be confirmed on your quotation.",
     h1: "Paper Shopping Bags for Retail",
     description:
-      "Paper shopping bags are carry bags for shops, gifts and takeaway. Describe the handle, the bag size and whether the face should be printed. The paper is named on the quotation.",
-    alt: "Printed cartons standing in trays on a shop shelf. The picture does not show a paper shopping bag",
+      "Paper shopping bags are carry bags for shops, gifts and takeaway. Describe the handle, the bag size and whether the face should be printed. The paper is named on the quotation. The pictures are illustrative packaging concepts. Final packaging specifications are confirmed during quotation.",
+    image: "/assets/paper-shopping-bags-kraft-white.webp",
+    alt: "Premium kraft and white paper shopping bags with paper and cord handles",
+    gallery: [
+      {
+        src: "/assets/paper-shopping-bags-kraft-white.webp",
+        alt: "Premium kraft and white paper shopping bags with paper and cord handles",
+      },
+      {
+        src: "/assets/paper-shopping-bags-luxury-handles.webp",
+        alt: "Colourful luxury paper shopping bags with cord ribbon and rope handles",
+      },
+      {
+        src: "/assets/paper-shopping-bags-size-collection.webp",
+        alt: "Paper shopping bags in several sizes with a clean retail presentation",
+      },
+    ],
     breadcrumbName: "Paper Shopping Bags",
     hideProductFeatures: true,
     internalLinks: [

@@ -364,14 +364,16 @@ export function usaStaticHtml(page, h1) {
 
 export function legalStaticHtml(routePath, page) {
   const sections = (page.sections || [])
-    .map(
-      (section) =>
-        `<h2 class="text-2xl font-semibold text-[var(--axis-dark-blue)] mt-8 mb-4">${esc(section.title)}</h2><p class="text-gray-600 mb-4">${esc(section.body)}</p>`
-    )
+    .map((section) => {
+      const paragraphs = section.paragraphs?.length ? section.paragraphs : section.body ? [section.body] : [];
+      const body = paragraphs.map((paragraph) => `<p class="text-gray-600 mb-4">${esc(paragraph)}</p>`).join("");
+      return `<h2 class="text-2xl font-semibold text-[var(--axis-dark-blue)] mt-8 mb-4">${esc(section.title)}</h2>${body}`;
+    })
     .join("");
+  const updated = page.updated ? `<p class="text-gray-600">Last updated: ${esc(page.updated)}</p>` : "";
   return shell(
     routePath,
-    `<div class="min-h-screen bg-white"><main class="py-16"><div class="container mx-auto px-4 max-w-4xl"><div class="text-center mb-12"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[var(--axis-orange)] text-white mb-4">Legal</span><h1 class="text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(page.h1)}</h1><p class="text-gray-600">Last updated: ${esc(page.updated)}</p></div><p class="text-gray-600 mb-6">${esc(page.intro)}</p>${sections}</div></main></div>`
+    `<div class="min-h-screen bg-white"><main class="py-16"><div class="container mx-auto px-4 max-w-4xl"><div class="text-center mb-12"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[var(--axis-orange)] text-white mb-4">Legal</span><h1 class="text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(page.h1)}</h1>${updated}</div><p class="text-gray-600 mb-6">${esc(page.intro)}</p>${sections}</div></main></div>`
   );
 }
 

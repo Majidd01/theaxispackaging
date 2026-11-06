@@ -154,23 +154,6 @@ export default function ProductDetailPage() {
         return;
       }
 
-      const existing = JSON.parse(localStorage.getItem("quoteItems") || "[]");
-      const item = {
-        slug,
-        productName: product?.name ?? slug,
-        quantity: quantityValue,
-        dimensions: { length: form.length, width: form.width, depth: form.depth, unit: form.unit },
-        material: form.material,
-        printing: form.print,
-        finishing: form.finishing,
-        additionalOption: form.additionalOption,
-        addUp: form.addUp,
-        contact: { name: form.name, email: form.email, phone: form.phone },
-        fileName: selectedFile?.name || null,
-        createdAt: new Date().toISOString(),
-      };
-      localStorage.setItem("quoteItems", JSON.stringify([item, ...existing]));
-
       toast({ title: "Added to quote", description: "We received your request.", className: "border-green-600 text-green-700" });
     } catch (err) {
       toast({ title: "Failed to submit", description: "Please try again." });

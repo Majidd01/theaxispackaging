@@ -111,8 +111,22 @@ const _PRODUCT_CATEGORIES = [
     name: "Paper Shopping Bags",
     description: "Stylish and eco-friendly paper shopping bags for retail and gifting. Custom printed with your logo for a premium brand experience.",
     icon: "🛍️",
-    image: "/assets/retail-packaging-display.jpg",
-    alt: "Retail cartons standing in shelf trays. This photograph does not show a paper shopping bag.",
+    image: "/assets/paper-shopping-bags-kraft-white.webp",
+    alt: "Premium kraft and white paper shopping bags with paper and cord handles",
+    gallery: [
+      {
+        src: "/assets/paper-shopping-bags-kraft-white.webp",
+        alt: "Premium kraft and white paper shopping bags with paper and cord handles",
+      },
+      {
+        src: "/assets/paper-shopping-bags-luxury-handles.webp",
+        alt: "Colourful luxury paper shopping bags with cord ribbon and rope handles",
+      },
+      {
+        src: "/assets/paper-shopping-bags-size-collection.webp",
+        alt: "Paper shopping bags in several sizes with a clean retail presentation",
+      },
+    ],
     slug: "paper-bags",
     metaTitle: "Buy Paper Shopping Bags - Eco-Friendly - Axis Packaging",
     metaDescription: "Stylish and eco-friendly paper shopping bags for retail and gifting. Custom printed with your logo for a premium brand experience.",
@@ -202,8 +216,22 @@ const _PRODUCT_CATEGORIES = [
     name: "Bakery & Cake Boxes",
     description: "Keep treats fresh with custom bakery and cake boxes. Durable, food-safe packaging perfect for cakes, pastries, and desserts.",
     icon: "🎂",
-    image: "/assets/packify-food-packaging.jpg",
-    alt: "Prepared-food trays and containers. This photograph does not show a bakery or cake box.",
+    image: "/assets/bakery-boxes-cake-packaging.webp",
+    alt: "Elegant printed bakery and cake boxes in cream and blush",
+    gallery: [
+      {
+        src: "/assets/bakery-boxes-cake-packaging.webp",
+        alt: "Elegant printed bakery and cake boxes in cream and blush",
+      },
+      {
+        src: "/assets/bakery-boxes-pastry-cupcake.webp",
+        alt: "Colourful pastry and cupcake bakery boxes with window lids",
+      },
+      {
+        src: "/assets/bakery-boxes-takeaway-window.webp",
+        alt: "Premium bakery takeaway boxes with handles and a window",
+      },
+    ],
     slug: "bakery-boxes",
     metaTitle: "Buy Bakery & Cake Boxes - Food Safe - Axis Packaging",
     metaDescription: "Food-safe boxes perfect for cakes, pastries, and baked goods. Custom printed and available in various sizes for all your bakery needs.",
@@ -354,14 +382,28 @@ const _PRODUCT_CATEGORIES = [
   },
   {
     name: "Candle & Fragrance Boxes",
-    description: "Candle and fragrance boxes are cartons for jar candles, pillars, tapers, wax melts and small diffuser sets. Measure the item with its lid or cap on, and say whether the customer collects it or it is posted. The board, any print and the quantity are confirmed on your quotation. This page does not list materials or finishes.",
+    description: "Candle and fragrance boxes are cartons for jar candles, pillars, tapers, wax melts and small diffuser sets. Measure the item with its lid or cap on, and say whether the customer collects it or it is posted. The board, any print and the quantity are confirmed on your quotation. This page does not list materials or finishes. The pictures are illustrative packaging concepts. Final packaging specifications are confirmed during quotation.",
     icon: "🕯️",
-    image: "/assets/packify-cosmetics-packaging.jpg",
+    image: "/assets/candle-boxes-luxury-cartons.webp",
     slug: "candle-boxes",
     metaTitle: "Custom Candle & Fragrance Boxes Packaging | Axis",
     metaDescription: "Candle and fragrance boxes for UK brands. Measure the item with its lid on and send the height so the carton can be confirmed on your quotation.",
     h1: "Custom Candle & Fragrance Packaging Boxes",
-    alt: "Illustrative cosmetic tubes a jar and dropper bottles on a pink background rather than a candle box",
+    alt: "Luxury printed candle boxes in cream charcoal and gold",
+    gallery: [
+      {
+        src: "/assets/candle-boxes-luxury-cartons.webp",
+        alt: "Luxury printed candle boxes in cream charcoal and gold",
+      },
+      {
+        src: "/assets/candle-boxes-fragrance-gift.webp",
+        alt: "Premium candle and fragrance gift boxes with a plain candle jar",
+      },
+      {
+        src: "/assets/candle-boxes-collection.webp",
+        alt: "A colourful collection of candle boxes in different shapes and sizes",
+      },
+    ],
     breadcrumbName: "Candle & Fragrance Boxes",
     hideProductFeatures: true,
     internalLinks: [

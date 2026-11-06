@@ -4,6 +4,7 @@ import { NavigationWrapper } from "@/components/navigation-wrapper";
 import { HomeHeroGate } from "@/components/home-hero-gate";
 import { StaticContentGate } from "@/components/static-content-gate";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { CookieConsent } from "@/components/cookie-consent";
 import Home from "@/app/page";
 
 const AboutPage = lazy(() => import("@/app/about/page"));
@@ -61,6 +62,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
+      <CookieConsent />
     </NavigationWrapper>
   );
 }

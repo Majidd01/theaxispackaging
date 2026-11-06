@@ -141,13 +141,16 @@ export function Footer() {
               © {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
             </span>
             <span className="hidden sm:inline">•</span>
-            <div className="space-x-4">
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
               <Link to="/terms" className="hover:text-white">
                 Terms
               </Link>
               <Link to="/privacy" className="hover:text-white">
                 Privacy
               </Link>
+              <button type="button" data-cookie-preferences className="hover:text-white">
+                Cookie Preferences
+              </button>
             </div>
           </div>
         </div>

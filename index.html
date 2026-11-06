@@ -42,82 +42,230 @@
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 		<link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
 
-		<!-- Google tag (gtag.js). The stub is ready immediately. The library loads after window load, during idle, so its long tasks stay out of the initial blocking window. -->
+		<!-- Consent Mode v2, basic. gtag.js stays unloaded until analytics is accepted. Advertising consent is not requested. -->
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
+			(function () {
+				var KEY = "axis_analytics_consent";
+				var ID = "G-7CGWJZE8QL";
+				var loaded = false;
+				var tracking = false;
+				window.dataLayer = window.dataLayer || [];
+				function gtag() {
+					dataLayer.push(arguments);
+				}
+				window.gtag = gtag;
+				gtag("consent", "default", {
+					ad_storage: "denied",
+					ad_user_data: "denied",
+					ad_personalization: "denied",
+					analytics_storage: "denied",
+					wait_for_update: 500
+				});
 
-			var axisGaLandingUrl = location.href;
-			var axisGaLandingReferrer = document.referrer || "";
-			var axisGaPendingViews = [];
-			var axisGaLastUrl = axisGaLandingUrl;
-			var axisGaStarted = false;
+				function read() {
+					try {
+						return localStorage.getItem(KEY);
+					} catch (error) {
+						return null;
+					}
+				}
 
-			function axisGaRemember() {
-				if (window.__axisGaReady) return;
-				var href = location.href;
-				if (href === axisGaLastUrl) return;
-				axisGaLastUrl = href;
-				axisGaPendingViews.push({ href: href, title: document.title || "" });
-			}
+				function write(value) {
+					try {
+						localStorage.setItem(KEY, value);
+					} catch (error) {}
+				}
 
-			var axisGaPushState = history.pushState;
-			var axisGaReplaceState = history.replaceState;
-			history.pushState = function () {
-				var result = axisGaPushState.apply(this, arguments);
-				axisGaRemember();
-				return result;
-			};
-			history.replaceState = function () {
-				var result = axisGaReplaceState.apply(this, arguments);
-				axisGaRemember();
-				return result;
-			};
-			window.addEventListener("popstate", axisGaRemember);
+				function isAnalyticsUrl(url) {
+					return /google-analytics\.com|analytics\.google\.com|\/g\/collect|googletagmanager\.com\/gtag\/js/i.test(String(url || ""));
+				}
 
-			function axisGaFlush() {
-				var views = axisGaPendingViews.splice(0, axisGaPendingViews.length);
-				for (var i = 0; i < views.length; i++) {
-					gtag("event", "page_view", {
-						page_location: views[i].href,
-						page_title: views[i].title
+				var restoreAnalyticsTransport = function () {};
+
+				function blockFurtherAnalytics() {
+					if (window.__axisGaBlocked) return;
+					window.__axisGaBlocked = true;
+					var originalFetch = window.fetch;
+					var originalBeacon = navigator.sendBeacon ? navigator.sendBeacon.bind(navigator) : null;
+					var originalOpen = XMLHttpRequest.prototype.open;
+					var originalSend = XMLHttpRequest.prototype.send;
+					if (originalFetch) {
+						window.fetch = function (input) {
+							var url = typeof input === "string" ? input : input && input.url;
+							if (isAnalyticsUrl(url)) return Promise.resolve(new Response("", { status: 204 }));
+							return originalFetch.apply(this, arguments);
+						};
+					}
+					if (originalBeacon) {
+						navigator.sendBeacon = function (url) {
+							if (isAnalyticsUrl(url)) return true;
+							return originalBeacon.apply(navigator, arguments);
+						};
+					}
+					XMLHttpRequest.prototype.open = function (method, url) {
+						this.__axisBlockAnalytics = isAnalyticsUrl(url);
+						return originalOpen.apply(this, arguments);
+					};
+					XMLHttpRequest.prototype.send = function () {
+						if (this.__axisBlockAnalytics) return;
+						return originalSend.apply(this, arguments);
+					};
+					restoreAnalyticsTransport = function () {
+						window.__axisGaBlocked = false;
+						if (originalFetch) window.fetch = originalFetch;
+						if (originalBeacon) navigator.sendBeacon = originalBeacon;
+						XMLHttpRequest.prototype.open = originalOpen;
+						XMLHttpRequest.prototype.send = originalSend;
+						restoreAnalyticsTransport = function () {};
+					};
+				}
+
+				function clearGaCookies() {
+					var host = location.hostname;
+					var parts = host.split(".");
+					var domains = ["", host];
+					if (parts.length > 1) domains.push("." + parts.slice(-2).join("."));
+					document.cookie.split(";").forEach(function (item) {
+						var name = item.split("=")[0].trim();
+						if (name !== "_ga" && name.indexOf("_ga_") !== 0 && name !== "_gid" && name.indexOf("_gat") !== 0) return;
+						domains.forEach(function (domain) {
+							document.cookie = name + "=; Max-Age=0; path=/" + (domain ? "; domain=" + domain : "");
+						});
 					});
 				}
-			}
 
-			function axisGaLoad() {
-				if (axisGaStarted) return;
-				axisGaStarted = true;
-				var axisGaConfig = { page_location: axisGaLandingUrl };
-				if (axisGaLandingReferrer) axisGaConfig.page_referrer = axisGaLandingReferrer;
-				gtag("js", new Date());
-				gtag("config", "G-7CGWJZE8QL", axisGaConfig);
-				dataLayer.push(function () {
-					window.__axisGaReady = true;
-					axisGaFlush();
+				var formDirty = false;
+				function markDirty(event) {
+					var field = event.target;
+					if (!field || !field.matches || !field.matches("input, textarea, select")) return;
+					if (field.name === "companyWebsite" || field.id === "companyWebsite") return;
+					var type = (field.type || "").toLowerCase();
+					if (type === "hidden" || type === "button" || type === "submit") return;
+					formDirty = true;
+				}
+				document.addEventListener("input", markDirty, true);
+				document.addEventListener("change", markDirty, true);
+
+				function unsavedInput() {
+					if (formDirty) return true;
+					var fields = document.querySelectorAll("input, textarea, select");
+					for (var i = 0; i < fields.length; i++) {
+						var field = fields[i];
+						var type = (field.type || "").toLowerCase();
+						if (type === "hidden" || type === "button" || type === "submit") continue;
+						if (field.name === "companyWebsite" || field.id === "companyWebsite") continue;
+						if (type === "checkbox" || type === "radio") {
+							if (field.checked !== field.defaultChecked) return true;
+						} else if (type === "file") {
+							if (field.files && field.files.length) return true;
+						} else if (field.tagName === "SELECT") {
+							if (field.selectedIndex > 0 && field.options[field.selectedIndex] && !field.options[field.selectedIndex].defaultSelected && field.value) return true;
+						} else if ((field.value || "") !== (field.defaultValue || "")) {
+							return true;
+						}
+					}
+					return false;
+				}
+
+				function watchNavigation() {
+					if (tracking) return;
+					tracking = true;
+					var last = location.href;
+					function track() {
+						if (read() !== "granted" || !loaded) return;
+						if (location.href === last) return;
+						last = location.href;
+						gtag("event", "page_view", {
+							page_location: location.href,
+							page_title: document.title || ""
+						});
+					}
+					var pushState = history.pushState;
+					var replaceState = history.replaceState;
+					history.pushState = function () {
+						var result = pushState.apply(this, arguments);
+						track();
+						return result;
+					};
+					history.replaceState = function () {
+						var result = replaceState.apply(this, arguments);
+						track();
+						return result;
+					};
+					window.addEventListener("popstate", track);
+				}
+
+				function grantAnalytics() {
+					gtag("consent", "update", {
+						analytics_storage: "granted",
+						ad_storage: "denied",
+						ad_user_data: "denied",
+						ad_personalization: "denied"
+					});
+				}
+
+				function load() {
+					if (read() !== "granted") return;
+					if (loaded) {
+						grantAnalytics();
+						return;
+					}
+					loaded = true;
+					grantAnalytics();
+					gtag("js", new Date());
+					gtag("config", ID, {
+						page_location: location.href,
+						send_page_view: true
+					});
+					var script = document.createElement("script");
+					script.async = true;
+					script.src = "https://www.googletagmanager.com/gtag/js?id=" + ID;
+					document.head.appendChild(script);
+					watchNavigation();
+				}
+
+				window.axisAnalytics = {
+					storageKey: KEY,
+					measurementId: ID,
+					read: read,
+					loaded: function () {
+						return loaded;
+					},
+					accept: function () {
+						write("granted");
+						restoreAnalyticsTransport();
+						load();
+						window.dispatchEvent(new CustomEvent("axis-consent-change"));
+					},
+					reject: function () {
+						var hadLoaded = loaded;
+						write("denied");
+						clearGaCookies();
+						blockFurtherAnalytics();
+						if (hadLoaded) {
+							gtag("consent", "update", {
+								analytics_storage: "denied",
+								ad_storage: "denied",
+								ad_user_data: "denied",
+								ad_personalization: "denied"
+							});
+						}
+						window.dispatchEvent(new CustomEvent("axis-consent-change"));
+						if (hadLoaded && !unsavedInput()) location.reload();
+					}
+				};
+
+				if (read() !== "granted") clearGaCookies();
+				if (read() === "granted") load();
+
+				document.addEventListener("click", function (event) {
+					var target = event.target;
+					if (!target || !target.closest) return;
+					if (!target.closest("[data-cookie-preferences]")) return;
+					event.preventDefault();
+					window.dispatchEvent(new CustomEvent("axis-open-cookie-preferences"));
 				});
-				var script = document.createElement("script");
-				script.async = true;
-				script.src = "https://www.googletagmanager.com/gtag/js?id=G-7CGWJZE8QL";
-				script.onload = function () {
-					window.__axisGaReady = true;
-					axisGaFlush();
-				};
-				script.onerror = function () {
-					window.__axisGaReady = true;
-				};
-				document.head.appendChild(script);
-			}
-
-			function axisGaSchedule() {
-				if ("requestIdleCallback" in window) requestIdleCallback(axisGaLoad, { timeout: 2000 });
-				else setTimeout(axisGaLoad, 2000);
-			}
-
-			if (document.readyState === "complete") axisGaSchedule();
-			else window.addEventListener("load", axisGaSchedule, { once: true });
+			})();
 		</script>
 	</head>
 	<body>

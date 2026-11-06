@@ -29,14 +29,16 @@ export default function PrivacyPage() {
           <div className="text-center mb-12">
             <Badge className="bg-[var(--axis-orange)] text-white mb-4">Legal</Badge>
             <h1 className="text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">{PRIVACY_PAGE.h1}</h1>
-            <p className="text-gray-600">Last updated: {PRIVACY_PAGE.updated}</p>
+            {PRIVACY_PAGE.updated ? <p className="text-gray-600">Last updated: {PRIVACY_PAGE.updated}</p> : null}
           </div>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 mb-6">{PRIVACY_PAGE.intro}</p>
             {PRIVACY_PAGE.sections.map((section) => (
               <section key={section.title}>
                 <h2 className="text-2xl font-semibold text-[var(--axis-dark-blue)] mt-8 mb-4">{section.title}</h2>
-                <p className="text-gray-600 mb-4">{section.body}</p>
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph} className="text-gray-600 mb-4">{paragraph}</p>
+                ))}
               </section>
             ))}
           </div>

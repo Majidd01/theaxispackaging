@@ -480,9 +480,24 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
     h1: "Bakery and Cake Boxes for UK Bakeries",
     metaDescription:
       "Bakery and cake boxes for UK bakeries and cafés. Tell Axis Packaging the bake, quantity and any food-contact requirement so it can be confirmed on your quotation.",
-    alt: "Compartment trays of prepared food. This picture is not a cake box",
+    image: "/assets/bakery-boxes-cake-packaging.webp",
+    alt: "Elegant printed bakery and cake boxes in cream and blush",
+    gallery: [
+      {
+        src: "/assets/bakery-boxes-cake-packaging.webp",
+        alt: "Elegant printed bakery and cake boxes in cream and blush",
+      },
+      {
+        src: "/assets/bakery-boxes-pastry-cupcake.webp",
+        alt: "Colourful pastry and cupcake bakery boxes with window lids",
+      },
+      {
+        src: "/assets/bakery-boxes-takeaway-window.webp",
+        alt: "Premium bakery takeaway boxes with handles and a window",
+      },
+    ],
     description:
-      "Bakery and cake boxes are cartons for whole cakes, cupcakes, cookies and pastries. Send the width of the bake and the height of any decoration so the box can clear it. Say whether the customer carries it out or it travels further. Any food-contact requirement is confirmed on your quotation. This page does not publish a certificate.",
+      "Bakery and cake boxes are cartons for whole cakes, cupcakes, cookies and pastries. Send the width of the bake and the height of any decoration so the box can clear it. Say whether the customer carries it out or it travels further. Any food-contact requirement is confirmed on your quotation. This page does not publish a certificate. The pictures are illustrative packaging concepts. Final packaging specifications are confirmed during quotation.",
     internalLinks: [
       { phrase: "food and drink containers", href: "/products/food-containers" },
       { phrase: "takeaway food trays", href: "/products/food-trays" },
