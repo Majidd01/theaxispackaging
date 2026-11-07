@@ -202,7 +202,7 @@ function validate(body) {
 
 function subjectFor(enquiry) {
   if (enquiry.form === "product") return `Product quote enquiry: ${enquiry.product} from ${enquiry.name}`;
-  if (enquiry.form === "instant") return `Instant quote enquiry from ${enquiry.name}`;
+  if (enquiry.form === "instant") return `Custom packaging quotation enquiry from ${enquiry.name}`;
   if (enquiry.form === "contact") return `Contact enquiry from ${enquiry.name}`;
   return `Homepage quote enquiry from ${enquiry.name}`;
 }

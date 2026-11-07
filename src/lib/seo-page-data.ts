@@ -66,9 +66,9 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
     path: "/quote",
     pageType: "Landing",
     primaryTopic: "custom packaging quote UK",
-    title: "Get a Custom Packaging Quote UK | Axis Packaging",
+    title: "Request a Custom Packaging Quotation | Axis Packaging",
     description: truncateMeta(
-      "Request a custom packaging quote from Axis Packaging. Share sizes, materials and quantities for delivery in the UK or the USA."
+      "Request a custom packaging quotation from Axis Packaging. Share the product, quantity and delivery details for the UK or the USA."
     ),
   },
   sustainability: {
@@ -101,11 +101,11 @@ export const STATIC_PAGE_SEO: Record<string, PageSeo> = {
   terms: {
     path: "/terms",
     pageType: "Policy",
-    primaryTopic: "terms of service",
-    title: "Terms of Service | Axis Packaging",
-    h1: "Terms of Service",
+    primaryTopic: "terms and conditions",
+    title: "Terms and Conditions | Axis Packaging",
+    h1: "Terms and Conditions",
     description: truncateMeta(
-      "Read the Terms of Service for Axis Packaging’s website and custom packaging services."
+      "Terms for Axis Packaging quotations, samples, payment and UK and USA delivery of custom packaging boxes and paper bags."
     ),
   },
   privacy: {

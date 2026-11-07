@@ -23,7 +23,7 @@ export function Manufacturer() {
       icon: Clock,
       title: "Fast Production",
       description: "Fast turnaround options are confirmed on your quotation",
-      stat: "24h Quote Response",
+      stat: "Quote timing confirmed individually",
     },
     {
       icon: Shield,
@@ -114,7 +114,7 @@ export function Manufacturer() {
               Request a Packaging Quotation
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Tell us about your product and the packaging you need. We respond to quotation requests within 24 hours.
+              Tell us about your product and the packaging you need. Our customer support is available 24/7. Quotation turnaround times are confirmed individually.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-[var(--axis-orange)] hover:bg-[var(--axis-orange)]/90 text-white">

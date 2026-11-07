@@ -226,7 +226,7 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
     ],
     quoteTitle: "Request a Quote for Custom Office Boxes",
     quoteIntro:
-      "Tell us your product type, dimensions, quantity, and branding requirements. Quotation requests receive a 24h quote response. Axis Packaging supplies custom packaging matched to the specification agreed on your quotation.",
+      "Tell us your product type, dimensions, quantity, and branding requirements. Quotation turnaround times are confirmed individually. Axis Packaging supplies custom packaging matched to the specification agreed on your quotation.",
   },
 
   "home-decor": {
@@ -323,7 +323,7 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
     ],
     quoteTitle: "Get a Quote for Custom Home Decor Packaging",
     quoteIntro:
-      "Tell us your product type, dimensions, materials preference, quantity, and any branding requirements. Quotation requests receive a 24h quote response. Axis Packaging supplies custom packaging matched to the specification agreed on your quotation.",
+      "Tell us your product type, dimensions, materials preference, quantity, and any branding requirements. Quotation turnaround times are confirmed individually. Axis Packaging supplies custom packaging matched to the specification agreed on your quotation.",
   },
 
   "music-cases": {
@@ -403,7 +403,7 @@ export const PRODUCT_ENRICHMENTS: Record<string, Record<string, unknown>> = {
     ],
     quoteTitle: "Get a Quote for Custom Musical Instrument Boxes",
     quoteIntro:
-      "Tell us your instrument type, dimensions, quantity, and branding requirements. Quotation requests receive a 24h quote response. Axis Packaging supplies custom packaging matched to the specification agreed on your quotation.",
+      "Tell us your instrument type, dimensions, quantity, and branding requirements. Quotation turnaround times are confirmed individually. Axis Packaging supplies custom packaging matched to the specification agreed on your quotation.",
   },
   ...THIN_PRODUCT_ENRICHMENTS,
   ...PACKAGING_PRODUCT_ENRICHMENTS,

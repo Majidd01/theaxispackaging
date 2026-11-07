@@ -24,14 +24,14 @@ export function Sustainability() {
     },
     {
       icon: Sun,
-      title: "24h Quote Response",
-      description: "Quotation requests receive a response within 24 hours",
+      title: "Quote timing confirmed individually",
+      description: "Quotation turnaround times are confirmed individually",
     },
   ]
 
   const certifications = [
     "24/7 Customer Support",
-    "24h Quote Response",
+    "Quote timing confirmed individually",
     "Premium Quality Packaging",
     "Material Options",
     "Quotation Support",

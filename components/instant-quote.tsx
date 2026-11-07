@@ -21,7 +21,7 @@ import {
   updateDimensions,
   updateFormData,
 } from "@/lib/slices/quoteFormSlice";
-import { Calculator, CheckCircle, Clock, Upload } from "lucide-react";
+import { Calculator, CheckCircle, Upload } from "lucide-react";
 import { DeliveryFields } from "@/components/delivery-fields";
 import { EnquiryHoneypot } from "@/components/enquiry-honeypot";
 import { deliveryPayload, initialDelivery, validateDelivery, type DeliveryDetails } from "@/lib/delivery-destination";
@@ -40,6 +40,7 @@ export function InstantQuote() {
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [fileNames, setFileNames] = useState<string[]>([]);
   const [delivery, setDelivery] = useState<DeliveryDetails>(() => initialDelivery());
+  const [formError, setFormError] = useState("");
 
   useLayoutEffect(() => {
     const intro = document.getElementById("static-quote-intro");
@@ -63,6 +64,7 @@ export function InstantQuote() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError("");
 
     // Validate required fields
     const quantity = formData.quantity === "custom" ? customQuantity.trim() : formData.quantity;
@@ -76,7 +78,7 @@ export function InstantQuote() {
       deliveryError
     ) {
       if (deliveryError) setStep(2);
-      alert(deliveryError || "Please fill in all required fields marked with *");
+      setFormError(deliveryError || "Please fill in all required fields marked with *");
       return;
     }
 
@@ -101,12 +103,12 @@ export function InstantQuote() {
         ...deliveryPayload(delivery),
       });
       if (!result.ok) {
-        alert(result.error);
+        setFormError(result.error || "We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
         return;
       }
       dispatch(setSubmitted(true));
     } catch {
-      alert("We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
+      setFormError("We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
     } finally {
       dispatch(setSubmitting(false));
     }
@@ -116,10 +118,11 @@ export function InstantQuote() {
     if (step === 2) {
       const deliveryError = validateDelivery(delivery);
       if (deliveryError) {
-        alert(deliveryError);
+        setFormError(deliveryError);
         return;
       }
     }
+    setFormError("");
     setStep(Math.min(step + 1, 3));
   };
   const prevStep = () => setStep(Math.max(step - 1, 1));
@@ -133,11 +136,10 @@ export function InstantQuote() {
               <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
             <h2 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">
-              Quote Request Submitted!
+              Your quotation request has been sent
             </h2>
             <p className="text-xl text-gray-600 mb-6">
-              Thank you for your interest! Our team will review your requirements and get back to
-              you within 24 hours with a detailed quote.
+              Thank you for your interest! Our team will review your requirements. Our customer support is available 24/7. Quotation turnaround times are confirmed individually.
             </p>
             <div className="bg-white rounded-lg p-6 shadow-lg">
               <h3 className="font-semibold text-[var(--axis-dark-blue)] mb-4">
@@ -160,7 +162,7 @@ export function InstantQuote() {
                   <div className="w-6 h-6 bg-[var(--axis-orange)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                     3
                   </div>
-                  <span>You receive your quote within 24 hours</span>
+                  <span>Quotation turnaround times are confirmed individually</span>
                 </div>
               </div>
             </div>
@@ -176,13 +178,13 @@ export function InstantQuote() {
         <div className="text-center mb-12">
           <Badge className="bg-[var(--axis-orange)] text-white mb-4">
             <Calculator className="h-4 w-4 mr-2" />
-            Instant Quote
+            Quotation Request
           </Badge>
           <h1 className="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">
             {QUOTE_GUIDE.h1}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Fill out our quick form and receive a detailed quote for your custom packaging needs
+            {QUOTE_GUIDE.lead}
           </p>
         </div>
 
@@ -206,13 +208,7 @@ export function InstantQuote() {
         <div className="max-w-4xl mx-auto">
           <Card className="border-0 shadow-xl">
             <CardHeader className="bg-[var(--axis-dark-blue)] text-white rounded-t-lg">
-              <CardTitle className="flex items-center justify-between">
-                <span>Custom Packaging Quote Request</span>
-                <div className="flex items-center space-x-2">
-                  <Clock className="h-5 w-5" />
-                  <span className="text-sm">~3 minutes</span>
-                </div>
-              </CardTitle>
+              <CardTitle>Custom Packaging Quotation Request</CardTitle>
               {/* Progress Bar */}
               <div className="mt-4">
                 <div className="flex justify-between text-sm mb-2">
@@ -565,7 +561,7 @@ export function InstantQuote() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span>You review the quotation before deciding whether to proceed. Quotation requests receive a 24h quote response</span>
+                          <span>You review the quotation before deciding whether to proceed. Quotation turnaround times are confirmed individually</span>
                         </li>
                       </ul>
                     </div>
@@ -574,6 +570,9 @@ export function InstantQuote() {
 
                 {/* Navigation Buttons */}
                 <EnquiryHoneypot value={companyWebsite} onChange={setCompanyWebsite} />
+                {formError ? (
+                  <p className="mt-6 text-base text-red-700" role="alert">{formError}</p>
+                ) : null}
                 <div className="flex justify-between mt-8 pt-6 border-t">
                   <Button
                     type="button"

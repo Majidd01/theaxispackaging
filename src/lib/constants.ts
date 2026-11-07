@@ -766,7 +766,7 @@ const _PRODUCT_CATEGORIES = [
       {
         title: "Send the brief",
         intro:
-          "Use the quotation form on this page. Quotation requests receive a 24h quote response, and customer support is available 24/7. Price and timing are confirmed on the quotation.",
+          "Use the quotation form on this page. Our customer support is available 24/7. Quotation turnaround times are confirmed individually. Price and timing are confirmed on the quotation.",
         subsections: [
           {
             title: "A list you can copy",
@@ -1045,7 +1045,7 @@ const _PRODUCT_CATEGORIES = [
       {
         title: "Send the brief",
         intro:
-          "Use the quotation form on this page. Quotation requests receive a 24h quote response, and customer support is available 24/7. Price and timing are confirmed on the quotation.",
+          "Use the quotation form on this page. Our customer support is available 24/7. Quotation turnaround times are confirmed individually. Price and timing are confirmed on the quotation.",
         subsections: [
           {
             title: "A list you can copy",
@@ -2109,7 +2109,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         title: "Why Choose Axis Packaging?",
-        intro: "Axis Packaging supplies printed food trays from Leeds for UK food businesses. Quotation requests receive a 24h quote response, and customer support is available 24/7. The reply confirms the tray, the print and the quantity. Price and timing are not published on this page.",
+        intro: "Axis Packaging supplies printed food trays from Leeds for UK food businesses. Our customer support is available 24/7. Quotation turnaround times are confirmed individually. The reply confirms the tray, the print and the quantity. Price and timing are not published on this page.",
         subsections: [
           {
             title: "A quotation for the job you describe",
@@ -2151,7 +2151,7 @@ const _PRODUCT_CATEGORIES = [
       },
       {
         question: "What details are needed to request a quote?",
-        answer: "Name the food, the shape, the approximate length, width and depth, the print, and the quantity. Quotation requests receive a 24h quote response.",
+        answer: "Name the food, the shape, the approximate length, width and depth, the print, and the quantity. Quotation turnaround times are confirmed individually.",
       },
       {
         question: "Can bakeries and cafés order branded food trays?",
@@ -2388,7 +2388,7 @@ const _PRODUCT_CATEGORIES = [
           {
             title: "8. State the quantity and the artwork",
             content:
-              "Give the quantity you want quoted. No minimum is published on this page. Say whether the artwork is finished, and who will check the dish names. Quotation requests receive a 24h quote response.",
+              "Give the quantity you want quoted. No minimum is published on this page. Say whether the artwork is finished, and who will check the dish names. Quotation turnaround times are confirmed individually.",
           },
         ],
       },
@@ -2766,7 +2766,7 @@ export const PRODUCT_CATEGORIES = _PRODUCT_CATEGORIES.map((product) =>
 );
 
 export const TRUST_INDICATORS = [
-  { text: "24h Quote Response", icon: "⭐" },
+  { text: "Quote timing confirmed individually", icon: "⭐" },
   { text: "Premium Quality Packaging", icon: "🏆" },
   { text: "24/7 Customer Support", icon: "📞" },
   { text: "Quotation Support", icon: "🎨" },
@@ -3139,7 +3139,7 @@ export const PACKAGING_SERVICES = [
 ];
 
 export const CERTIFICATIONS = [
-  "24h Quote Response",
+  "Quote timing confirmed individually",
   "24/7 Customer Support",
   "Premium Quality Packaging",
   "Quotation Support",

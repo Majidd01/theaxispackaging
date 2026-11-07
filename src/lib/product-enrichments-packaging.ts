@@ -65,7 +65,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     ],
     urgencyBanner: {
       title: "Request a Packaging Quotation",
-      text: "Tell us the bags and the quantity you need. Quotation requests receive a 24h quote response. Timing is confirmed on your quotation and is not a guaranteed delivery time.",
+      text: "Tell us the bags and the quantity you need. Quotation turnaround times are confirmed individually. Timing is confirmed on your quotation and is not a guaranteed delivery time.",
     },
     quoteTitle: "Get Your Custom Reusable Bags Now",
   },
@@ -131,7 +131,7 @@ export const PACKAGING_PRODUCT_ENRICHMENTS: Record<string, Record<string, unknow
     ],
     urgencyBanner: {
       title: "Request a Packaging Quotation",
-      text: "Tell us the mailer bags and the quantity you need. Quotation requests receive a 24h quote response. Timing is confirmed on your quotation and is not a guaranteed delivery time.",
+      text: "Tell us the mailer bags and the quantity you need. Quotation turnaround times are confirmed individually. Timing is confirmed on your quotation and is not a guaranteed delivery time.",
     },
     quoteTitle: "Get Your Custom Mailer Bags Now",
   },

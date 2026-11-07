@@ -83,22 +83,145 @@ export const PRIVACY_PAGE = {
   ],
 };
 
-export const TERMS_PAGE = {
-  h1: "Terms of Service",
-  updated: "January 2024",
-  intro: "These Terms of Service govern your use of Axis Packaging's website and services.",
+type TermsSection = {
+  title: string;
+  paragraphs: string[];
+  subsections?: Array<{ title: string; paragraphs: string[] }>;
+};
+
+/**
+ * Business terms for quotations and confirmed orders.
+ * The date is the date of this local text. It is not a solicitor’s approval date.
+ * Do not describe these terms as legally certified.
+ */
+export const TERMS_PAGE: {
+  h1: string;
+  updated: string;
+  intro: string;
+  sections: TermsSection[];
+} = {
+  h1: "Terms and Conditions",
+  updated: "7 November 2026",
+  intro:
+    "Axis Packaging supplies custom packaging, including packaging boxes and paper bags, to businesses in the United Kingdom and the United States. These terms explain the quotations, samples, payment and delivery policies that apply today. They are not a solicitor’s certificate, and they do not guarantee legal compliance.",
   sections: [
     {
-      title: "Acceptance of Terms",
-      body: "By accessing and using our website, you accept and agree to be bound by the terms and provision of this agreement.",
+      title: "What these terms cover",
+      paragraphs: [
+        "Phone: +44 7473 984273. Email: info@theaxispackaging.com.",
+        "Postal correspondence: 104 Pudsey Road, Leeds, LS12 3TZ, United Kingdom. That address is for letters. It is not the warehouse and it is not a factory. These terms do not say that Axis Packaging owns the warehouse, and they do not say that the packaging is manufactured in the United Kingdom.",
+        "If you are buying as an individual for purposes outside your business, UK or US consumer law may give you rights that a contract cannot remove. These terms do not remove those rights, or any other right the law does not allow a contract to remove.",
+      ],
     },
     {
-      title: "Services",
-      body: "Axis Packaging provides custom packaging solutions and related services as described on our website.",
+      title: "What this website does",
+      paragraphs: [
+        "The product pages describe packaging you can ask us to quote. Pictures described as illustrative concepts are not photographs of stock and are not photographs of a finished order.",
+        "The forms on the homepage, on a product page, at /quote and at /contact ask for a quotation. The website does not create an order, does not take a payment, and does not keep the enquiry in a database. If you select an artwork file, only the file name is recorded. The file is not uploaded.",
+        "The specification that can be ordered is the one later set out in the quotation and, if you proceed, in the written confirmation of the order.",
+      ],
     },
     {
-      title: "Contact Information",
-      body: "For questions about these Terms of Service, please contact us at legal@axispackaging.com.",
+      title: "Quotations",
+      paragraphs: [
+        "A quotation is valid for one calendar month from the date it is issued. If you want to proceed at the quoted price, confirm the quotation within that period.",
+        "Sending a form, or receiving a quotation, is not an order. While the quotation is valid, the price is the price stated on it.",
+      ],
+    },
+    {
+      title: "Samples",
+      paragraphs: [
+        "Where a sample is part of the work, the sample itself is free. It is provided so you can approve it before the order is placed or confirmed. Approving the sample is part of the order confirmation process.",
+        "Approving the sample is not, by itself, the written confirmation of the order, and it does not by itself make the advance payment due. The order is confirmed when that confirmation is made in writing.",
+        "These terms do not say that a sample is available for every product. They do not say that sending the sample is free. If a charge applies to sending the sample, it is the charge stated on the quotation. No sample lead time is published here.",
+        "Approving a sample and approving final artwork are different steps. The sample is the physical piece sent for review. The print on the order is the print described when the order is confirmed. These terms do not set a colour tolerance.",
+      ],
+    },
+    {
+      title: "Payment",
+      paragraphs: [
+        "A confirmed order requires a 50% advance payment. The remaining 50% is due on the same calendar day you receive the parcel.",
+        "These terms do not name a payment method, a bank account, a processing fee, interest, or a late charge.",
+      ],
+    },
+    {
+      title: "Order confirmation",
+      paragraphs: [
+        "An order is not confirmed by the website form, by the quotation alone, or by approval of a sample on its own. It is confirmed when you and Axis Packaging confirm it in writing. The website does not generate that confirmation.",
+        "After confirmation, the packaging is supplied to the confirmed specification and dispatched from a UK warehouse to the United Kingdom or United States address on the order.",
+      ],
+    },
+    {
+      title: "Cancellation",
+      paragraphs: [
+        "You may cancel before the order is confirmed in writing. After confirmation, an order ordinarily cannot be cancelled.",
+        "These terms do not add a cancellation penalty, and they do not say that a payment is forfeited automatically. They do not remove a statutory right, including a right the law does not allow a contract to remove. A right that applies where packaging arrives damaged, or where the print does not match the approved specification, also remains.",
+        "A change to size, quantity, material, print or delivery address after confirmation has to be agreed in writing. An agreed change can affect the price and the time.",
+      ],
+    },
+    {
+      title: "Damaged packaging and incorrect printing",
+      paragraphs: [
+        "Axis Packaging will replace packaging that arrives damaged, or that has printing which does not match the specification you approved.",
+        "That is the remedy stated here. These terms do not set a deadline for reporting the problem, a compensation amount, a list of evidence, or any warranty beyond this replacement. They do not remove a statutory right that applies to the order.",
+        "The pictures on the website are not the specification. The specification is the one in the written confirmation.",
+      ],
+    },
+    {
+      title: "Delivery and customs",
+      paragraphs: [
+        "The two points below are the delivery and customs policy for confirmed UK and USA orders. This page does not add a delivery time.",
+      ],
+      subsections: [
+        {
+          title: "Delivery",
+          paragraphs: [
+            "Confirmed orders for customers in the United Kingdom and the United States are dispatched from a UK warehouse directly to the delivery address on the order. The warehouse street is not published.",
+            "Axis Packaging is responsible for the delivery charges of that agreed UK or USA delivery. A different address or an extra service is included only when the quotation or the written confirmation says so.",
+          ],
+        },
+        {
+          title: "Customs costs",
+          paragraphs: [
+            "Axis Packaging is responsible for the customs costs of the UK and USA deliveries it arranges under the order.",
+            "These terms do not name an Incoterm, an importer of record, a tax registration, or a customs procedure. Those points are not decided on this page.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Customer support",
+      paragraphs: [
+        "Axis Packaging provides customer support 24 hours a day, seven days a week. You can call +44 7473 984273 or email info@theaxispackaging.com.",
+        "These terms do not promise that a quotation request or other enquiry is answered within 24 hours. Customer support is not a production date or a delivery date.",
+      ],
+    },
+    {
+      title: "Artwork and specification",
+      paragraphs: [
+        "You are responsible for the sizes, quantities, materials and wording you ask us to quote, and for having the right to use the artwork and names you supply. You allow Axis Packaging to use that material to prepare a quotation, a sample where a sample is used, and the confirmed order.",
+        "Packaging is quoted for the product and use you describe. A food-contact, cosmetic or other regulated suitability is confirmed only if the quotation or the written confirmation says so.",
+      ],
+    },
+    {
+      title: "What these terms do not decide",
+      paragraphs: [
+        "The earlier sections state the business policies for a quotation and a confirmed order. This section is different. It records points that have not been legally settled, so they are not added as extra obligations.",
+        "These terms do not choose a governing law or a court. They do not set a limit on liability, and they do not exclude liability that the law does not allow a contract to exclude, including liability for death or personal injury caused by negligence, or for fraud.",
+        "These terms do not name a registered company or a company number. A liability or dispute clause would need a separate legal review before it could be added. None is added here.",
+      ],
+    },
+    {
+      title: "Contact",
+      paragraphs: [
+        "For a question about these terms, email info@theaxispackaging.com or call +44 7473 984273. You can also write to 104 Pudsey Road, Leeds, LS12 3TZ, United Kingdom. Personal information is explained on the Privacy Policy page.",
+      ],
+    },
+    {
+      title: "Changes to these terms",
+      paragraphs: [
+        "These terms replace the January 2024 text, including the previous legal contact email. They apply to a new quotation from the date on this page. They do not rewrite a confirmation that has already been sent.",
+      ],
     },
   ],
 };

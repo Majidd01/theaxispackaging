@@ -154,7 +154,11 @@ export default function ProductDetailPage() {
         return;
       }
 
-      toast({ title: "Added to quote", description: "We received your request.", className: "border-green-600 text-green-700" });
+      toast({
+        title: "Your quotation request has been sent.",
+        description: "This is an enquiry, not an order. Your quotation will be prepared separately.",
+        className: "border-green-600 text-green-700",
+      });
     } catch (err) {
       toast({ title: "Failed to submit", description: "Please try again." });
     } finally {
@@ -458,8 +462,8 @@ export default function ProductDetailPage() {
                       />
                     )}
                     <EnquiryHoneypot value={companyWebsite} onChange={setCompanyWebsite} />
-                    <Button onClick={handleAddToQuote} disabled={submitting} className="bg-green-600 hover:bg-green-700 text-white px-8">
-                      {submitting ? "ADDING..." : "ADD TO QUOTE"}
+                    <Button onClick={handleAddToQuote} disabled={submitting} className="bg-green-600 hover:bg-green-700 text-white px-8 whitespace-normal h-auto min-h-10 text-center">
+                      {submitting ? "Sending..." : "Send Quotation Request"}
                     </Button>
                   </div>
                 </div>
@@ -1079,7 +1083,7 @@ export default function ProductDetailPage() {
                           </div>
                           <div className="flex items-center text-sm text-gray-500">
                             <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
-                            <span>24h Quote Response</span>
+                            <span>Quote timing confirmed individually</span>
                           </div>
                         </div>
 

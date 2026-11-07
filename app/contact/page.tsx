@@ -38,14 +38,16 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formError, setFormError] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [delivery, setDelivery] = useState<DeliveryDetails>(() => initialDelivery());
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError("");
     const deliveryError = validateDelivery(delivery);
     if (deliveryError) {
-      alert(deliveryError);
+      setFormError(deliveryError);
       return;
     }
     setIsSubmitting(true);
@@ -64,12 +66,12 @@ export default function ContactPage() {
         ...deliveryPayload(delivery),
       });
       if (!result.ok) {
-        alert(result.error);
+        setFormError(result.error || "We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
         return;
       }
       setSubmitted(true);
     } catch {
-      alert("We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
+      setFormError("We could not send your enquiry. Please try again or email info@theaxispackaging.com.");
     } finally {
       setIsSubmitting(false);
     }
@@ -244,6 +246,10 @@ export default function ContactPage() {
 
                       <DeliveryFields value={delivery} onChange={setDelivery} idPrefix="contact-delivery" />
 
+                      {formError ? (
+                        <p className="text-base text-red-700" role="alert">{formError}</p>
+                      ) : null}
+
                       <Button
                         type="submit"
                         disabled={isSubmitting}
@@ -295,8 +301,7 @@ export default function ContactPage() {
                 Your Request is Submitted!
               </h2>
               <p className="text-xl text-gray-600 mb-6">
-                Thank you for contacting us! Our team will review your project requirements and get back to
-                you within 24 hours with a detailed response.
+                Thank you for contacting us! Our team will review your project requirements. Our customer support is available 24/7. Quotation turnaround times are confirmed individually.
               </p>
               <div className="bg-white rounded-lg p-6 shadow-lg">
                 <h3 className="font-semibold text-[var(--axis-dark-blue)] mb-4">
@@ -319,7 +324,7 @@ export default function ContactPage() {
                     <div className="w-6 h-6 bg-[var(--axis-orange)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                       3
                     </div>
-                    <span>You receive our response within 24 hours</span>
+                    <span>Quotation turnaround times are confirmed individually</span>
                   </div>
                 </div>
               </div>

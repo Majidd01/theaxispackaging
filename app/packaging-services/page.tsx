@@ -66,8 +66,8 @@ export default function PackagingServicesPage() {
             </div>
             <div className="flex flex-col items-center">
               <Factory className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <h3 className="text-3xl font-bold text-[var(--axis-dark-blue)] mb-2">24h</h3>
-              <p className="text-gray-600">Quote Response</p>
+              <h3 className="text-xl font-bold text-[var(--axis-dark-blue)] mb-2">Confirmed individually</h3>
+              <p className="text-gray-600">Quotation timing</p>
             </div>
           </div>
         </div>

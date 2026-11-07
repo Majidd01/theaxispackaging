@@ -9,8 +9,8 @@ export function Quote() {
   const benefits = [
     {
       icon: Clock,
-      title: "Fast Turnaround",
-      description: "Get your quote within 24 hours",
+      title: "Quotation timing",
+      description: "Quotation turnaround times are confirmed individually",
     },
     {
       icon: Users,

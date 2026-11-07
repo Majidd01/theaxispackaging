@@ -39,8 +39,8 @@ export const MOQ_PAGE = {
       content: "Tell us the quantity you need and we will include it in your quotation.",
     },
     {
-      title: "24h Quote Response",
-      content: "Quotation requests receive a response within 24 hours.",
+      title: "Quote timing confirmed individually",
+      content: "Quotation turnaround times are confirmed individually.",
     },
     {
       title: "The product",
@@ -65,7 +65,7 @@ export const MOQ_PAGE = {
     {
       question: "Does quantity change the timing?",
       answer:
-        "Timing depends on the packaging and the quantity. We confirm the expected timing on your quotation. Quotation requests receive a 24h quote response.",
+        "Timing depends on the packaging and the quantity. We confirm the expected timing on your quotation. Quotation turnaround times are confirmed individually.",
     },
   ],
 };

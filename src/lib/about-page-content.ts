@@ -2,12 +2,12 @@ export const ABOUT_PAGE = {
   badge: "About Axis Packaging",
   h1: "Custom packaging for UK & USA businesses",
   intro:
-    "Axis Packaging is a Leeds-based custom packaging supplier for businesses in the United Kingdom and the United States. Customers can discuss custom sizes, materials and printing, and those details are confirmed on the quotation. Orders are dispatched from a UK warehouse to the agreed delivery address. Shipping costs and estimated delivery times are confirmed individually. Postal correspondence: 104 Pudsey Road, Leeds, LS12 3TZ. Call +44 7473 984273 or email info@theaxispackaging.com.",
+    "Axis Packaging is a Leeds-based custom packaging supplier for businesses in the United Kingdom and the United States. Customers can discuss custom sizes, materials and printing, and those details are confirmed on the quotation. Orders are dispatched from a UK warehouse to the agreed delivery address. Axis Packaging is responsible for the UK and USA delivery charges and customs costs. Estimated delivery times are confirmed individually. Postal correspondence: 104 Pudsey Road, Leeds, LS12 3TZ. Call +44 7473 984273 or email info@theaxispackaging.com.",
   storyTitle: "How we can help",
   story: [
     "We supply packaging that can be sized and printed around the product. Size, quantity, materials and branding are discussed from the details you send. The quotation names the packaging, the print, the price and the delivery arrangements that can be offered.",
     "Restaurants, cafés, bakeries, shops, cosmetics brands and online sellers often need different packs. Tell us the product and how it is handed over or posted, and the quotation follows that brief.",
-    "Customers can ask about packaging samples. Availability, suitability, costs and delivery arrangements are confirmed individually. Customer support is available 24/7. Request a quotation by phone, email or the form.",
+    "A free sample is available for approval before an order is confirmed. Please contact us to confirm whether a sample is available for your product and to confirm the delivery arrangements. Customer support is available 24/7. Request a quotation by phone, email or the form.",
   ],
   markets: {
     title: "Enquiries from the UK and the United States",

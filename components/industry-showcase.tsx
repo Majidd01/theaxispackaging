@@ -65,8 +65,8 @@ export function IndustryShowcase() {
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-[var(--axis-dark-blue)] mb-1">24h</h3>
-              <p className="text-sm text-gray-600">Quote Response</p>
+              <h3 className="text-lg font-bold text-[var(--axis-dark-blue)] mb-1">Confirmed individually</h3>
+              <p className="text-sm text-gray-600">Quotation timing</p>
             </div>
           </div>
         </div>

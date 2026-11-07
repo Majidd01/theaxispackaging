@@ -22,7 +22,7 @@ export function DeliveryFields({ value, onChange, idPrefix = "delivery" }: Deliv
       <legend className="text-sm font-medium text-gray-700">Delivery destination</legend>
       <p className="text-sm text-gray-600">
         {isUs
-          ? "Orders are dispatched from a UK warehouse to the US delivery address. Shipping cost and timing are confirmed on the quotation."
+          ? "Orders are dispatched from a UK warehouse to the US delivery address. Axis Packaging is responsible for the delivery charges and customs costs. Delivery timing is confirmed on the quotation."
           : "United Kingdom delivery uses a town or city and a postcode. Orders are dispatched from a UK warehouse."}
       </p>
       <div>

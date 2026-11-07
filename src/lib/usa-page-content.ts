@@ -13,7 +13,7 @@ export const USA_PAGE_SEO = {
   path: "/custom-packaging-usa",
   title: "Custom Packaging USA | Printed Boxes Quoted for Business",
   description:
-    "Custom Packaging USA for printed boxes and branded packs. Orders are dispatched from a UK warehouse. Shipping costs and times are confirmed on quotation.",
+    "Custom Packaging USA for printed boxes and branded packs. UK warehouse dispatch. Axis Packaging is responsible for delivery charges and customs costs.",
   h1: "Custom Packaging USA for Businesses",
   keywords:
     "custom packaging USA, custom packaging boxes USA, custom printed boxes USA, branded packaging USA, custom packaging for small business USA, wholesale custom packaging USA, custom retail packaging USA, custom food packaging USA, printed packaging boxes USA, international custom packaging supplier",
@@ -47,7 +47,7 @@ export const USA_PAGE = {
       title: "Custom Packaging Solutions for USA Businesses",
       paragraphs: [
         "Custom packaging USA buyers usually need a pack that fits a real product, carries their branding and can be shipped to a named US address. Axis Packaging supplies custom packaging for UK and US businesses, including cartons, rigid boxes, mailers, food and bakery packaging, retail packaging and paper bags. A style, material, print method or quantity is available only when the quotation says so.",
-        "Axis Packaging is an international custom packaging supplier for these orders, not a domestic US supplier. Say whether the pack is a mailer, a counter box, a shelf carton or a gift box, and whether the contents are fragile, food or cosmetic. Freight, timing and import responsibilities are quoted for that order.",
+        "Axis Packaging is an international custom packaging supplier for these orders, not a domestic US supplier. Say whether the pack is a mailer, a counter box, a shelf carton or a gift box, and whether the contents are fragile, food or cosmetic. Axis Packaging is responsible for the delivery charges and customs costs. Timing is confirmed on the quotation.",
       ],
     },
     {
@@ -137,7 +137,7 @@ export const USA_PAGE = {
         },
         {
           title: "Review the quotation",
-          body: "Quotation requests receive a 24h quote response. The reply confirms what can be offered. It is not an order.",
+          body: "Quotation turnaround times are confirmed individually. The reply confirms what can be offered. It is not an order.",
         },
       ],
     },
@@ -145,10 +145,10 @@ export const USA_PAGE = {
       id: "shipping",
       title: "Dispatch from a UK Warehouse to the United States",
       paragraphs: [
-        "Orders for US customers are dispatched from a UK warehouse directly to the confirmed delivery address. Axis Packaging does not ship them from a US warehouse. The packaging specification is agreed before an order proceeds. Shipping cost depends on the order and the destination. Mailers to one ZIP code are not the same calculation as a larger shipment to another state.",
-        "Delivery estimates are quoted individually. There is no guaranteed transit time, free international shipping or standard rate on this website. Dispatch from the UK warehouse does not remove US customs, duties, taxes or importer responsibilities. Those points depend on the shipment and are agreed as part of the shipping terms. Axis Packaging does not publish a tariff or a duty-free threshold, and it does not guarantee customs clearance.",
-        "Before an order is confirmed, three points need an answer: who the importer of record is, whether a customs broker is involved, and which shipping terms apply. DDP, DAP, FOB and other Incoterms are not an automatic default. If a term is offered, it is written on that quotation.",
-        "Import paperwork stays with the importer unless the quotation says otherwise. Country of origin is confirmed for the shipment when the documents require it. The UK warehouse location is not a statement of where the packaging was manufactured. [U.S. Customs and Border Protection](https://www.cbp.gov/) explains how goods are entered. That guidance is not legal advice, and it does not mean Axis Packaging files the entry.",
+        "Orders for US customers are dispatched from a UK warehouse directly to the confirmed delivery address. Axis Packaging does not ship them from a US warehouse. The packaging specification is agreed before an order proceeds. Axis Packaging is responsible for the delivery charges of that agreed UK or USA delivery.",
+        "Delivery estimates are quoted individually. There is no guaranteed transit time and no published rate on this website. Axis Packaging is responsible for the customs costs of the UK and USA deliveries it arranges. Axis Packaging does not publish a tariff or a duty-free threshold, and it does not guarantee customs clearance.",
+        "This page does not name an importer of record, a customs broker, an Incoterm, a tax registration, or a customs procedure.",
+        "The UK warehouse location is not a statement of where the packaging was manufactured. [U.S. Customs and Border Protection](https://www.cbp.gov/) explains how goods are entered. That guidance is not legal advice, and it does not mean Axis Packaging files the entry.",
         "Food packaging, cosmetic packaging and other regulated uses need the product, the contact conditions and any document checked for that order. Suitability is not an FDA approval, and Axis Packaging does not claim one. The [U.S. Food and Drug Administration](https://www.fda.gov/) publishes its own food-contact guidance. A quotation covers a compliance point only after that point has been checked.",
       ],
     },
@@ -156,7 +156,7 @@ export const USA_PAGE = {
       id: "small-business",
       title: "Custom Packaging for Small Businesses and Growing Brands",
       paragraphs: [
-        "Custom packaging for small business USA enquiries are welcome for a first run or a later repeat. There is no published price and no published minimum order quantity. The quotation says whether your quantity can be supplied and what it costs, including freight. Wholesale custom packaging USA is the same process at a larger quantity. It is not a stock programme or a US warehousing service.",
+        "Custom packaging for small business USA enquiries are welcome for a first run or a later repeat. There is no published price and no published minimum order quantity. The quotation says whether your quantity can be supplied and what the packaging costs. Axis Packaging is responsible for the delivery charges and customs costs of the agreed delivery. Wholesale custom packaging USA is the same process at a larger quantity. It is not a stock programme or a US warehousing service.",
         "Printed packaging boxes USA projects are easier to quote when you say whether the artwork is finished, in progress or still an idea. Customer support is available 24/7 by phone or email. That support is not a guaranteed design service or a guaranteed sample.",
       ],
     },
@@ -196,15 +196,15 @@ export const USA_PAGE = {
     },
     {
       title: "Support while you decide",
-      body: "Customer support is available 24/7, and quotation requests receive a 24h quote response. You can discuss the requirement before you proceed.",
+      body: "Our customer support is available 24/7. Quotation turnaround times are confirmed individually. You can discuss the requirement before you proceed.",
     },
     {
       title: "USA shipping, stated plainly",
-      body: "Custom packaging orders can be supplied and shipped to USA customers. They are dispatched from a UK warehouse, and the cost and timing are confirmed on the quotation.",
+      body: "Custom packaging orders can be supplied and shipped to USA customers. They are dispatched from a UK warehouse. Axis Packaging is responsible for the delivery charges and customs costs. Timing is confirmed on the quotation.",
     },
     {
       title: "Pricing explained on the quotation",
-      body: "Prices are not published because they depend on the order. Freight, duties and importer responsibilities are set out in the quotation.",
+      body: "Prices are not published because they depend on the order. Axis Packaging is responsible for the delivery charges and customs costs of the agreed UK or USA delivery.",
     },
   ],
   faqsTitle: "Frequently Asked Questions About USA Packaging Orders",
@@ -212,7 +212,7 @@ export const USA_PAGE = {
     {
       question: "Does Axis Packaging deliver custom packaging to the USA?",
       answer:
-        "Yes. US businesses can request custom packaging. Orders are dispatched from a UK warehouse to the confirmed US delivery address. The quotation confirms the specification, shipping cost and delivery arrangements. Axis Packaging does not operate a US office, warehouse or factory.",
+        "Yes. US businesses can request custom packaging. Orders are dispatched from a UK warehouse to the confirmed US delivery address. The quotation confirms the specification and delivery arrangements. Axis Packaging is responsible for the delivery charges and customs costs. Axis Packaging does not operate a US office, warehouse or factory.",
     },
     {
       question: "Where are orders shipped from?",
@@ -232,7 +232,7 @@ export const USA_PAGE = {
     {
       question: "How do I request a USA packaging quote?",
       answer:
-        "Use the quotation form, select United States, and add the city, state and ZIP code with the format, quantity, dimensions and print notes. Quotation requests receive a 24h quote response. The reply is a quotation to review, not a confirmed order.",
+        "Use the quotation form, select United States, and add the city, state and ZIP code with the format, quantity, dimensions and print notes. Quotation turnaround times are confirmed individually. The reply is a quotation to review, not a confirmed order.",
     },
     {
       question: "Can I submit my own artwork or branding?",
@@ -242,17 +242,17 @@ export const USA_PAGE = {
     {
       question: "How are shipping costs and delivery estimates calculated?",
       answer:
-        "Freight depends on the order and the US destination, and the delivery estimate is quoted individually. There is no published international rate, free-shipping offer or guaranteed delivery date. Duties and taxes also depend on the shipment.",
+        "The delivery estimate is quoted individually. There is no published rate and no guaranteed delivery date. Axis Packaging is responsible for the delivery charges and customs costs of the agreed delivery.",
     },
     {
       question: "Who handles US customs duties and clearance?",
       answer:
-        "The importer, any customs broker and the shipping terms must be agreed before an order is confirmed. Axis Packaging does not guarantee clearance or publish a duty rate, and no Incoterm is the default. The quotation names who is responsible.",
+        "Axis Packaging is responsible for the customs costs of the UK and USA deliveries it arranges. This page does not name an importer of record, a customs broker, an Incoterm, or a customs procedure. It does not guarantee customs clearance or publish a duty rate.",
     },
     {
       question: "Can US customers request packaging samples?",
       answer:
-        "You can ask. Availability, suitability, any cost and delivery are confirmed individually. A request is not a promise that a sample will be sent, and a sample is not the finished production specification.",
+        "A free sample is available for approval before an order is confirmed. Please contact us to confirm whether a sample is available for your product and to confirm the delivery arrangements. A sample is not the finished production specification.",
     },
     {
       question: "Is packaging suitable for food or regulated products?",
@@ -262,7 +262,7 @@ export const USA_PAGE = {
   ],
   closing: {
     title: "Request a USA packaging quotation",
-    body: "Tell Axis Packaging what you need to pack, the quantity, the print and the US city, state and ZIP code. The quotation will set out what can be supplied and how dispatch from a UK warehouse would be arranged. Quotation requests receive a 24h quote response.",
+    body: "Tell Axis Packaging what you need to pack, the quantity, the print and the US city, state and ZIP code. The quotation will set out what can be supplied and how dispatch from a UK warehouse would be arranged. Quotation turnaround times are confirmed individually.",
     primary: { href: "/quote?delivery=US", label: "Request a Quote" },
     secondary: { href: "/contact", label: "Contact Axis Packaging" },
   },
@@ -285,7 +285,7 @@ export function usaLandingJsonLd() {
     serviceSchema({
       name: "Custom Packaging for USA Businesses",
       description:
-        "Custom packaging quotations for businesses in the United States. Orders are dispatched from a UK warehouse to the confirmed delivery address. Specifications, shipping and import responsibilities are confirmed on the quotation. The business contact remains in Leeds.",
+        "Custom packaging quotations for businesses in the United States. Orders are dispatched from a UK warehouse to the confirmed delivery address. Axis Packaging is responsible for the delivery charges and customs costs. The business contact remains in Leeds.",
       path: USA_PAGE_SEO.path,
       image: USA_PAGE.image.src,
       areaServed: "United States",

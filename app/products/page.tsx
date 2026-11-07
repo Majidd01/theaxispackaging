@@ -70,7 +70,7 @@ export default function ProductsPage() {
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               {selectedIndustry
                 ? `Discover our specialized packaging solutions designed specifically for the ${selectedIndustry.name} industry. ${selectedIndustry.description}`
-                : "Explore custom packaging for businesses in the UK and USA. Choose a product to see where it is used, or tell us the item, quantity and print when you request a quotation. Quotation requests receive a 24h quote response."}
+                : "Explore custom packaging for businesses in the UK and USA. Choose a product to see where it is used, or tell us the item, quantity and print when you request a quotation. Quotation turnaround times are confirmed individually."}
             </p>
           </div>
         </section>

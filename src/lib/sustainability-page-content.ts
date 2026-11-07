@@ -23,7 +23,7 @@ export const SUSTAINABILITY_PAGE = {
     {
       title: "What to send with a material question",
       intro:
-        "Request a quotation with the points below. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+        "Request a quotation with the points below. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
       bullets: [
         "The product being packed",
         "Whether you want a paper-based pack",

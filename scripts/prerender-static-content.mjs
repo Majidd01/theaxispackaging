@@ -261,7 +261,8 @@ export function quoteIntroHtml(guide) {
   const usa = guide.usaLink
     ? `<p class="text-gray-700 leading-relaxed mt-4">${esc(guide.usaNote)} <a href="${esc(guide.usaLink.href)}" class="text-[var(--axis-orange)] font-medium">${esc(guide.usaLink.label)}</a></p>`
     : "";
-  return `<section id="static-quote-intro" class="py-12 bg-white"><div class="container mx-auto px-4 max-w-4xl"><h1 class="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(guide.h1)}</h1><h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(guide.h2)}</h2><p class="text-gray-700 leading-relaxed mb-4">${esc(guide.intro)}</p><ul class="list-disc pl-5 space-y-2 mb-4">${bullets}</ul><p class="text-gray-700 leading-relaxed">${esc(guide.close)}</p>${usa}</div></section>`;
+  const lead = guide.lead ? `<p class="text-xl text-gray-600 mb-6">${esc(guide.lead)}</p>` : "";
+  return `<section id="static-quote-intro" class="py-12 bg-white"><div class="container mx-auto px-4 max-w-4xl"><h1 class="text-3xl lg:text-4xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(guide.h1)}</h1>${lead}<h2 class="text-3xl font-bold text-[var(--axis-dark-blue)] mb-4">${esc(guide.h2)}</h2><p class="text-gray-700 leading-relaxed mb-4">${esc(guide.intro)}</p><ul class="list-disc pl-5 space-y-2 mb-4">${bullets}</ul><p class="text-gray-700 leading-relaxed">${esc(guide.close)}</p>${usa}</div></section>`;
 }
 
 export function sustainabilityStaticHtml(page) {
@@ -367,7 +368,15 @@ export function legalStaticHtml(routePath, page) {
     .map((section) => {
       const paragraphs = section.paragraphs?.length ? section.paragraphs : section.body ? [section.body] : [];
       const body = paragraphs.map((paragraph) => `<p class="text-gray-600 mb-4">${esc(paragraph)}</p>`).join("");
-      return `<h2 class="text-2xl font-semibold text-[var(--axis-dark-blue)] mt-8 mb-4">${esc(section.title)}</h2>${body}`;
+      const subsections = (section.subsections || [])
+        .map((sub) => {
+          const subBody = (sub.paragraphs || [])
+            .map((paragraph) => `<p class="text-gray-600 mb-4">${esc(paragraph)}</p>`)
+            .join("");
+          return `<h3 class="text-xl font-semibold text-[var(--axis-dark-blue)] mt-6 mb-3">${esc(sub.title)}</h3>${subBody}`;
+        })
+        .join("");
+      return `<h2 class="text-2xl font-semibold text-[var(--axis-dark-blue)] mt-8 mb-4">${esc(section.title)}</h2>${body}${subsections}`;
     })
     .join("");
   const updated = page.updated ? `<p class="text-gray-600">Last updated: ${esc(page.updated)}</p>` : "";

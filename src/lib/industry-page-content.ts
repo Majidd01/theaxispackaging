@@ -54,7 +54,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What to include in an apparel quotation",
         intro:
-          "Request a quotation with the garment and the sales channel. Axis Packaging confirms the specification, quantity and timing in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the garment and the sales channel. Axis Packaging confirms the specification, quantity and timing in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The item, such as knitwear, shoes or an accessory",
           "Whether you need a box, a bag, or both",
@@ -101,7 +101,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a bakery quotation needs",
         intro:
-          "Request a quotation with the bake, not a certificate name. The reply confirms the pack, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the bake, not a certificate name. The reply confirms the pack, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The bake and whether it is iced or fragile",
           "Collection, counter sale, or delivery",
@@ -146,7 +146,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "Details for a beer or liquor quotation",
         intro:
-          "Request a quotation with the liquid and the bottle. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the liquid and the bottle. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Beer, cider, spirits, or a mixed gift",
           "Bottle size and how many bottles are in one pack",
@@ -190,7 +190,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What to include in a beverage quotation",
         intro:
-          "Request a quotation with the drink format. The reply confirms the pack, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the drink format. The reply confirms the pack, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Cup, bottle, can, or multipack",
           "Served on site, sold from a shelf, or delivered",
@@ -234,7 +234,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "Details for a candle quotation",
         intro:
-          "Request a quotation with the candle, not a finish name copied from another brand. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the candle, not a finish name copied from another brand. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Jar, pillar, melt, or a set",
           "The vessel size",
@@ -278,7 +278,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a confectionery quotation needs",
         intro:
-          "Request a quotation and name the sweet. Any food-contact requirement should be stated so it can be confirmed. Quotation requests receive a 24h quote response.",
+          "Request a quotation and name the sweet. Any food-contact requirement should be stated so it can be confirmed. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The sweet and whether it is already wrapped",
           "Single unit or assortment",
@@ -322,7 +322,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What to send with the quotation",
         intro:
-          "Request a quotation and include the text your customer requires. Axis Packaging will confirm what can be supplied, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation and include the text your customer requires. Axis Packaging will confirm what can be supplied, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product format in your own words",
           "The wording that must be printed",
@@ -366,7 +366,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "Details for a chocolate quotation",
         intro:
-          "Request a quotation with the selection and the season if the artwork changes. The reply confirms the pack, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the selection and the season if the artwork changes. The reply confirms the pack, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Bar, praline selection, or seasonal gift",
           "The quantity and the tray count, if there is one",
@@ -410,7 +410,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a coffee quotation should include",
         intro:
-          "Request a quotation with the format and the fill weight if you know it. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the format and the fill weight if you know it. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Bag, tin, carton, or a combination",
           "Retail, café supply, or gift",
@@ -454,7 +454,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What to include in a cosmetics quotation",
         intro:
-          "Request a quotation with the container size and the wording. The reply confirms the pack, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the container size and the wording. The reply confirms the pack, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Jar, tube, palette, or set",
           "The container size",
@@ -498,7 +498,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "Details for an e-commerce quotation",
         intro:
-          "Request a quotation with a typical order, not an average across every product you sell. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with a typical order, not an average across every product you sell. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "What a typical parcel contains",
           "Mailer, bag, or outer carton",
@@ -542,7 +542,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What an electronics quotation needs",
         intro:
-          "Request a quotation with the device and the journey. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the device and the journey. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The device or spare part",
           "Retail carton, postal pack, or outer shipper",
@@ -586,7 +586,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a food quotation must include",
         intro:
-          "Request a quotation with the food and any food-contact requirement. The reply confirms what can be supplied, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the food and any food-contact requirement. The reply confirms what can be supplied, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The food and whether it is hot, chilled or dry",
           "Retail pack or service pack",
@@ -630,7 +630,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What to include in a gift quotation",
         intro:
-          "Request a quotation with the gift and the handover. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the gift and the handover. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "What the gift is",
           "One item or a set",
@@ -674,7 +674,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "Details for a jewellery quotation",
         intro:
-          "Request a quotation with a photo if the shape is unusual. The reply confirms the box, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with a photo if the shape is unusual. The reply confirms the box, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Ring, earrings, necklace, or a set",
           "The approximate size of the piece",
@@ -718,7 +718,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a pet product quotation needs",
         intro:
-          "Request a quotation with the product and the channel. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the product and the channel. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Treat, toy, accessory, or grooming product",
           "Whether a pet eats it",
@@ -762,7 +762,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What the quotation must contain",
         intro:
-          "Request a quotation with the product and the labelling you need. Axis Packaging confirms what can be supplied, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the product and the labelling you need. Axis Packaging confirms what can be supplied, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product, described by you",
           "The text that must be printed",
@@ -806,7 +806,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a presentation quotation needs",
         intro:
-          "Request a quotation with the item and the audience. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the item and the audience. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product, sample, or gift",
           "Who receives it",
@@ -856,7 +856,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a restaurant quotation should include",
         intro:
-          "Request a quotation with the menu item and whether it travels. The reply confirms the pack, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the menu item and whether it travels. The reply confirms the pack, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The dish or drink",
           "Eaten in, collected, or delivered",
@@ -900,7 +900,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a retail quotation needs",
         intro:
-          "Request a quotation with the product and the fixture. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the product and the fixture. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product sold from the shelf",
           "Carton, label, display, or a combination",
@@ -944,7 +944,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a shipping quotation needs",
         intro:
-          "Request a quotation with a typical shipment. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with a typical shipment. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "What is inside, and the approximate weight if you know it",
           "Parcel, outer carton, or both",
@@ -989,7 +989,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "Details for a soap quotation",
         intro:
-          "Request a quotation with the format and the fragrance names. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the format and the fragrance names. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Bar, bottle, or gift set",
           "The bar or bottle size",
@@ -1033,7 +1033,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a toy quotation should include",
         intro:
-          "Request a quotation with the toy and the wording you must print. The reply confirms the box, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the toy and the wording you must print. The reply confirms the box, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The toy or game",
           "Shelf sale, online sale, or wholesale outer",
@@ -1077,7 +1077,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "What a tea quotation needs",
         intro:
-          "Request a quotation with the format and the fill if you know it. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the format and the fill if you know it. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Loose tea, tea bags, or a gift caddy",
           "Retail unit or gift",
@@ -1122,7 +1122,7 @@ const INDUSTRY_PAGES: Record<string, IndustryCopy> = {
       {
         title: "Details for a wine quotation",
         intro:
-          "Request a quotation with the bottle size and the count. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the bottle size and the count. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Still wine, sparkling wine, or a mixed gift",
           "Bottle size and bottles per pack",

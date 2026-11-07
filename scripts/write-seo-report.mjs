@@ -158,7 +158,7 @@ Unique descriptions (~140–160 chars where practical) with UK benefit framing. 
 - No visual H1 redesign.
 - Contact H1 brand typo fixed: “theasxis Packaging” → “Axis Packaging” (same styling).
 - Existing single H1 pattern retained on templates.
-- Quote page H1 remains: “Get Your Custom Quote in Minutes”.
+- Quote page H1: “Request a Custom Packaging Quotation”.
 
 ---
 

@@ -100,7 +100,7 @@ export function Quotation() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get a personalized quote for your custom packaging needs. Our experts will provide you with competitive pricing and design recommendations.
+            Send your product, quantity and delivery details. Our team will review the enquiry and prepare a quotation. You can ask for guidance on the packaging. Design recommendations are not a guaranteed full design service.
           </p>
         </div>
 
@@ -295,7 +295,7 @@ export function Quotation() {
                     onCheckedChange={(checked) => handleInputChange("agreeToTerms", checked as boolean)}
                   />
                   <label htmlFor="terms" className="text-sm text-gray-600">
-                    I agree to the <Link to="/terms" className="text-orange-600 hover:underline">Terms of Service</Link> and <Link to="/privacy" className="text-orange-600 hover:underline">Privacy Policy</Link>
+                    I agree to the <Link to="/terms" className="text-orange-600 hover:underline">Terms and Conditions</Link> and <Link to="/privacy" className="text-orange-600 hover:underline">Privacy Policy</Link>
                   </label>
                 </div>
 
@@ -335,8 +335,8 @@ export function Quotation() {
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Quick Response</h4>
-                    <p className="text-gray-600 text-sm">Quotation requests receive a 24h quote response. The quotation sets out the packaging, the price and the delivery arrangements that can be offered.</p>
+                    <h4 className="font-semibold text-gray-900 mb-2">Quotation timing</h4>
+                    <p className="text-gray-600 text-sm">Quotation turnaround times are confirmed individually. The quotation sets out the packaging, the price and the delivery arrangements that can be offered.</p>
                   </div>
                 </div>
 
@@ -371,8 +371,8 @@ export function Quotation() {
                   <div className="text-orange-100 text-sm">Customer Support</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold">24h</div>
-                  <div className="text-orange-100 text-sm">Quote Response</div>
+                  <div className="text-lg font-bold">Confirmed individually</div>
+                  <div className="text-orange-100 text-sm">Quotation timing</div>
                 </div>
               </div>
             </div>

@@ -27,25 +27,25 @@ export const FAQ_PAGE_ITEMS = [
     {
       id: "2",
       question: "What are your turnaround times?",
-      answer: `Production timing depends on the packaging, the print and the quantity. We confirm the expected timing on your quotation. Those dates are estimates and are not a guaranteed delivery time. Quotation requests receive a 24h quote response.`,
+      answer: `Production timing depends on the packaging, the print and the quantity. We confirm the expected timing on your quotation. Those dates are estimates and are not a guaranteed delivery time. Quotation turnaround times are confirmed individually.`,
       category: "Production",
     },
     {
       id: "3",
       question: "What are your payment terms?",
-      answer: `Payment terms are confirmed on your quotation. Deposits, credit terms and card fees are not published on this page.`,
+      answer: `A confirmed order requires a 50% advance payment. The remaining 50% is due on the same calendar day you receive the parcel. Payment arrangements are confirmed during quotation.`,
       category: "Pricing",
     },
     {
       id: "4",
       question: "Do you offer free samples?",
-      answer: `Customers can ask about packaging samples when discussing their requirements. Sample availability, suitability, costs and delivery arrangements are confirmed individually.`,
+      answer: `A free sample is available for approval before an order is confirmed. Please contact us to confirm whether a sample is available for your product and to confirm the delivery arrangements.`,
       category: "Orders",
     },
     {
       id: "5",
       question: "Do you ship internationally?",
-      answer: `Tell us the delivery address and the packaging, and we will confirm the shipping options on your quotation. Orders for UK and US customers are dispatched from a UK warehouse. We do not publish a guaranteed delivery time.`,
+      answer: `UK and USA orders are dispatched from our UK warehouse. Axis Packaging is responsible for the delivery charges and customs costs under our stated policy. Delivery arrangements are confirmed during quotation. We do not publish a guaranteed delivery time.`,
       category: "Shipping",
     },
     {
@@ -57,7 +57,7 @@ export const FAQ_PAGE_ITEMS = [
     {
       id: "7",
       question: "How do I place an order?",
-      answer: `Contact Axis Packaging by phone, email or the quotation form. Share the product, the quantity and any artwork. Quotation requests receive a 24h quote response, and 24/7 customer support is available.`,
+      answer: `Contact Axis Packaging by phone, email or the quotation form. Share the product, the quantity and any artwork. Our customer support is available 24/7. Quotation turnaround times are confirmed individually.`,
       category: "Orders",
     },
     {

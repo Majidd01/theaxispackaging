@@ -224,8 +224,8 @@ export default function IndustryDetailPage() {
             </div>
             <div className="flex flex-col items-center">
               <Factory className="h-12 w-12 text-[var(--axis-orange)] mb-4" />
-              <p className="text-3xl font-bold mb-2">24h</p>
-              <p className="text-blue-100">Quote Response</p>
+              <p className="text-xl font-bold mb-2">Confirmed individually</p>
+              <p className="text-blue-100">Quotation timing</p>
             </div>
             <div className="flex flex-col items-center">
               <Package className="h-12 w-12 text-[var(--axis-orange)] mb-4" />

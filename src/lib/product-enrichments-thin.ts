@@ -39,7 +39,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What to send with a folding carton quotation",
         intro:
-          "The quotation form asks for the details that change the carton. Axis Packaging confirms the specification, the order quantity and the timing on that quotation. Quotation requests receive a 24h quote response.",
+          "The quotation form asks for the details that change the carton. Axis Packaging confirms the specification, the order quantity and the timing on that quotation. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The item inside, such as a bar, a compact, a kit or a gift",
           "How many cartons you need",
@@ -84,7 +84,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What to include in a rigid box quotation",
         intro:
-          "Describe the product the box has to present. Do not guess a board grade on this page. Request a quotation with the points below and the reply will confirm what can be supplied. Quotation requests receive a 24h quote response.",
+          "Describe the product the box has to present. Do not guess a board grade on this page. Request a quotation with the points below and the reply will confirm what can be supplied. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product or set that sits in the box",
           "Whether you need one item or several pieces in the same pack",
@@ -129,7 +129,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "Details that help an insert quotation",
         intro:
-          "The useful information is the product, not a material name copied from another supplier. Request a quotation with the points below. Order quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "The useful information is the product, not a material name copied from another supplier. Request a quotation with the points below. Order quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "What the insert must hold, and how many pieces",
           "The outer box it has to fit, if you already have one",
@@ -175,7 +175,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What to include in a shipping box quotation",
         intro:
-          "Tell us what is going in the box and how it travels. Request a quotation rather than guessing a strength. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "Tell us what is going in the box and how it travels. Request a quotation rather than guessing a strength. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product and its approximate weight, if you know it",
           "Whether the box is posted, stored, or both",
@@ -220,7 +220,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "Information for a cosmetic box quotation",
         intro:
-          "Name the beauty product and how it is sold. Request a quotation with the points below. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Name the beauty product and how it is sold. Request a quotation with the points below. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product, such as a jar, tube, palette or set",
           "How many boxes you need",
@@ -332,7 +332,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What a pharmaceutical quotation needs",
         intro:
-          "Do not assume a standard carton. Request a quotation with the product and the labelling you need. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Do not assume a standard carton. Request a quotation with the product and the labelling you need. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product type, described by you",
           "The text that must be printed",
@@ -377,7 +377,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "Details for an electronics quotation",
         intro:
-          "Request a quotation with the protection the product actually needs. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the protection the product actually needs. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The device or accessory, and whether it is fragile",
           "Whether you need cushioning, static protection, or both",
@@ -421,7 +421,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What to send for a jewellery box quotation",
         intro:
-          "A photo of the piece is more useful than a generic box name. Request a quotation with the points below. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "A photo of the piece is more useful than a generic box name. Request a quotation with the points below. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The piece, such as a ring, earrings, a necklace or a set",
           "How many boxes you need",
@@ -465,7 +465,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "Details for a wine box quotation",
         intro:
-          "Request a quotation with the bottle, not only the word wine. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the bottle, not only the word wine. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "Wine, spirits, or a mixed gift set",
           "The bottle size and how many bottles are in one box",
@@ -593,7 +593,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What to include in an apparel quotation",
         intro:
-          "Request a quotation and name the garment. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation and name the garment. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The item, such as a shirt, shoes, jewellery or a full outfit",
           "Whether you need a box, a bag, or both",
@@ -637,7 +637,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What to send with a subscription box quotation",
         intro:
-          "List what goes in a typical kit. Request a quotation with the points below. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "List what goes in a typical kit. Request a quotation with the points below. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The products in one kit",
           "How often you ship, if that changes the quantity",
@@ -681,7 +681,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "Details for a gift box quotation",
         intro:
-          "Request a quotation with the gift itself. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the gift itself. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "What the gift is",
           "Whether it is one item or a set",
@@ -725,7 +725,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What a toy box quotation needs",
         intro:
-          "Request a quotation and include any wording you must print. The reply confirms the box, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation and include any wording you must print. The reply confirms the box, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The toy or game",
           "The quantity and the approximate size",
@@ -769,7 +769,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "Information for a media packaging quotation",
         intro:
-          "Request a quotation with the item and the sales channel. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the item and the sales channel. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The item, such as a book, CD, DVD or printed set",
           "Whether it is a retail pack, a postal pack, or an outer carton",
@@ -814,7 +814,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What an automotive quotation should include",
         intro:
-          "Request a quotation with the part, not a guessed board name. The reply confirms the specification, quantity and timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the part, not a guessed board name. The reply confirms the specification, quantity and timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The part, and whether it is sharp, oily or fragile",
           "The quantity and the approximate size",
@@ -857,7 +857,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "Details for a sports box quotation",
         intro:
-          "Request a quotation with the item and the journey. Specification, quantity and timing are confirmed in the reply. Quotation requests receive a 24h quote response.",
+          "Request a quotation with the item and the journey. Specification, quantity and timing are confirmed in the reply. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The kit or accessory",
           "Whether it is sold singly or in a multi-pack",
@@ -902,7 +902,7 @@ const THIN_PRODUCT_PAGES: Record<string, Record<string, unknown>> = {
       {
         title: "What to include in a pet product quotation",
         intro:
-          "Request a quotation and name the pet product. The reply confirms the pack, the quantity and the timing. Quotation requests receive a 24h quote response.",
+          "Request a quotation and name the pet product. The reply confirms the pack, the quantity and the timing. Quotation turnaround times are confirmed individually.",
         bullets: [
           "The product, and whether a pet eats it",
           "Any food-contact requirement you need confirmed",
